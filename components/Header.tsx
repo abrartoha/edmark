@@ -29,7 +29,7 @@ export default function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="nav-link">
               {item.label}
@@ -37,7 +37,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a href={site.phoneHref} className="text-sm font-semibold text-brand-700">
             {site.phone}
           </a>
@@ -49,7 +49,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 md:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -71,7 +71,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-brand-100 bg-white md:hidden">
+        <div className="border-t border-brand-100 bg-white lg:hidden">
           <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
             {nav.map((item) => (
               <Link

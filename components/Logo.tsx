@@ -14,11 +14,11 @@ export default function Logo({
       aria-label={site.name}
     >
       <Image
-        src={variant === "light" ? "/images/logo-white.png" : "/images/logo.jpg"}
+        src={variant === "light" ? "/images/logo-white.png" : "/images/logo.png"}
         alt={site.name}
-        width={160}
-        height={48}
-        className="h-10 w-auto object-contain"
+        width={180}
+        height={54}
+        className="h-11 w-auto object-contain"
         priority
       />
     </span>

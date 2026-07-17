@@ -1,9 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useState, type CSSProperties } from "react";
 
 const STORAGE_KEY = "edmark_intro_seen";
+
+// Four tiles matching the logo — top-left big, top-right small, bottom-left small, bottom-right big
+// Each tile flies in from a corner
+const tiles: { style: CSSProperties; from: CSSProperties }[] = [
+  {
+    // Top-left: large mint-green tile
+    style: { top: 4, left: 6, width: 58, height: 58, opacity: 1 },
+    from: { ["--tx" as string]: "-220px", ["--ty" as string]: "-180px" },
+  },
+  {
+    // Top-right: small tile
+    style: { top: 10, left: 74, width: 46, height: 46, opacity: 0.9 },
+    from: { ["--tx" as string]: "240px", ["--ty" as string]: "-200px" },
+  },
+  {
+    // Bottom-left: small tile
+    style: { top: 74, left: 0, width: 46, height: 46, opacity: 0.9 },
+    from: { ["--tx" as string]: "-240px", ["--ty" as string]: "210px" },
+  },
+  {
+    // Bottom-right: large cyan-blue tile
+    style: { top: 62, left: 56, width: 68, height: 62, opacity: 1 },
+    from: { ["--tx" as string]: "240px", ["--ty" as string]: "220px" },
+  },
+];
 
 export default function Intro() {
   const [show, setShow] = useState(true);
@@ -56,6 +80,7 @@ export default function Intro() {
       role="status"
       aria-label="Edmark Education"
     >
+      {/* soft glow blobs */}
       <div
         className="pointer-events-none absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
         aria-hidden="true"
@@ -65,16 +90,35 @@ export default function Intro() {
         aria-hidden="true"
       />
 
-      <div className="relative flex flex-col items-center gap-6 px-6">
-        <div className="intro-word">
-          <Image
-            src="/images/logo-white.png"
-            alt="Edmark Education"
-            width={280}
-            height={84}
-            className="h-20 w-auto object-contain sm:h-24"
-            priority
-          />
+      <div className="relative flex flex-col items-center gap-8 px-6 sm:flex-row sm:gap-10">
+        {/* Four tiles converging from corners to form the mark */}
+        <div className="relative h-[150px] w-[150px] shrink-0">
+          {tiles.map((t, i) => (
+            <span
+              key={i}
+              className="intro-tile absolute rounded-[14px] shadow-glow"
+              style={{
+                ...t.style,
+                ...t.from,
+                animationDelay: `${i * 0.12}s`,
+                background:
+                  i <= 1
+                    ? "linear-gradient(135deg, #1de9b6 0%, #14c49a 100%)"
+                    : "linear-gradient(135deg, #14c49a 0%, #22d3ee 100%)",
+                transform: `translate(var(--tx, 0), var(--ty, 0)) scale(0.3) rotate(-16deg) skewX(-8deg)`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Wordmark sliding in from the side — matching logo typography */}
+        <div className="intro-word overflow-hidden text-center sm:text-left">
+          <span className="block font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
+            EDMARK
+          </span>
+          <span className="mt-1 block text-sm font-bold uppercase tracking-[0.3em] text-white/80">
+            Education
+          </span>
         </div>
       </div>
 

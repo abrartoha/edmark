@@ -146,10 +146,10 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brand-800 pt-8 text-xs text-brand-300 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {site.legalName}. All rights reserved. ABN {site.abn}
           </p>
           <p>
-            {site.contact.name} · {site.contact.role}
+            {site.address.full}
           </p>
         </div>
       </div>

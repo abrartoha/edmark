@@ -97,4 +97,26 @@ export const successStories: SuccessStory[] = [
       "Tanvir was an experienced engineer in Bangladesh who wanted to transition into research but had never written an academic research proposal. He came to Edmark with a rough idea about sustainable construction materials but no clear methodology or literature review. Over multiple sessions, we helped him define a precise research question, structure a methodology section that demonstrated feasibility, and position his work within the existing literature. We also identified a Swinburne research group working in exactly his area and helped him secure a research scholarship that covered his tuition and provided a living stipend.",
     outcome: "Currently completing his Masters by Research with plans to upgrade to a PhD",
   },
+  {
+    name: "Nusrat J.",
+    course: "Masters by Research in Data Science",
+    university: "Deakin University",
+    origin: "Bangladesh",
+    quote:
+      "Edmark helped me get a 100% scholarship for my Masters by Research. I never thought it was possible — they made every step feel manageable and gave me the confidence to aim higher.",
+    story:
+      "Nusrat had a strong academic record with a first-class honours degree but had no idea how to approach a research degree application in Australia. She came to Edmark with a vague research interest in data science and healthcare. We helped her refine that into a specific, compelling research proposal on predictive analytics for chronic disease management in rural communities. We identified three potential supervisors at Deakin whose work aligned perfectly with her proposal, coached her through the initial outreach, and helped her prepare a flawless application. When the RTP scholarship results came in, she received a full scholarship covering 100% of her tuition plus a living stipend of over $32,000 per year.",
+    outcome: "Currently completing her Masters by Research on a full RTP scholarship with plans to pursue a PhD",
+  },
+  {
+    name: "Sharif M.",
+    course: "PhD in Artificial Intelligence",
+    university: "Swinburne University of Technology",
+    origin: "India",
+    quote:
+      "I applied to three universities on my own and got rejected by all of them. Edmark completely rewrote my proposal, found the perfect supervisor, and I got accepted with a full scholarship within two months.",
+    story:
+      "Sharif had published two journal papers and presented at an international conference, but his previous PhD applications failed because his research proposals were unfocused and didn't align with any supervisor's active projects. Edmark's team worked with him to redefine his research direction around explainable AI for healthcare — a topic with active funding at Swinburne. We rewrote his proposal from scratch, structured his methodology around existing datasets at the university, and connected him with a supervisor who was actively looking for a PhD student. The application was approved in six weeks, and he received a Swinburne University Postgraduate Research Award covering full tuition and a $35,000 annual stipend.",
+    outcome: "Enrolled in his PhD with full scholarship, already published his first paper as a Swinburne researcher",
+  },
 ];

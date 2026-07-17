@@ -269,6 +269,150 @@ Research degree applications are complex, and the stakes are high. We help you:
 
 Book a free consultation and let's discuss your research goals.
 `,
+  "10-ielts-tips-to-score-7-or-higher": `
+## Tip 1: Understand the scoring system
+
+IELTS scores each module (Listening, Reading, Writing, Speaking) on a band scale of 0–9 in 0.5 increments. Your overall score is the average of all four modules. To score 7.0 overall, you don't need 7.0 in every module — but you can't afford anything below 6.5.
+
+## Tip 2: Master time management in Reading
+
+You have 60 minutes for 40 questions across three passages. Many students run out of time on the third passage. Practice the habit of spending no more than 18 minutes per passage, leaving 6 minutes for review.
+
+## Tip 3: Don't leave any answer blank
+
+There is no negative marking in IELTS. If you're unsure, make your best guess. A blank answer is always wrong — a guess has a chance of being right.
+
+## Tip 4: Learn the Writing Task 2 structure
+
+For Task 2 (the essay), use this proven structure: introduction (2–3 sentences with a clear thesis), body paragraph 1 (main argument + example), body paragraph 2 (second argument + example), conclusion (summary of position). Aim for 270–290 words.
+
+## Tip 5: Use linking words naturally
+
+Words like "however," "furthermore," "in contrast" and "consequently" improve your coherence score — but only if they're used correctly. Don't force them in where they don't belong. Practice using them in sentences until they feel natural.
+
+## Tip 6: Practice Speaking with a timer
+
+The Speaking test is only 11–14 minutes. Part 2 gives you 1 minute to prepare and 2 minutes to speak. Practice speaking for exactly 2 minutes on random topics. Record yourself and listen back for fluency and pronunciation.
+
+## Tip 7: Read academic texts daily
+
+The Reading module uses academic passages from journals, textbooks and magazines. Build your reading speed and vocabulary by reading The Economist, New Scientist or academic abstracts for 20 minutes daily.
+
+## Tip 8: Focus on Listening keywords
+
+Before each Listening section, read the questions quickly and underline keywords. Listen for synonyms and paraphrases — IELTS rarely uses the exact same words in the question and the recording.
+
+## Tip 9: Get professional feedback on Writing
+
+Writing is the hardest module to improve alone because you can't objectively assess your own work. Get feedback from a teacher or experienced IELTS tutor on at least 5 practice essays before your test.
+
+## Tip 10: Take official practice tests under exam conditions
+
+Complete at least 3 full practice tests (Cambridge IELTS books are the gold standard) under real exam conditions — timed, no breaks, no distractions. This builds stamina and reduces test-day anxiety.
+`,
+  "pte-academic-preparation-guide": `
+## What is PTE Academic?
+
+PTE Academic (Pearson Test of English) is a computer-based English language test accepted by all Australian universities and the Department of Home Affairs for visa applications. It tests your speaking, writing, reading and listening skills in a single 2-hour session.
+
+## Test format overview
+
+- **Speaking & Writing** (54–67 minutes): Read aloud, repeat sentence, describe image, re-tell lecture, answer short question, summarise written text, essay
+- **Reading** (29–30 minutes): Multiple choice, re-order paragraphs, fill in the blanks
+- **Listening** (30–43 minutes): Summarise spoken text, multiple choice, fill in the blanks, highlight correct summary, select missing word, highlight incorrect words, write from dictation
+
+## Scoring
+
+PTE scores range from 10 to 90. Here's how they map to university requirements:
+
+- PTE 50 (≈ IELTS 6.0) — minimum for most undergraduate programs
+- PTE 58 (≈ IELTS 6.5) — common postgraduate requirement
+- PTE 65 (≈ IELTS 7.0) — required for competitive programs and some professional courses
+
+## Top preparation strategies
+
+### 1. Master "Read Aloud"
+
+Read Aloud contributes to both your reading and speaking scores. Practice reading academic sentences at a natural pace with clear pronunciation. Record yourself and listen back. Focus on word stress and sentence intonation.
+
+### 2. Practice "Write from Dictation" obsessively
+
+This task contributes heavily to your writing and listening scores. You hear a sentence once and must type it exactly. Practice with dictation exercises daily — this single task can significantly boost your overall score.
+
+### 3. Use official PTE practice tests
+
+Pearson offers scored practice tests that simulate the real exam. Take at least 2 scored practice tests before your real test to understand your strengths and weaknesses.
+
+### 4. Improve your typing speed
+
+PTE is entirely computer-based. If you type slowly, you'll run out of time in the writing sections. Aim for at least 40 words per minute. Use free typing practice websites to build speed.
+
+### 5. Don't pause too long in Speaking
+
+The microphone auto-detects silence. If you pause for more than 3 seconds, it will move to the next question. Practice maintaining a steady flow of speech, even if you need to use filler phrases like "let me think about this" while gathering your thoughts.
+
+## Free resources
+
+- **PTE Official Website** — free practice questions and scored mock tests
+- **E2Language** — free YouTube tutorials for every PTE task type
+- **PTE Study App** — mobile practice on the go
+- **Cambridge English** — general English skill building
+
+## Our advice
+
+If you're targeting PTE 58+ and struggling to get there, book a free consultation with us. We can recommend preparation courses and help you plan your test timeline around your application deadlines.
+`,
+  "how-to-write-a-statement-of-purpose-for-australian-universities": `
+## What is a Statement of Purpose?
+
+A Statement of Purpose (SOP) is a personal essay that explains why you want to study a particular course at a particular university. It's your chance to go beyond grades and test scores and show the admissions committee who you are, what drives you, and why you're a strong fit.
+
+## Why it matters
+
+Many Australian universities, especially for postgraduate and competitive programs, weigh your SOP heavily. A strong SOP can compensate for a slightly lower GPA. A weak SOP can get an otherwise strong application rejected.
+
+## Structure of a winning SOP
+
+### Opening paragraph: Hook + purpose
+
+Start with something specific — a moment, experience, or realisation that sparked your interest in this field. Then state clearly what you're applying for and why.
+
+**Bad:** "I have always been interested in business."
+**Good:** "When I helped my family's small retail business survive a cash flow crisis at age 19, I realised that financial literacy wasn't just an academic concept — it was the difference between a family keeping and losing their livelihood."
+
+### Body paragraph 1: Academic background
+
+Summarise your academic journey, highlighting relevant coursework, projects, and achievements. Connect your academic experience to the course you're applying for. Show progression and growing expertise.
+
+### Body paragraph 2: Professional experience
+
+Describe relevant work experience, internships, or research. Focus on what you learned and how it prepared you for this program. Use specific examples with measurable outcomes where possible.
+
+### Body paragraph 3: Why this university and course
+
+This is where most SOPs fail. Generic statements like "your university has a great reputation" mean nothing. Research the specific program and mention:
+
+- Specific courses or specialisations that interest you
+- Faculty members whose research aligns with your goals
+- Unique features of the program (industry placements, labs, partnerships)
+- Why this university's location and culture suit you
+
+### Closing paragraph: Future goals
+
+Explain what you plan to do after graduating and how this program connects to your career aspirations. Be specific and realistic.
+
+## Common mistakes to avoid
+
+1. **Being too generic** — every sentence should be specific to you and to this program
+2. **Repeating your CV** — the SOP adds context and narrative, not a list of achievements
+3. **Negative language** — don't dwell on failures or weaknesses; focus on growth
+4. **Exceeding the word limit** — if they say 500 words, stay under 500 words
+5. **Grammatical errors** — have someone proofread your SOP; errors signal carelessness
+
+## How Edmark can help
+
+We've reviewed hundreds of SOPs and know exactly what Australian admissions committees look for. Our team helps you brainstorm, structure, write and refine your SOP until it's compelling, authentic and polished. This service is included in our free consultation — book one today.
+`,
   "ielts-vs-pte-which-english-test-should-you-take": `
 ## Both tests are accepted
 

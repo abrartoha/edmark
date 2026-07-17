@@ -62,4 +62,31 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-17",
     readTime: "12 min read",
   },
+  {
+    slug: "10-ielts-tips-to-score-7-or-higher",
+    title: "10 IELTS Tips to Score 7.0 or Higher",
+    excerpt:
+      "Proven strategies for each IELTS module — Listening, Reading, Writing and Speaking — from students who achieved band 7.0+ on their first attempt.",
+    category: "Test Prep",
+    date: "2026-07-10",
+    readTime: "8 min read",
+  },
+  {
+    slug: "pte-academic-preparation-guide",
+    title: "PTE Academic: Complete Preparation Guide for Beginners",
+    excerpt:
+      "Everything you need to know about PTE Academic — test format, scoring, preparation resources and strategies to hit your target score.",
+    category: "Test Prep",
+    date: "2026-07-03",
+    readTime: "9 min read",
+  },
+  {
+    slug: "how-to-write-a-statement-of-purpose-for-australian-universities",
+    title: "How to Write a Statement of Purpose That Gets You Accepted",
+    excerpt:
+      "Your statement of purpose can make or break your application. Here's a step-by-step guide with examples and common mistakes to avoid.",
+    category: "Admissions",
+    date: "2026-06-09",
+    readTime: "7 min read",
+  },
 ];

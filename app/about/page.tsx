@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import Breadcrumb from "@/components/Breadcrumb";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import { site } from "@/lib/site";
@@ -46,6 +48,7 @@ export default function AboutPage() {
         title="Empowering students for life"
         subtitle="We're on a mission to make world-class Australian education accessible, understandable and achievable for every ambitious student."
       />
+      <Breadcrumb items={[{ label: "About" }]} />
 
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid items-center gap-14 lg:grid-cols-2">
@@ -62,10 +65,10 @@ export default function AboutPage() {
                 Edmark Education to change that.
               </p>
               <p>
-                From our office in Sunshine, Victoria, we&apos;ve helped hundreds
-                of students find the right course, win scholarships they didn&apos;t
-                know existed, and step onto campus with confidence. No pressure,
-                no jargon — just expert guidance that puts you first.
+                From our office at Level 5, 12 Clark St in Sunshine, Victoria, we&apos;ve
+                helped hundreds of students find the right course, win scholarships
+                they didn&apos;t know existed, and step onto campus with confidence.
+                No pressure, no jargon — just expert guidance that puts you first.
               </p>
               <p>
                 Today, Edmark partners with leading Australian universities,
@@ -125,27 +128,53 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team / Consultants */}
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page">
-          <div className="reveal mx-auto max-w-3xl rounded-3xl border border-brand-100 bg-brand-50 p-8 text-center shadow-soft sm:p-12">
-            <span className="eyebrow">Your dedicated advisor</span>
-            <h2 className="mt-4 text-2xl font-bold text-brand-900">
-              {site.contact.name}
-            </h2>
-            <p className="text-sm font-semibold text-brand-600">
-              {site.contact.role}
-            </p>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-brand-900/70">
-              &ldquo;My job is simple: understand your goals and build the
-              clearest path to reach them. Reach out anytime — the first
-              conversation is always free.&rdquo;
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm font-semibold text-brand-700">
-              <a href={site.phoneHref}>{site.phone}</a>
-              <span className="text-brand-200">·</span>
-              <a href={site.emailHref}>{site.email}</a>
-            </div>
+          <SectionHeading
+            center
+            eyebrow="Our team"
+            title="Your dedicated education consultants"
+            subtitle="Two experienced consultants ready to guide you through every step of your study journey in Australia."
+          />
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
+            {site.team.map((member, i) => (
+              <div
+                key={member.name}
+                className="reveal rounded-3xl border border-brand-100 bg-brand-50 p-8 text-center shadow-soft"
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={160}
+                  height={160}
+                  className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white shadow-soft"
+                />
+                <h3 className="mt-5 text-xl font-bold text-brand-900">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-semibold text-brand-600">
+                  {member.role}
+                </p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="mt-3 inline-block text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors"
+                >
+                  {member.email}
+                </a>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ABN & Legal */}
+      <section className="bg-brand-50 py-10">
+        <div className="container-page text-center">
+          <p className="text-sm text-brand-900/60">
+            <strong className="text-brand-900">Edmark Education</strong> · ABN {site.abn} · {site.address.full}
+          </p>
         </div>
       </section>
 
