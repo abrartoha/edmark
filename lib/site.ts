@@ -8,8 +8,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://edmark.com.au",
   description:
     "Edmark Education is a trusted Australian education consultancy helping students choose the right course, university and pathway. Free consultation, expert guidance, admission to top institutions.",
-  phone: "+61 449 212 492",
-  phoneHref: "tel:+61449212492",
+  phone: "+61 3 7057 3443",
+  phoneHref: "tel:+61370573443",
   email: "mahin@edmark.com.au",
   emailHref: "mailto:mahin@edmark.com.au",
   whatsappHref: "https://wa.me/61449212492",
