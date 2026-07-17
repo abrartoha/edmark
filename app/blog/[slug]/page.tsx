@@ -177,6 +177,98 @@ Many students live close to campus and walk or cycle to save on transport costs.
 4. **Live in the inner suburbs** — areas like Footscray, Brunswick and Clayton offer cheaper rent with good transport links
 5. **Buy second-hand textbooks** — check campus noticeboards and online marketplaces
 `,
+  "how-to-write-a-research-proposal-for-australian-universities": `
+## Why the research proposal matters more than your grades
+
+For coursework programs, your academic transcript is king. For research degrees, it's your research proposal. A well-crafted proposal demonstrates three things universities need to see: that you understand your field, that your research question is original and feasible, and that you have the skills to execute the project.
+
+A mediocre proposal from a student with excellent grades will be rejected. A strong proposal from a student with good (not perfect) grades will get serious attention. This is where most applicants get it wrong — they invest all their energy into their CV and treat the proposal as an afterthought.
+
+## The anatomy of a winning research proposal
+
+### Title
+
+Your title should be specific, concise and informative. Avoid vague titles like "A Study of Machine Learning in Healthcare." Instead, try something like "Federated Learning for Privacy-Preserving Disease Prediction in Rural Australian Health Networks." The title signals immediately whether your thinking is precise or fuzzy.
+
+### Research background and context
+
+This section (usually 1–2 pages) demonstrates your understanding of the field. You need to:
+
+- Summarise the current state of knowledge in your area
+- Identify a clear gap, problem or contradiction in existing research
+- Cite key papers and position your work within the literature
+- Explain why this research matters — both academically and practically
+
+### Research questions and objectives
+
+State your primary research question clearly and concisely. Then break it into 2–4 specific objectives that, when achieved, will answer the overarching question. Your objectives should be measurable and achievable within the timeframe of your degree (typically 2 years for a Masters by Research, 3–4 years for a PhD).
+
+### Methodology
+
+This is where many proposals fall apart. You need to explain:
+
+- **What data or materials** you will work with
+- **How you will collect or generate** that data
+- **What methods or techniques** you will use to analyse it
+- **Why these methods** are appropriate for your research questions
+- **What tools, software or equipment** you will need
+
+Be specific. "I will use qualitative methods" is not a methodology. "I will conduct semi-structured interviews with 20 clinical practitioners, analysed using thematic analysis following Braun & Clarke's (2006) framework" is a methodology.
+
+### Timeline
+
+Provide a realistic timeline showing key milestones across your candidature. Include literature review, data collection, analysis, writing and submission dates. This shows the university you've thought about feasibility.
+
+### References
+
+Include a reference list of 15–30 key papers you've cited. This demonstrates your familiarity with the literature and helps potential supervisors assess whether your interests align with their own.
+
+## Finding the right supervisor
+
+Before you submit a formal application, you should ideally have a supervisor who has agreed to work with you. Here's how:
+
+1. **Search university research profiles** — most universities list faculty members' research interests, publications and current projects
+2. **Read their recent papers** — understand what they're currently working on, not what they published ten years ago
+3. **Check if they're accepting students** — some supervisors have full quotas
+4. **Write a professional approach email** — introduce yourself, explain your research interest, attach your CV and a 1-page proposal summary, and ask if they'd be open to a conversation
+
+### What NOT to do when contacting supervisors
+
+- Don't send a generic email to 50 supervisors — they can tell
+- Don't attach a 20-page proposal as a first contact — keep it to a 1-page summary
+- Don't ask them to suggest a topic for you — come with your own ideas
+- Don't ignore their recent work — reference something specific they've published
+
+## Research scholarships in Australia
+
+Research degree students have access to funding that coursework students don't:
+
+- **Research Training Program (RTP)** — Australian Government-funded scholarships covering tuition fees and a living stipend ($32,192 AUD/year in 2026). Available at all Australian universities.
+- **University-specific research scholarships** — many universities offer their own research awards with stipends and travel grants
+- **Industry-partnered PhDs** — some research projects are co-funded by industry partners, offering higher stipends and industry experience
+- **International postgraduate research scholarships** — specifically for international students, covering tuition and living costs
+
+## Common mistakes that get research applications rejected
+
+1. **Research question too broad** — "I want to study AI" is not a research question
+2. **No clear gap in the literature** — you must explain what's missing and why it matters
+3. **Methodology is vague or inappropriate** — "I will use mixed methods" without specifics won't cut it
+4. **No supervisor alignment** — applying to a department where nobody works in your area
+5. **Weak writing quality** — your proposal is a writing sample; if it's poorly written, it signals you'll struggle with a thesis
+
+## How Edmark can help
+
+Research degree applications are complex, and the stakes are high. We help you:
+
+- Define and refine your research questions
+- Structure your proposal to meet Australian university standards
+- Identify and approach potential supervisors
+- Prepare your academic CV and publication portfolio
+- Find and apply for research scholarships
+- Manage your entire application from submission to offer
+
+Book a free consultation and let's discuss your research goals.
+`,
   "ielts-vs-pte-which-english-test-should-you-take": `
 ## Both tests are accepted
 

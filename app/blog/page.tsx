@@ -19,6 +19,7 @@ const categoryColors: Record<string, string> = {
   Scholarships: "bg-green-50 text-green-700",
   "Student Life": "bg-purple-50 text-purple-700",
   "Test Prep": "bg-rose-50 text-rose-700",
+  Research: "bg-indigo-50 text-indigo-700",
 };
 
 export default function BlogPage() {

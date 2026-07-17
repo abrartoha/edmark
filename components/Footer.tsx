@@ -7,6 +7,7 @@ const services = [
   { label: "University & Course Selection", href: "/services/university-course-selection" },
   { label: "Admission & Application", href: "/services/admission-application" },
   { label: "Scholarship Guidance", href: "/services/scholarship-guidance" },
+  { label: "Research Degree Support", href: "/services/research-degree-support" },
   { label: "Pre-Departure Support", href: "/services/pre-departure-support" },
 ];
 
@@ -14,6 +15,7 @@ const resources = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Scholarships", href: "/scholarships" },
+  { label: "Research Degrees", href: "/research-degrees" },
   { label: "Study in Australia", href: "/study-in-australia" },
   { label: "Success Stories", href: "/success-stories" },
 ];

@@ -11,10 +11,13 @@ type Status = "idle" | "loading" | "success" | "error";
 const interests = [
   "Not sure yet — need advice",
   "Undergraduate degree",
-  "Postgraduate / Masters",
+  "Postgraduate / Masters (coursework)",
+  "Masters by Research",
+  "PhD / Doctoral program",
   "Diploma / Vocational (TAFE)",
   "English language (ELICOS)",
   "Scholarship guidance",
+  "Research proposal help",
 ];
 
 const referralSources = [

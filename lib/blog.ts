@@ -53,4 +53,13 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-16",
     readTime: "5 min read",
   },
+  {
+    slug: "how-to-write-a-research-proposal-for-australian-universities",
+    title: "How to Write a Research Proposal for Australian Universities",
+    excerpt:
+      "A strong research proposal is the make-or-break element of any Masters by Research or PhD application. Here's exactly how to write one that gets accepted.",
+    category: "Research",
+    date: "2026-07-17",
+    readTime: "12 min read",
+  },
 ];

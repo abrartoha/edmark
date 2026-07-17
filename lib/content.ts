@@ -2,7 +2,7 @@
 
 export type Service = {
   slug: string;
-  icon: "compass" | "graduation" | "document" | "trophy" | "plane" | "headset";
+  icon: "compass" | "graduation" | "document" | "trophy" | "plane" | "headset" | "research";
   title: string;
   short: string;
   long: string;
@@ -86,6 +86,21 @@ export const services: Service[] = [
       "Course transfer and progression advice",
       "Continued academic guidance",
       "One point of contact you can trust",
+    ],
+  },
+  {
+    slug: "research-degree-support",
+    icon: "research",
+    title: "Research Degree Support",
+    short:
+      "From finding the right supervisor to writing a winning research proposal — we help you secure your Masters by Research or PhD place.",
+    long: "Research degrees are different from coursework programs. You need a strong research proposal, a supervisor match, evidence of research capability, and often publications or prior research experience. We guide you through every step — from identifying the right research group to crafting a proposal that gets accepted.",
+    points: [
+      "Research proposal writing and review",
+      "Supervisor identification and matching",
+      "PhD and Masters by Research application support",
+      "Research scholarship and funding guidance",
+      "Academic CV and publication portfolio preparation",
     ],
   },
 ];
@@ -237,5 +252,22 @@ export const faqs = [
   {
     q: "Where are you located?",
     a: "Our office is at 12 Clark St, Sunshine VIC 3020. We also support students Australia-wide and internationally via phone, email and video call.",
+  },
+  // Research Degrees
+  {
+    q: "Do you help with Masters by Research and PhD applications?",
+    a: "Yes — research degree support is one of our specialist services. We help you identify suitable supervisors, write a compelling research proposal, prepare your academic CV and publication portfolio, and manage the entire application process. Research degrees have unique requirements that differ significantly from coursework programs, and our team understands exactly what universities look for.",
+  },
+  {
+    q: "Can you help me write a research proposal?",
+    a: "Absolutely. A strong research proposal is the most critical part of a research degree application. We help you define your research questions, structure your methodology, review your literature positioning, and refine your proposal until it meets the standards expected by Australian universities. We've helped students get accepted into competitive research programs at Group of Eight universities.",
+  },
+  {
+    q: "How do I find a PhD supervisor in Australia?",
+    a: "Finding the right supervisor is essential for a successful research degree. We help you search university research profiles, identify academics whose work aligns with your interests, and craft a professional initial approach email. We also advise on what supervisors look for in a candidate and how to present your research experience effectively.",
+  },
+  {
+    q: "Are there scholarships for research degree students?",
+    a: "Yes. Research students have access to specific funding that coursework students don't, including Research Training Program (RTP) scholarships from the Australian Government, university-funded research scholarships, and industry-partnered PhD stipends. Many of these cover full tuition plus a living allowance of $30,000–$35,000 AUD per year. We help you identify and apply for every scholarship you're eligible for.",
   },
 ];

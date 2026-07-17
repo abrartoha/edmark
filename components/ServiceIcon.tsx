@@ -5,6 +5,7 @@ import {
   IconTrophy,
   IconPlane,
   IconHeadset,
+  IconResearch,
 } from "./Icons";
 import type { Service } from "@/lib/content";
 
@@ -15,6 +16,7 @@ const map = {
   trophy: IconTrophy,
   plane: IconPlane,
   headset: IconHeadset,
+  research: IconResearch,
 };
 
 export default function ServiceIcon({

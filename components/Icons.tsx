@@ -77,6 +77,14 @@ export const IconPin = ({ className = base }: P) => (
   </svg>
 );
 
+export const IconResearch = ({ className = base }: P) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.35-4.35" />
+    <path d="M11 8v6M8 11h6" />
+  </svg>
+);
+
 export const IconArrow = ({ className = "h-4 w-4" }: P) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14M13 6l6 6-6 6" />

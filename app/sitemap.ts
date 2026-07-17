@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/scholarships", priority: 0.8, freq: "monthly" as const },
     { path: "/success-stories", priority: 0.7, freq: "monthly" as const },
     { path: "/study-in-australia", priority: 0.9, freq: "monthly" as const },
+    { path: "/research-degrees", priority: 0.9, freq: "monthly" as const },
   ];
 
   const serviceRoutes = services.map((s) => ({

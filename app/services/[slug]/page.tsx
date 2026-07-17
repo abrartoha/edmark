@@ -109,6 +109,27 @@ const serviceExtras: Record<
       "Career advice and post-graduation options",
     ],
   },
+  "research-degree-support": {
+    extended:
+      "Research degrees — Masters by Research and PhDs — are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want to see a well-defined research proposal, evidence of research capability (publications, conference presentations, or a strong honours thesis), and a clear alignment between your research interests and the expertise of their academic staff. Most importantly, you need a supervisor who is willing to take you on — and that relationship often needs to be established before you even submit your formal application.\n\nThis is where most applicants struggle. They write generic proposals, contact supervisors with vague emails, or apply to programs without understanding what the research group actually needs. We've helped dozens of students navigate this process successfully — from identifying the right research group to crafting proposals that get accepted at Group of Eight universities.",
+    whoFor: [
+      "Graduates wanting to pursue a Masters by Research in Australia",
+      "PhD applicants looking for supervisor matches at Australian universities",
+      "Researchers needing help writing or refining their research proposal",
+      "International academics seeking research positions in Australia",
+      "Honours graduates considering the transition to a research career",
+      "Industry professionals wanting to pursue practice-based research",
+    ],
+    whatToExpect: [
+      "A detailed assessment of your research background and interests",
+      "Supervisor search and shortlisting across Australian universities",
+      "Research proposal drafting, structuring and review (multiple rounds)",
+      "Academic CV and publication portfolio preparation",
+      "Guidance on contacting supervisors with a professional approach email",
+      "Research scholarship identification and application support",
+      "Full application management from submission to offer",
+    ],
+  },
 };
 
 export function generateStaticParams() {
