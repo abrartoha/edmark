@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function PageHero({
   eyebrow,
   title,
@@ -9,6 +11,14 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-brand-900">
+      <Image
+        src="/images/hero-banner.png"
+        alt=""
+        fill
+        className="object-cover object-center opacity-20"
+        priority
+        aria-hidden="true"
+      />
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -left-32 -top-20 h-80 w-80 rounded-full bg-brand-700/40 blur-3xl" />
         <div className="absolute -right-20 top-0 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl" />

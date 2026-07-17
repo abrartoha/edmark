@@ -62,11 +62,20 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — Your Pathway to Studying in Australia`,
     description: site.description,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Edmark Education — Study in Australia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — Study in Australia`,
     description: site.description,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -91,7 +100,7 @@ const orgJsonLd = {
   telephone: site.phone,
   email: site.email,
   slogan: site.tagline,
-  logo: `${site.url}/logo.png`,
+  logo: `${site.url}/images/logo.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -117,7 +126,7 @@ const localBusinessJsonLd = {
   url: site.url,
   telephone: site.phone,
   email: site.email,
-  image: `${site.url}/logo.png`,
+  image: `${site.url}/images/logo.jpg`,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,

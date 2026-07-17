@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { IconArrow, IconCheck, IconStar } from "./Icons";
 
@@ -11,11 +12,20 @@ const bullets = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-brand-900">
-      {/* Decorative organic shapes echoing the business card */}
+      {/* Hero background image */}
+      <Image
+        src="/images/hero-banner.png"
+        alt=""
+        fill
+        className="object-cover object-center opacity-30"
+        priority
+        aria-hidden="true"
+      />
+
+      {/* Decorative organic shapes */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-brand-700/40 blur-3xl" />
         <div className="absolute -right-24 -top-20 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
-        <div className="animate-float absolute right-10 top-24 h-40 w-40 rounded-full bg-brand-gradient opacity-20 blur-2xl" />
       </div>
 
       <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
@@ -25,8 +35,8 @@ export default function Hero() {
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Your dream degree in
-            <span className="text-gradient"> Australia</span> starts here.
+            Pave the way to
+            <span className="text-gradient"> career growth</span> in Australia.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
