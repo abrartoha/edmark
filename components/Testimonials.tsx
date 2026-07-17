@@ -14,8 +14,12 @@ export default function Testimonials() {
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="card flex h-full flex-col">
+          {testimonials.map((t, i) => (
+            <figure
+              key={t.name}
+              className="card reveal flex h-full flex-col"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
               <div className="flex gap-1 text-brand-500">
                 {[...Array(5)].map((_, i) => (
                   <IconStar key={i} className="h-4 w-4" />

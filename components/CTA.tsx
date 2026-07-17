@@ -12,7 +12,7 @@ export default function CTA({
   return (
     <section className="bg-white pb-20 lg:pb-28">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-3xl bg-brand-diagonal px-8 py-16 text-center shadow-glow sm:px-16">
+        <div className="reveal relative overflow-hidden rounded-3xl bg-brand-diagonal px-8 py-16 text-center shadow-glow sm:px-16">
           <div className="pointer-events-none absolute inset-0" aria-hidden="true">
             <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-brand-500/30 blur-3xl" />
             <div className="absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-mint/20 blur-3xl" />

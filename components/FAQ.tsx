@@ -11,7 +11,7 @@ export default function FAQ() {
           subtitle="Still unsure? Book a free consultation and we'll answer every question about your specific situation."
         />
 
-        <div className="divide-y divide-brand-100 rounded-2xl border border-brand-100">
+        <div className="reveal divide-y divide-brand-100 rounded-2xl border border-brand-100">
           {faqs.map((f) => (
             <details key={f.q} className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
               <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">

@@ -16,8 +16,12 @@ export default function Services() {
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <article key={s.title} className="card-hover group">
+          {services.map((s, i) => (
+            <article
+              key={s.title}
+              className="card-hover group reveal"
+              style={{ transitionDelay: `${(i % 3) * 90}ms` }}
+            >
               <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
                 <ServiceIcon name={s.icon} className="h-7 w-7" />
               </div>
@@ -37,7 +41,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="reveal mt-12 text-center">
           <Link href="/services" className="btn-outline">
             Explore all services <IconArrow />
           </Link>

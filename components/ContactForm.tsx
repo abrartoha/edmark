@@ -90,7 +90,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-3xl border border-brand-100 bg-white p-8 shadow-soft">
+    <form
+      onSubmit={handleSubmit}
+      className="reveal rounded-3xl border border-brand-100 bg-white p-8 shadow-soft"
+      style={{ transitionDelay: "120ms" }}
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full name" name="name" placeholder="Your name" required />
         <Field label="Email" name="email" type="email" placeholder="you@email.com" required />

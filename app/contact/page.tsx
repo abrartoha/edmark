@@ -43,7 +43,7 @@ export default function ContactPage() {
 
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+          <div className="reveal">
             <h2 className="text-2xl font-bold text-brand-900">
               Speak with an advisor today
             </h2>

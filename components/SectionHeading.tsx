@@ -12,7 +12,9 @@ export default function SectionHeading({
   light?: boolean;
 }) {
   return (
-    <div className={`${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}>
+    <div
+      className={`reveal ${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}
+    >
       {eyebrow && (
         <span className={`eyebrow ${light ? "bg-white/10 text-mint" : ""}`}>
           {eyebrow}

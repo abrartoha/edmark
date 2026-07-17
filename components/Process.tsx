@@ -14,7 +14,11 @@ export default function Process() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
-            <div key={step.n} className="relative">
+            <div
+              key={step.n}
+              className="reveal relative"
+              style={{ transitionDelay: `${i * 90}ms` }}
+            >
               <div className="card h-full">
                 <span className="font-display text-4xl font-extrabold text-brand-100">
                   {step.n}

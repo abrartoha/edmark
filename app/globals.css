@@ -56,6 +56,17 @@
     @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-600;
   }
 
+  .nav-link {
+    @apply relative text-sm font-medium text-brand-900/80 transition-colors hover:text-brand-600;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-brand-gradient transition-all duration-300;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
   .card {
     @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-soft transition-all duration-300;
   }
@@ -71,5 +82,94 @@
   }
   .text-gradient {
     @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll reveal (progressive enhancement — only hides when JS is on)  */
+/* ------------------------------------------------------------------ */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* First-visit intro / preloader                                       */
+/* ------------------------------------------------------------------ */
+#edmark-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(120% 120% at 50% 0%, #0d6b5b 0%, #083a31 60%, #052721 100%);
+}
+[data-intro-seen="1"] #edmark-intro {
+  display: none !important;
+}
+
+.intro-tile {
+  transform: translate(var(--tx, 0), var(--ty, 0)) scale(0.3) rotate(-16deg) skewX(-8deg);
+  opacity: 0;
+  animation: intro-tile-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.intro-word {
+  opacity: 0;
+  transform: translateX(70px);
+  animation: intro-word-in 0.8s 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.intro-sub {
+  opacity: 0;
+  animation: intro-fade 0.7s 1.25s ease forwards;
+}
+.intro-exit {
+  animation: intro-out 0.7s 0.05s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes intro-tile-in {
+  to {
+    transform: translate(0, 0) scale(1) rotate(0) skewX(-8deg);
+    opacity: 1;
+  }
+}
+@keyframes intro-word-in {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes intro-fade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-out {
+  to {
+    opacity: 0;
+    transform: translateY(-24px);
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .intro-tile,
+  .intro-word,
+  .intro-sub {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

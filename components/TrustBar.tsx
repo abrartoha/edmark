@@ -9,7 +9,7 @@ const items = [
 export default function TrustBar() {
   return (
     <section className="border-b border-brand-100 bg-white py-8">
-      <div className="container-page">
+      <div className="container-page reveal">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-brand-900/50">
           Guiding students into every level of Australian education
         </p>

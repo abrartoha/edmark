@@ -4,6 +4,8 @@ import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Intro from "@/components/Intro";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -95,11 +97,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-AU" className={`${inter.variable} ${poppins.variable}`}>
+      <head>
+        {/* Progressive enhancement: mark JS on, and hide the intro on repeat
+            visits before first paint to avoid any flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js');try{if(sessionStorage.getItem('edmark_intro_seen')){document.documentElement.setAttribute('data-intro-seen','1')}}catch(e){}",
+          }}
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Intro />
+        <ScrollReveal />
         <Header />
         <main>{children}</main>
         <Footer />

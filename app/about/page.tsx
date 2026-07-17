@@ -77,8 +77,12 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-5">
-            {stats.map((s) => (
-              <div key={s.label} className="card text-center">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className="card reveal text-center"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
                 <div className="font-display text-4xl font-extrabold text-gradient">
                   {s.value}
                 </div>
@@ -100,8 +104,12 @@ export default function AboutPage() {
             subtitle="These aren't slogans on a wall — they're the standard we hold ourselves to with every student."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v) => (
-              <div key={v.title} className="card">
+            {values.map((v, i) => (
+              <div
+                key={v.title}
+                className="card reveal"
+                style={{ transitionDelay: `${(i % 4) * 80}ms` }}
+              >
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
                   <IconCheck className="h-6 w-6" />
                 </div>
@@ -119,7 +127,7 @@ export default function AboutPage() {
 
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page">
-          <div className="mx-auto max-w-3xl rounded-3xl border border-brand-100 bg-brand-50 p-8 text-center shadow-soft sm:p-12">
+          <div className="reveal mx-auto max-w-3xl rounded-3xl border border-brand-100 bg-brand-50 p-8 text-center shadow-soft sm:p-12">
             <span className="eyebrow">Your dedicated advisor</span>
             <h2 className="mt-4 text-2xl font-bold text-brand-900">
               {site.contact.name}
