@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
+import TrustLogos from "@/components/TrustLogos";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
@@ -11,7 +12,7 @@ import { faqs } from "@/lib/content";
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
+  mainEntity: faqs.slice(0, 5).map((f) => ({
     "@type": "Question",
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -27,6 +28,7 @@ export default function HomePage() {
       />
       <Hero />
       <TrustBar />
+      <TrustLogos />
       <Services />
       <WhyChooseUs />
       <Process />

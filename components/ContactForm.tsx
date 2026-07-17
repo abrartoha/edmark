@@ -2,7 +2,9 @@
 
 import { useState, type FormEvent } from "react";
 import { getSupabase } from "@/lib/supabase";
-import { IconArrow } from "./Icons";
+import { IconArrow, IconStar } from "./Icons";
+import { trackFormSubmission } from "./GoogleAnalytics";
+import { site } from "@/lib/site";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -13,6 +15,15 @@ const interests = [
   "Diploma / Vocational (TAFE)",
   "English language (ELICOS)",
   "Scholarship guidance",
+];
+
+const referralSources = [
+  "Google search",
+  "Social media",
+  "Friend or family referral",
+  "University or school",
+  "WhatsApp / community group",
+  "Other",
 ];
 
 export default function ContactForm() {
@@ -32,6 +43,7 @@ export default function ContactForm() {
       phone: String(data.get("phone") || "").trim(),
       interest: String(data.get("interest") || ""),
       message: String(data.get("message") || "").trim(),
+      referral_source: String(data.get("referral_source") || ""),
     };
 
     if (!payload.name || !payload.email) {
@@ -43,16 +55,14 @@ export default function ContactForm() {
     try {
       const supabase = getSupabase();
 
-      // Once you connect Supabase and create a `leads` table, this saves the
-      // enquiry automatically. Until then it succeeds gracefully so the form works.
       if (supabase) {
         const { error: dbError } = await supabase.from("leads").insert([payload]);
         if (dbError) throw dbError;
       } else {
-        // No Supabase configured yet — simulate success for a working demo.
         await new Promise((r) => setTimeout(r, 600));
       }
 
+      trackFormSubmission();
       setStatus("success");
       form.reset();
     } catch (err) {
@@ -82,16 +92,43 @@ export default function ContactForm() {
           Thank you — we&apos;ve got it!
         </h3>
         <p className="mt-2 text-sm text-brand-900/70">
-          Your advisor will be in touch within one business day. Keen to talk
-          sooner? Call us and we&apos;ll get started right away.
+          <strong>Mahin will contact you within 2 hours</strong> during business hours.
+          Keen to talk sooner? Call us and we&apos;ll get started right away.
         </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="btn-outline mt-6"
-        >
-          Send another enquiry
-        </button>
+        <div className="mt-4 rounded-xl bg-white p-4">
+          <p className="text-xs font-semibold text-brand-600 uppercase tracking-wider">What happens next</p>
+          <ol className="mt-2 space-y-1.5 text-left text-sm text-brand-900/70">
+            <li className="flex items-start gap-2">
+              <span className="font-bold text-brand-600">1.</span>
+              We review your enquiry and prepare personalised recommendations
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="font-bold text-brand-600">2.</span>
+              Mahin calls or emails you with a tailored study plan
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="font-bold text-brand-600">3.</span>
+              We begin your application process — fully managed, end to end
+            </li>
+          </ol>
+        </div>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="btn-outline"
+          >
+            Send another enquiry
+          </button>
+          <a
+            href={site.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
       </div>
     );
   }
@@ -136,6 +173,23 @@ export default function ContactForm() {
         />
       </div>
 
+      <div className="mt-5">
+        <label htmlFor="referral_source" className="mb-1.5 block text-sm font-semibold text-brand-900">
+          How did you hear about us?
+        </label>
+        <select
+          id="referral_source"
+          name="referral_source"
+          className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+          defaultValue=""
+        >
+          <option value="" disabled>Select an option</option>
+          {referralSources.map((s) => (
+            <option key={s}>{s}</option>
+          ))}
+        </select>
+      </div>
+
       {status === "error" && (
         <p className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">
           {error}
@@ -151,9 +205,14 @@ export default function ContactForm() {
         {status !== "loading" && <IconArrow />}
       </button>
 
-      <p className="mt-4 text-center text-xs text-brand-900/50">
-        No spam, ever. Your details are only used to help with your enquiry.
-      </p>
+      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-brand-900/50">
+        <span>No spam, ever.</span>
+        <span>·</span>
+        <span className="flex items-center gap-1">
+          <IconStar className="h-3 w-3 text-brand-500" />
+          We respond within 2 hours
+        </span>
+      </div>
     </form>
   );
 }

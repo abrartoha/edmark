@@ -6,6 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Intro from "@/components/Intro";
 import ScrollReveal from "@/components/ScrollReveal";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import NotificationBar from "@/components/NotificationBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +40,14 @@ export const metadata: Metadata = {
     "course selection Melbourne",
     "education agent Sunshine VIC",
     "Edmark Education",
+    "free education consultation Australia",
+    "scholarship guidance Australia",
+    "TAFE courses Melbourne",
+    "Group of Eight universities",
+    "study abroad Australia",
+    "international student support Melbourne",
+    "education agent Melbourne",
+    "best education consultant Victoria",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -70,7 +82,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const jsonLd = {
+const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: site.name,
@@ -79,6 +91,7 @@ const jsonLd = {
   telephone: site.phone,
   email: site.email,
   slogan: site.tagline,
+  logo: `${site.url}/logo.png`,
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
@@ -88,6 +101,57 @@ const jsonLd = {
     addressCountry: "AU",
   },
   areaServed: "AU",
+  sameAs: [
+    site.social.facebook,
+    site.social.instagram,
+    site.social.linkedin,
+  ],
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${site.url}/#business`,
+  name: site.name,
+  description: site.description,
+  url: site.url,
+  telephone: site.phone,
+  email: site.email,
+  image: `${site.url}/logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    postalCode: site.address.postcode,
+    addressCountry: "AU",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -37.7879,
+    longitude: 144.8325,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "Free consultation",
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  publisher: {
+    "@type": "Organization",
+    name: site.name,
+  },
 };
 
 export default function RootLayout({
@@ -98,8 +162,6 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={`${inter.variable} ${poppins.variable}`}>
       <head>
-        {/* Progressive enhancement: mark JS on, and hide the intro on repeat
-            visits before first paint to avoid any flash. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
@@ -108,15 +170,27 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GoogleAnalytics gaId={site.gaId} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Intro />
         <ScrollReveal />
+        <NotificationBar />
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <ExitIntentPopup />
       </body>
     </html>
   );

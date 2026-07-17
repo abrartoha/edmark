@@ -13,6 +13,7 @@ export const site = {
   email: "mahin@edmark.com.au",
   emailHref: "mailto:mahin@edmark.com.au",
   whatsappHref: "https://wa.me/61449212492",
+  gaId: process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX",
   address: {
     street: "12 Clark St",
     city: "Sunshine",
@@ -27,9 +28,11 @@ export const site = {
   },
   hours: "Mon–Sat: 9:00am – 6:00pm",
   social: {
-    facebook: "#",
-    instagram: "#",
-    linkedin: "#",
+    facebook: "https://facebook.com/edmarkeducation",
+    instagram: "https://instagram.com/edmarkeducation",
+    linkedin: "https://linkedin.com/company/edmark-education",
+    tiktok: "https://tiktok.com/@edmarkeducation",
+    youtube: "https://youtube.com/@edmarkeducation",
   },
 } as const;
 
