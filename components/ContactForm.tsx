@@ -57,8 +57,15 @@ export default function ContactForm() {
       form.reset();
     } catch (err) {
       setStatus("error");
+      const detail =
+        err && typeof err === "object" && "message" in err
+          ? String((err as { message: unknown }).message)
+          : "";
+      console.error("Contact form submit failed:", err);
       setError(
-        "Something went wrong sending your enquiry. Please call or email us directly and we'll help right away."
+        `Something went wrong sending your enquiry. Please call or email us directly and we'll help right away.${
+          detail ? ` (${detail})` : ""
+        }`
       );
     }
   }
