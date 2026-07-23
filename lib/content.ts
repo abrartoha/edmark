@@ -31,7 +31,7 @@ export const services: Service[] = [
       "Cut through 40+ institutions and 1,000+ courses to the handful that are perfect for you.",
     long: "With partnerships across Australia's leading universities, TAFEs and colleges, we shortlist options that match your profile, maximise your acceptance odds and set you up for a job after graduation — not just a degree.",
     points: [
-      "Matched to Group of Eight & specialist providers",
+      "Matched to universities, TAFEs, private colleges & pathway providers",
       "Entry-requirement and eligibility check",
       "Course outcomes and employability review",
     ],
@@ -131,7 +131,7 @@ export const steps = [
 export const reasons = [
   {
     title: "Advice you can actually trust",
-    body: "We recommend what's right for you — not whoever pays the biggest commission. Honest, student-first guidance every time.",
+    body: "We recommend what's right for you — honest, student-first guidance every time. Your goals come before anything else.",
   },
   {
     title: "Direct university partnerships",
@@ -172,7 +172,7 @@ export const faqs = [
   // General
   {
     q: "How much does your consultation cost?",
-    a: "Your initial consultation is completely free. We're paid by our partner institutions when you enrol, so our expert guidance costs you nothing.",
+    a: "Your initial consultation is completely free — no hidden fees, no obligations. We're here to help you find the best path forward.",
   },
   {
     q: "How does the consultation process work?",
@@ -180,7 +180,7 @@ export const faqs = [
   },
   {
     q: "Who can use your services?",
-    a: "We help international students, domestic students, and career changers of all ages. Whether you're a high-school leaver, a working professional looking to upskill, or someone seeking a fresh start in Australia, we're here to help.",
+    a: "We help international students from all backgrounds and at every stage of their education journey. Whether you're looking to start a diploma, pursue a bachelor's or master's degree, or advance into research, we're here to help.",
   },
   {
     q: "How long does the entire process take?",
@@ -193,7 +193,7 @@ export const faqs = [
   // Courses & Universities
   {
     q: "Which courses and institutions do you work with?",
-    a: "We work across the full spectrum of Australian education — universities (including Group of Eight), TAFEs, private colleges, English language schools, and foundation/pathway programs.",
+    a: "We work across the full spectrum of Australian education — universities, TAFEs, private colleges like PIA, AAHE, VIT and SISTC, English language schools, and foundation/pathway programs. Our partnerships span over 50 institutions across Australia.",
   },
   {
     q: "How do I choose the right course?",

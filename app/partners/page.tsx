@@ -41,9 +41,13 @@ const tafes = [
   { name: "TAFE Queensland", type: "TAFE", location: "Brisbane, QLD" },
 ];
 
-const colleges = [
+const privateColleges = [
+  { name: "Perth Institute of Australia (PIA)", type: "Private College", location: "Perth, WA" },
+  { name: "Australian Academy of Higher Education (AAHE)", type: "Private College", location: "Melbourne, VIC" },
+  { name: "Victorian Institute of Technology (VIT)", type: "Private College", location: "Melbourne, VIC" },
+  { name: "SISTC (Southern Institute of Science, Technology and Commerce)", type: "Private College", location: "Melbourne, VIC" },
+  { name: "Kaplan Business School", type: "Private College", location: "Melbourne/Sydney" },
   { name: "Navitas Group", type: "Pathway Provider", location: "Multiple campuses" },
-  { name: "Kaplan Business School", type: "College", location: "Melbourne/Sydney" },
   { name: "Insearch (UTS)", type: "Pathway Provider", location: "Sydney, NSW" },
   { name: "Eynesbury College", type: "Pathway Provider", location: "Adelaide, SA" },
   { name: "ELICOS Providers", type: "English Language", location: "Multiple cities" },
@@ -102,8 +106,8 @@ export default function PartnersPage() {
               <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE partners</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">5+</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Pathway providers</div>
+              <div className="font-display text-4xl font-extrabold text-gradient">9+</div>
+              <div className="mt-1 text-sm font-medium text-brand-900/70">Private colleges & pathways</div>
             </div>
           </div>
         </div>
@@ -153,9 +157,9 @@ export default function PartnersPage() {
             </div>
           </div>
           <div>
-            <SectionHeading eyebrow="Colleges & pathways" title="Pathway providers" />
+            <SectionHeading eyebrow="Private colleges & pathways" title="Colleges & pathway providers" />
             <div className="mt-8 space-y-3">
-              {colleges.map((c) => (
+              {privateColleges.map((c) => (
                 <div key={c.name} className="flex items-center gap-4 rounded-xl border border-brand-100 bg-brand-50/50 p-4">
                   <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
                     <IconGraduation className="h-4 w-4" />

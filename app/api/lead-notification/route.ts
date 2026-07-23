@@ -1,43 +1,71 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
-// Webhook endpoint for Supabase to call when a new lead is inserted.
-// Configure in Supabase Dashboard → Database → Webhooks → New Webhook:
-//   Table: leads, Events: INSERT, URL: https://edmark.com.au/api/lead-notification
-//
-// In production, wire this up to send an email notification via
-// Resend, SendGrid, or any transactional email service.
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const record = body?.record;
+    const { name, email, phone, interest, message, referral_source } = body;
 
-    if (!record) {
-      return NextResponse.json({ error: "No record provided" }, { status: 400 });
+    if (!name || !email) {
+      return NextResponse.json(
+        { error: "Name and email are required" },
+        { status: 400 }
+      );
     }
 
-    // Log the new lead for now. In production, replace with email sending.
-    console.log("New lead received:", {
-      name: record.name,
-      email: record.email,
-      phone: record.phone,
-      interest: record.interest,
-      referral_source: record.referral_source,
-      created_at: record.created_at,
+    await resend.emails.send({
+      from: "Edmark Education <operations@edmark.com.au>",
+      to: "operations@edmark.com.au",
+      subject: `New Lead: ${name}`,
+      replyTo: email,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #0d9488; border-bottom: 2px solid #0d9488; padding-bottom: 10px;">
+            New Enquiry from Edmark Website
+          </h2>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+            <tr>
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151; width: 140px;">Name</td>
+              <td style="padding: 8px 12px; color: #111827;">${name}</td>
+            </tr>
+            <tr style="background-color: #f9fafb;">
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151;">Email</td>
+              <td style="padding: 8px 12px; color: #111827;">
+                <a href="mailto:${email}" style="color: #0d9488;">${email}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151;">Phone</td>
+              <td style="padding: 8px 12px; color: #111827;">${phone || "Not provided"}</td>
+            </tr>
+            <tr style="background-color: #f9fafb;">
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151;">Interested in</td>
+              <td style="padding: 8px 12px; color: #111827;">${interest || "Not specified"}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151;">Found us via</td>
+              <td style="padding: 8px 12px; color: #111827;">${referral_source || "Not specified"}</td>
+            </tr>
+            <tr style="background-color: #f9fafb;">
+              <td style="padding: 8px 12px; font-weight: bold; color: #374151; vertical-align: top;">Message</td>
+              <td style="padding: 8px 12px; color: #111827; white-space: pre-wrap;">${message || "No message"}</td>
+            </tr>
+          </table>
+          <p style="margin-top: 20px; font-size: 13px; color: #6b7280;">
+            You can reply directly to this email to respond to ${name}.
+          </p>
+        </div>
+      `,
     });
-
-    // TODO: Send email notification to mahin@edmark.com.au
-    // Example with Resend:
-    // await resend.emails.send({
-    //   from: 'Edmark Leads <leads@edmark.com.au>',
-    //   to: 'mahin@edmark.com.au',
-    //   subject: `New Lead: ${record.name}`,
-    //   html: `<p>New enquiry from ${record.name} (${record.email})</p>...`
-    // });
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Lead notification error:", error);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to send notification" },
+      { status: 500 }
+    );
   }
 }

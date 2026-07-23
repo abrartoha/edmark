@@ -77,7 +77,7 @@ const scholarshipFaqs = [
   },
   {
     q: "Does Edmark charge for scholarship help?",
-    a: "No. Our scholarship guidance is part of our free consultation service. We're funded by partner institutions, so our expert help costs you nothing.",
+    a: "No. Our scholarship guidance is part of our free consultation service. Our expert help costs you nothing.",
   },
 ];
 

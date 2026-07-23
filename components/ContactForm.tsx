@@ -65,6 +65,13 @@ export default function ContactForm() {
         await new Promise((r) => setTimeout(r, 600));
       }
 
+      // Send email notification
+      fetch("/api/lead-notification", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch((err) => console.error("Email notification failed:", err));
+
       trackFormSubmission();
       setStatus("success");
       form.reset();

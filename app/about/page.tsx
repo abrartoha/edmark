@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Students first, always",
-    body: "Every recommendation we make is in your best interest — not driven by commissions. Your success is the only metric that matters to us.",
+    body: "Every recommendation we make is in your best interest. Your success is the only metric that matters to us.",
   },
   {
     title: "Honesty over hype",
