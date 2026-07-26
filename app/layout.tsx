@@ -82,6 +82,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  verification: {
+    google: "uSGONVt3j9FeBU1c5U8XoXxXHxBDuaFGo10cLt5jYnE",
+  },
   category: "education",
 };
 
