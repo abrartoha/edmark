@@ -6,7 +6,8 @@ export const site = {
   abn: "75 700 341 028",
   tagline: "Empowering students for life",
   domain: "edmark.com.au",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://edmark.com.au",
+  // Canonical site URL. Strip any trailing slash so we never emit "//path".
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.edmark.com.au").replace(/\/+$/, ""),
   description:
     "Edmark Education is a trusted Australian education consultancy helping students choose the right course, university and pathway. Free consultation, expert guidance, admission to top institutions.",
   phone: "+61 3 7057 3443",
