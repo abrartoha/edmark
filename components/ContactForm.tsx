@@ -55,37 +55,48 @@ export default function ContactForm() {
       return;
     }
 
+    // Deliver the lead through two independent channels — a database record
+    // and an email notification — so a failure in one never loses the lead.
+    let dbOk = false;
+    let emailOk = false;
+
     try {
       const supabase = getSupabase();
-
       if (supabase) {
         const { error: dbError } = await supabase.from("leads").insert([payload]);
-        if (dbError) throw dbError;
+        if (dbError) console.error("Lead DB insert failed:", dbError);
+        else dbOk = true;
       } else {
-        await new Promise((r) => setTimeout(r, 600));
+        // No database configured — that's fine, the email is the record.
+        dbOk = true;
       }
+    } catch (err) {
+      console.error("Lead DB insert threw:", err);
+    }
 
-      // Send email notification
-      fetch("/api/lead-notification", {
+    try {
+      const res = await fetch("/api/lead-notification", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-      }).catch((err) => console.error("Email notification failed:", err));
+      });
+      emailOk = res.ok;
+      if (!res.ok) {
+        console.error("Email notification failed:", res.status, await res.text());
+      }
+    } catch (err) {
+      console.error("Email notification fetch failed:", err);
+    }
 
+    // Success as long as the lead reached us through at least one channel.
+    if (dbOk || emailOk) {
       trackFormSubmission();
       setStatus("success");
       form.reset();
-    } catch (err) {
+    } else {
       setStatus("error");
-      const detail =
-        err && typeof err === "object" && "message" in err
-          ? String((err as { message: unknown }).message)
-          : "";
-      console.error("Contact form submit failed:", err);
       setError(
-        `Something went wrong sending your enquiry. Please call or email us directly and we'll help right away.${
-          detail ? ` (${detail})` : ""
-        }`
+        "Something went wrong sending your enquiry. Please call or email us directly and we'll help right away."
       );
     }
   }

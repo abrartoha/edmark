@@ -8,8 +8,12 @@ create table if not exists public.leads (
   phone text,
   interest text,
   message text,
+  referral_source text,
   created_at timestamptz not null default now()
 );
+
+-- If the table already exists from an earlier version, add the new column:
+alter table public.leads add column if not exists referral_source text;
 
 -- Enable Row Level Security
 alter table public.leads enable row level security;
