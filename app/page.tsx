@@ -1,8 +1,8 @@
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
-import TrustLogos from "@/components/TrustLogos";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
+// TrustLogos (partner institutions) intentionally removed from the homepage.
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -28,7 +28,6 @@ export default function HomePage() {
       />
       <Hero />
       <TrustBar />
-      <TrustLogos />
       <Services />
       <WhyChooseUs />
       <Process />

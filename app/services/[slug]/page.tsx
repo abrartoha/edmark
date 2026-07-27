@@ -61,22 +61,6 @@ const serviceExtras: Record<
       "Guidance on claims, extensions and renewals",
     ],
   },
-  "professional-year": {
-    extended:
-      "The Professional Year Program (PYP) is a structured program for international graduates in accounting, IT and engineering. It combines formal study with a supervised internship in an Australian workplace — giving you real local experience and additional points that can count toward skilled migration.\n\nWe assess your eligibility, match you with an approved provider in your field, and guide you through enrolment so you can focus on getting the most out of the program and your internship.",
-    whoFor: [
-      "Recent graduates in accounting, IT or engineering",
-      "Graduates seeking genuine Australian work experience",
-      "Applicants wanting additional skilled-migration points",
-      "Students planning their post-study pathway",
-    ],
-    whatToExpect: [
-      "An eligibility check for the Professional Year Program",
-      "Selection of an approved provider in your field",
-      "Guidance on the internship / workplace component",
-      "Support from enrolment through to completion",
-    ],
-  },
   "research-degrees": {
     extended:
       "Research degrees — Masters by Research and PhDs — are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want a well-defined research proposal, evidence of research capability, and a clear alignment between your interests and the expertise of their academic staff. Most importantly, you often need a supervisor willing to take you on before you even submit your formal application.\n\nThis is where most applicants struggle — generic proposals, vague supervisor emails, or applying without understanding what the research group needs. We help you navigate the process, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
@@ -93,20 +77,20 @@ const serviceExtras: Record<
       "Academic CV support and research scholarship guidance",
     ],
   },
-  "pte-naati": {
+  "pte-naati-py": {
     extended:
-      "English proficiency and community-language credentials play a major role in student visas and skilled migration. PTE Academic is one of the most widely accepted English tests, while the NAATI CCL test can add valuable points for applicants who speak an eligible community language.\n\nWe help you understand which tests you need, what scores to aim for, and how to prepare effectively — including practice resources, test strategy and booking support — so you walk into the exam room confident.",
+      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare — including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
     whoFor: [
       "Students needing an English test for a visa or admission",
       "Skilled migration applicants seeking extra points",
       "Bilingual applicants eligible for the NAATI CCL test",
-      "Anyone unsure which test or score they need",
+      "Accounting, IT and engineering graduates considering a Professional Year",
     ],
     whatToExpect: [
       "Advice on the right test and target score for your goal",
       "PTE Academic preparation and booking support",
       "NAATI CCL guidance and study resources",
-      "Practice materials and test-day strategy",
+      "Professional Year Program eligibility and provider selection",
     ],
   },
   "short-courses": {
@@ -128,7 +112,10 @@ const serviceExtras: Record<
 };
 
 export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
+  // pr-pathway-courses has its own folder route with sub-pages.
+  return services
+    .filter((s) => s.slug !== "pr-pathway-courses")
+    .map((s) => ({ slug: s.slug }));
 }
 
 export function generateMetadata({

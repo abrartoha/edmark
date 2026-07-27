@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { nav, site } from "@/lib/site";
 import { services } from "@/lib/content";
+import { prCategories } from "@/lib/pr-courses";
 import ServiceIcon from "./ServiceIcon";
 import Logo from "./Logo";
 
@@ -80,24 +81,39 @@ export default function Header() {
                 >
                   <div className="grid grid-cols-2 gap-1 rounded-2xl border border-brand-100 bg-white p-3 shadow-glow">
                     {services.map((s) => (
-                      <Link
-                        key={s.slug}
-                        href={`/services/${s.slug}`}
-                        onClick={() => setServicesOpen(false)}
-                        className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
-                      >
-                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
-                          <ServiceIcon name={s.icon} className="h-4 w-4" />
-                        </span>
-                        <span>
-                          <span className="block text-sm font-bold text-brand-900">
-                            {s.title}
+                      <div key={s.slug}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          onClick={() => setServicesOpen(false)}
+                          className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
+                        >
+                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
+                            <ServiceIcon name={s.icon} className="h-4 w-4" />
                           </span>
-                          <span className="mt-0.5 block text-xs leading-snug text-brand-900/55 line-clamp-2">
-                            {s.short}
+                          <span>
+                            <span className="block text-sm font-bold text-brand-900">
+                              {s.title}
+                            </span>
+                            <span className="mt-0.5 block text-xs leading-snug text-brand-900/55 line-clamp-2">
+                              {s.short}
+                            </span>
                           </span>
-                        </span>
-                      </Link>
+                        </Link>
+                        {s.slug === "pr-pathway-courses" && (
+                          <div className="ml-12 mt-1 flex flex-wrap gap-1.5 pb-1">
+                            {prCategories.map((c) => (
+                              <Link
+                                key={c.slug}
+                                href={`/services/pr-pathway-courses/${c.slug}`}
+                                onClick={() => setServicesOpen(false)}
+                                className="rounded-full border border-brand-100 bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700 transition-colors hover:border-brand-300 hover:text-brand-500"
+                              >
+                                {c.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -168,14 +184,29 @@ export default function Header() {
                         All services
                       </Link>
                       {services.map((s) => (
-                        <Link
-                          key={s.slug}
-                          href={`/services/${s.slug}`}
-                          onClick={closeMobile}
-                          className="block rounded-lg px-3 py-2 text-sm text-brand-900/80 hover:bg-brand-50"
-                        >
-                          {s.title}
-                        </Link>
+                        <div key={s.slug}>
+                          <Link
+                            href={`/services/${s.slug}`}
+                            onClick={closeMobile}
+                            className="block rounded-lg px-3 py-2 text-sm text-brand-900/80 hover:bg-brand-50"
+                          >
+                            {s.title}
+                          </Link>
+                          {s.slug === "pr-pathway-courses" && (
+                            <div className="ml-3 border-l border-brand-100 pl-2">
+                              {prCategories.map((c) => (
+                                <Link
+                                  key={c.slug}
+                                  href={`/services/pr-pathway-courses/${c.slug}`}
+                                  onClick={closeMobile}
+                                  className="block rounded-lg px-3 py-1.5 text-sm text-brand-900/70 hover:bg-brand-50"
+                                >
+                                  {c.title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}

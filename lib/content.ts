@@ -38,6 +38,20 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "short-courses",
+    icon: "graduation",
+    title: "Short Courses (Security & Aged Care)",
+    short:
+      "Fast, practical vocational courses — Security, Aged Care and Child Care — for job-ready skills and recognised qualifications.",
+    long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
+    points: [
+      "Security licensing courses",
+      "Aged Care (Certificate III & IV)",
+      "Child Care / Early Childhood Education & Care",
+      "RTO selection and enrolment support",
+    ],
+  },
+  {
     slug: "health-insurance",
     icon: "document",
     title: "Health Insurance (OSHC)",
@@ -52,17 +66,17 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "professional-year",
-    icon: "trophy",
-    title: "Professional Year",
+    slug: "pte-naati-py",
+    icon: "headset",
+    title: "PTE, NAATI & PY",
     short:
-      "Guidance into Professional Year programs in accounting, IT and engineering to build local experience and points.",
-    long: "The Professional Year Program (PYP) combines formal learning with an Australian workplace internship for graduates in accounting, IT and engineering. We help eligible graduates enrol with approved providers to gain valuable local experience and additional points toward skilled migration.",
+      "Test preparation for PTE Academic and NAATI CCL, plus guidance into the Professional Year Program — all to boost your points.",
+    long: "Strong English scores, community-language credentials and Australian work experience can each add valuable points toward skilled migration. We guide you on PTE Academic and NAATI CCL test preparation and booking, and help eligible graduates into the Professional Year Program (PYP) in accounting, IT and engineering.",
     points: [
-      "Eligibility assessment for the Professional Year Program",
-      "Approved provider selection (accounting, IT, engineering)",
-      "Internship and workplace-experience guidance",
-      "Support toward skilled migration points",
+      "PTE Academic preparation and booking guidance",
+      "NAATI CCL (community language) test guidance",
+      "Professional Year Program (accounting, IT, engineering)",
+      "Score and points advice for skilled migration",
     ],
   },
   {
@@ -78,34 +92,6 @@ export const services: Service[] = [
       "PhD and Masters by Research application support",
       "Research scholarship and funding guidance",
       "Academic CV and publication portfolio preparation",
-    ],
-  },
-  {
-    slug: "pte-naati",
-    icon: "headset",
-    title: "PTE & NAATI Preparation",
-    short:
-      "Preparation and booking support for PTE Academic and NAATI CCL tests to meet your visa and points requirements.",
-    long: "Strong English and community-language credentials can make the difference in your visa and migration outcome. We guide you on PTE Academic (English proficiency) and NAATI CCL (credentialled community language) — including preparation resources, test strategy and booking support.",
-    points: [
-      "PTE Academic preparation and booking guidance",
-      "NAATI CCL (community language) test guidance",
-      "Score-requirement advice for visas and points",
-      "Practice materials and test-day strategy",
-    ],
-  },
-  {
-    slug: "short-courses",
-    icon: "graduation",
-    title: "Short Courses (VET)",
-    short:
-      "Fast, practical vocational courses — Security, Aged Care and Child Care — for job-ready skills and recognised qualifications.",
-    long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
-    points: [
-      "Security licensing courses",
-      "Aged Care (Certificate III & IV)",
-      "Child Care / Early Childhood Education & Care",
-      "RTO selection and enrolment support",
     ],
   },
 ];
