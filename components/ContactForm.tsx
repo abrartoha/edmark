@@ -113,7 +113,7 @@ export default function ContactForm() {
           Thank you — we&apos;ve got it!
         </h3>
         <p className="mt-2 text-sm text-brand-900/70">
-          <strong>Mahin will contact you within 2 hours</strong> during business hours.
+          <strong>Our team will contact you within 2 hours</strong> during business hours.
           Keen to talk sooner? Call us and we&apos;ll get started right away.
         </p>
         <div className="mt-4 rounded-xl bg-white p-4">
@@ -125,7 +125,7 @@ export default function ContactForm() {
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold text-brand-600">2.</span>
-              Mahin calls or emails you with a tailored study plan
+              An advisor calls or emails you with a tailored study plan
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold text-brand-600">3.</span>
