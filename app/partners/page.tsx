@@ -1,56 +1,85 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
-import { IconCheck, IconGraduation } from "@/components/Icons";
+import { IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Our Partner Institutions",
   description:
-    "Edmark Education partners with 50+ leading Australian universities, TAFEs and colleges. Explore our partner institutions and find the right fit for your education journey.",
+    "Edmark Education partners with leading Australian universities, TAFEs and colleges across every state. Explore our partner institutions and find the right fit for your study journey.",
   alternates: { canonical: "/partners" },
 };
 
-const universities = [
-  { name: "University of Melbourne", type: "Go8 University", location: "Melbourne, VIC" },
-  { name: "Monash University", type: "Go8 University", location: "Melbourne, VIC" },
-  { name: "University of Sydney", type: "Go8 University", location: "Sydney, NSW" },
-  { name: "UNSW Sydney", type: "Go8 University", location: "Sydney, NSW" },
-  { name: "University of Queensland", type: "Go8 University", location: "Brisbane, QLD" },
-  { name: "Australian National University", type: "Go8 University", location: "Canberra, ACT" },
-  { name: "RMIT University", type: "University", location: "Melbourne, VIC" },
-  { name: "Deakin University", type: "University", location: "Geelong/Melbourne, VIC" },
-  { name: "Swinburne University of Technology", type: "University", location: "Melbourne, VIC" },
-  { name: "La Trobe University", type: "University", location: "Melbourne, VIC" },
-  { name: "Victoria University", type: "University", location: "Melbourne, VIC" },
-  { name: "Griffith University", type: "University", location: "Brisbane/Gold Coast, QLD" },
-  { name: "Western Sydney University", type: "University", location: "Sydney, NSW" },
-  { name: "University of Tasmania", type: "University", location: "Hobart, TAS" },
-  { name: "Charles Darwin University", type: "University", location: "Darwin, NT" },
-  { name: "Federation University", type: "University", location: "Ballarat, VIC" },
+type Institution = { slug: string; name: string; meta: string };
+
+const universities: Institution[] = [
+  { slug: "unimelb", name: "University of Melbourne", meta: "Go8 · Melbourne, VIC" },
+  { slug: "monash", name: "Monash University", meta: "Go8 · Melbourne, VIC" },
+  { slug: "sydney", name: "University of Sydney", meta: "Go8 · Sydney, NSW" },
+  { slug: "unsw", name: "UNSW Sydney", meta: "Go8 · Sydney, NSW" },
+  { slug: "uq", name: "University of Queensland", meta: "Go8 · Brisbane, QLD" },
+  { slug: "anu", name: "Australian National University", meta: "Go8 · Canberra, ACT" },
+  { slug: "adelaide", name: "University of Adelaide", meta: "Go8 · Adelaide, SA" },
+  { slug: "uwa", name: "University of Western Australia", meta: "Go8 · Perth, WA" },
+  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC" },
+  { slug: "deakin", name: "Deakin University", meta: "Geelong / Melbourne, VIC" },
+  { slug: "swinburne", name: "Swinburne University of Technology", meta: "Melbourne, VIC" },
+  { slug: "latrobe", name: "La Trobe University", meta: "Melbourne, VIC" },
+  { slug: "vu", name: "Victoria University", meta: "Melbourne, VIC" },
+  { slug: "federation", name: "Federation University", meta: "Ballarat, VIC" },
+  { slug: "uts", name: "University of Technology Sydney", meta: "Sydney, NSW" },
+  { slug: "macquarie", name: "Macquarie University", meta: "Sydney, NSW" },
+  { slug: "westernsydney", name: "Western Sydney University", meta: "Sydney, NSW" },
+  { slug: "newcastle", name: "University of Newcastle", meta: "Newcastle, NSW" },
+  { slug: "uow", name: "University of Wollongong", meta: "Wollongong, NSW" },
+  { slug: "csu", name: "Charles Sturt University", meta: "Bathurst, NSW" },
+  { slug: "scu", name: "Southern Cross University", meta: "Lismore, NSW" },
+  { slug: "une", name: "University of New England", meta: "Armidale, NSW" },
+  { slug: "acu", name: "Australian Catholic University", meta: "Multiple campuses" },
+  { slug: "canberra", name: "University of Canberra", meta: "Canberra, ACT" },
+  { slug: "cdu", name: "Charles Darwin University", meta: "Darwin, NT" },
+  { slug: "flinders", name: "Flinders University", meta: "Adelaide, SA" },
+  { slug: "unisa", name: "University of South Australia", meta: "Adelaide, SA" },
+  { slug: "utas", name: "University of Tasmania", meta: "Hobart, TAS" },
+  { slug: "qut", name: "Queensland University of Technology", meta: "Brisbane, QLD" },
+  { slug: "griffith", name: "Griffith University", meta: "Brisbane / Gold Coast, QLD" },
+  { slug: "jcu", name: "James Cook University", meta: "Townsville, QLD" },
+  { slug: "usq", name: "University of Southern Queensland", meta: "Toowoomba, QLD" },
+  { slug: "usc", name: "University of the Sunshine Coast", meta: "Sunshine Coast, QLD" },
+  { slug: "cqu", name: "CQUniversity", meta: "Rockhampton, QLD" },
+  { slug: "bond", name: "Bond University", meta: "Gold Coast, QLD" },
+  { slug: "torrens", name: "Torrens University Australia", meta: "Multiple campuses" },
+  { slug: "ecu", name: "Edith Cowan University", meta: "Perth, WA" },
+  { slug: "curtin", name: "Curtin University", meta: "Perth, WA" },
+  { slug: "murdoch", name: "Murdoch University", meta: "Perth, WA" },
+  { slug: "notredame", name: "University of Notre Dame Australia", meta: "Fremantle, WA" },
 ];
 
-const tafes = [
-  { name: "Melbourne Polytechnic", type: "TAFE", location: "Melbourne, VIC" },
-  { name: "Holmesglen Institute", type: "TAFE", location: "Melbourne, VIC" },
-  { name: "Box Hill Institute", type: "TAFE", location: "Melbourne, VIC" },
-  { name: "Chisholm Institute", type: "TAFE", location: "Melbourne, VIC" },
-  { name: "TAFE NSW", type: "TAFE", location: "Sydney, NSW" },
-  { name: "TAFE Queensland", type: "TAFE", location: "Brisbane, QLD" },
+const colleges: Institution[] = [
+  { slug: "kaplan", name: "Kaplan Business School", meta: "Multiple campuses" },
+  { slug: "mit", name: "Melbourne Institute of Technology", meta: "Melbourne, VIC" },
+  { slug: "vit", name: "Victorian Institute of Technology", meta: "Melbourne, VIC" },
+  { slug: "holmes", name: "Holmes Institute", meta: "Melbourne, VIC" },
+  { slug: "koi", name: "King's Own Institute", meta: "Sydney, NSW" },
+  { slug: "navitas", name: "Navitas", meta: "Pathway provider" },
+  { slug: "deakincollege", name: "Deakin College", meta: "Pathway · Melbourne, VIC" },
+  { slug: "monashcollege", name: "Monash College", meta: "Pathway · Melbourne, VIC" },
+  { slug: "utscollege", name: "UTS College", meta: "Pathway · Sydney, NSW" },
 ];
 
-const privateColleges = [
-  { name: "Perth Institute of Australia (PIA)", type: "Private College", location: "Perth, WA" },
-  { name: "Australian Academy of Higher Education (AAHE)", type: "Private College", location: "Melbourne, VIC" },
-  { name: "Victorian Institute of Technology (VIT)", type: "Private College", location: "Melbourne, VIC" },
-  { name: "SISTC (Southern Institute of Science, Technology and Commerce)", type: "Private College", location: "Melbourne, VIC" },
-  { name: "Kaplan Business School", type: "Private College", location: "Melbourne/Sydney" },
-  { name: "Navitas Group", type: "Pathway Provider", location: "Multiple campuses" },
-  { name: "Insearch (UTS)", type: "Pathway Provider", location: "Sydney, NSW" },
-  { name: "Eynesbury College", type: "Pathway Provider", location: "Adelaide, SA" },
-  { name: "ELICOS Providers", type: "English Language", location: "Multiple cities" },
+const tafes: Institution[] = [
+  { slug: "melbournepoly", name: "Melbourne Polytechnic", meta: "Melbourne, VIC" },
+  { slug: "holmesglen", name: "Holmesglen Institute", meta: "Melbourne, VIC" },
+  { slug: "boxhill", name: "Box Hill Institute", meta: "Melbourne, VIC" },
+  { slug: "chisholm", name: "Chisholm Institute", meta: "Melbourne, VIC" },
+  { slug: "tafensw", name: "TAFE NSW", meta: "Sydney, NSW" },
+  { slug: "tafeqld", name: "TAFE Queensland", meta: "Brisbane, QLD" },
+  { slug: "tafesa", name: "TAFE SA", meta: "Adelaide, SA" },
+  { slug: "tastafe", name: "TasTAFE", meta: "Hobart, TAS" },
+  { slug: "cit", name: "Canberra Institute of Technology", meta: "Canberra, ACT" },
 ];
 
 const benefits = [
@@ -62,19 +91,53 @@ const benefits = [
   "Up-to-date knowledge of entry requirements and course changes",
 ];
 
+function LogoCard({ inst, i }: { inst: Institution; i: number }) {
+  return (
+    <div
+      className="reveal group flex flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-white p-5 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow"
+      style={{ transitionDelay: `${(i % 10) * 40}ms` }}
+    >
+      <div className="grid h-20 w-20 place-items-center rounded-2xl border border-brand-100 bg-white">
+        <Image
+          src={`/images/partners/${inst.slug}.png`}
+          alt={`${inst.name} logo`}
+          width={80}
+          height={80}
+          className="h-16 w-16 object-contain"
+        />
+      </div>
+      <div>
+        <h3 className="text-sm font-bold leading-snug text-brand-900">{inst.name}</h3>
+        <p className="mt-1 text-xs text-brand-900/50">{inst.meta}</p>
+      </div>
+    </div>
+  );
+}
+
+function LogoGrid({ items }: { items: Institution[] }) {
+  return (
+    <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {items.map((inst, i) => (
+        <LogoCard key={inst.slug} inst={inst} i={i} />
+      ))}
+    </div>
+  );
+}
+
 export default function PartnersPage() {
+  const total = universities.length + colleges.length + tafes.length;
   return (
     <>
       <PageHero
         eyebrow="Our partners"
-        title="50+ partner institutions across Australia"
+        title={`${total}+ partner institutions across Australia`}
         subtitle="Direct relationships with leading universities, TAFEs and colleges mean faster offers, stronger applications and exclusive opportunities for our students."
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
 
       {/* Why partnerships matter */}
       <section className="bg-white py-16 lg:py-24">
-        <div className="container-page grid gap-12 lg:grid-cols-2 items-center">
+        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
               eyebrow="Why it matters"
@@ -94,7 +157,7 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">50+</div>
+              <div className="font-display text-4xl font-extrabold text-gradient">{total}+</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">Partner institutions</div>
             </div>
             <div className="card text-center">
@@ -102,12 +165,12 @@ export default function PartnersPage() {
               <div className="mt-1 text-sm font-medium text-brand-900/70">Group of Eight universities</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">6+</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE partners</div>
+              <div className="font-display text-4xl font-extrabold text-gradient">{universities.length}</div>
+              <div className="mt-1 text-sm font-medium text-brand-900/70">University partners</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">9+</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Private colleges & pathways</div>
+              <div className="font-display text-4xl font-extrabold text-gradient">{tafes.length}</div>
+              <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE & polytechnic partners</div>
             </div>
           </div>
         </div>
@@ -116,62 +179,39 @@ export default function PartnersPage() {
       {/* Universities */}
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
-          <SectionHeading center eyebrow="Universities" title="University partners" />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {universities.map((u, i) => (
-              <div
-                key={u.name}
-                className="reveal flex items-center gap-4 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"
-                style={{ transitionDelay: `${(i % 8) * 50}ms` }}
-              >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-gradient text-brand-950">
-                  <IconGraduation className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-brand-900">{u.name}</h3>
-                  <p className="text-xs text-brand-900/50">{u.type} · {u.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SectionHeading
+            center
+            eyebrow="Universities"
+            title="University partners"
+            subtitle="From the Group of Eight to leading modern universities, we work with institutions in every Australian state and territory."
+          />
+          <LogoGrid items={universities} />
         </div>
       </section>
 
-      {/* TAFEs & Colleges */}
+      {/* Colleges & pathways */}
       <section className="bg-white py-16 lg:py-24">
-        <div className="container-page grid gap-16 lg:grid-cols-2">
-          <div>
-            <SectionHeading eyebrow="TAFE partners" title="Vocational education" />
-            <div className="mt-8 space-y-3">
-              {tafes.map((t) => (
-                <div key={t.name} className="flex items-center gap-4 rounded-xl border border-brand-100 bg-brand-50/50 p-4">
-                  <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
-                    <IconGraduation className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-brand-900">{t.name}</h3>
-                    <p className="text-xs text-brand-900/50">{t.location}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <SectionHeading eyebrow="Private colleges & pathways" title="Colleges & pathway providers" />
-            <div className="mt-8 space-y-3">
-              {privateColleges.map((c) => (
-                <div key={c.name} className="flex items-center gap-4 rounded-xl border border-brand-100 bg-brand-50/50 p-4">
-                  <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
-                    <IconGraduation className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-brand-900">{c.name}</h3>
-                    <p className="text-xs text-brand-900/50">{c.type} · {c.location}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="container-page">
+          <SectionHeading
+            center
+            eyebrow="Colleges & pathways"
+            title="Private colleges & pathway providers"
+            subtitle="Flexible entry points, diplomas and pathway programs that lead into a full degree."
+          />
+          <LogoGrid items={colleges} />
+        </div>
+      </section>
+
+      {/* TAFEs */}
+      <section className="bg-brand-50 py-16 lg:py-24">
+        <div className="container-page">
+          <SectionHeading
+            center
+            eyebrow="Vocational education"
+            title="TAFE & polytechnic partners"
+            subtitle="Practical, industry-focused qualifications with strong graduate employment outcomes."
+          />
+          <LogoGrid items={tafes} />
         </div>
       </section>
 
