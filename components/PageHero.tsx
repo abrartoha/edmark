@@ -12,10 +12,11 @@ export default function PageHero({
   return (
     <section className="relative overflow-hidden bg-brand-900">
       <Image
-        src="/images/hero-banner.png"
+        src="/images/hero-banner.jpg"
         alt=""
         fill
-        className="object-cover object-center opacity-20"
+        sizes="100vw"
+        className="scale-105 object-cover object-center opacity-25 blur-[3px]"
         priority
         aria-hidden="true"
       />

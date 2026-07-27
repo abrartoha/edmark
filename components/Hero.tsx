@@ -14,10 +14,11 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-brand-900">
       {/* Hero background image */}
       <Image
-        src="/images/hero-banner.png"
+        src="/images/hero-banner.jpg"
         alt=""
         fill
-        className="object-cover object-center opacity-30"
+        sizes="100vw"
+        className="scale-105 object-cover object-center opacity-40 blur-[3px]"
         priority
         aria-hidden="true"
       />
