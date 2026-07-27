@@ -29,14 +29,23 @@ export const site = {
     {
       name: "Mahin Khan",
       role: "Education Consultant",
+      credential: "ICEF Certified · QEAC No: #15175",
       email: "mahin@edmark.com.au",
       image: "/images/mahin.png",
     },
     {
       name: "Ashab Ahmed Sakib",
       role: "Education Consultant",
+      credential: "",
       email: "sakib@edmark.com.au",
       image: "/images/sakib.png",
+    },
+    {
+      name: "Abrar Hossain Chy Toha",
+      role: "Operations Manager",
+      credential: "",
+      email: "abrar@edmark.com.au",
+      image: "/images/abrar.png",
     },
   ],
   hours: "Mon–Sat: 9:00am – 6:00pm",
