@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { IconArrow, IconCheck, IconStar } from "./Icons";
 
@@ -12,16 +11,20 @@ const bullets = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-brand-900">
-      {/* Hero background image */}
-      <Image
-        src="/images/hero-banner.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="scale-105 object-cover object-center opacity-40 blur-[3px]"
-        priority
+      {/* Hero background video (poster image shows instantly and is the
+          fallback if the video can't autoplay) */}
+      <video
+        className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-40 blur-[3px]"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero-banner.jpg"
         aria-hidden="true"
-      />
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Decorative organic shapes */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
