@@ -3,11 +3,32 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { nav, site } from "@/lib/site";
+import { services } from "@/lib/content";
+import ServiceIcon from "./ServiceIcon";
 import Logo from "./Logo";
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -15,6 +36,11 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const closeMobile = () => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+  };
 
   return (
     <header
@@ -30,11 +56,58 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="nav-link">
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) =>
+            item.href === "/services" ? (
+              <div
+                key={item.href}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                <Link
+                  href="/services"
+                  className="nav-link inline-flex items-center gap-1"
+                  aria-expanded={servicesOpen}
+                >
+                  {item.label}
+                  <Chevron open={servicesOpen} />
+                </Link>
+
+                <div
+                  className={`absolute left-1/2 top-full z-50 w-[620px] -translate-x-1/2 pt-4 ${
+                    servicesOpen ? "block" : "hidden"
+                  }`}
+                >
+                  <div className="grid grid-cols-2 gap-1 rounded-2xl border border-brand-100 bg-white p-3 shadow-glow">
+                    {services.map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/services/${s.slug}`}
+                        onClick={() => setServicesOpen(false)}
+                        className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
+                      >
+                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
+                          <ServiceIcon name={s.icon} className="h-4 w-4" />
+                        </span>
+                        <span>
+                          <span className="block text-sm font-bold text-brand-900">
+                            {s.title}
+                          </span>
+                          <span className="mt-0.5 block text-xs leading-snug text-brand-900/55 line-clamp-2">
+                            {s.short}
+                          </span>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -73,21 +146,52 @@ export default function Header() {
       {open && (
         <div className="border-t border-brand-100 bg-white lg:hidden">
           <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-2"
-            >
+            {nav.map((item) =>
+              item.href === "/services" ? (
+                <div key={item.href}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
+                    aria-expanded={mobileServicesOpen}
+                  >
+                    {item.label}
+                    <Chevron open={mobileServicesOpen} />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="ml-3 border-l border-brand-100 pl-2">
+                      <Link
+                        href="/services"
+                        onClick={closeMobile}
+                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-50"
+                      >
+                        All services
+                      </Link>
+                      {services.map((s) => (
+                        <Link
+                          key={s.slug}
+                          href={`/services/${s.slug}`}
+                          onClick={closeMobile}
+                          className="block rounded-lg px-3 py-2 text-sm text-brand-900/80 hover:bg-brand-50"
+                        >
+                          {s.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobile}
+                  className="rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+            <Link href="/contact" onClick={closeMobile} className="btn-primary mt-2">
               Book Free Consultation
             </Link>
           </nav>

@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
+import { services as allServices } from "@/lib/content";
 import Logo from "./Logo";
 
-const services = [
-  { label: "Free Career Counselling", href: "/services/free-career-counselling" },
-  { label: "University & Course Selection", href: "/services/university-course-selection" },
-  { label: "Admission & Application", href: "/services/admission-application" },
-  { label: "Scholarship Guidance", href: "/services/scholarship-guidance" },
-  { label: "Research Degree Support", href: "/services/research-degree-support" },
-  { label: "Pre-Departure Support", href: "/services/pre-departure-support" },
-];
+const services = allServices.map((s) => ({
+  label: s.title,
+  href: `/services/${s.slug}`,
+}));
 
 const resources = [
   { label: "Blog", href: "/blog" },

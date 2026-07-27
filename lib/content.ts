@@ -11,96 +11,101 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "free-career-counselling",
+    slug: "student-counselling",
     icon: "compass",
-    title: "Free Career Counselling",
+    title: "Student Counselling",
     short:
-      "One honest conversation that maps your strengths, goals and budget to the right course.",
-    long: "We start by understanding you — your academic background, career ambitions, budget and lifestyle. Then we build a personalised study roadmap so every step you take moves you closer to the career you actually want.",
+      "Free, honest one-on-one counselling that maps your goals, budget and the right study path in Australia.",
+    long: "Our experienced counsellors take the time to understand your academic background, career goals, budget and personal situation — then give you clear, unbiased advice on the best courses, institutions and pathways for you. No pressure, no hidden agenda, just guidance you can trust.",
     points: [
-      "One-on-one guidance with an expert advisor",
-      "Career and course fit assessment",
-      "Realistic budget and ROI planning",
+      "One-on-one session with an expert advisor",
+      "Course, institution and pathway recommendations",
+      "Budget, timeline and career-fit planning",
     ],
   },
   {
-    slug: "university-course-selection",
-    icon: "graduation",
-    title: "University & Course Selection",
-    short:
-      "Cut through 40+ institutions and 1,000+ courses to the handful that are perfect for you.",
-    long: "With partnerships across Australia's leading universities, TAFEs and colleges, we shortlist options that match your profile, maximise your acceptance odds and set you up for a job after graduation — not just a degree.",
-    points: [
-      "Matched to universities, TAFEs, private colleges & pathway providers",
-      "Entry-requirement and eligibility check",
-      "Course outcomes and employability review",
-    ],
-  },
-  {
-    slug: "admission-application",
-    icon: "document",
-    title: "Admission & Application",
-    short:
-      "We handle the paperwork, deadlines and documents — you avoid costly mistakes.",
-    long: "From statements of purpose to document certification and submission, our team manages your entire application so nothing gets missed. Faster offers, fewer rejections, zero guesswork.",
-    points: [
-      "Application preparation & submission",
-      "Statement of purpose and CV support",
-      "Deadline and document tracking",
-    ],
-  },
-  {
-    slug: "scholarship-guidance",
-    icon: "trophy",
-    title: "Scholarship Guidance",
-    short:
-      "Don't leave money on the table — we help you find and win the funding you qualify for.",
-    long: "Many students overpay because they never apply for scholarships they were eligible for. We identify every grant, discount and merit scholarship you qualify for and help you present a winning application.",
-    points: [
-      "Scholarship eligibility screening",
-      "Application and essay support",
-      "Fee and payment-plan advice",
-    ],
-  },
-  {
-    slug: "pre-departure-support",
+    slug: "pr-pathway-courses",
     icon: "plane",
-    title: "Pre-Departure Support",
+    title: "PR Pathway Courses",
     short:
-      "Arrive confident — accommodation, banking, and settling-in advice sorted before you fly.",
-    long: "Your journey doesn't end with an offer letter. We prepare you for life in Australia with practical guidance on accommodation, health cover, banking and your first weeks on campus.",
+      "Choose courses aligned with Australia's skilled occupation lists to strengthen your long-term residency prospects.",
+    long: "Not every course carries the same weight for migration. We help you select qualifications linked to occupations on Australia's skilled occupation lists, and consider regional study options that can support your pathway toward permanent residency. For formal migration advice we work alongside registered migration agents (MARA).",
     points: [
-      "Accommodation and living-cost guidance",
-      "Health cover (OSHC) and banking setup",
-      "Orientation and settling-in checklist",
+      "Course selection aligned to skilled occupation lists",
+      "Regional and state-nominated study options",
+      "Referral to registered migration agents for formal advice",
+      "Long-term study-to-residency planning",
     ],
   },
   {
-    slug: "ongoing-student-support",
-    icon: "headset",
-    title: "Ongoing Student Support",
+    slug: "health-insurance",
+    icon: "document",
+    title: "Health Insurance (OSHC)",
     short:
-      "A team that stays in your corner long after enrolment — because your success is our reputation.",
-    long: "Need to change courses, extend a program, or plan your next step after graduation? We're here for the whole journey, with responsive support whenever you need it.",
+      "Arrange the Overseas Student Health Cover (OSHC) required for your student visa — quick and hassle-free.",
+    long: "Every international student needs Overseas Student Health Cover (OSHC) for the length of their visa. We help you compare providers, choose the right level of cover for yourself or your family, and arrange your policy so your visa and enrolment requirements are fully met.",
     points: [
-      "Course transfer and progression advice",
-      "Continued academic guidance",
-      "One point of contact you can trust",
+      "Compare OSHC providers and levels of cover",
+      "Single, couple and family policies",
+      "Cover arranged for visa and CoE requirements",
+      "Guidance on claims and renewals",
     ],
   },
   {
-    slug: "research-degree-support",
+    slug: "professional-year",
+    icon: "trophy",
+    title: "Professional Year",
+    short:
+      "Guidance into Professional Year programs in accounting, IT and engineering to build local experience and points.",
+    long: "The Professional Year Program (PYP) combines formal learning with an Australian workplace internship for graduates in accounting, IT and engineering. We help eligible graduates enrol with approved providers to gain valuable local experience and additional points toward skilled migration.",
+    points: [
+      "Eligibility assessment for the Professional Year Program",
+      "Approved provider selection (accounting, IT, engineering)",
+      "Internship and workplace-experience guidance",
+      "Support toward skilled migration points",
+    ],
+  },
+  {
+    slug: "research-degrees",
     icon: "research",
-    title: "Research Degree Support",
+    title: "Research Degrees (Masters by Research & PhD)",
     short:
-      "From finding the right supervisor to writing a winning research proposal — we help you secure your Masters by Research or PhD place.",
-    long: "Research degrees are different from coursework programs. You need a strong research proposal, a supervisor match, evidence of research capability, and often publications or prior research experience. We guide you through every step — from identifying the right research group to crafting a proposal that gets accepted.",
+      "From supervisor match to a winning research proposal — full support for Masters by Research and PhD applications.",
+    long: "Research degrees are very different from coursework programs. You need a strong research proposal, a supervisor match, and evidence of research capability. We guide you through every step — from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
     points: [
       "Research proposal writing and review",
       "Supervisor identification and matching",
       "PhD and Masters by Research application support",
       "Research scholarship and funding guidance",
       "Academic CV and publication portfolio preparation",
+    ],
+  },
+  {
+    slug: "pte-naati",
+    icon: "headset",
+    title: "PTE & NAATI Preparation",
+    short:
+      "Preparation and booking support for PTE Academic and NAATI CCL tests to meet your visa and points requirements.",
+    long: "Strong English and community-language credentials can make the difference in your visa and migration outcome. We guide you on PTE Academic (English proficiency) and NAATI CCL (credentialled community language) — including preparation resources, test strategy and booking support.",
+    points: [
+      "PTE Academic preparation and booking guidance",
+      "NAATI CCL (community language) test guidance",
+      "Score-requirement advice for visas and points",
+      "Practice materials and test-day strategy",
+    ],
+  },
+  {
+    slug: "short-courses",
+    icon: "graduation",
+    title: "Short Courses (VET)",
+    short:
+      "Fast, practical vocational courses — Security, Aged Care and Child Care — for job-ready skills and recognised qualifications.",
+    long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
+    points: [
+      "Security licensing courses",
+      "Aged Care (Certificate III & IV)",
+      "Child Care / Early Childhood Education & Care",
+      "RTO selection and enrolment support",
     ],
   },
 ];

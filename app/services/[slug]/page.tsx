@@ -13,121 +13,116 @@ const serviceExtras: Record<
   string,
   { whoFor: string[]; whatToExpect: string[]; extended: string }
 > = {
-  "free-career-counselling": {
+  "student-counselling": {
     extended:
-      "Choosing a course is one of the biggest decisions of your life — and it shouldn't be rushed or based on incomplete information. Our free career counselling sessions are designed to give you clarity. We'll explore your academic history, your career aspirations, your personal circumstances and your budget to build a realistic, personalised study roadmap.\n\nUnlike other agents who push whichever institution pays the most, we recommend what's genuinely right for you. That's why students trust us — and why most of our business comes from referrals.",
+      "Choosing what and where to study is one of the biggest decisions you'll make — and it shouldn't be rushed or based on incomplete information. Our student counselling sessions are designed to give you clarity. We explore your academic history, career aspirations, budget and personal circumstances to build a realistic, personalised study plan.\n\nUnlike agents who push whichever institution pays the most, we recommend what's genuinely right for you. That's why most of our students come to us through referrals.",
     whoFor: [
-      "High school leavers unsure which degree to pursue",
+      "High school leavers unsure which course to pursue",
       "Working professionals looking to upskill or change careers",
       "International students exploring Australian education options",
-      "Parents wanting guidance for their children's education",
+      "Parents seeking guidance for their children's education",
     ],
     whatToExpect: [
-      "A relaxed 30-minute conversation (in person or online)",
+      "A relaxed conversation, in person or online",
       "An honest assessment of your options based on your profile",
       "A personalised shortlist of courses and institutions",
       "Clear next steps and a timeline for your journey",
     ],
   },
-  "university-course-selection": {
+  "pr-pathway-courses": {
     extended:
-      "Australia has over 40 universities and more than 22,000 courses. Without expert guidance, it's easy to choose the wrong course, the wrong campus, or miss a better option entirely. We cut through the noise by matching you with the programs where you'll actually thrive.\n\nOur partnerships with leading Australian institutions give us insider knowledge of entry requirements, course outcomes and campus culture. We don't just match you to a course — we match you to the right career path.",
+      "For many students, studying in Australia is also the first step toward permanent residency. But the course you choose matters — qualifications tied to occupations in demand can strengthen your skilled migration profile, while others may not count toward it at all.\n\nWe help you understand how course choice, location and level of study interact with the skilled occupation lists and points test, so your study decision supports your long-term goals. Important: migration rules change often, and formal, personalised migration advice must come from a registered migration agent (MARA) — whom we can connect you with.",
     whoFor: [
-      "Students who feel overwhelmed by too many options",
-      "Anyone unsure whether to pursue university or TAFE",
-      "Students wanting to study at a Group of Eight university",
-      "Career changers looking for the best return on investment",
+      "Students who want their study to support a residency pathway",
+      "Graduates considering further study to improve their prospects",
+      "Applicants weighing regional versus metropolitan study",
+      "Anyone confused by skilled occupation lists and points",
     ],
     whatToExpect: [
-      "A detailed profile assessment covering academics, goals and budget",
-      "A curated shortlist of 3–5 best-fit programs",
-      "Comparison of course outcomes, fees and campus locations",
-      "Guidance on entry requirements and how to strengthen your application",
+      "A review of your goals and current profile",
+      "Course and location options aligned to in-demand occupations",
+      "An overview of how study choices can affect your points",
+      "Referral to a registered migration agent for formal advice",
     ],
   },
-  "admission-application": {
+  "health-insurance": {
     extended:
-      "The application process for Australian institutions involves multiple documents, strict deadlines and specific formatting requirements. A single mistake can delay your offer by months — or result in a rejection. We take the stress out of the entire process.\n\nOur team reviews every document, crafts compelling personal statements, and submits your application on time. We follow up with institutions on your behalf and keep you informed at every step.",
+      "Overseas Student Health Cover (OSHC) is a mandatory requirement for your student visa — you must hold valid cover for the entire length of your stay. Choosing the right policy protects both your visa status and your health while you study.\n\nWe make it simple. We compare the major OSHC providers, explain what's covered, and help you arrange single, couple or family cover that matches your visa dates and enrolment. If you ever need to make a claim or renew, we're here to help.",
     whoFor: [
-      "Students applying to multiple institutions simultaneously",
-      "Anyone unfamiliar with Australian application processes",
-      "Students who want professional help with personal statements",
-      "Applicants who need document certification and translation",
+      "New international students applying for a student visa",
+      "Students bringing a partner or family to Australia",
+      "Anyone renewing or extending their existing cover",
+      "Students unsure which provider or level of cover to choose",
     ],
     whatToExpect: [
-      "Complete application preparation and document review",
-      "Professional statement of purpose and CV writing support",
-      "Submission management and deadline tracking",
-      "Regular updates on application status and next steps",
+      "A comparison of OSHC providers and levels of cover",
+      "The right policy for your visa and CoE dates",
+      "Help arranging single, couple or family cover",
+      "Guidance on claims, extensions and renewals",
     ],
   },
-  "scholarship-guidance": {
+  "professional-year": {
     extended:
-      "Thousands of dollars in scholarships go unclaimed every year simply because students don't know they exist or don't know how to apply. Our scholarship specialists identify every grant, discount and merit-based award you qualify for and help you present the strongest possible application.\n\nWe've helped students save anywhere from $2,000 to $40,000 on their education. Whether you're looking for merit-based, need-based or government-funded scholarships, we know where to look and how to win.",
+      "The Professional Year Program (PYP) is a structured program for international graduates in accounting, IT and engineering. It combines formal study with a supervised internship in an Australian workplace — giving you real local experience and additional points that can count toward skilled migration.\n\nWe assess your eligibility, match you with an approved provider in your field, and guide you through enrolment so you can focus on getting the most out of the program and your internship.",
     whoFor: [
-      "Students with strong academic records seeking merit scholarships",
-      "Students from developing countries eligible for government awards",
-      "Anyone who wants to reduce their tuition costs",
-      "Students unsure which scholarships they qualify for",
+      "Recent graduates in accounting, IT or engineering",
+      "Graduates seeking genuine Australian work experience",
+      "Applicants wanting additional skilled-migration points",
+      "Students planning their post-study pathway",
     ],
     whatToExpect: [
-      "A comprehensive scholarship eligibility screening",
-      "A shortlist of all scholarships you can apply for",
-      "Essay and application writing support",
-      "Fee structure and payment plan advice",
+      "An eligibility check for the Professional Year Program",
+      "Selection of an approved provider in your field",
+      "Guidance on the internship / workplace component",
+      "Support from enrolment through to completion",
     ],
   },
-  "pre-departure-support": {
+  "research-degrees": {
     extended:
-      "Getting your offer letter is exciting — but it's also when the practical challenges begin. Where will you live? How do you set up a bank account? What health insurance do you need? How do you get from the airport to your accommodation on day one?\n\nWe've helped hundreds of students prepare for life in Australia, and we know exactly what you need to do before you fly. Our pre-departure support covers everything from accommodation and insurance to cultural tips and first-week essentials.",
-    whoFor: [
-      "First-time international students moving to Australia",
-      "Students who want help finding accommodation",
-      "Anyone unsure about health insurance and banking requirements",
-      "Parents who want to know their child is fully prepared",
-    ],
-    whatToExpect: [
-      "Accommodation options and cost comparisons for your city",
-      "OSHC (Overseas Student Health Cover) setup and provider guidance",
-      "Banking and SIM card setup advice",
-      "A comprehensive pre-departure checklist and orientation brief",
-    ],
-  },
-  "ongoing-student-support": {
-    extended:
-      "Your relationship with Edmark doesn't end when you enrol. Throughout your studies, you'll have access to a dedicated advisor who can help with course changes, progression planning, and any challenges you face along the way.\n\nWhether you need to transfer courses, extend your program, or start planning your next qualification after graduation, we're just a call or message away. Your success is our reputation — and we take that seriously.",
-    whoFor: [
-      "Currently enrolled students needing course change advice",
-      "Students considering extending or upgrading their program",
-      "Graduates planning further study or career transitions",
-      "Anyone who wants a trusted advisor throughout their journey",
-    ],
-    whatToExpect: [
-      "Responsive support via phone, email or WhatsApp",
-      "Course transfer and credit assessment guidance",
-      "Academic progression and pathway planning",
-      "Career advice and post-graduation options",
-    ],
-  },
-  "research-degree-support": {
-    extended:
-      "Research degrees — Masters by Research and PhDs — are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want to see a well-defined research proposal, evidence of research capability (publications, conference presentations, or a strong honours thesis), and a clear alignment between your research interests and the expertise of their academic staff. Most importantly, you need a supervisor who is willing to take you on — and that relationship often needs to be established before you even submit your formal application.\n\nThis is where most applicants struggle. They write generic proposals, contact supervisors with vague emails, or apply to programs without understanding what the research group actually needs. We've helped dozens of students navigate this process successfully — from identifying the right research group to crafting proposals that get accepted at Group of Eight universities.",
+      "Research degrees — Masters by Research and PhDs — are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want a well-defined research proposal, evidence of research capability, and a clear alignment between your interests and the expertise of their academic staff. Most importantly, you often need a supervisor willing to take you on before you even submit your formal application.\n\nThis is where most applicants struggle — generic proposals, vague supervisor emails, or applying without understanding what the research group needs. We help you navigate the process, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
     whoFor: [
       "Graduates wanting to pursue a Masters by Research in Australia",
-      "PhD applicants looking for supervisor matches at Australian universities",
-      "Researchers needing help writing or refining their research proposal",
-      "International academics seeking research positions in Australia",
+      "PhD applicants looking for supervisor matches",
+      "Researchers needing help writing or refining a research proposal",
       "Honours graduates considering the transition to a research career",
-      "Industry professionals wanting to pursue practice-based research",
     ],
     whatToExpect: [
       "A detailed assessment of your research background and interests",
       "Supervisor search and shortlisting across Australian universities",
-      "Research proposal drafting, structuring and review (multiple rounds)",
-      "Academic CV and publication portfolio preparation",
-      "Guidance on contacting supervisors with a professional approach email",
-      "Research scholarship identification and application support",
-      "Full application management from submission to offer",
+      "Research proposal drafting, structuring and review",
+      "Academic CV support and research scholarship guidance",
+    ],
+  },
+  "pte-naati": {
+    extended:
+      "English proficiency and community-language credentials play a major role in student visas and skilled migration. PTE Academic is one of the most widely accepted English tests, while the NAATI CCL test can add valuable points for applicants who speak an eligible community language.\n\nWe help you understand which tests you need, what scores to aim for, and how to prepare effectively — including practice resources, test strategy and booking support — so you walk into the exam room confident.",
+    whoFor: [
+      "Students needing an English test for a visa or admission",
+      "Skilled migration applicants seeking extra points",
+      "Bilingual applicants eligible for the NAATI CCL test",
+      "Anyone unsure which test or score they need",
+    ],
+    whatToExpect: [
+      "Advice on the right test and target score for your goal",
+      "PTE Academic preparation and booking support",
+      "NAATI CCL guidance and study resources",
+      "Practice materials and test-day strategy",
+    ],
+  },
+  "short-courses": {
+    extended:
+      "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
+    whoFor: [
+      "People wanting job-ready skills quickly",
+      "Students seeking an affordable, practical qualification",
+      "Anyone entering security, aged care or child care",
+      "Workers looking to upskill or change fields",
+    ],
+    whatToExpect: [
+      "Help choosing the right short course for your goal",
+      "Matching to a quality registered training organisation (RTO)",
+      "Guidance on licensing and certification requirements",
+      "Enrolment support from start to finish",
     ],
   },
 };
