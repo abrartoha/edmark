@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "Edmark Education <operations@edmark.com.au>",
-      to: "operations@edmark.com.au",
+      to: "info@edmark.com.au",
       subject: `New Lead: ${name}`,
       replyTo: email,
       html: `
