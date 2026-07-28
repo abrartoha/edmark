@@ -87,12 +87,6 @@ export default function Hero() {
               </span>
             </div>
 
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              <Stat value="500+" label="Students guided" />
-              <Stat value="50+" label="Partner institutions" />
-              <Stat value="10+" label="Years experience" />
-            </div>
-
             <div className="mt-6 rounded-2xl bg-brand-50 p-5">
               <p className="text-sm font-medium text-brand-800">
                 &ldquo;Edmark found me a course I&apos;d never even considered,
@@ -116,14 +110,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-2xl border border-brand-100 p-4 text-center">
-      <div className="font-display text-2xl font-extrabold text-brand-600">{value}</div>
-      <div className="mt-1 text-xs font-medium text-brand-900/70">{label}</div>
-    </div>
   );
 }

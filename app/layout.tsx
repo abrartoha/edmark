@@ -8,7 +8,7 @@ import Intro from "@/components/Intro";
 import ScrollReveal from "@/components/ScrollReveal";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import NotificationBar from "@/components/NotificationBar";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ContactRail from "@/components/ContactRail";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const inter = Inter({
@@ -201,7 +201,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <WhatsAppButton />
+        <ContactRail />
         <ExitIntentPopup />
       </body>
     </html>

@@ -1,39 +1,61 @@
-import SectionHeading from "./SectionHeading";
+import Image from "next/image";
+import Link from "next/link";
+import { IconArrow } from "./Icons";
 
-const institutions = [
-  "University of Melbourne",
-  "Monash University",
-  "RMIT University",
-  "Deakin University",
-  "Swinburne University",
-  "La Trobe University",
-  "Melbourne Polytechnic",
-  "PIA",
-  "AAHE",
-  "VIT",
-  "SISTC",
-  "Kaplan Business School",
+// A representative slice of the partner network. The full list, grouped by
+// type and state, lives on /partners.
+const logos = [
+  { slug: "unimelb", name: "University of Melbourne" },
+  { slug: "monash", name: "Monash University" },
+  { slug: "sydney", name: "University of Sydney" },
+  { slug: "unsw", name: "UNSW Sydney" },
+  { slug: "uq", name: "University of Queensland" },
+  { slug: "anu", name: "Australian National University" },
+  { slug: "adelaide", name: "University of Adelaide" },
+  { slug: "uwa", name: "University of Western Australia" },
+  { slug: "rmit", name: "RMIT University" },
+  { slug: "deakin", name: "Deakin University" },
+  { slug: "swinburne", name: "Swinburne University of Technology" },
+  { slug: "latrobe", name: "La Trobe University" },
+  { slug: "uts", name: "University of Technology Sydney" },
+  { slug: "griffith", name: "Griffith University" },
+  { slug: "curtin", name: "Curtin University" },
+  { slug: "qut", name: "Queensland University of Technology" },
+  { slug: "melbournepoly", name: "Melbourne Polytechnic" },
+  { slug: "tafensw", name: "TAFE NSW" },
+  { slug: "kaplan", name: "Kaplan Business School" },
+  { slug: "navitas", name: "Navitas" },
 ];
 
 export default function TrustLogos() {
   return (
-    <section className="bg-brand-50/50 py-14 lg:py-20">
+    <section className="border-b border-brand-100 bg-white py-14 lg:py-16">
       <div className="container-page">
-        <SectionHeading
-          center
-          eyebrow="Partner institutions"
-          title="Universities, TAFEs and colleges across Australia"
-        />
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {institutions.map((uni, i) => (
-            <div
-              key={uni}
-              className="reveal flex h-24 items-center justify-center rounded-2xl border border-brand-100 bg-white px-4 text-center shadow-soft transition-all hover:border-brand-200 hover:shadow-glow"
-              style={{ transitionDelay: `${i * 60}ms` }}
-            >
-              <span className="text-sm font-semibold text-brand-800">{uni}</span>
+        <p className="reveal text-center text-xs font-semibold uppercase tracking-widest text-brand-900/50">
+          Direct partners with 50+ Australian institutions
+        </p>
+
+        <div className="reveal mt-10 grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-5">
+          {logos.map((l) => (
+            <div key={l.slug} className="flex items-center justify-center">
+              <Image
+                src={`/images/partners/${l.slug}.png`}
+                alt={l.name}
+                width={160}
+                height={64}
+                className="h-10 w-auto max-w-[130px] object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 lg:h-12"
+              />
             </div>
           ))}
+        </div>
+
+        <div className="reveal mt-10 text-center">
+          <Link
+            href="/partners"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-800"
+          >
+            See all partner institutions <IconArrow className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
     </section>

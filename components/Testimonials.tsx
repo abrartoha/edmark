@@ -1,6 +1,6 @@
 import { testimonials } from "@/lib/content";
 import SectionHeading from "./SectionHeading";
-import { IconStar } from "./Icons";
+import { IconCheck, IconStar } from "./Icons";
 
 export default function Testimonials() {
   return (
@@ -29,8 +29,22 @@ export default function Testimonials() {
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 border-t border-brand-100 pt-4">
-                <p className="text-sm font-bold text-brand-900">{t.name}</p>
-                <p className="text-xs text-brand-600">{t.detail}</p>
+                <p className="text-sm font-bold text-brand-900">
+                  {t.name}
+                  {t.route && (
+                    <span className="font-medium text-brand-900/50">
+                      {" "}
+                      &middot; {t.route}
+                    </span>
+                  )}
+                </p>
+                <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
+                {t.outcome && (
+                  <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">
+                    <IconCheck className="h-3.5 w-3.5 shrink-0" />
+                    {t.outcome}
+                  </p>
+                )}
               </figcaption>
             </figure>
           ))}

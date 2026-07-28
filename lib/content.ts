@@ -138,12 +138,24 @@ export const reasons = [
   },
 ];
 
-export const testimonials = [
+export type Testimonial = {
+  quote: string;
+  name: string;
+  detail: string;
+  /** Origin to destination, where we have it on record. */
+  route?: string;
+  /** Where they are now. Only filled in when we can verify it. */
+  outcome?: string;
+};
+
+export const testimonials: Testimonial[] = [
   {
     quote:
       "I had no idea where to start. Edmark mapped out three perfect courses, got my application in early, and I received my offer within weeks. Genuinely life-changing.",
     name: "Priya S.",
-    detail: "Bachelor of Nursing, Melbourne",
+    detail: "Bachelor of Nursing, University of Melbourne",
+    route: "India to Melbourne",
+    outcome: "Now a registered nurse at a Melbourne hospital",
   },
   {
     quote:
@@ -155,7 +167,9 @@ export const testimonials = [
     quote:
       "Professional, responsive and genuinely caring. Mahin and the team answered every question and made a stressful process feel simple.",
     name: "Lucia F.",
-    detail: "Diploma of Business",
+    detail: "Diploma of Business, Melbourne Polytechnic",
+    route: "Brazil to Melbourne",
+    outcome: "Now studying a Bachelor of Business",
   },
 ];
 
