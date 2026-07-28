@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 import { IconCheck, IconResearch, IconDocument, IconTrophy } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Research Degrees in Australia — Masters by Research & PhD Guide",
+  title: "Research Degrees in Australia: Masters by Research & PhD Guide",
   description:
     "Complete guide to Masters by Research and PhD programs in Australia. Research proposal writing, supervisor matching, scholarships and application support from Edmark Education.",
   alternates: { canonical: "/research-degrees" },
@@ -99,7 +99,7 @@ const scholarships = [
   {
     name: "University Research Scholarships",
     funder: "Individual universities",
-    coverage: "Varies — often full tuition + stipend",
+    coverage: "Varies, often full tuition + stipend",
     desc: "Most universities offer their own research scholarship programs. These may be faculty-specific, department-specific, or open to all research students. Often assessed alongside your application automatically.",
   },
   {
@@ -119,11 +119,11 @@ const scholarships = [
 const faqItems = [
   {
     q: "What's the difference between a Masters by Research and a Masters by Coursework?",
-    a: "A Masters by Coursework involves structured classes, assignments and exams — similar to an undergraduate degree but at a higher level. A Masters by Research is entirely project-based: you work with a supervisor on original research and produce a thesis. Research masters develop deep expertise in a specific topic and are the typical pathway to a PhD.",
+    a: "A Masters by Coursework involves structured classes, assignments and exams, similar to an undergraduate degree but at a higher level. A Masters by Research is entirely project-based: you work with a supervisor on original research and produce a thesis. Research masters develop deep expertise in a specific topic and are the typical pathway to a PhD.",
   },
   {
     q: "Do I need publications to apply for a PhD?",
-    a: "Publications strengthen your application but are not always required. What universities look for is evidence of research capability — this could be an honours or master's thesis, a conference presentation, a research assistant role, or demonstrated analytical skills in your professional work. We help you present whatever research experience you have in the strongest possible light.",
+    a: "Publications strengthen your application but are not always required. What universities look for is evidence of research capability. This could be an honours or master's thesis, a conference presentation, a research assistant role, or demonstrated analytical skills in your professional work. We help you present whatever research experience you have in the strongest possible light.",
   },
   {
     q: "Can I do a PhD part-time or remotely?",
@@ -131,7 +131,7 @@ const faqItems = [
   },
   {
     q: "How competitive are research scholarships?",
-    a: "Research scholarships are competitive, but the odds are better than many students think — especially if you have a strong proposal and a supervisor who advocates for you. At many universities, 30–50% of research students receive some form of scholarship. We help you maximise your chances by strengthening your proposal, identifying multiple funding sources, and timing your application strategically.",
+    a: "Research scholarships are competitive, but the odds are better than many students think, especially if you have a strong proposal and a supervisor who advocates for you. At many universities, 30–50% of research students receive some form of scholarship. We help you maximise your chances by strengthening your proposal, identifying multiple funding sources, and timing your application strategically.",
   },
   {
     q: "How long does the PhD application process take?",
@@ -139,14 +139,14 @@ const faqItems = [
   },
   {
     q: "Can Edmark help me if I've already been rejected?",
-    a: "Absolutely — many of our research degree clients come to us after a previous rejection. We review what went wrong (usually a weak proposal, poor supervisor fit, or incomplete application), and help you completely restructure your approach for a successful reapplication. Several of our students have been accepted on their second attempt with our support.",
+    a: "Absolutely. Many of our research degree clients come to us after a previous rejection. We review what went wrong (usually a weak proposal, poor supervisor fit, or incomplete application), and help you completely restructure your approach for a successful reapplication. Several of our students have been accepted on their second attempt with our support.",
   },
 ];
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Research Degree Support — Masters by Research & PhD Applications",
+  name: "Research Degree Support: Masters by Research & PhD Applications",
   description: "Complete support for Masters by Research and PhD applications at Australian universities. Research proposal writing, supervisor matching, scholarship guidance and application management.",
   provider: {
     "@type": "Organization",
@@ -181,7 +181,7 @@ export default function ResearchDegreesPage() {
       <PageHero
         eyebrow="Research degrees"
         title="Masters by Research & PhD application support"
-        subtitle="From research proposal writing to supervisor matching and scholarship applications — we guide you into Australia's top research programs."
+        subtitle="From research proposal writing to supervisor matching and scholarship applications, we guide you into Australia's top research programs."
       />
       <Breadcrumb items={[{ label: "Research Degrees" }]} />
 
@@ -335,7 +335,7 @@ export default function ResearchDegreesPage() {
             center
             eyebrow="Our process"
             title="How we help you secure a research place"
-            subtitle="From first conversation to confirmed offer — here's what working with us looks like."
+            subtitle="From first conversation to confirmed offer, here's what working with us looks like."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[

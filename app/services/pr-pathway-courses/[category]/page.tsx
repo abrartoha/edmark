@@ -21,7 +21,7 @@ export function generateMetadata({
   const cat = getPrCategory(params.category);
   if (!cat) return {};
   return {
-    title: `${cat.title} — PR Pathway Courses`,
+    title: `${cat.title}: PR Pathway Courses`,
     description: `${cat.tagline} Explore ${cat.title.toLowerCase()} qualifications, eligibility and career pathways with Edmark Education.`,
     alternates: { canonical: `/services/pr-pathway-courses/${cat.slug}` },
   };
@@ -108,7 +108,7 @@ export default function PrCategoryPage({
             center
             eyebrow="Eligibility"
             title="Eligibility requirements"
-            subtitle="General entry guidance — exact requirements vary by provider, course and your visa. We confirm the specifics for you."
+            subtitle="General entry guidance. Exact requirements vary by provider, course and your visa. We confirm the specifics for you."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {cat.eligibility.map((e) => (
@@ -156,7 +156,7 @@ export default function PrCategoryPage({
         <div className="container-page">
           <p className="mx-auto max-w-3xl rounded-2xl border border-brand-100 bg-brand-50/60 p-5 text-center text-xs leading-relaxed text-brand-900/60">
             Skilled occupation lists and migration rules change regularly. Edmark provides education and
-            course guidance only — formal migration advice must come from a registered migration agent
+            course guidance only. Formal migration advice must come from a registered migration agent
             (MARA), whom we can connect you with.
           </p>
         </div>

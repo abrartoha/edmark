@@ -79,7 +79,7 @@ export default function ExitIntentPopup() {
               Wait! Before you go&hellip;
             </h3>
             <p className="mt-2 text-center text-sm text-brand-900/70">
-              Download our free <strong>Study in Australia Checklist</strong> — everything you need to know in one place.
+              Download our free <strong>Study in Australia Checklist</strong>. Everything you need to know in one place.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex gap-3">
               <input

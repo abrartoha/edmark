@@ -4,7 +4,7 @@ import { useEffect, useState, type CSSProperties } from "react";
 
 const STORAGE_KEY = "edmark_intro_seen";
 
-// Four tiles matching the logo — top-left big, top-right small, bottom-left small, bottom-right big
+// Four tiles matching the logo: top-left big, top-right small, bottom-left small, bottom-right big
 // Each tile flies in from a corner
 const tiles: { style: CSSProperties; from: CSSProperties }[] = [
   {
@@ -111,7 +111,7 @@ export default function Intro() {
           ))}
         </div>
 
-        {/* Wordmark sliding in from the side — matching logo typography */}
+        {/* Wordmark sliding in from the side, matching logo typography */}
         <div className="intro-word overflow-hidden text-center sm:text-left">
           <span className="block font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
             EDMARK

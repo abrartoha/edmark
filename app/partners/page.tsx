@@ -142,7 +142,7 @@ export default function PartnersPage() {
             <SectionHeading
               eyebrow="Why it matters"
               title="How our partnerships benefit you"
-              subtitle="We don't just recommend institutions — we have direct relationships with their admissions teams. This gives our students a real advantage."
+              subtitle="We don't just recommend institutions. We have direct relationships with their admissions teams. This gives our students a real advantage."
             />
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (

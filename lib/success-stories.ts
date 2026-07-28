@@ -17,7 +17,7 @@ export const successStories: SuccessStory[] = [
     quote:
       "I had no idea where to start. Edmark mapped out three perfect courses, got my application in early, and I received my offer within weeks. Genuinely life-changing.",
     story:
-      "Priya came to us overwhelmed by the sheer number of nursing programs available in Australia. She wasn't sure whether to pursue a diploma or a full degree, and she had limited knowledge of Melbourne's universities. After a single consultation, we identified three programs that matched her clinical interests and budget. We handled her application, secured a partial scholarship, and prepared her for life in Melbourne — from finding affordable accommodation near campus to setting up her health insurance.",
+      "Priya came to us overwhelmed by the sheer number of nursing programs available in Australia. She wasn't sure whether to pursue a diploma or a full degree, and she had limited knowledge of Melbourne's universities. After a single consultation, we identified three programs that matched her clinical interests and budget. We handled her application, secured a partial scholarship, and prepared her for life in Melbourne, from finding affordable accommodation near campus to setting up her health insurance.",
     outcome: "Now working as a registered nurse at a Melbourne hospital",
   },
   {
@@ -39,7 +39,7 @@ export const successStories: SuccessStory[] = [
     quote:
       "My English wasn't strong enough for direct entry, but Edmark showed me a pathway I didn't know existed. Now I'm at one of the best tech universities in Australia.",
     story:
-      "Ahmed dreamed of studying IT in Australia but his IELTS score fell short of direct entry requirements. Instead of giving up, we designed a pathway: starting with an English language course (ELICOS), progressing to a Diploma of IT, and then articulating into a bachelor's degree at RMIT with full credit. This structured approach gave Ahmed the time to build his language skills while progressing toward his degree — without losing a year.",
+      "Ahmed dreamed of studying IT in Australia but his IELTS score fell short of direct entry requirements. Instead of giving up, we designed a pathway: starting with an English language course (ELICOS), progressing to a Diploma of IT, and then articulating into a bachelor's degree at RMIT with full credit. This structured approach gave Ahmed the time to build his language skills while progressing toward his degree, without losing a year.",
     outcome: "Currently completing his Bachelor of IT at RMIT with a high distinction average",
   },
   {

@@ -11,7 +11,7 @@ export default function Services() {
         <SectionHeading
           center
           eyebrow="What we do"
-          title="Everything you need to study in Australia — under one roof"
+          title="Everything you need to study in Australia, under one roof"
           subtitle="From your first question to your first day on campus, Edmark handles the hard parts so you can focus on what matters: your future."
         />
 

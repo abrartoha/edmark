@@ -34,11 +34,11 @@ Melbourne, Sydney and Brisbane are popular choices, but regional universities of
 
 ## Think about pathways and flexibility
 
-Not every student enters their dream course directly. Pathway programs — such as foundation studies, diplomas and English language courses — can bridge the gap between where you are now and where you want to be. Many pathway programs guarantee entry into a bachelor's degree with full credit transfer.
+Not every student enters their dream course directly. Pathway programs such as foundation studies, diplomas and English language courses can bridge the gap between where you are now and where you want to be. Many pathway programs guarantee entry into a bachelor's degree with full credit transfer.
 
 ## Get expert guidance
 
-With over 22,000 courses across 40+ institutions, the options can feel overwhelming. That's where a free consultation with an education advisor makes a real difference. We've helped hundreds of students find the course that matches their goals, budget and career aspirations — and we can do the same for you.
+With over 22,000 courses across 40+ institutions, the options can feel overwhelming. That's where a free consultation with an education advisor makes a real difference. We've helped hundreds of students find the course that matches their goals, budget and career aspirations, and we can do the same for you.
 `,
   "complete-guide-to-australian-student-visas-2026": `
 ## What is the Subclass 500 visa?
@@ -78,10 +78,10 @@ Student visa holders can work up to 48 hours per fortnight during study periods 
 
 ## Common mistakes to avoid
 
-- **Submitting incomplete documents** — this is the number one reason for delays
-- **Insufficient financial evidence** — make sure your bank statements cover the required amounts
-- **Weak GTE statement** — this should clearly explain your motivation for studying in Australia
-- **Applying too late** — don't leave it until the last minute
+- **Submitting incomplete documents**: this is the number one reason for delays
+- **Insufficient financial evidence**: make sure your bank statements cover the required amounts
+- **Weak GTE statement**: this should clearly explain your motivation for studying in Australia
+- **Applying too late**: don't leave it until the last minute
 
 ## How Edmark can help
 
@@ -90,7 +90,7 @@ While we are not migration agents, we guide you through every step of the visa p
   "top-scholarships-for-international-students-in-australia": `
 ## Why scholarships matter
 
-Studying in Australia is a significant financial investment, with tuition fees ranging from $20,000 to $50,000 AUD per year depending on the course and institution. Scholarships can reduce this burden substantially — some covering full tuition, while others provide partial fee waivers or living cost support.
+Studying in Australia is a significant financial investment, with tuition fees ranging from $20,000 to $50,000 AUD per year depending on the course and institution. Scholarships can reduce this burden substantially, with some covering full tuition and others providing partial fee waivers or living cost support.
 
 ## Government scholarships
 
@@ -104,10 +104,10 @@ A government program that provides scholarships for students studying at regiona
 
 Most Australian universities offer their own scholarship programs. Some notable examples:
 
-- **University of Melbourne** — Melbourne International Undergraduate Scholarship (up to $28,000 fee remission)
-- **Monash University** — International Merit Scholarship (up to $10,000 per year)
-- **RMIT University** — RMIT International Scholarship (up to 25% fee waiver)
-- **Deakin University** — Deakin International Scholarship (up to 25% fee reduction)
+- **University of Melbourne**: Melbourne International Undergraduate Scholarship (up to $28,000 fee remission)
+- **Monash University**: International Merit Scholarship (up to $10,000 per year)
+- **RMIT University**: RMIT International Scholarship (up to 25% fee waiver)
+- **Deakin University**: Deakin International Scholarship (up to 25% fee reduction)
 
 These scholarships are typically merit-based and assessed on academic performance, but some also consider financial need and community involvement.
 
@@ -117,11 +117,11 @@ Some scholarships are reserved for students from specific countries or regions. 
 
 ## How to maximise your chances
 
-1. **Start early** — many scholarships have deadlines 6-12 months before the course starts
-2. **Apply to multiple scholarships** — don't put all your eggs in one basket
-3. **Write a compelling personal statement** — explain your goals, achievements and why you deserve funding
-4. **Maintain strong academic results** — most merit scholarships require a minimum GPA
-5. **Get professional help** — an experienced education advisor can identify scholarships you didn't know existed
+1. **Start early**: many scholarships have deadlines 6-12 months before the course starts
+2. **Apply to multiple scholarships**: don't put all your eggs in one basket
+3. **Write a compelling personal statement**: explain your goals, achievements and why you deserve funding
+4. **Maintain strong academic results**: most merit scholarships require a minimum GPA
+5. **Get professional help**: an experienced education advisor can identify scholarships you didn't know existed
 
 ## How Edmark helps you win scholarships
 
@@ -171,18 +171,18 @@ Many students live close to campus and walk or cycle to save on transport costs.
 
 ## Tips to save money
 
-1. **Cook at home** — meal prep saves hundreds per month
-2. **Use student discounts** — your student ID unlocks discounts on food, transport, entertainment and software
-3. **Work part-time** — student visa holders can work up to 48 hours per fortnight
-4. **Live in the inner suburbs** — areas like Footscray, Brunswick and Clayton offer cheaper rent with good transport links
-5. **Buy second-hand textbooks** — check campus noticeboards and online marketplaces
+1. **Cook at home**: meal prep saves hundreds per month
+2. **Use student discounts**: your student ID unlocks discounts on food, transport, entertainment and software
+3. **Work part-time**: student visa holders can work up to 48 hours per fortnight
+4. **Live in the inner suburbs**: areas like Footscray, Brunswick and Clayton offer cheaper rent with good transport links
+5. **Buy second-hand textbooks**: check campus noticeboards and online marketplaces
 `,
   "how-to-write-a-research-proposal-for-australian-universities": `
 ## Why the research proposal matters more than your grades
 
 For coursework programs, your academic transcript is king. For research degrees, it's your research proposal. A well-crafted proposal demonstrates three things universities need to see: that you understand your field, that your research question is original and feasible, and that you have the skills to execute the project.
 
-A mediocre proposal from a student with excellent grades will be rejected. A strong proposal from a student with good (not perfect) grades will get serious attention. This is where most applicants get it wrong — they invest all their energy into their CV and treat the proposal as an afterthought.
+A mediocre proposal from a student with excellent grades will be rejected. A strong proposal from a student with good (not perfect) grades will get serious attention. This is where most applicants get it wrong. They invest all their energy into their CV and treat the proposal as an afterthought.
 
 ## The anatomy of a winning research proposal
 
@@ -197,7 +197,7 @@ This section (usually 1–2 pages) demonstrates your understanding of the field.
 - Summarise the current state of knowledge in your area
 - Identify a clear gap, problem or contradiction in existing research
 - Cite key papers and position your work within the literature
-- Explain why this research matters — both academically and practically
+- Explain why this research matters, both academically and practically
 
 ### Research questions and objectives
 
@@ -227,34 +227,34 @@ Include a reference list of 15–30 key papers you've cited. This demonstrates y
 
 Before you submit a formal application, you should ideally have a supervisor who has agreed to work with you. Here's how:
 
-1. **Search university research profiles** — most universities list faculty members' research interests, publications and current projects
-2. **Read their recent papers** — understand what they're currently working on, not what they published ten years ago
-3. **Check if they're accepting students** — some supervisors have full quotas
-4. **Write a professional approach email** — introduce yourself, explain your research interest, attach your CV and a 1-page proposal summary, and ask if they'd be open to a conversation
+1. **Search university research profiles**: most universities list faculty members' research interests, publications and current projects
+2. **Read their recent papers**: understand what they're currently working on, not what they published ten years ago
+3. **Check if they're accepting students**: some supervisors have full quotas
+4. **Write a professional approach email**: introduce yourself, explain your research interest, attach your CV and a 1-page proposal summary, and ask if they'd be open to a conversation
 
 ### What NOT to do when contacting supervisors
 
-- Don't send a generic email to 50 supervisors — they can tell
-- Don't attach a 20-page proposal as a first contact — keep it to a 1-page summary
-- Don't ask them to suggest a topic for you — come with your own ideas
-- Don't ignore their recent work — reference something specific they've published
+- Don't send a generic email to 50 supervisors. They can tell
+- Don't attach a 20-page proposal as a first contact. Keep it to a 1-page summary
+- Don't ask them to suggest a topic for you. Come with your own ideas
+- Don't ignore their recent work. Reference something specific they've published
 
 ## Research scholarships in Australia
 
 Research degree students have access to funding that coursework students don't:
 
-- **Research Training Program (RTP)** — Australian Government-funded scholarships covering tuition fees and a living stipend ($32,192 AUD/year in 2026). Available at all Australian universities.
-- **University-specific research scholarships** — many universities offer their own research awards with stipends and travel grants
-- **Industry-partnered PhDs** — some research projects are co-funded by industry partners, offering higher stipends and industry experience
-- **International postgraduate research scholarships** — specifically for international students, covering tuition and living costs
+- **Research Training Program (RTP)**: Australian Government-funded scholarships covering tuition fees and a living stipend ($32,192 AUD/year in 2026). Available at all Australian universities.
+- **University-specific research scholarships**: many universities offer their own research awards with stipends and travel grants
+- **Industry-partnered PhDs**: some research projects are co-funded by industry partners, offering higher stipends and industry experience
+- **International postgraduate research scholarships**: specifically for international students, covering tuition and living costs
 
 ## Common mistakes that get research applications rejected
 
-1. **Research question too broad** — "I want to study AI" is not a research question
-2. **No clear gap in the literature** — you must explain what's missing and why it matters
-3. **Methodology is vague or inappropriate** — "I will use mixed methods" without specifics won't cut it
-4. **No supervisor alignment** — applying to a department where nobody works in your area
-5. **Weak writing quality** — your proposal is a writing sample; if it's poorly written, it signals you'll struggle with a thesis
+1. **Research question too broad**: "I want to study AI" is not a research question
+2. **No clear gap in the literature**: you must explain what's missing and why it matters
+3. **Methodology is vague or inappropriate**: "I will use mixed methods" without specifics won't cut it
+4. **No supervisor alignment**: applying to a department where nobody works in your area
+5. **Weak writing quality**: your proposal is a writing sample; if it's poorly written, it signals you'll struggle with a thesis
 
 ## How Edmark can help
 
@@ -272,7 +272,7 @@ Book a free consultation and let's discuss your research goals.
   "10-ielts-tips-to-score-7-or-higher": `
 ## Tip 1: Understand the scoring system
 
-IELTS scores each module (Listening, Reading, Writing, Speaking) on a band scale of 0–9 in 0.5 increments. Your overall score is the average of all four modules. To score 7.0 overall, you don't need 7.0 in every module — but you can't afford anything below 6.5.
+IELTS scores each module (Listening, Reading, Writing, Speaking) on a band scale of 0–9 in 0.5 increments. Your overall score is the average of all four modules. To score 7.0 overall, you don't need 7.0 in every module, but you can't afford anything below 6.5.
 
 ## Tip 2: Master time management in Reading
 
@@ -280,7 +280,7 @@ You have 60 minutes for 40 questions across three passages. Many students run ou
 
 ## Tip 3: Don't leave any answer blank
 
-There is no negative marking in IELTS. If you're unsure, make your best guess. A blank answer is always wrong — a guess has a chance of being right.
+There is no negative marking in IELTS. If you're unsure, make your best guess. A blank answer is always wrong, but a guess has a chance of being right.
 
 ## Tip 4: Learn the Writing Task 2 structure
 
@@ -288,7 +288,7 @@ For Task 2 (the essay), use this proven structure: introduction (2–3 sentences
 
 ## Tip 5: Use linking words naturally
 
-Words like "however," "furthermore," "in contrast" and "consequently" improve your coherence score — but only if they're used correctly. Don't force them in where they don't belong. Practice using them in sentences until they feel natural.
+Words like "however," "furthermore," "in contrast" and "consequently" improve your coherence score, but only if they're used correctly. Don't force them in where they don't belong. Practice using them in sentences until they feel natural.
 
 ## Tip 6: Practice Speaking with a timer
 
@@ -300,7 +300,7 @@ The Reading module uses academic passages from journals, textbooks and magazines
 
 ## Tip 8: Focus on Listening keywords
 
-Before each Listening section, read the questions quickly and underline keywords. Listen for synonyms and paraphrases — IELTS rarely uses the exact same words in the question and the recording.
+Before each Listening section, read the questions quickly and underline keywords. Listen for synonyms and paraphrases, because IELTS rarely uses the exact same words in the question and the recording.
 
 ## Tip 9: Get professional feedback on Writing
 
@@ -308,7 +308,7 @@ Writing is the hardest module to improve alone because you can't objectively ass
 
 ## Tip 10: Take official practice tests under exam conditions
 
-Complete at least 3 full practice tests (Cambridge IELTS books are the gold standard) under real exam conditions — timed, no breaks, no distractions. This builds stamina and reduces test-day anxiety.
+Complete at least 3 full practice tests (Cambridge IELTS books are the gold standard) under real exam conditions: timed, no breaks, no distractions. This builds stamina and reduces test-day anxiety.
 `,
   "pte-academic-preparation-guide": `
 ## What is PTE Academic?
@@ -325,9 +325,9 @@ PTE Academic (Pearson Test of English) is a computer-based English language test
 
 PTE scores range from 10 to 90. Here's how they map to university requirements:
 
-- PTE 50 (≈ IELTS 6.0) — minimum for most undergraduate programs
-- PTE 58 (≈ IELTS 6.5) — common postgraduate requirement
-- PTE 65 (≈ IELTS 7.0) — required for competitive programs and some professional courses
+- PTE 50 (≈ IELTS 6.0): minimum for most undergraduate programs
+- PTE 58 (≈ IELTS 6.5): common postgraduate requirement
+- PTE 65 (≈ IELTS 7.0): required for competitive programs and some professional courses
 
 ## Top preparation strategies
 
@@ -337,7 +337,7 @@ Read Aloud contributes to both your reading and speaking scores. Practice readin
 
 ### 2. Practice "Write from Dictation" obsessively
 
-This task contributes heavily to your writing and listening scores. You hear a sentence once and must type it exactly. Practice with dictation exercises daily — this single task can significantly boost your overall score.
+This task contributes heavily to your writing and listening scores. You hear a sentence once and must type it exactly. Practice with dictation exercises daily. This single task can significantly boost your overall score.
 
 ### 3. Use official PTE practice tests
 
@@ -353,10 +353,10 @@ The microphone auto-detects silence. If you pause for more than 3 seconds, it wi
 
 ## Free resources
 
-- **PTE Official Website** — free practice questions and scored mock tests
-- **E2Language** — free YouTube tutorials for every PTE task type
-- **PTE Study App** — mobile practice on the go
-- **Cambridge English** — general English skill building
+- **PTE Official Website**: free practice questions and scored mock tests
+- **E2Language**: free YouTube tutorials for every PTE task type
+- **PTE Study App**: mobile practice on the go
+- **Cambridge English**: general English skill building
 
 ## Our advice
 
@@ -375,10 +375,10 @@ Many Australian universities, especially for postgraduate and competitive progra
 
 ### Opening paragraph: Hook + purpose
 
-Start with something specific — a moment, experience, or realisation that sparked your interest in this field. Then state clearly what you're applying for and why.
+Start with something specific: a moment, experience, or realisation that sparked your interest in this field. Then state clearly what you're applying for and why.
 
 **Bad:** "I have always been interested in business."
-**Good:** "When I helped my family's small retail business survive a cash flow crisis at age 19, I realised that financial literacy wasn't just an academic concept — it was the difference between a family keeping and losing their livelihood."
+**Good:** "When I helped my family's small retail business survive a cash flow crisis at age 19, I realised that financial literacy wasn't just an academic concept. It was the difference between a family keeping and losing their livelihood."
 
 ### Body paragraph 1: Academic background
 
@@ -403,15 +403,15 @@ Explain what you plan to do after graduating and how this program connects to yo
 
 ## Common mistakes to avoid
 
-1. **Being too generic** — every sentence should be specific to you and to this program
-2. **Repeating your CV** — the SOP adds context and narrative, not a list of achievements
-3. **Negative language** — don't dwell on failures or weaknesses; focus on growth
-4. **Exceeding the word limit** — if they say 500 words, stay under 500 words
-5. **Grammatical errors** — have someone proofread your SOP; errors signal carelessness
+1. **Being too generic**: every sentence should be specific to you and to this program
+2. **Repeating your CV**: the SOP adds context and narrative, not a list of achievements
+3. **Negative language**: don't dwell on failures or weaknesses; focus on growth
+4. **Exceeding the word limit**: if they say 500 words, stay under 500 words
+5. **Grammatical errors**: have someone proofread your SOP; errors signal carelessness
 
 ## How Edmark can help
 
-We've reviewed hundreds of SOPs and know exactly what Australian admissions committees look for. Our team helps you brainstorm, structure, write and refine your SOP until it's compelling, authentic and polished. This service is included in our free consultation — book one today.
+We've reviewed hundreds of SOPs and know exactly what Australian admissions committees look for. Our team helps you brainstorm, structure, write and refine your SOP until it's compelling, authentic and polished. This service is included in our free consultation, so book one today.
 `,
   "ielts-vs-pte-which-english-test-should-you-take": `
 ## Both tests are accepted
@@ -424,7 +424,7 @@ IELTS has been the gold standard for English testing for decades. It tests four 
 
 - **Listening** (30 minutes): Multiple choice, matching, sentence completion
 - **Reading** (60 minutes): Three long passages with various question types
-- **Writing** (60 minutes): Two tasks — a report/letter and an essay
+- **Writing** (60 minutes): Two tasks, a report/letter and an essay
 - **Speaking** (11–14 minutes): Face-to-face interview with an examiner
 
 **Key features:**
@@ -443,7 +443,7 @@ PTE Academic is a newer, fully computer-based test:
 - **Listening** (30–43 minutes): Summarise spoken text, multiple choice, fill in the blanks
 
 **Key features:**
-- Entirely computer-based — you speak into a microphone
+- Entirely computer-based, so you speak into a microphone
 - AI-scored (no human examiner for speaking)
 - Scores on a scale of 10–90
 - Results available in 1–2 days
@@ -476,7 +476,7 @@ Here's a rough guide to how IELTS and PTE scores compare:
 
 ## Our advice
 
-There's no objectively "better" test — it depends on your skills and preferences. We recommend taking a free practice test for both IELTS and PTE to see which format you feel more comfortable with. If you're unsure, book a free consultation and we'll help you decide based on your strengths.
+There's no objectively "better" test. It depends on your skills and preferences. We recommend taking a free practice test for both IELTS and PTE to see which format you feel more comfortable with. If you're unsure, book a free consultation and we'll help you decide based on your strengths.
 `,
 };
 

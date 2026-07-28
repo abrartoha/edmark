@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     slug: "complete-guide-to-australian-student-visas-2026",
     title: "Complete Guide to Australian Student Visas in 2026",
     excerpt:
-      "Everything you need to know about the Subclass 500 student visa — requirements, costs, processing times and common mistakes to avoid.",
+      "Everything you need to know about the Subclass 500 student visa, including requirements, costs, processing times and common mistakes to avoid.",
     category: "Visa",
     date: "2026-07-07",
     readTime: "10 min read",
@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     slug: "top-scholarships-for-international-students-in-australia",
     title: "Top Scholarships for International Students in Australia",
     excerpt:
-      "From government-funded Australia Awards to university-specific grants, here are the scholarships worth applying for — and how to win them.",
+      "From government-funded Australia Awards to university-specific grants, here are the scholarships worth applying for, and how to win them.",
     category: "Scholarships",
     date: "2026-06-30",
     readTime: "8 min read",
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
     slug: "cost-of-living-in-melbourne-student-guide",
     title: "Cost of Living in Melbourne: A Student's Guide",
     excerpt:
-      "A realistic breakdown of what you'll spend on rent, food, transport and fun in Melbourne — plus tips to stretch your budget further.",
+      "A realistic breakdown of what you'll spend on rent, food, transport and fun in Melbourne, plus tips to stretch your budget further.",
     category: "Student Life",
     date: "2026-06-23",
     readTime: "6 min read",
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     slug: "10-ielts-tips-to-score-7-or-higher",
     title: "10 IELTS Tips to Score 7.0 or Higher",
     excerpt:
-      "Proven strategies for each IELTS module — Listening, Reading, Writing and Speaking — from students who achieved band 7.0+ on their first attempt.",
+      "Proven strategies for each IELTS module (Listening, Reading, Writing and Speaking) from students who achieved band 7.0+ on their first attempt.",
     category: "Test Prep",
     date: "2026-07-10",
     readTime: "8 min read",
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     slug: "pte-academic-preparation-guide",
     title: "PTE Academic: Complete Preparation Guide for Beginners",
     excerpt:
-      "Everything you need to know about PTE Academic — test format, scoring, preparation resources and strategies to hit your target score.",
+      "Everything you need to know about PTE Academic, including test format, scoring, preparation resources and strategies to hit your target score.",
     category: "Test Prep",
     date: "2026-07-03",
     readTime: "9 min read",

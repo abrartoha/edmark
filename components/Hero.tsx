@@ -45,7 +45,7 @@ export default function Hero() {
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
             Confused about which course, campus or career path is right for you?
-            We turn confusion into a clear plan — matching you with the right
+            We turn confusion into a clear plan, matching you with the right
             university, maximising your scholarship chances, and handling the
             paperwork so you can focus on your future.
           </p>
@@ -96,11 +96,11 @@ export default function Hero() {
 
             <div className="mt-6 rounded-2xl bg-brand-50 p-5">
               <p className="text-sm font-medium text-brand-800">
-                &ldquo;Edmark found me a course I&apos;d never even considered —
+                &ldquo;Edmark found me a course I&apos;d never even considered,
                 and a scholarship that covered my first year.&rdquo;
               </p>
               <p className="mt-3 text-xs font-semibold text-brand-600">
-                — Priya, now studying Nursing in Melbourne
+                Priya, now studying Nursing in Melbourne
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 import { IconPhone, IconMail, IconPin, IconStar } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Book a Free Consultation",
+  title: "Contact Us: Book a Free Consultation",
   description:
     "Book your free education consultation with Edmark Education. Call, email or visit our Sunshine VIC office. Expert, no-obligation advice for studying in Australia.",
   alternates: { canonical: "/contact" },
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Let's talk"
         title="Book your free consultation"
-        subtitle="Tell us where you want to go — we'll show you the fastest, smartest way to get there. No cost, no pressure, no obligation."
+        subtitle="Tell us where you want to go and we'll show you the fastest, smartest way to get there. No cost, no pressure, no obligation."
       />
       <Breadcrumb items={[{ label: "Contact" }]} />
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
               Speak with an advisor today
             </h2>
             <p className="mt-3 text-brand-900/70">
-              Prefer to talk directly? Reach out any way you like — we usually
+              Prefer to talk directly? Reach out any way you like. We usually
               reply within <strong>2 hours</strong> during business hours.
             </p>
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
                 feel simple.&rdquo;
               </p>
               <p className="mt-2 text-xs font-semibold text-brand-600">
-                — Lucia F., Diploma of Business
+                Lucia F., Diploma of Business
               </p>
             </div>
           </div>

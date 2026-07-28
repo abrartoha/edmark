@@ -1,4 +1,4 @@
-// Lightweight inline icon set (stroke-based). Keeps the bundle tiny — no icon lib.
+// Lightweight inline icon set (stroke-based). Keeps the bundle tiny, no icon lib.
 type P = { className?: string };
 const base = "h-6 w-6";
 

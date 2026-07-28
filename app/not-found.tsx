@@ -10,7 +10,7 @@ export default function NotFound() {
           This page took a gap year
         </h1>
         <p className="mx-auto mt-3 max-w-md text-brand-900/70">
-          The page you&apos;re looking for doesn&apos;t exist — but your future
+          The page you&apos;re looking for doesn&apos;t exist, but your future
           does. Let&apos;s get you back on track.
         </p>
         <Link href="/" className="btn-primary mt-8">

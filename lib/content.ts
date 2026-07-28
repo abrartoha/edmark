@@ -16,7 +16,7 @@ export const services: Service[] = [
     title: "Student Counselling",
     short:
       "Free, honest one-on-one counselling that maps your goals, budget and the right study path in Australia.",
-    long: "Our experienced counsellors take the time to understand your academic background, career goals, budget and personal situation — then give you clear, unbiased advice on the best courses, institutions and pathways for you. No pressure, no hidden agenda, just guidance you can trust.",
+    long: "Our experienced counsellors take the time to understand your academic background, career goals, budget and personal situation, then give you clear, unbiased advice on the best courses, institutions and pathways for you. No pressure, no hidden agenda, just guidance you can trust.",
     points: [
       "One-on-one session with an expert advisor",
       "Course, institution and pathway recommendations",
@@ -42,7 +42,7 @@ export const services: Service[] = [
     icon: "graduation",
     title: "Short Courses (Security & Aged Care)",
     short:
-      "Fast, practical vocational courses — Security, Aged Care and Child Care — for job-ready skills and recognised qualifications.",
+      "Fast, practical vocational courses in Security, Aged Care and Child Care for job-ready skills and recognised qualifications.",
     long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
     points: [
       "Security licensing courses",
@@ -56,7 +56,7 @@ export const services: Service[] = [
     icon: "document",
     title: "Health Insurance (OSHC)",
     short:
-      "Arrange the Overseas Student Health Cover (OSHC) required for your student visa — quick and hassle-free.",
+      "Arrange the Overseas Student Health Cover (OSHC) required for your student visa, quick and hassle-free.",
     long: "Every international student needs Overseas Student Health Cover (OSHC) for the length of their visa. We help you compare providers, choose the right level of cover for yourself or your family, and arrange your policy so your visa and enrolment requirements are fully met.",
     points: [
       "Compare OSHC providers and levels of cover",
@@ -70,7 +70,7 @@ export const services: Service[] = [
     icon: "headset",
     title: "PTE, NAATI & PY",
     short:
-      "Test preparation for PTE Academic and NAATI CCL, plus guidance into the Professional Year Program — all to boost your points.",
+      "Test preparation for PTE Academic and NAATI CCL, plus guidance into the Professional Year Program, all to boost your points.",
     long: "Strong English scores, community-language credentials and Australian work experience can each add valuable points toward skilled migration. We guide you on PTE Academic and NAATI CCL test preparation and booking, and help eligible graduates into the Professional Year Program (PYP) in accounting, IT and engineering.",
     points: [
       "PTE Academic preparation and booking guidance",
@@ -84,8 +84,8 @@ export const services: Service[] = [
     icon: "research",
     title: "Research Degrees (Masters by Research & PhD)",
     short:
-      "From supervisor match to a winning research proposal — full support for Masters by Research and PhD applications.",
-    long: "Research degrees are very different from coursework programs. You need a strong research proposal, a supervisor match, and evidence of research capability. We guide you through every step — from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
+      "From supervisor match to a winning research proposal, full support for Masters by Research and PhD applications.",
+    long: "Research degrees are very different from coursework programs. You need a strong research proposal, a supervisor match, and evidence of research capability. We guide you through every step, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
     points: [
       "Research proposal writing and review",
       "Supervisor identification and matching",
@@ -100,7 +100,7 @@ export const steps = [
   {
     n: "01",
     title: "Book your free consultation",
-    body: "Tell us your goals in a relaxed, no-pressure chat — online or at our Sunshine office.",
+    body: "Tell us your goals in a relaxed, no-pressure chat, online or at our Sunshine office.",
   },
   {
     n: "02",
@@ -110,7 +110,7 @@ export const steps = [
   {
     n: "03",
     title: "We handle your application",
-    body: "Documents, submissions and follow-ups — managed end to end so you never miss a deadline.",
+    body: "Documents, submissions and follow-ups, managed end to end so you never miss a deadline.",
   },
   {
     n: "04",
@@ -122,7 +122,7 @@ export const steps = [
 export const reasons = [
   {
     title: "Advice you can actually trust",
-    body: "We recommend what's right for you — honest, student-first guidance every time. Your goals come before anything else.",
+    body: "We recommend what's right for you, with honest, student-first guidance every time. Your goals come before anything else.",
   },
   {
     title: "Direct university partnerships",
@@ -130,7 +130,7 @@ export const reasons = [
   },
   {
     title: "End-to-end, done-for-you service",
-    body: "From first chat to first class, one dedicated advisor manages everything — no runaround, no confusion.",
+    body: "From first chat to first class, one dedicated advisor manages everything, with no runaround and no confusion.",
   },
   {
     title: "Proven results",
@@ -163,7 +163,7 @@ export const faqs = [
   // General
   {
     q: "How much does your consultation cost?",
-    a: "Your initial consultation is completely free — no hidden fees, no obligations. We're here to help you find the best path forward.",
+    a: "Your initial consultation is completely free, with no hidden fees and no obligations. We're here to help you find the best path forward.",
   },
   {
     q: "How does the consultation process work?",
@@ -184,11 +184,11 @@ export const faqs = [
   // Courses & Universities
   {
     q: "Which courses and institutions do you work with?",
-    a: "We work across the full spectrum of Australian education — universities, TAFEs, private colleges like PIA, AAHE, VIT and SISTC, English language schools, and foundation/pathway programs. Our partnerships span over 50 institutions across Australia.",
+    a: "We work across the full spectrum of Australian education, including universities, TAFEs, private colleges like PIA, AAHE, VIT and SISTC, English language schools, and foundation/pathway programs. Our partnerships span over 50 institutions across Australia.",
   },
   {
     q: "How do I choose the right course?",
-    a: "We assess your academic background, career goals, budget and lifestyle preferences to shortlist the courses where you'll thrive. We consider employability outcomes, course structure, campus culture and location so you make an informed decision — not a rushed one.",
+    a: "We assess your academic background, career goals, budget and lifestyle preferences to shortlist the courses where you'll thrive. We consider employability outcomes, course structure, campus culture and location so you make an informed decision, not a rushed one.",
   },
   {
     q: "What is the Group of Eight?",
@@ -238,7 +238,7 @@ export const faqs = [
   },
   {
     q: "Do you help after I get my offer?",
-    a: "Absolutely. We provide full pre-departure support — accommodation, health cover, banking and orientation — plus ongoing help throughout your studies.",
+    a: "Absolutely. We provide full pre-departure support covering accommodation, health cover, banking and orientation, plus ongoing help throughout your studies.",
   },
   {
     q: "Where are you located?",
@@ -247,7 +247,7 @@ export const faqs = [
   // Research Degrees
   {
     q: "Do you help with Masters by Research and PhD applications?",
-    a: "Yes — research degree support is one of our specialist services. We help you identify suitable supervisors, write a compelling research proposal, prepare your academic CV and publication portfolio, and manage the entire application process. Research degrees have unique requirements that differ significantly from coursework programs, and our team understands exactly what universities look for.",
+    a: "Yes, research degree support is one of our specialist services. We help you identify suitable supervisors, write a compelling research proposal, prepare your academic CV and publication portfolio, and manage the entire application process. Research degrees have unique requirements that differ significantly from coursework programs, and our team understands exactly what universities look for.",
   },
   {
     q: "Can you help me write a research proposal?",

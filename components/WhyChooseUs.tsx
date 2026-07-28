@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
           <SectionHeading
             eyebrow="Why Edmark"
             title="Students choose us because we put them first"
-            subtitle="There are plenty of agents. There's only one Edmark — where honest advice, real partnerships and a done-for-you service come standard."
+            subtitle="There are plenty of agents. There's only one Edmark, where honest advice, real partnerships and a done-for-you service come standard."
           />
           <Link href="/contact" className="btn-primary mt-8">
             Talk to an advisor <IconArrow />

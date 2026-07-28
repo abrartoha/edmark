@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 type Status = "idle" | "loading" | "success" | "error";
 
 const interests = [
-  "Not sure yet — need advice",
+  "Not sure yet, need advice",
   "Undergraduate degree",
   "Postgraduate / Masters (coursework)",
   "Masters by Research",
@@ -55,8 +55,8 @@ export default function ContactForm() {
       return;
     }
 
-    // Deliver the lead through two independent channels — a database record
-    // and an email notification — so a failure in one never loses the lead.
+    // Deliver the lead through two independent channels (a database record
+    // and an email notification) so a failure in one never loses the lead.
     let dbOk = false;
     let emailOk = false;
 
@@ -67,7 +67,7 @@ export default function ContactForm() {
         if (dbError) console.error("Lead DB insert failed:", dbError);
         else dbOk = true;
       } else {
-        // No database configured — that's fine, the email is the record.
+        // No database configured, so the email is the record.
         dbOk = true;
       }
     } catch (err) {
@@ -110,7 +110,7 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="mt-5 text-xl font-bold text-brand-900">
-          Thank you — we&apos;ve got it!
+          Thank you, we&apos;ve got it!
         </h3>
         <p className="mt-2 text-sm text-brand-900/70">
           <strong>Our team will contact you within 2 hours</strong> during business hours.
@@ -129,7 +129,7 @@ export default function ContactForm() {
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold text-brand-600">3.</span>
-              We begin your application process — fully managed, end to end
+              We begin your application process, fully managed from end to end
             </li>
           </ol>
         </div>

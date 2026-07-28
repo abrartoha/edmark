@@ -10,7 +10,7 @@ export default function Testimonials() {
           center
           eyebrow="Student stories"
           title="Real students. Real offers. Real futures."
-          subtitle="Our reputation is built on referrals — here's what students say after working with Edmark."
+          subtitle="Our reputation is built on referrals. Here's what students say after working with Edmark."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">

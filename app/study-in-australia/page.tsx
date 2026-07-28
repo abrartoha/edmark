@@ -7,9 +7,9 @@ import CTA from "@/components/CTA";
 import { IconCheck, IconGraduation, IconPlane, IconDocument } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Study in Australia — Complete Guide for International Students",
+  title: "Study in Australia: Complete Guide for International Students",
   description:
-    "Everything you need to know about studying in Australia as an international student. Courses, costs, visas, scholarships, work rights and student life — a complete guide by Edmark Education.",
+    "Everything you need to know about studying in Australia as an international student. Courses, costs, visas, scholarships, work rights and student life. A complete guide by Edmark Education.",
   alternates: { canonical: "/study-in-australia" },
 };
 
@@ -82,7 +82,7 @@ export default function StudyInAustraliaPage() {
       <PageHero
         eyebrow="Study in Australia"
         title="Your complete guide to studying in Australia"
-        subtitle="Everything international students need to know — courses, costs, visas, scholarships, work rights and student life."
+        subtitle="Everything international students need to know about courses, costs, visas, scholarships, work rights and student life."
       />
       <Breadcrumb items={[{ label: "Study in Australia" }]} />
 
@@ -93,7 +93,7 @@ export default function StudyInAustraliaPage() {
             center
             eyebrow="Why Australia?"
             title="6 reasons to study in Australia"
-            subtitle="Australia is the third most popular destination for international students worldwide — and for good reason."
+            subtitle="Australia is the third most popular destination for international students worldwide, and for good reason."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyAustralia.map((item, i) => (
@@ -292,11 +292,11 @@ export default function StudyInAustraliaPage() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">1</span>
-                <span><strong className="text-brand-900">Semester 1 (February/March)</strong> — The primary intake with the widest range of courses. Applications typically close in October–December of the previous year.</span>
+                <span><strong className="text-brand-900">Semester 1 (February/March)</strong> is the primary intake, with the widest range of courses. Applications typically close in October–December of the previous year.</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">2</span>
-                <span><strong className="text-brand-900">Semester 2 (July/August)</strong> — A secondary intake available for most courses. Applications typically close in April–May.</span>
+                <span><strong className="text-brand-900">Semester 2 (July/August)</strong> is a secondary intake available for most courses. Applications typically close in April–May.</span>
               </li>
             </ul>
             <p className="mt-4 text-sm text-brand-900/50">

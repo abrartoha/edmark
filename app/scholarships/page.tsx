@@ -9,7 +9,7 @@ import { IconCheck, IconTrophy } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Scholarships for International Students in Australia",
   description:
-    "Find and win scholarships to study in Australia. Edmark Education helps you identify merit-based, need-based and government-funded scholarships — free consultation.",
+    "Find and win scholarships to study in Australia. Edmark Education helps you identify merit-based, need-based and government-funded scholarships. Free consultation.",
   alternates: { canonical: "/scholarships" },
 };
 
@@ -101,7 +101,7 @@ export default function ScholarshipsPage() {
       <PageHero
         eyebrow="Scholarships"
         title="Don't pay more than you have to"
-        subtitle="Thousands of dollars in scholarships go unclaimed every year. We help you find and win the funding you qualify for — completely free."
+        subtitle="Thousands of dollars in scholarships go unclaimed every year. We help you find and win the funding you qualify for, completely free."
       />
       <Breadcrumb items={[{ label: "Scholarships" }]} />
 

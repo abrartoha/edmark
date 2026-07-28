@@ -9,7 +9,7 @@ import { IconCheck } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Education Consulting Services",
   description:
-    "Free career counselling, university and course selection, admissions, scholarships and pre-departure support. Edmark Education guides you into the right Australian institution — end to end.",
+    "Free career counselling, university and course selection, admissions, scholarships and pre-departure support. Edmark Education guides you into the right Australian institution, from end to end.",
   alternates: { canonical: "/services" },
 };
 

@@ -11,7 +11,7 @@ import { prCategories } from "@/lib/pr-courses";
 export const metadata: Metadata = {
   title: "PR Pathway Courses",
   description:
-    "Study pathways aligned with Australia's in-demand occupations — Trade, Nursing, Hospitality & Cookery and Teaching. Explore qualifications, eligibility and career pathways with Edmark Education.",
+    "Study pathways aligned with Australia's in-demand occupations in Trade, Nursing, Hospitality & Cookery and Teaching. Explore qualifications, eligibility and career pathways with Edmark Education.",
   alternates: { canonical: "/services/pr-pathway-courses" },
 };
 
@@ -28,7 +28,7 @@ export default function PrPathwayPage() {
       <PageHero
         eyebrow="Services"
         title="PR Pathway Courses"
-        subtitle="Choose a study path aligned with Australia's in-demand occupations — and build genuine skills and experience while you're at it."
+        subtitle="Choose a study path aligned with Australia's in-demand occupations, and build genuine skills and experience while you're at it."
       />
       <Breadcrumb
         items={[
@@ -61,7 +61,7 @@ export default function PrPathwayPage() {
             <p className="text-sm leading-relaxed text-brand-900/70">
               Australia&apos;s skilled occupation lists include many trade, health, hospitality and
               education roles. The right qualification can open both a career and a longer-term
-              pathway — but the rules change often.
+              pathway, but the rules change often.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
               We give you honest, up-to-date course guidance and connect you with a registered

@@ -7,7 +7,7 @@ import { blogPosts } from "@/lib/blog";
 import { IconArrow } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Blog — Study in Australia Tips & Guides",
+  title: "Blog: Study in Australia Tips & Guides",
   description:
     "Expert tips, guides and advice for international students planning to study in Australia. Courses, visas, scholarships, student life and more from Edmark Education.",
   alternates: { canonical: "/blog" },
@@ -86,7 +86,7 @@ export default function BlogPage() {
 
       <CTA
         title="Need personalised advice?"
-        subtitle="Our blog gives you the big picture — a free consultation gives you a plan tailored to your specific goals and circumstances."
+        subtitle="Our blog gives you the big picture. A free consultation gives you a plan tailored to your specific goals and circumstances."
       />
     </>
   );

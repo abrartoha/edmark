@@ -1,4 +1,4 @@
-# Edmark Education — Website
+# Edmark Education Website
 
 A fast, SEO-optimised, conversion-focused website for **Edmark Education**, an Australian education consultancy. Built with **Next.js (App Router)**, **TypeScript** and **Tailwind CSS**, and wired to deploy on **Vercel** with **Supabase** as the backend.
 
@@ -7,10 +7,10 @@ A fast, SEO-optimised, conversion-focused website for **Edmark Education**, an A
 ## ✨ Features
 
 - **Aggressive, conversion-first marketing copy** across every page
-- **Fully responsive** — looks great on mobile, tablet and desktop
+- **Fully responsive**: looks great on mobile, tablet and desktop
 - **SEO-ready**: metadata, Open Graph, `sitemap.xml`, `robots.txt`, JSON-LD structured data (Organization + FAQ)
 - **Brand theme** pulled straight from the Edmark business card (teal / emerald / mint gradient)
-- **Supabase-ready contact form** — captures leads with graceful fallback before Supabase is connected
+- **Supabase-ready contact form**: captures leads with graceful fallback before Supabase is connected
 - Pages: **Home**, **Services**, **About**, **Contact** (with embedded map)
 
 ## 🧱 Tech stack
@@ -41,9 +41,9 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 NEXT_PUBLIC_SITE_URL=https://edmark.com.au
 ```
 
-Add these in **Vercel → Project → Settings → Environment Variables** (and in `.env.local` for local dev — copy `.env.example`).
+Add these in **Vercel → Project → Settings → Environment Variables** (and in `.env.local` for local dev, copy `.env.example`).
 
-> Until Supabase is connected, the contact form still works and shows a success state — it just won't persist data yet.
+> Until Supabase is connected, the contact form still works and shows a success state. It just won't persist data yet.
 
 ## 🖥️ Local development (optional)
 
@@ -55,10 +55,10 @@ npm run dev
 
 ## 🎨 Customising content
 
-Almost all text and business details live in two files — edit these, no component digging required:
+Almost all text and business details live in two files. Edit these, no component digging required:
 
-- [`lib/site.ts`](lib/site.ts) — business name, phone, email, address, nav
-- [`lib/content.ts`](lib/content.ts) — services, process steps, testimonials, FAQs
+- [`lib/site.ts`](lib/site.ts): business name, phone, email, address, nav
+- [`lib/content.ts`](lib/content.ts): services, process steps, testimonials, FAQs
 
 Brand colours live in [`tailwind.config.ts`](tailwind.config.ts).
 

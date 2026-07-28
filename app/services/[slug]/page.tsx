@@ -15,7 +15,7 @@ const serviceExtras: Record<
 > = {
   "student-counselling": {
     extended:
-      "Choosing what and where to study is one of the biggest decisions you'll make — and it shouldn't be rushed or based on incomplete information. Our student counselling sessions are designed to give you clarity. We explore your academic history, career aspirations, budget and personal circumstances to build a realistic, personalised study plan.\n\nUnlike agents who push whichever institution pays the most, we recommend what's genuinely right for you. That's why most of our students come to us through referrals.",
+      "Choosing what and where to study is one of the biggest decisions you'll make, and it shouldn't be rushed or based on incomplete information. Our student counselling sessions are designed to give you clarity. We explore your academic history, career aspirations, budget and personal circumstances to build a realistic, personalised study plan.\n\nUnlike agents who push whichever institution pays the most, we recommend what's genuinely right for you. That's why most of our students come to us through referrals.",
     whoFor: [
       "High school leavers unsure which course to pursue",
       "Working professionals looking to upskill or change careers",
@@ -31,7 +31,7 @@ const serviceExtras: Record<
   },
   "pr-pathway-courses": {
     extended:
-      "For many students, studying in Australia is also the first step toward permanent residency. But the course you choose matters — qualifications tied to occupations in demand can strengthen your skilled migration profile, while others may not count toward it at all.\n\nWe help you understand how course choice, location and level of study interact with the skilled occupation lists and points test, so your study decision supports your long-term goals. Important: migration rules change often, and formal, personalised migration advice must come from a registered migration agent (MARA) — whom we can connect you with.",
+      "For many students, studying in Australia is also the first step toward permanent residency. But the course you choose matters. Qualifications tied to occupations in demand can strengthen your skilled migration profile, while others may not count toward it at all.\n\nWe help you understand how course choice, location and level of study interact with the skilled occupation lists and points test, so your study decision supports your long-term goals. Important: migration rules change often, and formal, personalised migration advice must come from a registered migration agent (MARA), whom we can connect you with.",
     whoFor: [
       "Students who want their study to support a residency pathway",
       "Graduates considering further study to improve their prospects",
@@ -47,7 +47,7 @@ const serviceExtras: Record<
   },
   "health-insurance": {
     extended:
-      "Overseas Student Health Cover (OSHC) is a mandatory requirement for your student visa — you must hold valid cover for the entire length of your stay. Choosing the right policy protects both your visa status and your health while you study.\n\nWe make it simple. We compare the major OSHC providers, explain what's covered, and help you arrange single, couple or family cover that matches your visa dates and enrolment. If you ever need to make a claim or renew, we're here to help.",
+      "Overseas Student Health Cover (OSHC) is a mandatory requirement for your student visa. You must hold valid cover for the entire length of your stay. Choosing the right policy protects both your visa status and your health while you study.\n\nWe make it simple. We compare the major OSHC providers, explain what's covered, and help you arrange single, couple or family cover that matches your visa dates and enrolment. If you ever need to make a claim or renew, we're here to help.",
     whoFor: [
       "New international students applying for a student visa",
       "Students bringing a partner or family to Australia",
@@ -63,7 +63,7 @@ const serviceExtras: Record<
   },
   "research-degrees": {
     extended:
-      "Research degrees — Masters by Research and PhDs — are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want a well-defined research proposal, evidence of research capability, and a clear alignment between your interests and the expertise of their academic staff. Most importantly, you often need a supervisor willing to take you on before you even submit your formal application.\n\nThis is where most applicants struggle — generic proposals, vague supervisor emails, or applying without understanding what the research group needs. We help you navigate the process, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
+      "Research degrees such as Masters by Research and PhDs are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want a well-defined research proposal, evidence of research capability, and a clear alignment between your interests and the expertise of their academic staff. Most importantly, you often need a supervisor willing to take you on before you even submit your formal application.\n\nThis is where most applicants struggle, with generic proposals, vague supervisor emails, or applications sent without understanding what the research group needs. We help you navigate the process, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
     whoFor: [
       "Graduates wanting to pursue a Masters by Research in Australia",
       "PhD applicants looking for supervisor matches",
@@ -79,7 +79,7 @@ const serviceExtras: Record<
   },
   "pte-naati-py": {
     extended:
-      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare — including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
+      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
     whoFor: [
       "Students needing an English test for a visa or admission",
       "Skilled migration applicants seeking extra points",

@@ -47,7 +47,7 @@ export default function SuccessStoriesPage() {
                     {story.name}
                   </p>
                   <p className="text-sm text-brand-600">
-                    {story.course} — {story.university}
+                    {story.course}, {story.university}
                   </p>
                   <p className="text-xs text-brand-900/50">
                     From {story.origin}

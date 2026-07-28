@@ -4,7 +4,7 @@ import { IconArrow, IconPhone } from "./Icons";
 
 export default function CTA({
   title = "Your future won't wait. Neither should you.",
-  subtitle = "Book your free, no-obligation consultation today. In 30 minutes you'll have a clear plan for studying in Australia — and a team ready to make it happen.",
+  subtitle = "Book your free, no-obligation consultation today. In 30 minutes you'll have a clear plan for studying in Australia, and a team ready to make it happen.",
 }: {
   title?: string;
   subtitle?: string;

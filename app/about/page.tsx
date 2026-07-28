@@ -25,7 +25,7 @@ const values = [
   },
   {
     title: "Excellence in the details",
-    body: "Deadlines, documents, and follow-ups handled meticulously — because the small things decide whether you get that offer.",
+    body: "Deadlines, documents, and follow-ups handled meticulously, because the small things decide whether you get that offer.",
   },
   {
     title: "Relationships that last",
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="mt-6 space-y-4 text-brand-900/70">
               <p>
                 Choosing where and what to study is one of the biggest decisions
-                of your life — yet too many students make it with confusing
+                of your life, yet too many students make it with confusing
                 information, hidden agendas and no real support. We started
                 Edmark Education to change that.
               </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 From our office at Level 5, 12 Clark St in Sunshine, Victoria, we&apos;ve
                 helped hundreds of students find the right course, win scholarships
                 they didn&apos;t know existed, and step onto campus with confidence.
-                No pressure, no jargon — just expert guidance that puts you first.
+                No pressure, no jargon, just expert guidance that puts you first.
               </p>
               <p>
                 Today, Edmark partners with leading Australian universities,
@@ -151,7 +151,7 @@ export default function AboutPage() {
             center
             eyebrow="Our values"
             title="What we stand for"
-            subtitle="These aren't slogans on a wall — they're the standard we hold ourselves to with every student."
+            subtitle="These aren't slogans on a wall. They're the standard we hold ourselves to with every student."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
