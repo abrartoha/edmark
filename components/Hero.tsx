@@ -99,7 +99,7 @@ export default function Hero() {
                 and a scholarship that covered my first year.&rdquo;
               </p>
               <p className="mt-3 text-xs font-semibold text-brand-600">
-                Priya, now studying Nursing in Melbourne
+                Priya, now a registered nurse in Melbourne
               </p>
             </div>
           </div>
