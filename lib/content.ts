@@ -134,7 +134,7 @@ export const reasons = [
   },
   {
     title: "Proven results",
-    body: "Hundreds of students placed, a 98% visa success rate, and a reputation built on referrals, not ads.",
+    body: "Hundreds of students placed into the right courses, and a reputation built on referrals, not ads.",
   },
 ];
 

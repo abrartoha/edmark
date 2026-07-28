@@ -87,10 +87,9 @@ export default function Hero() {
               </span>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-4">
+            <div className="mt-6 grid grid-cols-3 gap-3">
               <Stat value="500+" label="Students guided" />
               <Stat value="50+" label="Partner institutions" />
-              <Stat value="98%" label="Visa success rate" />
               <Stat value="10+" label="Years experience" />
             </div>
 
