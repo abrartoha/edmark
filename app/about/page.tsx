@@ -50,7 +50,7 @@ export default function AboutPage() {
       <Breadcrumb items={[{ label: "About" }]} />
 
       {/* Team / Consultants */}
-      <section className="bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -62,7 +62,7 @@ export default function AboutPage() {
             {site.team.map((member, i) => (
               <div
                 key={member.name}
-                className="reveal rounded-xl border border-line bg-white p-8 text-center"
+                className="reveal rounded-3xl border border-brand-100 bg-white p-8 text-center shadow-soft"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <Image
@@ -70,22 +70,22 @@ export default function AboutPage() {
                   alt={member.name}
                   width={160}
                   height={160}
-                  className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white"
+                  className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white shadow-soft"
                 />
-                <h3 className="mt-5 text-xl font-medium text-ink">
+                <h3 className="mt-5 text-xl font-bold text-brand-900">
                   {member.name}
                 </h3>
-                <p className="text-sm font-medium text-eucalypt">
+                <p className="text-sm font-semibold text-brand-600">
                   {member.role}
                 </p>
                 {member.credential && (
-                  <p className="mt-1 text-xs font-medium text-sage">
+                  <p className="mt-1 text-xs font-medium text-brand-900/60">
                     {member.credential}
                   </p>
                 )}
                 <a
                   href={`mailto:${member.email}`}
-                  className="mt-3 inline-block text-sm font-medium text-eucalypt hover:text-eucalypt transition-colors"
+                  className="mt-3 inline-block text-sm font-medium text-brand-700 hover:text-brand-500 transition-colors"
                 >
                   {member.email}
                 </a>
@@ -102,7 +102,7 @@ export default function AboutPage() {
               eyebrow="Our story"
               title="Founded on a simple belief: every student deserves an honest guide"
             />
-            <div className="mt-6 space-y-4 text-copy">
+            <div className="mt-6 space-y-4 text-brand-900/70">
               <p>
                 Choosing where and what to study is one of the biggest decisions
                 of your life, yet too many students make it with confusing
@@ -131,10 +131,10 @@ export default function AboutPage() {
                 className="card reveal text-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="numeral text-4xl">
+                <div className="font-display text-4xl font-extrabold text-gradient">
                   {s.value}
                 </div>
-                <div className="mt-2 text-sm font-medium text-copy">
+                <div className="mt-2 text-sm font-medium text-brand-900/70">
                   {s.label}
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -159,13 +159,13 @@ export default function AboutPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${(i % 4) * 80}ms` }}
               >
-                <div className="text-eucalypt">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
                   <IconCheck className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-base font-medium text-ink">
+                <h3 className="mt-4 text-base font-bold text-brand-900">
                   {v.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-copy">
+                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
                   {v.body}
                 </p>
               </div>
@@ -175,10 +175,10 @@ export default function AboutPage() {
       </section>
 
       {/* ABN & Legal */}
-      <section className="border-t border-line bg-white py-10">
+      <section className="border-t border-brand-100 bg-white py-10">
         <div className="container-page text-center">
-          <p className="text-sm text-sage">
-            <strong className="text-ink">Edmark Education</strong> · ABN {site.abn} · {site.address.full}
+          <p className="text-sm text-brand-900/60">
+            <strong className="text-brand-900">Edmark Education</strong> · ABN {site.abn} · {site.address.full}
           </p>
         </div>
       </section>

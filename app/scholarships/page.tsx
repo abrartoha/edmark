@@ -120,13 +120,13 @@ export default function ScholarshipsPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="text-eucalypt">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
                   <IconTrophy className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-ink">
+                <h3 className="mt-4 text-lg font-bold text-brand-900">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-copy">
+                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
                   {s.desc}
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function ScholarshipsPage() {
         </div>
       </section>
 
-      <section className="border-t-2 border-brass bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -150,13 +150,13 @@ export default function ScholarshipsPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-line bg-paper numeral text-2xl">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-gradient font-display text-2xl font-extrabold text-brand-950">
                   {s.n}
                 </div>
-                <h3 className="mt-5 text-lg font-medium text-ink">
+                <h3 className="mt-5 text-lg font-bold text-brand-900">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-copy">
+                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
                   {s.body}
                 </p>
               </div>
@@ -172,15 +172,15 @@ export default function ScholarshipsPage() {
             eyebrow="FAQ"
             title="Scholarship questions, answered"
           />
-          <div className="mt-10 divide-y divide-line rounded-xl border border-line">
+          <div className="mt-10 divide-y divide-brand-100 rounded-2xl border border-brand-100">
             {scholarshipFaqs.map((f) => (
               <details
                 key={f.q}
                 className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">
                   {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-eucalypt transition-colors group-open:rotate-45">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-transform group-open:rotate-45">
                     <svg
                       width="16"
                       height="16"
@@ -195,7 +195,7 @@ export default function ScholarshipsPage() {
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-copy">
+                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
                   {f.a}
                 </p>
               </details>

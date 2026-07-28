@@ -8,76 +8,49 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ----------------------------------------------------------------
-        // Deep Eucalypt & Brass. Semantic names, not colour names, so a
-        // future palette change is a single edit in this block.
-        // ----------------------------------------------------------------
-        ink: "#0E1F1A", // near-black, green undertone: headings
-        copy: "#3D4B47", // body text on paper
-        eucalypt: {
-          DEFAULT: "#154D3C", // primary: buttons, links, active states
-          deep: "#0F3A2D", // hover / pressed
-          light: "#8FBFA9", // light-on-dark accent (hero signature phrase)
-        },
-        brass: {
-          DEFAULT: "#C79A3C", // accent, used sparingly
-          deep: "#B0851F", // hover on dark
-        },
-        sage: "#5F6F6A", // muted text, captions, eyebrow labels
-        mist: "#B8C7C1", // body + links on wash-deep
-        paper: {
-          DEFAULT: "#FBFAF7", // page background
-          sunk: "#F3F1EA", // wash-paper terminus, subtle fills
-        },
-        line: "#DFDCD4", // hairline borders
-
-        // ----------------------------------------------------------------
-        // Compatibility ramp. The old teal `brand-*` scale is remapped onto
-        // the new palette so any class not yet swept still lands in-system
-        // instead of resurrecting the teal. Prefer the semantic names above
-        // for new work; this ramp is a migration aid, not a design token.
-        // ----------------------------------------------------------------
+        // Brand palette pulled from the Edmark Education card
         brand: {
-          50: "#F3F1EA",
-          100: "#DFDCD4",
-          200: "#C9C6BC",
-          300: "#A8B5AF",
-          400: "#8FBFA9",
-          500: "#2F6B55",
-          600: "#1D5B47",
-          700: "#154D3C",
-          800: "#123F31",
-          900: "#0E1F1A",
-          950: "#0A1713",
+          50: "#e9fbf4",
+          100: "#c6f5e2",
+          200: "#8fead0",
+          300: "#4fdcb7",
+          400: "#1ecfa0",
+          500: "#12a085", // core emerald
+          600: "#0e8570",
+          700: "#0d6b5b",
+          800: "#0b4f43", // deep teal (card footer)
+          900: "#083a31",
+          950: "#052721",
         },
-        mint: "#8FBFA9",
+        mint: "#1de9b6",
+        cyan: "#22d3ee",
+        ink: "#0a1f1a",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
       },
       backgroundImage: {
-        // Tonal only. All three share the same 165deg light direction.
-        "wash-deep": "linear-gradient(165deg, #154D3C 0%, #0E1F1A 100%)",
-        "wash-paper": "linear-gradient(165deg, #FBFAF7 0%, #F3F1EA 100%)",
-        // Strengthened from the specified 0.88/0.45/transparent. Measured
-        // against the brightest region of the hero poster (255,252,240), the
-        // original stops gave the headline only 1.41:1 where AA large text
-        // needs 3:1, and the supporting paragraph failed harder. These stops
-        // clear AA across the whole text block on a near-white frame:
-        // headline 6.6:1+, paragraph 4.6:1+, signature phrase 3.4:1+.
-        "scrim-hero":
-          "linear-gradient(to top, rgba(14,31,26,0.96) 0%, rgba(14,31,26,0.88) 42%, rgba(14,31,26,0.78) 100%)",
+        "brand-gradient": "linear-gradient(135deg, #1de9b6 0%, #12a085 50%, #22d3ee 100%)",
+        "brand-diagonal": "linear-gradient(120deg, #0b4f43 0%, #0d6b5b 100%)",
+      },
+      boxShadow: {
+        soft: "0 10px 40px -12px rgba(11, 79, 67, 0.25)",
+        glow: "0 20px 60px -20px rgba(18, 160, 133, 0.55)",
       },
       keyframes: {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s ease-out both",
+        float: "float 6s ease-in-out infinite",
       },
     },
   },

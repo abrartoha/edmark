@@ -17,7 +17,7 @@ const institutions = [
 
 export default function TrustLogos() {
   return (
-    <section className="bg-paper-sunk py-14 lg:py-20">
+    <section className="bg-brand-50/50 py-14 lg:py-20">
       <div className="container-page">
         <SectionHeading
           center
@@ -28,10 +28,10 @@ export default function TrustLogos() {
           {institutions.map((uni, i) => (
             <div
               key={uni}
-              className="reveal flex h-24 items-center justify-center rounded-xl border border-line bg-white px-4 text-center transition-all hover:border-sage/50"
+              className="reveal flex h-24 items-center justify-center rounded-2xl border border-brand-100 bg-white px-4 text-center shadow-soft transition-all hover:border-brand-200 hover:shadow-glow"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <span className="text-sm font-medium text-ink">{uni}</span>
+              <span className="text-sm font-semibold text-brand-800">{uni}</span>
             </div>
           ))}
         </div>

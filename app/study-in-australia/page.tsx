@@ -102,13 +102,13 @@ export default function StudyInAustraliaPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="text-eucalypt">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
                   <IconCheck className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 text-base font-medium text-ink">
+                <h3 className="mt-4 text-base font-bold text-brand-900">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-copy">
+                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
                   {item.desc}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default function StudyInAustraliaPage() {
       </section>
 
       {/* Types of Education */}
-      <section className="bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -130,20 +130,20 @@ export default function StudyInAustraliaPage() {
             {educationTypes.map((t, i) => (
               <div
                 key={t.type}
-                className="reveal grid items-center gap-6 rounded-xl border border-line bg-white p-6 sm:grid-cols-[1fr_auto]"
+                className="reveal grid items-center gap-6 rounded-2xl border border-brand-100 bg-white p-6 shadow-soft sm:grid-cols-[1fr_auto]"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div>
-                  <h3 className="text-lg font-medium text-ink">{t.type}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-copy">
+                  <h3 className="text-lg font-bold text-brand-900">{t.type}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-brand-900/70">
                     {t.desc}
                   </p>
                 </div>
-                <div className="rounded-xl bg-paper-sunk px-4 py-2 text-center">
-                  <span className="block text-xs font-medium uppercase text-eucalypt">
+                <div className="rounded-xl bg-brand-50 px-4 py-2 text-center">
+                  <span className="block text-xs font-semibold uppercase text-brand-500">
                     Typical fees
                   </span>
-                  <span className="font-display text-lg font-medium text-ink">
+                  <span className="font-display text-lg font-bold text-brand-900">
                     {t.fees}
                   </span>
                 </div>
@@ -165,20 +165,20 @@ export default function StudyInAustraliaPage() {
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px] text-left text-sm">
               <thead>
-                <tr className="border-b-2 border-line">
-                  <th className="py-3 pr-4 font-medium text-ink">City</th>
-                  <th className="py-3 pr-4 font-medium text-ink">Rent (shared)</th>
-                  <th className="py-3 pr-4 font-medium text-ink">Food</th>
-                  <th className="py-3 font-medium text-ink">Transport</th>
+                <tr className="border-b-2 border-brand-200">
+                  <th className="py-3 pr-4 font-bold text-brand-900">City</th>
+                  <th className="py-3 pr-4 font-bold text-brand-900">Rent (shared)</th>
+                  <th className="py-3 pr-4 font-bold text-brand-900">Food</th>
+                  <th className="py-3 font-bold text-brand-900">Transport</th>
                 </tr>
               </thead>
               <tbody>
                 {livingCosts.map((c) => (
-                  <tr key={c.city} className="border-b border-line">
-                    <td className="py-3 pr-4 font-medium text-ink">{c.city}</td>
-                    <td className="py-3 pr-4 text-copy">{c.rent}</td>
-                    <td className="py-3 pr-4 text-copy">{c.food}</td>
-                    <td className="py-3 text-copy">{c.transport}</td>
+                  <tr key={c.city} className="border-b border-brand-100">
+                    <td className="py-3 pr-4 font-semibold text-brand-900">{c.city}</td>
+                    <td className="py-3 pr-4 text-brand-900/70">{c.rent}</td>
+                    <td className="py-3 pr-4 text-brand-900/70">{c.food}</td>
+                    <td className="py-3 text-brand-900/70">{c.transport}</td>
                   </tr>
                 ))}
               </tbody>
@@ -188,7 +188,7 @@ export default function StudyInAustraliaPage() {
       </section>
 
       {/* Student Visa */}
-      <section className="bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page max-w-4xl">
           <SectionHeading
             center
@@ -207,18 +207,18 @@ export default function StudyInAustraliaPage() {
             ].map((req) => (
               <div
                 key={req}
-                className="flex items-start gap-3 rounded-xl bg-white p-4"
+                className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-soft"
               >
-                <span className="mt-0.5 shrink-0 text-eucalypt">
-                  <IconCheck className="h-4 w-4" />
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                  <IconCheck className="h-3 w-3" />
                 </span>
-                <span className="text-sm text-copy">{req}</span>
+                <span className="text-sm text-brand-900/80">{req}</span>
               </div>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-sage">
+          <p className="mt-8 text-center text-sm text-brand-900/60">
             Visa application charge: $710 AUD · Processing time: 4–12 weeks ·{" "}
-            <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-medium text-eucalypt hover:underline">
+            <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-semibold text-brand-600 hover:underline">
               Read our full visa guide →
             </Link>
           </p>
@@ -237,44 +237,44 @@ export default function StudyInAustraliaPage() {
           <div className="mt-10 overflow-x-auto">
             <table className="w-full min-w-[500px] text-left text-sm">
               <thead>
-                <tr className="border-b-2 border-line">
-                  <th className="py-3 pr-4 font-medium text-ink">Level</th>
-                  <th className="py-3 pr-4 font-medium text-ink">IELTS</th>
-                  <th className="py-3 pr-4 font-medium text-ink">PTE</th>
-                  <th className="py-3 font-medium text-ink">TOEFL iBT</th>
+                <tr className="border-b-2 border-brand-200">
+                  <th className="py-3 pr-4 font-bold text-brand-900">Level</th>
+                  <th className="py-3 pr-4 font-bold text-brand-900">IELTS</th>
+                  <th className="py-3 pr-4 font-bold text-brand-900">PTE</th>
+                  <th className="py-3 font-bold text-brand-900">TOEFL iBT</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-line">
-                  <td className="py-3 pr-4 font-medium text-ink">Foundation / Pathway</td>
-                  <td className="py-3 pr-4 text-copy">5.0–5.5</td>
-                  <td className="py-3 pr-4 text-copy">36–42</td>
-                  <td className="py-3 text-copy">35–46</td>
+                <tr className="border-b border-brand-100">
+                  <td className="py-3 pr-4 font-semibold text-brand-900">Foundation / Pathway</td>
+                  <td className="py-3 pr-4 text-brand-900/70">5.0–5.5</td>
+                  <td className="py-3 pr-4 text-brand-900/70">36–42</td>
+                  <td className="py-3 text-brand-900/70">35–46</td>
                 </tr>
-                <tr className="border-b border-line">
-                  <td className="py-3 pr-4 font-medium text-ink">Undergraduate</td>
-                  <td className="py-3 pr-4 text-copy">6.0–6.5</td>
-                  <td className="py-3 pr-4 text-copy">50–58</td>
-                  <td className="py-3 text-copy">60–79</td>
+                <tr className="border-b border-brand-100">
+                  <td className="py-3 pr-4 font-semibold text-brand-900">Undergraduate</td>
+                  <td className="py-3 pr-4 text-brand-900/70">6.0–6.5</td>
+                  <td className="py-3 pr-4 text-brand-900/70">50–58</td>
+                  <td className="py-3 text-brand-900/70">60–79</td>
                 </tr>
-                <tr className="border-b border-line">
-                  <td className="py-3 pr-4 font-medium text-ink">Postgraduate</td>
-                  <td className="py-3 pr-4 text-copy">6.5–7.0</td>
-                  <td className="py-3 pr-4 text-copy">58–65</td>
-                  <td className="py-3 text-copy">79–94</td>
+                <tr className="border-b border-brand-100">
+                  <td className="py-3 pr-4 font-semibold text-brand-900">Postgraduate</td>
+                  <td className="py-3 pr-4 text-brand-900/70">6.5–7.0</td>
+                  <td className="py-3 pr-4 text-brand-900/70">58–65</td>
+                  <td className="py-3 text-brand-900/70">79–94</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-medium text-ink">PhD / Research</td>
-                  <td className="py-3 pr-4 text-copy">6.5–7.5</td>
-                  <td className="py-3 pr-4 text-copy">58–73</td>
-                  <td className="py-3 text-copy">79–102</td>
+                  <td className="py-3 pr-4 font-semibold text-brand-900">PhD / Research</td>
+                  <td className="py-3 pr-4 text-brand-900/70">6.5–7.5</td>
+                  <td className="py-3 pr-4 text-brand-900/70">58–73</td>
+                  <td className="py-3 text-brand-900/70">79–102</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="mt-6 text-center text-sm text-sage">
+          <p className="mt-6 text-center text-sm text-brand-900/60">
             Not sure which test to take?{" "}
-            <Link href="/blog/ielts-vs-pte-which-english-test-should-you-take" className="font-medium text-eucalypt hover:underline">
+            <Link href="/blog/ielts-vs-pte-which-english-test-should-you-take" className="font-semibold text-brand-600 hover:underline">
               Read our IELTS vs PTE guide →
             </Link>
           </p>
@@ -282,51 +282,51 @@ export default function StudyInAustraliaPage() {
       </section>
 
       {/* Intakes & Work Rights */}
-      <section className="bg-paper-sunk py-16 lg:py-24">
+      <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-2">
           <div className="card reveal">
-            <h3 className="text-xl font-medium text-ink">Intake dates</h3>
-            <p className="mt-3 text-sm leading-relaxed text-copy">
+            <h3 className="text-xl font-bold text-brand-900">Intake dates</h3>
+            <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
               Australian universities typically have two main intakes:
             </p>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3 text-sm text-copy">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-eucalypt text-paper text-xs font-medium">1</span>
-                <span><strong className="text-ink">Semester 1 (February/March)</strong> is the primary intake, with the widest range of courses. Applications typically close in October–December of the previous year.</span>
+              <li className="flex items-start gap-3 text-sm text-brand-900/70">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">1</span>
+                <span><strong className="text-brand-900">Semester 1 (February/March)</strong> is the primary intake, with the widest range of courses. Applications typically close in October–December of the previous year.</span>
               </li>
-              <li className="flex items-start gap-3 text-sm text-copy">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-eucalypt text-paper text-xs font-medium">2</span>
-                <span><strong className="text-ink">Semester 2 (July/August)</strong> is a secondary intake available for most courses. Applications typically close in April–May.</span>
+              <li className="flex items-start gap-3 text-sm text-brand-900/70">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">2</span>
+                <span><strong className="text-brand-900">Semester 2 (July/August)</strong> is a secondary intake available for most courses. Applications typically close in April–May.</span>
               </li>
             </ul>
-            <p className="mt-4 text-sm text-sage">
+            <p className="mt-4 text-sm text-brand-900/50">
               Some institutions also offer trimester or quarterly intakes.
             </p>
           </div>
 
           <div className="card reveal" style={{ transitionDelay: "100ms" }}>
-            <h3 className="text-xl font-medium text-ink">Work while studying</h3>
-            <p className="mt-3 text-sm leading-relaxed text-copy">
+            <h3 className="text-xl font-bold text-brand-900">Work while studying</h3>
+            <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
               Student visa holders enjoy generous work rights in Australia:
             </p>
             <ul className="mt-4 space-y-3">
-              <li className="flex items-start gap-3 text-sm text-copy">
-                <span className="mt-0.5 shrink-0 text-eucalypt">
-                  <IconCheck className="h-4 w-4" />
+              <li className="flex items-start gap-3 text-sm text-brand-900/70">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                  <IconCheck className="h-3 w-3" />
                 </span>
-                <span><strong className="text-ink">During study periods:</strong> Up to 48 hours per fortnight</span>
+                <span><strong className="text-brand-900">During study periods:</strong> Up to 48 hours per fortnight</span>
               </li>
-              <li className="flex items-start gap-3 text-sm text-copy">
-                <span className="mt-0.5 shrink-0 text-eucalypt">
-                  <IconCheck className="h-4 w-4" />
+              <li className="flex items-start gap-3 text-sm text-brand-900/70">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                  <IconCheck className="h-3 w-3" />
                 </span>
-                <span><strong className="text-ink">During breaks:</strong> Unlimited hours</span>
+                <span><strong className="text-brand-900">During breaks:</strong> Unlimited hours</span>
               </li>
-              <li className="flex items-start gap-3 text-sm text-copy">
-                <span className="mt-0.5 shrink-0 text-eucalypt">
-                  <IconCheck className="h-4 w-4" />
+              <li className="flex items-start gap-3 text-sm text-brand-900/70">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                  <IconCheck className="h-3 w-3" />
                 </span>
-                <span><strong className="text-ink">Minimum wage:</strong> $24.10 AUD/hour (2026)</span>
+                <span><strong className="text-brand-900">Minimum wage:</strong> $24.10 AUD/hour (2026)</span>
               </li>
             </ul>
           </div>
@@ -342,9 +342,9 @@ export default function StudyInAustraliaPage() {
             title="Overseas Student Health Cover (OSHC)"
             subtitle="OSHC is mandatory for all international students in Australia. It covers essential medical and hospital services."
           />
-          <div className="mt-8 rounded-xl bg-paper-sunk p-8">
-            <p className="text-sm leading-relaxed text-copy">
-              OSHC typically costs <strong className="text-ink">$500–$700 AUD per year</strong> and must be held for the entire duration of your student visa. Popular providers include Medibank, Allianz, BUPA and NIB. We help you choose the right plan during our pre-departure support.
+          <div className="mt-8 rounded-2xl bg-brand-50 p-8">
+            <p className="text-sm leading-relaxed text-brand-900/70">
+              OSHC typically costs <strong className="text-brand-900">$500–$700 AUD per year</strong> and must be held for the entire duration of your student visa. Popular providers include Medibank, Allianz, BUPA and NIB. We help you choose the right plan during our pre-departure support.
             </p>
           </div>
         </div>

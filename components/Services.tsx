@@ -11,7 +11,7 @@ export default function Services() {
         <SectionHeading
           center
           eyebrow="What we do"
-          title={<>Everything you need to <em className="signature">study in Australia</em>, under one roof</>}
+          title="Everything you need to study in Australia, under one roof"
           subtitle="From your first question to your first day on campus, Edmark handles the hard parts so you can focus on what matters: your future."
         />
 
@@ -22,17 +22,17 @@ export default function Services() {
               className="card-hover group reveal"
               style={{ transitionDelay: `${(i % 3) * 90}ms` }}
             >
-              <div className="text-eucalypt">
-                <ServiceIcon name={s.icon} className="h-6 w-6" />
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
+                <ServiceIcon name={s.icon} className="h-7 w-7" />
               </div>
-              <h3 className="mt-5 text-xl font-medium text-ink">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-copy">
+              <h3 className="mt-5 text-xl font-bold text-brand-900">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
                 {s.short}
               </p>
               <ul className="mt-5 space-y-2">
                 {s.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2 text-sm text-ink">
-                    <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-eucalypt" />
+                  <li key={p} className="flex items-start gap-2 text-sm text-brand-800">
+                    <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
                     {p}
                   </li>
                 ))}

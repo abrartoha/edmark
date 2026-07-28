@@ -82,7 +82,7 @@ export default function Intro() {
     >
       {/* soft glow blobs */}
       <div
-        className="hidden"
+        className="pointer-events-none absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
         aria-hidden="true"
       />
       <div
@@ -96,15 +96,15 @@ export default function Intro() {
           {tiles.map((t, i) => (
             <span
               key={i}
-              className="intro-tile absolute rounded-[14px]"
+              className="intro-tile absolute rounded-[14px] shadow-glow"
               style={{
                 ...t.style,
                 ...t.from,
                 animationDelay: `${i * 0.12}s`,
                 background:
                   i <= 1
-                    ? "#154D3C"
-                    : "#1D5B47",
+                    ? "linear-gradient(135deg, #1de9b6 0%, #14c49a 100%)"
+                    : "linear-gradient(135deg, #14c49a 0%, #22d3ee 100%)",
                 transform: `translate(var(--tx, 0), var(--ty, 0)) scale(0.3) rotate(-16deg) skewX(-8deg)`,
               }}
             />
@@ -113,16 +113,16 @@ export default function Intro() {
 
         {/* Wordmark sliding in from the side, matching logo typography */}
         <div className="intro-word overflow-hidden text-center sm:text-left">
-          <span className="block font-display text-5xl font-medium tracking-tight text-paper sm:text-6xl">
+          <span className="block font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
             EDMARK
           </span>
-          <span className="mt-1 block text-sm font-medium uppercase tracking-[0.3em] text-mist">
+          <span className="mt-1 block text-sm font-bold uppercase tracking-[0.3em] text-white/80">
             Education
           </span>
         </div>
       </div>
 
-      <p className="intro-sub absolute bottom-16 text-sm font-medium tracking-wide text-mist">
+      <p className="intro-sub absolute bottom-16 text-sm font-medium tracking-wide text-brand-100">
         Empowering students for life
       </p>
     </div>

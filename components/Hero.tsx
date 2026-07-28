@@ -8,124 +8,122 @@ const bullets = [
   "End-to-end application support",
 ];
 
-const stats = [
-  { value: "500+", label: "Students guided" },
-  { value: "50+", label: "Partner institutions" },
-  { value: "10+", label: "Years experience" },
-];
-
 export default function Hero() {
   return (
-    <>
-      <section className="relative overflow-hidden bg-ink">
-        {/* Hero background video (poster image shows instantly and is the
-            fallback if the video can't autoplay) */}
-        <video
-          className="absolute inset-0 h-full w-full scale-105 object-cover object-center"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/images/hero-banner.jpg"
-          aria-hidden="true"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+    <section className="relative overflow-hidden bg-brand-900">
+      {/* Hero background video (poster image shows instantly and is the
+          fallback if the video can't autoplay) */}
+      <video
+        className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60 blur-[1px]"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero-banner.jpg"
+        aria-hidden="true"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
-        {/* Scrim: a separate layer above the video, never on the video itself,
-            so it covers the poster frame and the playing footage identically
-            and there is no colour flash before playback begins. Sits below the
-            content in z-order and never intercepts pointer events. */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0 bg-scrim-hero"
-          aria-hidden="true"
-        />
+      {/* Decorative organic shapes */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-brand-700/40 blur-3xl" />
+        <div className="absolute -right-24 -top-20 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
+      </div>
 
-        <div className="container-page relative z-10 max-w-4xl py-24 lg:py-32">
-          <div className="animate-fade-up">
-            <span className="eyebrow-light">
-              <IconStar className="h-3.5 w-3.5" /> Australia&apos;s trusted
-              education consultants
-            </span>
+      <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
+        <div className="animate-fade-up">
+          <span className="eyebrow bg-white/10 text-mint">
+            <IconStar className="h-3.5 w-3.5" /> Australia&apos;s trusted education consultants
+          </span>
 
-            <h1 className="mt-6 text-paper">
-              Pave the way to
-              <span className="signature-light"> career growth</span> in
-              Australia.
-            </h1>
+          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+            Pave the way to
+            <span className="text-gradient"> career growth</span> in Australia.
+          </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
-              Confused about which course, campus or career path is right for
-              you? We turn confusion into a clear plan, matching you with the
-              right university, maximising your scholarship chances, and
-              handling the paperwork so you can focus on your future.
-            </p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
+            Confused about which course, campus or career path is right for you?
+            We turn confusion into a clear plan, matching you with the right
+            university, maximising your scholarship chances, and handling the
+            paperwork so you can focus on your future.
+          </p>
 
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-              {bullets.map((b) => (
-                <li
-                  key={b}
-                  className="flex items-center gap-2 text-sm font-normal text-paper"
-                >
-                  <IconCheck className="h-4 w-4 shrink-0 text-eucalypt-light" />
-                  {b}
-                </li>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+            {bullets.map((b) => (
+              <li key={b} className="flex items-center gap-2 text-sm font-medium text-white">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                  <IconCheck className="h-3 w-3" />
+                </span>
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link href="/contact" className="btn-primary text-base">
+              Book Your Free Consultation <IconArrow />
+            </Link>
+            <a href={site.phoneHref} className="btn-ghost-light text-base">
+              Call {site.phone}
+            </a>
+          </div>
+
+          <p className="mt-6 text-sm text-brand-200">
+            Join hundreds of students who trusted Edmark to launch their careers.
+          </p>
+        </div>
+
+        {/* Floating highlight card */}
+        <div className="animate-fade-up relative mx-auto w-full max-w-md lg:mx-0">
+          <div className="rounded-3xl border border-white/15 bg-white/95 p-8 shadow-glow backdrop-blur">
+            <div className="flex items-center gap-1 text-brand-500">
+              {[...Array(5)].map((_, i) => (
+                <IconStar key={i} className="h-5 w-5" />
               ))}
-            </ul>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact" className="btn-primary text-base">
-                Book Your Free Consultation <IconArrow />
-              </Link>
-              <a href={site.phoneHref} className="btn-ghost-light text-base">
-                Call{" "}
-                <span className="font-mono tracking-[0.12em]">{site.phone}</span>
-              </a>
+              <span className="ml-2 text-sm font-semibold text-brand-900">
+                Rated by students
+              </span>
             </div>
 
-            <p className="mt-6 text-sm text-mist">
-              Join hundreds of students who trusted Edmark to launch their
-              careers.
-            </p>
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              <Stat value="500+" label="Students guided" />
+              <Stat value="50+" label="Partner institutions" />
+              <Stat value="10+" label="Years experience" />
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-brand-50 p-5">
+              <p className="text-sm font-medium text-brand-800">
+                &ldquo;Edmark found me a course I&apos;d never even considered,
+                and a scholarship that covered my first year.&rdquo;
+              </p>
+              <p className="mt-3 text-xs font-semibold text-brand-600">
+                Priya, now a registered nurse in Melbourne
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Stat band. Moved out of the old floating glass card so that nothing
-          overlaps the video: its own flat band directly beneath the hero. */}
-      <section className="border-b border-line bg-paper">
-        <div className="container-page grid gap-10 py-10 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16">
-          <dl className="grid grid-cols-3 gap-6">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="numeral text-3xl sm:text-4xl">{s.value}</dd>
-                <p className="eyebrow mt-2">{s.label}</p>
-              </div>
-            ))}
-          </dl>
+      {/* Wave divider */}
+      <div className="relative" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" className="block w-full" preserveAspectRatio="none">
+          <path
+            fill="#ffffff"
+            d="M0,64 C240,120 480,120 720,88 C960,56 1200,24 1440,64 L1440,120 L0,120 Z"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+}
 
-          <figure className="border-t border-line pt-8 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
-            <div
-              className="flex items-center gap-1 text-eucalypt"
-              aria-label="Rated by students"
-            >
-              {[...Array(5)].map((_, i) => (
-                <IconStar key={i} className="h-4 w-4" />
-              ))}
-              <span className="eyebrow ml-3">Rated by students</span>
-            </div>
-            <blockquote className="mt-4 text-base leading-relaxed text-copy">
-              &ldquo;Edmark found me a course I&apos;d never even considered,
-              and a scholarship that covered my first year.&rdquo;
-            </blockquote>
-            <figcaption className="eyebrow mt-3">
-              Priya, now a registered nurse in Melbourne
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-    </>
+function Stat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-2xl border border-brand-100 p-4 text-center">
+      <div className="font-display text-2xl font-extrabold text-brand-600">{value}</div>
+      <div className="mt-1 text-xs font-medium text-brand-900/70">{label}</div>
+    </div>
   );
 }

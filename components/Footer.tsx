@@ -19,12 +19,16 @@ const resources = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-transparent text-mist">
+    <footer className="relative overflow-hidden bg-brand-900 text-brand-100">
+      <div
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-700/40 blur-3xl"
+        aria-hidden="true"
+      />
       <div className="container-page relative py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Logo variant="light" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-200">
               {site.tagline}. Trusted education consultants guiding students to
               the right course, campus and career in Australia.
             </p>
@@ -50,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs font-normal uppercase tracking-[0.12em] text-paper">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -58,7 +62,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-brand-200 transition-colors hover:text-mint"
                   >
                     {item.label}
                   </Link>
@@ -68,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs font-normal uppercase tracking-[0.12em] text-paper">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Services
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -76,7 +80,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-brand-200 transition-colors hover:text-mint"
                   >
                     {s.label}
                   </Link>
@@ -86,7 +90,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs font-normal uppercase tracking-[0.12em] text-paper">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Resources
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -94,7 +98,7 @@ export default function Footer() {
                 <li key={r.href}>
                   <Link
                     href={r.href}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-brand-200 transition-colors hover:text-mint"
                   >
                     {r.label}
                   </Link>
@@ -104,20 +108,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs font-normal uppercase tracking-[0.12em] text-paper">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               Get in touch
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a
-                  href={site.phoneHref}
-                  className="font-mono tracking-[0.12em] transition-colors hover:text-brass"
-                >
+                <a href={site.phoneHref} className="transition-colors hover:text-mint">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={site.emailHref} className="transition-colors hover:text-brass">
+                <a href={site.emailHref} className="transition-colors hover:text-mint">
                   {site.email}
                 </a>
               </li>
@@ -126,21 +127,21 @@ export default function Footer() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-brass"
+                  className="transition-colors hover:text-mint"
                 >
                   WhatsApp
                 </a>
               </li>
-              <li className="text-mist">{site.address.full}</li>
-              <li className="text-mist">{site.hours}</li>
+              <li className="text-brand-200">{site.address.full}</li>
+              <li className="text-brand-200">{site.hours}</li>
             </ul>
-            <Link href="/contact" className="btn mt-6 bg-paper text-ink hover:bg-paper-sunk focus-visible:ring-offset-ink">
+            <Link href="/contact" className="btn-primary mt-6">
               Book Free Consultation
             </Link>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.14] pt-8 text-xs text-mist sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brand-800 pt-8 text-xs text-brand-300 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {site.legalName}. All rights reserved. ABN {site.abn}
           </p>
@@ -168,7 +169,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="grid h-9 w-9 place-items-center rounded-full border border-white/[0.14] text-mist transition-all hover:border-brass hover:text-brass"
+      className="grid h-9 w-9 place-items-center rounded-full border border-brand-700 text-brand-300 transition-all hover:border-mint hover:text-mint"
     >
       <svg
         className="h-4 w-4"

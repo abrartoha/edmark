@@ -36,10 +36,10 @@ export default function ExitIntentPopup() {
 
   return (
     <div className="fixed inset-0 z-[60] grid place-items-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-md rounded-xl bg-white p-8 animate-fade-up">
+      <div className="relative w-full max-w-md rounded-3xl bg-white p-8 shadow-glow animate-fade-up">
         <button
           onClick={() => setShow(false)}
-          className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full text-sage hover:bg-paper-sunk hover:text-ink"
+          className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full text-brand-900/50 hover:bg-brand-50 hover:text-brand-900"
           aria-label="Close"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -50,13 +50,13 @@ export default function ExitIntentPopup() {
 
         {submitted ? (
           <div className="text-center py-4">
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-eucalypt text-paper">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-gradient text-brand-950">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <h3 className="mt-4 text-xl font-medium text-ink">Check your inbox!</h3>
-            <p className="mt-2 text-sm text-copy">
+            <h3 className="mt-4 text-xl font-bold text-brand-900">Check your inbox!</h3>
+            <p className="mt-2 text-sm text-brand-900/70">
               Your free Study in Australia Checklist is on its way.
             </p>
             <button
@@ -68,17 +68,17 @@ export default function ExitIntentPopup() {
           </div>
         ) : (
           <>
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-paper-sunk">
-              <svg className="h-7 w-7 text-eucalypt" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-50">
+              <svg className="h-7 w-7 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
                 <path d="M14 2v6h6" />
                 <path d="M8 13h8M8 17h5" />
               </svg>
             </div>
-            <h3 className="mt-4 text-center text-xl font-medium text-ink">
+            <h3 className="mt-4 text-center text-xl font-bold text-brand-900">
               Wait! Before you go&hellip;
             </h3>
-            <p className="mt-2 text-center text-sm text-copy">
+            <p className="mt-2 text-center text-sm text-brand-900/70">
               Download our free <strong>Study in Australia Checklist</strong>. Everything you need to know in one place.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex gap-3">
@@ -86,13 +86,13 @@ export default function ExitIntentPopup() {
                 type="email"
                 required
                 placeholder="Your email address"
-                className="flex-1 rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-eucalypt focus:ring-2 focus:ring-eucalypt/30"
+                className="flex-1 rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
               />
               <button type="submit" className="btn-primary whitespace-nowrap text-sm">
                 Send it
               </button>
             </form>
-            <p className="mt-3 text-center text-xs text-sage">
+            <p className="mt-3 text-center text-xs text-brand-900/40">
               No spam. Unsubscribe anytime.
             </p>
           </>

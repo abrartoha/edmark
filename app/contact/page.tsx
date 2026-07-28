@@ -46,10 +46,10 @@ export default function ContactPage() {
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="reveal">
-            <h2 className="text-2xl font-medium text-ink">
+            <h2 className="text-2xl font-bold text-brand-900">
               Speak with an advisor today
             </h2>
-            <p className="mt-3 text-copy">
+            <p className="mt-3 text-brand-900/70">
               Prefer to talk directly? Reach out any way you like. We usually
               reply within <strong>2 hours</strong> during business hours.
             </p>
@@ -59,16 +59,16 @@ export default function ContactPage() {
                 <a
                   key={d.label}
                   href={d.href}
-                  className="flex items-start gap-4 rounded-xl border border-line p-5 transition hover:border-sage/50 hover:bg-paper-sunk"
+                  className="flex items-start gap-4 rounded-2xl border border-brand-100 p-5 transition hover:border-brand-200 hover:bg-brand-50"
                 >
-                  <span className="text-eucalypt">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-gradient text-brand-950">
                     <d.icon className="h-6 w-6" />
                   </span>
                   <span>
-                    <span className="block text-xs font-medium uppercase tracking-wider text-eucalypt">
+                    <span className="block text-xs font-semibold uppercase tracking-wider text-brand-500">
                       {d.label}
                     </span>
-                    <span className="mt-1 block font-medium text-ink">
+                    <span className="mt-1 block font-semibold text-brand-900">
                       {d.value}
                     </span>
                   </span>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 href={site.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 rounded-xl border border-line bg-paper-sunk p-5 transition-colors hover:border-sage/50"
+                className="flex items-start gap-4 rounded-2xl border border-green-200 bg-green-50 p-5 transition hover:border-green-300 hover:bg-green-100"
               >
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl text-white" style={{ backgroundColor: "#25D366" }}>
                   <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
@@ -88,36 +88,36 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span>
-                  <span className="eyebrow block">
+                  <span className="block text-xs font-semibold uppercase tracking-wider text-green-700">
                     Chat on WhatsApp
                   </span>
-                  <span className="mt-1 block font-medium text-ink">
+                  <span className="mt-1 block font-semibold text-green-900">
                     Quick replies, even on weekends
                   </span>
                 </span>
               </a>
             </div>
 
-            <div className="mt-6 rounded-xl bg-paper-sunk p-5">
-              <p className="text-sm font-medium text-ink">
+            <div className="mt-6 rounded-2xl bg-brand-50 p-5">
+              <p className="text-sm font-semibold text-brand-900">
                 Office hours
               </p>
-              <p className="mt-1 text-sm text-copy">{site.hours}</p>
+              <p className="mt-1 text-sm text-brand-900/70">{site.hours}</p>
             </div>
 
             {/* Testimonial near form */}
-            <div className="mt-6 rounded-xl border border-line p-5">
-              <div className="flex gap-1 text-eucalypt">
+            <div className="mt-6 rounded-2xl border border-brand-100 p-5">
+              <div className="flex gap-1 text-brand-500">
                 {[...Array(5)].map((_, i) => (
                   <IconStar key={i} className="h-3.5 w-3.5" />
                 ))}
               </div>
-              <p className="mt-2 text-sm italic text-copy">
+              <p className="mt-2 text-sm italic text-brand-900/70">
                 &ldquo;Professional, responsive and genuinely caring. Mahin and
                 the team answered every question and made a stressful process
                 feel simple.&rdquo;
               </p>
-              <p className="mt-2 text-xs font-medium text-eucalypt">
+              <p className="mt-2 text-xs font-semibold text-brand-600">
                 Lucia F., Diploma of Business
               </p>
             </div>
@@ -127,9 +127,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-paper-sunk pb-16 lg:pb-24">
+      <section className="bg-brand-50 pb-16 lg:pb-24">
         <div className="container-page">
-          <div className="overflow-hidden rounded-xl border border-line">
+          <div className="overflow-hidden rounded-3xl border border-brand-100 shadow-soft">
             <iframe
               title="Edmark Education office location"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(

@@ -10,24 +10,29 @@ export default function CTA({
   subtitle?: string;
 }) {
   return (
-    // Transparent: the wash-deep gradient is painted by the shared
-    // `.footer-zone` ancestor so it runs straight into the footer with no seam.
-    <section className="bg-transparent pb-20 pt-20 lg:pb-28 lg:pt-28">
+    <section className="bg-white pb-20 lg:pb-28">
       <div className="container-page">
-        <div className="reveal mx-auto max-w-2xl text-center">
-          <h2 className="text-paper">{title}</h2>
-          <p className="mt-5 text-lg leading-relaxed text-mist">{subtitle}</p>
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="btn bg-paper text-ink hover:bg-paper-sunk focus-visible:ring-offset-ink text-base"
-            >
-              Book Free Consultation <IconArrow />
-            </Link>
-            <a href={site.phoneHref} className="btn-ghost-light text-base">
-              <IconPhone className="h-5 w-5" />
-              <span className="font-mono tracking-[0.12em]">{site.phone}</span>
-            </a>
+        <div className="reveal relative overflow-hidden rounded-3xl bg-brand-diagonal px-8 py-16 text-center shadow-glow sm:px-16">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-brand-500/30 blur-3xl" />
+            <div className="absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-mint/20 blur-3xl" />
+          </div>
+
+          <div className="relative mx-auto max-w-2xl">
+            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              {title}
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-brand-100">
+              {subtitle}
+            </p>
+            <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+              <Link href="/contact" className="btn-primary text-base">
+                Book Free Consultation <IconArrow />
+              </Link>
+              <a href={site.phoneHref} className="btn-ghost-light text-base">
+                <IconPhone className="h-5 w-5" /> {site.phone}
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -58,18 +58,18 @@ export default function FAQPage() {
         <div className="container-page max-w-4xl">
           {categories.map((cat) => (
             <div key={cat.heading} className="mb-12 last:mb-0">
-              <h2 className="mb-6 text-2xl font-medium text-ink">
+              <h2 className="mb-6 text-2xl font-bold text-brand-900">
                 {cat.heading}
               </h2>
-              <div className="reveal divide-y divide-line rounded-xl border border-line">
+              <div className="reveal divide-y divide-brand-100 rounded-2xl border border-brand-100">
                 {cat.items.map((f) => (
                   <details
                     key={f.q}
                     className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden"
                   >
-                    <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink">
+                    <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">
                       {f.q}
-                      <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-eucalypt transition-colors group-open:rotate-45">
+                      <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-transform group-open:rotate-45">
                         <svg
                           width="16"
                           height="16"
@@ -84,7 +84,7 @@ export default function FAQPage() {
                         </svg>
                       </span>
                     </summary>
-                    <p className="mt-3 text-sm leading-relaxed text-copy">
+                    <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
                       {f.a}
                     </p>
                   </details>

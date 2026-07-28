@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Newsreader, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
@@ -11,29 +11,16 @@ import NotificationBar from "@/components/NotificationBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 
-// Display: Newsreader, 400 + 500 only, italic loaded for the signature phrase.
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-// Body/UI. Geist was specified but ships as an npm package and npm is not
-// available in this environment, so Inter stands in: the same neo-grotesque
-// register, already self-hosted here. Swap to `geist/font` when npm is back.
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
   display: "swap",
 });
 
-// Numerals, eyebrow labels, phone number. Stands in for Geist Mono.
-const plexMono = IBM_Plex_Mono({
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -102,7 +89,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#154D3C",
+  themeColor: "#0b4f43",
   width: "device-width",
   initialScale: 1,
 };
@@ -185,10 +172,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en-AU"
-      className={`${inter.variable} ${newsreader.variable} ${plexMono.variable}`}
-    >
+    <html lang="en-AU" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -215,13 +199,8 @@ export default function RootLayout({
         <ScrollReveal />
         <NotificationBar />
         <Header />
-        {/* One wash-deep ground shared by the closing CTA and the footer, so
-            the gradient runs continuously through both with no seam. Every
-            section above the CTA paints its own opaque background. */}
-        <div className="footer-zone">
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <main>{children}</main>
+        <Footer />
         <WhatsAppButton />
         <ExitIntentPopup />
       </body>

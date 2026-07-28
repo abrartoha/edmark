@@ -31,30 +31,30 @@ export default function SuccessStoriesPage() {
                 className="card reveal flex flex-col"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="flex gap-1 text-eucalypt">
+                <div className="flex gap-1 text-brand-500">
                   {[...Array(5)].map((_, j) => (
                     <IconStar key={j} className="h-4 w-4" />
                   ))}
                 </div>
-                <blockquote className="mt-4 text-sm italic leading-relaxed text-copy">
+                <blockquote className="mt-4 text-sm italic leading-relaxed text-brand-900/80">
                   &ldquo;{story.quote}&rdquo;
                 </blockquote>
-                <p className="mt-4 text-sm leading-relaxed text-copy">
+                <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
                   {story.story}
                 </p>
-                <div className="mt-auto border-t border-line pt-4 mt-6">
-                  <p className="text-base font-medium text-ink">
+                <div className="mt-auto border-t border-brand-100 pt-4 mt-6">
+                  <p className="text-base font-bold text-brand-900">
                     {story.name}
                   </p>
-                  <p className="text-sm text-eucalypt">
+                  <p className="text-sm text-brand-600">
                     {story.course}, {story.university}
                   </p>
-                  <p className="text-xs text-sage">
+                  <p className="text-xs text-brand-900/50">
                     From {story.origin}
                   </p>
-                  <div className="mt-3 inline-flex items-center gap-2 rounded bg-paper-sunk px-3 py-1.5">
-                    <span className="h-2 w-2 rounded-full bg-eucalypt" />
-                    <span className="text-xs font-medium text-ink">
+                  <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5">
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                    <span className="text-xs font-semibold text-brand-800">
                       {story.outcome}
                     </span>
                   </div>
