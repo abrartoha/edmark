@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export default function SectionHeading({
   eyebrow,
   title,
@@ -6,7 +8,9 @@ export default function SectionHeading({
   light = false,
 }: {
   eyebrow?: string;
-  title: string;
+  // ReactNode so a heading can carry the signature device, e.g.
+  // title={<>Everything you need to <em className="signature">study here</em></>}
+  title: ReactNode;
   subtitle?: string;
   center?: boolean;
   light?: boolean;
@@ -16,21 +20,13 @@ export default function SectionHeading({
       className={`reveal ${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}
     >
       {eyebrow && (
-        <span className={`eyebrow ${light ? "bg-white/10 text-mint" : ""}`}>
-          {eyebrow}
-        </span>
+        <span className={light ? "eyebrow-light" : "eyebrow"}>{eyebrow}</span>
       )}
-      <h2
-        className={`mt-4 text-3xl font-extrabold sm:text-4xl ${
-          light ? "text-white" : "text-brand-900"
-        }`}
-      >
-        {title}
-      </h2>
+      <h2 className={`mt-4 ${light ? "text-paper" : "text-ink"}`}>{title}</h2>
       {subtitle && (
         <p
           className={`mt-4 text-lg leading-relaxed ${
-            light ? "text-brand-100" : "text-brand-900/70"
+            light ? "text-mist" : "text-copy"
           }`}
         >
           {subtitle}

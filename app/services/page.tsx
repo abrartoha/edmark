@@ -27,27 +27,27 @@ export default function ServicesPage() {
           {services.map((s, i) => (
             <article
               key={s.title}
-              className="reveal grid items-center gap-8 rounded-3xl border border-brand-100 p-8 shadow-soft lg:grid-cols-[auto_1fr_1fr] lg:p-10"
+              className="reveal grid items-center gap-8 rounded-xl border border-line p-8 lg:grid-cols-[auto_1fr_1fr] lg:p-10"
             >
-              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
-                <ServiceIcon name={s.icon} className="h-8 w-8" />
+              <div className="text-eucalypt">
+                <ServiceIcon name={s.icon} className="h-6 w-6" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-400">
+                <span className="text-xs font-medium uppercase tracking-widest text-eucalypt-light">
                   0{i + 1}
                 </span>
-                <h2 className="mt-1 text-2xl font-bold text-brand-900">
+                <h2 className="mt-1 text-2xl font-medium text-ink">
                   {s.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
+                <p className="mt-3 text-sm leading-relaxed text-copy">
                   {s.long}
                 </p>
               </div>
-              <ul className="space-y-3 rounded-2xl bg-brand-50 p-6">
+              <ul className="space-y-3 rounded-xl bg-paper-sunk p-6">
                 {s.points.map((p) => (
-                  <li key={p} className="flex items-start gap-3 text-sm font-medium text-brand-800">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
-                      <IconCheck className="h-3 w-3" />
+                  <li key={p} className="flex items-start gap-3 text-sm font-medium text-ink">
+                    <span className="mt-0.5 shrink-0 text-eucalypt">
+                      <IconCheck className="h-4 w-4" />
                     </span>
                     {p}
                   </li>

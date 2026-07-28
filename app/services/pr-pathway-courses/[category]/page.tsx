@@ -51,10 +51,10 @@ export default function PrCategoryPage({
       {/* Intro */}
       <section className="bg-white py-14 lg:py-20">
         <div className="container-page grid items-center gap-10 lg:grid-cols-[auto_1fr]">
-          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-brand-gradient text-brand-950 shadow-glow">
+          <div className="text-eucalypt">
             <ServiceIcon name={cat.icon} className="h-10 w-10" />
           </div>
-          <div className="space-y-4 text-brand-900/70">
+          <div className="space-y-4 text-copy">
             {cat.intro.map((p, i) => (
               <p key={i} className="leading-relaxed">
                 {p}
@@ -65,32 +65,32 @@ export default function PrCategoryPage({
       </section>
 
       {/* Programs / Certifications */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading center eyebrow="Qualifications" title={cat.programsHeading} />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cat.programs.map((p, i) => (
               <div
                 key={p.name}
-                className="reveal flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+                className="reveal flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-all duration-300"
                 style={{ transitionDelay: `${(i % 3) * 80}ms` }}
               >
-                <div className="relative flex h-32 items-center justify-center bg-brand-gradient">
-                  <ServiceIcon name={cat.icon} className="h-12 w-12 text-brand-950/90" />
+                <div className="relative flex h-32 items-center justify-center bg-eucalypt">
+                  <ServiceIcon name={cat.icon} className="h-12 w-12 text-ink/90" />
                   {p.code && (
-                    <span className="absolute right-3 top-3 rounded-full bg-brand-950/15 px-3 py-1 text-xs font-bold text-brand-950">
+                    <span className="absolute right-3 top-3 rounded bg-ink/15 px-3 py-1 text-xs font-medium text-ink">
                       {p.code}
                     </span>
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-base font-bold text-brand-900">{p.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/60">
+                  <h3 className="text-base font-medium text-ink">{p.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-sage">
                     {p.description}
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-gradient px-5 py-2.5 text-sm font-semibold text-brand-950 transition-transform hover:-translate-y-0.5"
+                    className="btn-primary mt-5"
                   >
                     Contact Now <IconArrow />
                   </Link>
@@ -114,12 +114,12 @@ export default function PrCategoryPage({
             {cat.eligibility.map((e) => (
               <div
                 key={e}
-                className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-brand-50/60 p-5"
+                className="flex items-start gap-4 rounded-xl border border-line bg-paper-sunk p-5"
               >
-                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="mt-0.5 shrink-0 text-eucalypt">
                   <IconCheck className="h-3.5 w-3.5" />
                 </span>
-                <p className="text-sm font-medium text-brand-800">{e}</p>
+                <p className="text-sm font-medium text-ink">{e}</p>
               </div>
             ))}
           </div>
@@ -127,7 +127,7 @@ export default function PrCategoryPage({
       </section>
 
       {/* Career Pathways */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -139,12 +139,12 @@ export default function PrCategoryPage({
             {cat.careerPathways.map((c, i) => (
               <div
                 key={c}
-                className="flex items-center gap-4 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"
+                className="flex items-center gap-4 rounded-xl border border-line bg-white p-5"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-gradient text-sm font-bold text-brand-950">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-paper numeral text-sm">
                   {i + 1}
                 </span>
-                <p className="text-sm font-semibold text-brand-900">{c}</p>
+                <p className="text-sm font-medium text-ink">{c}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function PrCategoryPage({
       {/* Migration note */}
       <section className="bg-white py-10">
         <div className="container-page">
-          <p className="mx-auto max-w-3xl rounded-2xl border border-brand-100 bg-brand-50/60 p-5 text-center text-xs leading-relaxed text-brand-900/60">
+          <p className="mx-auto max-w-3xl rounded-xl border border-line bg-paper-sunk p-5 text-center text-xs leading-relaxed text-sage">
             Skilled occupation lists and migration rules change regularly. Edmark provides education and
             course guidance only. Formal migration advice must come from a registered migration agent
             (MARA), whom we can connect you with.
@@ -163,9 +163,9 @@ export default function PrCategoryPage({
       </section>
 
       {/* Other categories */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-ink">
             Explore other PR pathway courses
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -175,14 +175,14 @@ export default function PrCategoryPage({
                 href={`/services/pr-pathway-courses/${o.slug}`}
                 className="card-hover group flex items-start gap-4"
               >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-gradient text-brand-950">
+                <div className="text-eucalypt">
                   <ServiceIcon name={o.icon} className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-900 transition-colors group-hover:text-brand-600">
+                  <h3 className="font-medium text-ink transition-colors group-hover:text-eucalypt">
                     {o.title}
                   </h3>
-                  <p className="mt-1 text-sm text-brand-900/60 line-clamp-2">{o.tagline}</p>
+                  <p className="mt-1 text-sm text-sage line-clamp-2">{o.tagline}</p>
                 </div>
               </Link>
             ))}

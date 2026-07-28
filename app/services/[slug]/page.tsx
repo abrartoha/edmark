@@ -178,33 +178,33 @@ export default function ServicePage({
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid gap-16 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
-              <ServiceIcon name={service.icon} className="h-8 w-8" />
+            <div className="text-eucalypt">
+              <ServiceIcon name={service.icon} className="h-6 w-6" />
             </div>
-            <h2 className="mt-6 text-3xl font-bold text-brand-900">
+            <h2 className="mt-6 text-3xl font-medium text-ink">
               {service.title}
             </h2>
             {extras?.extended.split("\n\n").map((p, i) => (
               <p
                 key={i}
-                className="mt-4 text-brand-900/70 leading-relaxed"
+                className="mt-4 text-copy leading-relaxed"
               >
                 {p}
               </p>
             ))}
 
-            <div className="mt-8 rounded-2xl bg-brand-50 p-6">
-              <h3 className="text-lg font-bold text-brand-900">
+            <div className="mt-8 rounded-xl bg-paper-sunk p-6">
+              <h3 className="text-lg font-medium text-ink">
                 What&apos;s included
               </h3>
               <ul className="mt-4 space-y-3">
                 {service.points.map((p) => (
                   <li
                     key={p}
-                    className="flex items-start gap-3 text-sm font-medium text-brand-800"
+                    className="flex items-start gap-3 text-sm font-medium text-ink"
                   >
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
-                      <IconCheck className="h-3 w-3" />
+                    <span className="mt-0.5 shrink-0 text-eucalypt">
+                      <IconCheck className="h-4 w-4" />
                     </span>
                     {p}
                   </li>
@@ -217,17 +217,17 @@ export default function ServicePage({
             {extras && (
               <>
                 <div className="card">
-                  <h3 className="text-lg font-bold text-brand-900">
+                  <h3 className="text-lg font-medium text-ink">
                     Who is this for?
                   </h3>
                   <ul className="mt-4 space-y-3">
                     {extras.whoFor.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-3 text-sm text-brand-900/70"
+                        className="flex items-start gap-3 text-sm text-copy"
                       >
-                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600">
-                          <IconCheck className="h-3 w-3" />
+                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-paper-sunk text-eucalypt">
+                          <IconCheck className="h-4 w-4" />
                         </span>
                         {item}
                       </li>
@@ -236,16 +236,16 @@ export default function ServicePage({
                 </div>
 
                 <div className="card">
-                  <h3 className="text-lg font-bold text-brand-900">
+                  <h3 className="text-lg font-medium text-ink">
                     What to expect
                   </h3>
                   <ol className="mt-4 space-y-3">
                     {extras.whatToExpect.map((item, i) => (
                       <li
                         key={item}
-                        className="flex items-start gap-3 text-sm text-brand-900/70"
+                        className="flex items-start gap-3 text-sm text-copy"
                       >
-                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">
+                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-eucalypt text-paper text-xs font-medium">
                           {i + 1}
                         </span>
                         {item}
@@ -259,9 +259,9 @@ export default function ServicePage({
         </div>
       </section>
 
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-ink">
             Explore our other services
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -271,14 +271,14 @@ export default function ServicePage({
                 href={`/services/${s.slug}`}
                 className="card-hover group flex items-start gap-4"
               >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-gradient text-brand-950">
+                <div className="text-eucalypt">
                   <ServiceIcon name={s.icon} className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                  <h3 className="font-medium text-ink group-hover:text-eucalypt transition-colors">
                     {s.title}
                   </h3>
-                  <p className="mt-1 text-sm text-brand-900/60 line-clamp-2">
+                  <p className="mt-1 text-sm text-sage line-clamp-2">
                     {s.short}
                   </p>
                 </div>

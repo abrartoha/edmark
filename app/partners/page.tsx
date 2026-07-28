@@ -94,10 +94,10 @@ const benefits = [
 function LogoCard({ inst, i }: { inst: Institution; i: number }) {
   return (
     <div
-      className="reveal group flex flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-white p-5 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow"
+      className="reveal group flex flex-col items-center gap-3 rounded-xl border border-line bg-white p-5 text-center transition-all duration-300 hover:border-sage/50"
       style={{ transitionDelay: `${(i % 10) * 40}ms` }}
     >
-      <div className="grid h-20 w-20 place-items-center rounded-2xl border border-brand-100 bg-white">
+      <div className="grid h-20 w-20 place-items-center rounded-xl border border-line bg-white">
         <Image
           src={`/images/partners/${inst.slug}.png`}
           alt={`${inst.name} logo`}
@@ -107,8 +107,8 @@ function LogoCard({ inst, i }: { inst: Institution; i: number }) {
         />
       </div>
       <div>
-        <h3 className="text-sm font-bold leading-snug text-brand-900">{inst.name}</h3>
-        <p className="mt-1 text-xs text-brand-900/50">{inst.meta}</p>
+        <h3 className="text-sm font-medium leading-snug text-ink">{inst.name}</h3>
+        <p className="mt-1 text-xs text-sage">{inst.meta}</p>
       </div>
     </div>
   );
@@ -146,9 +146,9 @@ export default function PartnersPage() {
             />
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
-                    <IconCheck className="h-3 w-3" />
+                <li key={b} className="flex items-start gap-3 text-sm text-copy">
+                  <span className="mt-0.5 shrink-0 text-eucalypt">
+                    <IconCheck className="h-4 w-4" />
                   </span>
                   {b}
                 </li>
@@ -157,27 +157,27 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">{total}+</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Partner institutions</div>
+              <div className="numeral text-4xl">{total}+</div>
+              <div className="mt-1 text-sm font-medium text-copy">Partner institutions</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">8</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Group of Eight universities</div>
+              <div className="numeral text-4xl">8</div>
+              <div className="mt-1 text-sm font-medium text-copy">Group of Eight universities</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">{universities.length}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">University partners</div>
+              <div className="numeral text-4xl">{universities.length}</div>
+              <div className="mt-1 text-sm font-medium text-copy">University partners</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-extrabold text-gradient">{tafes.length}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE & polytechnic partners</div>
+              <div className="numeral text-4xl">{tafes.length}</div>
+              <div className="mt-1 text-sm font-medium text-copy">TAFE & polytechnic partners</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Universities */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -203,7 +203,7 @@ export default function PartnersPage() {
       </section>
 
       {/* TAFEs */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center

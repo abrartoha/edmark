@@ -103,32 +103,32 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-3xl border border-brand-200 bg-brand-50 p-10 text-center shadow-soft">
-        <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-gradient text-brand-950">
+      <div className="rounded-xl border border-line bg-paper-sunk p-10 text-center">
+        <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-eucalypt text-paper">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-5 text-xl font-bold text-brand-900">
+        <h3 className="mt-5 text-xl font-medium text-ink">
           Thank you, we&apos;ve got it!
         </h3>
-        <p className="mt-2 text-sm text-brand-900/70">
+        <p className="mt-2 text-sm text-copy">
           <strong>Our team will contact you within 2 hours</strong> during business hours.
           Keen to talk sooner? Call us and we&apos;ll get started right away.
         </p>
         <div className="mt-4 rounded-xl bg-white p-4">
-          <p className="text-xs font-semibold text-brand-600 uppercase tracking-wider">What happens next</p>
-          <ol className="mt-2 space-y-1.5 text-left text-sm text-brand-900/70">
+          <p className="text-xs font-medium text-eucalypt uppercase tracking-wider">What happens next</p>
+          <ol className="mt-2 space-y-1.5 text-left text-sm text-copy">
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">1.</span>
+              <span className="font-medium text-eucalypt">1.</span>
               We review your enquiry and prepare personalised recommendations
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">2.</span>
+              <span className="font-medium text-eucalypt">2.</span>
               An advisor calls or emails you with a tailored study plan
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">3.</span>
+              <span className="font-medium text-eucalypt">3.</span>
               We begin your application process, fully managed from end to end
             </li>
           </ol>
@@ -157,7 +157,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="reveal rounded-3xl border border-brand-100 bg-white p-8 shadow-soft"
+      className="reveal rounded-xl border border-line bg-white p-8"
       style={{ transitionDelay: "120ms" }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -165,13 +165,13 @@ export default function ContactForm() {
         <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
         <Field label="Phone" name="phone" type="tel" placeholder="04xx xxx xxx" />
         <div>
-          <label htmlFor="interest" className="mb-1.5 block text-sm font-semibold text-brand-900">
+          <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-ink">
             I&apos;m interested in
           </label>
           <select
             id="interest"
             name="interest"
-            className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+            className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-eucalypt focus:ring-2 focus:ring-eucalypt/30"
             defaultValue={interests[0]}
           >
             {interests.map((i) => (
@@ -182,7 +182,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-brand-900">
+        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
           How can we help?
         </label>
         <textarea
@@ -190,18 +190,18 @@ export default function ContactForm() {
           name="message"
           rows={4}
           placeholder="Tell us a little about your goals..."
-          className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+          className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-eucalypt focus:ring-2 focus:ring-eucalypt/30"
         />
       </div>
 
       <div className="mt-5">
-        <label htmlFor="referral_source" className="mb-1.5 block text-sm font-semibold text-brand-900">
+        <label htmlFor="referral_source" className="mb-1.5 block text-sm font-medium text-ink">
           How did you hear about us?
         </label>
         <select
           id="referral_source"
           name="referral_source"
-          className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+          className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-eucalypt focus:ring-2 focus:ring-eucalypt/30"
           defaultValue=""
         >
           <option value="" disabled>Select an option</option>
@@ -226,11 +226,11 @@ export default function ContactForm() {
         {status !== "loading" && <IconArrow />}
       </button>
 
-      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-brand-900/50">
+      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-sage">
         <span>No spam, ever.</span>
         <span>·</span>
         <span className="flex items-center gap-1">
-          <IconStar className="h-3 w-3 text-brand-500" />
+          <IconStar className="h-3 w-3 text-eucalypt" />
           We respond within 2 hours
         </span>
       </div>
@@ -253,8 +253,8 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-semibold text-brand-900">
-        {label} {required && <span className="text-brand-400">*</span>}
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink">
+        {label} {required && <span className="text-eucalypt-light">*</span>}
       </label>
       <input
         id={name}
@@ -262,7 +262,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+        className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-eucalypt focus:ring-2 focus:ring-eucalypt/30"
       />
     </div>
   );

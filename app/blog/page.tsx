@@ -13,15 +13,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-const categoryColors: Record<string, string> = {
-  Courses: "bg-blue-50 text-blue-700",
-  Visa: "bg-amber-50 text-amber-700",
-  Scholarships: "bg-green-50 text-green-700",
-  "Student Life": "bg-purple-50 text-purple-700",
-  "Test Prep": "bg-rose-50 text-rose-700",
-  Research: "bg-indigo-50 text-indigo-700",
-  Admissions: "bg-teal-50 text-teal-700",
-};
+// One flat, in-palette chip for every category. The old map ran seven
+// competing hues, which is exactly the chromatic noise this palette removes.
+const CATEGORY_CHIP = "border border-line bg-paper-sunk text-eucalypt";
 
 export default function BlogPage() {
   return (
@@ -44,26 +38,24 @@ export default function BlogPage() {
               >
                 <div className="flex items-center gap-3">
                   <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      categoryColors[post.category] || "bg-brand-50 text-brand-700"
-                    }`}
+                    className={`rounded px-3 py-1 text-xs font-medium ${CATEGORY_CHIP}`}
                   >
                     {post.category}
                   </span>
-                  <span className="text-xs text-brand-900/50">
+                  <span className="text-xs text-sage">
                     {post.readTime}
                   </span>
                 </div>
-                <h2 className="mt-4 text-lg font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                <h2 className="mt-4 text-lg font-medium text-ink group-hover:text-eucalypt transition-colors">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/60">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-sage">
                   {post.excerpt}
                 </p>
-                <div className="mt-4 flex items-center justify-between border-t border-brand-50 pt-4">
+                <div className="mt-4 flex items-center justify-between border-t border-line pt-4">
                   <time
                     dateTime={post.date}
-                    className="text-xs text-brand-900/50"
+                    className="text-xs text-sage"
                   >
                     {new Date(post.date).toLocaleDateString("en-AU", {
                       day: "numeric",
@@ -73,7 +65,7 @@ export default function BlogPage() {
                   </time>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-800 transition-colors"
+                    className="flex items-center gap-1 text-sm font-medium text-eucalypt hover:text-ink transition-colors"
                   >
                     Read more <IconArrow className="h-3.5 w-3.5" />
                   </Link>

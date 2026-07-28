@@ -48,22 +48,22 @@ export default function PrPathwayPage() {
             />
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
-                    <IconCheck className="h-3 w-3" />
+                <li key={b} className="flex items-start gap-3 text-sm text-copy">
+                  <span className="mt-0.5 shrink-0 text-eucalypt">
+                    <IconCheck className="h-4 w-4" />
                   </span>
                   {b}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-3xl border border-brand-100 bg-brand-50/60 p-8">
-            <p className="text-sm leading-relaxed text-brand-900/70">
+          <div className="rounded-xl border border-line bg-paper-sunk p-8">
+            <p className="text-sm leading-relaxed text-copy">
               Australia&apos;s skilled occupation lists include many trade, health, hospitality and
               education roles. The right qualification can open both a career and a longer-term
               pathway, but the rules change often.
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
+            <p className="mt-4 text-sm leading-relaxed text-copy">
               We give you honest, up-to-date course guidance and connect you with a registered
               migration agent (MARA) for any formal migration advice.
             </p>
@@ -72,7 +72,7 @@ export default function PrPathwayPage() {
       </section>
 
       {/* Categories */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -85,18 +85,18 @@ export default function PrPathwayPage() {
               <Link
                 key={c.slug}
                 href={`/services/pr-pathway-courses/${c.slug}`}
-                className="reveal group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+                className="reveal group flex flex-col overflow-hidden rounded-xl border border-line bg-white transition-all duration-300"
                 style={{ transitionDelay: `${(i % 2) * 80}ms` }}
               >
-                <div className="flex h-28 items-center gap-4 bg-brand-gradient px-8">
-                  <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/20 text-brand-950 backdrop-blur">
-                    <ServiceIcon name={c.icon} className="h-7 w-7" />
+                <div className="flex h-28 items-center gap-4 bg-eucalypt px-8">
+                  <div className="text-eucalypt">
+                    <ServiceIcon name={c.icon} className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-extrabold text-brand-950">{c.title}</h3>
+                  <h3 className="text-xl font-medium text-ink">{c.title}</h3>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="flex-1 text-sm leading-relaxed text-brand-900/65">{c.tagline}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:text-brand-500">
+                  <p className="flex-1 text-sm leading-relaxed text-sage">{c.tagline}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt group-hover:text-eucalypt">
                     View {c.programs.length} qualifications <IconArrow />
                   </span>
                 </div>

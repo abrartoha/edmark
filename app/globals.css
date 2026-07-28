@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-poppins: "Poppins", var(--font-inter);
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -14,16 +9,38 @@
   }
 
   body {
-    @apply bg-white text-ink antialiased;
+    @apply bg-paper font-sans text-copy antialiased;
+    font-size: 16px;
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    @apply bg-brand-500/20 text-brand-900;
+    @apply bg-eucalypt/15 text-ink;
   }
 
-  h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-balance;
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-normal text-ink text-balance;
+    letter-spacing: -0.015em;
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    line-height: 1.08;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+  }
+
+  /* Visible keyboard focus everywhere, never removed. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-eucalypt ring-offset-2 ring-offset-paper;
   }
 }
 
@@ -32,47 +49,94 @@
     @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
   }
 
+  /* ---------------------------------------------------------------- */
+  /* Buttons. 4px radius, flat fills, 1px borders. No pills, no glow,  */
+  /* no transform on hover: hover darkens and nothing else moves.      */
+  /* ---------------------------------------------------------------- */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500;
+    @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-eucalypt focus-visible:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-brand-gradient text-brand-950 shadow-glow hover:-translate-y-0.5 hover:shadow-lg;
+    @apply btn bg-eucalypt text-paper hover:bg-eucalypt-deep;
   }
 
   .btn-dark {
-    @apply btn bg-brand-800 text-white hover:bg-brand-900;
+    @apply btn bg-ink text-paper hover:bg-eucalypt-deep;
   }
 
   .btn-outline {
-    @apply btn border border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+    @apply btn border border-line bg-paper text-ink hover:bg-paper-sunk;
   }
 
+  /* Secondary on a dark ground (hero, wash-deep). */
   .btn-ghost-light {
-    @apply btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20;
+    @apply btn border border-mist/40 bg-transparent text-paper hover:border-mist hover:bg-white/5 focus-visible:ring-offset-ink;
   }
 
+  /* ---------------------------------------------------------------- */
+  /* Eyebrow / meta labels: mono, uppercase, wide tracking. Not a pill.*/
+  /* ---------------------------------------------------------------- */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-600;
+    @apply inline-flex items-center gap-2 font-mono text-xs font-normal uppercase text-sage;
+    letter-spacing: 0.12em;
+  }
+
+  .eyebrow-light {
+    @apply eyebrow text-eucalypt-light;
+  }
+
+  /* Numerals: mono eucalypt, wide tracking. */
+  .numeral {
+    @apply font-mono font-normal text-eucalypt;
+    letter-spacing: 0.12em;
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* SIGNATURE DEVICE: one key phrase per heading, Newsreader italic.  */
+  /* `.signature` on paper, `.signature-light` on the dark hero, where */
+  /* eucalypt itself would only reach 1.76:1 against the scrim.        */
+  /* ---------------------------------------------------------------- */
+  .signature {
+    @apply font-display italic text-eucalypt;
+  }
+
+  .signature-light {
+    @apply font-display italic text-eucalypt-light;
   }
 
   .nav-link {
-    @apply relative text-sm font-medium text-brand-900/80 transition-colors hover:text-brand-600;
+    @apply relative text-sm font-normal text-copy transition-colors hover:text-eucalypt;
   }
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-brand-gradient transition-all duration-300;
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-eucalypt transition-all duration-300;
   }
   .nav-link:hover::after {
     @apply w-full;
   }
 
+  /* Cards: 12px radius, 1px hairline, no decorative shadow. */
   .card {
-    @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-soft transition-all duration-300;
+    @apply rounded-xl border border-line bg-white p-7 transition-colors duration-200;
   }
 
   .card-hover {
-    @apply card hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-glow;
+    @apply card hover:border-sage/50;
+  }
+
+  /* ---------------------------------------------------------------- */
+  /* Footer zone. CTA and Footer are not siblings (CTA lives at the    */
+  /* end of each page, Footer in the root layout), so the continuous   */
+  /* wash-deep is painted by their shared ancestor and anchored to the */
+  /* bottom of the page at a fixed band height. Both children are      */
+  /* transparent, so the gradient runs through them with no seam.      */
+  /* ---------------------------------------------------------------- */
+  .footer-zone {
+    background-image: linear-gradient(165deg, #154d3c 0%, #0e1f1a 100%);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 1500px;
   }
 }
 
@@ -80,13 +144,10 @@
   .text-balance {
     text-wrap: balance;
   }
-  .text-gradient {
-    @apply bg-brand-gradient bg-clip-text text-transparent;
-  }
 }
 
 /* ------------------------------------------------------------------ */
-/* Scroll reveal (progressive enhancement — only hides when JS is on)  */
+/* Scroll reveal (progressive enhancement, only hides when JS is on)   */
 /* ------------------------------------------------------------------ */
 .js .reveal {
   opacity: 0;
@@ -101,7 +162,8 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* First-visit intro / preloader                                       */
+/* First-visit intro / preloader. Flat ink: gradients are reserved for */
+/* the three places named in the design rules, and this is not one.    */
 /* ------------------------------------------------------------------ */
 #edmark-intro {
   position: fixed;
@@ -110,7 +172,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: radial-gradient(120% 120% at 50% 0%, #0d6b5b 0%, #083a31 60%, #052721 100%);
+  background: #0e1f1a;
 }
 [data-intro-seen="1"] #edmark-intro {
   display: none !important;
@@ -171,5 +233,11 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+  .animate-fade-up {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

@@ -550,17 +550,17 @@ export default function BlogPostPage({
         <div className="container-page mx-auto max-w-3xl">
           <header className="mb-12">
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+              <span className="rounded bg-paper-sunk px-3 py-1 text-xs font-medium text-eucalypt">
                 {post.category}
               </span>
-              <span className="text-xs text-brand-900/50">{post.readTime}</span>
+              <span className="text-xs text-sage">{post.readTime}</span>
             </div>
-            <h1 className="mt-4 text-3xl font-extrabold text-brand-900 sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-medium text-ink sm:text-4xl">
               {post.title}
             </h1>
             <time
               dateTime={post.date}
-              className="mt-3 block text-sm text-brand-900/50"
+              className="mt-3 block text-sm text-sage"
             >
               {new Date(post.date).toLocaleDateString("en-AU", {
                 day: "numeric",
@@ -578,7 +578,7 @@ export default function BlogPostPage({
                 return (
                   <h2
                     key={i}
-                    className="mt-10 mb-4 text-2xl font-bold text-brand-900"
+                    className="mt-10 mb-4 text-2xl font-medium text-ink"
                   >
                     {trimmed.replace("## ", "")}
                   </h2>
@@ -587,7 +587,7 @@ export default function BlogPostPage({
                 return (
                   <h3
                     key={i}
-                    className="mt-8 mb-3 text-xl font-bold text-brand-900"
+                    className="mt-8 mb-3 text-xl font-medium text-ink"
                   >
                     {trimmed.replace("### ", "")}
                   </h3>
@@ -596,7 +596,7 @@ export default function BlogPostPage({
                 return (
                   <li
                     key={i}
-                    className="ml-5 mb-2 text-brand-900/70 leading-relaxed list-disc"
+                    className="ml-5 mb-2 text-copy leading-relaxed list-disc"
                     dangerouslySetInnerHTML={{
                       __html: trimmed
                         .replace(/^- /, "")
@@ -608,7 +608,7 @@ export default function BlogPostPage({
                 return (
                   <li
                     key={i}
-                    className="ml-5 mb-2 text-brand-900/70 leading-relaxed list-disc"
+                    className="ml-5 mb-2 text-copy leading-relaxed list-disc"
                   >
                     {trimmed.replace("- ", "")}
                   </li>
@@ -617,7 +617,7 @@ export default function BlogPostPage({
                 return (
                   <li
                     key={i}
-                    className="ml-5 mb-2 text-brand-900/70 leading-relaxed list-decimal"
+                    className="ml-5 mb-2 text-copy leading-relaxed list-decimal"
                     dangerouslySetInnerHTML={{
                       __html: trimmed
                         .replace(/^\d+\.\s*/, "")
@@ -628,7 +628,7 @@ export default function BlogPostPage({
               return (
                 <p
                   key={i}
-                  className="mb-4 text-brand-900/70 leading-relaxed"
+                  className="mb-4 text-copy leading-relaxed"
                   dangerouslySetInnerHTML={{
                     __html: trimmed.replace(
                       /\*\*(.*?)\*\*/g,
@@ -642,9 +642,9 @@ export default function BlogPostPage({
         </div>
       </article>
 
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-ink">
             More from our blog
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -654,13 +654,13 @@ export default function BlogPostPage({
                 href={`/blog/${p.slug}`}
                 className="card-hover group"
               >
-                <span className="text-xs font-semibold text-brand-500">
+                <span className="text-xs font-medium text-eucalypt">
                   {p.category}
                 </span>
-                <h3 className="mt-2 font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                <h3 className="mt-2 font-medium text-ink group-hover:text-eucalypt transition-colors">
                   {p.title}
                 </h3>
-                <span className="mt-2 flex items-center gap-1 text-sm font-semibold text-brand-600">
+                <span className="mt-2 flex items-center gap-1 text-sm font-medium text-eucalypt">
                   Read <IconArrow className="h-3 w-3" />
                 </span>
               </Link>

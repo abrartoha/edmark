@@ -201,13 +201,13 @@ export default function ResearchDegreesPage() {
                 className="card-hover reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
+                <div className="text-eucalypt">
                   <item.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-brand-900">
+                <h3 className="mt-5 text-lg font-medium text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
+                <p className="mt-3 text-sm leading-relaxed text-copy">
                   {item.desc}
                 </p>
               </div>
@@ -217,7 +217,7 @@ export default function ResearchDegreesPage() {
       </section>
 
       {/* Degree Types */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="border-t-2 border-brass bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -229,27 +229,27 @@ export default function ResearchDegreesPage() {
             {degreeTypes.map((d, i) => (
               <div
                 key={d.title}
-                className="reveal rounded-3xl border border-brand-100 bg-white p-8 shadow-soft lg:p-10"
+                className="reveal rounded-xl border border-line bg-white p-8 lg:p-10"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-brand-900">{d.title}</h3>
-                    <span className="mt-1 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
+                    <h3 className="text-2xl font-medium text-ink">{d.title}</h3>
+                    <span className="mt-1 inline-block rounded bg-paper-sunk px-3 py-1 text-xs font-medium text-eucalypt">
                       Duration: {d.duration}
                     </span>
                   </div>
                 </div>
-                <p className="mt-4 text-brand-900/70 leading-relaxed">{d.desc}</p>
+                <p className="mt-4 text-copy leading-relaxed">{d.desc}</p>
                 <div className="mt-6">
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-brand-500">
+                  <h4 className="text-sm font-medium uppercase tracking-wider text-eucalypt">
                     Entry requirements
                   </h4>
                   <ul className="mt-3 space-y-2">
                     {d.entry.map((req) => (
-                      <li key={req} className="flex items-start gap-3 text-sm text-brand-900/70">
-                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
-                          <IconCheck className="h-3 w-3" />
+                      <li key={req} className="flex items-start gap-3 text-sm text-copy">
+                        <span className="mt-0.5 shrink-0 text-eucalypt">
+                          <IconCheck className="h-4 w-4" />
                         </span>
                         {req}
                       </li>
@@ -275,19 +275,19 @@ export default function ResearchDegreesPage() {
             {proposalSections.map((s, i) => (
               <div
                 key={s.title}
-                className="reveal rounded-2xl border border-brand-100 bg-brand-50/50 p-6"
+                className="reveal rounded-xl border border-line bg-paper-sunk p-6"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-gradient font-display text-sm font-bold text-brand-950">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-paper numeral text-sm">
                   {i + 1}
                 </div>
-                <h3 className="mt-3 font-bold text-brand-900">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-900/60">{s.desc}</p>
+                <h3 className="mt-3 font-medium text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-sage">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/blog/how-to-write-a-research-proposal-for-australian-universities" className="text-sm font-semibold text-brand-600 hover:underline">
+            <Link href="/blog/how-to-write-a-research-proposal-for-australian-universities" className="text-sm font-medium text-eucalypt hover:underline">
               Read our full research proposal writing guide →
             </Link>
           </div>
@@ -295,7 +295,7 @@ export default function ResearchDegreesPage() {
       </section>
 
       {/* Scholarships */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
@@ -311,17 +311,17 @@ export default function ResearchDegreesPage() {
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-bold text-brand-900">{s.name}</h3>
+                  <h3 className="text-lg font-medium text-ink">{s.name}</h3>
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
+                  <span className="rounded bg-paper-sunk px-3 py-1 text-xs font-medium text-eucalypt">
                     {s.funder}
                   </span>
-                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                  <span className="rounded bg-paper-sunk px-3 py-1 text-xs font-medium text-eucalypt">
                     {s.coverage}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">{s.desc}</p>
+                <p className="mt-3 text-sm leading-relaxed text-copy">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -349,11 +349,11 @@ export default function ResearchDegreesPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-gradient font-display text-2xl font-extrabold text-brand-950">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-line bg-paper numeral text-2xl">
                   {step.n}
                 </div>
-                <h3 className="mt-5 text-base font-bold text-brand-900">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">{step.desc}</p>
+                <h3 className="mt-5 text-base font-medium text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-copy">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -361,29 +361,29 @@ export default function ResearchDegreesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-brand-50 py-16 lg:py-24">
+      <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page max-w-3xl">
           <SectionHeading
             center
             eyebrow="FAQ"
             title="Research degree questions, answered"
           />
-          <div className="mt-10 divide-y divide-brand-100 rounded-2xl border border-brand-100 bg-white">
+          <div className="mt-10 divide-y divide-line rounded-xl border border-line bg-white">
             {faqItems.map((f) => (
               <details
                 key={f.q}
                 className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink">
                   {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-transform group-open:rotate-45">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-eucalypt transition-colors group-open:rotate-45">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                       <line x1="12" y1="5" x2="12" y2="19" />
                       <line x1="5" y1="12" x2="19" y2="12" />
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">{f.a}</p>
+                <p className="mt-3 text-sm leading-relaxed text-copy">{f.a}</p>
               </details>
             ))}
           </div>
