@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import { IconCheck } from "@/components/Icons";
+import { universities, colleges, tafes, type Institution } from "@/lib/partners";
 
 export const metadata: Metadata = {
   title: "Our Partner Institutions",
@@ -13,87 +14,21 @@ export const metadata: Metadata = {
   alternates: { canonical: "/partners" },
 };
 
-type Institution = { slug: string; name: string; meta: string };
-
-const universities: Institution[] = [
-  { slug: "unimelb", name: "University of Melbourne", meta: "Go8 · Melbourne, VIC" },
-  { slug: "monash", name: "Monash University", meta: "Go8 · Melbourne, VIC" },
-  { slug: "sydney", name: "University of Sydney", meta: "Go8 · Sydney, NSW" },
-  { slug: "unsw", name: "UNSW Sydney", meta: "Go8 · Sydney, NSW" },
-  { slug: "uq", name: "University of Queensland", meta: "Go8 · Brisbane, QLD" },
-  { slug: "anu", name: "Australian National University", meta: "Go8 · Canberra, ACT" },
-  { slug: "adelaide", name: "University of Adelaide", meta: "Go8 · Adelaide, SA" },
-  { slug: "uwa", name: "University of Western Australia", meta: "Go8 · Perth, WA" },
-  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC" },
-  { slug: "deakin", name: "Deakin University", meta: "Geelong / Melbourne, VIC" },
-  { slug: "swinburne", name: "Swinburne University of Technology", meta: "Melbourne, VIC" },
-  { slug: "latrobe", name: "La Trobe University", meta: "Melbourne, VIC" },
-  { slug: "vu", name: "Victoria University", meta: "Melbourne, VIC" },
-  { slug: "federation", name: "Federation University", meta: "Ballarat, VIC" },
-  { slug: "uts", name: "University of Technology Sydney", meta: "Sydney, NSW" },
-  { slug: "macquarie", name: "Macquarie University", meta: "Sydney, NSW" },
-  { slug: "westernsydney", name: "Western Sydney University", meta: "Sydney, NSW" },
-  { slug: "newcastle", name: "University of Newcastle", meta: "Newcastle, NSW" },
-  { slug: "uow", name: "University of Wollongong", meta: "Wollongong, NSW" },
-  { slug: "csu", name: "Charles Sturt University", meta: "Bathurst, NSW" },
-  { slug: "scu", name: "Southern Cross University", meta: "Lismore, NSW" },
-  { slug: "une", name: "University of New England", meta: "Armidale, NSW" },
-  { slug: "acu", name: "Australian Catholic University", meta: "Multiple campuses" },
-  { slug: "canberra", name: "University of Canberra", meta: "Canberra, ACT" },
-  { slug: "cdu", name: "Charles Darwin University", meta: "Darwin, NT" },
-  { slug: "flinders", name: "Flinders University", meta: "Adelaide, SA" },
-  { slug: "unisa", name: "University of South Australia", meta: "Adelaide, SA" },
-  { slug: "utas", name: "University of Tasmania", meta: "Hobart, TAS" },
-  { slug: "qut", name: "Queensland University of Technology", meta: "Brisbane, QLD" },
-  { slug: "griffith", name: "Griffith University", meta: "Brisbane / Gold Coast, QLD" },
-  { slug: "jcu", name: "James Cook University", meta: "Townsville, QLD" },
-  { slug: "usq", name: "University of Southern Queensland", meta: "Toowoomba, QLD" },
-  { slug: "usc", name: "University of the Sunshine Coast", meta: "Sunshine Coast, QLD" },
-  { slug: "cqu", name: "CQUniversity", meta: "Rockhampton, QLD" },
-  { slug: "bond", name: "Bond University", meta: "Gold Coast, QLD" },
-  { slug: "torrens", name: "Torrens University Australia", meta: "Multiple campuses" },
-  { slug: "ecu", name: "Edith Cowan University", meta: "Perth, WA" },
-  { slug: "curtin", name: "Curtin University", meta: "Perth, WA" },
-  { slug: "murdoch", name: "Murdoch University", meta: "Perth, WA" },
-  { slug: "notredame", name: "University of Notre Dame Australia", meta: "Fremantle, WA" },
-];
-
-const colleges: Institution[] = [
-  { slug: "kaplan", name: "Kaplan Business School", meta: "Multiple campuses" },
-  { slug: "mit", name: "Melbourne Institute of Technology", meta: "Melbourne, VIC" },
-  { slug: "vit", name: "Victorian Institute of Technology", meta: "Melbourne, VIC" },
-  { slug: "holmes", name: "Holmes Institute", meta: "Melbourne, VIC" },
-  { slug: "koi", name: "King's Own Institute", meta: "Sydney, NSW" },
-  { slug: "navitas", name: "Navitas", meta: "Pathway provider" },
-  { slug: "deakincollege", name: "Deakin College", meta: "Pathway · Melbourne, VIC" },
-  { slug: "monashcollege", name: "Monash College", meta: "Pathway · Melbourne, VIC" },
-  { slug: "utscollege", name: "UTS College", meta: "Pathway · Sydney, NSW" },
-];
-
-const tafes: Institution[] = [
-  { slug: "melbournepoly", name: "Melbourne Polytechnic", meta: "Melbourne, VIC" },
-  { slug: "holmesglen", name: "Holmesglen Institute", meta: "Melbourne, VIC" },
-  { slug: "boxhill", name: "Box Hill Institute", meta: "Melbourne, VIC" },
-  { slug: "chisholm", name: "Chisholm Institute", meta: "Melbourne, VIC" },
-  { slug: "tafensw", name: "TAFE NSW", meta: "Sydney, NSW" },
-  { slug: "tafeqld", name: "TAFE Queensland", meta: "Brisbane, QLD" },
-  { slug: "tafesa", name: "TAFE SA", meta: "Adelaide, SA" },
-  { slug: "tastafe", name: "TasTAFE", meta: "Hobart, TAS" },
-  { slug: "cit", name: "Canberra Institute of Technology", meta: "Canberra, ACT" },
-];
-
 const benefits = [
-  "Faster application processing through direct partnerships",
+  "Faster application processing through our partner network",
   "Access to exclusive scholarships not publicly advertised",
   "Priority assessment and conditional offers",
-  "Direct communication with admissions teams",
+  "An open line to admissions teams",
   "Pathway and credit transfer arrangements",
   "Up-to-date knowledge of entry requirements and course changes",
 ];
 
 function LogoCard({ inst, i }: { inst: Institution; i: number }) {
   return (
-    <div
+    <a
+      href={inst.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="reveal group flex flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-white p-5 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-glow"
       style={{ transitionDelay: `${(i % 10) * 40}ms` }}
     >
@@ -107,10 +42,12 @@ function LogoCard({ inst, i }: { inst: Institution; i: number }) {
         />
       </div>
       <div>
-        <h3 className="text-sm font-bold leading-snug text-brand-900">{inst.name}</h3>
+        <h3 className="text-sm font-bold leading-snug text-brand-900 transition-colors group-hover:text-brand-600">
+          {inst.name}
+        </h3>
         <p className="mt-1 text-xs text-brand-900/50">{inst.meta}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -131,7 +68,7 @@ export default function PartnersPage() {
       <PageHero
         eyebrow="Our partners"
         title={`${total}+ partner institutions across Australia`}
-        subtitle="Direct relationships with leading universities, TAFEs and colleges mean faster offers, stronger applications and exclusive opportunities for our students."
+        subtitle="Working relationships with leading universities, TAFEs and colleges mean faster offers, stronger applications and more opportunities for our students."
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
 
@@ -142,7 +79,7 @@ export default function PartnersPage() {
             <SectionHeading
               eyebrow="Why it matters"
               title="How our partnerships benefit you"
-              subtitle="We don't just recommend institutions. We have direct relationships with their admissions teams. This gives our students a real advantage."
+              subtitle="We don't just recommend institutions. We work with their admissions teams. This gives our students a real advantage."
             />
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (

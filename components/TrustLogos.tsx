@@ -1,51 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+import { featuredInstitutions } from "@/lib/partners";
 import { IconArrow } from "./Icons";
-
-// A representative slice of the partner network. The full list, grouped by
-// type and state, lives on /partners.
-const logos = [
-  { slug: "unimelb", name: "University of Melbourne" },
-  { slug: "monash", name: "Monash University" },
-  { slug: "sydney", name: "University of Sydney" },
-  { slug: "unsw", name: "UNSW Sydney" },
-  { slug: "uq", name: "University of Queensland" },
-  { slug: "anu", name: "Australian National University" },
-  { slug: "adelaide", name: "University of Adelaide" },
-  { slug: "uwa", name: "University of Western Australia" },
-  { slug: "rmit", name: "RMIT University" },
-  { slug: "deakin", name: "Deakin University" },
-  { slug: "swinburne", name: "Swinburne University of Technology" },
-  { slug: "latrobe", name: "La Trobe University" },
-  { slug: "uts", name: "University of Technology Sydney" },
-  { slug: "griffith", name: "Griffith University" },
-  { slug: "curtin", name: "Curtin University" },
-  { slug: "qut", name: "Queensland University of Technology" },
-  { slug: "melbournepoly", name: "Melbourne Polytechnic" },
-  { slug: "tafensw", name: "TAFE NSW" },
-  { slug: "kaplan", name: "Kaplan Business School" },
-  { slug: "navitas", name: "Navitas" },
-];
 
 export default function TrustLogos() {
   return (
     <section className="border-b border-brand-100 bg-white py-14 lg:py-16">
       <div className="container-page">
         <p className="reveal text-center text-xs font-semibold uppercase tracking-widest text-brand-900/50">
-          Direct partners with 50+ Australian institutions
+          Partner institutions across Australia
         </p>
 
-        <div className="reveal mt-10 grid grid-cols-3 items-center gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-5">
-          {logos.map((l) => (
-            <div key={l.slug} className="flex items-center justify-center">
+        <div className="reveal mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {featuredInstitutions.map((inst) => (
+            <a
+              key={inst.slug}
+              href={inst.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-white p-4 text-center transition-all duration-300 hover:border-brand-200 hover:shadow-soft"
+            >
               <Image
-                src={`/images/partners/${l.slug}.png`}
-                alt={l.name}
-                width={160}
-                height={64}
-                className="h-10 w-auto max-w-[130px] object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 lg:h-12"
+                src={`/images/partners/${inst.slug}.png`}
+                alt={`${inst.name} logo`}
+                width={120}
+                height={60}
+                className="h-12 w-auto max-w-[110px] object-contain"
               />
-            </div>
+              <span className="text-xs font-semibold leading-snug text-brand-900 transition-colors group-hover:text-brand-600">
+                {inst.name}
+              </span>
+            </a>
           ))}
         </div>
 
