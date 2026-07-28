@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export default function SectionHeading({
   eyebrow,
   title,
@@ -6,7 +8,9 @@ export default function SectionHeading({
   light = false,
 }: {
   eyebrow?: string;
-  title: string;
+  // ReactNode so a heading can highlight one phrase, e.g.
+  // title={<>Everything you need, <span className="text-brand-500">…</span></>}
+  title: ReactNode;
   subtitle?: string;
   center?: boolean;
   light?: boolean;

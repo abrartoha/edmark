@@ -201,8 +201,8 @@ export default function ResearchDegreesPage() {
                 className="card-hover reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-500 text-brand-950 shadow-glow">
-                  <item.icon className="h-7 w-7" />
+                <div className="text-brand-500">
+                  <item.icon className="h-9 w-9" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-brand-900">
                   {item.title}

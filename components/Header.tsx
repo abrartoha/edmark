@@ -87,8 +87,8 @@ export default function Header() {
                           onClick={() => setServicesOpen(false)}
                           className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
                         >
-                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-500 text-brand-950">
-                            <ServiceIcon name={s.icon} className="h-4 w-4" />
+                          <span className="shrink-0 text-brand-500">
+                            <ServiceIcon name={s.icon} className="h-6 w-6" />
                           </span>
                           <span>
                             <span className="block text-sm font-bold text-brand-900">

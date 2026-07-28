@@ -102,8 +102,8 @@ export default function StudyInAustraliaPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500 text-brand-950">
-                  <IconCheck className="h-5 w-5" />
+                <div className="text-brand-500">
+                  <IconCheck className="h-6 w-6" />
                 </div>
                 <h3 className="mt-4 text-base font-bold text-brand-900">
                   {item.title}

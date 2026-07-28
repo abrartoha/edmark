@@ -175,8 +175,8 @@ export default function PrCategoryPage({
                 href={`/services/pr-pathway-courses/${o.slug}`}
                 className="card-hover group flex items-start gap-4"
               >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-500 text-brand-950">
-                  <ServiceIcon name={o.icon} className="h-5 w-5" />
+                <div className="shrink-0 text-brand-500">
+                  <ServiceIcon name={o.icon} className="h-6 w-6" />
                 </div>
                 <div>
                   <h3 className="font-bold text-brand-900 transition-colors group-hover:text-brand-600">

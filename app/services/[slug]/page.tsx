@@ -178,8 +178,8 @@ export default function ServicePage({
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid gap-16 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-500 text-brand-950 shadow-glow">
-              <ServiceIcon name={service.icon} className="h-8 w-8" />
+            <div className="text-brand-500">
+              <ServiceIcon name={service.icon} className="h-9 w-9" />
             </div>
             <h2 className="mt-6 text-3xl font-bold text-brand-900">
               {service.title}
@@ -271,8 +271,8 @@ export default function ServicePage({
                 href={`/services/${s.slug}`}
                 className="card-hover group flex items-start gap-4"
               >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-500 text-brand-950">
-                  <ServiceIcon name={s.icon} className="h-5 w-5" />
+                <div className="shrink-0 text-brand-500">
+                  <ServiceIcon name={s.icon} className="h-6 w-6" />
                 </div>
                 <div>
                   <h3 className="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">

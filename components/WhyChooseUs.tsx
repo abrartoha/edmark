@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
               className="card reveal"
               style={{ transitionDelay: `${(i % 2) * 100}ms` }}
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500 text-brand-950">
+              <div className="text-brand-500">
                 <IconCheck className="h-6 w-6" />
               </div>
               <h3 className="mt-4 text-base font-bold text-brand-900">{r.title}</h3>

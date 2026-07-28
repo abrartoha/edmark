@@ -61,8 +61,8 @@ export default function ContactPage() {
                   href={d.href}
                   className="flex items-start gap-4 rounded-2xl border border-brand-100 p-5 transition hover:border-brand-200 hover:bg-brand-50"
                 >
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-500 text-brand-950">
-                    <d.icon className="h-6 w-6" />
+                  <span className="shrink-0 text-brand-500">
+                    <d.icon className="h-7 w-7" />
                   </span>
                   <span>
                     <span className="block text-xs font-semibold uppercase tracking-wider text-brand-500">
