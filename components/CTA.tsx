@@ -10,9 +10,10 @@ export default function CTA({
   subtitle?: string;
 }) {
   return (
-    // Transparent: the wash-deep gradient is painted by the shared
-    // `.footer-zone` ancestor so it runs straight into the footer with no seam.
-    <section className="bg-transparent pb-20 pt-20 lg:pb-28 lg:pt-28">
+    // Flat #154D3C: wash-deep's own 0% stop. The footer gradient below picks
+    // up from exactly this colour, so the seam is invisible by construction
+    // rather than by tuning, on every page and every viewport height.
+    <section className="bg-eucalypt pb-20 pt-20 lg:pb-28 lg:pt-28">
       <div className="container-page">
         <div className="reveal mx-auto max-w-2xl text-center">
           <h2 className="text-paper">{title}</h2>

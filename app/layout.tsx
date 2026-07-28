@@ -215,13 +215,8 @@ export default function RootLayout({
         <ScrollReveal />
         <NotificationBar />
         <Header />
-        {/* One wash-deep ground shared by the closing CTA and the footer, so
-            the gradient runs continuously through both with no seam. Every
-            section above the CTA paints its own opaque background. */}
-        <div className="footer-zone">
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <main>{children}</main>
+        <Footer />
         <WhatsAppButton />
         <ExitIntentPopup />
       </body>

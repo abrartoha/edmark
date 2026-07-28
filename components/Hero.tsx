@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Hero background video (poster image shows instantly and is the
             fallback if the video can't autoplay) */}
         <video
-          className="absolute inset-0 h-full w-full scale-105 object-cover object-center"
+          className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60 blur-[1px]"
           autoPlay
           muted
           loop
@@ -38,12 +38,14 @@ export default function Hero() {
             and there is no colour flash before playback begins. Sits below the
             content in z-order and never intercepts pointer events. */}
         <div
-          className="pointer-events-none absolute inset-0 z-0 bg-scrim-hero"
+          className="pointer-events-none absolute inset-0 z-0 bg-scrim-hero-mobile md:bg-scrim-hero"
           aria-hidden="true"
         />
 
-        <div className="container-page relative z-10 max-w-4xl py-24 lg:py-32">
-          <div className="animate-fade-up">
+        <div className="container-page relative z-10 py-24 lg:py-32">
+          {/* Held to the left half: the md+ scrim is horizontal, so the text
+              must stay inside the dark end of it. */}
+          <div className="max-w-2xl animate-fade-up">
             <span className="eyebrow-light">
               <IconStar className="h-3.5 w-3.5" /> Australia&apos;s trusted
               education consultants
