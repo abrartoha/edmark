@@ -120,7 +120,7 @@ export default function ScholarshipsPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500 text-brand-950">
                   <IconTrophy className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-lg font-bold text-brand-900">
@@ -150,7 +150,7 @@ export default function ScholarshipsPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-gradient font-display text-2xl font-extrabold text-brand-950">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-extrabold text-brand-950">
                   {s.n}
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-brand-900">

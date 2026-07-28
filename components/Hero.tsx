@@ -53,7 +53,7 @@ export default function Hero() {
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {bullets.map((b) => (
               <li key={b} className="flex items-center gap-2 text-sm font-medium text-white">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
                 {b}

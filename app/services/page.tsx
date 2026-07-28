@@ -29,7 +29,7 @@ export default function ServicesPage() {
               key={s.title}
               className="reveal grid items-center gap-8 rounded-3xl border border-brand-100 p-8 shadow-soft lg:grid-cols-[auto_1fr_1fr] lg:p-10"
             >
-              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
+              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-500 text-brand-950 shadow-glow">
                 <ServiceIcon name={s.icon} className="h-8 w-8" />
               </div>
               <div>
@@ -46,7 +46,7 @@ export default function ServicesPage() {
               <ul className="space-y-3 rounded-2xl bg-brand-50 p-6">
                 {s.points.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-sm font-medium text-brand-800">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                       <IconCheck className="h-3 w-3" />
                     </span>
                     {p}

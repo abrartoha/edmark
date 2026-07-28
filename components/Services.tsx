@@ -22,7 +22,7 @@ export default function Services() {
               className="card-hover group reveal"
               style={{ transitionDelay: `${(i % 3) * 90}ms` }}
             >
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-500 text-brand-950 shadow-glow">
                 <ServiceIcon name={s.icon} className="h-7 w-7" />
               </div>
               <h3 className="mt-5 text-xl font-bold text-brand-900">{s.title}</h3>

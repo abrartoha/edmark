@@ -102,7 +102,7 @@ export default function StudyInAustraliaPage() {
                 className="card reveal"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient text-brand-950">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500 text-brand-950">
                   <IconCheck className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-base font-bold text-brand-900">
@@ -209,7 +209,7 @@ export default function StudyInAustraliaPage() {
                 key={req}
                 className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-soft"
               >
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
                 <span className="text-sm text-brand-900/80">{req}</span>
@@ -291,11 +291,11 @@ export default function StudyInAustraliaPage() {
             </p>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">1</span>
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-bold">1</span>
                 <span><strong className="text-brand-900">Semester 1 (February/March)</strong> is the primary intake, with the widest range of courses. Applications typically close in October–December of the previous year.</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950 text-xs font-bold">2</span>
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-bold">2</span>
                 <span><strong className="text-brand-900">Semester 2 (July/August)</strong> is a secondary intake available for most courses. Applications typically close in April–May.</span>
               </li>
             </ul>
@@ -311,19 +311,19 @@ export default function StudyInAustraliaPage() {
             </p>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
                 <span><strong className="text-brand-900">During study periods:</strong> Up to 48 hours per fortnight</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
                 <span><strong className="text-brand-900">During breaks:</strong> Unlimited hours</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
                 <span><strong className="text-brand-900">Minimum wage:</strong> $24.10 AUD/hour (2026)</span>

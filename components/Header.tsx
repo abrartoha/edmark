@@ -51,7 +51,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-page flex h-20 items-center justify-between py-3">
+      <div className="container-page flex h-24 items-center justify-between py-3">
         <Link href="/" aria-label={`${site.name} home`} className="py-1">
           <Logo />
         </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                           onClick={() => setServicesOpen(false)}
                           className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
                         >
-                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-gradient text-brand-950">
+                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-500 text-brand-950">
                             <ServiceIcon name={s.icon} className="h-4 w-4" />
                           </span>
                           <span>
@@ -127,12 +127,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={site.phoneHref} className="text-sm font-semibold text-brand-700">
-            {site.phone}
+          <a href={site.phoneHref} className="btn-primary">
+            Call us
           </a>
-          <Link href="/contact" className="btn-primary">
-            Free Consultation
-          </Link>
         </div>
 
         <button
@@ -222,9 +219,9 @@ export default function Header() {
                 </Link>
               )
             )}
-            <Link href="/contact" onClick={closeMobile} className="btn-primary mt-2">
-              Book Free Consultation
-            </Link>
+            <a href={site.phoneHref} onClick={closeMobile} className="btn-primary mt-2">
+              Call us
+            </a>
           </nav>
         </div>
       )}

@@ -201,7 +201,7 @@ export default function ResearchDegreesPage() {
                 className="card-hover reveal"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-brand-950 shadow-glow">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-500 text-brand-950 shadow-glow">
                   <item.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-brand-900">
@@ -248,7 +248,7 @@ export default function ResearchDegreesPage() {
                   <ul className="mt-3 space-y-2">
                     {d.entry.map((req) => (
                       <li key={req} className="flex items-start gap-3 text-sm text-brand-900/70">
-                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-gradient text-brand-950">
+                        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
                           <IconCheck className="h-3 w-3" />
                         </span>
                         {req}
@@ -278,7 +278,7 @@ export default function ResearchDegreesPage() {
                 className="reveal rounded-2xl border border-brand-100 bg-brand-50/50 p-6"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-gradient font-display text-sm font-bold text-brand-950">
+                <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 font-display text-sm font-bold text-brand-950">
                   {i + 1}
                 </div>
                 <h3 className="mt-3 font-bold text-brand-900">{s.title}</h3>
@@ -349,7 +349,7 @@ export default function ResearchDegreesPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-gradient font-display text-2xl font-extrabold text-brand-950">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-extrabold text-brand-950">
                   {step.n}
                 </div>
                 <h3 className="mt-5 text-base font-bold text-brand-900">{step.title}</h3>
