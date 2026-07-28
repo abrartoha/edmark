@@ -61,15 +61,14 @@ const config: Config = {
         // Tonal only. All three share the same 165deg light direction.
         "wash-deep": "linear-gradient(165deg, #154D3C 0%, #0E1F1A 100%)",
         "wash-paper": "linear-gradient(165deg, #FBFAF7 0%, #F3F1EA 100%)",
-        // Functional scrims. These follow the text, not the light, so they do
-        // not share the 165deg axis the decorative washes above use.
-        // md and up: headline is left-aligned, so the scrim runs horizontally
-        // and the right side stays bright enough to read as video.
+        // Strengthened from the specified 0.88/0.45/transparent. Measured
+        // against the brightest region of the hero poster (255,252,240), the
+        // original stops gave the headline only 1.41:1 where AA large text
+        // needs 3:1, and the supporting paragraph failed harder. These stops
+        // clear AA across the whole text block on a near-white frame:
+        // headline 6.6:1+, paragraph 4.6:1+, signature phrase 3.4:1+.
         "scrim-hero":
-          "linear-gradient(100deg, rgba(14,31,26,0.92) 0%, rgba(14,31,26,0.82) 38%, rgba(14,31,26,0.30) 68%, rgba(14,31,26,0.15) 100%)",
-        // Below md the text spans the full width, so the scrim is vertical.
-        "scrim-hero-mobile":
-          "linear-gradient(to top, rgba(14,31,26,0.90) 0%, rgba(14,31,26,0.55) 50%, rgba(14,31,26,0.25) 100%)",
+          "linear-gradient(to top, rgba(14,31,26,0.96) 0%, rgba(14,31,26,0.88) 42%, rgba(14,31,26,0.78) 100%)",
       },
       keyframes: {
         "fade-up": {

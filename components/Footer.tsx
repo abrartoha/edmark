@@ -19,7 +19,7 @@ const resources = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-wash-deep text-mist">
+    <footer className="relative bg-transparent text-mist">
       <div className="container-page relative py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-1">
