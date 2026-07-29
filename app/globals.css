@@ -28,11 +28,11 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-500;
+    @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-eucalypt;
   }
 
   .btn-primary {
-    @apply btn bg-brand-gradient text-brand-950 shadow-glow hover:-translate-y-0.5 hover:shadow-lg;
+    @apply btn bg-eucalypt text-paper hover:bg-eucalypt-deep;
   }
 
   .btn-dark {
@@ -52,11 +52,11 @@
   }
 
   .nav-link {
-    @apply relative text-sm font-medium text-brand-900/80 transition-colors hover:text-brand-600;
+    @apply relative text-sm font-medium text-copy transition-colors hover:text-eucalypt;
   }
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-brand-500 transition-all duration-300;
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-eucalypt transition-all duration-300;
   }
   .nav-link:hover::after {
     @apply w-full;

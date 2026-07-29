@@ -45,9 +45,9 @@ function Dropdown({ item }: { item: NavItem }) {
           open ? "block" : "hidden"
         }`}
       >
-        <div className="rounded-2xl border border-brand-100 bg-white p-3 shadow-glow">
+        <div className="rounded-xl border border-line bg-paper p-3">
           {item.blurb && (
-            <p className="px-3 pb-2 pt-1 text-xs font-semibold uppercase tracking-wider text-brand-900/45">
+            <p className="px-3 pb-2 pt-1 text-xs font-medium uppercase tracking-wider text-sage">
               {item.blurb}
             </p>
           )}
@@ -56,13 +56,13 @@ function Dropdown({ item }: { item: NavItem }) {
               key={c.href}
               href={c.href}
               onClick={() => setOpen(false)}
-              className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-brand-50"
+              className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-paper-sunk"
             >
-              <span className="block text-sm font-bold text-brand-900">
+              <span className="block text-sm font-bold text-ink">
                 {c.label}
               </span>
               {c.note && (
-                <span className="mt-0.5 block text-xs leading-snug text-brand-900/55">
+                <span className="mt-0.5 block text-xs leading-snug text-sage">
                   {c.note}
                 </span>
               )}
@@ -95,7 +95,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-brand-100 bg-white/90 backdrop-blur-md"
+          ? "border-b border-line bg-paper/95 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -125,7 +125,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 xl:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-ink xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -147,7 +147,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-brand-100 bg-white xl:hidden">
+        <div className="border-t border-line bg-paper xl:hidden">
           <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
             {nav.map((item) =>
               item.children ? (
@@ -157,26 +157,26 @@ export default function Header() {
                     onClick={() =>
                       setOpenGroup((g) => (g === item.label ? null : item.label))
                     }
-                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-paper-sunk"
                     aria-expanded={openGroup === item.label}
                   >
                     {item.label}
                     <Chevron open={openGroup === item.label} />
                   </button>
                   {openGroup === item.label && (
-                    <div className="ml-3 border-l border-brand-100 pl-2">
+                    <div className="ml-3 border-l border-line pl-2">
                       {item.children.map((c) => (
                         <Link
                           key={c.href}
                           href={c.href}
                           onClick={closeMobile}
-                          className="block rounded-lg px-3 py-2.5 hover:bg-brand-50"
+                          className="block rounded-lg px-3 py-2.5 hover:bg-paper-sunk"
                         >
-                          <span className="block text-sm font-semibold text-brand-900">
+                          <span className="block text-sm font-semibold text-ink">
                             {c.label}
                           </span>
                           {c.note && (
-                            <span className="mt-0.5 block text-xs text-brand-900/55">
+                            <span className="mt-0.5 block text-xs text-sage">
                               {c.note}
                             </span>
                           )}
@@ -190,7 +190,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={closeMobile}
-                  className="rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
+                  className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-paper-sunk"
                 >
                   {item.label}
                 </Link>
