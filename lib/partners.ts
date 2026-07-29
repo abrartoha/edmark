@@ -31,15 +31,15 @@ export const tafes: Institution[] = [
   { slug: "melbournepoly", name: "Melbourne Polytechnic", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.melbournepolytechnic.edu.au" },
   { slug: "holmesglen", name: "Holmesglen Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://holmesglen.edu.au" },
   { slug: "boxhill", name: "Box Hill Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.boxhill.edu.au" },
-  { slug: "kangan", name: "Kangan Institute", meta: "Melbourne, VIC", url: "https://www.kangan.edu.au" },
+  { slug: "kangan", name: "Kangan Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.kangan.edu.au" },
   { slug: "angliss", name: "William Angliss Institute", meta: "Melbourne, VIC", url: "https://www.angliss.edu.au" },
 ];
 
 export const colleges: Institution[] = [
-  { slug: "pia", name: "Polytechnic Institute Australia (PIA)", meta: "Sydney, NSW", url: "https://www.pia.edu.au" },
-  { slug: "aahe", name: "Australasian Academy of Higher Education (AAHE)", meta: "CRICOS 04181B", url: "https://aahe.edu.au" },
+  { slug: "pia", name: "Polytechnic Institute Australia (PIA)", meta: "Sydney, NSW", hasLogo: true, url: "https://www.pia.edu.au" },
+  { slug: "aahe", name: "Australasian Academy of Higher Education (AAHE)", meta: "CRICOS 04181B", hasLogo: true, url: "https://aahe.edu.au" },
   { slug: "vit", name: "Victorian Institute of Technology (VIT)", meta: "Melbourne, VIC", hasLogo: true, url: "https://vit.edu.au" },
-  { slug: "sistc", name: "Sydney International School of Technology and Commerce (SISTC)", meta: "Sydney, NSW", url: "https://sistc.edu.au" },
+  { slug: "sistc", name: "Sydney International School of Technology and Commerce (SISTC)", meta: "Sydney, NSW", hasLogo: true, url: "https://sistc.edu.au" },
   { slug: "kaplan", name: "Kaplan Business School", meta: "Multiple campuses", hasLogo: true, url: "https://www.kbs.edu.au" },
   { slug: "holmes", name: "Holmes Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.holmes.edu.au" },
   { slug: "mit", name: "Melbourne Institute of Technology (MIT)", meta: "Melbourne & Sydney", hasLogo: true, url: "https://www.mit.edu.au" },
@@ -48,11 +48,11 @@ export const colleges: Institution[] = [
 // ---------------------------------------------------------------------------
 // Overseas Student Health Cover. Only five providers are government approved
 // for a subclass 500 visa. CBHS left the OSHC market in October 2025 and is
-// deliberately not listed. None of these have a logo file yet, so they render
-// as name cards until one is added and hasLogo is set.
+// deliberately not listed. Providers without a logo file render as name cards
+// until one is added and hasLogo is set.
 // ---------------------------------------------------------------------------
 export const oshcProviders: Institution[] = [
-  { slug: "ahm", name: "ahm OSHC", meta: "Government approved OSHC provider", url: "https://www.ahm.com.au" },
+  { slug: "ahm", name: "ahm OSHC", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.ahm.com.au" },
   { slug: "allianzcare", name: "Allianz Care Australia", meta: "Government approved OSHC provider", url: "https://www.allianzcare.com.au" },
   { slug: "bupa", name: "Bupa", meta: "Government approved OSHC provider", url: "https://www.bupa.com.au" },
   { slug: "medibank", name: "Medibank", meta: "Government approved OSHC provider", url: "https://www.medibank.com.au" },
