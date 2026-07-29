@@ -75,13 +75,12 @@ function LogoGrid({ items }: { items: Institution[] }) {
 }
 
 export default function PartnersPage() {
-  const total = universities.length + colleges.length + tafes.length;
   return (
     <>
       <PageHero
         eyebrow="Our partners"
-        title={`${total} partner institutions across Australia`}
-        subtitle="Working relationships with leading universities, TAFEs and colleges mean faster offers, stronger applications and more opportunities for our students."
+        title="Direct partnerships across Australia"
+        subtitle="We work directly with the universities, TAFEs and colleges listed here, which means faster offers and stronger applications. We can also get students admitted to many more institutions beyond this list."
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
 
@@ -105,23 +104,21 @@ export default function PartnersPage() {
               ))}
             </ul>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">{total}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Partner institutions</div>
-            </div>
-            <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">{colleges.length}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">College & pathway partners</div>
-            </div>
-            <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">{universities.length}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">University partners</div>
-            </div>
-            <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">{tafes.length}</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE & polytechnic partners</div>
-            </div>
+          <div className="card">
+            <p className="eyebrow">Direct partners</p>
+            <h3 className="mt-3 text-2xl">
+              These are the institutions we work with directly
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
+              Every university, TAFE and college on this page is a direct
+              partner. Your application goes straight to an admissions team
+              that already knows us, which is why offers come back faster.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
+              We can also get students admitted to many more institutions
+              across Australia. If the course you want sits outside this list,
+              ask us anyway. We will tell you honestly whether we can help.
+            </p>
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ export const tafes: Institution[] = [
   { slug: "holmesglen", name: "Holmesglen Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://holmesglen.edu.au" },
   { slug: "boxhill", name: "Box Hill Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.boxhill.edu.au" },
   { slug: "kangan", name: "Kangan Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.kangan.edu.au" },
-  { slug: "angliss", name: "William Angliss Institute", meta: "Melbourne, VIC", url: "https://www.angliss.edu.au" },
+  { slug: "angliss", name: "William Angliss Institute", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.angliss.edu.au" },
 ];
 
 export const colleges: Institution[] = [
@@ -53,9 +53,9 @@ export const colleges: Institution[] = [
 // ---------------------------------------------------------------------------
 export const oshcProviders: Institution[] = [
   { slug: "ahm", name: "ahm OSHC", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.ahm.com.au" },
-  { slug: "allianzcare", name: "Allianz Care Australia", meta: "Government approved OSHC provider", url: "https://www.allianzcare.com.au" },
-  { slug: "bupa", name: "Bupa", meta: "Government approved OSHC provider", url: "https://www.bupa.com.au" },
-  { slug: "medibank", name: "Medibank", meta: "Government approved OSHC provider", url: "https://www.medibank.com.au" },
+  { slug: "allianzcare", name: "Allianz Care Australia", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.allianzcare.com.au" },
+  { slug: "bupa", name: "Bupa", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.bupa.com.au" },
+  { slug: "medibank", name: "Medibank", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.medibank.com.au" },
   { slug: "nib", name: "nib", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.nib.com.au" },
 ];
 
