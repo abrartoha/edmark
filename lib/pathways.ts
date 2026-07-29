@@ -2,8 +2,9 @@
 // COURSE MATCHER DATA — THIS IS THE ONLY FILE YOU NEED TO EDIT.
 // ============================================================================
 //
-// Every entry below is a placeholder. Nothing here describes a real course.
-// Replace all four (add as many more as you like) before this tool goes live.
+// Twelve pathways covering all five fields across VET, undergraduate and
+// postgraduate levels. Figures are researched national ranges, not any one
+// provider's quote, and need checking against a real shortlist before launch.
 //
 // HOW TO FILL ONE IN
 // ------------------
@@ -64,14 +65,30 @@ export type Pathway = {
 };
 
 export const pathways: Pathway[] = [
+  // ---- Nursing & health -------------------------------------------------
   {
-    id: "placeholder-1",
-    name: "PLACEHOLDER — replace before launch",
-    duration: "",
-    tuitionMin: 0,
-    tuitionMax: 0,
-    entryRequirement: "",
-    nextIntake: "",
+    id: "cert3-individual-support",
+    name: "Certificate III in Individual Support (Ageing)",
+    duration: "6 to 12 months",
+    tuitionMin: 8000,
+    tuitionMax: 15000,
+    entryRequirement: "Year 12 or equivalent. Police check and placement hours required.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["nursing-health"],
+      qualifications: ["year12", "diploma", "bachelor", "masters"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "diploma-nursing",
+    name: "Diploma of Nursing (Enrolled Nurse)",
+    duration: "18 months to 2 years",
+    tuitionMin: 18000,
+    tuitionMax: 28000,
+    entryRequirement: "Year 12 or equivalent. Leads to AHPRA registration as an Enrolled Nurse.",
+    nextIntake: "February and July, with extra intakes at some RTOs",
     tags: {
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma"],
@@ -80,48 +97,161 @@ export const pathways: Pathway[] = [
     },
   },
   {
-    id: "placeholder-2",
-    name: "PLACEHOLDER — replace before launch",
-    duration: "",
-    tuitionMin: 0,
-    tuitionMax: 0,
-    entryRequirement: "",
-    nextIntake: "",
+    id: "bachelor-nursing",
+    name: "Bachelor of Nursing",
+    duration: "3 years full time",
+    tuitionMin: 32000,
+    tuitionMax: 45000,
+    entryRequirement: "Year 12 or equivalent. A Diploma of Nursing usually carries credit into second year.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["nursing-health"],
+      qualifications: ["year12", "diploma", "bachelor"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Trade & construction ---------------------------------------------
+  {
+    id: "cert3-carpentry",
+    name: "Certificate III in Carpentry",
+    duration: "2 to 3 years, including on-the-job training",
+    tuitionMin: 12000,
+    tuitionMax: 20000,
+    entryRequirement: "Year 12 or equivalent. Usually completed alongside an apprenticeship or work placement.",
+    nextIntake: "Rolling intakes at most RTOs",
     tags: {
       fields: ["trade-construction"],
-      qualifications: ["year12"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Hospitality & cookery --------------------------------------------
+  {
+    id: "cert3-commercial-cookery",
+    name: "Certificate III in Commercial Cookery",
+    duration: "12 to 18 months",
+    tuitionMin: 12000,
+    tuitionMax: 18000,
+    entryRequirement: "Year 12 or equivalent. Includes supervised kitchen service hours.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["hospitality-cookery"],
+      qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
       skilledOccupation: true,
     },
   },
   {
-    id: "placeholder-3",
-    name: "PLACEHOLDER — replace before launch",
-    duration: "",
-    tuitionMin: 0,
-    tuitionMax: 0,
-    entryRequirement: "",
-    nextIntake: "",
+    id: "diploma-hospitality-management",
+    name: "Diploma of Hospitality Management",
+    duration: "12 to 18 months",
+    tuitionMin: 16000,
+    tuitionMax: 26000,
+    entryRequirement: "Year 12 or equivalent, or a Certificate III in a hospitality field for credit.",
+    nextIntake: "Multiple intakes a year at most providers",
     tags: {
-      fields: ["business-it"],
+      fields: ["hospitality-cookery"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["15-25k", "25-40k"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Teaching & childcare ---------------------------------------------
+  {
+    id: "diploma-early-childhood",
+    name: "Diploma of Early Childhood Education and Care",
+    duration: "18 months to 2 years",
+    tuitionMin: 16000,
+    tuitionMax: 26000,
+    entryRequirement: "Year 12 or equivalent. Working with Children Check and placement hours required.",
+    nextIntake: "Multiple intakes a year at most providers",
+    tags: {
+      fields: ["teaching-childcare"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["15-25k", "25-40k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "master-teaching",
+    name: "Master of Teaching",
+    duration: "2 years full time",
+    tuitionMin: 30000,
+    tuitionMax: 45000,
+    entryRequirement: "A completed bachelor degree in a related discipline. Leads to teacher registration.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["teaching-childcare"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Business & IT ------------------------------------------------------
+  {
+    id: "bachelor-it",
+    name: "Bachelor of Information Technology",
+    duration: "3 years full time",
+    tuitionMin: 30000,
+    tuitionMax: 45000,
+    entryRequirement: "Year 12 or equivalent. Some providers assume mathematics as background.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["business-it"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "bachelor-business",
+    name: "Bachelor of Business",
+    duration: "3 years full time",
+    tuitionMin: 22000,
+    tuitionMax: 40000,
+    entryRequirement: "Year 12 or equivalent senior secondary qualification.",
+    nextIntake: "February and July, with a third intake at some providers",
+    tags: {
+      fields: ["business-it"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["15-25k", "25-40k", "40k-plus"],
       skilledOccupation: false,
     },
   },
   {
-    id: "placeholder-4",
-    name: "PLACEHOLDER — replace before launch",
-    duration: "",
-    tuitionMin: 0,
-    tuitionMax: 0,
-    entryRequirement: "",
-    nextIntake: "",
+    id: "master-professional-accounting",
+    name: "Master of Professional Accounting",
+    duration: "2 years full time",
+    tuitionMin: 28000,
+    tuitionMax: 45000,
+    entryRequirement: "A completed bachelor degree in any discipline.",
+    nextIntake: "February and July at most universities",
     tags: {
-      fields: ["hospitality-cookery", "teaching-childcare"],
-      qualifications: ["year12", "diploma"],
-      budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: false,
+      fields: ["business-it"],
+      qualifications: ["bachelor", "masters"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "master-it",
+    name: "Master of Information Technology",
+    duration: "1.5 to 2 years full time, shorter with credit",
+    tuitionMin: 30000,
+    tuitionMax: 48000,
+    entryRequirement: "A completed bachelor degree. A cognate degree usually shortens the program.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["business-it"],
+      qualifications: ["bachelor", "masters"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
     },
   },
 ];
