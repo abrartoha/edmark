@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/lib/site";
 
@@ -73,10 +72,10 @@ export default function ContactRail() {
         </a>
       </Rail>
 
-      <Rail label="Send an enquiry">
-        <Link
-          href="/contact"
-          aria-label="Send an enquiry"
+      <Rail label={`Email ${site.email}`}>
+        <a
+          href={site.emailHref}
+          aria-label={`Email ${site.email}`}
           className={`${base} border border-brand-100 bg-white text-brand-700`}
         >
           <svg
@@ -91,7 +90,7 @@ export default function ContactRail() {
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m22 7-10 6L2 7" />
           </svg>
-        </Link>
+        </a>
       </Rail>
     </div>
   );

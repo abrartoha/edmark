@@ -127,9 +127,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={site.phoneHref} className="btn-primary">
-            Call us
-          </a>
+          <Link href="/contact" className="btn-primary">
+            Enquire now
+          </Link>
         </div>
 
         <button
@@ -219,9 +219,9 @@ export default function Header() {
                 </Link>
               )
             )}
-            <a href={site.phoneHref} onClick={closeMobile} className="btn-primary mt-2">
-              Call us
-            </a>
+            <Link href="/contact" onClick={closeMobile} className="btn-primary mt-2">
+              Enquire now
+            </Link>
           </nav>
         </div>
       )}
