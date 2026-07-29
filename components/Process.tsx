@@ -2,7 +2,7 @@ import { steps } from "@/lib/content";
 
 // Short node labels for the timeline. The full step titles and bodies stay in
 // lib/content.ts and are still used verbatim beneath each node.
-const nodeLabels = ["Apply", "Offer", "Visa", "Start"];
+const nodeLabels = ["Consult", "Plan", "Apply", "Enrol"];
 
 export default function Process() {
   return (

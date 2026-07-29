@@ -48,14 +48,26 @@ function Dropdown({ item }: { item: NavItem }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Link
-        href={item.href}
-        className="nav-link inline-flex items-center gap-1"
-        aria-expanded={open}
-      >
-        {item.label}
-        <Chevron open={open} />
-      </Link>
+      {item.href ? (
+        <Link
+          href={item.href}
+          className="nav-link inline-flex items-center gap-1"
+          aria-expanded={open}
+        >
+          {item.label}
+          <Chevron open={open} />
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="nav-link inline-flex items-center gap-1"
+          aria-expanded={open}
+        >
+          {item.label}
+          <Chevron open={open} />
+        </button>
+      )}
 
       <div
         className={`absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2 pt-4 ${
@@ -130,7 +142,7 @@ export default function Header() {
             item.children || item.groups ? (
               <Dropdown key={item.label} item={item} />
             ) : (
-              <Link key={item.href} href={item.href} className="nav-link">
+              <Link key={item.href} href={item.href ?? "/"} className="nav-link">
                 {item.label}
               </Link>
             )
@@ -223,7 +235,7 @@ export default function Header() {
               ) : (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href ?? "/"}
                   onClick={closeMobile}
                   className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-paper-sunk"
                 >

@@ -17,8 +17,6 @@ export const metadata: Metadata = {
   description:
     "Bachelor degrees, Masters by coursework and pathway programs at Australian universities. Entry requirements explained plainly, with 2026 intake planning guidance from Edmark Education.",
   alternates: { canonical: "/services/higher-education" },
-  // Course entries are placeholders until the data file is populated.
-  robots: { index: false, follow: true },
 };
 
 export default function HigherEducationPage() {

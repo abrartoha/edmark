@@ -50,10 +50,10 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
-              {nav.map((item) => (
+              {nav.filter((i) => i.href).map((item) => (
                 <li key={item.label}>
                   <Link
-                    href={item.href}
+                    href={item.href ?? "/"}
                     className="text-mist transition-colors hover:text-brass"
                   >
                     {item.label}

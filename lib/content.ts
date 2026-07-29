@@ -186,7 +186,8 @@ export const testimonials: Testimonial[] = [
     quote:
       "I had no idea where to start. Edmark mapped out three perfect courses, got my application in early, and I received my offer within weeks. Genuinely life-changing.",
     name: "Priya S.",
-    detail: "Bachelor of Nursing, University of Melbourne",
+    // TODO: confirm Priya's actual course and provider before naming one.
+    detail: "Bachelor of Nursing",
     route: "India to Melbourne",
     outcome: "Now a registered nurse at a Melbourne hospital",
   },
@@ -277,7 +278,7 @@ export const faqs = [
   },
   {
     q: "How much does it cost to live in Australia as a student?",
-    a: "Living costs vary by city. In Melbourne, budget approximately $21,000–$25,000 AUD per year for accommodation, food, transport and personal expenses. Regional areas are typically more affordable. We provide detailed cost breakdowns for your specific situation during consultation.",
+    a: "Two different numbers matter here. For your visa you must show access to at least AUD $29,710 per year for living costs, which is the Australian Government's financial capacity requirement and is not negotiable. What you actually spend is a separate question: in Melbourne most students find accommodation, food, transport and personal expenses land somewhere around AUD $24,000 to $30,000 a year depending on how you live, and regional areas are cheaper. Budget to the visa figure, not to the lifestyle one. We go through both with you during your consultation.",
   },
   {
     q: "What is OSHC and do I need it?",

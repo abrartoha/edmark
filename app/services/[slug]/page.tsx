@@ -279,9 +279,12 @@ const serviceExtras: Record<
 };
 
 export function generateStaticParams() {
-  // pr-pathway-courses has its own folder route with sub-pages.
+  // pr-pathway-courses has its own folder route with sub-pages, and
+  // research-degrees redirects to the fuller /research-degrees page.
   return services
-    .filter((s) => s.slug !== "pr-pathway-courses")
+    .filter(
+      (s) => s.slug !== "pr-pathway-courses" && s.slug !== "research-degrees"
+    )
     .map((s) => ({ slug: s.slug }));
 }
 

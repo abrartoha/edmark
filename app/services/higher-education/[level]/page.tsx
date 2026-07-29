@@ -24,8 +24,6 @@ export function generateMetadata({
     title: `${level.title} in Australia`,
     description: `${level.title} study options in Australia: indicative tuition, typical entry and English requirements, and intake timing. Confirmed for your situation during a free consultation with Edmark Education.`,
     alternates: { canonical: `/services/higher-education/${level.slug}` },
-    // Course entries are placeholders until the data file is populated.
-    robots: { index: false, follow: true },
   };
 }
 

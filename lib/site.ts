@@ -62,7 +62,8 @@ export type NavChild = { label: string; href: string; note?: string };
 export type NavGroup = { label?: string; items: NavChild[] };
 export type NavItem = {
   label: string;
-  href: string;
+  /** Omit on a parent that should open its menu rather than navigate. */
+  href?: string;
   /** Shown under the heading in the mega-menu. */
   blurb?: string;
   /** Flat list. Used by menus that need no grouping. */
@@ -75,7 +76,6 @@ export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   {
     label: "Courses",
-    href: "/services",
     blurb: "What you'll study",
     children: [
       {

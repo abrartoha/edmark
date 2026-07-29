@@ -21,8 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/partners", priority: 0.7, freq: "monthly" as const },
   ];
 
-  const serviceRoutes = services.map((s) => ({
-    path: `/services/${s.slug}`,
+  const serviceRoutes = services
+    .filter((s) => s.slug !== "research-degrees")
+    .map((s) => ({
+      path: `/services/${s.slug}`,
     priority: 0.7,
     freq: "monthly" as const,
   }));
