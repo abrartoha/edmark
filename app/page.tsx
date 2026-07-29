@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import TrustLogos from "@/components/TrustLogos";
+import PartnerCarousel from "@/components/PartnerCarousel";
 import CourseMatcher from "@/components/CourseMatcher";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
@@ -29,7 +29,7 @@ export default function HomePage() {
       />
       <Hero />
       <TrustBar />
-      <TrustLogos />
+      <PartnerCarousel />
       <CourseMatcher />
       <Services />
       <WhyChooseUs />

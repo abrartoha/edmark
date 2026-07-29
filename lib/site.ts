@@ -77,48 +77,26 @@ export const nav: NavItem[] = [
     label: "Courses",
     href: "/services",
     blurb: "What you'll study",
-    // Grouped by axis: level first, then goal. Trade and Hospitality sit under
-    // Vocational because that is their level; PR pathway is a goal that cuts
-    // across levels rather than a level of its own.
-    groups: [
+    children: [
       {
-        label: "By level",
-        items: [
-          {
-            label: "Higher education",
-            href: "/services/higher-education",
-            note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
-          },
-          {
-            label: "Vocational (VET) & short courses",
-            href: "/services/short-courses",
-            note: "Trade · Aged care · Child care · Cookery · Security",
-          },
-          {
-            label: "Research degrees",
-            href: "/research-degrees",
-            note: "Masters by research · PhD",
-          },
-        ],
+        label: "Higher education",
+        href: "/services/higher-education",
+        note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
       },
       {
-        label: "By goal",
-        items: [
-          {
-            label: "PR pathway courses",
-            href: "/services/pr-pathway-courses",
-            note: "Courses at any level aligned to skilled occupation lists",
-          },
-        ],
+        label: "Vocational (VET) & short courses",
+        href: "/services/short-courses",
+        note: "Trade · Aged care · Child care · Cookery · Security",
       },
       {
-        items: [
-          {
-            label: "Partners",
-            href: "/partners",
-            note: "50+ partner institutions",
-          },
-        ],
+        label: "Research degrees",
+        href: "/research-degrees",
+        note: "Masters by research · PhD",
+      },
+      {
+        label: "PR pathway courses",
+        href: "/services/pr-pathway-courses",
+        note: "Courses at any level aligned to skilled occupation lists",
       },
     ],
   },
@@ -135,6 +113,7 @@ export const nav: NavItem[] = [
       { label: "Professional year", href: "/services/professional-year" },
     ],
   },
+  { label: "Partners", href: "/partners" },
   { label: "Success stories", href: "/success-stories" },
   {
     label: "Resources",

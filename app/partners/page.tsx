@@ -5,7 +5,13 @@ import Breadcrumb from "@/components/Breadcrumb";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import { IconCheck } from "@/components/Icons";
-import { universities, colleges, tafes, type Institution } from "@/lib/partners";
+import {
+  universities,
+  colleges,
+  tafes,
+  oshcProviders,
+  type Institution,
+} from "@/lib/partners";
 
 export const metadata: Metadata = {
   title: "Our Partner Institutions",
@@ -149,6 +155,18 @@ export default function PartnersPage() {
             subtitle="Practical, industry-focused qualifications with strong graduate employment outcomes."
           />
           <LogoGrid items={tafes} />
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-paper py-16 lg:py-24">
+        <div className="container-page">
+          <SectionHeading
+            center
+            eyebrow="Health cover"
+            title="OSHC providers we work with"
+            subtitle="Overseas Student Health Cover is a visa requirement, and only five providers are approved by the Australian Government for a subclass 500 visa. We arrange cover with any of them."
+          />
+          <LogoGrid items={oshcProviders} />
         </div>
       </section>
 
