@@ -10,7 +10,7 @@ export default function WhyChooseUs() {
         <div>
           <SectionHeading
             eyebrow="Why Edmark"
-            title="Students choose us because we put them first"
+            title="Every student deserves honest advice."
             subtitle="There are plenty of agents. There's only one Edmark, where honest advice, real partnerships and a done-for-you service come standard."
           />
           <Link href="/contact" className="btn-primary mt-8">

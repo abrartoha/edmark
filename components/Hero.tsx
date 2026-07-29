@@ -35,19 +35,20 @@ export default function Hero() {
       <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
         <div className="animate-fade-up">
           <span className="eyebrow bg-white/10 text-mint">
-            <IconStar className="h-3.5 w-3.5" /> Australia&apos;s trusted education consultants
+            <IconStar className="h-3.5 w-3.5" /> Free consultations · Melbourne
+            based · 50+ partner institutions
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Pave the way to
-            <span className="text-gradient"> career growth</span> in Australia.
+            Before you apply, talk to{" "}
+            <span className="text-gradient">someone who knows.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
-            Confused about which course, campus or career path is right for you?
-            We turn confusion into a clear plan, matching you with the right
-            university, maximising your scholarship chances, and handling the
-            paperwork so you can focus on your future.
+            Choosing a course, a college and a city is the biggest decision
+            you&apos;ll make. We help international students in Australia get it
+            right the first time &mdash; free, and with no pressure to enrol
+            anywhere.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
