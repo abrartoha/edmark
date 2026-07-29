@@ -38,7 +38,7 @@ Not every student enters their dream course directly. Pathway programs such as f
 
 ## Get expert guidance
 
-With over 22,000 courses across 40+ institutions, the options can feel overwhelming. That's where a free consultation with an education advisor makes a real difference. We've helped hundreds of students find the course that matches their goals, budget and career aspirations, and we can do the same for you.
+With over 22,000 courses across more than 1,100 registered providers, the options can feel overwhelming. That's where a free consultation with an education advisor makes a real difference. We've helped hundreds of students find the course that matches their goals, budget and career aspirations, and we can do the same for you.
 `,
   "complete-guide-to-australian-student-visas-2026": `
 ## What is the Subclass 500 visa?
@@ -50,7 +50,7 @@ The Student visa (Subclass 500) is the main visa for international students stud
 To apply for a Subclass 500 visa, you need:
 
 - **Confirmation of Enrolment (CoE)** from a CRICOS-registered institution
-- **Genuine Temporary Entrant (GTE) statement** explaining why you want to study in Australia
+- **Genuine Student (GS) responses** explaining why you chose this course, how it fits your background and career plans, and how you will meet your visa conditions
 - **English language proficiency** (IELTS, PTE, TOEFL or Cambridge)
 - **Financial capacity** to cover tuition fees, living costs and travel (at least AUD $29,710 per year for living costs)
 - **Overseas Student Health Cover (OSHC)** for the duration of your stay
@@ -63,7 +63,7 @@ The application process is completed online through the Department of Home Affai
 1. Receive your Confirmation of Enrolment (CoE) from your institution
 2. Create an ImmiAccount and start your application
 3. Upload all required documents (passport, CoE, financial evidence, OSHC, English test results)
-4. Write your GTE statement
+4. Answer the Genuine Student (GS) questions, 150 words or fewer each
 5. Pay the visa application charge (AUD $2,500 for the primary applicant from 1 July 2026; AUD $2,050 for ELICOS and non-award courses)
 6. Attend a medical examination if required
 7. Wait for a decision
@@ -80,12 +80,12 @@ Student visa holders can work up to 48 hours per fortnight during study periods 
 
 - **Submitting incomplete documents**: this is the number one reason for delays
 - **Insufficient financial evidence**: make sure your bank statements cover the required amounts
-- **Weak GTE statement**: this should clearly explain your motivation for studying in Australia
+- **Weak Genuine Student responses**: these should show a clear, consistent line from your background to this course to your career
 - **Applying too late**: don't leave it until the last minute
 
 ## How Edmark can help
 
-While we are not migration agents, we guide you through every step of the visa process. We help you prepare your documents, write a compelling GTE statement, and connect you with a registered migration agent if you need specialist assistance.
+While we are not migration agents, we guide you through every step of the visa process. We help you prepare your documents, answer the Genuine Student questions in your own voice, and connect you with a registered migration agent if you need specialist assistance.
 `,
   "top-scholarships-for-international-students-in-australia": `
 ## Why scholarships matter
@@ -155,8 +155,8 @@ Shopping at Aldi, Woolworths or Coles and cooking at home is the most budget-fri
 
 ## Transport
 
-- **Public transport (myki card)**: $4.60 per day / up to $9.20 on weekends
-- **Student concession**: Available for some visa holders
+- **Public transport (myki)**: a 2-hour full fare is $5.70 and the full-fare daily cap is $11.40. Victoria has halved fares statewide from 1 June 2026 until 1 January 2027, so the daily cap is currently $5.70
+- **Student concession**: international students in Victoria are generally not eligible for the standard PTV concession and pay full fare. Some undergraduates can get an iUSEpass, which takes 50% off an annual myki, but availability depends on your institution
 - **Cycling**: Melbourne has excellent bike lanes and share bikes
 
 Many students live close to campus and walk or cycle to save on transport costs.
@@ -165,9 +165,11 @@ Many students live close to campus and walk or cycle to save on transport costs.
 
 - **Phone plan**: $20–$40 per month
 - **Internet** (if not included in rent): $60–$80 per month
-- **OSHC health insurance**: $500–$700 per year
+- **OSHC health insurance**: $620–$800 per year for single cover
 - **Textbooks and supplies**: $500–$1,000 per year
 - **Entertainment and social**: $50–$100 per week
+
+> Costs current as at July 2026. Government charges and fares change, often at the start of a financial year, so check the official source before you budget against them.
 
 ## Tips to save money
 
@@ -243,7 +245,7 @@ Before you submit a formal application, you should ideally have a supervisor who
 
 Research degree students have access to funding that coursework students don't:
 
-- **Research Training Program (RTP)**: Australian Government-funded scholarships covering tuition fees and a living stipend ($32,192 AUD/year in 2026). Available at all Australian universities.
+- **Research Training Program (RTP)**: Australian Government-funded scholarships covering tuition fees and a living stipend. The 2026 base rate is around $34,315 AUD/year, and many universities top it up, with rates from roughly $37,000 to $42,000 at the larger research institutions. Available at all Australian universities.
 - **University-specific research scholarships**: many universities offer their own research awards with stipends and travel grants
 - **Industry-partnered PhDs**: some research projects are co-funded by industry partners, offering higher stipends and industry experience
 - **International postgraduate research scholarships**: specifically for international students, covering tuition and living costs

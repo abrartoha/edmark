@@ -199,7 +199,7 @@ export default function StudyInAustraliaPage() {
           <div className="mt-10 space-y-4">
             {[
               "Confirmation of Enrolment (CoE) from a CRICOS-registered institution",
-              "Genuine Temporary Entrant (GTE) statement",
+              "Genuine Student (GS) responses",
               "English language proficiency (IELTS 5.5–7.0 depending on course)",
               "Financial capacity (tuition + AUD $29,710/year living costs)",
               "Overseas Student Health Cover (OSHC)",

@@ -93,7 +93,7 @@ const scholarships = [
   {
     name: "Research Training Program (RTP)",
     funder: "Australian Government",
-    coverage: "Full tuition + $32,192 AUD/year stipend",
+    coverage: "Full tuition + stipend from ~$34,315 AUD/year",
     desc: "The primary funding source for research students at Australian universities. Covers tuition fees, provides a living allowance, and includes a relocation allowance for students who move interstate or internationally.",
   },
   {
