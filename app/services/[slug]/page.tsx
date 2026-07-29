@@ -45,6 +45,23 @@ const serviceExtras: Record<
       "Referral to a registered migration agent for formal advice",
     ],
   },
+  "application-support": {
+    extended:
+      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). We also prepare you for the Genuine Student (GS) requirement, which replaced the Genuine Temporary Entrant test in March 2024 and asks targeted questions, 150 words or fewer each, about why this course, why now, and how it fits your career.",
+    whoFor: [
+      "Students applying to more than one institution at once",
+      "Anyone who has had an application delayed or knocked back",
+      "Applicants unsure how to answer the Genuine Student questions",
+      "Students transferring between providers or courses",
+    ],
+    whatToExpect: [
+      "A document checklist tailored to each provider",
+      "Applications lodged in parallel, not one at a time",
+      "Draft review of your Genuine Student responses",
+      "A plain comparison of every offer you receive",
+      "Acceptance, payment and CoE handled end to end",
+    ],
+  },
   "health-insurance": {
     extended:
       "Overseas Student Health Cover (OSHC) is a mandatory requirement for your student visa. You must hold valid cover for the entire length of your stay. Choosing the right policy protects both your visa status and your health while you study.\n\nWe make it simple. We compare the major OSHC providers, explain what's covered, and help you arrange single, couple or family cover that matches your visa dates and enrolment. If you ever need to make a claim or renew, we're here to help.",
@@ -91,6 +108,23 @@ const serviceExtras: Record<
       "PTE Academic preparation and booking support",
       "NAATI CCL guidance and study resources",
       "Professional Year Program eligibility and provider selection",
+    ],
+  },
+  "professional-year": {
+    extended:
+      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For many graduates the internship matters more than the points: it is often the first line of local experience on an Australian resume.\n\nCompleted with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nOne caution we would rather give up front: a Professional Year does not on its own deliver permanent residency. It sits alongside your occupation, English score, work experience and skills assessment, and those settings change. We help you choose a provider and time your enrolment, then refer you to a registered migration agent (MARA) for formal advice.",
+    whoFor: [
+      "Accounting, IT and engineering graduates of Australian degrees",
+      "Temporary Graduate (485) visa holders planning their next step",
+      "Graduates with no Australian work experience yet",
+      "Anyone weighing 5 points against a year of study",
+    ],
+    whatToExpect: [
+      "An eligibility check against your degree and visa",
+      "Provider comparison across the three streams",
+      "Timing advice so the program fits inside your 485",
+      "Enrolment support and document preparation",
+      "Referral to a MARA agent for formal migration advice",
     ],
   },
   "short-courses": {

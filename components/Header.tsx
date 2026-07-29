@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { nav, site } from "@/lib/site";
-import { services } from "@/lib/content";
-import { prCategories } from "@/lib/pr-courses";
-import ServiceIcon from "./ServiceIcon";
+import { nav, site, type NavItem } from "@/lib/site";
 import Logo from "./Logo";
 
 function Chevron({ open }: { open: boolean }) {
@@ -25,11 +22,62 @@ function Chevron({ open }: { open: boolean }) {
   );
 }
 
+function Dropdown({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <Link
+        href={item.href}
+        className="nav-link inline-flex items-center gap-1"
+        aria-expanded={open}
+      >
+        {item.label}
+        <Chevron open={open} />
+      </Link>
+
+      <div
+        className={`absolute left-1/2 top-full z-50 w-[340px] -translate-x-1/2 pt-4 ${
+          open ? "block" : "hidden"
+        }`}
+      >
+        <div className="rounded-2xl border border-brand-100 bg-white p-3 shadow-glow">
+          {item.blurb && (
+            <p className="px-3 pb-2 pt-1 text-xs font-semibold uppercase tracking-wider text-brand-900/45">
+              {item.blurb}
+            </p>
+          )}
+          {item.children?.map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-brand-50"
+            >
+              <span className="block text-sm font-bold text-brand-900">
+                {c.label}
+              </span>
+              {c.note && (
+                <span className="mt-0.5 block text-xs leading-snug text-brand-900/55">
+                  {c.note}
+                </span>
+              )}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -40,7 +88,7 @@ export default function Header() {
 
   const closeMobile = () => {
     setOpen(false);
-    setMobileServicesOpen(false);
+    setOpenGroup(null);
   };
 
   return (
@@ -51,73 +99,15 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-page flex h-24 items-center justify-between py-3">
+      <div className="container-page flex h-24 items-center justify-between gap-6 py-3">
         <Link href="/" aria-label={`${site.name} home`} className="py-1">
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {nav.map((item) =>
-            item.href === "/services" ? (
-              <div
-                key={item.href}
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <Link
-                  href="/services"
-                  className="nav-link inline-flex items-center gap-1"
-                  aria-expanded={servicesOpen}
-                >
-                  {item.label}
-                  <Chevron open={servicesOpen} />
-                </Link>
-
-                <div
-                  className={`absolute left-1/2 top-full z-50 w-[620px] -translate-x-1/2 pt-4 ${
-                    servicesOpen ? "block" : "hidden"
-                  }`}
-                >
-                  <div className="grid grid-cols-2 gap-1 rounded-2xl border border-brand-100 bg-white p-3 shadow-glow">
-                    {services.map((s) => (
-                      <div key={s.slug}>
-                        <Link
-                          href={`/services/${s.slug}`}
-                          onClick={() => setServicesOpen(false)}
-                          className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
-                        >
-                          <span className="shrink-0 text-brand-500">
-                            <ServiceIcon name={s.icon} className="h-6 w-6" />
-                          </span>
-                          <span>
-                            <span className="block text-sm font-bold text-brand-900">
-                              {s.title}
-                            </span>
-                            <span className="mt-0.5 block text-xs leading-snug text-brand-900/55 line-clamp-2">
-                              {s.short}
-                            </span>
-                          </span>
-                        </Link>
-                        {s.slug === "pr-pathway-courses" && (
-                          <div className="ml-12 mt-1 flex flex-wrap gap-1.5 pb-1">
-                            {prCategories.map((c) => (
-                              <Link
-                                key={c.slug}
-                                href={`/services/pr-pathway-courses/${c.slug}`}
-                                onClick={() => setServicesOpen(false)}
-                                className="rounded-full border border-brand-100 bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700 transition-colors hover:border-brand-300 hover:text-brand-500"
-                              >
-                                {c.title}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            item.children ? (
+              <Dropdown key={item.label} item={item} />
             ) : (
               <Link key={item.href} href={item.href} className="nav-link">
                 {item.label}
@@ -126,7 +116,7 @@ export default function Header() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <Link href="/contact" className="btn-primary">
             Enquire now
           </Link>
@@ -135,7 +125,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -157,53 +147,40 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-brand-100 bg-white lg:hidden">
+        <div className="border-t border-brand-100 bg-white xl:hidden">
           <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
             {nav.map((item) =>
-              item.href === "/services" ? (
-                <div key={item.href}>
+              item.children ? (
+                <div key={item.label}>
                   <button
                     type="button"
-                    onClick={() => setMobileServicesOpen((v) => !v)}
+                    onClick={() =>
+                      setOpenGroup((g) => (g === item.label ? null : item.label))
+                    }
                     className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-brand-900 hover:bg-brand-50"
-                    aria-expanded={mobileServicesOpen}
+                    aria-expanded={openGroup === item.label}
                   >
                     {item.label}
-                    <Chevron open={mobileServicesOpen} />
+                    <Chevron open={openGroup === item.label} />
                   </button>
-                  {mobileServicesOpen && (
+                  {openGroup === item.label && (
                     <div className="ml-3 border-l border-brand-100 pl-2">
-                      <Link
-                        href="/services"
-                        onClick={closeMobile}
-                        className="block rounded-lg px-3 py-2 text-sm font-semibold text-brand-700 hover:bg-brand-50"
-                      >
-                        All services
-                      </Link>
-                      {services.map((s) => (
-                        <div key={s.slug}>
-                          <Link
-                            href={`/services/${s.slug}`}
-                            onClick={closeMobile}
-                            className="block rounded-lg px-3 py-2 text-sm text-brand-900/80 hover:bg-brand-50"
-                          >
-                            {s.title}
-                          </Link>
-                          {s.slug === "pr-pathway-courses" && (
-                            <div className="ml-3 border-l border-brand-100 pl-2">
-                              {prCategories.map((c) => (
-                                <Link
-                                  key={c.slug}
-                                  href={`/services/pr-pathway-courses/${c.slug}`}
-                                  onClick={closeMobile}
-                                  className="block rounded-lg px-3 py-1.5 text-sm text-brand-900/70 hover:bg-brand-50"
-                                >
-                                  {c.title}
-                                </Link>
-                              ))}
-                            </div>
+                      {item.children.map((c) => (
+                        <Link
+                          key={c.href}
+                          href={c.href}
+                          onClick={closeMobile}
+                          className="block rounded-lg px-3 py-2.5 hover:bg-brand-50"
+                        >
+                          <span className="block text-sm font-semibold text-brand-900">
+                            {c.label}
+                          </span>
+                          {c.note && (
+                            <span className="mt-0.5 block text-xs text-brand-900/55">
+                              {c.note}
+                            </span>
                           )}
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   )}

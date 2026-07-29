@@ -57,12 +57,68 @@ export const site = {
   },
 } as const;
 
-export const nav = [
+export type NavChild = { label: string; href: string; note?: string };
+export type NavItem = {
+  label: string;
+  href: string;
+  /** Shown under the heading in the mega-menu. */
+  blurb?: string;
+  children?: NavChild[];
+};
+
+export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Partners", href: "/partners" },
-  { label: "Success Stories", href: "/success-stories" },
-  { label: "Blog", href: "/blog" },
-  { label: "About us", href: "/about" },
+  {
+    label: "Courses",
+    href: "/services",
+    blurb: "What you'll study",
+    children: [
+      {
+        label: "PR pathway courses",
+        href: "/services/pr-pathway-courses",
+        note: "Trade · Nursing · Hospitality & cookery · Teaching",
+      },
+      {
+        label: "Short courses",
+        href: "/services/short-courses",
+        note: "Security · Aged care · Child care",
+      },
+      {
+        label: "Research degrees",
+        href: "/research-degrees",
+        note: "Masters by research · PhD",
+      },
+      {
+        label: "Where you can study",
+        href: "/partners",
+        note: "50+ partner institutions",
+      },
+    ],
+  },
+  {
+    label: "Services",
+    href: "/services",
+    blurb: "How we help",
+    children: [
+      { label: "Free course counselling", href: "/services/student-counselling" },
+      { label: "Application & enrolment support", href: "/services/application-support" },
+      { label: "Scholarships", href: "/scholarships" },
+      { label: "OSHC health cover", href: "/services/health-insurance" },
+      { label: "PTE & NAATI test prep", href: "/services/pte-naati-py" },
+      { label: "Professional year", href: "/services/professional-year" },
+    ],
+  },
+  { label: "Success stories", href: "/success-stories" },
+  {
+    label: "Resources",
+    href: "/blog",
+    blurb: "Learn before you commit",
+    children: [
+      { label: "Study in Australia guide", href: "/study-in-australia" },
+      { label: "Blog", href: "/blog" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-] as const;
+];

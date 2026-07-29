@@ -13,7 +13,7 @@ export const services: Service[] = [
   {
     slug: "student-counselling",
     icon: "compass",
-    title: "Student Counselling",
+    title: "Free Course Counselling",
     short:
       "Free, honest one-on-one counselling that maps your goals, budget and the right study path in Australia.",
     long: "Our experienced counsellors take the time to understand your academic background, career goals, budget and personal situation, then give you clear, unbiased advice on the best courses, institutions and pathways for you. No pressure, no hidden agenda, just guidance you can trust.",
@@ -40,7 +40,7 @@ export const services: Service[] = [
   {
     slug: "short-courses",
     icon: "graduation",
-    title: "Short Courses (Security & Aged Care)",
+    title: "Short Courses",
     short:
       "Fast, practical vocational courses in Security, Aged Care and Child Care for job-ready skills and recognised qualifications.",
     long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
@@ -52,9 +52,24 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "application-support",
+    icon: "document",
+    title: "Application & Enrolment Support",
+    short:
+      "We prepare, submit and track your applications, then carry you through offer, payment and CoE.",
+    long: "An application fails on detail far more often than on grades. We build your document set, check every transcript and English result against the institution's own criteria, and submit to several providers in parallel so you are not waiting on a single answer. From there we chase admissions on your behalf, talk you through each offer, and handle acceptance, tuition payment and your Confirmation of Enrolment (CoE).\n\nWe also help you prepare for the Genuine Student (GS) requirement, which replaced the old Genuine Temporary Entrant test in March 2024. GS asks targeted questions, each answered in 150 words or fewer, about why you chose this course, how it fits your background and career plans, and how you will meet your visa conditions. Unlike GTE, it accepts that you may later seek permanent residency, provided study is your genuine primary purpose. We help you answer it consistently and in your own voice.",
+    points: [
+      "Document checklist and transcript preparation",
+      "Parallel applications to several institutions",
+      "Genuine Student (GS) statement guidance",
+      "Offer comparison, acceptance and tuition payment",
+      "Confirmation of Enrolment (CoE) and deadline tracking",
+    ],
+  },
+  {
     slug: "health-insurance",
     icon: "document",
-    title: "Health Insurance (OSHC)",
+    title: "OSHC Health Cover",
     short:
       "Arrange the Overseas Student Health Cover (OSHC) required for your student visa, quick and hassle-free.",
     long: "Every international student needs Overseas Student Health Cover (OSHC) for the length of their visa. We help you compare providers, choose the right level of cover for yourself or your family, and arrange your policy so your visa and enrolment requirements are fully met.",
@@ -68,21 +83,38 @@ export const services: Service[] = [
   {
     slug: "pte-naati-py",
     icon: "headset",
-    title: "PTE, NAATI & PY",
+    title: "PTE & NAATI Test Prep",
     short:
-      "Test preparation for PTE Academic and NAATI CCL, plus guidance into the Professional Year Program, all to boost your points.",
-    long: "Strong English scores, community-language credentials and Australian work experience can each add valuable points toward skilled migration. We guide you on PTE Academic and NAATI CCL test preparation and booking, and help eligible graduates into the Professional Year Program (PYP) in accounting, IT and engineering.",
+      "Preparation, strategy and booking support for PTE Academic and the NAATI CCL test.",
+    long: "English proficiency and community-language credentials both carry weight in the skilled migration points test, and both reward preparation. We help you work out which test suits you, what score to aim for, and how to prepare for it, then support you through booking and results. PTE Academic is accepted by every Australian university and by the Department of Home Affairs, while the NAATI CCL test rewards applicants who speak an eligible community language.",
     points: [
-      "PTE Academic preparation and booking guidance",
-      "NAATI CCL (community language) test guidance",
-      "Professional Year Program (accounting, IT, engineering)",
-      "Score and points advice for skilled migration",
+      "Choosing between PTE Academic and IELTS",
+      "Target score planning for your course and visa",
+      "Practice resources and test-day strategy",
+      "NAATI CCL (community language) preparation",
+      "Booking support and results guidance",
+    ],
+  },
+  {
+    slug: "professional-year",
+    icon: "trophy",
+    title: "Professional Year",
+    short:
+      "A 44-week program for accounting, IT and engineering graduates, including a 12-week internship, worth 5 points toward skilled migration.",
+    long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test, and the local experience is often worth more than the points.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nA Professional Year on its own does not guarantee permanent residency. It is one input alongside your occupation, English score, work experience and skills assessment, and the rules change. We help you choose a provider and time your enrolment, and refer you to a registered migration agent (MARA) for formal migration advice.",
+    points: [
+      "44 weeks, including a 12-week industry internship",
+      "Accounting, IT and engineering streams",
+      "5 points toward the skilled migration points test",
+      "Eligibility check against your 485 visa and degree",
+      "Approved provider selection and enrolment",
+      "Referral to a registered migration agent for formal advice",
     ],
   },
   {
     slug: "research-degrees",
     icon: "research",
-    title: "Research Degrees (Masters by Research & PhD)",
+    title: "Research Degrees",
     short:
       "From supervisor match to a winning research proposal, full support for Masters by Research and PhD applications.",
     long: "Research degrees are very different from coursework programs. You need a strong research proposal, a supervisor match, and evidence of research capability. We guide you through every step, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
