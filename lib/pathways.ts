@@ -24,7 +24,7 @@
 //   fields             one or more of:
 //                      "nursing-health" | "trade-construction" |
 //                      "hospitality-cookery" | "business-it" |
-//                      "teaching-childcare"
+//                      "teaching-childcare" | "engineering-science"
 //   qualifications     which prior qualifications can enter this pathway:
 //                      "year12" | "diploma" | "bachelor" | "masters"
 //   budgetBands        which yearly tuition budgets this fits:
@@ -42,7 +42,8 @@ export type Field =
   | "trade-construction"
   | "hospitality-cookery"
   | "business-it"
-  | "teaching-childcare";
+  | "teaching-childcare"
+  | "engineering-science";
 
 export type Qualification = "year12" | "diploma" | "bachelor" | "masters";
 
@@ -395,6 +396,67 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: false,
+    },
+  },
+  // ---- Engineering & science ---------------------------------------------
+  {
+    id: "bachelor-engineering",
+    name: "Bachelor of Engineering (Honours)",
+    duration: "4 years full time",
+    tuitionMin: 40000,
+    tuitionMax: 55000,
+    entryRequirement: "Year 12 or equivalent, with mathematics and often physics required rather than assumed. Accredited by Engineers Australia.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["engineering-science"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "master-engineering",
+    name: "Master of Engineering",
+    duration: "2 years full time",
+    tuitionMin: 35000,
+    tuitionMax: 50000,
+    entryRequirement: "A completed bachelor degree in engineering or a closely related discipline.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["engineering-science"],
+      qualifications: ["bachelor", "masters"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "diploma-engineering",
+    name: "Diploma of Engineering",
+    duration: "12 months",
+    tuitionMin: 16000,
+    tuitionMax: 28000,
+    entryRequirement: "Year 12 or equivalent. Usually carries credit into the second year of an engineering degree.",
+    nextIntake: "Multiple intakes a year at most providers",
+    tags: {
+      fields: ["engineering-science"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k", "25-40k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "bachelor-science",
+    name: "Bachelor of Science",
+    duration: "3 years full time",
+    tuitionMin: 30000,
+    tuitionMax: 45000,
+    entryRequirement: "Year 12 or equivalent. Majors range from biomedical and environmental science to data science.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["engineering-science"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["25-40k", "40k-plus"],
       skilledOccupation: false,
     },
   },

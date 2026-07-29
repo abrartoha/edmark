@@ -44,6 +44,7 @@ export const questions: Question[] = [
       { value: "hospitality-cookery", label: "Hospitality & cookery" },
       { value: "business-it", label: "Business & IT" },
       { value: "teaching-childcare", label: "Teaching & childcare" },
+      { value: "engineering-science", label: "Engineering & science" },
       { value: "not-sure", label: "Not sure yet" },
     ],
   },
