@@ -79,16 +79,7 @@ export default function Hero() {
         {/* Floating highlight card */}
         <div className="animate-fade-up relative mx-auto w-full max-w-md lg:mx-0">
           <div className="rounded-3xl border border-white/15 bg-white/95 p-8 shadow-glow backdrop-blur">
-            <div className="flex items-center gap-1 text-brand-500">
-              {[...Array(5)].map((_, i) => (
-                <IconStar key={i} className="h-5 w-5" />
-              ))}
-              <span className="ml-2 text-sm font-semibold text-brand-900">
-                Rated by students
-              </span>
-            </div>
-
-            <div className="mt-6 rounded-2xl bg-brand-50 p-5">
+            <div className="rounded-2xl bg-brand-50 p-5">
               <p className="text-sm font-medium text-brand-800">
                 &ldquo;Edmark found me a course I&apos;d never even considered,
                 and a scholarship that covered my first year.&rdquo;
