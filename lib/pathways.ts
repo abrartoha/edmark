@@ -254,4 +254,148 @@ export const pathways: Pathway[] = [
       skilledOccupation: true,
     },
   },
+  // ---- Added: trades beyond carpentry ------------------------------------
+  {
+    id: "cert3-electrician",
+    name: "Certificate III in Electrotechnology Electrician",
+    duration: "3 to 4 years, including on-the-job training",
+    tuitionMin: 14000,
+    tuitionMax: 22000,
+    entryRequirement: "Year 12 or equivalent. Leads to electrical licensing, which is regulated in each state.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["trade-construction"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "cert3-plumbing",
+    name: "Certificate III in Plumbing",
+    duration: "3 to 4 years, including on-the-job training",
+    tuitionMin: 14000,
+    tuitionMax: 22000,
+    entryRequirement: "Year 12 or equivalent. Usually completed alongside an apprenticeship.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["trade-construction"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "cert3-automotive",
+    name: "Certificate III in Light Vehicle Mechanical Technology",
+    duration: "2 to 3 years, including on-the-job training",
+    tuitionMin: 12000,
+    tuitionMax: 20000,
+    entryRequirement: "Year 12 or equivalent. Diagnosing, servicing and repairing light vehicles.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["trade-construction"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Added: health beyond nursing --------------------------------------
+  {
+    id: "bachelor-social-work",
+    name: "Bachelor of Social Work",
+    duration: "4 years full time",
+    tuitionMin: 30000,
+    tuitionMax: 38000,
+    entryRequirement: "Year 12 or equivalent. Includes supervised field placements.",
+    nextIntake: "February, with a mid-year intake at some universities",
+    tags: {
+      fields: ["nursing-health", "teaching-childcare"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["25-40k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "master-nursing",
+    name: "Master of Nursing",
+    duration: "1.5 to 2 years full time",
+    tuitionMin: 32000,
+    tuitionMax: 46000,
+    entryRequirement: "Registration as a nurse, or a bachelor degree for entry-to-practice streams.",
+    nextIntake: "February and July at most universities",
+    tags: {
+      fields: ["nursing-health"],
+      qualifications: ["bachelor", "masters"],
+      budgetBands: ["25-40k", "40k-plus"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Added: hospitality progression ------------------------------------
+  {
+    id: "cert4-kitchen-management",
+    name: "Certificate IV in Kitchen Management",
+    duration: "12 to 18 months",
+    tuitionMin: 13000,
+    tuitionMax: 20000,
+    entryRequirement: "Usually follows a Certificate III in Commercial Cookery and builds toward chef de partie roles.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["hospitality-cookery"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Added: teaching entry point ---------------------------------------
+  {
+    id: "cert3-early-childhood",
+    name: "Certificate III in Early Childhood Education and Care",
+    duration: "6 to 12 months",
+    tuitionMin: 8000,
+    tuitionMax: 15000,
+    entryRequirement: "Year 12 or equivalent. Working with Children Check and placement hours required.",
+    nextIntake: "Rolling intakes at most RTOs",
+    tags: {
+      fields: ["teaching-childcare"],
+      qualifications: ["year12", "diploma", "bachelor", "masters"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: true,
+    },
+  },
+  {
+    id: "bachelor-education",
+    name: "Bachelor of Education (Early Childhood / Primary)",
+    duration: "4 years full time",
+    tuitionMin: 28000,
+    tuitionMax: 40000,
+    entryRequirement: "Year 12 or equivalent. A diploma in early childhood often carries credit.",
+    nextIntake: "February, with a mid-year intake at some universities",
+    tags: {
+      fields: ["teaching-childcare"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["25-40k"],
+      skilledOccupation: true,
+    },
+  },
+
+  // ---- Added: business entry point ---------------------------------------
+  {
+    id: "diploma-business",
+    name: "Diploma of Business",
+    duration: "12 months",
+    tuitionMin: 12000,
+    tuitionMax: 22000,
+    entryRequirement: "Year 12 or equivalent. Often packaged as credit into the first year of a bachelor degree.",
+    nextIntake: "Multiple intakes a year at most providers",
+    tags: {
+      fields: ["business-it"],
+      qualifications: ["year12", "diploma"],
+      budgetBands: ["under-15k", "15-25k"],
+      skilledOccupation: false,
+    },
+  },
 ];
