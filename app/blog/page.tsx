@@ -54,7 +54,7 @@ export default function BlogPage() {
                     {post.readTime}
                   </span>
                 </div>
-                <h2 className="mt-4 text-lg font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                <h2 className="mt-4 text-lg font-medium text-brand-900 group-hover:text-brand-600 transition-colors">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/60">

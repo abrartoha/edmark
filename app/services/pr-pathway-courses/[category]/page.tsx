@@ -84,7 +84,7 @@ export default function PrCategoryPage({
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-base font-bold text-brand-900">{p.name}</h3>
+                  <h3 className="text-base font-medium text-brand-900">{p.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/60">
                     {p.description}
                   </p>
@@ -165,7 +165,7 @@ export default function PrCategoryPage({
       {/* Other categories */}
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-brand-900">
             Explore other PR pathway courses
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -179,7 +179,7 @@ export default function PrCategoryPage({
                   <ServiceIcon name={o.icon} className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-900 transition-colors group-hover:text-brand-600">
+                  <h3 className="font-medium text-brand-900 transition-colors group-hover:text-brand-600">
                     {o.title}
                   </h3>
                   <p className="mt-1 text-sm text-brand-900/60 line-clamp-2">{o.tagline}</p>

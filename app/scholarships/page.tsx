@@ -123,7 +123,7 @@ export default function ScholarshipsPage() {
                 <div className="text-brand-500">
                   <IconTrophy className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-brand-900">
+                <h3 className="mt-4 text-lg font-medium text-brand-900">
                   {s.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
@@ -150,10 +150,10 @@ export default function ScholarshipsPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-extrabold text-brand-950">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-medium text-brand-950">
                   {s.n}
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-brand-900">
+                <h3 className="mt-5 text-lg font-medium text-brand-900">
                   {s.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/70">

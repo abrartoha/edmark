@@ -109,7 +109,7 @@ export default function ContactForm() {
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="mt-5 text-xl font-bold text-brand-900">
+        <h3 className="mt-5 text-xl font-medium text-brand-900">
           Thank you, we&apos;ve got it!
         </h3>
         <p className="mt-2 text-sm text-brand-900/70">

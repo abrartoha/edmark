@@ -55,7 +55,7 @@ export default function ExitIntentPopup() {
                 <path d="M20 6 9 17l-5-5" />
               </svg>
             </div>
-            <h3 className="mt-4 text-xl font-bold text-brand-900">Check your inbox!</h3>
+            <h3 className="mt-4 text-xl font-medium text-brand-900">Check your inbox!</h3>
             <p className="mt-2 text-sm text-brand-900/70">
               Your free Study in Australia Checklist is on its way.
             </p>
@@ -75,7 +75,7 @@ export default function ExitIntentPopup() {
                 <path d="M8 13h8M8 17h5" />
               </svg>
             </div>
-            <h3 className="mt-4 text-center text-xl font-bold text-brand-900">
+            <h3 className="mt-4 text-center text-xl font-medium text-brand-900">
               Wait! Before you go&hellip;
             </h3>
             <p className="mt-2 text-center text-sm text-brand-900/70">

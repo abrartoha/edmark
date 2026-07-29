@@ -215,7 +215,7 @@ export default function ServicePage({
             <div className="text-brand-500">
               <ServiceIcon name={service.icon} className="h-9 w-9" />
             </div>
-            <h2 className="mt-6 text-3xl font-bold text-brand-900">
+            <h2 className="mt-6 text-3xl font-medium text-brand-900">
               {service.title}
             </h2>
             {extras?.extended.split("\n\n").map((p, i) => (
@@ -228,7 +228,7 @@ export default function ServicePage({
             ))}
 
             <div className="mt-8 rounded-2xl bg-brand-50 p-6">
-              <h3 className="text-lg font-bold text-brand-900">
+              <h3 className="text-lg font-medium text-brand-900">
                 What&apos;s included
               </h3>
               <ul className="mt-4 space-y-3">
@@ -251,7 +251,7 @@ export default function ServicePage({
             {extras && (
               <>
                 <div className="card">
-                  <h3 className="text-lg font-bold text-brand-900">
+                  <h3 className="text-lg font-medium text-brand-900">
                     Who is this for?
                   </h3>
                   <ul className="mt-4 space-y-3">
@@ -270,7 +270,7 @@ export default function ServicePage({
                 </div>
 
                 <div className="card">
-                  <h3 className="text-lg font-bold text-brand-900">
+                  <h3 className="text-lg font-medium text-brand-900">
                     What to expect
                   </h3>
                   <ol className="mt-4 space-y-3">
@@ -295,7 +295,7 @@ export default function ServicePage({
 
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-brand-900">
             Explore our other services
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -309,7 +309,7 @@ export default function ServicePage({
                   <ServiceIcon name={s.icon} className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                  <h3 className="font-medium text-brand-900 group-hover:text-brand-600 transition-colors">
                     {s.title}
                   </h3>
                   <p className="mt-1 text-sm text-brand-900/60 line-clamp-2">

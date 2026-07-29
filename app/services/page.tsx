@@ -36,7 +36,7 @@ export default function ServicesPage() {
                 <span className="text-xs font-bold uppercase tracking-widest text-brand-400">
                   0{i + 1}
                 </span>
-                <h2 className="mt-1 text-2xl font-bold text-brand-900">
+                <h2 className="mt-1 text-2xl font-medium text-brand-900">
                   {s.title}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-brand-900/70">

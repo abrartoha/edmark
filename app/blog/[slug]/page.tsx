@@ -557,7 +557,7 @@ export default function BlogPostPage({
               </span>
               <span className="text-xs text-brand-900/50">{post.readTime}</span>
             </div>
-            <h1 className="mt-4 text-3xl font-extrabold text-brand-900 sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-medium text-brand-900 sm:text-4xl">
               {post.title}
             </h1>
             <time
@@ -580,7 +580,7 @@ export default function BlogPostPage({
                 return (
                   <h2
                     key={i}
-                    className="mt-10 mb-4 text-2xl font-bold text-brand-900"
+                    className="mt-10 mb-4 text-2xl font-medium text-brand-900"
                   >
                     {trimmed.replace("## ", "")}
                   </h2>
@@ -589,7 +589,7 @@ export default function BlogPostPage({
                 return (
                   <h3
                     key={i}
-                    className="mt-8 mb-3 text-xl font-bold text-brand-900"
+                    className="mt-8 mb-3 text-xl font-medium text-brand-900"
                   >
                     {trimmed.replace("### ", "")}
                   </h3>
@@ -646,7 +646,7 @@ export default function BlogPostPage({
 
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="text-center text-2xl font-bold text-brand-900">
+          <h2 className="text-center text-2xl font-medium text-brand-900">
             More from our blog
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -659,7 +659,7 @@ export default function BlogPostPage({
                 <span className="text-xs font-semibold text-brand-500">
                   {p.category}
                 </span>
-                <h3 className="mt-2 font-bold text-brand-900 group-hover:text-brand-600 transition-colors">
+                <h3 className="mt-2 font-medium text-brand-900 group-hover:text-brand-600 transition-colors">
                   {p.title}
                 </h3>
                 <span className="mt-2 flex items-center gap-1 text-sm font-semibold text-brand-600">

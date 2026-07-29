@@ -33,7 +33,7 @@ export default function Services() {
                 name={s.icon}
                 className="h-9 w-9 text-brand-500 transition-colors group-hover:text-brand-600"
               />
-              <h3 className="mt-5 text-lg font-bold text-brand-900 transition-colors group-hover:text-brand-600">
+              <h3 className="mt-5 text-lg font-medium text-brand-900 transition-colors group-hover:text-brand-600">
                 {s.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/70">

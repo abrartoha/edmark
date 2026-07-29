@@ -10,7 +10,7 @@ export default function FAQ() {
     <section className="bg-white py-20 lg:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-2xl">
-          <h2 className="reveal text-3xl font-extrabold text-brand-900 sm:text-4xl">
+          <h2 className="reveal text-3xl font-medium text-brand-900 sm:text-4xl">
             Everything you might be wondering
           </h2>
 

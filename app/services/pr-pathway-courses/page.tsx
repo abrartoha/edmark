@@ -92,7 +92,7 @@ export default function PrPathwayPage() {
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/20 text-brand-950 backdrop-blur">
                     <ServiceIcon name={c.icon} className="h-7 w-7" />
                   </div>
-                  <h3 className="text-xl font-extrabold text-brand-950">{c.title}</h3>
+                  <h3 className="text-xl font-medium text-brand-950">{c.title}</h3>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="flex-1 text-sm leading-relaxed text-brand-900/65">{c.tagline}</p>

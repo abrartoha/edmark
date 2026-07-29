@@ -69,7 +69,7 @@ export default function SuccessStoriesPage() {
       {/* Moved here from the homepage, which now features one story only. */}
       <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
-          <h2 className="reveal text-2xl font-extrabold text-brand-900 sm:text-3xl">
+          <h2 className="reveal text-2xl font-medium text-brand-900 sm:text-3xl">
             More from our students
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">

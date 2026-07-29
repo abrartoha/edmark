@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
               Services
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
               Resources
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -104,7 +104,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
               Get in touch
             </h3>
             <ul className="mt-4 space-y-3 text-sm">

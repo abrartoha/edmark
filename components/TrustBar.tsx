@@ -22,7 +22,7 @@ export default function TrustBar() {
             {stats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-3xl font-extrabold text-brand-600 sm:text-4xl">
+                <dd className="font-display text-3xl font-medium text-brand-600 sm:text-4xl">
                   {s.value}
                 </dd>
                 <p className="mt-1 text-xs font-medium text-brand-900/60 sm:text-sm">

@@ -58,7 +58,7 @@ export default function FAQPage() {
         <div className="container-page max-w-4xl">
           {categories.map((cat) => (
             <div key={cat.heading} className="mb-12 last:mb-0">
-              <h2 className="mb-6 text-2xl font-bold text-brand-900">
+              <h2 className="mb-6 text-2xl font-medium text-brand-900">
                 {cat.heading}
               </h2>
               <div className="reveal divide-y divide-brand-100 rounded-2xl border border-brand-100">

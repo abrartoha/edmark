@@ -39,7 +39,7 @@ export default function Hero() {
             based · 50+ partner institutions
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-medium leading-[1.05] text-white sm:text-5xl lg:text-6xl">
             Before you apply, talk to{" "}
             <span className="text-gradient">someone who knows.</span>
           </h1>

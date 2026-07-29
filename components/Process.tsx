@@ -8,7 +8,7 @@ export default function Process() {
   return (
     <section className="bg-white py-12 lg:py-16">
       <div className="container-page">
-        <h2 className="reveal text-3xl font-extrabold text-brand-900 sm:text-4xl">
+        <h2 className="reveal text-3xl font-medium text-brand-900 sm:text-4xl">
           From confused to enrolled in four simple steps
         </h2>
 
@@ -41,7 +41,7 @@ export default function Process() {
               <p className="text-sm font-extrabold uppercase tracking-widest text-brand-600">
                 {nodeLabels[i]}
               </p>
-              <h3 className="mt-2 text-base font-bold text-brand-900">
+              <h3 className="mt-2 text-base font-medium text-brand-900">
                 {step.title}
               </h3>
               <p className="mt-1.5 text-sm leading-relaxed text-brand-900/70">

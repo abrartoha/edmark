@@ -22,7 +22,7 @@ export default function CTA({
           </div>
 
           <div className="relative mx-auto max-w-2xl">
-            <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+            <h2 className="text-3xl font-medium text-white sm:text-4xl">
               {title}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-brand-100">

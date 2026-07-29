@@ -72,7 +72,7 @@ export default function AboutPage() {
                   height={160}
                   className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white shadow-soft"
                 />
-                <h3 className="mt-5 text-xl font-bold text-brand-900">
+                <h3 className="mt-5 text-xl font-medium text-brand-900">
                   {member.name}
                 </h3>
                 <p className="text-sm font-semibold text-brand-600">
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 className="card reveal text-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="font-display text-4xl font-extrabold text-gradient">
+                <div className="font-display text-4xl font-medium text-gradient">
                   {s.value}
                 </div>
                 <div className="mt-2 text-sm font-medium text-brand-900/70">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <div className="text-brand-500">
                   <IconCheck className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-base font-bold text-brand-900">
+                <h3 className="mt-4 text-base font-medium text-brand-900">
                   {v.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/70">

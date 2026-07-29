@@ -113,7 +113,7 @@ export default function Intro() {
 
         {/* Wordmark sliding in from the side, matching logo typography */}
         <div className="intro-word overflow-hidden text-center sm:text-left">
-          <span className="block font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
+          <span className="block font-display text-5xl font-medium tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
             EDMARK
           </span>
           <span className="mt-1 block text-sm font-bold uppercase tracking-[0.3em] text-white/80">

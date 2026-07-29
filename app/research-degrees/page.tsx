@@ -204,7 +204,7 @@ export default function ResearchDegreesPage() {
                 <div className="text-brand-500">
                   <item.icon className="h-9 w-9" />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-brand-900">
+                <h3 className="mt-5 text-lg font-medium text-brand-900">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
@@ -234,7 +234,7 @@ export default function ResearchDegreesPage() {
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-brand-900">{d.title}</h3>
+                    <h3 className="text-2xl font-medium text-brand-900">{d.title}</h3>
                     <span className="mt-1 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
                       Duration: {d.duration}
                     </span>
@@ -242,7 +242,7 @@ export default function ResearchDegreesPage() {
                 </div>
                 <p className="mt-4 text-brand-900/70 leading-relaxed">{d.desc}</p>
                 <div className="mt-6">
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-brand-500">
+                  <h4 className="text-sm font-medium uppercase tracking-wider text-brand-500">
                     Entry requirements
                   </h4>
                   <ul className="mt-3 space-y-2">
@@ -278,10 +278,10 @@ export default function ResearchDegreesPage() {
                 className="reveal rounded-2xl border border-brand-100 bg-brand-50/50 p-6"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
-                <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 font-display text-sm font-bold text-brand-950">
+                <div className="grid h-9 w-9 place-items-center rounded-full bg-brand-500 font-display text-sm font-medium text-brand-950">
                   {i + 1}
                 </div>
-                <h3 className="mt-3 font-bold text-brand-900">{s.title}</h3>
+                <h3 className="mt-3 font-medium text-brand-900">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/60">{s.desc}</p>
               </div>
             ))}
@@ -311,7 +311,7 @@ export default function ResearchDegreesPage() {
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-bold text-brand-900">{s.name}</h3>
+                  <h3 className="text-lg font-medium text-brand-900">{s.name}</h3>
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
@@ -349,10 +349,10 @@ export default function ResearchDegreesPage() {
                 className="reveal text-center"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-extrabold text-brand-950">
+                <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-brand-500 font-display text-2xl font-medium text-brand-950">
                   {step.n}
                 </div>
-                <h3 className="mt-5 text-base font-bold text-brand-900">{step.title}</h3>
+                <h3 className="mt-5 text-base font-medium text-brand-900">{step.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/70">{step.desc}</p>
               </div>
             ))}

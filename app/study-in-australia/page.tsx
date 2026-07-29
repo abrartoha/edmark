@@ -105,7 +105,7 @@ export default function StudyInAustraliaPage() {
                 <div className="text-brand-500">
                   <IconCheck className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-base font-bold text-brand-900">
+                <h3 className="mt-4 text-base font-medium text-brand-900">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
@@ -134,7 +134,7 @@ export default function StudyInAustraliaPage() {
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div>
-                  <h3 className="text-lg font-bold text-brand-900">{t.type}</h3>
+                  <h3 className="text-lg font-medium text-brand-900">{t.type}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-brand-900/70">
                     {t.desc}
                   </p>
@@ -143,7 +143,7 @@ export default function StudyInAustraliaPage() {
                   <span className="block text-xs font-semibold uppercase text-brand-500">
                     Typical fees
                   </span>
-                  <span className="font-display text-lg font-bold text-brand-900">
+                  <span className="font-display text-lg font-medium text-brand-900">
                     {t.fees}
                   </span>
                 </div>
@@ -285,7 +285,7 @@ export default function StudyInAustraliaPage() {
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-2">
           <div className="card reveal">
-            <h3 className="text-xl font-bold text-brand-900">Intake dates</h3>
+            <h3 className="text-xl font-medium text-brand-900">Intake dates</h3>
             <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
               Australian universities typically have two main intakes:
             </p>
@@ -305,7 +305,7 @@ export default function StudyInAustraliaPage() {
           </div>
 
           <div className="card reveal" style={{ transitionDelay: "100ms" }}>
-            <h3 className="text-xl font-bold text-brand-900">Work while studying</h3>
+            <h3 className="text-xl font-medium text-brand-900">Work while studying</h3>
             <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
               Student visa holders enjoy generous work rights in Australia:
             </p>
