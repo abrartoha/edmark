@@ -21,7 +21,7 @@ export default function TrustLogos() {
                 height={60}
                 className="h-12 w-auto max-w-[110px] object-contain"
               />
-              <span className="text-xs font-semibold leading-snug text-brand-900 transition-colors group-hover:text-brand-600">
+              <span className="text-xs font-medium leading-snug text-brand-900 transition-colors group-hover:text-brand-600">
                 {inst.name}
               </span>
             </a>

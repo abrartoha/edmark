@@ -44,7 +44,7 @@ export default function SuccessStoriesPage() {
                   {story.story}
                 </p>
                 <div className="mt-auto border-t border-brand-100 pt-4 mt-6">
-                  <p className="text-base font-bold text-brand-900">
+                  <p className="text-base font-medium text-brand-900">
                     {story.name}
                   </p>
                   <p className="text-sm text-brand-600">
@@ -55,7 +55,7 @@ export default function SuccessStoriesPage() {
                   </p>
                   <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5">
                     <span className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="text-xs font-semibold text-brand-800">
+                    <span className="text-xs font-medium text-brand-800">
                       {story.outcome}
                     </span>
                   </div>
@@ -82,7 +82,7 @@ export default function SuccessStoriesPage() {
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 border-t border-brand-100 pt-4">
-                  <p className="text-sm font-bold text-brand-900">{t.name}</p>
+                  <p className="text-sm font-medium text-brand-900">{t.name}</p>
                   <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
                 </figcaption>
               </figure>

@@ -113,7 +113,7 @@ export default function Intro() {
           <span className="block font-display text-5xl font-medium tracking-tight text-white sm:text-6xl">
             EDMARK
           </span>
-          <span className="mt-1 block text-sm font-bold uppercase tracking-[0.3em] text-white/80">
+          <span className="mt-1 block text-sm font-medium uppercase tracking-[0.3em] text-white/80">
             Education
           </span>
         </div>

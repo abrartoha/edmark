@@ -75,7 +75,7 @@ export default function AboutPage() {
                 <h3 className="mt-5 text-xl font-medium text-brand-900">
                   {member.name}
                 </h3>
-                <p className="text-sm font-semibold text-brand-600">
+                <p className="text-sm font-medium text-brand-600">
                   {member.role}
                 </p>
                 {member.credential && (

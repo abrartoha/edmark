@@ -117,18 +117,18 @@ export default function ContactForm() {
           Keen to talk sooner? Call us and we&apos;ll get started right away.
         </p>
         <div className="mt-4 rounded-xl bg-white p-4">
-          <p className="text-xs font-semibold text-brand-600 uppercase tracking-wider">What happens next</p>
+          <p className="text-xs font-medium text-brand-600 uppercase tracking-wider">What happens next</p>
           <ol className="mt-2 space-y-1.5 text-left text-sm text-brand-900/70">
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">1.</span>
+              <span className="font-medium text-brand-600">1.</span>
               We review your enquiry and prepare personalised recommendations
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">2.</span>
+              <span className="font-medium text-brand-600">2.</span>
               An advisor calls or emails you with a tailored study plan
             </li>
             <li className="flex items-start gap-2">
-              <span className="font-bold text-brand-600">3.</span>
+              <span className="font-medium text-brand-600">3.</span>
               We begin your application process, fully managed from end to end
             </li>
           </ol>
@@ -165,7 +165,7 @@ export default function ContactForm() {
         <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
         <Field label="Phone" name="phone" type="tel" placeholder="04xx xxx xxx" />
         <div>
-          <label htmlFor="interest" className="mb-1.5 block text-sm font-semibold text-brand-900">
+          <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-brand-900">
             I&apos;m interested in
           </label>
           <select
@@ -182,7 +182,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-brand-900">
+        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-brand-900">
           How can we help?
         </label>
         <textarea
@@ -195,7 +195,7 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <label htmlFor="referral_source" className="mb-1.5 block text-sm font-semibold text-brand-900">
+        <label htmlFor="referral_source" className="mb-1.5 block text-sm font-medium text-brand-900">
           How did you hear about us?
         </label>
         <select
@@ -244,7 +244,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-semibold text-brand-900">
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-brand-900">
         {label} {required && <span className="text-brand-400">*</span>}
       </label>
       <input

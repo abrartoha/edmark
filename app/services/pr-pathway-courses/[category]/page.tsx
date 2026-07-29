@@ -78,7 +78,7 @@ export default function PrCategoryPage({
                 <div className="relative flex h-32 items-center justify-center bg-brand-500">
                   <ServiceIcon name={cat.icon} className="h-12 w-12 text-brand-950/90" />
                   {p.code && (
-                    <span className="absolute right-3 top-3 rounded-full bg-brand-950/15 px-3 py-1 text-xs font-bold text-brand-950">
+                    <span className="absolute right-3 top-3 rounded-full bg-brand-950/15 px-3 py-1 text-xs font-medium text-brand-950">
                       {p.code}
                     </span>
                   )}
@@ -90,7 +90,7 @@ export default function PrCategoryPage({
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-brand-950 transition-transform hover:-translate-y-0.5"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-medium text-brand-950 transition-transform hover:-translate-y-0.5"
                   >
                     Contact Now <IconArrow />
                   </Link>
@@ -141,10 +141,10 @@ export default function PrCategoryPage({
                 key={c}
                 className="flex items-center gap-4 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-500 text-sm font-bold text-brand-950">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-500 text-sm font-medium text-brand-950">
                   {i + 1}
                 </span>
-                <p className="text-sm font-semibold text-brand-900">{c}</p>
+                <p className="text-sm font-medium text-brand-900">{c}</p>
               </div>
             ))}
           </div>

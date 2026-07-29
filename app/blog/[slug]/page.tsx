@@ -552,7 +552,7 @@ export default function BlogPostPage({
         <div className="container-page mx-auto max-w-3xl">
           <header className="mb-12">
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+              <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
                 {post.category}
               </span>
               <span className="text-xs text-brand-900/50">{post.readTime}</span>
@@ -656,13 +656,13 @@ export default function BlogPostPage({
                 href={`/blog/${p.slug}`}
                 className="card-hover group"
               >
-                <span className="text-xs font-semibold text-brand-500">
+                <span className="text-xs font-medium text-brand-500">
                   {p.category}
                 </span>
                 <h3 className="mt-2 font-medium text-brand-900 group-hover:text-brand-600 transition-colors">
                   {p.title}
                 </h3>
-                <span className="mt-2 flex items-center gap-1 text-sm font-semibold text-brand-600">
+                <span className="mt-2 flex items-center gap-1 text-sm font-medium text-brand-600">
                   Read <IconArrow className="h-3 w-3" />
                 </span>
               </Link>

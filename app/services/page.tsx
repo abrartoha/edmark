@@ -33,7 +33,7 @@ export default function ServicesPage() {
                 <ServiceIcon name={s.icon} className="h-9 w-9" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-400">
+                <span className="text-xs font-medium uppercase tracking-widest text-brand-400">
                   0{i + 1}
                 </span>
                 <h2 className="mt-1 text-2xl font-medium text-brand-900">

@@ -235,7 +235,7 @@ export default function ResearchDegreesPage() {
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <h3 className="text-2xl font-medium text-brand-900">{d.title}</h3>
-                    <span className="mt-1 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
+                    <span className="mt-1 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600">
                       Duration: {d.duration}
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export default function ResearchDegreesPage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/blog/how-to-write-a-research-proposal-for-australian-universities" className="text-sm font-semibold text-brand-600 hover:underline">
+            <Link href="/blog/how-to-write-a-research-proposal-for-australian-universities" className="text-sm font-medium text-brand-600 hover:underline">
               Read our full research proposal writing guide →
             </Link>
           </div>
@@ -314,10 +314,10 @@ export default function ResearchDegreesPage() {
                   <h3 className="text-lg font-medium text-brand-900">{s.name}</h3>
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">
+                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600">
                     {s.funder}
                   </span>
-                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
                     {s.coverage}
                   </span>
                 </div>
@@ -374,7 +374,7 @@ export default function ResearchDegreesPage() {
                 key={f.q}
                 className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-brand-900">
                   {f.q}
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-transform group-open:rotate-45">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">

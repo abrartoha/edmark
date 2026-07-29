@@ -29,7 +29,7 @@ function Row({ c, onNavigate }: { c: NavChild; onNavigate: () => void }) {
       onClick={onNavigate}
       className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-paper-sunk"
     >
-      <span className="block text-sm font-bold text-ink">{c.label}</span>
+      <span className="block text-sm font-medium text-ink">{c.label}</span>
       {c.note && (
         <span className="mt-0.5 block text-xs leading-snug text-sage">
           {c.note}
@@ -204,7 +204,7 @@ export default function Header() {
                                 onClick={closeMobile}
                                 className="block rounded-lg px-3 py-2.5 hover:bg-paper-sunk"
                               >
-                                <span className="block text-sm font-semibold text-ink">
+                                <span className="block text-sm font-medium text-ink">
                                   {c.label}
                                 </span>
                                 {c.note && (

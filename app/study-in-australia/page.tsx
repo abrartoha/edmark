@@ -140,7 +140,7 @@ export default function StudyInAustraliaPage() {
                   </p>
                 </div>
                 <div className="rounded-xl bg-brand-50 px-4 py-2 text-center">
-                  <span className="block text-xs font-semibold uppercase text-brand-500">
+                  <span className="block text-xs font-medium uppercase text-brand-500">
                     Typical fees
                   </span>
                   <span className="font-display text-lg font-medium text-brand-900">
@@ -166,16 +166,16 @@ export default function StudyInAustraliaPage() {
             <table className="w-full min-w-[600px] text-left text-sm">
               <thead>
                 <tr className="border-b-2 border-brand-200">
-                  <th className="py-3 pr-4 font-bold text-brand-900">City</th>
-                  <th className="py-3 pr-4 font-bold text-brand-900">Rent (shared)</th>
-                  <th className="py-3 pr-4 font-bold text-brand-900">Food</th>
-                  <th className="py-3 font-bold text-brand-900">Transport</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">City</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">Rent (shared)</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">Food</th>
+                  <th className="py-3 font-medium text-brand-900">Transport</th>
                 </tr>
               </thead>
               <tbody>
                 {livingCosts.map((c) => (
                   <tr key={c.city} className="border-b border-brand-100">
-                    <td className="py-3 pr-4 font-semibold text-brand-900">{c.city}</td>
+                    <td className="py-3 pr-4 text-brand-900">{c.city}</td>
                     <td className="py-3 pr-4 text-brand-900/70">{c.rent}</td>
                     <td className="py-3 pr-4 text-brand-900/70">{c.food}</td>
                     <td className="py-3 text-brand-900/70">{c.transport}</td>
@@ -218,7 +218,7 @@ export default function StudyInAustraliaPage() {
           </div>
           <p className="mt-8 text-center text-sm text-brand-900/60">
             Visa application charge: AUD $2,500 (from 1 July 2026) · Processing time: 4–12 weeks ·{" "}
-            <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-semibold text-brand-600 hover:underline">
+            <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-medium text-brand-600 hover:underline">
               Read our full visa guide →
             </Link>
           </p>
@@ -238,33 +238,33 @@ export default function StudyInAustraliaPage() {
             <table className="w-full min-w-[500px] text-left text-sm">
               <thead>
                 <tr className="border-b-2 border-brand-200">
-                  <th className="py-3 pr-4 font-bold text-brand-900">Level</th>
-                  <th className="py-3 pr-4 font-bold text-brand-900">IELTS</th>
-                  <th className="py-3 pr-4 font-bold text-brand-900">PTE</th>
-                  <th className="py-3 font-bold text-brand-900">TOEFL iBT</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">Level</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">IELTS</th>
+                  <th className="py-3 pr-4 font-medium text-brand-900">PTE</th>
+                  <th className="py-3 font-medium text-brand-900">TOEFL iBT</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b border-brand-100">
-                  <td className="py-3 pr-4 font-semibold text-brand-900">Foundation / Pathway</td>
+                  <td className="py-3 pr-4 text-brand-900">Foundation / Pathway</td>
                   <td className="py-3 pr-4 text-brand-900/70">5.0–5.5</td>
                   <td className="py-3 pr-4 text-brand-900/70">36–42</td>
                   <td className="py-3 text-brand-900/70">35–46</td>
                 </tr>
                 <tr className="border-b border-brand-100">
-                  <td className="py-3 pr-4 font-semibold text-brand-900">Undergraduate</td>
+                  <td className="py-3 pr-4 text-brand-900">Undergraduate</td>
                   <td className="py-3 pr-4 text-brand-900/70">6.0–6.5</td>
                   <td className="py-3 pr-4 text-brand-900/70">50–58</td>
                   <td className="py-3 text-brand-900/70">60–79</td>
                 </tr>
                 <tr className="border-b border-brand-100">
-                  <td className="py-3 pr-4 font-semibold text-brand-900">Postgraduate</td>
+                  <td className="py-3 pr-4 text-brand-900">Postgraduate</td>
                   <td className="py-3 pr-4 text-brand-900/70">6.5–7.0</td>
                   <td className="py-3 pr-4 text-brand-900/70">58–65</td>
                   <td className="py-3 text-brand-900/70">79–94</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-semibold text-brand-900">PhD / Research</td>
+                  <td className="py-3 pr-4 text-brand-900">PhD / Research</td>
                   <td className="py-3 pr-4 text-brand-900/70">6.5–7.5</td>
                   <td className="py-3 pr-4 text-brand-900/70">58–73</td>
                   <td className="py-3 text-brand-900/70">79–102</td>
@@ -274,7 +274,7 @@ export default function StudyInAustraliaPage() {
           </div>
           <p className="mt-6 text-center text-sm text-brand-900/60">
             Not sure which test to take?{" "}
-            <Link href="/blog/ielts-vs-pte-which-english-test-should-you-take" className="font-semibold text-brand-600 hover:underline">
+            <Link href="/blog/ielts-vs-pte-which-english-test-should-you-take" className="font-medium text-brand-600 hover:underline">
               Read our IELTS vs PTE guide →
             </Link>
           </p>
@@ -291,11 +291,11 @@ export default function StudyInAustraliaPage() {
             </p>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-bold">1</span>
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-medium">1</span>
                 <span><strong className="text-brand-900">Semester 1 (February/March)</strong> is the primary intake, with the widest range of courses. Applications typically close in October–December of the previous year.</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-bold">2</span>
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950 text-xs font-medium">2</span>
                 <span><strong className="text-brand-900">Semester 2 (July/August)</strong> is a secondary intake available for most courses. Applications typically close in April–May.</span>
               </li>
             </ul>

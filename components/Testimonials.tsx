@@ -24,7 +24,7 @@ export default function Testimonials() {
             </blockquote>
 
             <figcaption className="mt-6">
-              <p className="text-base font-bold text-brand-900">
+              <p className="text-base font-medium text-brand-900">
                 {featured.name}
                 {featured.route && (
                   <span className="font-medium text-brand-900/50">
@@ -35,7 +35,7 @@ export default function Testimonials() {
               </p>
               <p className="mt-1 text-sm text-brand-900/60">{featured.detail}</p>
               {featured.outcome && (
-                <p className="mt-3 text-sm font-semibold text-brand-700">
+                <p className="mt-3 text-sm font-medium text-brand-700">
                   {featured.outcome}
                 </p>
               )}
@@ -43,7 +43,7 @@ export default function Testimonials() {
 
             <Link
               href="/success-stories"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-800"
+              className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition-colors hover:text-brand-800"
             >
               Read more student stories <IconArrow className="h-3.5 w-3.5" />
             </Link>

@@ -42,7 +42,7 @@ export default function TrustBar() {
               <li key={c.name} className="flex items-center gap-2.5">
                 <IconCheck className="h-5 w-5 shrink-0 text-brand-500" />
                 <span>
-                  <span className="block text-sm font-bold text-brand-900">
+                  <span className="block text-sm font-medium text-brand-900">
                     {c.name}
                   </span>
                   <span className="block text-xs text-brand-900/55">

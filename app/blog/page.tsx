@@ -44,7 +44,7 @@ export default function BlogPage() {
               >
                 <div className="flex items-center gap-3">
                   <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    className={`rounded-full px-3 py-1 text-xs font-medium ${
                       categoryColors[post.category] || "bg-brand-50 text-brand-700"
                     }`}
                   >
@@ -73,7 +73,7 @@ export default function BlogPage() {
                   </time>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-800 transition-colors"
+                    className="flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-800 transition-colors"
                   >
                     Read more <IconArrow className="h-3.5 w-3.5" />
                   </Link>

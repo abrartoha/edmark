@@ -96,7 +96,7 @@ export default function PrPathwayPage() {
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="flex-1 text-sm leading-relaxed text-brand-900/65">{c.tagline}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:text-brand-500">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 group-hover:text-brand-500">
                     View {c.programs.length} qualifications <IconArrow />
                   </span>
                 </div>

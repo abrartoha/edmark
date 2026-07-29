@@ -39,7 +39,7 @@ export default function Services() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-900/70">
                 {s.short}
               </p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand-600">
                 Learn more
                 <IconArrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>

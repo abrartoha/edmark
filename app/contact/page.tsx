@@ -64,10 +64,10 @@ export default function ContactPage() {
                     <d.icon className="h-7 w-7" />
                   </span>
                   <span>
-                    <span className="block text-xs font-semibold uppercase tracking-wider text-brand-500">
+                    <span className="block text-xs font-medium uppercase tracking-wider text-brand-500">
                       {d.label}
                     </span>
-                    <span className="mt-1 block font-semibold text-brand-900">
+                    <span className="mt-1 block font-medium text-brand-900">
                       {d.value}
                     </span>
                   </span>
@@ -87,10 +87,10 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span>
-                  <span className="block text-xs font-semibold uppercase tracking-wider text-green-700">
+                  <span className="block text-xs font-medium uppercase tracking-wider text-green-700">
                     Chat on WhatsApp
                   </span>
-                  <span className="mt-1 block font-semibold text-green-900">
+                  <span className="mt-1 block font-medium text-green-900">
                     Quick replies
                   </span>
                 </span>
@@ -98,7 +98,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-6 rounded-2xl bg-brand-50 p-5">
-              <p className="text-sm font-semibold text-brand-900">
+              <p className="text-sm font-medium text-brand-900">
                 Office hours
               </p>
               <p className="mt-1 text-sm text-brand-900/70">{site.hours}</p>

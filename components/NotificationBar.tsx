@@ -24,7 +24,7 @@ export default function NotificationBar() {
       <div className="container-page flex items-center justify-between gap-4 py-2.5">
         <Link
           href="/contact"
-          className="flex-1 text-center text-xs font-semibold text-brand-950 hover:underline sm:text-sm"
+          className="flex-1 text-center text-xs font-medium text-brand-950 hover:underline sm:text-sm"
         >
           February 2027 intake closing soon. Book your free consultation today
           <span className="ml-1" aria-hidden="true">→</span>

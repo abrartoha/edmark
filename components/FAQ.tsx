@@ -20,7 +20,7 @@ export default function FAQ() {
                 key={f.q}
                 className="group py-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-brand-900">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-brand-900">
                   {f.q}
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-brand-600 transition-transform group-open:rotate-45">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -39,7 +39,7 @@ export default function FAQ() {
           <div className="reveal mt-8">
             <Link
               href="/faq"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-800"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition-colors hover:text-brand-800"
             >
               See all questions <IconArrow className="h-3.5 w-3.5" />
             </Link>
