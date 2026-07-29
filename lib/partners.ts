@@ -56,7 +56,7 @@ export const oshcProviders: Institution[] = [
   { slug: "allianzcare", name: "Allianz Care Australia", meta: "Government approved OSHC provider", url: "https://www.allianzcare.com.au" },
   { slug: "bupa", name: "Bupa", meta: "Government approved OSHC provider", url: "https://www.bupa.com.au" },
   { slug: "medibank", name: "Medibank", meta: "Government approved OSHC provider", url: "https://www.medibank.com.au" },
-  { slug: "nib", name: "nib", meta: "Government approved OSHC provider", url: "https://www.nib.com.au" },
+  { slug: "nib", name: "nib", meta: "Government approved OSHC provider", hasLogo: true, url: "https://www.nib.com.au" },
 ];
 
 export const allInstitutions: Institution[] = [
