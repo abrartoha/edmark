@@ -50,7 +50,7 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 font-mono text-xs font-normal uppercase text-sage;
+    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase text-eucalypt;
     letter-spacing: 0.12em;
   }
 

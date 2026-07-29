@@ -39,13 +39,20 @@ function LogoCard({ inst, i }: { inst: Institution; i: number }) {
       style={{ transitionDelay: `${(i % 10) * 40}ms` }}
     >
       <div className="grid h-20 w-20 place-items-center rounded-2xl border border-brand-100 bg-white">
-        <Image
-          src={`/images/partners/${inst.slug}.png`}
-          alt={`${inst.name} logo`}
-          width={80}
-          height={80}
-          className="h-16 w-16 object-contain"
-        />
+        {inst.hasLogo ? (
+          <Image
+            src={`/images/partners/${inst.slug}.png`}
+            alt={`${inst.name} logo`}
+            width={80}
+            height={80}
+            className="h-16 w-16 object-contain"
+          />
+        ) : (
+          /* No logo file yet: initial as a placeholder mark. */
+          <span className="font-mono text-2xl font-medium text-eucalypt">
+            {inst.name.charAt(0).toUpperCase()}
+          </span>
+        )}
       </div>
       <div>
         <h3 className="text-sm font-medium leading-snug text-brand-900 transition-colors group-hover:text-brand-600">

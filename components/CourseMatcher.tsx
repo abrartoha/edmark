@@ -19,7 +19,7 @@ const TOTAL = questions.length;
 function Detail({ label, value }: { label: string; value: string; }) {
   return (
     <div className="border-t border-line pt-3">
-      <dt className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-sage">
+      <dt className="eyebrow text-[0.65rem]">
         {label}
       </dt>
       <dd className="mt-1 text-sm text-ink">{value || "Not set"}</dd>
@@ -37,7 +37,7 @@ function ResultCard({ pathway }: { pathway: Pathway }) {
       <dl className="mt-5 space-y-3">
         <Detail label="Typical duration" value={pathway.duration} />
         <div className="border-t border-line pt-3">
-          <dt className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-sage">
+          <dt className="eyebrow text-[0.65rem]">
             Indicative annual tuition
           </dt>
           <dd className="mt-1 font-mono text-sm text-eucalypt">
@@ -110,7 +110,7 @@ export default function CourseMatcher() {
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.12em] text-sage">
+          <p className="eyebrow">
             Course matcher
           </p>
           <h2 className="mt-3 font-serif text-3xl font-normal leading-tight text-ink sm:text-4xl">
@@ -127,7 +127,7 @@ export default function CourseMatcher() {
             <div className="rounded-xl border border-line bg-paper p-6 sm:p-8">
               {/* Progress */}
               <div className="flex items-center justify-between gap-4">
-                <p className="font-mono text-xs uppercase tracking-[0.12em] text-sage">
+                <p className="eyebrow">
                   Question {step + 1} of {TOTAL}
                 </p>
                 {step > 0 && (
