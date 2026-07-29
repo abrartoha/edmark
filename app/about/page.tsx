@@ -131,7 +131,7 @@ export default function AboutPage() {
                 className="card reveal text-center"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="font-display text-4xl font-medium text-gradient">
+                <div className="font-display text-4xl font-medium text-eucalypt">
                   {s.value}
                 </div>
                 <div className="mt-2 text-sm font-medium text-brand-900/70">

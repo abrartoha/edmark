@@ -96,15 +96,12 @@ export default function Intro() {
           {tiles.map((t, i) => (
             <span
               key={i}
-              className="intro-tile absolute rounded-[14px] shadow-glow"
+              className="intro-tile absolute rounded-[14px]"
               style={{
                 ...t.style,
                 ...t.from,
                 animationDelay: `${i * 0.12}s`,
-                background:
-                  i <= 1
-                    ? "linear-gradient(135deg, #1de9b6 0%, #14c49a 100%)"
-                    : "linear-gradient(135deg, #14c49a 0%, #22d3ee 100%)",
+                background: i <= 1 ? "#8FBFA9" : "#154D3C",
                 transform: `translate(var(--tx, 0), var(--ty, 0)) scale(0.3) rotate(-16deg) skewX(-8deg)`,
               }}
             />
@@ -113,7 +110,7 @@ export default function Intro() {
 
         {/* Wordmark sliding in from the side, matching logo typography */}
         <div className="intro-word overflow-hidden text-center sm:text-left">
-          <span className="block font-display text-5xl font-medium tracking-tight text-white sm:text-6xl" style={{ fontWeight: 900 }}>
+          <span className="block font-display text-5xl font-medium tracking-tight text-white sm:text-6xl">
             EDMARK
           </span>
           <span className="mt-1 block text-sm font-bold uppercase tracking-[0.3em] text-white/80">

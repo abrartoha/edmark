@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="grid min-h-[60vh] place-items-center bg-white px-5 py-24">
       <div className="text-center">
-        <p className="font-display text-7xl font-medium text-gradient">404</p>
+        <p className="font-display text-7xl font-medium text-eucalypt">404</p>
         <h1 className="mt-4 text-2xl font-medium text-brand-900">
           This page took a gap year
         </h1>

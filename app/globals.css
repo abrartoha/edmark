@@ -123,7 +123,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: radial-gradient(120% 120% at 50% 0%, #0d6b5b 0%, #083a31 60%, #052721 100%);
+  background: #0a1f1a;
 }
 [data-intro-seen="1"] #edmark-intro {
   display: none !important;

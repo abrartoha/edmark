@@ -94,19 +94,19 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-gradient">{total}+</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">{total}+</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">Partner institutions</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-gradient">8</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">8</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">Group of Eight universities</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-gradient">{universities.length}</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">{universities.length}</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">University partners</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-gradient">{tafes.length}</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">{tafes.length}</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">TAFE & polytechnic partners</div>
             </div>
           </div>
