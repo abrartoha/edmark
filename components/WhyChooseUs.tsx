@@ -5,7 +5,7 @@ import { IconArrow, IconCheck } from "./Icons";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-brand-50 py-20 lg:py-28">
+    <section className="bg-paper-sunk py-20 lg:py-28">
       <div className="container-page grid items-center gap-14 lg:grid-cols-2">
         <div>
           <SectionHeading
@@ -18,23 +18,19 @@ export default function WhyChooseUs() {
           </Link>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          {reasons.map((r, i) => (
-            <div
-              key={r.title}
-              className="card reveal"
-              style={{ transitionDelay: `${(i % 2) * 100}ms` }}
-            >
-              <div className="text-brand-500">
-                <IconCheck className="h-6 w-6" />
+        <ul className="reveal divide-y divide-brand-200/70">
+          {reasons.map((r) => (
+            <li key={r.title} className="flex gap-4 py-5 first:pt-0 last:pb-0">
+              <IconCheck className="mt-1 h-5 w-5 shrink-0 text-brand-500" />
+              <div>
+                <h3 className="text-base font-bold text-brand-900">{r.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-brand-900/70">
+                  {r.body}
+                </p>
               </div>
-              <h3 className="mt-4 text-base font-bold text-brand-900">{r.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
-                {r.body}
-              </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

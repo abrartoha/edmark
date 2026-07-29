@@ -15,7 +15,7 @@ const credentials = [
 
 export default function TrustBar() {
   return (
-    <section className="border-b border-brand-100 bg-brand-50/60 py-10 lg:py-12">
+    <section className="border-b border-brand-100 bg-paper-sunk py-10 lg:py-12">
       <div className="container-page reveal">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_auto_1fr] lg:gap-12">
           <dl className="grid grid-cols-3 gap-4 text-center lg:gap-8">

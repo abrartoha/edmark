@@ -308,3 +308,24 @@ export const faqs = [
     a: "Yes. Research students have access to specific funding that coursework students don't, including Research Training Program (RTP) scholarships from the Australian Government, university-funded research scholarships, and industry-partnered PhD stipends. Many of these cover full tuition plus a living allowance of $30,000–$35,000 AUD per year. We help you identify and apply for every scholarship you're eligible for.",
   },
 ];
+
+// ---------------------------------------------------------------------------
+// The five questions shown on the homepage. The full set above stays intact and
+// /faq keeps rendering all of it, so nothing here removes content from the site.
+// Selected by question text and validated at module load: if one of these is
+// reworded above, the build fails rather than the homepage quietly dropping a
+// question.
+// ---------------------------------------------------------------------------
+const homepageFaqQuestions = [
+  "How much does your consultation cost?",
+  "How does the consultation process work?",
+  "How long does the entire process take?",
+  "Can I consult online or does it have to be in person?",
+  "Do you help with student visa applications?",
+];
+
+export const homepageFaqs = homepageFaqQuestions.map((q) => {
+  const found = faqs.find((f) => f.q === q);
+  if (!found) throw new Error(`Homepage FAQ not found in faqs: "${q}"`);
+  return found;
+});

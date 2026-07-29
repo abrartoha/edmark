@@ -1,44 +1,55 @@
 import { steps } from "@/lib/content";
-import SectionHeading from "./SectionHeading";
+
+// Short node labels for the timeline. The full step titles and bodies stay in
+// lib/content.ts and are still used verbatim beneath each node.
+const nodeLabels = ["Apply", "Offer", "Visa", "Start"];
 
 export default function Process() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-12 lg:py-16">
       <div className="container-page">
-        <SectionHeading
-          center
-          eyebrow="How it works"
-          title="From confused to enrolled in four simple steps"
-          subtitle="No jargon. No runaround. Just a clear, guided path to your Australian education."
-        />
+        <h2 className="reveal text-3xl font-extrabold text-brand-900 sm:text-4xl">
+          From confused to enrolled in four simple steps
+        </h2>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* ---------------------------------------------------------------
+            640px and up: one hairline rule running across, four nodes on it.
+            Below 640px the same markup rotates, with the rule running down
+            the left and the nodes sitting on it. One DOM, no duplication.
+            --------------------------------------------------------------- */}
+        <ol className="reveal relative mt-10 grid gap-8 sm:mt-14 sm:grid-cols-4 sm:gap-6">
+          {/* Vertical rule, below sm */}
+          <span
+            className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-brand-200 sm:hidden"
+            aria-hidden="true"
+          />
+          {/* Horizontal rule, sm and up */}
+          <span
+            className="absolute left-0 right-0 top-[7px] hidden h-px bg-brand-200 sm:block"
+            aria-hidden="true"
+          />
+
           {steps.map((step, i) => (
-            <div
-              key={step.n}
-              className="reveal relative"
-              style={{ transitionDelay: `${i * 90}ms` }}
-            >
-              <div className="card h-full">
-                <span className="font-display text-4xl font-extrabold text-brand-100">
-                  {step.n}
-                </span>
-                <h3 className="mt-3 text-lg font-bold text-brand-900">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
-                  {step.body}
-                </p>
-              </div>
-              {i < steps.length - 1 && (
-                <div
-                  className="absolute -right-3 top-1/2 hidden h-px w-6 bg-brand-200 lg:block"
-                  aria-hidden="true"
-                />
-              )}
-            </div>
+            <li key={step.n} className="relative pl-8 sm:pl-0">
+              <span
+                className="absolute left-0 top-0 grid h-[15px] w-[15px] place-items-center rounded-full border-2 border-brand-500 bg-white sm:relative sm:mb-5"
+                aria-hidden="true"
+              >
+                <span className="h-[5px] w-[5px] rounded-full bg-brand-500" />
+              </span>
+
+              <p className="text-sm font-extrabold uppercase tracking-widest text-brand-600">
+                {nodeLabels[i]}
+              </p>
+              <h3 className="mt-2 text-base font-bold text-brand-900">
+                {step.title}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-brand-900/70">
+                {step.body}
+              </p>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

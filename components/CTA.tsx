@@ -5,12 +5,15 @@ import { IconArrow, IconPhone } from "./Icons";
 export default function CTA({
   title = "Your future won't wait. Neither should you.",
   subtitle = "Book your free, no-obligation consultation today. In 30 minutes you'll have a clear plan for studying in Australia, and a team ready to make it happen.",
+  // Opt-in only. Every page except the homepage keeps the white ground.
+  tinted = false,
 }: {
   title?: string;
   subtitle?: string;
+  tinted?: boolean;
 }) {
   return (
-    <section className="bg-white pb-20 lg:pb-28">
+    <section className={`${tinted ? "bg-paper-sunk" : "bg-white"} pb-20 lg:pb-28 ${tinted ? "pt-20 lg:pt-28" : ""}`}>
       <div className="container-page">
         <div className="reveal relative overflow-hidden rounded-3xl bg-brand-diagonal px-8 py-16 text-center shadow-glow sm:px-16">
           <div className="pointer-events-none absolute inset-0" aria-hidden="true">

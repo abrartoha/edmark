@@ -1,17 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import { featuredInstitutions } from "@/lib/partners";
-import { IconArrow } from "./Icons";
 
 export default function TrustLogos() {
   return (
-    <section className="border-b border-brand-100 bg-white py-14 lg:py-16">
+    <section className="border-b border-brand-100 bg-white py-12 lg:py-16">
       <div className="container-page">
-        <p className="reveal text-center text-xs font-semibold uppercase tracking-widest text-brand-900/50">
-          Partner institutions across Australia
-        </p>
-
-        <div className="reveal mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="reveal grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {featuredInstitutions.map((inst) => (
             <a
               key={inst.slug}
@@ -34,14 +28,6 @@ export default function TrustLogos() {
           ))}
         </div>
 
-        <div className="reveal mt-10 text-center">
-          <Link
-            href="/partners"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-800"
-          >
-            See all partner institutions <IconArrow className="h-3.5 w-3.5" />
-          </Link>
-        </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
 import { successStories } from "@/lib/success-stories";
+import { testimonials } from "@/lib/content";
 import { IconStar } from "@/components/Icons";
 
 export const metadata: Metadata = {
@@ -60,6 +61,31 @@ export default function SuccessStoriesPage() {
                   </div>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Moved here from the homepage, which now features one story only. */}
+      <section className="bg-paper-sunk py-16 lg:py-24">
+        <div className="container-page">
+          <h2 className="reveal text-2xl font-extrabold text-brand-900 sm:text-3xl">
+            More from our students
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {testimonials.slice(1).map((t) => (
+              <figure
+                key={t.name}
+                className="reveal rounded-2xl border border-brand-100 bg-white p-7"
+              >
+                <blockquote className="text-base leading-relaxed text-brand-900/80">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 border-t border-brand-100 pt-4">
+                  <p className="text-sm font-bold text-brand-900">{t.name}</p>
+                  <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

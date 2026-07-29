@@ -36,7 +36,7 @@ export default function HomePage() {
       <Process />
       <Testimonials />
       <FAQ />
-      <CTA />
+      <CTA tinted />
     </>
   );
 }

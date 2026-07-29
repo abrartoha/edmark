@@ -1,54 +1,54 @@
+import Link from "next/link";
 import { testimonials } from "@/lib/content";
-import SectionHeading from "./SectionHeading";
-import { IconCheck, IconStar } from "./Icons";
+import { IconArrow } from "./Icons";
+
+// One testimonial only, the most complete. The other two are shown on
+// /success-stories, which carries a pull-quote strip at its foot.
+const featured = testimonials[0];
 
 export default function Testimonials() {
   return (
-    <section className="bg-brand-50 py-20 lg:py-28">
+    <section className="bg-paper-sunk py-20 lg:py-28">
       <div className="container-page">
-        <SectionHeading
-          center
-          eyebrow="Student stories"
-          title="Real students. Real offers. Real futures."
-          subtitle="Our reputation is built on referrals. Here's what students say after working with Edmark."
-        />
+        <figure className="reveal grid items-center gap-10 sm:grid-cols-[240px_1fr] sm:gap-12">
+          {/* Neutral placeholder until the real photo is supplied. */}
+          <div
+            className="mx-auto h-[240px] w-[240px] shrink-0 rounded-2xl border border-brand-100 bg-white sm:mx-0"
+            role="img"
+            aria-label={`Photo of ${featured.name} coming soon`}
+          />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <figure
-              key={t.name}
-              className="card reveal flex h-full flex-col"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="flex gap-1 text-brand-500">
-                {[...Array(5)].map((_, i) => (
-                  <IconStar key={i} className="h-4 w-4" />
-                ))}
-              </div>
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-brand-900/80">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 border-t border-brand-100 pt-4">
-                <p className="text-sm font-bold text-brand-900">
-                  {t.name}
-                  {t.route && (
-                    <span className="font-medium text-brand-900/50">
-                      {" "}
-                      &middot; {t.route}
-                    </span>
-                  )}
-                </p>
-                <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
-                {t.outcome && (
-                  <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">
-                    <IconCheck className="h-3.5 w-3.5 shrink-0" />
-                    {t.outcome}
-                  </p>
+          <div>
+            <blockquote className="text-xl font-medium leading-relaxed text-brand-900 sm:text-2xl">
+              &ldquo;{featured.quote}&rdquo;
+            </blockquote>
+
+            <figcaption className="mt-6">
+              <p className="text-base font-bold text-brand-900">
+                {featured.name}
+                {featured.route && (
+                  <span className="font-medium text-brand-900/50">
+                    {" "}
+                    &middot; {featured.route}
+                  </span>
                 )}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+              </p>
+              <p className="mt-1 text-sm text-brand-900/60">{featured.detail}</p>
+              {featured.outcome && (
+                <p className="mt-3 text-sm font-semibold text-brand-700">
+                  {featured.outcome}
+                </p>
+              )}
+            </figcaption>
+
+            <Link
+              href="/success-stories"
+              className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-800"
+            >
+              Read more student stories <IconArrow className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </figure>
       </div>
     </section>
   );
