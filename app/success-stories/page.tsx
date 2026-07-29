@@ -92,6 +92,11 @@ export default function SuccessStoriesPage() {
                     )}
                   </p>
                   <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
+                  {t.outcome && (
+                    <p className="mt-2 text-xs font-medium text-brand-700">
+                      {t.outcome}
+                    </p>
+                  )}
                 </figcaption>
               </figure>
             ))}

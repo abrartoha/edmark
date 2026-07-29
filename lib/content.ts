@@ -194,9 +194,9 @@ export const testimonials: Testimonial[] = [
     quote:
       "The scholarship advice alone saved me thousands. They treated my future like it was their own. I recommend Edmark to every student I meet.",
     name: "Arjun M.",
-    // TODO: outcome still needed.
     detail: "Master of IT, Melbourne Institute of Technology",
     route: "India",
+    outcome: "Now working at Deloitte",
   },
   {
     quote:
