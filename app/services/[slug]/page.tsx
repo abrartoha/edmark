@@ -145,7 +145,7 @@ const serviceExtras: Record<
         tuitionMax: 1800,
         tuitionBasis: "for the full course",
         entryRequirement:
-          "Over 18, with a police check and the security licensing requirements of your state. Availability to student visa holders varies by provider and state, and some RTOs do not enrol subclass 500 holders at all, so we check eligibility before you commit.",
+          "Over 18 with current work rights. In Victoria the licence is issued by Victoria Police, and its Licensing and Regulation Division only recognises training completed by overseas students where the course is both delivered by an approved RTO and CRICOS registered. Confirm CRICOS registration before you enrol, because training that is not registered will not count toward a licence. Your visa work-hour limit still applies once you are licensed.",
         englishRequirement: "Provider placement test, commonly around IELTS 5.5.",
         nextIntake: "Rolling intakes at most RTOs",
       },
