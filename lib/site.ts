@@ -58,12 +58,17 @@ export const site = {
 } as const;
 
 export type NavChild = { label: string; href: string; note?: string };
+/** A labelled block inside a mega-menu. Omit `label` for an unlabelled block. */
+export type NavGroup = { label?: string; items: NavChild[] };
 export type NavItem = {
   label: string;
   href: string;
   /** Shown under the heading in the mega-menu. */
   blurb?: string;
+  /** Flat list. Used by menus that need no grouping. */
   children?: NavChild[];
+  /** Grouped list, rendered with a rule between blocks. Takes precedence. */
+  groups?: NavGroup[];
 };
 
 export const nav: NavItem[] = [
@@ -72,26 +77,43 @@ export const nav: NavItem[] = [
     label: "Courses",
     href: "/services",
     blurb: "What you'll study",
-    children: [
+    // Grouped by axis: level first, then goal. Trade and Hospitality sit under
+    // Vocational because that is their level; PR pathway is a goal that cuts
+    // across levels rather than a level of its own.
+    groups: [
       {
-        label: "PR pathway courses",
-        href: "/services/pr-pathway-courses",
-        note: "Trade · Nursing · Hospitality & cookery · Teaching",
+        label: "By level",
+        items: [
+          {
+            label: "Vocational & short courses",
+            href: "/services/short-courses",
+            note: "Security · Aged care · Child care · Trade · Hospitality & cookery",
+          },
+          {
+            label: "Research degrees",
+            href: "/research-degrees",
+            note: "Masters by research · PhD",
+          },
+        ],
       },
       {
-        label: "Short courses",
-        href: "/services/short-courses",
-        note: "Security · Aged care · Child care",
+        label: "By goal",
+        items: [
+          {
+            label: "PR pathway courses",
+            href: "/services/pr-pathway-courses",
+            note: "Courses at any level aligned to skilled occupation lists",
+          },
+        ],
       },
       {
-        label: "Research degrees",
-        href: "/research-degrees",
-        note: "Masters by research · PhD",
-      },
-      {
-        label: "Where you can study",
-        href: "/partners",
-        note: "50+ partner institutions",
+        items: [
+          {
+            label: "Partners",
+            href: "/partners",
+            note: "50+ partner institutions",
+          },
+        ],
       },
     ],
   },

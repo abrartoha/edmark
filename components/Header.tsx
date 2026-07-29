@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { nav, site, type NavItem } from "@/lib/site";
+import { nav, site, type NavChild, type NavItem } from "@/lib/site";
 import Logo from "./Logo";
 
 function Chevron({ open }: { open: boolean }) {
@@ -19,6 +19,23 @@ function Chevron({ open }: { open: boolean }) {
     >
       <path d="m6 9 6 6 6-6" />
     </svg>
+  );
+}
+
+function Row({ c, onNavigate }: { c: NavChild; onNavigate: () => void }) {
+  return (
+    <Link
+      href={c.href}
+      onClick={onNavigate}
+      className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-paper-sunk"
+    >
+      <span className="block text-sm font-bold text-ink">{c.label}</span>
+      {c.note && (
+        <span className="mt-0.5 block text-xs leading-snug text-sage">
+          {c.note}
+        </span>
+      )}
+    </Link>
   );
 }
 
@@ -41,7 +58,7 @@ function Dropdown({ item }: { item: NavItem }) {
       </Link>
 
       <div
-        className={`absolute left-1/2 top-full z-50 w-[340px] -translate-x-1/2 pt-4 ${
+        className={`absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2 pt-4 ${
           open ? "block" : "hidden"
         }`}
       >
@@ -51,23 +68,27 @@ function Dropdown({ item }: { item: NavItem }) {
               {item.blurb}
             </p>
           )}
-          {item.children?.map((c) => (
-            <Link
-              key={c.href}
-              href={c.href}
-              onClick={() => setOpen(false)}
-              className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-paper-sunk"
-            >
-              <span className="block text-sm font-bold text-ink">
-                {c.label}
-              </span>
-              {c.note && (
-                <span className="mt-0.5 block text-xs leading-snug text-sage">
-                  {c.note}
-                </span>
-              )}
-            </Link>
-          ))}
+
+          {item.groups
+            ? item.groups.map((g, gi) => (
+                <div
+                  key={g.label ?? `g${gi}`}
+                  // Rule between blocks, never above the first.
+                  className={gi > 0 ? "mt-2 border-t border-line pt-2" : ""}
+                  role="group"
+                  aria-label={g.label}
+                >
+                  {g.label && (
+                    <p className="eyebrow px-3 pb-1 pt-2">{g.label}</p>
+                  )}
+                  {g.items.map((c) => (
+                    <Row key={c.href} c={c} onNavigate={() => setOpen(false)} />
+                  ))}
+                </div>
+              ))
+            : item.children?.map((c) => (
+                <Row key={c.href} c={c} onNavigate={() => setOpen(false)} />
+              ))}
         </div>
       </div>
     </div>
@@ -106,7 +127,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {nav.map((item) =>
-            item.children ? (
+            item.children || item.groups ? (
               <Dropdown key={item.label} item={item} />
             ) : (
               <Link key={item.href} href={item.href} className="nav-link">
@@ -150,7 +171,7 @@ export default function Header() {
         <div className="border-t border-line bg-paper xl:hidden">
           <nav className="container-page flex flex-col gap-1 py-4" aria-label="Mobile">
             {nav.map((item) =>
-              item.children ? (
+              item.children || item.groups ? (
                 <div key={item.label}>
                   <button
                     type="button"
@@ -165,23 +186,37 @@ export default function Header() {
                   </button>
                   {openGroup === item.label && (
                     <div className="ml-3 border-l border-line pl-2">
-                      {item.children.map((c) => (
-                        <Link
-                          key={c.href}
-                          href={c.href}
-                          onClick={closeMobile}
-                          className="block rounded-lg px-3 py-2.5 hover:bg-paper-sunk"
-                        >
-                          <span className="block text-sm font-semibold text-ink">
-                            {c.label}
-                          </span>
-                          {c.note && (
-                            <span className="mt-0.5 block text-xs text-sage">
-                              {c.note}
-                            </span>
-                          )}
-                        </Link>
-                      ))}
+                      {(item.groups ?? [{ items: item.children ?? [] }]).map(
+                        (g, gi) => (
+                          <div
+                            key={g.label ?? `g${gi}`}
+                            className={gi > 0 ? "mt-2 border-t border-line pt-2" : ""}
+                            role="group"
+                            aria-label={g.label}
+                          >
+                            {g.label && (
+                              <p className="eyebrow px-3 pb-1 pt-2">{g.label}</p>
+                            )}
+                            {g.items.map((c) => (
+                              <Link
+                                key={c.href}
+                                href={c.href}
+                                onClick={closeMobile}
+                                className="block rounded-lg px-3 py-2.5 hover:bg-paper-sunk"
+                              >
+                                <span className="block text-sm font-semibold text-ink">
+                                  {c.label}
+                                </span>
+                                {c.note && (
+                                  <span className="mt-0.5 block text-xs text-sage">
+                                    {c.note}
+                                  </span>
+                                )}
+                              </Link>
+                            ))}
+                          </div>
+                        )
+                      )}
                     </div>
                   )}
                 </div>
