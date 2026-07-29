@@ -35,7 +35,7 @@ const values = [
 
 const stats = [
   { value: "500+", label: "Students guided" },
-  { value: "50+", label: "Partner institutions" },
+  { value: "20+", label: "Partner institutions" },
   { value: "5+", label: "Years of experience" },
 ];
 

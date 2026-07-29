@@ -80,7 +80,7 @@ export default function PartnersPage() {
     <>
       <PageHero
         eyebrow="Our partners"
-        title={`${total}+ partner institutions across Australia`}
+        title={`${total} partner institutions across Australia`}
         subtitle="Working relationships with leading universities, TAFEs and colleges mean faster offers, stronger applications and more opportunities for our students."
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
@@ -107,12 +107,12 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">{total}+</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">{total}</div>
               <div className="mt-1 text-sm font-medium text-brand-900/70">Partner institutions</div>
             </div>
             <div className="card text-center">
-              <div className="font-display text-4xl font-medium text-eucalypt">8</div>
-              <div className="mt-1 text-sm font-medium text-brand-900/70">Group of Eight universities</div>
+              <div className="font-display text-4xl font-medium text-eucalypt">{colleges.length}</div>
+              <div className="mt-1 text-sm font-medium text-brand-900/70">College & pathway partners</div>
             </div>
             <div className="card text-center">
               <div className="font-display text-4xl font-medium text-eucalypt">{universities.length}</div>
@@ -133,7 +133,7 @@ export default function PartnersPage() {
             center
             eyebrow="Universities"
             title="University partners"
-            subtitle="From the Group of Eight to leading modern universities, we work with institutions in every Australian state and territory."
+            subtitle="Victorian universities, TAFEs and colleges, alongside partners in Tasmania, the Northern Territory and New South Wales."
           />
           <LogoGrid items={universities} />
         </div>
