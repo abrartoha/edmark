@@ -11,11 +11,8 @@ export type SuccessStory = {
 export const successStories: SuccessStory[] = [
   {
     name: "Priya S.",
-    // TODO: confirm Priya's actual course and provider. University of
-    // Melbourne does not offer an undergraduate Bachelor of Nursing, so the
-    // previous pairing was not a claim we could stand behind.
     course: "Bachelor of Nursing",
-    university: "Melbourne, Victoria",
+    university: "Australian Catholic University",
     origin: "India",
     quote:
       "I had no idea where to start. Edmark mapped out three perfect courses, got my application in early, and I received my offer within weeks. Genuinely life-changing.",

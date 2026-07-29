@@ -91,9 +91,7 @@ export default function SuccessStoriesPage() {
                       </span>
                     )}
                   </p>
-                  <p className="mt-0.5 text-xs text-brand-900/60">
-                    {t.detail.split(",")[0]}
-                  </p>
+                  <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
                 </figcaption>
               </figure>
             ))}

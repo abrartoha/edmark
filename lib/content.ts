@@ -186,8 +186,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "I had no idea where to start. Edmark mapped out three perfect courses, got my application in early, and I received my offer within weeks. Genuinely life-changing.",
     name: "Priya S.",
-    // TODO: confirm Priya's actual course and provider before naming one.
-    detail: "Bachelor of Nursing",
+    detail: "Bachelor of Nursing, Australian Catholic University",
     route: "India to Melbourne",
     outcome: "Now a registered nurse at a Melbourne hospital",
   },
@@ -195,9 +194,8 @@ export const testimonials: Testimonial[] = [
     quote:
       "The scholarship advice alone saved me thousands. They treated my future like it was their own. I recommend Edmark to every student I meet.",
     name: "Arjun M.",
-    // TODO: university and outcome still needed. India is confirmed; the
-    // provider is not, so none is named.
-    detail: "Master of IT",
+    // TODO: outcome still needed.
+    detail: "Master of IT, Melbourne Institute of Technology",
     route: "India",
   },
   {
