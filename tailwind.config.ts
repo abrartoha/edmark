@@ -25,10 +25,22 @@ const config: Config = {
         mint: "#1de9b6",
         cyan: "#22d3ee",
         ink: "#0a1f1a",
+
+        // Course matcher palette. Added additively: no existing class uses
+        // these names, so the rest of the site is unaffected. `ink` above is
+        // reused rather than redefined, since globals.css sets body text from
+        // it and changing it would recolour every page.
+        eucalypt: { DEFAULT: "#154D3C", deep: "#0F3A2D" },
+        brass: "#C79A3C",
+        sage: "#5F6F6A",
+        paper: { DEFAULT: "#FBFAF7", sunk: "#F3F1EA" },
+        line: "#DFDCD4",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-newsreader)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       backgroundImage: {
         "brand-gradient": "linear-gradient(135deg, #1de9b6 0%, #12a085 50%, #22d3ee 100%)",

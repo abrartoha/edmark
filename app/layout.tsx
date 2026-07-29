@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Newsreader, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
@@ -21,6 +21,25 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+// Course matcher typography. Newsreader is the specified display face.
+// Geist and Geist Mono were specified for body and numerals but ship as an npm
+// package, and npm is unavailable here, so Inter (already loaded) and IBM Plex
+// Mono stand in.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -172,7 +191,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={`${inter.variable} ${poppins.variable}`}>
+    <html
+      lang="en-AU"
+      className={`${inter.variable} ${poppins.variable} ${newsreader.variable} ${plexMono.variable}`}
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
