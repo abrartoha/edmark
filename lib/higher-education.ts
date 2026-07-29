@@ -98,6 +98,47 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0 overall, commonly with no band below 6.0.",
         nextIntake: "February and July at most providers",
       },
+      {
+        name: "Bachelor of Engineering (Honours)",
+        duration: "4 years full time",
+        tuitionMin: 40000,
+        tuitionMax: 55000,
+        entryRequirement:
+          "Year 12 or equivalent with mathematics, and physics at many providers. Four years rather than three because it is an honours degree accredited by Engineers Australia.",
+        englishRequirement: "IELTS Academic 6.5 overall, rising to 7.0 at some providers.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Bachelor of Science",
+        duration: "3 years full time",
+        tuitionMin: 30000,
+        tuitionMax: 45000,
+        entryRequirement:
+          "Year 12 or equivalent. Majors range from biomedical and environmental science through to data science.",
+        englishRequirement: "IELTS Academic 6.0 to 6.5 overall, depending on the major.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Bachelor of Education (Early Childhood / Primary)",
+        duration: "4 years full time",
+        tuitionMin: 28000,
+        tuitionMax: 40000,
+        entryRequirement:
+          "Year 12 or equivalent. A diploma in early childhood education often carries credit into the degree.",
+        englishRequirement:
+          "IELTS Academic 7.0 or higher. Teacher registration authorities set their own English standard on top of the university's, so check both.",
+        nextIntake: "February, with a mid-year intake at some providers",
+      },
+      {
+        name: "Bachelor of Social Work",
+        duration: "4 years full time",
+        tuitionMin: 30000,
+        tuitionMax: 38000,
+        entryRequirement:
+          "Year 12 or equivalent. Includes supervised field placements across the degree.",
+        englishRequirement: "IELTS Academic 6.5 overall or higher, depending on the provider.",
+        nextIntake: "February, with a mid-year intake at some providers",
+      },
     ],
     skilledOccupationRelated: false,
   },
@@ -140,6 +181,48 @@ export const levels: Level[] = [
           "A completed bachelor degree. Health, science or a related field is preferred at most providers.",
         englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
         nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Master of Engineering",
+        duration: "2 years full time",
+        tuitionMin: 35000,
+        tuitionMax: 50000,
+        entryRequirement:
+          "A completed bachelor degree in engineering or a closely related discipline.",
+        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Master of Teaching",
+        duration: "2 years full time",
+        tuitionMin: 30000,
+        tuitionMax: 45000,
+        entryRequirement:
+          "A completed bachelor degree in a related discipline. This is the postgraduate route into teacher registration.",
+        englishRequirement:
+          "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
+        nextIntake: "February, with a mid-year intake at some providers",
+      },
+      {
+        name: "Master of Nursing",
+        duration: "1.5 to 2 years full time",
+        tuitionMin: 32000,
+        tuitionMax: 46000,
+        entryRequirement:
+          "Registration as a nurse, or a bachelor degree for entry-to-practice streams.",
+        englishRequirement:
+          "IELTS Academic 7.0 with 7.0 in every band where the program leads to AHPRA registration.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Master of Business Administration (MBA)",
+        duration: "1.5 to 2 years full time",
+        tuitionMin: 40000,
+        tuitionMax: 75000,
+        entryRequirement:
+          "A completed bachelor degree, plus professional work experience at most providers. Fees sit well above other coursework masters and vary more widely.",
+        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July, with extra intakes at some providers",
       },
     ],
     skilledOccupationRelated: false,
@@ -185,6 +268,26 @@ export const levels: Level[] = [
         englishRequirement:
           "No minimum to enter. Typically priced at $300 to $500 a week, so total cost moves with course length.",
         nextIntake: "Weekly or fortnightly starts at most colleges",
+      },
+      {
+        name: "Diploma of Business",
+        duration: "12 months",
+        tuitionMin: 12000,
+        tuitionMax: 22000,
+        entryRequirement:
+          "Year 12 or equivalent. Usually packaged as credit into the first year of a business degree.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Multiple intakes a year at most providers",
+      },
+      {
+        name: "Diploma of Engineering",
+        duration: "12 months",
+        tuitionMin: 16000,
+        tuitionMax: 28000,
+        entryRequirement:
+          "Year 12 or equivalent. Usually carries credit into the second year of an engineering degree.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Multiple intakes a year at most providers",
       },
     ],
     skilledOccupationRelated: false,
