@@ -165,7 +165,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="grid h-9 w-9 place-items-center rounded-full border border-brand-700 text-brand-300 transition-all hover:border-mint hover:text-mint"
+      className="grid h-9 w-9 place-items-center rounded-full bg-brand-gradient text-brand-950 transition-transform duration-200 hover:scale-110"
     >
       <svg
         className="h-4 w-4"
