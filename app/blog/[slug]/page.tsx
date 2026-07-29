@@ -52,7 +52,7 @@ To apply for a Subclass 500 visa, you need:
 - **Confirmation of Enrolment (CoE)** from a CRICOS-registered institution
 - **Genuine Temporary Entrant (GTE) statement** explaining why you want to study in Australia
 - **English language proficiency** (IELTS, PTE, TOEFL or Cambridge)
-- **Financial capacity** to cover tuition fees, living costs and travel (approximately $24,505 AUD per year for living costs)
+- **Financial capacity** to cover tuition fees, living costs and travel (at least AUD $29,710 per year for living costs)
 - **Overseas Student Health Cover (OSHC)** for the duration of your stay
 - **Character and health requirements** including police clearances and medical examinations
 
@@ -64,7 +64,7 @@ The application process is completed online through the Department of Home Affai
 2. Create an ImmiAccount and start your application
 3. Upload all required documents (passport, CoE, financial evidence, OSHC, English test results)
 4. Write your GTE statement
-5. Pay the visa application charge (currently $710 AUD)
+5. Pay the visa application charge (AUD $2,500 for the primary applicant from 1 July 2026; AUD $2,050 for ELICOS and non-award courses)
 6. Attend a medical examination if required
 7. Wait for a decision
 
@@ -132,7 +132,7 @@ We screen your eligibility for every available scholarship, help you prepare win
 
 Melbourne is consistently ranked as one of the world's most liveable cities, and it's also one of Australia's most popular student destinations. While it's not the cheapest city, it offers excellent value when you factor in quality of life, work opportunities and cultural experiences.
 
-The Australian Government estimates that international students need approximately $24,505 AUD per year for living costs (excluding tuition). In Melbourne, your actual costs will depend on your lifestyle, accommodation choices and spending habits.
+The Australian Government requires international students to show at least AUD $29,710 per year for living costs (excluding tuition). In Melbourne, your actual costs will depend on your lifestyle, accommodation choices and spending habits.
 
 ## Accommodation
 

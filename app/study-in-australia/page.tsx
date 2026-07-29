@@ -160,7 +160,7 @@ export default function StudyInAustraliaPage() {
             center
             eyebrow="Living costs"
             title="How much does it cost to live in Australia?"
-            subtitle="The Australian Government requires international students to demonstrate access to at least $24,505 AUD per year for living costs."
+            subtitle="The Australian Government requires international students to demonstrate access to at least AUD $29,710 per year for living costs."
           />
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px] text-left text-sm">
@@ -201,7 +201,7 @@ export default function StudyInAustraliaPage() {
               "Confirmation of Enrolment (CoE) from a CRICOS-registered institution",
               "Genuine Temporary Entrant (GTE) statement",
               "English language proficiency (IELTS 5.5–7.0 depending on course)",
-              "Financial capacity (tuition + $24,505 AUD/year living costs)",
+              "Financial capacity (tuition + AUD $29,710/year living costs)",
               "Overseas Student Health Cover (OSHC)",
               "Police clearance and medical examination",
             ].map((req) => (
@@ -217,7 +217,7 @@ export default function StudyInAustraliaPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-brand-900/60">
-            Visa application charge: $710 AUD · Processing time: 4–12 weeks ·{" "}
+            Visa application charge: AUD $2,500 (from 1 July 2026) · Processing time: 4–12 weeks ·{" "}
             <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-semibold text-brand-600 hover:underline">
               Read our full visa guide →
             </Link>
