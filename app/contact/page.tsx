@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import ContactForm from "@/components/ContactForm";
 import { site } from "@/lib/site";
-import { IconPhone, IconMail, IconPin, IconStar } from "@/components/Icons";
+import { IconPhone, IconMail, IconPin } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us: Book a Free Consultation",
@@ -50,8 +50,7 @@ export default function ContactPage() {
               Speak with an advisor today
             </h2>
             <p className="mt-3 text-brand-900/70">
-              Prefer to talk directly? Reach out any way you like. We usually
-              reply within <strong>2 hours</strong> during business hours.
+              Prefer to talk directly? Reach out any way you like.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -92,7 +91,7 @@ export default function ContactPage() {
                     Chat on WhatsApp
                   </span>
                   <span className="mt-1 block font-semibold text-green-900">
-                    Quick replies, even on weekends
+                    Quick replies
                   </span>
                 </span>
               </a>
@@ -103,23 +102,6 @@ export default function ContactPage() {
                 Office hours
               </p>
               <p className="mt-1 text-sm text-brand-900/70">{site.hours}</p>
-            </div>
-
-            {/* Testimonial near form */}
-            <div className="mt-6 rounded-2xl border border-brand-100 p-5">
-              <div className="flex gap-1 text-brand-500">
-                {[...Array(5)].map((_, i) => (
-                  <IconStar key={i} className="h-3.5 w-3.5" />
-                ))}
-              </div>
-              <p className="mt-2 text-sm italic text-brand-900/70">
-                &ldquo;Professional, responsive and genuinely caring. Mahin and
-                the team answered every question and made a stressful process
-                feel simple.&rdquo;
-              </p>
-              <p className="mt-2 text-xs font-semibold text-brand-600">
-                Lucia F., Diploma of Business
-              </p>
             </div>
           </div>
 

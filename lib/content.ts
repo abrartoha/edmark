@@ -256,7 +256,7 @@ export const faqs = [
   },
   {
     q: "Where are you located?",
-    a: "Our office is at 12 Clark St, Sunshine VIC 3020. We also support students Australia-wide and internationally via phone, email and video call.",
+    a: "Our office is at Level 5, 12 Clarke Street, Sunshine VIC 3020. We also support students Australia-wide and internationally via phone, email and video call.",
   },
   // Research Degrees
   {

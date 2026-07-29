@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { getSupabase } from "@/lib/supabase";
-import { IconArrow, IconStar } from "./Icons";
+import { IconArrow } from "./Icons";
 import { trackFormSubmission } from "./GoogleAnalytics";
 import { site } from "@/lib/site";
 
@@ -225,15 +225,6 @@ export default function ContactForm() {
         {status === "loading" ? "Sending..." : "Get My Free Consultation"}
         {status !== "loading" && <IconArrow />}
       </button>
-
-      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-brand-900/50">
-        <span>No spam, ever.</span>
-        <span>·</span>
-        <span className="flex items-center gap-1">
-          <IconStar className="h-3 w-3 text-brand-500" />
-          We respond within 2 hours
-        </span>
-      </div>
     </form>
   );
 }

@@ -110,7 +110,7 @@ export default function AboutPage() {
                 Edmark Education to change that.
               </p>
               <p>
-                From our office at Level 5, 12 Clark St in Sunshine, Victoria, we&apos;ve
+                From our office at Level 5, 12 Clarke Street in Sunshine, Victoria, we&apos;ve
                 helped hundreds of students find the right course, win scholarships
                 they didn&apos;t know existed, and step onto campus with confidence.
                 No pressure, no jargon, just expert guidance that puts you first.

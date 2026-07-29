@@ -12,18 +12,18 @@ export const site = {
     "Edmark Education is a trusted Australian education consultancy helping students choose the right course, university and pathway. Free consultation, expert guidance, admission to top institutions.",
   phone: "03 7057 3443",
   phoneHref: "tel:0370573443",
-  email: "operations@edmark.com.au",
-  emailHref: "mailto:operations@edmark.com.au",
+  email: "info@edmark.com.au",
+  emailHref: "mailto:info@edmark.com.au",
   whatsappHref: "https://wa.me/61449212492",
   gaId: process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX",
   address: {
     level: "Level 5",
-    street: "12 Clark St",
+    street: "12 Clarke Street",
     city: "Sunshine",
     state: "VIC",
     postcode: "3020",
     country: "Australia",
-    full: "Level 5, 12 Clark St, Sunshine VIC 3020, Australia",
+    full: "Level 5, 12 Clarke Street, Sunshine VIC 3020",
   },
   team: [
     {
@@ -48,13 +48,12 @@ export const site = {
       image: "/images/sakib.png",
     },
   ],
-  hours: "Mon–Sat: 9:00am – 6:00pm",
+  hours: "Mon–Sat: 8:00am – 7:00pm",
   social: {
-    facebook: "https://facebook.com/edmarkeducation",
-    instagram: "https://instagram.com/edmarkeducation",
-    linkedin: "https://linkedin.com/company/edmark-education",
+    facebook: "https://www.facebook.com/profile.php?id=61592129003362",
+    instagram: "https://www.instagram.com/edmark.education",
+    linkedin: "https://www.linkedin.com/company/edmark-education",
     tiktok: "https://tiktok.com/@edmarkeducation",
-    youtube: "https://youtube.com/@edmarkeducation",
   },
 } as const;
 
