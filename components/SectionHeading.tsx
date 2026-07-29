@@ -20,7 +20,7 @@ export default function SectionHeading({
       className={`reveal ${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}
     >
       {eyebrow && (
-        <span className={`eyebrow ${light ? "bg-white/10 text-mint" : ""}`}>
+        <span className={light ? "eyebrow-light" : "eyebrow"}>
           {eyebrow}
         </span>
       )}

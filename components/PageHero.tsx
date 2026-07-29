@@ -25,7 +25,7 @@ export default function PageHero({
         <div className="absolute -right-20 top-0 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl" />
       </div>
       <div className="container-page relative py-20 text-center lg:py-24">
-        <span className="eyebrow bg-white/10 text-mint">{eyebrow}</span>
+        <span className="eyebrow-light">{eyebrow}</span>
         <h1 className="mx-auto mt-5 max-w-3xl text-4xl font-medium text-white sm:text-5xl">
           {title}
         </h1>

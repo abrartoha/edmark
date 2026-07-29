@@ -38,7 +38,7 @@ export default function Process() {
                 <span className="h-[5px] w-[5px] rounded-full bg-brand-500" />
               </span>
 
-              <p className="text-sm font-extrabold uppercase tracking-widest text-brand-600">
+              <p className="eyebrow">
                 {nodeLabels[i]}
               </p>
               <h3 className="mt-2 text-base font-medium text-brand-900">

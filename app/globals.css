@@ -14,11 +14,13 @@
   }
 
   ::selection {
-    @apply bg-brand-500/20 text-brand-900;
+    @apply bg-eucalypt/15 text-ink;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-balance;
+    @apply font-serif font-normal text-ink text-balance;
+    letter-spacing: -0.015em;
+    font-optical-sizing: auto;
   }
 }
 
@@ -36,19 +38,35 @@
   }
 
   .btn-dark {
-    @apply btn bg-brand-800 text-white hover:bg-brand-900;
+    @apply btn bg-ink text-paper hover:bg-eucalypt-deep;
   }
 
   .btn-outline {
-    @apply btn border border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+    @apply btn border border-line bg-paper text-ink hover:border-sage hover:text-eucalypt;
   }
 
   .btn-ghost-light {
-    @apply btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20;
+    @apply btn border border-mist/40 bg-transparent text-paper hover:border-mist hover:bg-white/5;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-600;
+    @apply inline-flex items-center gap-2 font-mono text-xs font-normal uppercase text-sage;
+    letter-spacing: 0.12em;
+  }
+
+  .eyebrow-light {
+    @apply eyebrow text-eucalypt-light;
+  }
+
+  /* SIGNATURE DEVICE: one key phrase per heading, Newsreader italic.
+     Defined here; applied to the hero phrase in Stage 4. Hero and section
+     headings only, nowhere else. */
+  .signature {
+    @apply font-serif italic text-eucalypt;
+  }
+
+  .signature-light {
+    @apply font-serif italic text-eucalypt-light;
   }
 
   .nav-link {
@@ -63,11 +81,11 @@
   }
 
   .card {
-    @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-soft transition-all duration-300;
+    @apply rounded-xl border border-line bg-paper p-7 transition-colors duration-200;
   }
 
   .card-hover {
-    @apply card hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-glow;
+    @apply card hover:border-sage/50;
   }
 }
 
