@@ -8,7 +8,7 @@ const STORAGE_KEY = "edmark_intro_seen";
 // Each tile flies in from a corner
 const tiles: { style: CSSProperties; from: CSSProperties }[] = [
   {
-    // Top-left: large mint-green tile
+    // Top-left: large tile
     style: { top: 4, left: 6, width: 58, height: 58, opacity: 1 },
     from: { ["--tx" as string]: "-220px", ["--ty" as string]: "-180px" },
   },
@@ -81,14 +81,6 @@ export default function Intro() {
       aria-label="Edmark Education"
     >
       {/* soft glow blobs */}
-      <div
-        className="pointer-events-none absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -right-16 bottom-1/4 h-80 w-80 rounded-full bg-mint/10 blur-3xl"
-        aria-hidden="true"
-      />
 
       <div className="relative flex flex-col items-center gap-8 px-6 sm:flex-row sm:gap-10">
         {/* Four tiles converging from corners to form the mark */}
@@ -110,16 +102,16 @@ export default function Intro() {
 
         {/* Wordmark sliding in from the side, matching logo typography */}
         <div className="intro-word overflow-hidden text-center sm:text-left">
-          <span className="block font-display text-5xl font-medium tracking-tight text-white sm:text-6xl">
+          <span className="block font-display text-5xl font-medium tracking-tight text-paper sm:text-6xl">
             EDMARK
           </span>
-          <span className="mt-1 block text-sm font-medium uppercase tracking-[0.3em] text-white/80">
+          <span className="mt-1 block text-sm font-medium uppercase tracking-[0.3em] text-mist">
             Education
           </span>
         </div>
       </div>
 
-      <p className="intro-sub absolute bottom-16 text-sm font-medium tracking-wide text-brand-100">
+      <p className="intro-sub absolute bottom-16 text-sm font-medium tracking-wide text-mist">
         Empowering students for life
       </p>
     </div>

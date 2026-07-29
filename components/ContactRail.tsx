@@ -23,7 +23,7 @@ function Rail({
     >
       {children}
       {hover && (
-        <span className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-lg bg-brand-900 px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+        <span className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-lg bg-ink px-3 py-1.5 text-xs font-medium text-paper shadow-lg">
           {label}
         </span>
       )}
@@ -33,7 +33,7 @@ function Rail({
 
 export default function ContactRail() {
   const base =
-    "grid h-12 w-12 place-items-center rounded-full shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2";
+    "grid h-12 w-12 place-items-center rounded-full shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-eucalypt focus-visible:ring-offset-2";
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
@@ -41,7 +41,7 @@ export default function ContactRail() {
         <a
           href={site.phoneHref}
           aria-label={`Call ${site.phone}`}
-          className={`${base} bg-brand-500 text-brand-950`}
+          className={`${base} bg-eucalypt text-paper`}
         >
           <svg
             className="h-6 w-6"
@@ -76,7 +76,7 @@ export default function ContactRail() {
         <a
           href={site.emailHref}
           aria-label={`Email ${site.email}`}
-          className={`${base} border border-brand-100 bg-white text-brand-700`}
+          className={`${base} border border-line bg-paper text-eucalypt`}
         >
           <svg
             className="h-6 w-6"

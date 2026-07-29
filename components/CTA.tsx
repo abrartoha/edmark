@@ -16,16 +16,11 @@ export default function CTA({
     <section className={`${tinted ? "bg-paper-sunk" : "bg-white"} pb-20 lg:pb-28 ${tinted ? "pt-20 lg:pt-28" : ""}`}>
       <div className="container-page">
         <div className="reveal relative overflow-hidden rounded-xl bg-wash-deep px-8 py-16 text-center sm:px-16">
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-brand-500/30 blur-3xl" />
-            <div className="absolute -bottom-20 -right-10 h-72 w-72 rounded-full bg-mint/20 blur-3xl" />
-          </div>
-
           <div className="relative mx-auto max-w-2xl">
-            <h2 className="text-3xl font-medium text-white sm:text-4xl">
+            <h2 className="text-3xl font-medium text-paper sm:text-4xl">
               {title}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-brand-100">
+            <p className="mt-4 text-lg leading-relaxed text-mist">
               {subtitle}
             </p>
             <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">

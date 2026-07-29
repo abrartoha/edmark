@@ -19,16 +19,12 @@ const resources = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-brand-900 text-brand-100">
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-700/40 blur-3xl"
-        aria-hidden="true"
-      />
+    <footer className="relative bg-wash-deep text-mist">
       <div className="container-page relative py-16">
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Logo variant="light" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-200">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist">
               {site.tagline}. Trusted education consultants guiding students to
               the right course, campus and career in Australia.
             </p>
@@ -50,7 +46,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-paper">
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -58,7 +54,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-brand-200 transition-colors hover:text-mint"
+                    className="text-mist transition-colors hover:text-brass"
                   >
                     {item.label}
                   </Link>
@@ -68,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-paper">
               Services
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -76,7 +72,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-brand-200 transition-colors hover:text-mint"
+                    className="text-mist transition-colors hover:text-brass"
                   >
                     {s.label}
                   </Link>
@@ -86,7 +82,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-paper">
               Resources
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -94,7 +90,7 @@ export default function Footer() {
                 <li key={r.href}>
                   <Link
                     href={r.href}
-                    className="text-brand-200 transition-colors hover:text-mint"
+                    className="text-mist transition-colors hover:text-brass"
                   >
                     {r.label}
                   </Link>
@@ -104,17 +100,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-white">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-paper">
               Get in touch
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={site.phoneHref} className="transition-colors hover:text-mint">
+                <a href={site.phoneHref} className="transition-colors hover:text-brass">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={site.emailHref} className="transition-colors hover:text-mint">
+                <a href={site.emailHref} className="transition-colors hover:text-brass">
                   {site.email}
                 </a>
               </li>
@@ -123,13 +119,13 @@ export default function Footer() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-mint"
+                  className="transition-colors hover:text-brass"
                 >
                   WhatsApp
                 </a>
               </li>
-              <li className="text-brand-200">{site.address.full}</li>
-              <li className="text-brand-200">{site.hours}</li>
+              <li className="text-mist">{site.address.full}</li>
+              <li className="text-mist">{site.hours}</li>
             </ul>
             <Link href="/contact" className="btn-primary mt-6">
               Book Free Consultation
@@ -137,7 +133,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brand-800 pt-8 text-xs text-brand-300 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.14] pt-8 text-xs text-mist sm:flex-row">
           <p>
             © {site.legalName}. All rights reserved. ABN {site.abn}
           </p>

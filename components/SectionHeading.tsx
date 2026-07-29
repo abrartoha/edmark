@@ -9,7 +9,7 @@ export default function SectionHeading({
 }: {
   eyebrow?: string;
   // ReactNode so a heading can highlight one phrase, e.g.
-  // title={<>Everything you need, <span className="text-brand-500">…</span></>}
+  // title={<>Everything you need, <span className="text-eucalypt">…</span></>}
   title: ReactNode;
   subtitle?: string;
   center?: boolean;
@@ -26,7 +26,7 @@ export default function SectionHeading({
       )}
       <h2
         className={`mt-4 text-3xl font-medium sm:text-4xl ${
-          light ? "text-white" : "text-brand-900"
+          light ? "text-paper" : "text-ink"
         }`}
       >
         {title}
@@ -34,7 +34,7 @@ export default function SectionHeading({
       {subtitle && (
         <p
           className={`mt-4 text-lg leading-relaxed ${
-            light ? "text-brand-100" : "text-brand-900/70"
+            light ? "text-mist" : "text-copy"
           }`}
         >
           {subtitle}
