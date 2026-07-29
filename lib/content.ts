@@ -40,11 +40,12 @@ export const services: Service[] = [
   {
     slug: "short-courses",
     icon: "graduation",
-    title: "Short Courses",
+    title: "Vocational (VET) & Short Courses",
     short:
-      "Fast, practical vocational courses in Security, Aged Care and Child Care for job-ready skills and recognised qualifications.",
-    long: "Short vocational courses are an affordable, fast way to gain job-ready skills and nationally recognised qualifications. We help you enrol in in-demand areas such as Security, Aged Care and Child Care, connecting you with quality registered training organisations (RTOs).",
+      "Nationally recognised trade, care, cookery and short courses. Practical qualifications that lead to work rather than to another degree.",
+    long: "Vocational education and training, VET, is the practical half of the Australian system. These are nationally recognised qualifications built around doing the job rather than studying the theory of it, and many of them lead to licensed or registered occupations. They are also the fastest and cheapest route to a recognised Australian qualification.\n\nWe cover trades such as carpentry, plumbing, electrical and automotive, the care sector across aged care and early childhood, commercial cookery and hospitality, and short security courses. Every one of these is delivered by a registered training organisation, and we check that the RTO and the course are the right ones for your visa and your goal before you enrol.",
     points: [
+      "Trade apprenticeship qualifications",
       "Security licensing courses",
       "Aged Care (Certificate III & IV)",
       "Child Care / Early Childhood Education & Care",

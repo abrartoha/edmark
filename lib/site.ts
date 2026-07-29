@@ -90,9 +90,9 @@ export const nav: NavItem[] = [
             note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
           },
           {
-            label: "Vocational & short courses",
+            label: "Vocational (VET) & short courses",
             href: "/services/short-courses",
-            note: "Security · Aged care · Child care · Trade · Hospitality & cookery",
+            note: "Trade · Aged care · Child care · Cookery · Security",
           },
           {
             label: "Research degrees",

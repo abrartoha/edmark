@@ -139,6 +139,77 @@ const serviceExtras: Record<
   "short-courses": {
     courses: [
       {
+        name: "Certificate III in Carpentry (CPC30220)",
+        duration: "2 to 3 years, including on-the-job training",
+        tuitionMin: 12000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "Year 12 or equivalent. Setting out, building, assembling and installing structures on residential and commercial sites.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Plumbing (CPC32420)",
+        duration: "3 to 4 years, including on-the-job training",
+        tuitionMin: 14000,
+        tuitionMax: 22000,
+        entryRequirement:
+          "Year 12 or equivalent. Plumbing is a licensed trade, and licensing is regulated state by state.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Electrotechnology Electrician (UEE30820)",
+        duration: "3 to 4 years, including on-the-job training",
+        tuitionMin: 14000,
+        tuitionMax: 22000,
+        entryRequirement:
+          "Year 12 or equivalent. The pathway to an electrical licence, which is regulated separately in each state.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Light Vehicle Mechanical Technology (AUR30620)",
+        duration: "2 to 3 years, including on-the-job training",
+        tuitionMin: 12000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "Year 12 or equivalent. Diagnosing, servicing and repairing light vehicles.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Commercial Cookery (SIT30821)",
+        duration: "12 to 18 months",
+        tuitionMin: 12000,
+        tuitionMax: 18000,
+        entryRequirement:
+          "Year 12 or equivalent. Includes supervised commercial kitchen service hours.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Diploma of Hospitality Management (SIT50422)",
+        duration: "12 to 18 months",
+        tuitionMin: 16000,
+        tuitionMax: 26000,
+        entryRequirement:
+          "Year 12 or equivalent, or a Certificate III in a hospitality field for credit.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Multiple intakes a year at most providers",
+      },
+      {
+        name: "Diploma of Nursing (HLT54121)",
+        duration: "18 months to 2 years",
+        tuitionMin: 18000,
+        tuitionMax: 28000,
+        entryRequirement:
+          "Year 12 or equivalent. Leads to AHPRA registration as an Enrolled Nurse.",
+        englishRequirement:
+          "IELTS Academic 7.0 with 7.0 in every band, set by AHPRA for registration rather than by the provider.",
+        nextIntake: "February and July, with extra intakes at some RTOs",
+      },
+      {
         name: "Certificate II in Security Operations (CPP20218)",
         duration: "2 to 4 weeks full time",
         tuitionMin: 1000,
