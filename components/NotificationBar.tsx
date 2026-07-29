@@ -20,7 +20,7 @@ export default function NotificationBar() {
   if (!visible) return null;
 
   return (
-    <div className="relative z-50 bg-brass">
+    <div className="relative z-50 bg-brand-gradient">
       <div className="container-page flex items-center justify-between gap-4 py-2.5">
         <Link
           href="/contact"
