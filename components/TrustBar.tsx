@@ -10,7 +10,7 @@ const stats = [
 // are individual professional credentials, not company-level memberships.
 const credentials = [
   { name: "ICEF Certified", note: "Education agent training" },
-  { name: "QEAC #15175", note: "Qualified Education Agent Counsellor" },
+  { name: "QEAC Certified", note: "Qualified Education Agent Counsellor" },
 ];
 
 export default function TrustBar() {
