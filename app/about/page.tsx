@@ -36,7 +36,7 @@ const values = [
 const stats = [
   { value: "500+", label: "Students guided" },
   { value: "50+", label: "Partner institutions" },
-  { value: "10+", label: "Years of experience" },
+  { value: "5+", label: "Years of experience" },
 ];
 
 export default function AboutPage() {
