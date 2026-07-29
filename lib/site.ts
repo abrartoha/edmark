@@ -85,6 +85,11 @@ export const nav: NavItem[] = [
         label: "By level",
         items: [
           {
+            label: "Higher education",
+            href: "/services/higher-education",
+            note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
+          },
+          {
             label: "Vocational & short courses",
             href: "/services/short-courses",
             note: "Security · Aged care · Child care · Trade · Hospitality & cookery",
