@@ -58,17 +58,6 @@
     @apply eyebrow text-eucalypt-light;
   }
 
-  /* SIGNATURE DEVICE: one key phrase per heading, Newsreader italic.
-     Defined here; applied to the hero phrase in Stage 4. Hero and section
-     headings only, nowhere else. */
-  .signature {
-    @apply font-serif italic text-eucalypt;
-  }
-
-  .signature-light {
-    @apply font-serif italic text-eucalypt-light;
-  }
-
   .nav-link {
     @apply relative text-sm font-medium text-copy transition-colors hover:text-eucalypt;
   }

@@ -7,7 +7,7 @@ export default function PageHero({
   subtitle,
 }: {
   eyebrow: string;
-  /** ReactNode so a page can set one phrase in the signature italic. */
+  /** ReactNode so a page can emphasise one phrase, e.g. a coloured span. */
   title: ReactNode;
   subtitle: string;
 }) {

@@ -29,7 +29,7 @@ export default function HigherEducationPage() {
         title={
           <>
             Degrees, and the{" "}
-            <span className="signature-light">route that gets you there</span>
+            <span className="text-eucalypt-light">route that gets you there</span>
           </>
         }
         subtitle="Bachelor degrees, Masters by coursework and the pathway programs that lead into them."
