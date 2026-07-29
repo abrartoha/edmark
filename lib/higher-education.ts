@@ -40,6 +40,8 @@ export type Course = {
   entryRequirement: string;
   englishRequirement: string;
   nextIntake: string;
+  /** Defaults to "per year". Use "for the full course" for short programs. */
+  tuitionBasis?: string;
 };
 
 export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
@@ -55,18 +57,6 @@ export type Level = {
   skilledOccupationRelated: boolean;
 };
 
-const PLACEHOLDER = "PLACEHOLDER — replace before launch";
-
-const blankCourse = (): Course => ({
-  name: PLACEHOLDER,
-  duration: "",
-  tuitionMin: 0,
-  tuitionMax: 0,
-  entryRequirement: "",
-  englishRequirement: "",
-  nextIntake: "",
-});
-
 export const levels: Level[] = [
   {
     slug: "undergraduate",
@@ -77,7 +67,38 @@ export const levels: Level[] = [
       "A bachelor degree sits at level 7 of the Australian Qualifications Framework and is the usual first degree at an Australian university. Most run three to four years of full-time study, with an honours year or professional accreditation requirements adding to that in some fields.",
       "This is the entry point if you are coming from Year 12 or an equivalent senior secondary qualification. If your qualification does not meet a university's direct entry requirement, a pathway program is usually the route in rather than a barrier.",
     ],
-    courses: [blankCourse(), blankCourse(), blankCourse()],
+    courses: [
+      {
+        name: "Bachelor of Nursing",
+        duration: "3 years full time",
+        tuitionMin: 32000,
+        tuitionMax: 45000,
+        entryRequirement:
+          "Completed Year 12 or equivalent. A completed Diploma of Nursing usually carries credit into second year.",
+        englishRequirement:
+          "IELTS Academic 7.0 overall with 7.0 in every band. Set by AHPRA for registration, not by the university, so it cannot be waived.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Bachelor of Business",
+        duration: "3 years full time",
+        tuitionMin: 22000,
+        tuitionMax: 40000,
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July, with a third intake at some providers",
+      },
+      {
+        name: "Bachelor of Information Technology",
+        duration: "3 years full time",
+        tuitionMin: 30000,
+        tuitionMax: 45000,
+        entryRequirement:
+          "Completed Year 12 or equivalent. Some providers assume mathematics as background rather than requiring it.",
+        englishRequirement: "IELTS Academic 6.0 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July at most providers",
+      },
+    ],
     skilledOccupationRelated: false,
   },
   {
@@ -89,7 +110,38 @@ export const levels: Level[] = [
       "A masters by coursework sits at level 9 of the Australian Qualifications Framework and builds on a completed bachelor degree. It is taught rather than research-led, so you take structured units and assessments rather than writing a thesis.",
       "Length usually runs one to two years and depends heavily on credit: a bachelor degree in the same field, or relevant professional experience, can shorten the program. This is the common route for specialising further or moving into a new field without committing to research.",
     ],
-    courses: [blankCourse(), blankCourse(), blankCourse()],
+    courses: [
+      {
+        name: "Master of Information Technology",
+        duration: "1.5 to 2 years full time, shorter with credit",
+        tuitionMin: 30000,
+        tuitionMax: 48000,
+        entryRequirement:
+          "A completed bachelor degree. A degree in the same field usually reduces the program length.",
+        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Master of Professional Accounting",
+        duration: "2 years full time",
+        tuitionMin: 28000,
+        tuitionMax: 45000,
+        entryRequirement:
+          "A completed bachelor degree in any discipline. Designed as an entry route for graduates without an accounting background.",
+        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July at most providers",
+      },
+      {
+        name: "Master of Public Health",
+        duration: "1.5 to 2 years full time",
+        tuitionMin: 30000,
+        tuitionMax: 46000,
+        entryRequirement:
+          "A completed bachelor degree. Health, science or a related field is preferred at most providers.",
+        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
+        nextIntake: "February and July at most providers",
+      },
+    ],
     skilledOccupationRelated: false,
   },
   {
@@ -101,7 +153,40 @@ export const levels: Level[] = [
       "Pathway programs exist to get you to a university's entry requirement rather than around it. Foundation studies build academic and English skills for degree entry, diploma programs can carry credit equivalent to the first year of a bachelor degree so you continue into second year, and ELICOS courses lift your English to the level a course requires.",
       "Where a pathway leads into a degree, both can be issued together as a packaged offer on a single student visa, so you apply once rather than twice.",
     ],
-    courses: [blankCourse(), blankCourse(), blankCourse()],
+    courses: [
+      {
+        name: "Foundation studies",
+        duration: "8 to 12 months",
+        tuitionMin: 28000,
+        tuitionMax: 39000,
+        entryRequirement:
+          "Completed Year 11 or a Year 12 result below the direct-entry level for your chosen degree.",
+        englishRequirement: "IELTS Academic 5.5 overall is the common entry point.",
+        nextIntake: "Multiple intakes a year, commonly February, June and October",
+      },
+      {
+        name: "Diploma leading to second year",
+        duration: "8 to 12 months",
+        tuitionMin: 18000,
+        tuitionMax: 30000,
+        entryRequirement:
+          "Completed Year 12 or equivalent. Credit from the diploma carries into the degree, so you continue at second year rather than starting again.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Commonly February, June and October",
+      },
+      {
+        name: "ELICOS English program",
+        duration: "12 to 25 weeks, set by your current level",
+        tuitionMin: 3600,
+        tuitionMax: 12500,
+        tuitionBasis: "for the full course",
+        entryRequirement:
+          "A placement test rather than a fixed entry score. Length is set by the gap between your current English and what your next course requires.",
+        englishRequirement:
+          "No minimum to enter. Typically priced at $300 to $500 a week, so total cost moves with course length.",
+        nextIntake: "Weekly or fortnightly starts at most colleges",
+      },
+    ],
     skilledOccupationRelated: false,
   },
 ];
@@ -135,14 +220,32 @@ export const whichLevel: { title: string; body: string }[] = [
 // text. `intro` and `note` frame it; the rows are the requirement itself.
 // ---------------------------------------------------------------------------
 export const entryRequirementsExample = {
-  intro: PLACEHOLDER,
+  intro:
+    "Entry requirements look like one number but are really three separate gates: your qualification, your academic result, and your English. Here is what a Bachelor of Nursing application typically has to clear, and what happens when one of the three falls short.",
   rows: [
-    { label: "Qualification", value: PLACEHOLDER },
-    { label: "ATAR equivalent", value: PLACEHOLDER },
-    { label: "English test score", value: PLACEHOLDER },
-    { label: "Outcome", value: PLACEHOLDER },
+    {
+      label: "Qualification",
+      value:
+        "Completed Year 12 or equivalent, or a completed Diploma of Nursing, which usually carries credit into second year.",
+    },
+    {
+      label: "ATAR equivalent",
+      value:
+        "Commonly in the mid 60s to mid 70s, and higher at Group of Eight universities. Each institution converts overseas results to an ATAR equivalent using its own table, so the same transcript can clear one provider and not another.",
+    },
+    {
+      label: "English test score",
+      value:
+        "IELTS Academic 7.0 overall with 7.0 in every band. For nursing this is set by AHPRA for registration rather than by the university, so no provider can lower it.",
+    },
+    {
+      label: "Outcome",
+      value:
+        "Meet all three and you receive a full offer. Meet the first two but not the English, and the usual result is a packaged offer with an ELICOS course attached, on a single student visa.",
+    },
   ],
-  note: PLACEHOLDER,
+  note:
+    "Typical figures for planning, not a quote from any one provider. ATAR equivalence, credit and English rules all vary by institution and change between intakes. We confirm the exact numbers against your transcript and a real shortlist before you apply.",
 };
 
 // ---------------------------------------------------------------------------

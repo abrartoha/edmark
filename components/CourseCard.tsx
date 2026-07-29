@@ -28,7 +28,7 @@ export default function CourseCard({ course }: { course: Course }) {
       <dl className="mt-5 space-y-3">
         <Row label="Typical duration" value={course.duration} />
         <Row
-          label="Indicative annual tuition"
+          label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
           value={formatTuition(course.tuitionMin, course.tuitionMax)}
           mono
         />
