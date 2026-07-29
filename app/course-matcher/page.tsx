@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description:
     "Answer five questions and see three Australian study pathways worth considering. Free, instant and no email required. Indicative only, confirmed with you during a free consultation.",
   alternates: { canonical: "/course-matcher" },
+  // Placeholder course data: keep this out of the index until it is real.
+  robots: { index: false, follow: true },
 };
 
 export default function CourseMatcherPage() {

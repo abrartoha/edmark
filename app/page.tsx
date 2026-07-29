@@ -3,7 +3,7 @@ import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import TrustLogos from "@/components/TrustLogos";
-import CourseMatcher from "@/components/CourseMatcher";
+// import CourseMatcher from "@/components/CourseMatcher";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -30,7 +30,12 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <TrustLogos />
-      <CourseMatcher />
+      {/* Hidden until lib/pathways.ts holds real course data. The quiz gating
+          itself works: the results screen only appears after question 5. But
+          completing the quiz today surfaces three "PLACEHOLDER — replace before
+          launch" cards, and any curious visitor will complete it.
+          Re-enable by uncommenting the line below. */}
+      {/* <CourseMatcher /> */}
       <Services />
       <WhyChooseUs />
       <Process />
