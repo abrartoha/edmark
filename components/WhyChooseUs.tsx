@@ -18,13 +18,13 @@ export default function WhyChooseUs() {
           </Link>
         </div>
 
-        <ul className="reveal divide-y divide-brand-200/70">
+        <ul className="reveal divide-y divide-line">
           {reasons.map((r) => (
             <li key={r.title} className="flex gap-4 py-5 first:pt-0 last:pb-0">
-              <IconCheck className="mt-1 h-5 w-5 shrink-0 text-brand-500" />
+              <IconCheck className="mt-1 h-5 w-5 shrink-0 text-eucalypt" />
               <div>
-                <h3 className="text-base font-medium text-brand-900">{r.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-brand-900/70">
+                <h3 className="text-base font-medium text-ink">{r.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-copy">
                   {r.body}
                 </p>
               </div>

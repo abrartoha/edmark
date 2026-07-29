@@ -13,29 +13,29 @@ export default function Testimonials() {
         <figure className="reveal grid items-center gap-10 sm:grid-cols-[240px_1fr] sm:gap-12">
           {/* Neutral placeholder until the real photo is supplied. */}
           <div
-            className="mx-auto h-[240px] w-[240px] shrink-0 rounded-2xl border border-brand-100 bg-white sm:mx-0"
+            className="mx-auto h-[240px] w-[240px] shrink-0 rounded-2xl border border-line bg-white sm:mx-0"
             role="img"
             aria-label={`Photo of ${featured.name} coming soon`}
           />
 
           <div>
-            <blockquote className="text-xl font-medium leading-relaxed text-brand-900 sm:text-2xl">
+            <blockquote className="text-xl font-medium leading-relaxed text-ink sm:text-2xl">
               &ldquo;{featured.quote}&rdquo;
             </blockquote>
 
             <figcaption className="mt-6">
-              <p className="text-base font-medium text-brand-900">
+              <p className="text-base font-medium text-ink">
                 {featured.name}
                 {featured.route && (
-                  <span className="font-medium text-brand-900/50">
+                  <span className="font-medium text-sage">
                     {" "}
                     &middot; {featured.route}
                   </span>
                 )}
               </p>
-              <p className="mt-1 text-sm text-brand-900/60">{featured.detail}</p>
+              <p className="mt-1 text-sm text-sage">{featured.detail}</p>
               {featured.outcome && (
-                <p className="mt-3 text-sm font-medium text-brand-700">
+                <p className="mt-3 text-sm font-medium text-eucalypt">
                   {featured.outcome}
                 </p>
               )}
@@ -43,7 +43,7 @@ export default function Testimonials() {
 
             <Link
               href="/success-stories"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition-colors hover:text-brand-800"
+              className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-ink"
             >
               Read more student stories <IconArrow className="h-3.5 w-3.5" />
             </Link>

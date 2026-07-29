@@ -10,7 +10,7 @@ const bullets = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-900">
+    <section className="relative overflow-hidden bg-ink">
       {/* Hero background video (poster image shows instantly and is the
           fallback if the video can't autoplay) */}
       <video
@@ -26,12 +26,6 @@ export default function Hero() {
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Decorative organic shapes */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-brand-700/40 blur-3xl" />
-        <div className="absolute -right-24 -top-20 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
-      </div>
-
       <div className="container-page relative py-20 lg:py-28">
         <div className="animate-fade-up max-w-3xl">
           <span className="eyebrow-light">
@@ -39,12 +33,12 @@ export default function Hero() {
             based · 50+ partner institutions
           </span>
 
-          <h1 className="mt-6 text-4xl font-medium leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-medium leading-[1.05] text-paper sm:text-5xl lg:text-6xl">
             Before you apply, talk to{" "}
             <span className="text-gradient">someone who knows.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
             Choosing a course, a college and a city is the biggest decision
             you&apos;ll make. We help international students in Australia get it
             right the first time &mdash; free, and with no pressure to enrol
@@ -53,10 +47,8 @@ export default function Hero() {
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {bullets.map((b) => (
-              <li key={b} className="flex items-center gap-2 text-sm font-medium text-white">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-brand-500 text-brand-950">
-                  <IconCheck className="h-3 w-3" />
-                </span>
+              <li key={b} className="flex items-center gap-2 text-sm font-medium text-paper">
+<IconCheck className="h-4 w-4 shrink-0 text-eucalypt-light" />
                 {b}
               </li>
             ))}
@@ -71,7 +63,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-brand-200">
+          <p className="mt-6 text-sm text-mist">
             Join hundreds of students who trusted Edmark to launch their careers.
           </p>
         </div>
@@ -81,7 +73,7 @@ export default function Hero() {
       <div className="relative" aria-hidden="true">
         <svg viewBox="0 0 1440 120" className="block w-full" preserveAspectRatio="none">
           <path
-            fill="#ffffff"
+            fill="#FBFAF7"
             d="M0,64 C240,120 480,120 720,88 C960,56 1200,24 1440,64 L1440,120 L0,120 Z"
           />
         </svg>

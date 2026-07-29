@@ -10,26 +10,26 @@ export default function FAQ() {
     <section className="bg-white py-20 lg:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-2xl">
-          <h2 className="reveal text-3xl font-medium text-brand-900 sm:text-4xl">
+          <h2 className="reveal text-3xl font-medium text-ink sm:text-4xl">
             Everything you might be wondering
           </h2>
 
-          <div className="reveal mt-8 divide-y divide-brand-100 border-y border-brand-100">
+          <div className="reveal mt-8 divide-y divide-line border-y border-line">
             {homepageFaqs.map((f) => (
               <details
                 key={f.q}
                 className="group py-5 [&_summary::-webkit-details-marker]:hidden"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-brand-900">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink">
                   {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-brand-600 transition-transform group-open:rotate-45">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-paper-sunk text-eucalypt transition-transform group-open:rotate-45">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                       <line x1="12" y1="5" x2="12" y2="19" />
                       <line x1="5" y1="12" x2="19" y2="12" />
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-brand-900/70">
+                <p className="mt-3 text-sm leading-relaxed text-copy">
                   {f.a}
                 </p>
               </details>
@@ -39,7 +39,7 @@ export default function FAQ() {
           <div className="reveal mt-8">
             <Link
               href="/faq"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 transition-colors hover:text-brand-800"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-ink"
             >
               See all questions <IconArrow className="h-3.5 w-3.5" />
             </Link>
