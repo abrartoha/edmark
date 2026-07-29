@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-poppins: "Poppins", var(--font-inter);
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;

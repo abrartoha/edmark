@@ -30,19 +30,30 @@ const config: Config = {
         // these names, so the rest of the site is unaffected. `ink` above is
         // reused rather than redefined, since globals.css sets body text from
         // it and changing it would recolour every page.
-        eucalypt: { DEFAULT: "#154D3C", deep: "#0F3A2D" },
-        brass: "#C79A3C",
-        sage: "#5F6F6A",
+        eucalypt: {
+          DEFAULT: "#154D3C",
+          deep: "#0F3A2D", // hover / pressed
+          light: "#8FBFA9", // light-on-dark accent
+        },
+        brass: { DEFAULT: "#C79A3C", deep: "#B0851F" },
+        sage: "#5F6F6A", // muted text, captions, eyebrow labels
+        mist: "#B8C7C1", // body + links on wash-deep
+        copy: "#3D4B47", // body text on paper
         paper: { DEFAULT: "#FBFAF7", sunk: "#F3F1EA" },
-        line: "#DFDCD4",
+        line: "#DFDCD4", // hairline borders
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        // font-display now resolves to Newsreader, so the 11 existing
+        // font-display call sites migrate without being edited.
+        display: ["var(--font-newsreader)", "Georgia", "serif"],
         serif: ["var(--font-newsreader)", "Georgia", "serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
       },
       backgroundImage: {
+        // Tonal, single family, long distance. Restored from the revert.
+        "wash-deep": "linear-gradient(165deg, #154D3C 0%, #0E1F1A 100%)",
+        "wash-paper": "linear-gradient(165deg, #FBFAF7 0%, #F3F1EA 100%)",
         "brand-gradient": "linear-gradient(135deg, #1de9b6 0%, #12a085 50%, #22d3ee 100%)",
         "brand-diagonal": "linear-gradient(120deg, #0b4f43 0%, #0d6b5b 100%)",
       },

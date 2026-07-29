@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins, Newsreader, IBM_Plex_Mono } from "next/font/google";
+import { Newsreader } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
@@ -11,36 +13,17 @@ import NotificationBar from "@/components/NotificationBar";
 import ContactRail from "@/components/ContactRail";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-// Course matcher typography. Newsreader is the specified display face.
-// Geist and Geist Mono were specified for body and numerals but ship as an npm
-// package, and npm is unavailable here, so Inter (already loaded) and IBM Plex
-// Mono stand in.
+// Display and body serif. `adjustFontFallback` is off because Next has no
+// metric overrides for Newsreader, which was emitting a build warning; an
+// explicit Georgia fallback covers the swap instead.
 const newsreader = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500"],
   style: ["normal", "italic"],
   variable: "--font-newsreader",
   display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
+  fallback: ["Georgia", "Times New Roman", "serif"],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -193,7 +176,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${inter.variable} ${poppins.variable} ${newsreader.variable} ${plexMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${newsreader.variable}`}
     >
       <head>
         <script
