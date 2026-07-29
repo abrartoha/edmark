@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="animate-fade-up max-w-3xl">
           <span className="eyebrow-light">
             <IconStar className="h-3.5 w-3.5" /> Free consultations · Melbourne
-            based · 20+ partner institutions
+            based
           </span>
 
           <h1 className="mt-6 text-4xl font-medium leading-[1.05] text-paper sm:text-5xl lg:text-6xl">

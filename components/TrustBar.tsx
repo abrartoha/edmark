@@ -2,7 +2,6 @@ import { IconCheck } from "./Icons";
 
 const stats = [
   { value: "500+", label: "Students guided" },
-  { value: "20+", label: "Partner institutions" },
   { value: "5+", label: "Years of experience" },
 ];
 
@@ -18,7 +17,7 @@ export default function TrustBar() {
     <section className="border-b border-line bg-paper-sunk py-10 lg:py-12">
       <div className="container-page reveal">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_auto_1fr] lg:gap-12">
-          <dl className="grid grid-cols-3 gap-4 text-center lg:gap-8">
+          <dl className="grid grid-cols-2 gap-4 text-center lg:gap-8">
             {stats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>

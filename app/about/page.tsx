@@ -35,7 +35,6 @@ const values = [
 
 const stats = [
   { value: "500+", label: "Students guided" },
-  { value: "20+", label: "Partner institutions" },
   { value: "5+", label: "Years of experience" },
 ];
 
@@ -124,7 +123,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {stats.map((s, i) => (
               <div
                 key={s.label}
