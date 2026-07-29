@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 export default function PageHero({
   eyebrow,
@@ -6,7 +7,8 @@ export default function PageHero({
   subtitle,
 }: {
   eyebrow: string;
-  title: string;
+  /** ReactNode so a page can set one phrase in the signature italic. */
+  title: ReactNode;
   subtitle: string;
 }) {
   return (

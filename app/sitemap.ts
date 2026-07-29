@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { services } from "@/lib/content";
 import { blogPosts } from "@/lib/blog";
+import { levels } from "@/lib/higher-education";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -26,13 +27,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     freq: "monthly" as const,
   }));
 
+  // Listed so the entries exist; the pages themselves ship robots noindex
+  // until the course data is populated.
+  const higherEducationRoutes = [
+    { path: "/services/higher-education", priority: 0.8, freq: "monthly" as const },
+    ...levels.map((l) => ({
+      path: `/services/higher-education/${l.slug}`,
+      priority: 0.7,
+      freq: "monthly" as const,
+    })),
+  ];
+
   const blogRoutes = blogPosts.map((post) => ({
     path: `/blog/${post.slug}`,
     priority: 0.6,
     freq: "monthly" as const,
   }));
 
-  const allRoutes = [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  const allRoutes = [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...higherEducationRoutes,
+    ...blogRoutes,
+  ];
 
   return allRoutes.map((route) => ({
     url: `${site.url}${route.path}`,

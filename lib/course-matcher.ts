@@ -78,16 +78,9 @@ export const questions: Question[] = [
   },
 ];
 
-// ---------------------------------------------------------------------------
-// Compliance copy. Held as constants so it renders verbatim and cannot drift
-// through an edit to the component. Do not reword.
-// ---------------------------------------------------------------------------
-
-export const MARA_NOTICE =
-  "Course selection can support a residency pathway, but we are not migration agents. For formal visa or migration advice we'll refer you to a registered migration agent (MARA).";
-
-export const INDICATIVE_NOTICE =
-  "Indicative only. Fees, durations and entry requirements vary by institution and intake, and change without notice. We'll confirm exact details for your situation during your free consultation.";
+// Compliance copy now lives in lib/compliance.ts so the higher-education pages
+// share the exact same strings. Re-exported here so existing imports still work.
+export { MARA_NOTICE, INDICATIVE_NOTICE } from "./compliance";
 
 // ---------------------------------------------------------------------------
 // Timing shapes the closing prompt only. It never affects ranking: intakes vary
