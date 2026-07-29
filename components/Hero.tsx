@@ -32,8 +32,8 @@ export default function Hero() {
         <div className="absolute -right-24 -top-20 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
       </div>
 
-      <div className="container-page relative grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-        <div className="animate-fade-up">
+      <div className="container-page relative py-20 lg:py-28">
+        <div className="animate-fade-up max-w-3xl">
           <span className="eyebrow bg-white/10 text-mint">
             <IconStar className="h-3.5 w-3.5" /> Free consultations · Melbourne
             based · 50+ partner institutions
@@ -74,21 +74,6 @@ export default function Hero() {
           <p className="mt-6 text-sm text-brand-200">
             Join hundreds of students who trusted Edmark to launch their careers.
           </p>
-        </div>
-
-        {/* Floating highlight card */}
-        <div className="animate-fade-up relative mx-auto w-full max-w-md lg:mx-0">
-          <div className="rounded-3xl border border-white/15 bg-white/95 p-8 shadow-glow backdrop-blur">
-            <div className="rounded-2xl bg-brand-50 p-5">
-              <p className="text-sm font-medium text-brand-800">
-                &ldquo;Edmark found me a course I&apos;d never even considered,
-                and a scholarship that covered my first year.&rdquo;
-              </p>
-              <p className="mt-3 text-xs font-semibold text-brand-600">
-                Priya, now a registered nurse in Melbourne
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
