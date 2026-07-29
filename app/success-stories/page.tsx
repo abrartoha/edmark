@@ -82,8 +82,18 @@ export default function SuccessStoriesPage() {
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 border-t border-brand-100 pt-4">
-                  <p className="text-sm font-medium text-brand-900">{t.name}</p>
-                  <p className="mt-0.5 text-xs text-brand-900/60">{t.detail}</p>
+                  <p className="text-sm font-medium text-brand-900">
+                    {t.name}
+                    {t.route && (
+                      <span className="font-normal text-brand-900/50">
+                        {" "}
+                        &middot; {t.route.split(" to ")[0]}
+                      </span>
+                    )}
+                  </p>
+                  <p className="mt-0.5 text-xs text-brand-900/60">
+                    {t.detail.split(",")[0]}
+                  </p>
                 </figcaption>
               </figure>
             ))}
