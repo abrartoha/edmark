@@ -8,10 +8,19 @@ import { services } from "@/lib/content";
 import { site } from "@/lib/site";
 import { IconCheck, IconArrow } from "@/components/Icons";
 import ServiceIcon from "@/components/ServiceIcon";
+import CourseCard from "@/components/CourseCard";
+import { INDICATIVE_NOTICE } from "@/lib/compliance";
+import type { Course } from "@/lib/higher-education";
 
 const serviceExtras: Record<
   string,
-  { whoFor: string[]; whatToExpect: string[]; extended: string }
+  {
+    whoFor: string[];
+    whatToExpect: string[];
+    extended: string;
+    /** Optional. When present the page renders a course list. */
+    courses?: Course[];
+  }
 > = {
   "student-counselling": {
     extended:
@@ -128,6 +137,59 @@ const serviceExtras: Record<
     ],
   },
   "short-courses": {
+    courses: [
+      {
+        name: "Certificate II in Security Operations (CPP20218)",
+        duration: "2 to 4 weeks full time",
+        tuitionMin: 1000,
+        tuitionMax: 1800,
+        tuitionBasis: "for the full course",
+        entryRequirement:
+          "Over 18, with a police check and the security licensing requirements of your state. Availability to student visa holders varies by provider and state, and some RTOs do not enrol subclass 500 holders at all, so we check eligibility before you commit.",
+        englishRequirement: "Provider placement test, commonly around IELTS 5.5.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Individual Support (Ageing)",
+        duration: "6 to 12 months",
+        tuitionMin: 8000,
+        tuitionMax: 15000,
+        entryRequirement:
+          "Year 12 or equivalent. Police check and supervised placement hours are required.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate IV in Ageing Support",
+        duration: "12 months",
+        tuitionMin: 10000,
+        tuitionMax: 18000,
+        entryRequirement:
+          "Usually follows a Certificate III in Individual Support and leads to team leader and coordinator roles.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Certificate III in Early Childhood Education and Care",
+        duration: "6 to 12 months",
+        tuitionMin: 8000,
+        tuitionMax: 15000,
+        entryRequirement:
+          "Year 12 or equivalent. Working with Children Check and placement hours are required.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+      },
+      {
+        name: "Diploma of Early Childhood Education and Care",
+        duration: "18 months to 2 years",
+        tuitionMin: 16000,
+        tuitionMax: 26000,
+        entryRequirement:
+          "Year 12 or equivalent. Qualifies you as a lead educator or room leader.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Multiple intakes a year at most providers",
+      },
+    ],
     extended:
       "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
     whoFor: [
@@ -291,6 +353,24 @@ export default function ServicePage({
             )}
           </div>
         </div>
+
+        {/* Course list, only where the service has one. */}
+        {extras?.courses && (
+          <div className="container-page mt-16">
+            <p className="eyebrow">Courses</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl">
+              What you can study
+            </h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {extras.courses.map((c) => (
+                <CourseCard key={c.name} course={c} />
+              ))}
+            </div>
+            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
+              {INDICATIVE_NOTICE}
+            </p>
+          </div>
+        )}
       </section>
 
       <section className="bg-brand-50 py-16 lg:py-24">
