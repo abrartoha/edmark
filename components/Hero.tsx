@@ -41,7 +41,7 @@ export default function Hero() {
 
           <h1 className="mt-6 text-4xl font-medium leading-[1.05] text-white sm:text-5xl lg:text-6xl">
             Before you apply, talk to{" "}
-            <span className="signature-light">someone who knows.</span>
+            <span className="text-gradient">someone who knows.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-100">
