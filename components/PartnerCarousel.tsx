@@ -15,7 +15,7 @@ const groups = [
   { label: "OSHC providers", items: oshcProviders },
 ];
 
-const INTERVAL = 2000;
+const INTERVAL = 3000;
 
 export default function PartnerCarousel() {
   const [index, setIndex] = useState(0);
