@@ -43,17 +43,6 @@ export const successStories: SuccessStory[] = [
     outcome: "Currently completing his Bachelor of IT at RMIT with a high distinction average",
   },
   {
-    name: "Dr. Fatima N.",
-    course: "PhD in Computer Science",
-    university: "University of Melbourne",
-    origin: "Pakistan",
-    quote:
-      "I had been rejected twice before I came to Edmark. They completely restructured my research proposal, helped me find the perfect supervisor, and I got accepted with a full scholarship. I couldn't believe it.",
-    story:
-      "Fatima had a strong honours degree and two published papers, but her previous PhD applications had been rejected because her research proposals were too broad and didn't align with any supervisor's expertise. We worked with her over six weeks to narrow her research focus, identify three potential supervisors at the University of Melbourne whose work directly complemented her interests, and rewrite her proposal from scratch. We also helped her craft a professional approach email that led to a meeting with her now-supervisor before she even submitted her formal application.",
-    outcome: "Completed her PhD with a full RTP scholarship and now works as a postdoctoral researcher",
-  },
-  {
     name: "Tanvir R.",
     course: "Masters by Research in Engineering",
     university: "Swinburne University of Technology",
