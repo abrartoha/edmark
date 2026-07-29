@@ -10,8 +10,8 @@ import { IconArrow } from "./Icons";
 // instead of a wall of sixty.
 const groups = [
   { label: "Universities", items: universities.slice(0, 6) },
-  { label: "TAFEs & polytechnics", items: tafes.slice(0, 6) },
   { label: "Colleges & pathway providers", items: colleges.slice(0, 6) },
+  { label: "TAFEs & polytechnics", items: tafes.slice(0, 6) },
   { label: "OSHC providers", items: oshcProviders },
 ];
 
@@ -44,18 +44,24 @@ export default function PartnerCarousel() {
       className="border-b border-line bg-white py-12 lg:py-16"
       aria-roledescription="carousel"
       aria-label="Our partners"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
     >
       <div className="container-page">
         <p className="eyebrow text-center">
           {groups[index].label}
         </p>
 
-        {/* Viewport. Slides sit in a row and translate right to left. */}
-        <div className="mt-8 overflow-hidden">
+        {/* Viewport. Slides sit in a row and translate right to left.
+            Auto-advance pauses only while the pointer or keyboard focus is on
+            the logos themselves. Scoping it here rather than to the whole
+            section matters: the section is a full-width band, so an idle
+            cursor resting anywhere in it used to stop the carousel dead. */}
+        <div
+          className="mt-8 overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocusCapture={() => setPaused(true)}
+          onBlurCapture={() => setPaused(false)}
+        >
           <div
             className="flex transition-transform duration-700 ease-out motion-reduce:transition-none"
             style={{ transform: `translateX(-${index * 100}%)` }}

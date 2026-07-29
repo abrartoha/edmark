@@ -13,13 +13,15 @@ export type Institution = {
   hasLogo?: boolean;
 };
 
+// Order is deliberate: this is the sequence they appear in on the homepage
+// carousel and /partners, so the first three lead the first slide.
 export const universities: Institution[] = [
+  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.rmit.edu.au" },
+  { slug: "swinburne", name: "Swinburne University of Technology", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.swinburne.edu.au" },
+  { slug: "latrobe", name: "La Trobe University", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.latrobe.edu.au" },
   { slug: "vu", name: "Victoria University", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.vu.edu.au" },
   { slug: "federation", name: "Federation University", meta: "Ballarat / Melbourne, VIC", hasLogo: true, url: "https://federation.edu.au" },
-  { slug: "latrobe", name: "La Trobe University", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.latrobe.edu.au" },
   { slug: "deakin", name: "Deakin University", meta: "Geelong / Melbourne, VIC", hasLogo: true, url: "https://www.deakin.edu.au" },
-  { slug: "swinburne", name: "Swinburne University of Technology", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.swinburne.edu.au" },
-  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.rmit.edu.au" },
   { slug: "acu", name: "Australian Catholic University", meta: "Melbourne, VIC · multiple campuses", hasLogo: true, url: "https://www.acu.edu.au" },
   { slug: "cqu", name: "CQUniversity Melbourne", meta: "Melbourne, VIC", hasLogo: true, url: "https://www.cqu.edu.au" },
   { slug: "torrens", name: "Torrens University", meta: "Melbourne, VIC · multiple campuses", hasLogo: true, url: "https://www.torrens.edu.au" },
