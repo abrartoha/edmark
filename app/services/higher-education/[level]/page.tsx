@@ -34,14 +34,14 @@ export default function LevelPage({ params }: { params: { level: string } }) {
   return (
     <>
       <PageHero
-        eyebrow="Higher education"
+        eyebrow="Higher Education"
         title={level.title}
         subtitle={level.tagline}
       />
       <Breadcrumb
         items={[
           { label: "Services", href: "/services" },
-          { label: "Higher education", href: "/services/higher-education" },
+          { label: "Higher Education", href: "/services/higher-education" },
           { label: level.title },
         ]}
       />

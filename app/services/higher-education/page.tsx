@@ -23,7 +23,7 @@ export default function HigherEducationPage() {
   return (
     <>
       <PageHero
-        eyebrow="Higher education"
+        eyebrow="Higher Education"
         title={
           <>
             Degrees, and the{" "}
@@ -35,64 +35,12 @@ export default function HigherEducationPage() {
       <Breadcrumb
         items={[
           { label: "Services", href: "/services" },
-          { label: "Higher education" },
+          { label: "Higher Education" },
         ]}
       />
 
-      {/* 1. Which level is right for you */}
-      <section className="bg-paper py-16 lg:py-24">
-        <div className="container-page">
-          <p className="eyebrow">Which level is right for you</p>
-          <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
-            Three levels, three different starting points
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {whichLevel.map((w) => (
-              <div key={w.title} className="card">
-                <h3 className="text-lg">{w.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-copy">{w.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Entry requirements, plainly */}
-      <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow">Entry requirements, plainly</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl">What an offer actually asks for</h2>
-          <p className="mt-5 text-base leading-relaxed text-copy">
-            {entryRequirementsExample.intro}
-          </p>
-
-          <dl className="mt-8 divide-y divide-line border-y border-line">
-            {entryRequirementsExample.rows.map((r) => (
-              <div key={r.label} className="grid gap-1 py-4 sm:grid-cols-[200px_1fr] sm:gap-6">
-                <dt className="eyebrow">{r.label}</dt>
-                <dd className="text-sm text-ink">{r.value}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <p className="mt-6 text-sm leading-relaxed text-sage">
-            {entryRequirementsExample.note}
-          </p>
-        </div>
-      </section>
-
-      {/* 3. 2026 intake planning — supplied verbatim */}
-      <section className="bg-paper py-16 lg:py-24">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow">2026 intake planning</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl">Places are allocated, and timing matters</h2>
-          <p className="mt-5 border-l-2 border-brass pl-5 text-base leading-relaxed text-copy">
-            {INTAKE_PLANNING_2026}
-          </p>
-        </div>
-      </section>
-
-      {/* Levels */}
+      {/* Levels. First on the page so the three routes and their courses are
+          the first thing a visitor can act on. */}
       <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <p className="eyebrow">Explore by level</p>
@@ -119,6 +67,59 @@ export default function HigherEducationPage() {
 
           <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
             {INDICATIVE_NOTICE}
+          </p>
+        </div>
+      </section>
+
+      {/* Which level is right for you */}
+      <section className="bg-paper py-16 lg:py-24">
+        <div className="container-page">
+          <p className="eyebrow">Which level is right for you</p>
+          <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
+            Three levels, three different starting points
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {whichLevel.map((w) => (
+              <div key={w.title} className="card">
+                <h3 className="text-lg">{w.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-copy">{w.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Entry requirements, plainly */}
+      <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
+        <div className="container-page max-w-3xl">
+          <p className="eyebrow">Entry requirements, plainly</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl">What an offer actually asks for</h2>
+          <p className="mt-5 text-base leading-relaxed text-copy">
+            {entryRequirementsExample.intro}
+          </p>
+
+          <dl className="mt-8 divide-y divide-line border-y border-line">
+            {entryRequirementsExample.rows.map((r) => (
+              <div key={r.label} className="grid gap-1 py-4 sm:grid-cols-[200px_1fr] sm:gap-6">
+                <dt className="eyebrow">{r.label}</dt>
+                <dd className="text-sm text-ink">{r.value}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-6 text-sm leading-relaxed text-sage">
+            {entryRequirementsExample.note}
+          </p>
+        </div>
+      </section>
+
+      {/* 2026 intake planning — supplied verbatim */}
+      <section className="bg-paper py-16 lg:py-24">
+        <div className="container-page max-w-3xl">
+          <p className="eyebrow">2026 intake planning</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl">Places are allocated, and timing matters</h2>
+          <p className="mt-5 border-l-2 border-brass pl-5 text-base leading-relaxed text-copy">
+            {INTAKE_PLANNING_2026}
           </p>
         </div>
       </section>

@@ -79,7 +79,7 @@ export const nav: NavItem[] = [
     blurb: "What you'll study",
     children: [
       {
-        label: "Higher education",
+        label: "Higher Education",
         href: "/services/higher-education",
         note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
       },
