@@ -12,6 +12,32 @@ const nextConfig = {
     ];
   },
 
+  async headers() {
+    return [
+      {
+        // Files in public/ ship with "max-age=0, must-revalidate" by default,
+        // so the 11.6MB hero video was re-downloaded in full on every single
+        // page view, including by returning visitors. On a slow connection
+        // that alone can stall the page long enough to look broken.
+        //
+        // Marked immutable, so if the video is ever replaced it must be given
+        // a NEW filename or returning visitors keep the old one for a year.
+        source: "/videos/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // 30 days rather than immutable: partner logos and team photos do get
+        // swapped, and a replacement should propagate without renaming.
+        source: "/images/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=2592000" },
+        ],
+      },
+    ];
+  },
+
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
