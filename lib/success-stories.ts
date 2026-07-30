@@ -32,14 +32,14 @@ export const successStories: SuccessStory[] = [
     outcome: "Currently completing his Bachelor of IT at RMIT with a high distinction average",
   },
   {
-    name: "Tanvir R.",
+    name: "Arif R.",
     course: "Masters by Research in Engineering",
     university: "Swinburne University of Technology",
     origin: "Bangladesh",
     quote:
       "Writing a research proposal felt impossible until Edmark showed me exactly how to structure it. They understood what Australian universities actually want to see.",
     story:
-      "Tanvir was an experienced engineer in Bangladesh who wanted to transition into research but had never written an academic research proposal. He came to Edmark with a rough idea about sustainable construction materials but no clear methodology or literature review. Over multiple sessions, we helped him define a precise research question, structure a methodology section that demonstrated feasibility, and position his work within the existing literature. We also identified a Swinburne research group working in exactly his area and helped him secure a research scholarship that covered his tuition and provided a living stipend.",
+      "Arif was an experienced engineer in Bangladesh who wanted to transition into research but had never written an academic research proposal. He came to Edmark with a rough idea about sustainable construction materials but no clear methodology or literature review. Over multiple sessions, we helped him define a precise research question, structure a methodology section that demonstrated feasibility, and position his work within the existing literature. We also identified a Swinburne research group working in exactly his area and helped him secure a research scholarship that covered his tuition and provided a living stipend.",
     outcome: "Currently completing his Masters by Research with plans to upgrade to a PhD",
   },
 ];
