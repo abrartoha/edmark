@@ -84,45 +84,6 @@ export default function PartnersPage() {
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
 
-      {/* Why partnerships matter */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow="Why it matters"
-              title="How our partnerships benefit you"
-              subtitle="We don't just recommend institutions. We work with their admissions teams. This gives our students a real advantage."
-            />
-            <ul className="mt-8 space-y-3">
-              {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
-                    <IconCheck className="h-3 w-3" />
-                  </span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="card">
-            <p className="eyebrow">Direct partners</p>
-            <h3 className="mt-3 text-2xl">
-              These are the institutions we work with directly
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
-              Every university, TAFE and college on this page is a direct
-              partner. Your application goes straight to an admissions team
-              that already knows us, which is why offers come back faster.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
-              We can also get students admitted to many more institutions
-              across Australia. If the course you want sits outside this list,
-              ask us anyway. We will tell you honestly whether we can help.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Universities */}
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
@@ -171,6 +132,48 @@ export default function PartnersPage() {
             subtitle="Overseas Student Health Cover is a visa requirement, and only five providers are approved by the Australian Government for a subclass 500 visa. We arrange cover with any of them."
           />
           <LogoGrid items={oshcProviders} />
+        </div>
+      </section>
+
+      {/* Why partnerships matter. Sits after the lists so a visitor sees who
+          we work with before the pitch. Tinted rather than white because the
+          OSHC section above it is bg-paper, which is close enough to white
+          that the two would read as one long band. */}
+      <section className="bg-brand-50 py-16 lg:py-24">
+        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              eyebrow="Why it matters"
+              title="How our partnerships benefit you"
+              subtitle="We don't just recommend institutions. We work with their admissions teams. This gives our students a real advantage."
+            />
+            <ul className="mt-8 space-y-3">
+              {benefits.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
+                    <IconCheck className="h-3 w-3" />
+                  </span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="card">
+            <p className="eyebrow">Direct partners</p>
+            <h3 className="mt-3 text-2xl">
+              These are the institutions we work with directly
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
+              Every university, TAFE and college on this page is a direct
+              partner. Your application goes straight to an admissions team
+              that already knows us, which is why offers come back faster.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
+              We can also get students admitted to many more institutions
+              across Australia. If the course you want sits outside this list,
+              ask us anyway. We will tell you honestly whether we can help.
+            </p>
+          </div>
         </div>
       </section>
 
