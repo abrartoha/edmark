@@ -10,45 +10,40 @@ export default function Testimonials() {
   return (
     <section className="bg-paper-sunk py-20 lg:py-28">
       <div className="container-page">
-        <figure className="reveal grid items-center gap-10 sm:grid-cols-[240px_1fr] sm:gap-12">
-          {/* Neutral placeholder until the real photo is supplied. */}
-          <div
-            className="mx-auto h-[240px] w-[240px] shrink-0 rounded-2xl border border-line bg-white sm:mx-0"
-            role="img"
-            aria-label={`Photo of ${featured.name} coming soon`}
-          />
+        {/* No portrait. The measure is capped so the quote does not run the
+            full container width once there is nothing beside it. */}
+        <figure className="reveal max-w-3xl">
+          <blockquote className="text-xl font-medium leading-relaxed text-ink sm:text-2xl">
+            &ldquo;{featured.quote}&rdquo;
+          </blockquote>
 
-          <div>
-            <blockquote className="text-xl font-medium leading-relaxed text-ink sm:text-2xl">
-              &ldquo;{featured.quote}&rdquo;
-            </blockquote>
-
-            <figcaption className="mt-6">
-              <p className="text-base font-medium text-ink">
-                {featured.name}
-                {featured.route && (
-                  <span className="font-medium text-sage">
-                    {" "}
-                    &middot; {featured.route}
-                  </span>
-                )}
-              </p>
-              <p className="mt-1 text-sm text-sage">{featured.detail}</p>
-              {featured.outcome && (
-                <p className="mt-3 text-sm font-medium text-eucalypt">
-                  {featured.outcome}
-                </p>
+          {/* figcaption stays the last child of figure, so the link below
+              sits outside it rather than between the quote and the caption. */}
+          <figcaption className="mt-6">
+            <p className="text-base font-medium text-ink">
+              {featured.name}
+              {featured.route && (
+                <span className="font-medium text-sage">
+                  {" "}
+                  &middot; {featured.route}
+                </span>
               )}
-            </figcaption>
-
-            <Link
-              href="/success-stories"
-              className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-ink"
-            >
-              Read more student stories <IconArrow className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+            </p>
+            <p className="mt-1 text-sm text-sage">{featured.detail}</p>
+            {featured.outcome && (
+              <p className="mt-3 text-sm font-medium text-eucalypt">
+                {featured.outcome}
+              </p>
+            )}
+          </figcaption>
         </figure>
+
+        <Link
+          href="/success-stories"
+          className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-ink"
+        >
+          Read more student stories <IconArrow className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </section>
   );
