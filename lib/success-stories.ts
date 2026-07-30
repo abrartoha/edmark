@@ -21,17 +21,6 @@ export const successStories: SuccessStory[] = [
     outcome: "Now working as a registered nurse at a Melbourne hospital",
   },
   {
-    name: "Lucia F.",
-    course: "Diploma of Business",
-    university: "Melbourne Polytechnic",
-    origin: "Brazil",
-    quote:
-      "Professional, responsive and genuinely caring. Mahin and the team answered every question and made a stressful process feel simple.",
-    story:
-      "Lucia was a career changer in her late twenties who wanted to study business but felt uncertain about committing to a full bachelor's degree in a new country. We recommended starting with a diploma program that offered a guaranteed pathway to a bachelor's degree with full credit transfer. This gave her the confidence to take the first step, and she thrived in the hands-on learning environment.",
-    outcome: "Now pursuing a Bachelor of Business with plans to start her own consultancy",
-  },
-  {
     name: "Ahmed H.",
     course: "ELICOS + Diploma of IT pathway",
     university: "RMIT University",

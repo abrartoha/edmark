@@ -198,14 +198,6 @@ export const testimonials: Testimonial[] = [
     route: "India",
     outcome: "Now working at Deloitte",
   },
-  {
-    quote:
-      "Professional, responsive and genuinely caring. Mahin and the team answered every question and made a stressful process feel simple.",
-    name: "Lucia F.",
-    detail: "Diploma of Business, Melbourne Polytechnic",
-    route: "Brazil to Melbourne",
-    outcome: "Now studying a Bachelor of Business",
-  },
 ];
 
 export const faqs = [
