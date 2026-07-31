@@ -23,7 +23,10 @@ export default function Hero() {
         poster="/images/hero-banner.jpg"
         aria-hidden="true"
       >
-        <source src="/videos/hero.mp4" type="video/mp4" />
+        {/* Versioned filename on purpose: /videos/* is cached immutable for a
+            year, so replacing the file in place would leave returning
+            visitors on the old cut. Bump the suffix on any future edit. */}
+        <source src="/videos/hero-v2.mp4" type="video/mp4" />
       </video>
 
       <div className="container-page relative py-20 lg:py-28">
