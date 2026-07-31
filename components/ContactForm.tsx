@@ -104,7 +104,7 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-3xl border border-brand-200 bg-brand-50 p-10 text-center shadow-soft">
-        <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-brand-500 text-brand-950">
+        <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-mint-300 text-brand-950">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6 9 17l-5-5" />
           </svg>

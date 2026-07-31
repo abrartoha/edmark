@@ -129,7 +129,7 @@ export default function PartnerCarousel() {
         <div className="mt-8 text-center">
           <Link
             href="/partners"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-eucalypt-deep"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-teal-500"
           >
             See all partner institutions <IconArrow className="h-3.5 w-3.5" />
           </Link>

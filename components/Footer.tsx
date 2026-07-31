@@ -54,7 +54,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href ?? "/"}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-mist transition-colors hover:text-brass-light"
                   >
                     {item.label}
                   </Link>
@@ -72,7 +72,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-mist transition-colors hover:text-brass-light"
                   >
                     {s.label}
                   </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <li key={r.href}>
                   <Link
                     href={r.href}
-                    className="text-mist transition-colors hover:text-brass"
+                    className="text-mist transition-colors hover:text-brass-light"
                   >
                     {r.label}
                   </Link>
@@ -105,12 +105,12 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={site.phoneHref} className="transition-colors hover:text-brass">
+                <a href={site.phoneHref} className="transition-colors hover:text-brass-light">
                   {site.phone}
                 </a>
               </li>
               <li>
-                <a href={site.emailHref} className="transition-colors hover:text-brass">
+                <a href={site.emailHref} className="transition-colors hover:text-brass-light">
                   {site.email}
                 </a>
               </li>
@@ -119,7 +119,7 @@ export default function Footer() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-brass"
+                  className="transition-colors hover:text-brass-light"
                 >
                   WhatsApp
                 </a>

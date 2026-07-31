@@ -34,11 +34,11 @@
   }
 
   .btn-primary {
-    @apply btn bg-eucalypt text-paper hover:bg-eucalypt-deep;
+    @apply btn bg-eucalypt text-paper hover:bg-teal-500;
   }
 
   .btn-dark {
-    @apply btn bg-ink text-paper hover:bg-eucalypt-deep;
+    @apply btn bg-ink text-paper hover:bg-teal-500;
   }
 
   .btn-outline {
@@ -63,7 +63,10 @@
   }
   .nav-link::after {
     content: "";
-    @apply absolute -bottom-1 left-0 h-px w-0 bg-eucalypt transition-all duration-300;
+    /* Brass, per the palette rule: teal fills, brass outlines, and brass is
+       the underline on active nav. It is a 1px decorative rule, not text, and
+       the link colour shifts on hover too, so the cue is not underline-only. */
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-brass transition-all duration-300;
   }
   .nav-link:hover::after {
     @apply w-full;
@@ -112,7 +115,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: #0a1f1a;
+  background: #062421; /* Ink. Hardcoded because the intro paints before Tailwind. */
 }
 [data-intro-seen="1"] #edmark-intro {
   display: none !important;

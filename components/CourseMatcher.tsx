@@ -216,7 +216,7 @@ export default function CourseMatcher() {
                 )}
                 <Link
                   href="/contact"
-                  className="mt-5 inline-flex items-center justify-center rounded bg-eucalypt px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-eucalypt-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-eucalypt focus-visible:ring-offset-2"
+                  className="mt-5 inline-flex items-center justify-center rounded bg-eucalypt px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-teal-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-eucalypt focus-visible:ring-offset-2"
                 >
                   Get these checked properly — book a free consultation
                 </Link>

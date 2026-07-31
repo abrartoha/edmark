@@ -81,7 +81,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
 
           <Link
             href="/services/higher-education"
-            className="mt-10 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-eucalypt-deep"
+            className="mt-10 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-teal-500"
           >
             <IconArrow className="h-3.5 w-3.5 rotate-180" />
             All higher education

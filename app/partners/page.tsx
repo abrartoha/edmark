@@ -150,7 +150,7 @@ export default function PartnersPage() {
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
                     <IconCheck className="h-3 w-3" />
                   </span>
                   {b}

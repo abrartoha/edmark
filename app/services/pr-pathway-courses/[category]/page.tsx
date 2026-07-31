@@ -51,7 +51,7 @@ export default function PrCategoryPage({
       {/* Intro */}
       <section className="bg-white py-14 lg:py-20">
         <div className="container-page grid items-center gap-10 lg:grid-cols-[auto_1fr]">
-          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-brand-500 text-brand-950 shadow-glow">
+          <div className="grid h-20 w-20 place-items-center rounded-3xl bg-mint-300 text-brand-950 shadow-glow">
             <ServiceIcon name={cat.icon} className="h-10 w-10" />
           </div>
           <div className="space-y-4 text-brand-900/70">
@@ -75,7 +75,7 @@ export default function PrCategoryPage({
                 className="reveal flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
                 style={{ transitionDelay: `${(i % 3) * 80}ms` }}
               >
-                <div className="relative flex h-32 items-center justify-center bg-brand-500">
+                <div className="relative flex h-32 items-center justify-center bg-mint-300">
                   <ServiceIcon name={cat.icon} className="h-12 w-12 text-brand-950/90" />
                   {p.code && (
                     <span className="absolute right-3 top-3 rounded-full bg-brand-950/15 px-3 py-1 text-xs font-medium text-brand-950">
@@ -90,7 +90,7 @@ export default function PrCategoryPage({
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-medium text-brand-950 transition-transform hover:-translate-y-0.5"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-mint-300 px-5 py-2.5 text-sm font-medium text-brand-950 transition-transform hover:-translate-y-0.5"
                   >
                     Contact Now <IconArrow />
                   </Link>
@@ -116,7 +116,7 @@ export default function PrCategoryPage({
                 key={e}
                 className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-brand-50/60 p-5"
               >
-                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
+                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
                   <IconCheck className="h-3.5 w-3.5" />
                 </span>
                 <p className="text-sm font-medium text-brand-800">{e}</p>
@@ -141,7 +141,7 @@ export default function PrCategoryPage({
                 key={c}
                 className="flex items-center gap-4 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-500 text-sm font-medium text-brand-950">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mint-300 text-sm font-medium text-brand-950">
                   {i + 1}
                 </span>
                 <p className="text-sm font-medium text-brand-900">{c}</p>

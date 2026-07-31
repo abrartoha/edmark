@@ -49,7 +49,7 @@ export default function PrPathwayPage() {
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3 text-sm text-brand-900/70">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-500 text-brand-950">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
                     <IconCheck className="h-3 w-3" />
                   </span>
                   {b}
@@ -88,7 +88,7 @@ export default function PrPathwayPage() {
                 className="reveal group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
                 style={{ transitionDelay: `${(i % 2) * 80}ms` }}
               >
-                <div className="flex h-28 items-center gap-4 bg-brand-500 px-8">
+                <div className="flex h-28 items-center gap-4 bg-mint-300 px-8">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/20 text-brand-950 backdrop-blur">
                     <ServiceIcon name={c.icon} className="h-7 w-7" />
                   </div>
