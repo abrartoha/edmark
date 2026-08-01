@@ -29,8 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     freq: "monthly" as const,
   }));
 
-  // Listed so the entries exist; the pages themselves ship robots noindex
-  // until the course data is populated.
+  // Course data is populated and these pages are indexable: they inherit
+  // index/follow from the root layout and set no robots override.
   const higherEducationRoutes = [
     { path: "/services/higher-education", priority: 0.8, freq: "monthly" as const },
     ...levels.map((l) => ({

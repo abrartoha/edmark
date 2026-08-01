@@ -1,10 +1,12 @@
 import type { Course } from "@/lib/higher-education";
 
-function formatTuition(min: number, max: number): string {
-  if (!min && !max) return "Not set";
+function formatTuition(min?: number, max?: number): string {
+  // Both omitted is a deliberate signal, not missing data: some programs are
+  // priced too differently across the network to quote as a range.
+  if (!min && !max) return "Varies by provider";
   const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
   if (min && max && min !== max) return `${money(min)}–${money(max)}`;
-  return money(max || min);
+  return money(max || min || 0);
 }
 
 function Row({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
@@ -35,6 +37,13 @@ export default function CourseCard({ course }: { course: Course }) {
         <Row label="Typical entry requirement" value={course.entryRequirement} />
         <Row label="English requirement" value={course.englishRequirement} />
         <Row label="Next intake" value={course.nextIntake} />
+
+        {/* "Related" on purpose. Asserting a course IS on a current skilled
+            list would be a claim we cannot stand behind between updates, which
+            is what the ANZSCO footnote under the grid exists to qualify. */}
+        {course.skilledOccupation && course.anzsco && (
+          <Row label="Related skilled occupation" value={course.anzsco} />
+        )}
       </dl>
     </article>
   );

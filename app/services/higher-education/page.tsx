@@ -7,6 +7,7 @@ import { IconArrow } from "@/components/Icons";
 import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import {
   INTAKE_PLANNING_2026,
+  SCHOLARSHIPS_NOTE,
   entryRequirementsExample,
   levels,
   whichLevel,
@@ -120,6 +121,20 @@ export default function HigherEducationPage() {
           <h2 className="mt-3 text-3xl sm:text-4xl">Places are allocated, and timing matters</h2>
           <p className="mt-5 border-l-2 border-brass pl-5 text-base leading-relaxed text-copy">
             {INTAKE_PLANNING_2026}
+          </p>
+        </div>
+      </section>
+
+      {/* Scholarships. Generic on purpose: no institution named and no value
+          attributed to one, because terms are reset every intake. */}
+      <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
+        <div className="container-page max-w-3xl">
+          <p className="eyebrow">Scholarships</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl">
+            What you can realistically expect
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-copy">
+            {SCHOLARSHIPS_NOTE}
           </p>
         </div>
       </section>

@@ -45,7 +45,9 @@ export const metadata: Metadata = {
     "free education consultation Australia",
     "scholarship guidance Australia",
     "TAFE courses Melbourne",
-    "Group of Eight universities",
+    // "Group of Eight universities" removed: root keywords render on every
+    // page, so it was naming institutions on the higher-education pages,
+    // and none of the Go8 are partners.
     "study abroad Australia",
     "international student support Melbourne",
     "education agent Melbourne",
@@ -91,7 +93,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b4f43",
+  themeColor: "#0F4A47",
   width: "device-width",
   initialScale: 1,
 };

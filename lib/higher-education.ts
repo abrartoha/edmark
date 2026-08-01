@@ -1,32 +1,33 @@
 // ============================================================================
-// HIGHER EDUCATION DATA — THIS IS THE ONLY FILE YOU NEED TO EDIT.
+// HIGHER EDUCATION DATA
 // ============================================================================
 //
-// Nothing below describes a real course. Every course entry is a placeholder
-// and every figure is zero or empty. Replace them before these pages are
-// linked from the nav.
+// NO INSTITUTION NAMES. Not on this page, not on the three level pages. Every
+// figure is a RANGE across the partner network, never a quote from one
+// provider. There is deliberately no institution field on Course: if one is
+// added, it will end up rendered.
 //
 // FILLING IN A COURSE
 // -------------------
 //   name                 As a student would say it, e.g. "Bachelor of Nursing".
-//                        Not an institution's marketing name.
-//   duration             Free text, e.g. "3 years full-time".
-//   tuitionMin / Max     Whole dollars per year, no commas or $ sign.
-//                        18000 and 24000 render as "$18,000–$24,000".
-//                        Leave both 0 and the card shows "Not set".
-//   entryRequirement     Free text, e.g. "Completed Year 12 or equivalent".
-//   englishRequirement   Free text, e.g. "IELTS 6.5 with no band below 6.0".
+//   duration             Free text, e.g. "3 years full time".
+//   tuitionMin / Max     Whole dollars, no commas or $ sign. Omit BOTH when
+//                        fees genuinely vary too widely to quote; the card
+//                        then reads "Varies by provider" rather than a number.
+//   tuitionBasis         Defaults to "per year". Use "for the full course" or
+//                        "per week" where that is how the fee is actually set.
+//   entryRequirement     Free text. Keep it generic across the network.
+//   englishRequirement   Free text, e.g. "IELTS Academic 6.0".
 //   nextIntake           Free text, e.g. "February and July".
+//   skilledOccupation    true only where the qualification maps to an
+//                        occupation on a skilled list. Setting it true prints
+//                        the ANZSCO reference on the card, and any true entry
+//                        on a level pulls the MARA notice onto that page.
+//   anzsco               Occupation name and code. Required when
+//                        skilledOccupation is true, ignored otherwise.
 //
-// PER LEVEL
-// ---------
-//   skilledOccupationRelated
-//        Set true only if the level's content genuinely touches skilled
-//        occupation lists or residency. Setting it true adds the MARA referral
-//        notice to that page. All three ship false. When in doubt, leave false.
-//
-// The indicative-only notice renders under every course listing regardless,
-// on all four pages. It is not configurable, by design.
+// The indicative-only notice renders under every course listing on all four
+// pages. It is not configurable, by design.
 //
 // There is deliberately no intake-month field on a level: intakes vary by
 // institution rather than by level, so a single value here would be invented.
@@ -35,13 +36,18 @@
 export type Course = {
   name: string;
   duration: string;
-  tuitionMin: number;
-  tuitionMax: number;
+  /** Omit both when fees vary too widely to quote as a range. */
+  tuitionMin?: number;
+  tuitionMax?: number;
   entryRequirement: string;
   englishRequirement: string;
   nextIntake: string;
-  /** Defaults to "per year". Use "for the full course" for short programs. */
+  /** Defaults to "per year". */
   tuitionBasis?: string;
+  /** Optional so the short-courses list, which shares this type, stays valid. */
+  skilledOccupation?: boolean;
+  /** Occupation name and ANZSCO code. Only read when skilledOccupation. */
+  anzsco?: string;
 };
 
 export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
@@ -71,76 +77,72 @@ export const levels: Level[] = [
       {
         name: "Bachelor of Nursing",
         duration: "3 years full time",
-        tuitionMin: 32000,
-        tuitionMax: 45000,
-        entryRequirement:
-          "Completed Year 12 or equivalent. A completed Diploma of Nursing usually carries credit into second year.",
+        tuitionMin: 36000,
+        tuitionMax: 47000,
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement:
-          "IELTS Academic 7.0 overall with 7.0 in every band. Set by AHPRA for registration, not by the university, so it cannot be waived.",
-        nextIntake: "February and July at most providers",
+          "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0, so that standard cannot be lowered by a provider.",
+        nextIntake: "February, with July at some providers",
+        skilledOccupation: true,
+        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
         name: "Bachelor of Business",
         duration: "3 years full time",
-        tuitionMin: 22000,
+        tuitionMin: 17500,
+        tuitionMax: 35500,
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: false,
+      },
+      {
+        name: "Bachelor of Accounting",
+        duration: "3 years full time",
+        tuitionMin: 26000,
+        tuitionMax: 35000,
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+        anzsco: "Accountant (General), ANZSCO 221111",
+      },
+      {
+        name: "Bachelor of Information Technology / Networking",
+        duration: "3 years full time",
+        tuitionMin: 19000,
         tuitionMax: 40000,
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
-        englishRequirement: "IELTS Academic 6.0 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July, with a third intake at some providers",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+        anzsco: "Software Engineer, ANZSCO 261313, and related ICT occupations",
       },
       {
-        name: "Bachelor of Information Technology",
-        duration: "3 years full time",
-        tuitionMin: 30000,
-        tuitionMax: 45000,
-        entryRequirement:
-          "Completed Year 12 or equivalent. Some providers assume mathematics as background rather than requiring it.",
-        englishRequirement: "IELTS Academic 6.0 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July at most providers",
-      },
-      {
-        name: "Bachelor of Engineering (Honours)",
+        name: "Bachelor of Engineering",
         duration: "4 years full time",
-        tuitionMin: 40000,
-        tuitionMax: 55000,
-        entryRequirement:
-          "Year 12 or equivalent with mathematics, and physics at many providers. Four years rather than three because it is an honours degree accredited by Engineers Australia.",
-        englishRequirement: "IELTS Academic 6.5 overall, rising to 7.0 at some providers.",
-        nextIntake: "February and July at most providers",
+        tuitionMin: 38000,
+        tuitionMax: 48000,
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "February and July",
+        skilledOccupation: true,
+        anzsco: "Engineering occupations, for example Civil Engineer, ANZSCO 233211",
       },
       {
-        name: "Bachelor of Science",
-        duration: "3 years full time",
-        tuitionMin: 30000,
-        tuitionMax: 45000,
-        entryRequirement:
-          "Year 12 or equivalent. Majors range from biomedical and environmental science through to data science.",
-        englishRequirement: "IELTS Academic 6.0 to 6.5 overall, depending on the major.",
-        nextIntake: "February and July at most providers",
-      },
-      {
-        name: "Bachelor of Education (Early Childhood / Primary)",
-        duration: "4 years full time",
-        tuitionMin: 28000,
-        tuitionMax: 40000,
-        entryRequirement:
-          "Year 12 or equivalent. A diploma in early childhood education often carries credit into the degree.",
-        englishRequirement:
-          "IELTS Academic 7.0 or higher. Teacher registration authorities set their own English standard on top of the university's, so check both.",
-        nextIntake: "February, with a mid-year intake at some providers",
-      },
-      {
-        name: "Bachelor of Social Work",
-        duration: "4 years full time",
+        name: "Bachelor of Early Childhood Education",
+        duration: "3 to 4 years full time",
         tuitionMin: 30000,
         tuitionMax: 38000,
-        entryRequirement:
-          "Year 12 or equivalent. Includes supervised field placements across the degree.",
-        englishRequirement: "IELTS Academic 6.5 overall or higher, depending on the provider.",
-        nextIntake: "February, with a mid-year intake at some providers",
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement:
+          "IELTS Academic 6.5 to 7.0. Teacher registration authorities set their own standard on top of the provider's.",
+        nextIntake: "February and July",
+        skilledOccupation: true,
+        anzsco: "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111",
       },
     ],
-    skilledOccupationRelated: false,
+    skilledOccupationRelated: true,
   },
   {
     slug: "postgraduate",
@@ -153,79 +155,78 @@ export const levels: Level[] = [
     ],
     courses: [
       {
-        name: "Master of Information Technology",
-        duration: "1.5 to 2 years full time, shorter with credit",
-        tuitionMin: 30000,
-        tuitionMax: 48000,
-        entryRequirement:
-          "A completed bachelor degree. A degree in the same field usually reduces the program length.",
-        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July at most providers",
+        name: "Master of Information Technology / Networking",
+        duration: "2 years full time",
+        tuitionMin: 21000,
+        tuitionMax: 40000,
+        entryRequirement: "A completed bachelor degree.",
+        englishRequirement: "IELTS Academic 6.0 to 6.5.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+        anzsco: "ICT occupations, for example Software Engineer, ANZSCO 261313",
       },
       {
         name: "Master of Professional Accounting",
         duration: "2 years full time",
-        tuitionMin: 28000,
-        tuitionMax: 45000,
+        tuitionMin: 20500,
+        tuitionMax: 38500,
         entryRequirement:
           "A completed bachelor degree in any discipline. Designed as an entry route for graduates without an accounting background.",
-        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July at most providers",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+        anzsco: "Accountant (General), ANZSCO 221111",
       },
       {
-        name: "Master of Public Health",
+        name: "MBA / Master of Business",
         duration: "1.5 to 2 years full time",
-        tuitionMin: 30000,
-        tuitionMax: 46000,
+        tuitionMin: 18500,
+        tuitionMax: 39500,
         entryRequirement:
-          "A completed bachelor degree. Health, science or a related field is preferred at most providers.",
-        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July at most providers",
+          "A completed bachelor degree. Some providers also expect professional work experience.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "February, July and November",
+        skilledOccupation: false,
       },
       {
-        name: "Master of Engineering",
+        name: "Master of Business Analytics",
         duration: "2 years full time",
         tuitionMin: 35000,
-        tuitionMax: 50000,
-        entryRequirement:
-          "A completed bachelor degree in engineering or a closely related discipline.",
-        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July at most providers",
-      },
-      {
-        name: "Master of Teaching",
-        duration: "2 years full time",
-        tuitionMin: 30000,
-        tuitionMax: 45000,
-        entryRequirement:
-          "A completed bachelor degree in a related discipline. This is the postgraduate route into teacher registration.",
-        englishRequirement:
-          "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
-        nextIntake: "February, with a mid-year intake at some providers",
+        tuitionMax: 40000,
+        entryRequirement: "A completed bachelor degree.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "February, July and November",
+        skilledOccupation: false,
       },
       {
         name: "Master of Nursing",
         duration: "1.5 to 2 years full time",
-        tuitionMin: 32000,
-        tuitionMax: 46000,
+        tuitionMin: 34500,
+        tuitionMax: 47500,
         entryRequirement:
-          "Registration as a nurse, or a bachelor degree for entry-to-practice streams.",
+          "A completed bachelor degree, or registration as a nurse depending on the stream.",
         englishRequirement:
-          "IELTS Academic 7.0 with 7.0 in every band where the program leads to AHPRA registration.",
-        nextIntake: "February and July at most providers",
+          "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0 where the program leads to registration.",
+        nextIntake: "February and July",
+        skilledOccupation: true,
+        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
-        name: "Master of Business Administration (MBA)",
-        duration: "1.5 to 2 years full time",
-        tuitionMin: 40000,
-        tuitionMax: 75000,
+        name: "Master of Teaching",
+        duration: "2 years full time",
+        tuitionMin: 34000,
+        tuitionMax: 38000,
         entryRequirement:
-          "A completed bachelor degree, plus professional work experience at most providers. Fees sit well above other coursework masters and vary more widely.",
-        englishRequirement: "IELTS Academic 6.5 overall, commonly with no band below 6.0.",
-        nextIntake: "February and July, with extra intakes at some providers",
+          "A completed bachelor degree in a related discipline. This is the postgraduate route into teacher registration.",
+        englishRequirement:
+          "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
+        nextIntake: "February and July",
+        skilledOccupation: true,
+        anzsco:
+          "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111, and Secondary School Teacher, ANZSCO 241411",
       },
     ],
-    skilledOccupationRelated: false,
+    skilledOccupationRelated: true,
   },
   {
     slug: "pathway-programs",
@@ -239,55 +240,36 @@ export const levels: Level[] = [
     courses: [
       {
         name: "Foundation studies",
-        duration: "8 to 12 months",
-        tuitionMin: 28000,
-        tuitionMax: 39000,
+        duration: "About 1 year full time",
         entryRequirement:
-          "Completed Year 11 or a Year 12 result below the direct-entry level for your chosen degree.",
-        englishRequirement: "IELTS Academic 5.5 overall is the common entry point.",
-        nextIntake: "Multiple intakes a year, commonly February, June and October",
+          "Leads into year 1 of a bachelor degree. Suited to a Year 11 or Year 12 result below the direct-entry level for your chosen degree.",
+        englishRequirement: "IELTS Academic 5.5.",
+        nextIntake: "February, June and October",
+        skilledOccupation: false,
       },
       {
-        name: "Diploma leading to second year",
-        duration: "8 to 12 months",
-        tuitionMin: 18000,
-        tuitionMax: 30000,
-        entryRequirement:
-          "Completed Year 12 or equivalent. Credit from the diploma carries into the degree, so you continue at second year rather than starting again.",
-        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
-        nextIntake: "Commonly February, June and October",
-      },
-      {
-        name: "ELICOS English program",
-        duration: "12 to 25 weeks, set by your current level",
-        tuitionMin: 3600,
-        tuitionMax: 12500,
+        name: "Diploma to degree (Business or IT)",
+        duration: "1 year full time",
+        tuitionMin: 19000,
+        tuitionMax: 38000,
         tuitionBasis: "for the full course",
         entryRequirement:
-          "A placement test rather than a fixed entry score. Length is set by the gap between your current English and what your next course requires.",
-        englishRequirement:
-          "No minimum to enter. Typically priced at $300 to $500 a week, so total cost moves with course length.",
-        nextIntake: "Weekly or fortnightly starts at most colleges",
+          "Usually carries credit into year 2 of a bachelor degree, so you continue rather than start again.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: false,
       },
       {
-        name: "Diploma of Business",
-        duration: "12 months",
-        tuitionMin: 12000,
-        tuitionMax: 22000,
+        name: "ELICOS (English language)",
+        duration: "Flexible, set by the gap between your English and your next course",
+        tuitionMin: 400,
+        tuitionMax: 500,
+        tuitionBasis: "per week",
         entryRequirement:
-          "Year 12 or equivalent. Usually packaged as credit into the first year of a business degree.",
-        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
-        nextIntake: "Multiple intakes a year at most providers",
-      },
-      {
-        name: "Diploma of Engineering",
-        duration: "12 months",
-        tuitionMin: 16000,
-        tuitionMax: 28000,
-        entryRequirement:
-          "Year 12 or equivalent. Usually carries credit into the second year of an engineering degree.",
-        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
-        nextIntake: "Multiple intakes a year at most providers",
+          "Packaged with a main course on a single student visa, so you apply once rather than twice.",
+        englishRequirement: "No minimum to enter. A placement test sets your starting level.",
+        nextIntake: "Rolling starts through the year",
+        skilledOccupation: false,
       },
     ],
     skilledOccupationRelated: false,
@@ -334,7 +316,7 @@ export const entryRequirementsExample = {
     {
       label: "ATAR equivalent",
       value:
-        "Commonly in the mid 60s to mid 70s, and higher at Group of Eight universities. Each institution converts overseas results to an ATAR equivalent using its own table, so the same transcript can clear one provider and not another.",
+        "Commonly in the mid 60s to mid 70s, and higher at the more selective providers. Each institution converts overseas results to an ATAR equivalent using its own table, so the same transcript can clear one provider and not another.",
     },
     {
       label: "English test score",
@@ -358,3 +340,12 @@ export const entryRequirementsExample = {
 // ---------------------------------------------------------------------------
 export const INTAKE_PLANNING_2026 =
   "Australia's National Planning Level for 2026 is 295,000 new international student commencements, with higher education providers sharing 196,750 of those places. It operates as a visa processing priority system rather than a hard refusal limit — once a provider reaches its allocation, visa processing for its students can slow significantly. Students moving into public universities from Australian schooling or from pathway colleges are exempt from the planning level. We'll tell you which providers still have room for your intake.";
+
+// ---------------------------------------------------------------------------
+// HUB BLOCK 4 — Scholarships
+// Generic by design. No institution is named and no value is attributed to a
+// provider, because scholarship terms are reset by each institution every
+// intake and a named figure here would go stale without anyone noticing.
+// ---------------------------------------------------------------------------
+export const SCHOLARSHIPS_NOTE =
+  "Most of our partner institutions offer international scholarships of 10–30% of tuition. Many are applied automatically when you apply, and some go up to 50% by separate application. Values and conditions are set by each institution, usually depend on your prior academic results, and often require ongoing grades to keep. We'll tell you exactly what you qualify for, in writing, as part of your free consultation.";
