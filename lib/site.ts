@@ -28,7 +28,7 @@ export const site = {
   team: [
     {
       name: "Abrar Hossain Chy Toha",
-      role: "CEO",
+      role: "Operations Manager",
       credential: "",
       email: "abrar@edmark.com.au",
       image: "/images/abrar.png",
@@ -42,7 +42,7 @@ export const site = {
     },
     {
       name: "Ashab Ahmed Sakib",
-      role: "Operations Manager",
+      role: "CEO",
       credential: "",
       email: "sakib@edmark.com.au",
       image: "/images/sakib.png",
