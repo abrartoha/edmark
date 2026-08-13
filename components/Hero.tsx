@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Hero background video (poster image shows instantly and is the
           fallback if the video can't autoplay) */}
       <video
-        className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60 blur-[1px]"
+        className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60 blur-[0.5px]"
         autoPlay
         muted
         loop
