@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { IconArrow, IconCheck, IconStar } from "./Icons";
+import HeroVideo from "./HeroVideo";
 
 const bullets = [
   "100% free consultation",
@@ -12,22 +13,9 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink">
       {/* Hero background video (poster image shows instantly and is the
-          fallback if the video can't autoplay) */}
-      <video
-        className="absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-60 blur-[0.5px]"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/images/hero-banner.jpg"
-        aria-hidden="true"
-      >
-        {/* Versioned filename on purpose: /videos/* is cached immutable for a
-            year, so replacing the file in place would leave returning
-            visitors on the old cut. Bump the suffix on any future edit. */}
-        <source src="/videos/hero-v2.mp4" type="video/mp4" />
-      </video>
+          fallback if the video can't autoplay). Client component so it can
+          force autoplay on mobile Safari. */}
+      <HeroVideo />
 
       <div className="container-page relative py-20 lg:py-28">
         <div className="animate-fade-up max-w-3xl">
