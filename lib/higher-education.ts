@@ -203,10 +203,13 @@ export const FEE_BANDS: FeeBand[] = [
 ];
 
 /** Vocational fees are annual, not per semester, and start far lower. */
+// Cut to where the minimums actually sit rather than to round numbers. The
+// fees cluster hard at $9,000 and $12,000, so tiers of 5/10/15/20k left the
+// top two nearly identical and separated nothing in the middle.
 export const VET_FEE_BANDS: FeeBand[] = [
   { label: "Up to $5,000", max: 5000 },
-  { label: "Up to $10,000", max: 10000 },
-  { label: "Up to $15,000", max: 15000 },
+  { label: "Up to $9,000", max: 9000 },
+  { label: "Up to $12,000", max: 12000 },
   { label: "Up to $20,000", max: 20000 },
 ];
 
