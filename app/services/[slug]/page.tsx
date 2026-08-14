@@ -521,6 +521,83 @@ const serviceExtras: Record<
         field: "Health & Community Care",
       },
 
+      {
+        name: "Certificate III in Hospitality (SIT30622)",
+        duration: "12 to 18 months",
+        tuitionMin: 12000,
+        tuitionMax: 18000,
+        entryRequirement:
+          "Year 12 or equivalent. Front-of-house service across cafes, bars, hotels and restaurants, and the usual entry point to a hospitality career.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
+      },
+      {
+        name: "Certificate III in Patisserie (SIT31021)",
+        duration: "12 to 18 months",
+        tuitionMin: 12000,
+        tuitionMax: 18000,
+        entryRequirement:
+          "Year 12 or equivalent. Specialist training in pastries, cakes, desserts and breads for work as a pastry cook or patissier.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
+      },
+      {
+        name: "Certificate IV in Patisserie (SIT40721)",
+        duration: "12 to 18 months",
+        tuitionMin: 12000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "A Certificate III in Patisserie or equivalent experience. Advanced technique plus the supervisory skills for senior pastry roles.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
+      },
+      {
+        name: "Certificate IV in Kitchen Management (SIT40521)",
+        duration: "12 to 18 months",
+        tuitionMin: 12000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "A Certificate III in Commercial Cookery or equivalent. Supervisory cookery and kitchen operations, including rostering, menu costing and food safety.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
+      },
+      {
+        name: "Advanced Diploma of Hospitality Management (SIT60322)",
+        duration: "18 months to 2 years",
+        tuitionMin: 16000,
+        tuitionMax: 26000,
+        entryRequirement:
+          "A diploma in a hospitality field, or equivalent industry experience. Senior management, strategy and business planning for leadership roles.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
+      },
+      {
+        name: "Certificate IV in School Based Education Support (CHC40221)",
+        duration: "12 months",
+        tuitionMin: 8000,
+        tuitionMax: 15000,
+        entryRequirement:
+          "Year 12 or equivalent. Prepares you to work as an education support worker or teacher's aide, assisting teachers and students in schools.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Early Childhood Education",
+      },
+      {
+        name: "Diploma of School Age Education and Care (CHC50221)",
+        duration: "18 months to 2 years",
+        tuitionMin: 8000,
+        tuitionMax: 18000,
+        entryRequirement:
+          "Year 12 or equivalent, or a related Certificate III for credit. Supporting school-aged children in before and after school programs and vacation care.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Early Childhood Education",
+      },
     ],
     extended:
       "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
