@@ -17,7 +17,12 @@ import {
 } from "@/lib/higher-education";
 
 /** A course plus the level it sits under, so one flat list can span both. */
-export type BrowserCourse = Course & { levelSlug: string; levelTitle: string };
+export type BrowserCourse = Course & {
+  levelSlug: string;
+  levelTitle: string;
+  /** Set so a listed card links to its own page. */
+  slug?: string;
+};
 
 /** Toggles a value in a set, returning a new set. */
 function toggle<T>(set: Set<T>, value: T) {
@@ -304,7 +309,11 @@ export default function CourseBrowser({
         {results.length > 0 ? (
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {results.map((c, i) => (
-              <CourseCard key={`${c.name}-${i}`} course={c} />
+              <CourseCard
+                key={`${c.name}-${i}`}
+                course={c}
+                href={c.slug ? `/courses/${c.slug}` : undefined}
+              />
             ))}
           </div>
         ) : (

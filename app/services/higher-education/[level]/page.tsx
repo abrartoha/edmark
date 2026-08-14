@@ -4,6 +4,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CourseBrowser from "@/components/CourseBrowser";
+import { courseSlug } from "@/lib/course-catalog";
 import CTA from "@/components/CTA";
 import { IconArrow } from "@/components/Icons";
 import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
@@ -70,6 +71,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
               ...c,
               levelSlug: level.slug,
               levelTitle: level.title,
+              slug: courseSlug(c.name),
             }))}
             levels={levels.map((l) => ({
               slug: l.slug,

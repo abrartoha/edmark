@@ -3,6 +3,7 @@ import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
 import CourseBrowser from "@/components/CourseBrowser";
+import { courseSlug } from "@/lib/course-catalog";
 import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
 import {
   INTAKE_PLANNING_2026,
@@ -52,6 +53,7 @@ export default function HigherEducationPage() {
                 ...c,
                 levelSlug: l.slug,
                 levelTitle: l.title,
+                slug: courseSlug(c.name),
               }))
             )}
             levels={levels.map((l) => ({
