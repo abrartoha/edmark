@@ -230,9 +230,9 @@ const serviceExtras: Record<
         field: "Security",
       },
       {
-        name: "Certificate III in Individual Support (Ageing)",
+        name: "Certificate III in Individual Support (Ageing and Disability) (CHC33021)",
         duration: "6 to 12 months",
-        tuitionMin: 8000,
+        tuitionMin: 4000,
         tuitionMax: 15000,
         entryRequirement:
           "Year 12 or equivalent. Police check and supervised placement hours are required.",
@@ -252,9 +252,9 @@ const serviceExtras: Record<
         field: "Health & Community Care",
       },
       {
-        name: "Certificate III in Early Childhood Education and Care",
+        name: "Certificate III in Early Childhood Education and Care (CHC30125)",
         duration: "6 to 12 months",
-        tuitionMin: 8000,
+        tuitionMin: 7500,
         tuitionMax: 15000,
         entryRequirement:
           "Year 12 or equivalent. Working with Children Check and placement hours are required.",
@@ -263,9 +263,9 @@ const serviceExtras: Record<
         field: "Early Childhood Education",
       },
       {
-        name: "Diploma of Early Childhood Education and Care",
-        duration: "18 months to 2 years",
-        tuitionMin: 16000,
+        name: "Diploma of Early Childhood Education and Care (CHC50125)",
+        duration: "56 weeks to 2 years",
+        tuitionMin: 8000,
         tuitionMax: 26000,
         entryRequirement:
           "Year 12 or equivalent. Qualifies you as a lead educator or room leader.",
@@ -491,6 +491,50 @@ const serviceExtras: Record<
         englishRequirement: "IELTS Academic 6.0, or PTE Academic 50.",
         nextIntake: "Monthly intakes",
         field: "Business",
+      },
+      {
+        name: "Certificate IV in Disability Support (CHC43121)",
+        duration: "30 weeks",
+        tuitionMin: 5000,
+        tuitionMax: 8000,
+        entryRequirement:
+          "A Certificate III in Individual Support is a prerequisite, plus Year 11 or 12 transcripts. Includes 120 hours of work placement. The lower fee is the onshore rate; applying from overseas costs more.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
+      },
+      {
+        name: "Certificate IV in Mental Health Peer Work (CHC43515)",
+        duration: "38 weeks",
+        tuitionMin: 5000,
+        tuitionMax: 8000,
+        entryRequirement:
+          "Year 11 or 12 transcripts. For workers with lived experience of mental illness, as a consumer or a carer. Includes 80 hours of work placement. The lower fee is the onshore rate; applying from overseas costs more.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
+      },
+      {
+        name: "Diploma of Mental Health (CHC53315)",
+        duration: "78 weeks",
+        tuitionMin: 11500,
+        tuitionMax: 16500,
+        entryRequirement:
+          "Year 11 or 12 transcripts. Includes 400 hours of work placement. The lower fee is the onshore rate; applying from overseas costs more.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
+      },
+      {
+        name: "Diploma of Community Services (Case Management, Child, Youth and Family Welfare) (CHC52025)",
+        duration: "78 weeks",
+        tuitionMin: 11500,
+        tuitionMax: 16500,
+        entryRequirement:
+          "Year 11 or 12 transcripts. Covers case management across mental health, homelessness, family violence and child protection settings. Includes 400 hours of work placement. The lower fee is the onshore rate; applying from overseas costs more.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
       },
 
     ],

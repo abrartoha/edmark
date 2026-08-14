@@ -48,6 +48,7 @@ export const colleges: Institution[] = [
   { slug: "mit", name: "Melbourne Institute of Technology (MIT)", meta: "Melbourne & Sydney", hasLogo: true, url: "https://www.mit.edu.au" },
   { slug: "icv", name: "International College of Victoria (ICV)", meta: "West Melbourne, VIC · RTO 22581", hasLogo: true, url: "https://www.icv.edu.au" },
   { slug: "mihe", name: "Melbourne Institute of Higher Education (MIHE)", meta: "Preston & Melbourne, VIC", hasLogo: true, url: "https://www.mihe.vic.edu.au" },
+  { slug: "jti", name: "Job Training Institute (JTI)", meta: "Melbourne, VIC · RTO 122208", hasLogo: true, url: "https://www.jti.edu.au" },
 ];
 
 // ---------------------------------------------------------------------------
