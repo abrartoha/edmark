@@ -142,7 +142,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Carpentry (CPC30220)",
         duration: "2 to 3 years, including on-the-job training",
-        tuitionMin: 12000,
+        tuitionMin: 9000,
         tuitionMax: 20000,
         entryRequirement:
           "Year 12 or equivalent. Setting out, building, assembling and installing structures on residential and commercial sites.",
@@ -481,7 +481,18 @@ const serviceExtras: Record<
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
         field: "Business",
+      },      {
+        name: "Graduate Diploma of Management (Learning) (BSB80120)",
+        duration: "52 weeks",
+        tuitionMin: 12000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "Australian Year 12 or equivalent. A vocational qualification at graduate diploma level, aimed at organisational learning and capability development. Application and material fees are charged separately.",
+        englishRequirement: "IELTS Academic 6.0, or PTE Academic 50.",
+        nextIntake: "Monthly intakes",
+        field: "Business",
       },
+
     ],
     extended:
       "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
