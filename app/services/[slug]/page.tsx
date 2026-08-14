@@ -39,22 +39,6 @@ const serviceExtras: Record<
       "Clear next steps and a timeline for your journey",
     ],
   },
-  "pr-pathway-courses": {
-    extended:
-      "For many students, studying in Australia is also the first step toward permanent residency. But the course you choose matters. Qualifications tied to occupations in demand can strengthen your skilled migration profile, while others may not count toward it at all.\n\nWe help you understand how course choice, location and level of study interact with the skilled occupation lists and points test, so your study decision supports your long-term goals. Important: migration rules change often, and formal, personalised migration advice must come from a registered migration agent (MARA), whom we can connect you with.",
-    whoFor: [
-      "Students who want their study to support a residency pathway",
-      "Graduates considering further study to improve their prospects",
-      "Applicants weighing regional versus metropolitan study",
-      "Anyone confused by skilled occupation lists and points",
-    ],
-    whatToExpect: [
-      "A review of your goals and current profile",
-      "Course and location options aligned to in-demand occupations",
-      "An overview of how study choices can affect your points",
-      "Referral to a registered migration agent for formal advice",
-    ],
-  },
   "application-support": {
     extended:
       "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). We also prepare you for the Genuine Student (GS) requirement, which replaced the Genuine Temporary Entrant test in March 2024 and asks targeted questions, 150 words or fewer each, about why this course, why now, and how it fits your career.",
@@ -556,11 +540,11 @@ const serviceExtras: Record<
 };
 
 export function generateStaticParams() {
-  // pr-pathway-courses has its own folder route with sub-pages, and
+  // research-degrees has its own folder route, and
   // research-degrees redirects to the fuller /research-degrees page.
   return services
     .filter(
-      (s) => s.slug !== "pr-pathway-courses" && s.slug !== "research-degrees"
+      (s) => s.slug !== "research-degrees"
     )
     .map((s) => ({ slug: s.slug }));
 }

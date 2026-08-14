@@ -24,20 +24,6 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "pr-pathway-courses",
-    icon: "plane",
-    title: "PR Pathway Courses",
-    short:
-      "Choose courses aligned with Australia's skilled occupation lists to strengthen your long-term residency prospects.",
-    long: "Not every course carries the same weight for migration. We help you select qualifications linked to occupations on Australia's skilled occupation lists, and consider regional study options that can support your pathway toward permanent residency. For formal migration advice we work alongside registered migration agents (MARA).",
-    points: [
-      "Course selection aligned to skilled occupation lists",
-      "Regional and state-nominated study options",
-      "Referral to registered migration agents for formal advice",
-      "Long-term study-to-residency planning",
-    ],
-  },
-  {
     slug: "short-courses",
     icon: "graduation",
     title: "Vocational (VET) & Short Courses",

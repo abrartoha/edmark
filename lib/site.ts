@@ -93,11 +93,6 @@ export const nav: NavItem[] = [
         href: "/research-degrees",
         note: "Masters by research · PhD",
       },
-      {
-        label: "PR pathway courses",
-        href: "/services/pr-pathway-courses",
-        note: "Courses at any level aligned to skilled occupation lists",
-      },
     ],
   },
   {

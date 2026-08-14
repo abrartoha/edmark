@@ -16,6 +16,19 @@ const nextConfig = {
         destination: "/services/higher-education",
         permanent: true,
       },
+      {
+        // PR pathway courses was removed. Its trade list now lives on the
+        // vocational page, so that URL goes there rather than to the hub.
+        // Listed before the catch-all below, which would otherwise claim it.
+        source: "/services/pr-pathway-courses/trade",
+        destination: "/services/short-courses",
+        permanent: true,
+      },
+      {
+        source: "/services/pr-pathway-courses/:category*",
+        destination: "/services",
+        permanent: true,
+      },
     ];
   },
 
