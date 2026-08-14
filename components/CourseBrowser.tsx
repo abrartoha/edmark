@@ -147,8 +147,12 @@ export default function CourseBrowser({
 
   return (
     <div className="mt-10 grid gap-10 lg:grid-cols-[248px_1fr] lg:gap-12">
-      {/* Sticky on desktop so the filters stay reachable down a long list. */}
-      <aside className="lg:sticky lg:top-28 lg:self-start">
+      {/* Sticky on desktop so the filters stay reachable down a long list, and
+          scrollable in its own right because the six groups run past 1100px,
+          taller than a laptop viewport. Without the max height and overflow a
+          sticky column simply pins at the top and everything below the fold
+          becomes unreachable: the page scrolls, the sidebar does not. */}
+      <aside className="lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto lg:pr-3">
         <div className="flex items-baseline justify-between">
           <h3 className="text-lg">Filter</h3>
           {activeCount > 0 && (
