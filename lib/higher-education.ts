@@ -120,6 +120,25 @@ export function ieltsOf(c: Course): number | null {
   return m ? Number(m[1]) : null;
 }
 
+/**
+ * Indicative PTE Academic equivalents for the IELTS bands used here, taken
+ * from Pearson's concordance between the enhanced PTE Academic and IELTS
+ * Academic (July 2025). Pearson gives each band a range; these are its
+ * midpoints: 6.0 concords to 46-54, 6.5 to 55-62, 7.0 to 63-70, 7.5 to 71-78
+ * and 8.0 to 79-85.
+ *
+ * Shown as a guide only. A provider sets the PTE score it will accept, and the
+ * Department of Home Affairs sets a separate one for the visa, which it moved
+ * on 7 August 2025. Neither is derived from this table.
+ */
+export const PTE_EQUIVALENT: Record<string, number> = {
+  "6.0": 50,
+  "6.5": 58,
+  "7.0": 65,
+  "7.5": 73,
+  "8.0": 79,
+};
+
 /** Intake months named in the course's nextIntake sentence. */
 export function intakeMonthsOf(c: Course): string[] {
   return INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));

@@ -9,6 +9,7 @@ import {
   INTAKE_MONTHS,
   ieltsOf,
   intakeMonthsOf,
+  PTE_EQUIVALENT,
   type Course,
 } from "@/lib/higher-education";
 
@@ -84,7 +85,6 @@ export default function CourseBrowser({
   const [fees, setFees] = useState<Set<string>>(new Set());
   const [months, setMonths] = useState<Set<string>>(new Set());
   const [ielts, setIelts] = useState<Set<number>>(new Set());
-  const [durations, setDurations] = useState<Set<string>>(new Set());
 
   const all = courses;
 
@@ -106,9 +106,8 @@ export default function CourseBrowser({
         const v = ieltsOf(c);
         return v !== null && ielts.has(v);
       },
-      duration: (c: Course) => durations.size === 0 || durations.has(c.duration),
     }),
-    [levelSlugs, fields, fees, months, ielts, durations]
+    [levelSlugs, fields, fees, months, ielts]
   );
 
   const results = useMemo(
@@ -125,7 +124,6 @@ export default function CourseBrowser({
     );
 
   const fieldOptions = FIELD_ORDER.filter((f) => all.some((c) => c.field === f));
-  const durationOptions = Array.from(new Set(all.map((c) => c.duration))).sort();
   const ieltsOptions = Array.from(
     new Set(all.map(ieltsOf).filter((v): v is number => v !== null))
   ).sort((a, b) => a - b);
@@ -134,7 +132,7 @@ export default function CourseBrowser({
   );
 
   const activeCount =
-    levelSlugs.size + fields.size + fees.size + months.size + ielts.size + durations.size;
+    levelSlugs.size + fields.size + fees.size + months.size + ielts.size;
 
   const clear = () => {
     setLevelSlugs(new Set());
@@ -142,7 +140,6 @@ export default function CourseBrowser({
     setFees(new Set());
     setMonths(new Set());
     setIelts(new Set());
-    setDurations(new Set());
   };
 
   return (
@@ -236,33 +233,23 @@ export default function CourseBrowser({
             ))}
           </Group>
 
-          <Group legend="English (IELTS Academic)">
+          <Group legend="English (IELTS / PTE)">
             {ieltsOptions.map((v) => (
               <Check
                 key={v}
-                label={v.toFixed(1)}
+                label={`IELTS ${v.toFixed(1)} / PTE ${PTE_EQUIVALENT[v.toFixed(1)] ?? "-"}`}
                 checked={ielts.has(v)}
                 count={others("ielts").filter((c) => ieltsOf(c) === v).length}
                 onChange={() => setIelts(toggle(ielts, v))}
               />
             ))}
             <p className="mt-2 text-xs leading-relaxed text-sage">
-              PTE is accepted at most providers. We confirm the equivalent score
-              for your shortlist, since providers set their own conversion.
+              PTE figures are Pearson's indicative concordance. Each provider
+              sets the score it accepts, and the visa requirement is set
+              separately, so we confirm both against your shortlist.
             </p>
           </Group>
 
-          <Group legend="Duration">
-            {durationOptions.map((d) => (
-              <Check
-                key={d}
-                label={d.replace(" full time", "")}
-                checked={durations.has(d)}
-                count={others("duration").filter((c) => c.duration === d).length}
-                onChange={() => setDurations(toggle(durations, d))}
-              />
-            ))}
-          </Group>
         </div>
       </aside>
 
