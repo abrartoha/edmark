@@ -97,6 +97,41 @@ export type Course = {
   field?: Field;
 };
 
+// ---------------------------------------------------------------------------
+// Filter helpers. Intake and English requirement are stored as free text
+// because that is how a provider states them, so the browser derives its
+// filters from those strings rather than from extra fields that could drift
+// out of step with the sentence a student actually reads.
+// ---------------------------------------------------------------------------
+
+export const INTAKE_MONTHS = [
+  "January",
+  "February",
+  "March",
+  "July",
+  "August",
+  "September",
+  "November",
+] as const;
+
+/** Minimum IELTS on a course, or null where none is stated. */
+export function ieltsOf(c: Course): number | null {
+  const m = c.englishRequirement.match(/IELTS Academic (\d+(?:\.\d+)?)/);
+  return m ? Number(m[1]) : null;
+}
+
+/** Intake months named in the course's nextIntake sentence. */
+export function intakeMonthsOf(c: Course): string[] {
+  return INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));
+}
+
+/** Tuition bands, keyed off the lower bound of the course's range. */
+export const FEE_BANDS = [
+  { label: "Under $13,000", test: (min: number) => min < 13000 },
+  { label: "$13,000 to $17,999", test: (min: number) => min >= 13000 && min < 18000 },
+  { label: "$18,000 and above", test: (min: number) => min >= 18000 },
+] as const;
+
 export type LevelSlug = "undergraduate" | "postgraduate";
 
 export type Level = {
