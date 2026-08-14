@@ -10,7 +10,10 @@ import {
   ieltsOf,
   intakeMonthsOf,
   PTE_EQUIVALENT,
+  ROLLING_INTAKE,
   type Course,
+  type Field,
+  type FeeBand,
 } from "@/lib/higher-education";
 
 /** A course plus the level it sits under, so one flat list can span both. */
@@ -68,17 +71,26 @@ function Group({ legend, children }: { legend: string; children: React.ReactNode
 
 export default function CourseBrowser({
   courses,
-  levels,
+  levels = [],
   lockedLevel,
+  fieldOrder = FIELD_ORDER,
+  feeBands = FEE_BANDS,
+  feeLegend = "Budget per semester",
 }: {
   courses: BrowserCourse[];
-  levels: { slug: string; title: string; count: number }[];
+  /** Omit where the list has no levels, e.g. vocational courses. */
+  levels?: { slug: string; title: string; count: number }[];
   /**
    * Set on a level page, where the route already fixes the level, so Level
    * renders as links out. Left undefined on the hub, where it is a filter and
    * a student can switch without loading another page.
    */
   lockedLevel?: string;
+  /** Study areas to offer, in display order. Higher education by default. */
+  fieldOrder?: readonly Field[];
+  /** Fee tiers. Higher education quotes per semester, vocational per year. */
+  feeBands?: FeeBand[];
+  feeLegend?: string;
 }) {
   const [levelSlugs, setLevelSlugs] = useState<Set<string>>(new Set());
   const [fields, setFields] = useState<Set<string>>(new Set());
@@ -98,7 +110,7 @@ export default function CourseBrowser({
       field: (c: Course) => fields.size === 0 || (c.field ? fields.has(c.field) : false),
       fee: (c: Course) =>
         fees.size === 0 ||
-        FEE_BANDS.some((b) => fees.has(b.label) && b.test(c.tuitionMin ?? 0)),
+        feeBands.some((b) => fees.has(b.label) && (c.tuitionMin ?? 0) <= b.max),
       month: (c: Course) =>
         months.size === 0 || intakeMonthsOf(c).some((m) => months.has(m)),
       ielts: (c: Course) => {
@@ -107,7 +119,7 @@ export default function CourseBrowser({
         return v !== null && ielts.has(v);
       },
     }),
-    [levelSlugs, fields, fees, months, ielts]
+    [levelSlugs, fields, fees, months, ielts, feeBands]
   );
 
   const results = useMemo(
@@ -123,13 +135,16 @@ export default function CourseBrowser({
         .every(([, p]) => p(c))
     );
 
-  const fieldOptions = FIELD_ORDER.filter((f) => all.some((c) => c.field === f));
+  const fieldOptions = fieldOrder.filter((f) => all.some((c) => c.field === f));
   const ieltsOptions = Array.from(
     new Set(all.map(ieltsOf).filter((v): v is number => v !== null))
   ).sort((a, b) => a - b);
-  const monthOptions = INTAKE_MONTHS.filter((m) =>
-    all.some((c) => intakeMonthsOf(c).includes(m))
-  );
+  const monthOptions = [
+    ...INTAKE_MONTHS.filter((m) => all.some((c) => intakeMonthsOf(c).includes(m))),
+    ...(all.some((c) => intakeMonthsOf(c).includes(ROLLING_INTAKE))
+      ? [ROLLING_INTAKE]
+      : []),
+  ];
 
   const activeCount =
     levelSlugs.size + fields.size + fees.size + months.size + ielts.size;
@@ -164,6 +179,7 @@ export default function CourseBrowser({
         </div>
 
         <div className="mt-5 space-y-5">
+          {levels.length > 0 && (
           <fieldset>
             <legend className="eyebrow mb-2">Level</legend>
             {lockedLevel
@@ -192,6 +208,7 @@ export default function CourseBrowser({
                   />
                 ))}
           </fieldset>
+          )}
 
           <Group legend="Study area">
             {fieldOptions.map((f) => (
@@ -205,13 +222,13 @@ export default function CourseBrowser({
             ))}
           </Group>
 
-          <Group legend="Budget per semester">
-            {FEE_BANDS.map((b) => (
+          <Group legend={feeLegend}>
+            {feeBands.map((b) => (
               <Check
                 key={b.label}
                 label={b.label}
                 checked={fees.has(b.label)}
-                count={others("fee").filter((c) => b.test(c.tuitionMin ?? 0)).length}
+                count={others("fee").filter((c) => (c.tuitionMin ?? 0) <= b.max).length}
                 onChange={() => setFees(toggle(fees, b.label))}
               />
             ))}

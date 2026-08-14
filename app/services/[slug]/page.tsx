@@ -8,7 +8,8 @@ import { services } from "@/lib/content";
 import { site } from "@/lib/site";
 import { IconCheck, IconArrow } from "@/components/Icons";
 import ServiceIcon from "@/components/ServiceIcon";
-import CourseCard from "@/components/CourseCard";
+import CourseBrowser from "@/components/CourseBrowser";
+import { VET_FEE_BANDS, VET_FIELD_ORDER } from "@/lib/higher-education";
 import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import type { Course } from "@/lib/higher-education";
 
@@ -147,6 +148,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Setting out, building, assembling and installing structures on residential and commercial sites.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Construction & Trades",
       },
       {
         name: "Certificate III in Plumbing (CPC32420)",
@@ -157,6 +159,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Plumbing is a licensed trade, and licensing is regulated state by state.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Construction & Trades",
       },
       {
         name: "Certificate III in Electrotechnology Electrician (UEE30820)",
@@ -167,6 +170,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. The pathway to an electrical licence, which is regulated separately in each state.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Construction & Trades",
       },
       {
         name: "Certificate III in Light Vehicle Mechanical Technology (AUR30620)",
@@ -177,6 +181,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Diagnosing, servicing and repairing light vehicles.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Automotive",
       },
       {
         name: "Certificate III in Commercial Cookery (SIT30821)",
@@ -187,6 +192,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Includes supervised commercial kitchen service hours.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Hospitality & Cookery",
       },
       {
         name: "Diploma of Hospitality Management (SIT50422)",
@@ -197,6 +203,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent, or a Certificate III in a hospitality field for credit.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Multiple intakes a year at most providers",
+        field: "Hospitality & Cookery",
       },
       {
         name: "Diploma of Nursing (HLT54121)",
@@ -208,6 +215,7 @@ const serviceExtras: Record<
         englishRequirement:
           "IELTS Academic 7.0 with 7.0 in every band, set by AHPRA for registration rather than by the provider.",
         nextIntake: "February and July, with extra intakes at some RTOs",
+        field: "Health & Community Care",
       },
       {
         name: "Certificate II in Security Operations (CPP20218)",
@@ -219,6 +227,7 @@ const serviceExtras: Record<
           "Over 18 with current work rights. In Victoria the licence is issued by Victoria Police, and its Licensing and Regulation Division only recognises training completed by overseas students where the course is both delivered by an approved RTO and CRICOS registered. Confirm CRICOS registration before you enrol, because training that is not registered will not count toward a licence. Your visa work-hour limit still applies once you are licensed.",
         englishRequirement: "Provider placement test, commonly around IELTS 5.5.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Security",
       },
       {
         name: "Certificate III in Individual Support (Ageing)",
@@ -229,6 +238,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Police check and supervised placement hours are required.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
       },
       {
         name: "Certificate IV in Ageing Support",
@@ -239,6 +249,7 @@ const serviceExtras: Record<
           "Usually follows a Certificate III in Individual Support and leads to team leader and coordinator roles.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Health & Community Care",
       },
       {
         name: "Certificate III in Early Childhood Education and Care",
@@ -249,6 +260,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Working with Children Check and placement hours are required.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
+        field: "Early Childhood Education",
       },
       {
         name: "Diploma of Early Childhood Education and Care",
@@ -259,6 +271,7 @@ const serviceExtras: Record<
           "Year 12 or equivalent. Qualifies you as a lead educator or room leader.",
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Multiple intakes a year at most providers",
+        field: "Early Childhood Education",
       },
     ],
     extended:
@@ -435,12 +448,20 @@ export default function ServicePage({
             <h2 className="mt-3 text-3xl sm:text-4xl">
               What you can study
             </h2>
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {extras.courses.map((c) => (
-                <CourseCard key={c.name} course={c} />
-              ))}
-            </div>
-            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
+            {/* Same browser as higher education, configured for vocational
+                study: trade study areas, annual fee tiers rather than per
+                semester, and no Level group since VET has none. */}
+            <CourseBrowser
+              courses={extras.courses.map((c) => ({
+                ...c,
+                levelSlug: "",
+                levelTitle: "",
+              }))}
+              fieldOrder={VET_FIELD_ORDER}
+              feeBands={VET_FEE_BANDS}
+              feeLegend="Budget per year"
+            />
+            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
               {INDICATIVE_NOTICE}
             </p>
           </div>

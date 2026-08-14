@@ -41,7 +41,15 @@ export type Field =
   | "Health"
   | "Hotel Management"
   | "Law"
-  | "Science";
+  | "Science"
+  // Vocational study areas. Separate values rather than reusing the academic
+  // ones because a VET student browses by trade, not by faculty.
+  | "Construction & Trades"
+  | "Automotive"
+  | "Hospitality & Cookery"
+  | "Health & Community Care"
+  | "Early Childhood Education"
+  | "Security";
 
 /** Fixed display order, so the index reads the same on every level. */
 export const FIELD_ORDER: Field[] = [
@@ -53,6 +61,16 @@ export const FIELD_ORDER: Field[] = [
   "Hotel Management",
   "Law",
   "Science",
+];
+
+/** Display order for the vocational list. */
+export const VET_FIELD_ORDER: Field[] = [
+  "Construction & Trades",
+  "Automotive",
+  "Hospitality & Cookery",
+  "Health & Community Care",
+  "Early Childhood Education",
+  "Security",
 ];
 
 /** Anchor id for a field heading. */
@@ -116,7 +134,11 @@ export const INTAKE_MONTHS = [
 
 /** Minimum IELTS on a course, or null where none is stated. */
 export function ieltsOf(c: Course): number | null {
-  const m = c.englishRequirement.match(/IELTS Academic (\d+(?:\.\d+)?)/);
+  // Deliberately loose about what sits between "IELTS" and the number. Not
+  // every course words it as "IELTS Academic 5.5"; one reads "Provider
+  // placement test, commonly around IELTS 5.5", and requiring the strict
+  // phrasing left that course out of the English filter entirely.
+  const m = c.englishRequirement.match(/IELTS\D{0,20}(\d+(?:\.\d+)?)/);
   return m ? Number(m[1]) : null;
 }
 
@@ -132,6 +154,8 @@ export function ieltsOf(c: Course): number | null {
  * on 7 August 2025. Neither is derived from this table.
  */
 export const PTE_EQUIVALENT: Record<string, number> = {
+  "5.0": 36,
+  "5.5": 42,
   "6.0": 50,
   "6.5": 58,
   "7.0": 65,
@@ -139,9 +163,18 @@ export const PTE_EQUIVALENT: Record<string, number> = {
   "8.0": 79,
 };
 
-/** Intake months named in the course's nextIntake sentence. */
+/** Courses with no fixed month, which is most vocational training. */
+export const ROLLING_INTAKE = "Rolling or multiple";
+
+/**
+ * Intake months named in the course's nextIntake sentence, or the rolling
+ * bucket where none are. Without that fallback, a course reading "Rolling
+ * intakes at most RTOs" would match no intake filter and become unreachable
+ * the moment one was ticked.
+ */
 export function intakeMonthsOf(c: Course): string[] {
-  return INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));
+  const found = INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));
+  return found.length > 0 ? found : [ROLLING_INTAKE];
 }
 
 /**
@@ -154,11 +187,23 @@ export function intakeMonthsOf(c: Course): string[] {
  * most of the list in one bucket and some buckets empty, since providers
  * cluster around the same entry price.
  */
-export const FEE_BANDS = [
-  { label: "Up to $13,000", test: (min: number) => min <= 13000 },
-  { label: "Up to $18,000", test: (min: number) => min <= 18000 },
-  { label: "Up to $24,000", test: (min: number) => min <= 24000 },
-] as const;
+export type FeeBand = { label: string; max: number };
+
+// Plain data, not predicates. These cross from a server component into the
+// client browser, and a function cannot be serialised over that boundary.
+export const FEE_BANDS: FeeBand[] = [
+  { label: "Up to $13,000", max: 13000 },
+  { label: "Up to $18,000", max: 18000 },
+  { label: "Up to $24,000", max: 24000 },
+];
+
+/** Vocational fees are annual, not per semester, and start far lower. */
+export const VET_FEE_BANDS: FeeBand[] = [
+  { label: "Up to $5,000", max: 5000 },
+  { label: "Up to $10,000", max: 10000 },
+  { label: "Up to $15,000", max: 15000 },
+  { label: "Up to $20,000", max: 20000 },
+];
 
 export type LevelSlug = "undergraduate" | "postgraduate";
 
