@@ -346,10 +346,15 @@ export default function ServicePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      {/* service.short is a sentence and service.long runs to several
+          paragraphs, so using them as the heading and subheading pushed the
+          content far down the page. The title is the page name, the subtitle
+          is the one-line summary, and the long copy stays where it belongs:
+          in the body below, and as the meta description. */}
       <PageHero
-        eyebrow={service.title}
-        title={service.short}
-        subtitle={service.long}
+        eyebrow="Services"
+        title={service.title}
+        subtitle={service.short}
       />
       <Breadcrumb
         items={[
@@ -362,7 +367,7 @@ export default function ServicePage({
           to VET lands on the list and its filters rather than on service copy.
           The explanatory sections follow underneath. */}
       {extras?.courses && (
-        <section className="border-b border-line bg-paper py-16 lg:py-24">
+        <section className="border-b border-line bg-paper py-12 lg:py-16">
           <div className="container-page">
             <p className="eyebrow">Courses</p>
             <h2 className="mt-3 text-3xl sm:text-4xl">
