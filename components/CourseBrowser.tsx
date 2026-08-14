@@ -76,6 +76,8 @@ export default function CourseBrowser({
   fieldOrder = FIELD_ORDER,
   feeBands = FEE_BANDS,
   feeLegend = "Budget per semester",
+  showIntake = true,
+  showEnglish = true,
 }: {
   courses: BrowserCourse[];
   /** Omit where the list has no levels, e.g. vocational courses. */
@@ -91,6 +93,13 @@ export default function CourseBrowser({
   /** Fee tiers. Higher education quotes per semester, vocational per year. */
   feeBands?: FeeBand[];
   feeLegend?: string;
+  /**
+   * Vocational courses are almost all rolling intake at a provider-set English
+   * level, so those two groups say the same thing on nearly every card and are
+   * turned off there rather than offering a filter that cannot narrow much.
+   */
+  showIntake?: boolean;
+  showEnglish?: boolean;
 }) {
   const [levelSlugs, setLevelSlugs] = useState<Set<string>>(new Set());
   const [fields, setFields] = useState<Set<string>>(new Set());
@@ -114,14 +123,16 @@ export default function CourseBrowser({
           (b) => fees.has(b.label) && c.tuitionMin != null && c.tuitionMin <= b.max
         ),
       month: (c: Course) =>
-        months.size === 0 || intakeMonthsOf(c).some((m) => months.has(m)),
+        !showIntake ||
+        months.size === 0 ||
+        intakeMonthsOf(c).some((m) => months.has(m)),
       ielts: (c: Course) => {
-        if (ielts.size === 0) return true;
+        if (!showEnglish || ielts.size === 0) return true;
         const v = ieltsOf(c);
         return v !== null && ielts.has(v);
       },
     }),
-    [levelSlugs, fields, fees, months, ielts, feeBands]
+    [levelSlugs, fields, fees, months, ielts, feeBands, showIntake, showEnglish]
   );
 
   const results = useMemo(
@@ -149,7 +160,11 @@ export default function CourseBrowser({
   ];
 
   const activeCount =
-    levelSlugs.size + fields.size + fees.size + months.size + ielts.size;
+    levelSlugs.size +
+    fields.size +
+    fees.size +
+    (showIntake ? months.size : 0) +
+    (showEnglish ? ielts.size : 0);
 
   const clear = () => {
     setLevelSlugs(new Set());
@@ -244,6 +259,7 @@ export default function CourseBrowser({
             </p>
           </Group>
 
+          {showIntake && (
           <Group legend="Intake">
             {monthOptions.map((m) => (
               <Check
@@ -255,7 +271,9 @@ export default function CourseBrowser({
               />
             ))}
           </Group>
+          )}
 
+          {showEnglish && (
           <Group legend="English (IELTS / PTE)">
             {ieltsOptions.map((v) => (
               <Check
@@ -272,6 +290,7 @@ export default function CourseBrowser({
               separately, so we confirm both against your shortlist.
             </p>
           </Group>
+          )}
 
         </div>
       </aside>

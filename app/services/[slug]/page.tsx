@@ -287,7 +287,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Bricklaying and Blocklaying (CPC33020)",
         duration: "2 to 3 years, including on-the-job training",
-        tuitionMin: 12000,
+        tuitionMin: 9000,
         tuitionMax: 20000,
         entryRequirement:
           "Year 12 or equivalent. A nationally recognised trade qualification delivered by a registered training organisation.",
@@ -298,7 +298,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Wall and Floor Tiling (CPC31320)",
         duration: "2 to 3 years, including on-the-job training",
-        tuitionMin: 12000,
+        tuitionMin: 9000,
         tuitionMax: 20000,
         entryRequirement:
           "Year 12 or equivalent. A nationally recognised trade qualification delivered by a registered training organisation.",
@@ -309,7 +309,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Solid Plastering (CPC31020)",
         duration: "2 to 3 years, including on-the-job training",
-        tuitionMin: 12000,
+        tuitionMin: 9000,
         tuitionMax: 20000,
         entryRequirement:
           "Year 12 or equivalent. A nationally recognised trade qualification delivered by a registered training organisation.",
@@ -342,7 +342,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Cabinet Making and Timber Technology (MSF30322)",
         duration: "2 to 3 years, including on-the-job training",
-        tuitionMin: 12000,
+        tuitionMin: 9000,
         tuitionMax: 20000,
         entryRequirement:
           "Year 12 or equivalent. A nationally recognised trade qualification delivered by a registered training organisation.",
@@ -353,7 +353,7 @@ const serviceExtras: Record<
       {
         name: "Certificate III in Roof Plumbing (CPC32620)",
         duration: "3 to 4 years, including on-the-job training",
-        tuitionMin: 14000,
+        tuitionMin: 9000,
         tuitionMax: 22000,
         entryRequirement:
           "Year 12 or equivalent. A licensed trade, and licensing is regulated state by state.",
@@ -448,6 +448,39 @@ const serviceExtras: Record<
         englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
         nextIntake: "Rolling intakes at most RTOs",
         field: "Automotive",
+      },
+      {
+        name: "Certificate III in Glass and Glazing (MSF30422)",
+        duration: "48 weeks",
+        tuitionMin: 9000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "Year 12 or equivalent. A nationally recognised trade qualification delivered by a registered training organisation. Material fees are charged separately.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Construction & Trades",
+      },
+      {
+        name: "Diploma of Building and Construction (Building) (CPC50220)",
+        duration: "48 weeks",
+        tuitionMin: 9000,
+        tuitionMax: 20000,
+        entryRequirement:
+          "Year 12 or equivalent, or a related Certificate III for credit. Commonly used toward builder registration, which is assessed state by state. Material fees are charged separately.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Construction & Trades",
+      },
+      {
+        name: "Diploma of Business (BSB50120)",
+        duration: "52 weeks",
+        tuitionMin: 5000,
+        tuitionMax: 16000,
+        entryRequirement:
+          "Year 12 or equivalent. Covers management, operations and business planning, and can carry credit into a bachelor degree. Material fees are charged separately.",
+        englishRequirement: "IELTS Academic 5.5 to 6.0 overall, depending on the provider.",
+        nextIntake: "Rolling intakes at most RTOs",
+        field: "Business",
       },
     ],
     extended:
@@ -561,6 +594,8 @@ export default function ServicePage({
               fieldOrder={VET_FIELD_ORDER}
               feeBands={VET_FEE_BANDS}
               feeLegend="Budget per year"
+              showIntake={false}
+              showEnglish={false}
             />
             <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
               {INDICATIVE_NOTICE}

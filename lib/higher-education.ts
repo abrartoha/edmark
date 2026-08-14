@@ -68,6 +68,7 @@ export const FIELD_ORDER: Field[] = [
 /** Display order for the vocational list. */
 export const VET_FIELD_ORDER: Field[] = [
   "Construction & Trades",
+  "Business",
   "Electrical & Refrigeration",
   "Engineering & Fabrication",
   "Automotive",
