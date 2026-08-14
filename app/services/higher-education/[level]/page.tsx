@@ -31,8 +31,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
   const level = getLevel(params.level);
   if (!level) notFound();
 
-  // Empty on a level whose courses carry no field, e.g. pathway programs,
-  // which then falls back to the flat grid.
+  // Falls back to a flat grid on a level whose courses carry no field.
   const groups = courseGroups(level.courses);
 
   return (

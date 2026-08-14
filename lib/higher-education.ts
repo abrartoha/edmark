@@ -97,7 +97,7 @@ export type Course = {
   field?: Field;
 };
 
-export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
+export type LevelSlug = "undergraduate" | "postgraduate";
 
 export type Level = {
   slug: LevelSlug;
@@ -737,149 +737,6 @@ export const levels: Level[] = [
     ],
     skilledOccupationRelated: true,
   },
-  {
-    slug: "pathway-programs",
-    title: "Pathway programs",
-    tagline:
-      "Foundation, diploma-to-degree and ELICOS routes that get you to the entry requirement.",
-    intro: [
-      "Pathway programs exist to get you to a university's entry requirement rather than around it. Foundation studies build academic and English skills for degree entry, diploma programs can carry credit equivalent to the first year of a bachelor degree so you continue into second year, and ELICOS courses lift your English to the level a course requires.",
-      "Where a pathway leads into a degree, both can be issued together as a packaged offer on a single student visa, so you apply once rather than twice.",
-    ],
-    courses: [
-      {
-        name: "Foundation studies",
-        duration: "About 1 year full time",
-        tuitionBasis: "per semester",
-        entryRequirement:
-          "Leads into year 1 of a bachelor degree. Suited to a Year 11 or Year 12 result below the direct-entry level for your chosen degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "February, June and October",
-        skilledOccupation: false,
-      },
-      {
-        name: "Diploma to degree (Business or IT)",
-        duration: "1 year full time",
-        tuitionMin: 19000,
-        tuitionMax: 38000,
-        tuitionBasis: "for the full course",
-        entryRequirement:
-          "Usually carries credit into year 2 of a bachelor degree, so you continue rather than start again.",
-        englishRequirement: "IELTS Academic 5.5 to 6.0.",
-        nextIntake: "February, July and November",
-        skilledOccupation: false,
-      },
-      {
-        name: "ELICOS (English language)",
-        duration: "Flexible, set by the gap between your English and your next course",
-        tuitionMin: 400,
-        tuitionMax: 500,
-        tuitionBasis: "per week",
-        entryRequirement:
-          "Packaged with a main course on a single student visa, so you apply once rather than twice.",
-        englishRequirement: "No minimum to enter. A placement test sets your starting level.",
-        nextIntake: "Rolling starts through the year",
-        skilledOccupation: false,
-      },
-      {
-        name: "Diploma of Business",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 17750,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March, July and November",
-        skilledOccupation: false,
-        field: "Business",
-      },
-      {
-        name: "Diploma of Information Technology",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 20000,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March",
-        skilledOccupation: false,
-        field: "Computing & IT",
-      },
-      {
-        name: "Diploma of Education",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 19000,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 6.5.",
-        nextIntake: "March and July",
-        skilledOccupation: false,
-        field: "Education & Teaching",
-      },
-      {
-        name: "Diploma of Engineering",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 24000,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March and July",
-        skilledOccupation: false,
-        field: "Engineering",
-      },
-      {
-        name: "Diploma of Health",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 23500,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5 to 6.5.",
-        nextIntake: "March and July",
-        skilledOccupation: false,
-        field: "Health",
-      },
-      {
-        name: "Diploma of Legal Studies",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 21000,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March and July",
-        skilledOccupation: false,
-        field: "Law",
-      },
-      {
-        name: "Diploma of Science",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 20000,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March",
-        skilledOccupation: false,
-        field: "Science",
-      },
-      {
-        name: "Diploma of Hotel Management",
-        duration: "1 year full time",
-        tuitionMin: 13000,
-        tuitionMax: 17750,
-        tuitionBasis: "per semester",
-        entryRequirement: "Completed Year 12 or equivalent. Designed to carry credit into a related bachelor degree.",
-        englishRequirement: "IELTS Academic 5.5.",
-        nextIntake: "March, July and November",
-        skilledOccupation: false,
-        field: "Hotel Management",
-      },
-    ],
-    skilledOccupationRelated: false,
-  },
 ];
 
 export function getLevel(slug: string) {
@@ -898,10 +755,6 @@ export const whichLevel: { title: string; body: string }[] = [
   {
     title: "Postgraduate coursework",
     body: "A masters by coursework, AQF level 9, taught through structured units rather than a research thesis. Usually one to two years, often shorter if your bachelor degree or work experience earns credit. Start here if you already hold a degree.",
-  },
-  {
-    title: "Pathway programs",
-    body: "Foundation studies, diploma-to-degree and ELICOS English courses. These get you to the entry requirement rather than around it, and a diploma can carry credit worth the first year of a degree. Start here if you are close to a requirement but not yet meeting it.",
   },
 ];
 

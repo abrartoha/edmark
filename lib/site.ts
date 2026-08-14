@@ -81,7 +81,7 @@ export const nav: NavItem[] = [
       {
         label: "Higher Education",
         href: "/services/higher-education",
-        note: "Bachelor degrees · Masters by coursework · Pathway & foundation programs",
+        note: "Bachelor degrees · Masters by coursework",
       },
       {
         label: "Vocational (VET) & short courses",

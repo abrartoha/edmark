@@ -9,6 +9,13 @@ const nextConfig = {
         destination: "/research-degrees",
         permanent: true,
       },
+      {
+        // The pathway level was removed from higher education. The route was
+        // live and indexable, so it redirects to the hub rather than 404ing.
+        source: "/services/higher-education/pathway-programs",
+        destination: "/services/higher-education",
+        permanent: true,
+      },
     ];
   },
 

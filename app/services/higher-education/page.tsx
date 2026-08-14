@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Higher Education in Australia",
   description:
-    "Bachelor degrees, Masters by coursework and pathway programs at Australian universities. Entry requirements explained plainly, with 2026 intake planning guidance from Edmark Education.",
+    "Bachelor degrees and Masters by coursework at Australian universities. Entry requirements explained plainly, with 2026 intake planning guidance from Edmark Education.",
   alternates: { canonical: "/services/higher-education" },
 };
 
@@ -31,7 +31,7 @@ export default function HigherEducationPage() {
             <span className="text-eucalypt-light">route that gets you there</span>
           </>
         }
-        subtitle="Bachelor degrees, Masters by coursework and the pathway programs that lead into them."
+        subtitle="Bachelor degrees and Masters by coursework at Australian universities."
       />
       <Breadcrumb
         items={[
@@ -40,14 +40,14 @@ export default function HigherEducationPage() {
         ]}
       />
 
-      {/* Levels. First on the page so the three routes and their courses are
-          the first thing a visitor can act on. */}
+      {/* Levels. First on the page so the routes and their courses are the
+          first thing a visitor can act on. */}
       <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <p className="eyebrow">Explore by level</p>
           <h2 className="mt-3 text-3xl sm:text-4xl">Where would you start?</h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {levels.map((l) => (
               <Link
                 key={l.slug}
@@ -77,9 +77,9 @@ export default function HigherEducationPage() {
         <div className="container-page">
           <p className="eyebrow">Which level is right for you</p>
           <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
-            Three levels, three different starting points
+            Two levels, two different starting points
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {whichLevel.map((w) => (
               <div key={w.title} className="card">
                 <h3 className="text-lg">{w.title}</h3>
