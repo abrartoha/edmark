@@ -37,13 +37,6 @@ export default function CourseCard({ course }: { course: Course }) {
         <Row label="Typical entry requirement" value={course.entryRequirement} />
         <Row label="English requirement" value={course.englishRequirement} />
         <Row label="Next intake" value={course.nextIntake} />
-
-        {/* "Related" on purpose. Asserting a course IS on a current skilled
-            list would be a claim we cannot stand behind between updates, which
-            is what the ANZSCO footnote under the grid exists to qualify. */}
-        {course.skilledOccupation && course.anzsco && (
-          <Row label="Related skilled occupation" value={course.anzsco} />
-        )}
       </dl>
     </article>
   );

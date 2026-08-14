@@ -20,11 +20,8 @@
 //   englishRequirement   Free text, e.g. "IELTS Academic 6.0".
 //   nextIntake           Free text, e.g. "February and July".
 //   skilledOccupation    true only where the qualification maps to an
-//                        occupation on a skilled list. Setting it true prints
-//                        the ANZSCO reference on the card, and any true entry
-//                        on a level pulls the MARA notice onto that page.
-//   anzsco               Occupation name and code. Required when
-//                        skilledOccupation is true, ignored otherwise.
+//                        occupation on a skilled list. Recorded as data; it is
+//                        not rendered, and no occupation code is published.
 //
 // The indicative-only notice renders under every course listing on all four
 // pages. It is not configurable, by design.
@@ -46,8 +43,6 @@ export type Course = {
   tuitionBasis?: string;
   /** Optional so the short-courses list, which shares this type, stays valid. */
   skilledOccupation?: boolean;
-  /** Occupation name and ANZSCO code. Only read when skilledOccupation. */
-  anzsco?: string;
 };
 
 export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
@@ -84,7 +79,6 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0, so that standard cannot be lowered by a provider.",
         nextIntake: "February, with July at some providers",
         skilledOccupation: true,
-        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
         name: "Bachelor of Business",
@@ -105,7 +99,6 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
-        anzsco: "Accountant (General), ANZSCO 221111",
       },
       {
         name: "Bachelor of Information Technology / Networking",
@@ -116,7 +109,6 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
-        anzsco: "Software Engineer, ANZSCO 261313, and related ICT occupations",
       },
       {
         name: "Bachelor of Engineering",
@@ -127,7 +119,6 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February and July",
         skilledOccupation: true,
-        anzsco: "Engineering occupations, for example Civil Engineer, ANZSCO 233211",
       },
       {
         name: "Bachelor of Early Childhood Education",
@@ -139,7 +130,6 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. Teacher registration authorities set their own standard on top of the provider's.",
         nextIntake: "February and July",
         skilledOccupation: true,
-        anzsco: "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111",
       },
     ],
     skilledOccupationRelated: true,
@@ -163,7 +153,6 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0 to 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
-        anzsco: "ICT occupations, for example Software Engineer, ANZSCO 261313",
       },
       {
         name: "Master of Professional Accounting",
@@ -175,7 +164,6 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
-        anzsco: "Accountant (General), ANZSCO 221111",
       },
       {
         name: "MBA / Master of Business",
@@ -209,7 +197,6 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0 where the program leads to registration.",
         nextIntake: "February and July",
         skilledOccupation: true,
-        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
         name: "Master of Teaching",
@@ -222,8 +209,6 @@ export const levels: Level[] = [
           "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
         nextIntake: "February and July",
         skilledOccupation: true,
-        anzsco:
-          "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111, and Secondary School Teacher, ANZSCO 241411",
       },
     ],
     skilledOccupationRelated: true,
