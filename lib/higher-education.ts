@@ -14,8 +14,10 @@
 //   tuitionMin / Max     Whole dollars, no commas or $ sign. Omit BOTH when
 //                        fees genuinely vary too widely to quote; the card
 //                        then reads "Varies by provider" rather than a number.
-//   tuitionBasis         Defaults to "per year". Use "for the full course" or
-//                        "per week" where that is how the fee is actually set.
+//   tuitionBasis         Defaults to "per year", which is why every degree
+//                        here sets it explicitly to "per semester". The
+//                        pathway entries use "for the full course" and
+//                        "per week", because that is how they are priced.
 //   entryRequirement     Free text. Keep it generic across the network.
 //   englishRequirement   Free text, e.g. "IELTS Academic 6.0".
 //   nextIntake           Free text, e.g. "February and July".
@@ -70,10 +72,33 @@ export const levels: Level[] = [
     ],
     courses: [
       {
+        name: "Bachelor of Information Technology / Networking",
+        duration: "3 years full time",
+        tuitionMin: 4800,
+        tuitionMax: 20000,
+        tuitionBasis: "per semester",
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+      },
+      {
+        name: "Bachelor of Business",
+        duration: "3 years full time",
+        tuitionMin: 4800,
+        tuitionMax: 17750,
+        tuitionBasis: "per semester",
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "February, July and November",
+        skilledOccupation: false,
+      },
+      {
         name: "Bachelor of Nursing",
         duration: "3 years full time",
-        tuitionMin: 36000,
-        tuitionMax: 47000,
+        tuitionMin: 18000,
+        tuitionMax: 23500,
+        tuitionBasis: "per semester",
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement:
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0, so that standard cannot be lowered by a provider.",
@@ -81,30 +106,11 @@ export const levels: Level[] = [
         skilledOccupation: true,
       },
       {
-        name: "Bachelor of Business",
-        duration: "3 years full time",
-        tuitionMin: 17500,
-        tuitionMax: 35500,
-        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
-        englishRequirement: "IELTS Academic 6.0.",
-        nextIntake: "February, July and November",
-        skilledOccupation: false,
-      },
-      {
         name: "Bachelor of Accounting",
         duration: "3 years full time",
-        tuitionMin: 26000,
-        tuitionMax: 35000,
-        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
-        englishRequirement: "IELTS Academic 6.0.",
-        nextIntake: "February, July and November",
-        skilledOccupation: true,
-      },
-      {
-        name: "Bachelor of Information Technology / Networking",
-        duration: "3 years full time",
-        tuitionMin: 19000,
-        tuitionMax: 40000,
+        tuitionMin: 13000,
+        tuitionMax: 17500,
+        tuitionBasis: "per semester",
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
@@ -113,8 +119,9 @@ export const levels: Level[] = [
       {
         name: "Bachelor of Engineering",
         duration: "4 years full time",
-        tuitionMin: 38000,
-        tuitionMax: 48000,
+        tuitionMin: 19000,
+        tuitionMax: 24000,
+        tuitionBasis: "per semester",
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February and July",
@@ -123,8 +130,9 @@ export const levels: Level[] = [
       {
         name: "Bachelor of Early Childhood Education",
         duration: "3 to 4 years full time",
-        tuitionMin: 30000,
-        tuitionMax: 38000,
+        tuitionMin: 15000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement:
           "IELTS Academic 6.5 to 7.0. Teacher registration authorities set their own standard on top of the provider's.",
@@ -147,29 +155,20 @@ export const levels: Level[] = [
       {
         name: "Master of Information Technology / Networking",
         duration: "2 years full time",
-        tuitionMin: 21000,
-        tuitionMax: 40000,
+        tuitionMin: 6500,
+        tuitionMax: 20000,
+        tuitionBasis: "per semester",
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.0 to 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
       },
       {
-        name: "Master of Professional Accounting",
-        duration: "2 years full time",
-        tuitionMin: 20500,
-        tuitionMax: 38500,
-        entryRequirement:
-          "A completed bachelor degree in any discipline. Designed as an entry route for graduates without an accounting background.",
-        englishRequirement: "IELTS Academic 6.5.",
-        nextIntake: "February, July and November",
-        skilledOccupation: true,
-      },
-      {
         name: "MBA / Master of Business",
         duration: "1.5 to 2 years full time",
-        tuitionMin: 18500,
-        tuitionMax: 39500,
+        tuitionMin: 6500,
+        tuitionMax: 19750,
+        tuitionBasis: "per semester",
         entryRequirement:
           "A completed bachelor degree. Some providers also expect professional work experience.",
         englishRequirement: "IELTS Academic 6.5.",
@@ -177,10 +176,23 @@ export const levels: Level[] = [
         skilledOccupation: false,
       },
       {
+        name: "Master of Professional Accounting",
+        duration: "2 years full time",
+        tuitionMin: 10250,
+        tuitionMax: 19250,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "A completed bachelor degree in any discipline. Designed as an entry route for graduates without an accounting background.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "February, July and November",
+        skilledOccupation: true,
+      },
+      {
         name: "Master of Business Analytics",
         duration: "2 years full time",
-        tuitionMin: 35000,
-        tuitionMax: 40000,
+        tuitionMin: 17500,
+        tuitionMax: 20000,
+        tuitionBasis: "per semester",
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
@@ -189,8 +201,9 @@ export const levels: Level[] = [
       {
         name: "Master of Nursing",
         duration: "1.5 to 2 years full time",
-        tuitionMin: 34500,
-        tuitionMax: 47500,
+        tuitionMin: 17250,
+        tuitionMax: 23750,
+        tuitionBasis: "per semester",
         entryRequirement:
           "A completed bachelor degree, or registration as a nurse depending on the stream.",
         englishRequirement:
@@ -201,8 +214,9 @@ export const levels: Level[] = [
       {
         name: "Master of Teaching",
         duration: "2 years full time",
-        tuitionMin: 34000,
-        tuitionMax: 38000,
+        tuitionMin: 17000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
         entryRequirement:
           "A completed bachelor degree in a related discipline. This is the postgraduate route into teacher registration.",
         englishRequirement:
@@ -226,6 +240,7 @@ export const levels: Level[] = [
       {
         name: "Foundation studies",
         duration: "About 1 year full time",
+        tuitionBasis: "per semester",
         entryRequirement:
           "Leads into year 1 of a bachelor degree. Suited to a Year 11 or Year 12 result below the direct-entry level for your chosen degree.",
         englishRequirement: "IELTS Academic 5.5.",

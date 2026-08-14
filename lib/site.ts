@@ -27,11 +27,11 @@ export const site = {
   },
   team: [
     {
-      name: "Abrar Hossain Chy Toha",
-      role: "Operations Manager",
+      name: "Ashab Ahmed Sakib",
+      role: "CEO",
       credential: "",
-      email: "abrar@edmark.com.au",
-      image: "/images/abrar.png",
+      email: "sakib@edmark.com.au",
+      image: "/images/sakib.png",
     },
     {
       name: "Mahin Khan",
@@ -41,13 +41,13 @@ export const site = {
       image: "/images/mahin.png",
     },
     {
-      name: "Ashab Ahmed Sakib",
-      role: "CEO",
+      name: "Abrar Hossain Chy Toha",
+      role: "Operations Manager",
       credential: "",
-      email: "sakib@edmark.com.au",
-      image: "/images/sakib.png",
+      email: "abrar@edmark.com.au",
+      image: "/images/abrar.png",
     },
-  ],
+    ],
   hours: "Mon–Sat: 8:00am – 7:00pm",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61592129003362",
