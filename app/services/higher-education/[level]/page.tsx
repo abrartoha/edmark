@@ -7,7 +7,7 @@ import CourseCard from "@/components/CourseCard";
 import CTA from "@/components/CTA";
 import { IconArrow } from "@/components/Icons";
 import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
-import { coursesByField, fieldSlug, getLevel, levels } from "@/lib/higher-education";
+import { courseGroups, fieldSlug, getLevel, levels } from "@/lib/higher-education";
 
 export function generateStaticParams() {
   return levels.map((l) => ({ level: l.slug }));
@@ -33,7 +33,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
 
   // Empty on a level whose courses carry no field, e.g. pathway programs,
   // which then falls back to the flat grid.
-  const groups = coursesByField(level.courses);
+  const groups = courseGroups(level.courses);
 
   return (
     <>
@@ -77,11 +77,11 @@ export default function LevelPage({ params }: { params: { level: string } }) {
               <nav className="mt-10 grid gap-x-10 gap-y-0 sm:grid-cols-2 lg:grid-cols-3" aria-label="Browse by field">
                 {groups.map((g) => (
                   <a
-                    key={g.field}
-                    href={`#${fieldSlug(g.field)}`}
+                    key={g.label}
+                    href={`#${fieldSlug(g.label)}`}
                     className="group flex items-center justify-between gap-4 border-b border-line py-4 text-base font-medium text-ink transition-colors hover:text-eucalypt"
                   >
-                    {g.field}
+                    {g.label}
                     <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-mint-300 text-ink transition-transform group-hover:translate-x-0.5">
                       <IconArrow className="h-3.5 w-3.5" />
                     </span>
@@ -90,8 +90,8 @@ export default function LevelPage({ params }: { params: { level: string } }) {
               </nav>
 
               {groups.map((g) => (
-                <div key={g.field} className="mt-14 scroll-mt-28" id={fieldSlug(g.field)}>
-                  <h3 className="text-2xl">{g.field}</h3>
+                <div key={g.label} className="mt-14 scroll-mt-28" id={fieldSlug(g.label)}>
+                  <h3 className="text-2xl">{g.label}</h3>
                   <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {g.courses.map((c, i) => (
                       <CourseCard key={`${c.name}-${i}`} course={c} />
