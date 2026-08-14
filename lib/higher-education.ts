@@ -49,7 +49,9 @@ export type Field =
   | "Hospitality & Cookery"
   | "Health & Community Care"
   | "Early Childhood Education"
-  | "Security";
+  | "Security"
+  | "Electrical & Refrigeration"
+  | "Engineering & Fabrication";
 
 /** Fixed display order, so the index reads the same on every level. */
 export const FIELD_ORDER: Field[] = [
@@ -66,6 +68,8 @@ export const FIELD_ORDER: Field[] = [
 /** Display order for the vocational list. */
 export const VET_FIELD_ORDER: Field[] = [
   "Construction & Trades",
+  "Electrical & Refrigeration",
+  "Engineering & Fabrication",
   "Automotive",
   "Hospitality & Cookery",
   "Health & Community Care",

@@ -110,7 +110,9 @@ export default function CourseBrowser({
       field: (c: Course) => fields.size === 0 || (c.field ? fields.has(c.field) : false),
       fee: (c: Course) =>
         fees.size === 0 ||
-        feeBands.some((b) => fees.has(b.label) && (c.tuitionMin ?? 0) <= b.max),
+        feeBands.some(
+          (b) => fees.has(b.label) && c.tuitionMin != null && c.tuitionMin <= b.max
+        ),
       month: (c: Course) =>
         months.size === 0 || intakeMonthsOf(c).some((m) => months.has(m)),
       ielts: (c: Course) => {
@@ -228,7 +230,11 @@ export default function CourseBrowser({
                 key={b.label}
                 label={b.label}
                 checked={fees.has(b.label)}
-                count={others("fee").filter((c) => (c.tuitionMin ?? 0) <= b.max).length}
+                count={
+                  others("fee").filter(
+                    (c) => c.tuitionMin != null && c.tuitionMin <= b.max
+                  ).length
+                }
                 onChange={() => setFees(toggle(fees, b.label))}
               />
             ))}
