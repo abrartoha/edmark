@@ -358,6 +358,36 @@ export default function ServicePage({
         ]}
       />
 
+      {/* Courses lead the page where a service has them, so clicking through
+          to VET lands on the list and its filters rather than on service copy.
+          The explanatory sections follow underneath. */}
+      {extras?.courses && (
+        <section className="border-b border-line bg-paper py-16 lg:py-24">
+          <div className="container-page">
+            <p className="eyebrow">Courses</p>
+            <h2 className="mt-3 text-3xl sm:text-4xl">
+              What you can study
+            </h2>
+            {/* Same browser as higher education, configured for vocational
+                study: trade study areas, annual fee tiers rather than per
+                semester, and no Level group since VET has none. */}
+            <CourseBrowser
+              courses={extras.courses.map((c) => ({
+                ...c,
+                levelSlug: "",
+                levelTitle: "",
+              }))}
+              fieldOrder={VET_FIELD_ORDER}
+              feeBands={VET_FEE_BANDS}
+              feeLegend="Budget per year"
+            />
+            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
+              {INDICATIVE_NOTICE}
+            </p>
+          </div>
+        </section>
+      )}
+
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page grid gap-16 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
@@ -441,31 +471,6 @@ export default function ServicePage({
           </div>
         </div>
 
-        {/* Course list, only where the service has one. */}
-        {extras?.courses && (
-          <div className="container-page mt-16">
-            <p className="eyebrow">Courses</p>
-            <h2 className="mt-3 text-3xl sm:text-4xl">
-              What you can study
-            </h2>
-            {/* Same browser as higher education, configured for vocational
-                study: trade study areas, annual fee tiers rather than per
-                semester, and no Level group since VET has none. */}
-            <CourseBrowser
-              courses={extras.courses.map((c) => ({
-                ...c,
-                levelSlug: "",
-                levelTitle: "",
-              }))}
-              fieldOrder={VET_FIELD_ORDER}
-              feeBands={VET_FEE_BANDS}
-              feeLegend="Budget per year"
-            />
-            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
-              {INDICATIVE_NOTICE}
-            </p>
-          </div>
-        )}
       </section>
 
       <section className="bg-brand-50 py-16 lg:py-24">
