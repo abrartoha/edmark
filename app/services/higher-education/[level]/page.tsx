@@ -60,7 +60,11 @@ export default function LevelPage({ params }: { params: { level: string } }) {
         </div>
       </section>
 
-      <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
+      {/* Paper, not paper-sunk. paper-sunk is Sand 200, a warm cream, and
+          the course cards are Mint 100, a cool tint. Sitting one on the other
+          put two competing tints in the same block. The border-y keeps this
+          section separated from the intro above it. */}
+      <section className="border-y border-line bg-paper py-16 lg:py-24">
         <div className="container-page">
           <p className="eyebrow">Courses</p>
           <h2 className="mt-3 text-3xl sm:text-4xl">{level.title} options</h2>
