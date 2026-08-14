@@ -27,6 +27,7 @@ export const universities: Institution[] = [
   { slug: "torrens", name: "Torrens University", meta: "Melbourne, VIC · multiple campuses", hasLogo: true, url: "https://www.torrens.edu.au" },
   { slug: "utas", name: "University of Tasmania", meta: "Hobart, TAS", hasLogo: true, url: "https://www.utas.edu.au" },
   { slug: "cdu", name: "Charles Darwin University", meta: "Darwin, NT", hasLogo: true, url: "https://www.cdu.edu.au" },
+  { slug: "southerncross", name: "Southern Cross University", meta: "Gold Coast, NSW · Sydney & Melbourne campuses", hasLogo: true, url: "https://www.scu.edu.au" },
 ];
 
 export const tafes: Institution[] = [

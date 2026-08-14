@@ -32,6 +32,41 @@
 // institution rather than by level, so a single value here would be invented.
 // ============================================================================
 
+/** Study areas, used to group and index the course lists on a level page. */
+export type Field =
+  | "Business"
+  | "Computing & IT"
+  | "Education & Teaching"
+  | "Engineering"
+  | "Health"
+  | "Hotel Management"
+  | "Law"
+  | "Science";
+
+/** Fixed display order, so the index reads the same on every level. */
+export const FIELD_ORDER: Field[] = [
+  "Business",
+  "Computing & IT",
+  "Education & Teaching",
+  "Engineering",
+  "Health",
+  "Hotel Management",
+  "Law",
+  "Science",
+];
+
+/** Anchor id for a field heading. */
+export const fieldSlug = (f: string) =>
+  f.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/** Fields actually present on a level, in FIELD_ORDER, each with its courses. */
+export function coursesByField(courses: Course[]): { field: Field; courses: Course[] }[] {
+  return FIELD_ORDER.map((field) => ({
+    field,
+    courses: courses.filter((c) => c.field === field),
+  })).filter((g) => g.courses.length > 0);
+}
+
 export type Course = {
   name: string;
   duration: string;
@@ -45,6 +80,8 @@ export type Course = {
   tuitionBasis?: string;
   /** Optional so the short-courses list, which shares this type, stays valid. */
   skilledOccupation?: boolean;
+  /** Study area. Drives the browse-by-field index on a level page. */
+  field?: Field;
 };
 
 export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
@@ -81,6 +118,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
+        field: "Computing & IT",
       },
       {
         name: "Bachelor of Business",
@@ -92,6 +130,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
         skilledOccupation: false,
+        field: "Business",
       },
       {
         name: "Bachelor of Nursing",
@@ -104,6 +143,7 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0, so that standard cannot be lowered by a provider.",
         nextIntake: "February, with July at some providers",
         skilledOccupation: true,
+        field: "Health",
       },
       {
         name: "Bachelor of Accounting",
@@ -115,6 +155,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
+        field: "Business",
       },
       {
         name: "Bachelor of Engineering",
@@ -126,6 +167,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February and July",
         skilledOccupation: true,
+        field: "Engineering",
       },
       {
         name: "Bachelor of Early Childhood Education",
@@ -138,6 +180,84 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. Teacher registration authorities set their own standard on top of the provider's.",
         nextIntake: "February and July",
         skilledOccupation: true,
+        field: "Education & Teaching",
+      },
+      {
+        name: "Bachelor of Social Work",
+        duration: "4 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "Completed Year 12 or equivalent. Includes supervised field placements across the degree.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "March, July and November",
+        skilledOccupation: true,
+        field: "Health",
+      },
+      {
+        name: "Bachelor of Psychological Science",
+        duration: "3 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "Completed Year 12 or equivalent. Registration as a psychologist needs further postgraduate study on top of this degree.",
+        englishRequirement: "IELTS Academic 6.0 to 6.5.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Health",
+      },
+      {
+        name: "Bachelor of Health Science",
+        duration: "3 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
+        entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
+        englishRequirement: "IELTS Academic 6.0 to 6.5.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Health",
+      },
+      {
+        name: "Bachelor of Laws",
+        duration: "4 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 21000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "Completed Year 12 or equivalent. Admission to practise in Australia requires further practical legal training after the degree.",
+        englishRequirement: "IELTS Academic 6.5 to 7.0.",
+        nextIntake: "March and July",
+        skilledOccupation: false,
+        field: "Law",
+      },
+      {
+        name: "Bachelor of Science",
+        duration: "3 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 20000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "Completed Year 12 or equivalent. Majors range from environmental and marine science through to biomedical science.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Science",
+      },
+      {
+        name: "Bachelor of Business (Hotel Management)",
+        duration: "3 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 17750,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "Completed Year 12 or equivalent. Usually includes an industry placement.",
+        englishRequirement: "IELTS Academic 6.0.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Hotel Management",
       },
     ],
     skilledOccupationRelated: true,
@@ -162,6 +282,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.0 to 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
+        field: "Computing & IT",
       },
       {
         name: "MBA / Master of Business",
@@ -174,6 +295,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: false,
+        field: "Business",
       },
       {
         name: "Master of Professional Accounting",
@@ -186,6 +308,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: true,
+        field: "Business",
       },
       {
         name: "Master of Business Analytics",
@@ -197,6 +320,7 @@ export const levels: Level[] = [
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
         skilledOccupation: false,
+        field: "Business",
       },
       {
         name: "Master of Nursing",
@@ -210,6 +334,7 @@ export const levels: Level[] = [
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0 where the program leads to registration.",
         nextIntake: "February and July",
         skilledOccupation: true,
+        field: "Health",
       },
       {
         name: "Master of Teaching",
@@ -223,6 +348,59 @@ export const levels: Level[] = [
           "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
         nextIntake: "February and July",
         skilledOccupation: true,
+        field: "Education & Teaching",
+      },
+      {
+        name: "Master of Social Work",
+        duration: "2 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 19000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "A completed bachelor degree. This is the qualifying route into professional social work for graduates of another discipline.",
+        englishRequirement: "IELTS Academic 7.0.",
+        nextIntake: "March and July",
+        skilledOccupation: true,
+        field: "Health",
+      },
+      {
+        name: "Master of Engineering",
+        duration: "2 years full time",
+        tuitionMin: 13000,
+        tuitionMax: 24000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "A completed bachelor degree in engineering or a closely related discipline.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "March and July",
+        skilledOccupation: true,
+        field: "Engineering",
+      },
+      {
+        name: "Graduate Certificate in Business",
+        duration: "6 months full time",
+        tuitionMin: 13000,
+        tuitionMax: 13000,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "A completed bachelor degree. Often used as a shorter entry point that credits into a masters.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Business",
+      },
+      {
+        name: "Graduate Diploma in Business",
+        duration: "1 year full time",
+        tuitionMin: 13000,
+        tuitionMax: 19750,
+        tuitionBasis: "per semester",
+        entryRequirement:
+          "A completed bachelor degree, or a graduate certificate carrying credit.",
+        englishRequirement: "IELTS Academic 6.5.",
+        nextIntake: "March, July and November",
+        skilledOccupation: false,
+        field: "Business",
       },
     ],
     skilledOccupationRelated: true,
