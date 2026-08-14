@@ -96,7 +96,7 @@ export const timingPrompt: Record<Timing, string> = {
   "one-year":
     "Plenty of runway. Book a free consultation to plan your intake and budget.",
   exploring:
-    "No rush. Book a free consultation whenever you're ready — it's free and there's no obligation.",
+    "No rush. Book a free consultation whenever you're ready. It's free and there's no obligation.",
 };
 
 // ---------------------------------------------------------------------------

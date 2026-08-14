@@ -27,8 +27,8 @@ export default function Hero() {
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
             Choosing a course, a college and a city is the biggest decision
             you&apos;ll make. We help international students in Australia get it
-            right the first time &mdash; free, and with no pressure to enrol
-            anywhere.
+            right the first time. It&apos;s free, and there&apos;s no pressure
+            to enrol anywhere.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">

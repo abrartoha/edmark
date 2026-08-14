@@ -339,7 +339,7 @@ export const entryRequirementsExample = {
 // drift through an edit to the page. Do not reword.
 // ---------------------------------------------------------------------------
 export const INTAKE_PLANNING_2026 =
-  "Australia's National Planning Level for 2026 is 295,000 new international student commencements, with higher education providers sharing 196,750 of those places. It operates as a visa processing priority system rather than a hard refusal limit — once a provider reaches its allocation, visa processing for its students can slow significantly. Students moving into public universities from Australian schooling or from pathway colleges are exempt from the planning level. We'll tell you which providers still have room for your intake.";
+  "Australia's National Planning Level for 2026 is 295,000 new international student commencements, with higher education providers sharing 196,750 of those places. It operates as a visa processing priority system rather than a hard refusal limit. Once a provider reaches its allocation, visa processing for its students can slow significantly. Students moving into public universities from Australian schooling or from pathway colleges are exempt from the planning level. We'll tell you which providers still have room for your intake.";
 
 // ---------------------------------------------------------------------------
 // HUB BLOCK 4 — Scholarships
