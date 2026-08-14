@@ -288,6 +288,24 @@ export const FIELD_INFO: Record<string, FieldInfo> = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// Course photography. Listed explicitly rather than probed from disk, because
+// the card renders inside a client component and cannot read the filesystem.
+// A course without an entry here falls back to its study area illustration,
+// so the two can coexist and photos can arrive a few at a time.
+// ---------------------------------------------------------------------------
+export const COURSE_PHOTOS = new Set<string>([
+  "bachelor-of-business",
+  "bachelor-of-education",
+  "bachelor-of-nursing",
+  "bachelor-of-psychological-science",
+  "bachelor-of-speech-pathology",
+]);
+
+export function coursePhoto(slug?: string): string | null {
+  return slug && COURSE_PHOTOS.has(slug) ? `/images/courses/${slug}.jpg` : null;
+}
+
 export function fieldInfo(field?: Field | string): FieldInfo | undefined {
   return field ? FIELD_INFO[field] : undefined;
 }

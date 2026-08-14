@@ -7,7 +7,14 @@ import CTA from "@/components/CTA";
 import FieldArt from "@/components/FieldArt";
 import { IconArrow, IconCheck } from "@/components/Icons";
 import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
-import { catalog, fieldInfo, getCourse, relatedCourses } from "@/lib/course-catalog";
+import Image from "next/image";
+import {
+  catalog,
+  coursePhoto,
+  fieldInfo,
+  getCourse,
+  relatedCourses,
+} from "@/lib/course-catalog";
 import { splitCourseName } from "@/components/CourseCard";
 
 export function generateStaticParams() {
@@ -51,17 +58,29 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   const { qualification, subject, code } = splitCourseName(course.name);
   const info = fieldInfo(course.field);
   const related = relatedCourses(course);
+  const photo = coursePhoto(course.slug);
 
   return (
     <>
-      {/* Illustrated header rather than a photograph, drawn in the site
-          palette. One scene per study area, so a course reads as part of a
-          group instead of carrying stock imagery that fits nothing. */}
+      {/* A photograph where the course has one. Where it does not, the study
+          area illustration stands in, drawn in the site palette, so the header
+          never renders empty while photos arrive a few at a time. */}
       <section className="relative overflow-hidden bg-ink">
-        <FieldArt
-          field={course.field}
-          className="absolute inset-0 h-full w-full opacity-30"
-        />
+        {photo ? (
+          <Image
+            src={photo}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="absolute inset-0 object-cover opacity-40"
+          />
+        ) : (
+          <FieldArt
+            field={course.field}
+            className="absolute inset-0 h-full w-full opacity-30"
+          />
+        )}
         <div className="container-page relative py-16 lg:py-20">
           <p className="text-xs font-medium uppercase tracking-wider text-mist">
             {course.sector}

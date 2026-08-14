@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import FieldArt from "./FieldArt";
+import { coursePhoto } from "@/lib/course-catalog";
 import type { Course } from "@/lib/higher-education";
 
 function formatTuition(min?: number, max?: number): string {
@@ -66,14 +68,29 @@ export default function CourseCard({
   // rather than clearing it, so the secondary text here uses copy at 7.9:1.
   const { qualification, subject, code } = splitCourseName(course.name);
 
+  // href is always /courses/<slug>, so the photo is looked up from it rather
+  // than threading a second prop through every caller.
+  const slug = href?.replace("/courses/", "");
+  const photo = coursePhoto(slug);
+
+  const media = "-mx-7 -mt-7 mb-6 h-36 w-[calc(100%+3.5rem)] rounded-tr-[2.5rem] object-cover";
+
   const body = (
     <>
-      {/* Illustration sits above the title and is decorative: the study area
-          is already named in the text, so it carries no extra meaning. */}
-      <FieldArt
-        field={course.field}
-        className="-mx-7 -mt-7 mb-6 h-32 w-[calc(100%+3.5rem)] rounded-tr-[2.5rem] object-cover"
-      />
+      {/* A photograph where the course has one, otherwise the study area
+          illustration. Decorative either way: the course is named in the text
+          beside it, so the alt text stays empty rather than repeating it. */}
+      {photo ? (
+        <Image
+          src={photo}
+          alt=""
+          width={1200}
+          height={805}
+          className={media}
+        />
+      ) : (
+        <FieldArt field={course.field} className={media} />
+      )}
       <h3 className="leading-snug">
         {qualification && (
           <span className="block text-xs font-medium uppercase tracking-wider text-copy">
