@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
-import { IconArrow } from "@/components/Icons";
-import { INDICATIVE_NOTICE } from "@/lib/compliance";
+import CourseBrowser from "@/components/CourseBrowser";
+import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
 import {
   INTAKE_PLANNING_2026,
   SCHOLARSHIPS_NOTE,
@@ -40,33 +39,38 @@ export default function HigherEducationPage() {
         ]}
       />
 
-      {/* Levels. First on the page so the routes and their courses are the
-          first thing a visitor can act on. */}
-      <section className="border-y border-line bg-paper-sunk py-16 lg:py-24">
+      {/* The browser leads the page. Level is one of its filters, so there is
+          no card grid in between: the nav link lands straight on the courses. */}
+      <section className="border-y border-line bg-paper py-16 lg:py-24">
         <div className="container-page">
-          <p className="eyebrow">Explore by level</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl">Where would you start?</h2>
+          <p className="eyebrow">Courses</p>
+          <h2 className="mt-3 text-3xl sm:text-4xl">Find your course</h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {levels.map((l) => (
-              <Link
-                key={l.slug}
-                href={`/services/higher-education/${l.slug}`}
-                className="card-hover group flex flex-col"
-              >
-                <h3 className="text-xl">{l.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-copy">
-                  {l.tagline}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt">
-                  View {l.courses.length} courses
-                  <IconArrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <CourseBrowser
+            courses={levels.flatMap((l) =>
+              l.courses.map((c) => ({
+                ...c,
+                levelSlug: l.slug,
+                levelTitle: l.title,
+              }))
+            )}
+            levels={levels.map((l) => ({
+              slug: l.slug,
+              title: l.title,
+              count: l.courses.length,
+            }))}
+          />
 
-          <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
+          {/* The hub now lists the courses themselves, including the
+              skilled-occupation ones, so it carries the same MARA notice the
+              level pages do rather than leaving it behind on them. */}
+          {levels.some((l) => l.skilledOccupationRelated) && (
+            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
+              {MARA_NOTICE}
+            </p>
+          )}
+
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-sage">
             {INDICATIVE_NOTICE}
           </p>
         </div>

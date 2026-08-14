@@ -66,12 +66,17 @@ export default function LevelPage({ params }: { params: { level: string } }) {
           <h2 className="mt-3 text-3xl sm:text-4xl">{level.title} options</h2>
 
           <CourseBrowser
-            level={level}
+            courses={level.courses.map((c) => ({
+              ...c,
+              levelSlug: level.slug,
+              levelTitle: level.title,
+            }))}
             levels={levels.map((l) => ({
               slug: l.slug,
               title: l.title,
               count: l.courses.length,
             }))}
+            lockedLevel={level.slug}
           />
 
           {/* Only when the level genuinely touches skilled occupations. */}

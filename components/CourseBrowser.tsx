@@ -10,8 +10,10 @@ import {
   ieltsOf,
   intakeMonthsOf,
   type Course,
-  type Level,
 } from "@/lib/higher-education";
+
+/** A course plus the level it sits under, so one flat list can span both. */
+export type BrowserCourse = Course & { levelSlug: string; levelTitle: string };
 
 /** Toggles a value in a set, returning a new set. */
 function toggle<T>(set: Set<T>, value: T) {
@@ -64,25 +66,35 @@ function Group({ legend, children }: { legend: string; children: React.ReactNode
 }
 
 export default function CourseBrowser({
-  level,
+  courses,
   levels,
+  lockedLevel,
 }: {
-  level: Level;
+  courses: BrowserCourse[];
   levels: { slug: string; title: string; count: number }[];
+  /**
+   * Set on a level page, where the route already fixes the level, so Level
+   * renders as links out. Left undefined on the hub, where it is a filter and
+   * a student can switch without loading another page.
+   */
+  lockedLevel?: string;
 }) {
+  const [levelSlugs, setLevelSlugs] = useState<Set<string>>(new Set());
   const [fields, setFields] = useState<Set<string>>(new Set());
   const [fees, setFees] = useState<Set<string>>(new Set());
   const [months, setMonths] = useState<Set<string>>(new Set());
   const [ielts, setIelts] = useState<Set<number>>(new Set());
   const [durations, setDurations] = useState<Set<string>>(new Set());
 
-  const all = level.courses;
+  const all = courses;
 
   // Each predicate is separate so a facet's counts can be computed against
   // every OTHER filter, which is what makes the numbers beside each option
   // reflect what you would actually get by ticking it.
   const preds = useMemo(
     () => ({
+      level: (c: BrowserCourse) =>
+        levelSlugs.size === 0 || levelSlugs.has(c.levelSlug),
       field: (c: Course) => fields.size === 0 || (c.field ? fields.has(c.field) : false),
       fee: (c: Course) =>
         fees.size === 0 ||
@@ -96,7 +108,7 @@ export default function CourseBrowser({
       },
       duration: (c: Course) => durations.size === 0 || durations.has(c.duration),
     }),
-    [fields, fees, months, ielts, durations]
+    [levelSlugs, fields, fees, months, ielts, durations]
   );
 
   const results = useMemo(
@@ -122,9 +134,10 @@ export default function CourseBrowser({
   );
 
   const activeCount =
-    fields.size + fees.size + months.size + ielts.size + durations.size;
+    levelSlugs.size + fields.size + fees.size + months.size + ielts.size + durations.size;
 
   const clear = () => {
+    setLevelSlugs(new Set());
     setFields(new Set());
     setFees(new Set());
     setMonths(new Set());
@@ -152,21 +165,31 @@ export default function CourseBrowser({
         <div className="mt-5 space-y-5">
           <fieldset>
             <legend className="eyebrow mb-2">Level</legend>
-            {levels.map((l) => (
-              <Link
-                key={l.slug}
-                href={`/services/higher-education/${l.slug}`}
-                aria-current={l.slug === level.slug ? "page" : undefined}
-                className={`flex items-center justify-between py-1.5 text-sm ${
-                  l.slug === level.slug
-                    ? "font-semibold text-eucalypt"
-                    : "text-copy hover:text-ink"
-                }`}
-              >
-                {l.title}
-                <span className="font-mono text-xs text-sage">{l.count}</span>
-              </Link>
-            ))}
+            {lockedLevel
+              ? levels.map((l) => (
+                  <Link
+                    key={l.slug}
+                    href={`/services/higher-education/${l.slug}`}
+                    aria-current={l.slug === lockedLevel ? "page" : undefined}
+                    className={`flex items-center justify-between py-1.5 text-sm ${
+                      l.slug === lockedLevel
+                        ? "font-semibold text-eucalypt"
+                        : "text-copy hover:text-ink"
+                    }`}
+                  >
+                    {l.title}
+                    <span className="font-mono text-xs text-sage">{l.count}</span>
+                  </Link>
+                ))
+              : levels.map((l) => (
+                  <Check
+                    key={l.slug}
+                    label={l.title}
+                    checked={levelSlugs.has(l.slug)}
+                    count={others("level").filter((c) => c.levelSlug === l.slug).length}
+                    onChange={() => setLevelSlugs(toggle(levelSlugs, l.slug))}
+                  />
+                ))}
           </fieldset>
 
           <Group legend="Study area">
