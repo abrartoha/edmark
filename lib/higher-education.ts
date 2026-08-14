@@ -125,11 +125,20 @@ export function intakeMonthsOf(c: Course): string[] {
   return INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));
 }
 
-/** Tuition bands, keyed off the lower bound of the course's range. */
+/**
+ * Budget tiers, tested against the LOWEST fee in a course's range.
+ *
+ * Cumulative rather than disjoint, and matched on the minimum, because a
+ * student filters by what they can afford: picking "up to $13,000" should
+ * return everything obtainable at or below that somewhere in the network, not
+ * only courses whose whole range sits inside a bracket. Disjoint bands left
+ * most of the list in one bucket and some buckets empty, since providers
+ * cluster around the same entry price.
+ */
 export const FEE_BANDS = [
-  { label: "Under $13,000", test: (min: number) => min < 13000 },
-  { label: "$13,000 to $17,999", test: (min: number) => min >= 13000 && min < 18000 },
-  { label: "$18,000 and above", test: (min: number) => min >= 18000 },
+  { label: "Up to $13,000", test: (min: number) => min <= 13000 },
+  { label: "Up to $18,000", test: (min: number) => min <= 18000 },
+  { label: "Up to $24,000", test: (min: number) => min <= 24000 },
 ] as const;
 
 export type LevelSlug = "undergraduate" | "postgraduate";

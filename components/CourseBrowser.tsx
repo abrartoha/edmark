@@ -204,7 +204,7 @@ export default function CourseBrowser({
             ))}
           </Group>
 
-          <Group legend="Tuition per semester">
+          <Group legend="Budget per semester">
             {FEE_BANDS.map((b) => (
               <Check
                 key={b.label}
@@ -214,6 +214,10 @@ export default function CourseBrowser({
                 onChange={() => setFees(toggle(fees, b.label))}
               />
             ))}
+            <p className="mt-2 text-xs leading-relaxed text-sage">
+              Matched on the lowest fee in each course's range, so a tier shows
+              everything available at or below it somewhere in the network.
+            </p>
           </Group>
 
           <Group legend="Intake">
