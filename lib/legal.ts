@@ -249,10 +249,6 @@ If something goes wrong, our complaints process is at [edmark.com.au/complaints]
 
 We may update these terms. The date at the top shows when they last changed. The version in force is the one published when you engage us.
 
-## 14. Governing law
-
-These terms are governed by the laws of Victoria, Australia. The courts of Victoria have jurisdiction.
-
 ---
 
 **Edmark Education Pty Ltd**
