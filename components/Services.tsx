@@ -24,7 +24,7 @@ export default function Services() {
           {services.map((s, i) => (
             <Link
               key={s.title}
-              href={`/services/${s.slug}`}
+              href={s.href ?? `/services/${s.slug}`}
               className="card-hover group reveal flex flex-col"
               style={{ transitionDelay: `${(i % 3) * 90}ms` }}
             >

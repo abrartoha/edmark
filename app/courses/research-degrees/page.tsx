@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Research Degrees in Australia: Masters by Research & PhD Guide",
   description:
     "Complete guide to Masters by Research and PhD programs in Australia. Research proposal writing, supervisor matching, scholarships and application support from Edmark Education.",
-  alternates: { canonical: "/research-degrees" },
+  alternates: { canonical: "/courses/research-degrees" },
   keywords: [
     "Masters by Research Australia",
     "PhD in Australia",
@@ -183,7 +183,7 @@ export default function ResearchDegreesPage() {
         title="Masters by Research & PhD application support"
         subtitle="From research proposal writing to supervisor matching and scholarship applications, we guide you into Australia's top research programs."
       />
-      <Breadcrumb items={[{ label: "Research Degrees" }]} />
+      <Breadcrumb items={[{ label: "Courses" }, { label: "Research Degrees" }]} />
 
       {/* What We Help With */}
       <section className="bg-white py-16 lg:py-24">

@@ -80,17 +80,17 @@ export const nav: NavItem[] = [
     children: [
       {
         label: "Higher Education",
-        href: "/services/higher-education",
+        href: "/courses/higher-education",
         note: "Bachelor degrees · Masters by coursework",
       },
       {
         label: "Vocational (VET) & short courses",
-        href: "/services/short-courses",
+        href: "/courses/short-courses",
         note: "Trade · Aged care · Child care · Cookery · Security",
       },
       {
         label: "Research degrees",
-        href: "/research-degrees",
+        href: "/courses/research-degrees",
         note: "Masters by research · PhD",
       },
     ],

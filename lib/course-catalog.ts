@@ -48,7 +48,7 @@ function build(): CatalogCourse[] {
         sector: "Higher education",
         levelTitle: level.title,
         levelSlug: level.slug,
-        listHref: `/services/higher-education/${level.slug}`,
+        listHref: `/courses/higher-education/${level.slug}`,
       });
     }
   }
@@ -60,7 +60,7 @@ function build(): CatalogCourse[] {
       sector: "Vocational",
       levelTitle: "",
       levelSlug: "",
-      listHref: "/services/short-courses",
+      listHref: "/courses/short-courses",
     });
   }
 

@@ -17,12 +17,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/scholarships", priority: 0.8, freq: "monthly" as const },
     { path: "/success-stories", priority: 0.7, freq: "monthly" as const },
     { path: "/study-in-australia", priority: 0.9, freq: "monthly" as const },
-    { path: "/research-degrees", priority: 0.9, freq: "monthly" as const },
+    { path: "/courses/research-degrees", priority: 0.9, freq: "monthly" as const },
+    { path: "/courses/short-courses", priority: 0.8, freq: "monthly" as const },
     { path: "/partners", priority: 0.7, freq: "monthly" as const },
   ];
 
+  // Services written up elsewhere (the course categories, under /courses) are
+  // listed with the routes above instead, at their own URL.
   const serviceRoutes = services
-    .filter((s) => s.slug !== "research-degrees")
+    .filter((s) => !s.href)
     .map((s) => ({
       path: `/services/${s.slug}`,
     priority: 0.7,
@@ -32,9 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Course data is populated and these pages are indexable: they inherit
   // index/follow from the root layout and set no robots override.
   const higherEducationRoutes = [
-    { path: "/services/higher-education", priority: 0.8, freq: "monthly" as const },
+    { path: "/courses/higher-education", priority: 0.8, freq: "monthly" as const },
     ...levels.map((l) => ({
-      path: `/services/higher-education/${l.slug}`,
+      path: `/courses/higher-education/${l.slug}`,
       priority: 0.7,
       freq: "monthly" as const,
     })),

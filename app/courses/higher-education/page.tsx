@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Higher Education in Australia",
   description:
     "Bachelor degrees and Masters by coursework at Australian universities. Entry requirements explained plainly, with 2026 intake planning guidance from Edmark Education.",
-  alternates: { canonical: "/services/higher-education" },
+  alternates: { canonical: "/courses/higher-education" },
 };
 
 export default function HigherEducationPage() {
@@ -35,7 +35,7 @@ export default function HigherEducationPage() {
       />
       <Breadcrumb
         items={[
-          { label: "Services", href: "/services" },
+          { label: "Courses" },
           { label: "Higher Education" },
         ]}
       />

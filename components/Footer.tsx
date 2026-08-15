@@ -5,14 +5,14 @@ import Logo from "./Logo";
 
 const services = allServices.map((s) => ({
   label: s.title,
-  href: `/services/${s.slug}`,
+  href: s.href ?? `/services/${s.slug}`,
 }));
 
 const resources = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Scholarships", href: "/scholarships" },
-  { label: "Research Degrees", href: "/research-degrees" },
+  { label: "Research Degrees", href: "/courses/research-degrees" },
   { label: "Study in Australia", href: "/study-in-australia" },
   { label: "Success Stories", href: "/success-stories" },
 ];

@@ -208,7 +208,7 @@ export default function CourseBrowser({
               ? levels.map((l) => (
                   <Link
                     key={l.slug}
-                    href={`/services/higher-education/${l.slug}`}
+                    href={`/courses/higher-education/${l.slug}`}
                     aria-current={l.slug === lockedLevel ? "page" : undefined}
                     className={`flex items-center justify-between py-1.5 text-sm ${
                       l.slug === lockedLevel

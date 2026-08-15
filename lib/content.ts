@@ -7,6 +7,12 @@ export type Service = {
   short: string;
   long: string;
   points: string[];
+  /**
+   * Where the service is written up, when that is not /services/<slug>. Two of
+   * these are course categories rather than services and live under /courses,
+   * so every listing links straight there rather than through a redirect.
+   */
+  href?: string;
 };
 
 export const services: Service[] = [
@@ -25,6 +31,7 @@ export const services: Service[] = [
   },
   {
     slug: "short-courses",
+    href: "/courses/short-courses",
     icon: "graduation",
     title: "Vocational (VET) & Short Courses",
     short:
@@ -100,6 +107,7 @@ export const services: Service[] = [
   },
   {
     slug: "research-degrees",
+    href: "/courses/research-degrees",
     icon: "research",
     title: "Research Degrees",
     short:
@@ -114,6 +122,134 @@ export const services: Service[] = [
     ],
   },
 ];
+
+/**
+ * The long-form half of a service write-up. Kept beside the services rather
+ * than inside the /services/[slug] route, because two of these pages now live
+ * under /courses and both routes read from the same place.
+ */
+export type ServiceExtras = {
+  whoFor: string[];
+  whatToExpect: string[];
+  extended: string;
+};
+
+export const serviceExtras: Record<string, ServiceExtras> = {
+  "student-counselling": {
+    extended:
+      "Choosing what and where to study is one of the biggest decisions you'll make, and it shouldn't be rushed or based on incomplete information. Our student counselling sessions are designed to give you clarity. We explore your academic history, career aspirations, budget and personal circumstances to build a realistic, personalised study plan.\n\nUnlike agents who push whichever institution pays the most, we recommend what's genuinely right for you. That's why most of our students come to us through referrals.",
+    whoFor: [
+      "High school leavers unsure which course to pursue",
+      "Working professionals looking to upskill or change careers",
+      "International students exploring Australian education options",
+      "Parents seeking guidance for their children's education",
+    ],
+    whatToExpect: [
+      "A relaxed conversation, in person or online",
+      "An honest assessment of your options based on your profile",
+      "A personalised shortlist of courses and institutions",
+      "Clear next steps and a timeline for your journey",
+    ],
+  },
+  "application-support": {
+    extended:
+      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). We also prepare you for the Genuine Student (GS) requirement, which replaced the Genuine Temporary Entrant test in March 2024 and asks targeted questions, 150 words or fewer each, about why this course, why now, and how it fits your career.",
+    whoFor: [
+      "Students applying to more than one institution at once",
+      "Anyone who has had an application delayed or knocked back",
+      "Applicants unsure how to answer the Genuine Student questions",
+      "Students transferring between providers or courses",
+    ],
+    whatToExpect: [
+      "A document checklist tailored to each provider",
+      "Applications lodged in parallel, not one at a time",
+      "Draft review of your Genuine Student responses",
+      "A plain comparison of every offer you receive",
+      "Acceptance, payment and CoE handled end to end",
+    ],
+  },
+  "health-insurance": {
+    extended:
+      "Overseas Student Health Cover (OSHC) is a mandatory requirement for your student visa. You must hold valid cover for the entire length of your stay. Choosing the right policy protects both your visa status and your health while you study.\n\nWe make it simple. We compare the major OSHC providers, explain what's covered, and help you arrange single, couple or family cover that matches your visa dates and enrolment. If you ever need to make a claim or renew, we're here to help.",
+    whoFor: [
+      "New international students applying for a student visa",
+      "Students bringing a partner or family to Australia",
+      "Anyone renewing or extending their existing cover",
+      "Students unsure which provider or level of cover to choose",
+    ],
+    whatToExpect: [
+      "A comparison of OSHC providers and levels of cover",
+      "The right policy for your visa and CoE dates",
+      "Help arranging single, couple or family cover",
+      "Guidance on claims, extensions and renewals",
+    ],
+  },
+  "research-degrees": {
+    extended:
+      "Research degrees such as Masters by Research and PhDs are fundamentally different from coursework programs. There are no set classes or assignments. Instead, you work closely with a supervisor on an original research project that contributes new knowledge to your field. Getting accepted requires a completely different application strategy.\n\nUniversities don't just look at your grades. They want a well-defined research proposal, evidence of research capability, and a clear alignment between your interests and the expertise of their academic staff. Most importantly, you often need a supervisor willing to take you on before you even submit your formal application.\n\nThis is where most applicants struggle, with generic proposals, vague supervisor emails, or applications sent without understanding what the research group needs. We help you navigate the process, from identifying the right research group to crafting a proposal that gets accepted at leading Australian universities.",
+    whoFor: [
+      "Graduates wanting to pursue a Masters by Research in Australia",
+      "PhD applicants looking for supervisor matches",
+      "Researchers needing help writing or refining a research proposal",
+      "Honours graduates considering the transition to a research career",
+    ],
+    whatToExpect: [
+      "A detailed assessment of your research background and interests",
+      "Supervisor search and shortlisting across Australian universities",
+      "Research proposal drafting, structuring and review",
+      "Academic CV support and research scholarship guidance",
+    ],
+  },
+  "pte-naati-py": {
+    extended:
+      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
+    whoFor: [
+      "Students needing an English test for a visa or admission",
+      "Skilled migration applicants seeking extra points",
+      "Bilingual applicants eligible for the NAATI CCL test",
+      "Accounting, IT and engineering graduates considering a Professional Year",
+    ],
+    whatToExpect: [
+      "Advice on the right test and target score for your goal",
+      "PTE Academic preparation and booking support",
+      "NAATI CCL guidance and study resources",
+      "Professional Year Program eligibility and provider selection",
+    ],
+  },
+  "professional-year": {
+    extended:
+      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For many graduates the internship matters more than the points: it is often the first line of local experience on an Australian resume.\n\nCompleted with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nOne caution we would rather give up front: a Professional Year does not on its own deliver permanent residency. It sits alongside your occupation, English score, work experience and skills assessment, and those settings change. We help you choose a provider and time your enrolment, then refer you to a registered migration agent (MARA) for formal advice.",
+    whoFor: [
+      "Accounting, IT and engineering graduates of Australian degrees",
+      "Temporary Graduate (485) visa holders planning their next step",
+      "Graduates with no Australian work experience yet",
+      "Anyone weighing 5 points against a year of study",
+    ],
+    whatToExpect: [
+      "An eligibility check against your degree and visa",
+      "Provider comparison across the three streams",
+      "Timing advice so the program fits inside your 485",
+      "Enrolment support and document preparation",
+      "Referral to a MARA agent for formal migration advice",
+    ],
+  },
+  "short-courses": {
+    extended:
+      "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
+    whoFor: [
+      "People wanting job-ready skills quickly",
+      "Students seeking an affordable, practical qualification",
+      "Anyone entering security, aged care or child care",
+      "Workers looking to upskill or change fields",
+    ],
+    whatToExpect: [
+      "Help choosing the right short course for your goal",
+      "Matching to a quality registered training organisation (RTO)",
+      "Guidance on licensing and certification requirements",
+      "Enrolment support from start to finish",
+    ],
+  },
+};
 
 export const steps = [
   {

@@ -24,7 +24,7 @@ export function generateMetadata({
   return {
     title: `${level.title} in Australia`,
     description: `${level.title} study options in Australia: indicative tuition, typical entry and English requirements, and intake timing. Confirmed for your situation during a free consultation with Edmark Education.`,
-    alternates: { canonical: `/services/higher-education/${level.slug}` },
+    alternates: { canonical: `/courses/higher-education/${level.slug}` },
   };
 }
 
@@ -41,8 +41,8 @@ export default function LevelPage({ params }: { params: { level: string } }) {
       />
       <Breadcrumb
         items={[
-          { label: "Services", href: "/services" },
-          { label: "Higher Education", href: "/services/higher-education" },
+          { label: "Courses" },
+          { label: "Higher Education", href: "/courses/higher-education" },
           { label: level.title },
         ]}
       />
@@ -94,7 +94,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
           </p>
 
           <Link
-            href="/services/higher-education"
+            href="/courses/higher-education"
             className="mt-10 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-teal-500"
           >
             <IconArrow className="h-3.5 w-3.5 rotate-180" />

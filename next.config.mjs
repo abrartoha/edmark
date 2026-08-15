@@ -2,18 +2,43 @@
 const nextConfig = {
   async redirects() {
     return [
+      // What you study now lives under /courses, and how we help you get
+      // there stays under /services. These three pages were on the wrong side
+      // of that line: the nav filed them under Courses while their URLs, and
+      // so their breadcrumbs, still said Services. Every old URL was live and
+      // indexed, so each one redirects to its new home rather than 404ing.
       {
-        // Research Degrees existed at two URLs competing for the same queries.
-        // /research-degrees is the fuller page and holds the canonical.
-        source: "/services/research-degrees",
-        destination: "/research-degrees",
+        source: "/services/higher-education",
+        destination: "/courses/higher-education",
         permanent: true,
       },
       {
-        // The pathway level was removed from higher education. The route was
-        // live and indexable, so it redirects to the hub rather than 404ing.
+        // Before the catch-all below, which would otherwise claim it.
         source: "/services/higher-education/pathway-programs",
-        destination: "/services/higher-education",
+        destination: "/courses/higher-education",
+        permanent: true,
+      },
+      {
+        source: "/services/higher-education/:level",
+        destination: "/courses/higher-education/:level",
+        permanent: true,
+      },
+      {
+        source: "/services/short-courses",
+        destination: "/courses/short-courses",
+        permanent: true,
+      },
+      {
+        source: "/research-degrees",
+        destination: "/courses/research-degrees",
+        permanent: true,
+      },
+      {
+        // Research Degrees existed at two URLs competing for the same queries.
+        // Pointed straight at the new page, so this is one hop rather than a
+        // chain through /research-degrees.
+        source: "/services/research-degrees",
+        destination: "/courses/research-degrees",
         permanent: true,
       },
       {
@@ -21,7 +46,7 @@ const nextConfig = {
         // vocational page, so that URL goes there rather than to the hub.
         // Listed before the catch-all below, which would otherwise claim it.
         source: "/services/pr-pathway-courses/trade",
-        destination: "/services/short-courses",
+        destination: "/courses/short-courses",
         permanent: true,
       },
       {

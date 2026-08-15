@@ -103,7 +103,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
 
       <Breadcrumb
         items={[
-          { label: "Services", href: "/services" },
+          { label: "Courses" },
           {
             label:
               course.sector === "Vocational"
