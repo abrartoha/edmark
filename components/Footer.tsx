@@ -12,6 +12,12 @@ const services = allServices.map((s) => ({
 // disclosure students should be able to find, not a primary destination.
 const explore = [{ label: "How we're paid", href: "/how-were-paid" }];
 
+const legal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Complaints", href: "/complaints" },
+];
+
 const resources = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
@@ -144,6 +150,20 @@ export default function Footer() {
           <p>
             © {site.legalName}. All rights reserved. ABN {site.abn} · ACN {site.acn}
           </p>
+          {/* Legal sits on the bottom rule rather than in a column of its own:
+              it is a place to look something up, not a place to browse. */}
+          <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            {legal.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="transition-colors hover:text-brass-light"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <p>
             {site.address.full}
           </p>
