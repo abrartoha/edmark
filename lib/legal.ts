@@ -267,7 +267,7 @@ export const complaints: LegalDoc = {
   subtitle:
     "If we have got something wrong, we want to know. It costs you nothing and it will not affect your application.",
   description:
-    "How to raise a complaint with Edmark Education, when you will hear back, how it is handled, and the external bodies you can go to if you are not satisfied.",
+    "How to raise a complaint with Edmark Education, when you will hear back, how it is handled, and how to ask for it to be reviewed if our answer does not settle it.",
   body: `**Last updated:** 16 August 2026
 
 If we have got something wrong, we want to know. Complaining costs you nothing, it will not affect your application, and we will not treat you differently for raising it.
@@ -294,49 +294,9 @@ You can complain in writing or by phone. If English is not your first language, 
 3. **We respond in writing** within 20 business days. If it is going to take longer, we will tell you why and give you a new date.
 4. **We tell you what we found**, what we are doing about it, and what to do if you disagree.
 
+If our answer does not settle it, you can ask for the matter to be reviewed by a senior member of our team who was not involved the first time. Ask in writing and we will arrange it.
+
 We keep a record of every complaint and what came of it, so the same thing does not keep happening.
-
-## If you are not satisfied
-
-You can ask for the matter to be reviewed internally by a senior member of our team who was not involved the first time. Ask in writing and we will arrange it.
-
-If you are still not satisfied, you can go outside Edmark. Which body you go to depends on what your complaint is about.
-
-### Complaints about how we handled your personal information
-
-**Office of the Australian Information Commissioner**
-oaic.gov.au · 1300 363 992 · GPO Box 5218, Sydney NSW 2001
-
-Complain to us first. If we have not responded within 30 days, or you are unhappy with our response, the OAIC can take it from there.
-
-### Complaints about us as a Victorian business
-
-**Consumer Affairs Victoria**
-consumer.vic.gov.au · 1300 55 81 81
-
-For issues about the service you were promised and the service you received.
-
-### Complaints about misleading conduct
-
-**Australian Competition and Consumer Commission**
-accc.gov.au · 1300 302 502
-
-### Complaints about your education provider
-
-Your course contract is with your institution, not with us, so complaints about fees, refunds, teaching, deferrals or cancellation go to them first. Every registered provider must have a complaints and appeals process — ask them for it in writing.
-
-If you have been through their internal process and you are not satisfied:
-
-**Overseas Students Ombudsman** — for students at private registered providers
-ombudsman.gov.au/overseas-students · 1300 362 072
-
-For students at public universities and TAFEs, the relevant state ombudsman handles it. In Victoria that is the Victorian Ombudsman: ombudsman.vic.gov.au · 1800 806 314.
-
-### Complaints about immigration advice
-
-We are not registered migration agents and we do not give immigration assistance. If you believe anyone has given you unlawful immigration advice, you can report it to the Office of the Migration Agents Registration Authority at mara.gov.au.
-
-You can also check whether any agent is registered, for free, on the same site.
 
 ---
 
