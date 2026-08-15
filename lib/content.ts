@@ -13,6 +13,12 @@ export type Service = {
    * so every listing links straight there rather than through a redirect.
    */
   href?: string;
+  /**
+   * Set on any service whose copy claims a migration benefit. Prints the
+   * verbatim MARA notice above the write-up, so the caveat is read before the
+   * claim rather than after it, or not at all.
+   */
+  maraNotice?: true;
 };
 
 export const services: Service[] = [
@@ -76,6 +82,8 @@ export const services: Service[] = [
   },
   {
     slug: "pte-naati-py",
+    // Claims points in the skilled migration test, same as Professional Year.
+    maraNotice: true,
     icon: "headset",
     title: "PTE & NAATI Test Prep",
     short:
@@ -91,6 +99,7 @@ export const services: Service[] = [
   },
   {
     slug: "professional-year",
+    maraNotice: true,
     icon: "trophy",
     title: "Professional Year",
     short:
