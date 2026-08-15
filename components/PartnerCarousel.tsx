@@ -6,13 +6,17 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { colleges, oshcProviders, tafes, universities } from "@/lib/partners";
 import { IconArrow } from "./Icons";
 
-// One slide per partner type, so the homepage shows a handful at a time
-// instead of a wall of sixty.
+// One slide per partner type. Twelve per slide, which is two rows of six on
+// desktop, rather than the single row of six this used to show: that was
+// hiding four partners outright, including two universities and two colleges
+// added after it was written.
+const PER_SLIDE = 12;
+
 const groups = [
-  { label: "Universities", items: universities.slice(0, 6) },
-  { label: "Colleges & pathway providers", items: colleges.slice(0, 6) },
-  { label: "TAFEs & polytechnics", items: tafes.slice(0, 6) },
-  { label: "OSHC providers", items: oshcProviders },
+  { label: "Universities", items: universities.slice(0, PER_SLIDE) },
+  { label: "Colleges & pathway providers", items: colleges.slice(0, PER_SLIDE) },
+  { label: "TAFEs & polytechnics", items: tafes.slice(0, PER_SLIDE) },
+  { label: "OSHC providers", items: oshcProviders.slice(0, PER_SLIDE) },
 ];
 
 const INTERVAL = 3000;
@@ -72,7 +76,7 @@ export default function PartnerCarousel() {
                 className="w-full shrink-0"
                 aria-hidden={gi !== index}
               >
-                <ul className="grid grid-cols-2 items-center gap-4 sm:grid-cols-3 lg:grid-cols-6">
+                <ul className="grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 lg:grid-cols-6">
                   {g.items.map((inst) => (
                     <li key={inst.slug}>
                       <a
