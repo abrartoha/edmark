@@ -87,12 +87,6 @@ You can turn cookies off in your browser settings. Some parts of the site may no
 
 We do not run advertising or remarketing pixels on this website. Nothing you do here is used to follow you around other sites.
 
-## How we protect it
-
-We store your information in access-controlled systems and limit access to the staff who need it. We use encrypted connections for our website and our email.
-
-No system is perfectly secure. If a data breach happens that is likely to cause you serious harm, we will tell you and notify the Office of the Australian Information Commissioner.
-
 ## How long we keep it
 
 We keep your file for seven years after your last contact with us, then destroy or de-identify it. We may keep some records longer where an institution agreement or the law requires it.
