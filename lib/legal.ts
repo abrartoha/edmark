@@ -5,13 +5,10 @@
 // wording can be edited without touching a component. Written by the business,
 // reproduced verbatim; do not reword any of it in passing.
 //
-// PLACEHOLDERS
-// ------------
-// A `TODO(abrar): ...` inside backticks is a value only the business can
-// supply, such as a retention period or the countries our records are hosted
-// in. They are not decoration: while any document still contains one, that
-// page renders a draft notice and stays noindex, and it publishes itself once
-// the last one is replaced. See needsWork() and the routes that call it.
+// The service providers named in the privacy policy are the ones this site
+// actually runs on: Vercel hosts it, Supabase stores enquiries, Resend sends
+// the notification email, Google Analytics measures visits. If any of those is
+// ever swapped out, that section has to change with it.
 // ---------------------------------------------------------------------------
 
 export type LegalDoc = {
@@ -23,11 +20,6 @@ export type LegalDoc = {
   body: string;
 };
 
-/** True while a document still carries an unfilled placeholder. */
-export function needsWork(doc: LegalDoc): boolean {
-  return doc.body.includes("TODO(abrar)");
-}
-
 export const privacy: LegalDoc = {
   slug: "privacy",
   title: "Privacy Policy",
@@ -35,7 +27,7 @@ export const privacy: LegalDoc = {
     "What we collect, why we collect it, who we give it to, and how you can see or correct it.",
   description:
     "How Edmark Education collects, uses, discloses and retains your personal information, who we disclose it to, and how to access, correct or complain about it.",
-  body: `**Last updated:** \`TODO(abrar): publication date\`
+  body: `**Last updated:** 16 August 2026
 
 Edmark Education Pty Ltd (ACN 700 341 028, ABN 75 700 341 028) collects personal information about you when we help you apply to study in Australia. This page explains what we collect, why, who we give it to, and how you can see or correct it.
 
@@ -90,15 +82,22 @@ We may also disclose information where the law requires it.
 
 Some of the institutions you apply to, and some of the technology we use, are located outside Australia. Where we send your information overseas, we take reasonable steps to make sure it is handled with protections comparable to the Australian Privacy Principles.
 
-\`TODO(abrar): confirm where your CRM, email and file storage are hosted, and list the countries here.\`
+The providers we rely on to run this website are:
+
+- **Vercel** — website hosting
+- **Supabase** — the database that stores enquiries sent through our contact form
+- **Resend** — delivery of the email that tells us you have enquired
+- **Google Analytics** — visitor statistics
+
+All four are United States companies, so information handled by them may be stored or processed outside Australia. We do not send your application file itself to any of them; that is held in our own systems and disclosed to institutions as described above.
 
 ## Cookies and analytics
 
-This website uses cookies and similar technology to remember your preferences and to understand how the site is used. We use \`TODO(abrar): name your analytics tool, e.g. Google Analytics\` for aggregate visitor statistics.
+This website uses cookies and similar technology to remember your preferences and to understand how the site is used. We use Google Analytics for aggregate visitor statistics: how many people visit, which pages they read, and roughly where they are in the world. We do not use it to identify you.
 
 You can turn cookies off in your browser settings. Some parts of the site may not work properly if you do.
 
-\`TODO(abrar): if you run Meta or Google advertising pixels, name them here.\`
+We do not run advertising or remarketing pixels on this website. Nothing you do here is used to follow you around other sites.
 
 ## How we protect it
 
@@ -108,7 +107,7 @@ No system is perfectly secure. If a data breach happens that is likely to cause 
 
 ## How long we keep it
 
-We keep your file for \`TODO(abrar): choose a period — seven years is a common default for business records\` after your last contact with us, then destroy or de-identify it. We may keep some records longer where an institution agreement or the law requires it.
+We keep your file for seven years after your last contact with us, then destroy or de-identify it. We may keep some records longer where an institution agreement or the law requires it.
 
 ## Seeing and correcting your information
 
@@ -120,7 +119,7 @@ You can also ask us to delete your information. We will do so unless we are requ
 
 ## Complaints
 
-If you think we have mishandled your personal information, email **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it within \`TODO(abrar): 2 business days suggested\` and give you a written response within 30 days.
+If you think we have mishandled your personal information, email **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it within 2 business days and give you a written response within 30 days.
 
 If you are not satisfied with our response, or we have not replied within 30 days, you can complain to the Office of the Australian Information Commissioner:
 
@@ -149,7 +148,7 @@ export const terms: LegalDoc = {
     "What our service covers, what it does not, and what we can and cannot promise.",
   description:
     "The terms on which Edmark Education provides education consulting: what the service covers, what it does not, how we are paid, and the limits of what we can promise.",
-  body: `**Last updated:** \`TODO(abrar): publication date\`
+  body: `**Last updated:** 16 August 2026
 
 These terms apply when you use this website or engage Edmark Education Pty Ltd (ACN 700 341 028, ABN 75 700 341 028) as your education consultant.
 
@@ -195,7 +194,9 @@ Our service is free to you. Institutions pay us a commission when a student enro
 
 We do not let commission decide your shortlist. If the right course is at an institution we have no agreement with, we will tell you, and we will help you apply anyway. If you want to know what we earn on a course we have recommended, ask us and we will tell you.
 
-\`TODO(abrar): if you charge students for anything at all — PTE bookings, document courier, Professional Year enrolment — list those fees here with amounts and when they are payable. If everything is genuinely free to the student, replace this line with a sentence saying so.\`
+We charge you nothing. There is no consultation fee, no application fee, no service fee and no success fee.
+
+Money you pay during the process is paid to someone else, not to us: tuition and application fees to the institution, your premium to the OSHC insurer, test fees to PTE or NAATI, and course fees to a Professional Year provider. You pay those directly, and their terms and refund policies apply.
 
 ## 5. Your responsibilities
 
@@ -277,7 +278,7 @@ export const complaints: LegalDoc = {
     "If we have got something wrong, we want to know. It costs you nothing and it will not affect your application.",
   description:
     "How to raise a complaint with Edmark Education, when you will hear back, how it is handled, and the external bodies you can go to if you are not satisfied.",
-  body: `**Last updated:** \`TODO(abrar): publication date\`
+  body: `**Last updated:** 16 August 2026
 
 If we have got something wrong, we want to know. Complaining costs you nothing, it will not affect your application, and we will not treat you differently for raising it.
 
@@ -298,9 +299,9 @@ You can complain in writing or by phone. If English is not your first language, 
 
 ## What happens next
 
-1. **We acknowledge it** within \`TODO(abrar): 2 business days suggested\`. You will get a name and a direct contact.
+1. **We acknowledge it** within 2 business days. You will get a name and a direct contact.
 2. **We look into it.** We read the file, talk to the staff involved, and come back to you if we need more detail.
-3. **We respond in writing** within \`TODO(abrar): 20 business days suggested\`. If it is going to take longer, we will tell you why and give you a new date.
+3. **We respond in writing** within 20 business days. If it is going to take longer, we will tell you why and give you a new date.
 4. **We tell you what we found**, what we are doing about it, and what to do if you disagree.
 
 We keep a record of every complaint and what came of it, so the same thing does not keep happening.

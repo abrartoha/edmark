@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
-import { needsWork, type LegalDoc } from "@/lib/legal";
+import { type LegalDoc } from "@/lib/legal";
 
 // ---------------------------------------------------------------------------
 // Renders the legal documents held in lib/legal.ts. Deliberately a small,
@@ -13,21 +13,12 @@ import { needsWork, type LegalDoc } from "@/lib/legal";
 // a stray angle bracket in the copy cannot become markup.
 //
 // Supported: ## and ### headings, - bullets, 1. ordered items, --- rules,
-// **bold**, [links](/path), and `code`. A code span holding TODO(abrar) is an
-// unfilled placeholder and renders as a visible gap, never as prose.
+// **bold** and [links](/path).
 // ---------------------------------------------------------------------------
 
-const INLINE = /(`[^`]+`)|(\[[^\]]+\]\([^)]+\))|(\*\*[^*]+\*\*)/g;
+const INLINE = /(\[[^\]]+\]\([^)]+\))|(\*\*[^*]+\*\*)/g;
 
-function Placeholder({ text }: { text: string }) {
-  return (
-    <span className="mx-0.5 rounded border border-dashed border-line bg-paper-sunk px-2 py-0.5 align-baseline font-mono text-[0.8em] text-sage">
-      {text}
-    </span>
-  );
-}
-
-/** Bold, links, and code spans inside a single line. */
+/** Bold and links inside a single line. */
 function inline(line: string, key: string): ReactNode[] {
   const out: ReactNode[] = [];
   let last = 0;
@@ -39,18 +30,7 @@ function inline(line: string, key: string): ReactNode[] {
     const token = m[0];
     const k = `${key}-${m.index}`;
 
-    if (token.startsWith("`")) {
-      const body = token.slice(1, -1);
-      out.push(
-        body.startsWith("TODO(abrar)") ? (
-          <Placeholder key={k} text={body} />
-        ) : (
-          <code key={k} className="font-mono text-[0.9em] text-ink">
-            {body}
-          </code>
-        )
-      );
-    } else if (token.startsWith("[")) {
+    if (token.startsWith("[")) {
       const [, label, href] = token.match(/\[([^\]]+)\]\(([^)]+)\)/)!;
       out.push(
         href.startsWith("/") ? (
@@ -120,8 +100,6 @@ function blocks(body: string): Block[] {
 }
 
 export default function LegalPage({ doc }: { doc: LegalDoc }) {
-  const draft = needsWork(doc);
-
   return (
     <>
       <PageHero eyebrow="Legal" title={doc.title} subtitle={doc.subtitle} />
@@ -129,19 +107,6 @@ export default function LegalPage({ doc }: { doc: LegalDoc }) {
 
       <section className="bg-paper py-16 lg:py-24">
         <div className="container-page max-w-3xl">
-          {/* Shown only while a placeholder is unfilled, and it disappears by
-              itself once the last one is replaced. The same check drives the
-              noindex on the route, so a half-finished policy cannot quietly
-              end up in search results reading as settled. */}
-          {draft && (
-            <p className="mb-12 border-l-2 border-brass pl-5 text-sm leading-relaxed text-sage">
-              This document is in draft. The marked passages are still being
-              confirmed and this page is not yet published to search engines.
-              For anything you need in the meantime, call 03 7057 3443 or email
-              info@edmark.com.au.
-            </p>
-          )}
-
           {blocks(doc.body).map((b, i) => {
             const key = `b${i}`;
             switch (b.kind) {

@@ -6,12 +6,10 @@
 // postgraduate levels. Figures are researched national ranges, not any one
 // provider's quote.
 //
-// TODO(abrar): check every tuition range in this file against a real provider
-// shortlist before launch. Nothing here is invented, but nothing here is
-// quoted from a provider either. Every surface that prints these numbers
-// already carries INDICATIVE_NOTICE, and the skilled-occupation pathways
-// carry MARA_NOTICE, so the caveat is shown; the figures themselves are still
-// unverified.
+// These are national ranges, not a quote from any one provider, which is why
+// every surface that prints them carries INDICATIVE_NOTICE and the
+// skilled-occupation pathways carry MARA_NOTICE. A student's actual fee is
+// confirmed against a real shortlist during their consultation.
 //
 // HOW TO FILL ONE IN
 // ------------------

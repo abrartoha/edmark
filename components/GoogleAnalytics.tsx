@@ -19,7 +19,7 @@ declare global {
 }
 
 export default function GoogleAnalytics({ gaId }: { gaId: string }) {
-  if (!gaId || gaId === "G-XXXXXXXXXX") return null;
+  if (!gaId) return null;
 
   return (
     <>

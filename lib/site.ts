@@ -16,7 +16,9 @@ export const site = {
   email: "info@edmark.com.au",
   emailHref: "mailto:info@edmark.com.au",
   whatsappHref: "https://wa.me/61449212492",
-  gaId: process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX",
+  // Empty when unset rather than a dummy id: this value is serialised into
+  // every page, so a placeholder would be visible in the source of all of them.
+  gaId: process.env.NEXT_PUBLIC_GA_ID || "",
   address: {
     level: "Level 5",
     street: "12 Clarke Street",

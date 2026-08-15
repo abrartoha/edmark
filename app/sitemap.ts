@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/content";
 import { blogPosts } from "@/lib/blog";
 import { levels } from "@/lib/higher-education";
+import { catalog } from "@/lib/course-catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -20,7 +21,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/courses/research-degrees", priority: 0.9, freq: "monthly" as const },
     { path: "/courses/short-courses", priority: 0.8, freq: "monthly" as const },
     { path: "/partners", priority: 0.7, freq: "monthly" as const },
+    { path: "/how-were-paid", priority: 0.6, freq: "yearly" as const },
+    // Low priority, but listed: a student looking for the privacy policy or
+    // the complaints process should be able to find it in search rather than
+    // having to trust that it exists.
+    { path: "/privacy", priority: 0.3, freq: "yearly" as const },
+    { path: "/terms", priority: 0.3, freq: "yearly" as const },
+    { path: "/complaints", priority: 0.4, freq: "yearly" as const },
   ];
+
+  // Every course has its own page, and all 96 were missing here: they are the
+  // pages a student actually searches for, by course name. /course-matcher is
+  // deliberately absent, since it is noindex.
+  const courseRoutes = catalog.map((c) => ({
+    path: `/courses/${c.slug}`,
+    priority: 0.6,
+    freq: "monthly" as const,
+  }));
 
   // Services written up elsewhere (the course categories, under /courses) are
   // listed with the routes above instead, at their own URL.
@@ -53,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...serviceRoutes,
     ...higherEducationRoutes,
+    ...courseRoutes,
     ...blogRoutes,
   ];
 
