@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -7,12 +8,12 @@ import CTA from "@/components/CTA";
 import { site } from "@/lib/site";
 import { IconCheck } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "About Us",
   description:
     "Edmark Education is a student-first Australian education consultancy. Learn about our mission to empower students for life with honest advice and end-to-end support.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const values = [
   {

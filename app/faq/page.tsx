@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
 import { faqs } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Frequently Asked Questions",
   description:
     "Get answers to common questions about studying in Australia, scholarships, student visas, costs and how Edmark Education can help you. Free consultation available.",
-  alternates: { canonical: "/faq" },
-};
+  path: "/faq",
+});
 
 const categories = [
   {

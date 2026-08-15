@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import ServiceDetail from "@/components/ServiceDetail";
 import { services, serviceExtras } from "@/lib/content";
@@ -19,9 +20,12 @@ export function generateMetadata({
   const service = services.find((s) => s.slug === params.slug);
   if (!service) return {};
   return {
-    title: service.title,
-    description: `${service.short} Free consultation with Edmark Education, Australia's trusted education consultancy.`,
-    alternates: { canonical: `/services/${params.slug}` },
+    ...pageSeo({
+      title: service.title,
+      description: `${service.short} Free consultation with Edmark Education, Australia's trusted education consultancy.`,
+      path: `/services/${params.slug}`,
+      image: "/og/services.jpg",
+    }),
   };
 }
 

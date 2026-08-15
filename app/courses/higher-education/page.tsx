@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
@@ -13,12 +14,12 @@ import {
   whichLevel,
 } from "@/lib/higher-education";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Higher Education in Australia",
   description:
     "Bachelor degrees and Masters by coursework at Australian universities. Entry requirements explained plainly, with 2026 intake planning guidance from Edmark Education.",
-  alternates: { canonical: "/courses/higher-education" },
-};
+  path: "/courses/higher-education",
+});
 
 export default function HigherEducationPage() {
   return (

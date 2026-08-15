@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -22,9 +23,11 @@ export function generateMetadata({
   const level = getLevel(params.level);
   if (!level) return {};
   return {
-    title: `${level.title} in Australia`,
-    description: `${level.title} study options in Australia: indicative tuition, typical entry and English requirements, and intake timing. Confirmed for your situation during a free consultation with Edmark Education.`,
-    alternates: { canonical: `/courses/higher-education/${level.slug}` },
+    ...pageSeo({
+      title: `${level.title} in Australia`,
+      description: `${level.title} study options in Australia: indicative tuition, typical entry and English requirements, and intake timing. Confirmed for your situation during a free consultation with Edmark Education.`,
+      path: `/courses/higher-education/${level.slug}`,
+    }),
   };
 }
 

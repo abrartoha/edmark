@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
@@ -6,12 +7,12 @@ import { successStories } from "@/lib/success-stories";
 import { testimonials } from "@/lib/content";
 import { IconStar } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Student Success Stories",
   description:
     "Real stories from real students. See how Edmark Education has helped hundreds of students find the right course, win scholarships and launch their careers in Australia.",
-  alternates: { canonical: "/success-stories" },
-};
+  path: "/success-stories",
+});
 
 export default function SuccessStoriesPage() {
   return (

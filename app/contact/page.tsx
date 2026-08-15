@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import ContactForm from "@/components/ContactForm";
 import { site } from "@/lib/site";
 import { IconPhone, IconMail, IconPin } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Contact Us: Book a Free Consultation",
   description:
     "Book your free education consultation with Edmark Education. Call, email or visit our Sunshine VIC office. Expert, no-obligation advice for studying in Australia.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const details = [
   {

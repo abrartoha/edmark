@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -6,12 +7,12 @@ import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import { IconCheck, IconGraduation, IconPlane, IconDocument } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Study in Australia: Complete Guide for International Students",
   description:
     "Everything you need to know about studying in Australia as an international student. Courses, costs, visas, scholarships, work rights and student life. A complete guide by Edmark Education.",
-  alternates: { canonical: "/study-in-australia" },
-};
+  path: "/study-in-australia",
+});
 
 const whyAustralia = [
   {

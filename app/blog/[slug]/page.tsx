@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -493,17 +494,14 @@ export function generateMetadata({
 }): Metadata {
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) return {};
-  return {
+  return pageSeo({
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: {
-      type: "article",
-      title: post.title,
-      description: post.excerpt,
-      publishedTime: post.date,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    // Every post shares the section card: there is no per-post artwork.
+    image: "/og/blog.jpg",
+    publishedTime: post.date,
+  });
 }
 
 export default function BlogPostPage({

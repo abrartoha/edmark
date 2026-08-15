@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import ServiceIcon from "@/components/ServiceIcon";
 import Process from "@/components/Process";
@@ -6,12 +7,12 @@ import CTA from "@/components/CTA";
 import { services } from "@/lib/content";
 import { IconCheck } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Education Consulting Services",
   description:
     "Free career counselling, university and course selection, admissions, scholarships and pre-departure support. Edmark Education guides you into the right Australian institution, from end to end.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

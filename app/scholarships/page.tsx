@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -6,12 +7,12 @@ import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import { IconCheck, IconTrophy } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Scholarships for International Students in Australia",
   description:
     "Find and win scholarships to study in Australia. Edmark Education helps you identify merit-based, need-based and government-funded scholarships. Free consultation.",
-  alternates: { canonical: "/scholarships" },
-};
+  path: "/scholarships",
+});
 
 const scholarshipTypes = [
   {

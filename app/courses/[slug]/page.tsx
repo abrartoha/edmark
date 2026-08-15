@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -29,9 +30,12 @@ export function generateMetadata({
   const course = getCourse(params.slug);
   if (!course) return {};
   return {
-    title: course.name,
-    description: `${course.name}: typical duration, indicative tuition, entry and English requirements, intakes and career outcomes. Confirmed for your situation in a free consultation with Edmark Education.`,
-    alternates: { canonical: `/courses/${course.slug}` },
+    ...pageSeo({
+      title: course.name,
+      description: `${course.name}: typical duration, indicative tuition, entry and English requirements, intakes and career outcomes. Confirmed for your situation in a free consultation with Edmark Education.`,
+      path: `/courses/${course.slug}`,
+      image: "/og/courses.jpg",
+    }),
   };
 }
 

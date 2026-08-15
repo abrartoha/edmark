@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -7,22 +8,12 @@ import CTA from "@/components/CTA";
 import { site } from "@/lib/site";
 import { IconCheck, IconResearch, IconDocument, IconTrophy } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Research Degrees in Australia: Masters by Research & PhD Guide",
   description:
     "Complete guide to Masters by Research and PhD programs in Australia. Research proposal writing, supervisor matching, scholarships and application support from Edmark Education.",
-  alternates: { canonical: "/courses/research-degrees" },
-  keywords: [
-    "Masters by Research Australia",
-    "PhD in Australia",
-    "research proposal writing",
-    "find PhD supervisor Australia",
-    "research degree application",
-    "RTP scholarship",
-    "doctoral program Australia",
-    "research degree support",
-  ],
-};
+  path: "/courses/research-degrees",
+});
 
 const whatWeHelp = [
   {

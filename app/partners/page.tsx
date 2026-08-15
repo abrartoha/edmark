@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -13,12 +14,12 @@ import {
   type Institution,
 } from "@/lib/partners";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Our Partner Institutions",
   description:
     "Edmark Education partners with leading Australian universities, TAFEs and colleges across every state. Explore our partner institutions and find the right fit for your study journey.",
-  alternates: { canonical: "/partners" },
-};
+  path: "/partners",
+});
 
 const benefits = [
   "Faster application processing through our partner network",

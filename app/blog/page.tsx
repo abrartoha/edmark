@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -6,12 +7,12 @@ import CTA from "@/components/CTA";
 import { blogPosts } from "@/lib/blog";
 import { IconArrow } from "@/components/Icons";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageSeo({
   title: "Blog: Study in Australia Tips & Guides",
   description:
     "Expert tips, guides and advice for international students planning to study in Australia. Courses, visas, scholarships, student life and more from Edmark Education.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 const categoryColors: Record<string, string> = {
   Courses: "bg-blue-50 text-blue-700",

@@ -33,26 +33,8 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  keywords: [
-    "education consultant Australia",
-    "study in Australia",
-    "international student advisor",
-    "university admission Australia",
-    "student visa guidance",
-    "course selection Melbourne",
-    "education agent Sunshine VIC",
-    "Edmark Education",
-    "free education consultation Australia",
-    "scholarship guidance Australia",
-    "TAFE courses Melbourne",
-    // "Group of Eight universities" removed: root keywords render on every
-    // page, so it was naming institutions on the higher-education pages,
-    // and none of the Go8 are partners.
-    "study abroad Australia",
-    "international student support Melbourne",
-    "education agent Melbourne",
-    "best education consultant Victoria",
-  ],
+  // No `keywords`. Search engines have ignored the tag for years, and a
+  // stuffed list is read by the humans who assess an education agent.
   authors: [{ name: site.name }],
   creator: site.name,
   publisher: site.name,
@@ -93,6 +75,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // The eucalypt token. Kept in hex because Viewport takes a colour, not a
+  // class; it must track `eucalypt.DEFAULT` in tailwind.config.ts.
   themeColor: "#0F4A47",
   width: "device-width",
   initialScale: 1,
