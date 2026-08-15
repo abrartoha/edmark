@@ -32,7 +32,10 @@ export default function PageHero({
         priority
         aria-hidden="true"
       />
-      <div className="container-page relative py-20 text-center lg:py-24">
+      {/* Shorter than it was: the banner used to push the first section of
+          every page below the fold, so a course list opened on a photograph
+          rather than on courses. */}
+      <div className="container-page relative py-12 text-center lg:py-16">
         <span className="eyebrow-light">{eyebrow}</span>
         <h1 className="mx-auto mt-5 max-w-3xl text-4xl font-medium text-paper sm:text-5xl">
           {title}
@@ -41,11 +44,14 @@ export default function PageHero({
           {subtitle}
         </p>
       </div>
+      {/* The wave stretches to the viewport width, so its height is a
+          percentage of it: on a wide screen the old 1440x100 box was adding
+          well over 100px of pure decoration. Same curve, shallower box. */}
       <div className="relative" aria-hidden="true">
-        <svg viewBox="0 0 1440 100" className="block w-full" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 56" className="block w-full" preserveAspectRatio="none">
           <path
             fill="#FBFAF7"
-            d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z"
+            d="M0,28 C360,56 1080,0 1440,28 L1440,56 L0,56 Z"
           />
         </svg>
       </div>
