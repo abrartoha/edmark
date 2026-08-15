@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -14,30 +15,39 @@ export const metadata: Metadata = pageSeo({
   path: "/study-in-australia",
 });
 
+// Photographed rather than ticked: six identical check marks said nothing
+// the headings did not already say. Images are decorative, so their alt text
+// stays empty and the card's own words carry the meaning.
 const whyAustralia = [
   {
     title: "World-class education",
     desc: "8 of the world's top 100 universities. Globally recognised qualifications accepted by employers worldwide.",
+    image: "/images/why-australia/world-class-education.jpg",
   },
   {
     title: "Post-study work rights",
     desc: "Temporary Graduate visa (Subclass 485) lets you work in Australia for 2–4 years after graduating.",
+    image: "/images/why-australia/post-study-work.jpg",
   },
   {
     title: "Multicultural & safe",
     desc: "One of the most multicultural countries on earth, with strong international student support systems.",
+    image: "/images/why-australia/multicultural-safe.jpg",
   },
   {
     title: "Work while studying",
     desc: "Student visa holders can work up to 48 hours per fortnight during study periods.",
+    image: "/images/why-australia/work-while-studying.jpg",
   },
   {
     title: "Innovation & research",
     desc: "Australia invests heavily in research. Students benefit from cutting-edge facilities and industry partnerships.",
+    image: "/images/why-australia/innovation-research.jpg",
   },
   {
     title: "Quality of life",
     desc: "Cities like Melbourne, Sydney and Brisbane consistently rank among the world's most liveable.",
+    image: "/images/why-australia/quality-of-life.jpg",
   },
 ];
 
@@ -101,16 +111,20 @@ export default function StudyInAustraliaPage() {
             {whyAustralia.map((item, i) => (
               <div
                 key={item.title}
-                className="card reveal"
+                className="card reveal overflow-hidden"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="text-brand-500">
-                  <IconCheck className="h-6 w-6" />
-                </div>
-                <h3 className="mt-4 text-base font-medium text-brand-900">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-brand-900/70">
+                {/* Bleeds past the card padding, the same treatment the
+                    course cards use, so the two read as one family. */}
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={1200}
+                  height={805}
+                  className="-mx-7 -mt-7 mb-6 h-40 w-[calc(100%+3.5rem)] rounded-tr-[2.5rem] object-cover"
+                />
+                <h3 className="text-xl font-medium text-ink">{item.title}</h3>
+                <p className="mt-2.5 text-base leading-relaxed text-copy">
                   {item.desc}
                 </p>
               </div>
