@@ -115,15 +115,9 @@ You can also ask us to delete your information. We will do so unless we are requ
 
 ## Complaints
 
-If you think we have mishandled your personal information, email **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it within 2 business days and give you a written response within 30 days.
+If you think we have mishandled your personal information, email **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it and give you a written response.
 
-If you are not satisfied with our response, or we have not replied within 30 days, you can complain to the Office of the Australian Information Commissioner:
-
-- **Web:** oaic.gov.au
-- **Phone:** 1300 363 992
-- **Post:** GPO Box 5218, Sydney NSW 2001
-
-Our full complaints process is at [edmark.com.au/complaints](/complaints).
+Our full complaints process, including what to do if you are not satisfied with our answer, is at [edmark.com.au/complaints](/complaints).
 
 ## Changes to this policy
 
