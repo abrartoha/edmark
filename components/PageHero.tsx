@@ -5,16 +5,26 @@ export default function PageHero({
   eyebrow,
   title,
   subtitle,
+  image,
 }: {
   eyebrow: string;
   /** ReactNode so a page can emphasise one phrase, e.g. a coloured span. */
   title: ReactNode;
   subtitle: string;
+  /**
+   * Banner for this page, from /images/heroes. Every page carrying a hero
+   * passes its own, so the header says something about the page rather than
+   * repeating one campus photograph site-wide. The homepage keeps its video.
+   *
+   * The default is the shared banner, which is also the video poster: a page
+   * that forgets to pass one still renders rather than showing a gap.
+   */
+  image?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-ink">
       <Image
-        src="/images/hero-banner.jpg"
+        src={image ?? "/images/hero-banner.jpg"}
         alt=""
         fill
         sizes="100vw"

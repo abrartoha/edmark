@@ -52,6 +52,7 @@ export default function FAQPage() {
         eyebrow="FAQ"
         title="Frequently asked questions"
         subtitle="Everything you need to know about studying in Australia with Edmark Education. Can't find your answer? Book a free consultation."
+        image="/images/heroes/faq.jpg"
       />
       <Breadcrumb items={[{ label: "FAQ" }]} />
 

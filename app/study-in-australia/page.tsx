@@ -84,6 +84,7 @@ export default function StudyInAustraliaPage() {
         eyebrow="Study in Australia"
         title="Your complete guide to studying in Australia"
         subtitle="Everything international students need to know about courses, costs, visas, scholarships, work rights and student life."
+        image="/images/heroes/study-in-australia.jpg"
       />
       <Breadcrumb items={[{ label: "Study in Australia" }]} />
 

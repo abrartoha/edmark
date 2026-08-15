@@ -41,6 +41,7 @@ export default function ContactPage() {
         eyebrow="Let's talk"
         title="Book your free consultation"
         subtitle="Tell us where you want to go and we'll show you the fastest, smartest way to get there. No cost, no pressure, no obligation."
+        image="/images/heroes/contact.jpg"
       />
       <Breadcrumb items={[{ label: "Contact" }]} />
 

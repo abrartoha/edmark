@@ -31,6 +31,7 @@ export default function BlogPage() {
         eyebrow="Blog"
         title="Tips & guides for studying in Australia"
         subtitle="Expert advice to help you choose the right course, win scholarships, navigate visas and thrive as a student in Australia."
+        image="/images/heroes/blog.jpg"
       />
       <Breadcrumb items={[{ label: "Blog" }]} />
 

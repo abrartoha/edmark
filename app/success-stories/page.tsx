@@ -21,6 +21,7 @@ export default function SuccessStoriesPage() {
         eyebrow="Success stories"
         title="Real students. Real results."
         subtitle="Our reputation is built on referrals. Here's what happens when students trust Edmark with their future."
+        image="/images/heroes/success-stories.jpg"
       />
       <Breadcrumb items={[{ label: "Success Stories" }]} />
 

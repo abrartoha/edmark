@@ -33,6 +33,7 @@ export default function HigherEducationPage() {
           </>
         }
         subtitle="Bachelor degrees and Masters by coursework at Australian universities."
+        image="/images/heroes/higher-education.jpg"
       />
       <Breadcrumb
         items={[

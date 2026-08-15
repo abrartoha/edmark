@@ -67,6 +67,7 @@ export default function ServiceDetail({
         eyebrow={eyebrow}
         title={service.title}
         subtitle={service.short}
+        image={`/images/heroes/${service.slug}.jpg`}
       />
       <Breadcrumb items={trail} />
 

@@ -82,6 +82,7 @@ export default function PartnersPage() {
         eyebrow="Our partners"
         title="Direct partnerships across Australia"
         subtitle="We work directly with the universities, TAFEs and colleges listed here, which means faster offers and stronger applications. We can also get students admitted to many more institutions beyond this list."
+        image="/images/heroes/partners.jpg"
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
 

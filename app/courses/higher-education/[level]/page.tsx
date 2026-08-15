@@ -41,6 +41,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
         eyebrow="Higher Education"
         title={level.title}
         subtitle={level.tagline}
+        image={`/images/heroes/${level.slug}.jpg`}
       />
       <Breadcrumb
         items={[

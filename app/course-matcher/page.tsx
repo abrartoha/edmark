@@ -24,6 +24,7 @@ export default function CourseMatcherPage() {
         eyebrow="Course matcher"
         title="Not sure where to start?"
         subtitle="Five questions, three pathways worth a closer look. Free, instant, and no email required."
+        image="/images/heroes/course-matcher.jpg"
       />
       <Breadcrumb items={[{ label: "Course matcher" }]} />
       <CourseMatcher />

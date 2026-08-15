@@ -21,6 +21,7 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title="Expert guidance at every step of your study journey"
         subtitle="One dedicated advisor. A done-for-you process. Everything you need to go from 'where do I start?' to your first day on an Australian campus."
+        image="/images/heroes/services.jpg"
       />
 
       <section className="bg-white py-16 lg:py-24">

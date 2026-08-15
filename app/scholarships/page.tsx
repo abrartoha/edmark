@@ -103,6 +103,7 @@ export default function ScholarshipsPage() {
         eyebrow="Scholarships"
         title="Don't pay more than you have to"
         subtitle="Thousands of dollars in scholarships go unclaimed every year. We help you find and win the funding you qualify for, completely free."
+        image="/images/heroes/scholarships.jpg"
       />
       <Breadcrumb items={[{ label: "Scholarships" }]} />
 

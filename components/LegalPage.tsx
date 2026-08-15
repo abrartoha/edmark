@@ -102,7 +102,12 @@ function blocks(body: string): Block[] {
 export default function LegalPage({ doc }: { doc: LegalDoc }) {
   return (
     <>
-      <PageHero eyebrow="Legal" title={doc.title} subtitle={doc.subtitle} />
+      <PageHero
+        eyebrow="Legal"
+        title={doc.title}
+        subtitle={doc.subtitle}
+        image={`/images/heroes/${doc.slug}.jpg`}
+      />
       <Breadcrumb items={[{ label: doc.title }]} />
 
       <section className="bg-paper py-16 lg:py-24">

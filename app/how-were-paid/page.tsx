@@ -19,6 +19,7 @@ export default function HowWerePaidPage() {
         eyebrow="How we're paid"
         title="Free for you, because institutions pay us."
         subtitle="The part most agents leave off their website. Here is ours, in full."
+        image="/images/heroes/how-were-paid.jpg"
       />
       <Breadcrumb items={[{ label: "How we're paid" }]} />
       <HowWerePaid />

@@ -46,6 +46,7 @@ export default function AboutPage() {
         eyebrow="About Edmark"
         title="Empowering students for life"
         subtitle="We're on a mission to make world-class Australian education accessible, understandable and achievable for every ambitious student."
+        image="/images/heroes/about.jpg"
       />
       <Breadcrumb items={[{ label: "About" }]} />
 

@@ -173,6 +173,7 @@ export default function ResearchDegreesPage() {
         eyebrow="Research degrees"
         title="Masters by Research & PhD application support"
         subtitle="From research proposal writing to supervisor matching and scholarship applications, we guide you into Australia's top research programs."
+        image="/images/heroes/research-degrees.jpg"
       />
       <Breadcrumb items={[{ label: "Courses" }, { label: "Research Degrees" }]} />
 
