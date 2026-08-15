@@ -2,8 +2,9 @@
 
 export const site = {
   name: "Edmark Education",
-  legalName: "Edmark Education",
+  legalName: "Edmark Education Pty Ltd",
   abn: "75 700 341 028",
+  acn: "700 341 028",
   tagline: "Empowering students for life",
   domain: "edmark.com.au",
   // Canonical site URL. Strip any trailing slash so we never emit "//path".

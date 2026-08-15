@@ -82,10 +82,25 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// The three nodes below are cross-referenced by @id rather than repeating one
+// another, so a crawler reads one business with a storefront and a website
+// instead of three unrelated entities that happen to share an address.
+const ORG_ID = `${site.url}/#organization`;
+const BUSINESS_ID = `${site.url}/#business`;
+
+/** ABN and ACN, as the registered identifiers a reviewer would check. */
+const registrations = [
+  { "@type": "PropertyValue", name: "ABN", value: site.abn },
+  { "@type": "PropertyValue", name: "ACN", value: site.acn },
+];
+
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
+  "@id": ORG_ID,
   name: site.name,
+  legalName: site.legalName,
+  identifier: registrations,
   description: site.description,
   url: site.url,
   telephone: site.phone,
@@ -111,8 +126,11 @@ const orgJsonLd = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": `${site.url}/#business`,
+  "@id": BUSINESS_ID,
+  parentOrganization: { "@id": ORG_ID },
   name: site.name,
+  legalName: site.legalName,
+  identifier: registrations,
   description: site.description,
   url: site.url,
   telephone: site.phone,
@@ -139,19 +157,22 @@ const localBusinessJsonLd = {
       closes: "19:00",
     },
   ],
+  sameAs: [
+    site.social.facebook,
+    site.social.instagram,
+    site.social.linkedin,
+  ],
   priceRange: "Free consultation",
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${site.url}/#website`,
   name: site.name,
   url: site.url,
   description: site.description,
-  publisher: {
-    "@type": "Organization",
-    name: site.name,
-  },
+  publisher: { "@id": ORG_ID },
 };
 
 export default function RootLayout({
