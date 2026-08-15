@@ -5,10 +5,11 @@
 // wording can be edited without touching a component. Written by the business,
 // reproduced verbatim; do not reword any of it in passing.
 //
-// The service providers named in the privacy policy are the ones this site
-// actually runs on: Vercel hosts it, Supabase stores enquiries, Resend sends
-// the notification email, Google Analytics measures visits. If any of those is
-// ever swapped out, that section has to change with it.
+// The overseas-disclosure section describes categories of recipient rather
+// than naming the vendors behind them, which is the usual form and means a
+// change of host or mail provider does not require a policy revision. Keep it
+// that way: naming a supplier in a public policy tells the internet what the
+// business runs on, and it dates the moment one is swapped out.
 // ---------------------------------------------------------------------------
 
 export type LegalDoc = {
@@ -80,16 +81,11 @@ We may also disclose information where the law requires it.
 
 ## Information sent overseas
 
-Some of the institutions you apply to, and some of the technology we use, are located outside Australia. Where we send your information overseas, we take reasonable steps to make sure it is handled with protections comparable to the Australian Privacy Principles.
+Some of the people and systems we deal with on your behalf are outside Australia. The institutions you apply to may be overseas. So may some of the technology we use to run this website and our records, including website hosting, email delivery and visitor analytics, which are commonly provided from the United States and other countries.
 
-The providers we rely on to run this website are:
+Before we disclose your personal information to an overseas recipient, we take reasonable steps to satisfy ourselves that they will handle it consistently with the Australian Privacy Principles. Where we cannot, we will tell you and ask for your consent first.
 
-- **Vercel** — website hosting
-- **Supabase** — the database that stores enquiries sent through our contact form
-- **Resend** — delivery of the email that tells us you have enquired
-- **Google Analytics** — visitor statistics
-
-All four are United States companies, so information handled by them may be stored or processed outside Australia. We do not send your application file itself to any of them; that is held in our own systems and disclosed to institutions as described above.
+If you want to know more about where your information goes, ask us and we will tell you.
 
 ## Cookies and analytics
 
