@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import HowWerePaid from "@/components/HowWerePaid";
 import PartnerCarousel from "@/components/PartnerCarousel";
 import CourseMatcher from "@/components/CourseMatcher";
 import Process from "@/components/Process";
@@ -34,6 +35,7 @@ export default function HomePage() {
       <CourseMatcher />
       <Services />
       <WhyChooseUs />
+      <HowWerePaid withLink />
       <Process />
       <Testimonials />
       <FAQ />

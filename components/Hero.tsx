@@ -50,7 +50,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-6 text-sm text-mist">
-            Join hundreds of students who trusted Edmark to launch their careers.
+            Join 1,200+ students who trusted Edmark to launch their careers.
           </p>
         </div>
       </div>

@@ -10,7 +10,7 @@ import { IconStar } from "@/components/Icons";
 export const metadata: Metadata = pageSeo({
   title: "Student Success Stories",
   description:
-    "Real stories from real students. See how Edmark Education has helped hundreds of students find the right course, win scholarships and launch their careers in Australia.",
+    "Real stories from real students. See how Edmark Education has helped 1,200+ students find the right course, win scholarships and launch their careers in Australia.",
   path: "/success-stories",
 });
 

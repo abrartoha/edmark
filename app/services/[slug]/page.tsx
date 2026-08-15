@@ -43,6 +43,9 @@ export default function ServicePage({
       extras={serviceExtras[params.slug]}
       eyebrow="Services"
       trail={[{ label: "Services", href: "/services" }, { label: service.title }]}
+      // The points claim stays on the detail page, where it can be read
+      // under the disclaimer, rather than on the card where it cannot.
+      maraNotice={params.slug === "professional-year"}
     />
   );
 }

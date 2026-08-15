@@ -111,7 +111,7 @@ export default function AboutPage() {
               </p>
               <p>
                 From our office at Level 5, 12 Clarke Street in Sunshine, Victoria, we&apos;ve
-                helped hundreds of students find the right course, win scholarships
+                helped 1,200+ students find the right course, win scholarships
                 they didn&apos;t know existed, and step onto campus with confidence.
                 No pressure, no jargon, just expert guidance that puts you first.
               </p>

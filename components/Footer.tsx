@@ -8,6 +8,10 @@ const services = allServices.map((s) => ({
   href: s.href ?? `/services/${s.slug}`,
 }));
 
+// Appended to the nav-derived Explore column. Not in the header nav: it is a
+// disclosure students should be able to find, not a primary destination.
+const explore = [{ label: "How we're paid", href: "/how-were-paid" }];
+
 const resources = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
@@ -50,10 +54,13 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
-              {nav.filter((i) => i.href).map((item) => (
+              {[
+                ...nav.filter((i) => i.href).map((i) => ({ label: i.label, href: i.href ?? "/" })),
+                ...explore,
+              ].map((item) => (
                 <li key={item.label}>
                   <Link
-                    href={item.href ?? "/"}
+                    href={item.href}
                     className="text-mist transition-colors hover:text-brass-light"
                   >
                     {item.label}
@@ -135,7 +142,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.14] pt-8 text-xs text-mist sm:flex-row">
           <p>
-            © {site.legalName}. All rights reserved. ABN {site.abn}
+            © {site.legalName}. All rights reserved. ABN {site.abn} · ACN {site.acn}
           </p>
           <p>
             {site.address.full}

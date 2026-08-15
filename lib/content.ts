@@ -94,7 +94,7 @@ export const services: Service[] = [
     icon: "trophy",
     title: "Professional Year",
     short:
-      "A 44-week program for accounting, IT and engineering graduates, including a 12-week internship, worth 5 points toward skilled migration.",
+      "A 44-week program for accounting, IT and engineering graduates, including a 12-week professional internship in your field.",
     long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test, and the local experience is often worth more than the points.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nA Professional Year on its own does not guarantee permanent residency. It is one input alongside your occupation, English score, work experience and skills assessment, and the rules change. We help you choose a provider and time your enrolment, and refer you to a registered migration agent (MARA) for formal migration advice.",
     points: [
       "44 weeks, including a 12-week industry internship",
@@ -289,7 +289,7 @@ export const reasons = [
   },
   {
     title: "Proven results",
-    body: "Hundreds of students placed into the right courses, and a reputation built on referrals, not ads.",
+    body: "1,200+ students placed into the right courses, and a reputation built on referrals, not ads.",
   },
 ];
 
@@ -318,7 +318,7 @@ export const testimonials: Testimonial[] = [
     name: "Arjun M.",
     detail: "Master of IT, Melbourne Institute of Technology",
     route: "India",
-    outcome: "Now working at Deloitte",
+    outcome: "Now working in IT consulting in Melbourne",
   },
 ];
 
@@ -385,7 +385,7 @@ export const faqs = [
   // Visa & Life in Australia
   {
     q: "Do you help with student visa applications?",
-    a: "While we are not migration agents, we guide you through the student visa (Subclass 500) process step by step. We help you understand the requirements, prepare your documentation, and connect you with a registered migration agent if you need specialist visa assistance.",
+    a: "No. We're education consultants, not registered migration agents, and only a MARA-registered agent or an Australian legal practitioner can give you immigration assistance. What we do is get the education side right \u2014 your offer letter, your Confirmation of Enrolment and your OSHC. Those are the documents a visa application depends on. When you're ready to lodge, we'll refer you to a registered migration agent, and you can check any agent's registration for free on the MARA register.",
   },
   {
     q: "Can I work while studying in Australia?",
