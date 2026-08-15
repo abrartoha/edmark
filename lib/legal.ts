@@ -79,14 +79,6 @@ We disclose your personal information to:
 
 We may also disclose information where the law requires it.
 
-## Information sent overseas
-
-Some of the people and systems we deal with on your behalf are outside Australia. The institutions you apply to may be overseas. So may some of the technology we use to run this website and our records, including website hosting, email delivery and visitor analytics, which are commonly provided from the United States and other countries.
-
-Before we disclose your personal information to an overseas recipient, we take reasonable steps to satisfy ourselves that they will handle it consistently with the Australian Privacy Principles. Where we cannot, we will tell you and ask for your consent first.
-
-If you want to know more about where your information goes, ask us and we will tell you.
-
 ## Cookies and analytics
 
 This website uses cookies and similar technology to remember your preferences and to understand how the site is used. We use Google Analytics for aggregate visitor statistics: how many people visit, which pages they read, and roughly where they are in the world. We do not use it to identify you.
