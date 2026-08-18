@@ -90,9 +90,9 @@ export function relatedCourses(course: CatalogCourse, limit = 3) {
 }
 
 // ---------------------------------------------------------------------------
-// Study-area detail. Careers are the lists that were published on the PR
-// pathway pages before it was removed, plus the career sections printed in the
-// provider brochures the courses came from. They describe the field, not one
+// Study-area detail. Careers are the lists that were published on the earlier
+// per-field pages, plus the career sections printed in the provider brochures
+// the courses came from. They describe the field, not one
 // course, which is why they sit here rather than on each entry.
 // ---------------------------------------------------------------------------
 

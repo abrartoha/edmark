@@ -13,12 +13,6 @@ export type Service = {
    * so every listing links straight there rather than through a redirect.
    */
   href?: string;
-  /**
-   * Set on any service whose copy claims a migration benefit. Prints the
-   * verbatim MARA notice above the write-up, so the caveat is read before the
-   * claim rather than after it, or not at all.
-   */
-  maraNotice?: true;
 };
 
 export const services: Service[] = [
@@ -57,11 +51,11 @@ export const services: Service[] = [
     title: "Application & Enrolment Support",
     short:
       "We prepare, submit and track your applications, then carry you through offer, payment and CoE.",
-    long: "An application fails on detail far more often than on grades. We build your document set, check every transcript and English result against the institution's own criteria, and submit to several providers in parallel so you are not waiting on a single answer. From there we chase admissions on your behalf, talk you through each offer, and handle acceptance, tuition payment and your Confirmation of Enrolment (CoE).\n\nWe also help you prepare for the Genuine Student (GS) requirement, which replaced the old Genuine Temporary Entrant test in March 2024. GS asks targeted questions, each answered in 150 words or fewer, about why you chose this course, how it fits your background and career plans, and how you will meet your visa conditions. Unlike GTE, it accepts that you may later seek permanent residency, provided study is your genuine primary purpose. We help you answer it consistently and in your own voice.",
+    long: "An application fails on detail far more often than on grades. We build your document set, check every transcript and English result against the institution's own criteria, and submit to several providers in parallel so you are not waiting on a single answer. From there we chase admissions on your behalf, talk you through each offer, and handle acceptance, tuition payment and your Confirmation of Enrolment (CoE).\n\nInstitutions also ask you to explain yourself in writing: why this course, why now, how it follows from what you have already studied or done, and where you expect it to take you. The answers are short, and a vague one costs offers. We help you write them consistently and in your own voice, so the story your application tells matches the documents behind it.",
     points: [
       "Document checklist and transcript preparation",
       "Parallel applications to several institutions",
-      "Genuine Student (GS) statement guidance",
+      "Study plan and course-choice statement guidance",
       "Offer comparison, acceptance and tuition payment",
       "Confirmation of Enrolment (CoE) and deadline tracking",
     ],
@@ -82,16 +76,14 @@ export const services: Service[] = [
   },
   {
     slug: "pte-naati-py",
-    // Claims points in the skilled migration test, same as Professional Year.
-    maraNotice: true,
     icon: "headset",
     title: "PTE & NAATI Test Prep",
     short:
       "Preparation, strategy and booking support for PTE Academic and the NAATI CCL test.",
-    long: "English proficiency and community-language credentials both carry weight in the skilled migration points test, and both reward preparation. We help you work out which test suits you, what score to aim for, and how to prepare for it, then support you through booking and results. PTE Academic is accepted by every Australian university and by the Department of Home Affairs, while the NAATI CCL test rewards applicants who speak an eligible community language.",
+    long: "Strong English and a community-language credential both open doors, and both reward preparation. We help you work out which test suits you, what score to aim for, and how to prepare for it, then support you through booking and results. PTE Academic is accepted by every Australian university, and the NAATI CCL test recognises applicants who speak an eligible community language.",
     points: [
       "Choosing between PTE Academic and IELTS",
-      "Target score planning for your course and visa",
+      "Target score planning for your course and goals",
       "Practice resources and test-day strategy",
       "NAATI CCL (community language) preparation",
       "Booking support and results guidance",
@@ -99,19 +91,17 @@ export const services: Service[] = [
   },
   {
     slug: "professional-year",
-    maraNotice: true,
     icon: "trophy",
     title: "Professional Year",
     short:
       "A 44-week program for accounting, IT and engineering graduates, including a 12-week professional internship in your field.",
-    long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test, and the local experience is often worth more than the points.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nA Professional Year on its own does not guarantee permanent residency. It is one input alongside your occupation, English score, work experience and skills assessment, and the rules change. We help you choose a provider and time your enrolment, and refer you to a registered migration agent (MARA) for formal migration advice.",
+    long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your degree, it gives you something a transcript cannot: a line of real local experience, which is often the first thing an Australian employer looks for.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nWe help you check your eligibility, compare the approved providers, and time your enrolment so it fits your study and work plans rather than cutting across them.",
     points: [
       "44 weeks, including a 12-week industry internship",
       "Accounting, IT and engineering streams",
-      "5 points toward the skilled migration points test",
-      "Eligibility check against your 485 visa and degree",
+      "Real Australian workplace experience for your resume",
+      "Eligibility check against your degree and current visa",
       "Approved provider selection and enrolment",
-      "Referral to a registered migration agent for formal advice",
     ],
   },
   {
@@ -162,17 +152,17 @@ export const serviceExtras: Record<string, ServiceExtras> = {
   },
   "application-support": {
     extended:
-      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). We also prepare you for the Genuine Student (GS) requirement, which replaced the Genuine Temporary Entrant test in March 2024 and asks targeted questions, 150 words or fewer each, about why this course, why now, and how it fits your career.",
+      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). Institutions also ask you to explain yourself in writing, in short answers, about why this course, why now, and how it fits what you have already done. We prepare you for those and keep the story consistent with the documents behind it.",
     whoFor: [
       "Students applying to more than one institution at once",
       "Anyone who has had an application delayed or knocked back",
-      "Applicants unsure how to answer the Genuine Student questions",
+      "Applicants unsure how to explain their course choice in writing",
       "Students transferring between providers or courses",
     ],
     whatToExpect: [
       "A document checklist tailored to each provider",
       "Applications lodged in parallel, not one at a time",
-      "Draft review of your Genuine Student responses",
+      "Draft review of your study plan and course-choice answers",
       "A plain comparison of every offer you receive",
       "Acceptance, payment and CoE handled end to end",
     ],
@@ -211,10 +201,10 @@ export const serviceExtras: Record<string, ServiceExtras> = {
   },
   "pte-naati-py": {
     extended:
-      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
+      "Strong English, a community-language credential and Australian work experience each strengthen your profile in their own way. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test recognises applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
     whoFor: [
-      "Students needing an English test for a visa or admission",
-      "Skilled migration applicants seeking extra points",
+      "Students needing an English test for admission or registration",
+      "Graduates looking to strengthen their professional profile",
       "Bilingual applicants eligible for the NAATI CCL test",
       "Accounting, IT and engineering graduates considering a Professional Year",
     ],
@@ -227,19 +217,18 @@ export const serviceExtras: Record<string, ServiceExtras> = {
   },
   "professional-year": {
     extended:
-      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For many graduates the internship matters more than the points: it is often the first line of local experience on an Australian resume.\n\nCompleted with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nOne caution we would rather give up front: a Professional Year does not on its own deliver permanent residency. It sits alongside your occupation, English score, work experience and skills assessment, and those settings change. We help you choose a provider and time your enrolment, then refer you to a registered migration agent (MARA) for formal advice.",
+      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For most graduates the internship is the whole point: it is often the first line of local experience on an Australian resume, and the thing employers read first.\n\nCompleted with an approved provider in an area related to your degree, it turns a qualification into demonstrable local experience. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nIt is a full year and it is not free, so it is worth entering deliberately. We check your eligibility against your degree, compare the approved providers honestly, and time your enrolment so it fits your plans.",
     whoFor: [
       "Accounting, IT and engineering graduates of Australian degrees",
-      "Temporary Graduate (485) visa holders planning their next step",
+      "Recent graduates on a Temporary Graduate (485) visa",
       "Graduates with no Australian work experience yet",
-      "Anyone weighing 5 points against a year of study",
+      "Anyone weighing a year of study against local experience",
     ],
     whatToExpect: [
       "An eligibility check against your degree and visa",
       "Provider comparison across the three streams",
       "Timing advice so the program fits inside your 485",
       "Enrolment support and document preparation",
-      "Referral to a MARA agent for formal migration advice",
     ],
   },
   "short-courses": {
@@ -391,10 +380,10 @@ export const faqs = [
     q: "Can I get a full scholarship?",
     a: "Full scholarships are competitive but absolutely available, particularly through programs like Australia Awards and some university-specific schemes. Most students receive partial scholarships that significantly reduce tuition fees. We'll be upfront about your chances and help you maximise your application.",
   },
-  // Visa & Life in Australia
+  // Life in Australia
   {
-    q: "Do you help with student visa applications?",
-    a: "No. We're education consultants, not registered migration agents, and only a MARA-registered agent or an Australian legal practitioner can give you immigration assistance. What we do is get the education side right \u2014 your offer letter, your Confirmation of Enrolment and your OSHC. Those are the documents a visa application depends on. When you're ready to lodge, we'll refer you to a registered migration agent, and you can check any agent's registration for free on the MARA register.",
+    q: "What exactly do you help me with?",
+    a: "Course and institution selection, your document set, applications to several providers in parallel, offer comparison, acceptance and tuition payment, your Confirmation of Enrolment, OSHC health cover, and pre-departure support through to your first day on campus. One advisor stays with you across all of it, so you are never re-explaining your situation to someone new.",
   },
   {
     q: "Can I work while studying in Australia?",
@@ -447,7 +436,7 @@ const homepageFaqQuestions = [
   "How does the consultation process work?",
   "How long does the entire process take?",
   "Can I consult online or does it have to be in person?",
-  "Do you help with student visa applications?",
+  "What exactly do you help me with?",
 ];
 
 export const homepageFaqs = homepageFaqQuestions.map((q) => {

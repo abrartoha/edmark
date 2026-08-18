@@ -21,10 +21,6 @@
 //   entryRequirement     Free text. Keep it generic across the network.
 //   englishRequirement   Free text, e.g. "IELTS Academic 6.0".
 //   nextIntake           Free text, e.g. "February and July".
-//   skilledOccupation    true only where the qualification maps to an
-//                        occupation on a skilled list. Recorded as data; it is
-//                        not rendered, and no occupation code is published.
-//
 // The indicative-only notice renders under every course listing on all four
 // pages. It is not configurable, by design.
 //
@@ -114,8 +110,6 @@ export type Course = {
   nextIntake: string;
   /** Defaults to "per year". */
   tuitionBasis?: string;
-  /** Optional so the short-courses list, which shares this type, stays valid. */
-  skilledOccupation?: boolean;
   /** Study area. Drives the browse-by-field index on a level page. */
   field?: Field;
 };
@@ -223,7 +217,6 @@ export type Level = {
   /** Paragraphs above the course list. */
   intro: string[];
   courses: Course[];
-  skilledOccupationRelated: boolean;
 };
 
 export const levels: Level[] = [
@@ -246,7 +239,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: true,
         field: "Computing & IT",
       },
       {
@@ -258,7 +250,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. A double degree, so you graduate with both awards.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: true,
         field: "Computing & IT",
       },
       {
@@ -270,7 +261,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -282,7 +272,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by CPA Australia.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: true,
         field: "Business",
       },
       {
@@ -294,7 +283,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by ACECQA.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -306,7 +294,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Specialisations across early childhood, primary and secondary.",
         englishRequirement: "IELTS Academic 7.5.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -318,7 +305,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by Engineers Australia. Civil and mechanical specialisations.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Engineering",
       },
       {
@@ -330,7 +316,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by the NMBA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -342,7 +327,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. For holders of an approved Diploma of Nursing.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -354,7 +338,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by the NMBA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -366,7 +349,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by OTA and the Occupational Therapy Council.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -378,7 +360,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by Speech Pathology Australia. Note the IELTS 8.0 requirement.",
         englishRequirement: "IELTS Academic 8.0.",
         nextIntake: "March and November",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -390,7 +371,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by APAC. Registration as a psychologist needs further postgraduate study.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -402,7 +382,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. The honours year following a psychological science degree.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -414,7 +393,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. A double degree, so you graduate with both awards.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -426,7 +404,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -438,7 +415,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -450,7 +426,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -462,7 +437,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by the Osteopathy Board of Australia.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -474,7 +448,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by ESSA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -486,7 +459,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -498,7 +470,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by the Australian Counselling Association.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -510,7 +481,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by the AASW. Includes supervised field placements.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -522,7 +492,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Accredited by Community Work Australia.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -534,7 +503,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Admission to practise requires further practical legal training.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Law",
       },
       {
@@ -546,7 +514,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Law",
       },
       {
@@ -558,7 +525,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Law",
       },
       {
@@ -570,7 +536,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification. Specialisations in agriculture, environment and marine science.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Science",
       },
       {
@@ -582,7 +547,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Science",
       },
       {
@@ -594,7 +558,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Hotel Management",
       },
       {
@@ -606,7 +569,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Hotel Management",
       },
       {
@@ -619,7 +581,6 @@ export const levels: Level[] = [
           "Completed Year 12 or equivalent senior secondary qualification. Charged per unit at some providers, with a standard full-time year of eight units.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "Multiple intakes a year, confirmed with the provider",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -632,11 +593,9 @@ export const levels: Level[] = [
           "Completed Year 12 or equivalent senior secondary qualification. Charged per unit at some providers, with a standard full-time year of eight units.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "Multiple intakes a year, confirmed with the provider",
-        skilledOccupation: true,
         field: "Computing & IT",
       },
     ],
-    skilledOccupationRelated: true,
   },
   {
     slug: "postgraduate",
@@ -657,7 +616,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Cybersecurity and artificial intelligence specialisations.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: true,
         field: "Computing & IT",
       },
       {
@@ -669,7 +627,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Business analytics and artificial intelligence specialisation available.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -681,7 +638,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. An entry route for graduates without an accounting background.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: true,
         field: "Business",
       },
       {
@@ -693,7 +649,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -705,7 +660,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Carries credit into a masters.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -717,7 +671,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. A shorter entry point that credits into a masters.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Business",
       },
       {
@@ -729,7 +682,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by NESA and AITSL. Primary and secondary specialisations.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March, July, September and November",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -741,7 +693,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by NESA, AITSL and ACECQA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March, July, September and November",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -753,7 +704,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by ACECQA.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July, September and November",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -765,7 +715,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by ACECQA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March, July and November",
-        skilledOccupation: true,
         field: "Education & Teaching",
       },
       {
@@ -777,7 +726,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Civil engineering specialisation.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March and July",
-        skilledOccupation: true,
         field: "Engineering",
       },
       {
@@ -789,7 +737,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by the NMBA.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "January and August",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -801,7 +748,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Accredited by the AASW. The qualifying route for graduates of another discipline.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March and November",
-        skilledOccupation: true,
         field: "Health",
       },
       {
@@ -813,7 +759,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "July and November",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -825,7 +770,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March and July",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -837,7 +781,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree. Requires prior undergraduate study in osteopathy.",
         englishRequirement: "IELTS Academic 7.0.",
         nextIntake: "March",
-        skilledOccupation: false,
         field: "Health",
       },
       {
@@ -849,7 +792,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Hotel Management",
       },
       {
@@ -861,7 +803,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Hotel Management",
       },
       {
@@ -873,7 +814,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "March, July and November",
-        skilledOccupation: false,
         field: "Hotel Management",
       },
       {
@@ -886,11 +826,9 @@ export const levels: Level[] = [
           "A completed bachelor degree. Charged per unit at some providers, with a standard full-time year of eight units.",
         englishRequirement: "IELTS Academic 6.0 to 6.5.",
         nextIntake: "Multiple intakes a year, confirmed with the provider",
-        skilledOccupation: true,
         field: "Computing & IT",
       },
     ],
-    skilledOccupationRelated: true,
   },
 ];
 

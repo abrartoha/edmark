@@ -7,7 +7,7 @@ import CourseCard from "@/components/CourseCard";
 import CTA from "@/components/CTA";
 import FieldArt from "@/components/FieldArt";
 import { IconArrow, IconCheck } from "@/components/Icons";
-import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
+import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import Image from "next/image";
 import {
   catalog,
@@ -144,11 +144,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
               {INDICATIVE_NOTICE}
             </p>
-            {course.skilledOccupation && (
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sage">
-                {MARA_NOTICE}
-              </p>
-            )}
           </div>
 
           <aside className="lg:pt-14">

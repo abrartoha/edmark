@@ -5,7 +5,6 @@ import { useState } from "react";
 import type { Pathway } from "@/lib/pathways";
 import {
   INDICATIVE_NOTICE,
-  MARA_NOTICE,
   formatTuition,
   matchPathways,
   questions,
@@ -47,12 +46,6 @@ function ResultCard({ pathway }: { pathway: Pathway }) {
         <Detail label="Typical entry requirement" value={pathway.entryRequirement} />
         <Detail label="Next intake" value={pathway.nextIntake} />
       </dl>
-
-      {pathway.tags.skilledOccupation && (
-        <p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-sage">
-          {MARA_NOTICE}
-        </p>
-      )}
     </article>
   );
 }

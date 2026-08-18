@@ -44,7 +44,7 @@ To do our job we usually need:
 - **Academic history** — transcripts, certificates, English test results (IELTS, PTE, TOEFL), and details of previous study
 - **Study and work background** — your CV, employment history, and any professional registrations
 - **Financial information** — evidence of funds where an institution asks for it as part of an application
-- **Visa and immigration status** — your current visa subclass, expiry date and travel history, so we can tell you which courses you can apply for
+- **Your current visa and study history in Australia** — what you hold now and when it expires, so we can tell you which courses and intakes are open to you
 - **Health information** — only where it is needed to arrange your Overseas Student Health Cover, or where an institution requires a disclosure for a placement or a course with health requirements
 
 Health information is sensitive information. We only collect it with your consent, and only when it is necessary.
@@ -73,7 +73,6 @@ We disclose your personal information to:
 - **Education institutions** — universities, TAFEs and colleges, when we lodge an application for you or follow it up. This is the main reason we collect your information, and applications cannot proceed without it.
 - **Health insurers** — the OSHC provider you choose, when we arrange your cover.
 - **Test and program providers** — PTE, NAATI and Professional Year providers, where you ask us to book or enrol you.
-- **Registered migration agents** — only where you ask us to refer you, and only with your consent. We are not migration agents ourselves.
 - **Our service providers** — the companies that host our website, email and application records. They are bound to keep your information confidential and use it only to provide their service to us.
 - **Anyone else you tell us to** — for example a parent, sponsor or education counsellor you have asked us to keep informed.
 
@@ -143,15 +142,11 @@ We are an education consultancy. We help international students choose a course,
 - Booking and preparing you for PTE, NAATI and Professional Year programs
 - Pre-departure and arrival guidance
 
-## 2. What we do not do
+## 2. The scope of our advice
 
-**We are not registered migration agents.** Under Australian law, only a registered migration agent or an Australian legal practitioner can give immigration assistance. We do not prepare, lodge or advise on visa applications.
+**Our services are limited to education and course advice.** That means choosing a course and provider, preparing and lodging your applications, following up offers and your Confirmation of Enrolment, arranging Overseas Student Health Cover, booking test and program enrolments, and pre-departure guidance. Everything in section 1 sits inside that scope, and nothing outside it does.
 
-What we do is get the education side right — your offer letter, your Confirmation of Enrolment and your OSHC. Those are the documents a visa application depends on. When you are ready to lodge, we will refer you to a registered migration agent if you ask.
-
-You can check any migration agent's registration for free on the Office of the Migration Agents Registration Authority register.
-
-We also do not provide legal, financial, taxation or medical advice.
+We do not provide legal, financial, taxation or medical advice, and nothing we tell you should be relied on as any of those. Where your situation calls for professional advice of a kind we do not provide, get it from someone qualified to give it.
 
 ## 3. No guarantees
 
@@ -159,8 +154,8 @@ We cannot guarantee:
 
 - That any institution will make you an offer. Admission decisions belong to the institution.
 - That you will receive a scholarship, or any particular amount.
-- That your visa will be granted. That decision belongs to the Department of Home Affairs.
-- Any particular academic result, employment outcome, salary or migration outcome.
+- That an institution will hold a place, a fee or an intake date open for you.
+- Any particular academic result, employment outcome or salary.
 
 Anything we tell you about your chances is our honest opinion based on your profile and our experience. It is not a promise.
 

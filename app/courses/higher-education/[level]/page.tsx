@@ -8,7 +8,7 @@ import CourseBrowser from "@/components/CourseBrowser";
 import { courseSlug } from "@/lib/course-catalog";
 import CTA from "@/components/CTA";
 import { IconArrow } from "@/components/Icons";
-import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
+import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import { getLevel, levels } from "@/lib/higher-education";
 
 export function generateStaticParams() {
@@ -85,15 +85,8 @@ export default function LevelPage({ params }: { params: { level: string } }) {
             lockedLevel={level.slug}
           />
 
-          {/* Only when the level genuinely touches skilled occupations. */}
-          {level.skilledOccupationRelated && (
-            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
-              {MARA_NOTICE}
-            </p>
-          )}
-
           {/* Unconditional, under every course listing. */}
-          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-sage">
+          <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
             {INDICATIVE_NOTICE}
           </p>
 

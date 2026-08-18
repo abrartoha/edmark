@@ -86,7 +86,9 @@ Student visa holders can work up to 48 hours per fortnight during study periods 
 
 ## How Edmark can help
 
-While we are not migration agents, we guide you through every step of the visa process. We help you prepare your documents, answer the Genuine Student questions in your own voice, and connect you with a registered migration agent if you need specialist assistance.
+Most of what decides whether an application goes smoothly happens well before it is lodged, and that is where we work. We get you into the right course at a CRICOS-registered provider, secure your Confirmation of Enrolment, make sure your English result actually meets your course's requirement rather than nearly meeting it, arrange OSHC for the correct dates, and help you set out your course choice and study plan clearly and consistently.
+
+That is what the common mistakes above really come down to: a file with gaps in it, or one that contradicts itself. Get the enrolment side complete and coherent and most of the risk is gone. Requirements, charges and processing times are set by the Department of Home Affairs and do change, so check the current details on the official website before you lodge.
 `,
   "top-scholarships-for-international-students-in-australia": `
 ## Why scholarships matter

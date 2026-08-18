@@ -5,7 +5,6 @@ import CTA from "@/components/CTA";
 import ServiceIcon from "@/components/ServiceIcon";
 import { IconCheck } from "@/components/Icons";
 import { services, type Service, type ServiceExtras } from "@/lib/content";
-import { MARA_NOTICE } from "@/lib/compliance";
 import { site } from "@/lib/site";
 
 type Crumb = { label: string; href?: string };
@@ -20,19 +19,12 @@ export default function ServiceDetail({
   extras,
   eyebrow,
   trail,
-  maraNotice,
   children,
 }: {
   service: Service;
   extras?: ServiceExtras;
   eyebrow: string;
   trail: Crumb[];
-  /**
-   * Prints the verbatim MARA notice above the write-up. Set on any service
-   * whose copy touches migration, so the caveat is read before the claim
-   * rather than after it.
-   */
-  maraNotice?: boolean;
   /** Rendered between the breadcrumb and the write-up, e.g. a course list. */
   children?: React.ReactNode;
 }) {
@@ -85,11 +77,6 @@ export default function ServiceDetail({
             <h2 className="mt-6 text-3xl font-medium text-brand-900">
               {service.title}
             </h2>
-            {maraNotice && (
-              <p className="mt-6 border-l-2 border-brass pl-5 text-sm leading-relaxed text-sage">
-                {MARA_NOTICE}
-              </p>
-            )}
             {extras?.extended.split("\n\n").map((p, i) => (
               <p
                 key={i}

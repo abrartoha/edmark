@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
 import CourseBrowser from "@/components/CourseBrowser";
 import { courseSlug } from "@/lib/course-catalog";
-import { INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
+import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import {
   INTAKE_PLANNING_2026,
   SCHOLARSHIPS_NOTE,
@@ -65,16 +65,7 @@ export default function HigherEducationPage() {
             }))}
           />
 
-          {/* The hub now lists the courses themselves, including the
-              skilled-occupation ones, so it carries the same MARA notice the
-              level pages do rather than leaving it behind on them. */}
-          {levels.some((l) => l.skilledOccupationRelated) && (
-            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
-              {MARA_NOTICE}
-            </p>
-          )}
-
-          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-sage">
+          <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
             {INDICATIVE_NOTICE}
           </p>
         </div>
