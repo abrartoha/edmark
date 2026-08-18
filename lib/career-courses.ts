@@ -1,7 +1,7 @@
-// PR Pathway course categories. Course codes are nationally recognised
+// In-demand career course categories. Course codes are nationally recognised
 // training-package codes (public data from training.gov.au). Descriptions are
-// original. Skilled occupation lists change frequently, so formal migration
-// advice must come from a registered migration agent (MARA).
+// original. Which fields are in demand shifts over time, so we confirm current
+// course status and outcomes at application time.
 
 import type { Service } from "./content";
 
@@ -11,7 +11,7 @@ export type Course = {
   description: string;
 };
 
-export type PrCategory = {
+export type CareerCategory = {
   slug: string;
   title: string;
   icon: Service["icon"];
@@ -23,14 +23,14 @@ export type PrCategory = {
   careerPathways: string[];
 };
 
-export const prCategories: PrCategory[] = [
+export const careerCategories: CareerCategory[] = [
   {
     slug: "trade",
     title: "Trade Courses",
     icon: "document",
     tagline: "Hands-on, licensed trades that are consistently in demand across Australia.",
     intro: [
-      "Skilled trades are among the most reliable study-to-work pathways in Australia. Many trade occupations appear on the skilled occupation lists, and qualified tradespeople are needed in every state and territory.",
+      "Skilled trades are among the most reliable study-to-work pathways in Australia. Qualified tradespeople are consistently in demand in every state and territory.",
       "These qualifications blend classroom learning with practical, on-the-job training so you graduate genuinely job-ready, often with a licence to work in your trade.",
       "Every qualification below is a nationally recognised code from the Australian training system, so it means the same thing at every provider. As an international student you need to study with a provider that is both a registered training organisation and CRICOS registered for that specific course, and not every provider is registered for every trade. We check that for you before you apply.",
     ],
@@ -71,8 +71,8 @@ export const prCategories: PrCategory[] = [
     ],
     eligibility: [
       "Completion of Year 11/12 or an equivalent qualification",
-      "English at the IELTS/PTE level required by your provider and visa",
-      "Usually 18+ for onshore study",
+      "English at the IELTS/PTE level your provider requires",
+      "Usually 18+ at the time you start",
       "Many trades include a supervised work placement or apprenticeship component",
     ],
     careerPathways: [
@@ -128,8 +128,8 @@ export const prCategories: PrCategory[] = [
     icon: "trophy",
     tagline: "From trade-level cookery to hospitality management, a clear and in-demand pathway.",
     intro: [
-      "Australia's hospitality and tourism sector offers strong job prospects and well-defined pathways, from foundational cookery through to senior management. Several occupations, including chefs, cooks and restaurant managers, feature on skilled occupation lists.",
-      "Packaged study plans (for example, Certificate III, then Certificate IV, then a Diploma) let you build your qualifications and your visa length together, with practical placements along the way.",
+      "Australia's hospitality and tourism sector offers strong job prospects and well-defined pathways, from foundational cookery through to senior management. Roles like chefs, cooks and restaurant managers are consistently in demand across the country.",
+      "Packaged study plans (for example, Certificate III, then Certificate IV, then a Diploma) let you build your qualifications step by step, with practical placements along the way.",
     ],
     programsHeading: "Certifications offered in Hospitality & Cookery programs",
     programs: [
@@ -163,7 +163,7 @@ export const prCategories: PrCategory[] = [
     icon: "graduation",
     tagline: "Early childhood and education-support pathways at both VET and university level.",
     intro: [
-      "Teaching and early childhood education is a rewarding, in-demand field with pathways at both vocational and university level. Early childhood educators and teachers appear on skilled occupation lists.",
+      "Teaching and early childhood education is a rewarding, in-demand field with pathways at both vocational and university level. Early childhood educators and teachers are in strong demand across the country.",
       "We help you choose the right level, from a Certificate III to a Master of Teaching, and plan credit pathways so your study builds toward the role and registration you're aiming for.",
     ],
     programsHeading: "Certifications offered in Teaching programs",
@@ -192,6 +192,6 @@ export const prCategories: PrCategory[] = [
   },
 ];
 
-export function getPrCategory(slug: string) {
-  return prCategories.find((c) => c.slug === slug);
+export function getCareerCategory(slug: string) {
+  return careerCategories.find((c) => c.slug === slug);
 }

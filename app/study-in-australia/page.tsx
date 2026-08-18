@@ -352,7 +352,7 @@ export default function StudyInAustraliaPage() {
 
       <CTA
         title="Let us guide your journey to Australia"
-        subtitle="Book a free consultation and get a personalised plan covering courses, scholarships, visas and everything else you need."
+        subtitle="Book a free consultation and get a personalised plan covering courses, scholarships, costs and everything else you need."
       />
     </>
   );

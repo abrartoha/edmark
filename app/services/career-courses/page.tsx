@@ -6,34 +6,34 @@ import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import ServiceIcon from "@/components/ServiceIcon";
 import { IconArrow, IconCheck } from "@/components/Icons";
-import { prCategories } from "@/lib/pr-courses";
+import { careerCategories } from "@/lib/career-courses";
 
 export const metadata: Metadata = {
-  title: "PR Pathway Courses",
+  title: "In-Demand Career Courses",
   description:
-    "Study pathways aligned with Australia's in-demand occupations in Trade, Nursing, Hospitality & Cookery and Teaching. Explore qualifications, eligibility and career pathways with Edmark Education.",
-  alternates: { canonical: "/services/pr-pathway-courses" },
+    "Study pathways in Trade, Nursing, Hospitality & Cookery and Teaching, four fields Australian employers consistently need. Explore qualifications, eligibility and career outcomes with Edmark Education.",
+  alternates: { canonical: "/services/career-courses" },
 };
 
 const benefits = [
-  "Courses aligned with in-demand and skilled occupations",
+  "Courses tied to fields Australian employers consistently need",
   "Regional and metropolitan study options",
-  "Packaged qualifications that build your study plan and visa length",
-  "Referral to registered migration agents for formal advice",
+  "Packaged qualifications that build one credential on the next",
+  "Nationally recognised codes, checked against CRICOS registration",
 ];
 
-export default function PrPathwayPage() {
+export default function CareerCoursesPage() {
   return (
     <>
       <PageHero
         eyebrow="Services"
-        title="PR Pathway Courses"
-        subtitle="Choose a study path aligned with Australia's in-demand occupations, and build genuine skills and experience while you're at it."
+        title="In-Demand Career Courses"
+        subtitle="Choose a study path in a field Australian employers are hiring in, and build genuine skills and experience while you're at it."
       />
       <Breadcrumb
         items={[
           { label: "Services", href: "/services" },
-          { label: "PR Pathway Courses" },
+          { label: "In-Demand Career Courses" },
         ]}
       />
 
@@ -43,8 +43,8 @@ export default function PrPathwayPage() {
           <div>
             <SectionHeading
               eyebrow="Study with your future in mind"
-              title="Not every course counts the same for migration"
-              subtitle="Qualifications tied to occupations in demand can strengthen your skilled-migration profile. We help you pick a course that builds real skills and supports your long-term goals in Australia."
+              title="Not every course opens the same doors"
+              subtitle="Qualifications tied to the work employers are actually hiring for lead somewhere. We help you pick a course that builds real skills and supports the career you want in Australia."
             />
             <ul className="mt-8 space-y-3">
               {benefits.map((b) => (
@@ -59,13 +59,14 @@ export default function PrPathwayPage() {
           </div>
           <div className="rounded-3xl border border-brand-100 bg-brand-50/60 p-8">
             <p className="text-sm leading-relaxed text-brand-900/70">
-              Australia&apos;s skilled occupation lists include many trade, health, hospitality and
-              education roles. The right qualification can open both a career and a longer-term
-              pathway, but the rules change often.
+              Trade, health, hospitality and education roles are among the most consistently
+              advertised jobs in Australia, in the cities and well beyond them. The right
+              qualification opens a career, but which fields are hiring hardest does shift over
+              time.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
-              We give you honest, up-to-date course guidance and connect you with a registered
-              migration agent (MARA) for any formal migration advice.
+              So we keep our course guidance honest and current, and confirm outcomes, provider
+              registration and entry requirements with you before you apply.
             </p>
           </div>
         </div>
@@ -77,14 +78,14 @@ export default function PrPathwayPage() {
           <SectionHeading
             center
             eyebrow="Pathways"
-            title="Explore our PR pathway courses"
+            title="Explore our career courses"
             subtitle="Four popular study areas, each with in-demand qualifications and clear career outcomes."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {prCategories.map((c, i) => (
+            {careerCategories.map((c, i) => (
               <Link
                 key={c.slug}
-                href={`/services/pr-pathway-courses/${c.slug}`}
+                href={`/services/career-courses/${c.slug}`}
                 className="reveal group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
                 style={{ transitionDelay: `${(i % 2) * 80}ms` }}
               >

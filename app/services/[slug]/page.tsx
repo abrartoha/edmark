@@ -38,35 +38,35 @@ const serviceExtras: Record<
       "Clear next steps and a timeline for your journey",
     ],
   },
-  "pr-pathway-courses": {
+  "career-courses": {
     extended:
-      "For many students, studying in Australia is also the first step toward permanent residency. But the course you choose matters. Qualifications tied to occupations in demand can strengthen your skilled migration profile, while others may not count toward it at all.\n\nWe help you understand how course choice, location and level of study interact with the skilled occupation lists and points test, so your study decision supports your long-term goals. Important: migration rules change often, and formal, personalised migration advice must come from a registered migration agent (MARA), whom we can connect you with.",
+      "The course you choose shapes the career you can build in Australia. Some qualifications are tied to the fields employers need most and open strong, in-demand career paths, while others stay more general.\n\nWe help you understand how course choice, location and level of study affect your long-term career options, so your study decision supports where you want to end up. Because which fields are in demand shifts over time, we confirm current course outcomes with you at application time.",
     whoFor: [
-      "Students who want their study to support a residency pathway",
+      "Students who want their study to lead to a strong career",
       "Graduates considering further study to improve their prospects",
       "Applicants weighing regional versus metropolitan study",
-      "Anyone confused by skilled occupation lists and points",
+      "Anyone unsure which courses lead to in-demand careers",
     ],
     whatToExpect: [
       "A review of your goals and current profile",
-      "Course and location options aligned to in-demand occupations",
-      "An overview of how study choices can affect your points",
-      "Referral to a registered migration agent for formal advice",
+      "Course and location options aligned to in-demand fields",
+      "An overview of how study choices affect your career options",
+      "A clear, personalised plan for your next steps",
     ],
   },
   "application-support": {
     extended:
-      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). We also prepare you for the Genuine Student (GS) requirement, which replaced the Genuine Temporary Entrant test in March 2024 and asks targeted questions, 150 words or fewer each, about why this course, why now, and how it fits your career.",
+      "Applications are lost on detail far more often than on grades: a missing transcript page, an English result that expired last month, a course code that changed between intakes. We build your document set against each institution's own criteria, submit to several providers in parallel so you are never waiting on a single answer, and chase admissions on your behalf until decisions land.\n\nOnce offers arrive we go through them with you honestly, including the ones we think you should turn down, then handle acceptance, tuition payment and your Confirmation of Enrolment (CoE). Institutions also ask you to explain yourself in writing, in short answers, about why this course, why now, and how it fits what you have already done. We prepare you for those and help you keep the story consistent with the documents behind it.",
     whoFor: [
       "Students applying to more than one institution at once",
       "Anyone who has had an application delayed or knocked back",
-      "Applicants unsure how to answer the Genuine Student questions",
+      "Applicants unsure how to explain their course choice in writing",
       "Students transferring between providers or courses",
     ],
     whatToExpect: [
       "A document checklist tailored to each provider",
       "Applications lodged in parallel, not one at a time",
-      "Draft review of your Genuine Student responses",
+      "Draft review of your study plan and course-choice answers",
       "A plain comparison of every offer you receive",
       "Acceptance, payment and CoE handled end to end",
     ],
@@ -105,10 +105,10 @@ const serviceExtras: Record<
   },
   "pte-naati-py": {
     extended:
-      "English proficiency, community-language credentials and Australian work experience can each add valuable points toward skilled migration. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test rewards applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
+      "Strong English, community-language credentials and Australian work experience can each strengthen your profile and your career prospects. PTE Academic is one of the most widely accepted English tests, the NAATI CCL test recognises applicants who speak an eligible community language, and the Professional Year Program (PYP) provides supervised local work experience for graduates in accounting, IT and engineering.\n\nWe help you understand which tests and programs apply to you, what scores to aim for, and how to prepare, including practice resources, test strategy, booking support, and enrolment into an approved Professional Year provider.",
     whoFor: [
-      "Students needing an English test for a visa or admission",
-      "Skilled migration applicants seeking extra points",
+      "Students needing an English test for admission or registration",
+      "Graduates looking to strengthen their professional profile",
       "Bilingual applicants eligible for the NAATI CCL test",
       "Accounting, IT and engineering graduates considering a Professional Year",
     ],
@@ -121,19 +121,19 @@ const serviceExtras: Record<
   },
   "professional-year": {
     extended:
-      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For many graduates the internship matters more than the points: it is often the first line of local experience on an Australian resume.\n\nCompleted with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nOne caution we would rather give up front: a Professional Year does not on its own deliver permanent residency. It sits alongside your occupation, English score, work experience and skills assessment, and those settings change. We help you choose a provider and time your enrolment, then refer you to a registered migration agent (MARA) for formal advice.",
+      "The Professional Year Program runs 44 weeks and pairs classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. For many graduates the internship is the real prize: it is often the first line of local experience on an Australian resume, and frequently what employers value most.\n\nCompleted with an approved provider in an area related to your degree, it gives you genuine Australian workplace experience. You will generally need a Temporary Graduate (subclass 485) visa and an Australian bachelor degree or higher in accounting, IT or engineering, recognised by the body governing your stream: ACS, CPA Australia or CA ANZ, or Engineers Australia. Since the program takes about a year, start it at least 12 months before your 485 expires.\n\nWe help you choose a provider, check your eligibility and time your enrolment so it fits your study and career plans.",
     whoFor: [
       "Accounting, IT and engineering graduates of Australian degrees",
-      "Temporary Graduate (485) visa holders planning their next step",
+      "Recent graduates on a Temporary Graduate (485) visa",
       "Graduates with no Australian work experience yet",
-      "Anyone weighing 5 points against a year of study",
+      "Anyone weighing a year of study against local work experience",
     ],
     whatToExpect: [
       "An eligibility check against your degree and visa",
       "Provider comparison across the three streams",
       "Timing advice so the program fits inside your 485",
       "Enrolment support and document preparation",
-      "Referral to a MARA agent for formal migration advice",
+      "Guidance on how the program fits your career plans",
     ],
   },
   "short-courses": {
@@ -279,12 +279,10 @@ const serviceExtras: Record<
 };
 
 export function generateStaticParams() {
-  // pr-pathway-courses has its own folder route with sub-pages, and
+  // career-courses has its own folder route with sub-pages, and
   // research-degrees redirects to the fuller /research-degrees page.
   return services
-    .filter(
-      (s) => s.slug !== "pr-pathway-courses" && s.slug !== "research-degrees"
-    )
+    .filter((s) => s.slug !== "career-courses" && s.slug !== "research-degrees")
     .map((s) => ({ slug: s.slug }));
 }
 

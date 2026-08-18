@@ -5,14 +5,14 @@ import type { BudgetBand, Field, Pathway, Qualification } from "./pathways";
 import { pathways } from "./pathways";
 
 export type Timing = "next-intake" | "six-months" | "one-year" | "exploring";
-export type Residency = "priority" | "somewhat" | "no";
+export type JobDemand = "priority" | "somewhat" | "no";
 export type FieldAnswer = Field | "not-sure";
 
 export type Answers = {
   qualification?: Qualification;
   field?: FieldAnswer;
   budget?: BudgetBand;
-  residency?: Residency;
+  jobDemand?: JobDemand;
   timing?: Timing;
 };
 
@@ -59,12 +59,12 @@ export const questions: Question[] = [
     ],
   },
   {
-    key: "residency",
-    prompt: "Is long-term residency part of your plan?",
+    key: "jobDemand",
+    prompt: "How much does strong job demand matter to you?",
     options: [
-      { value: "priority", label: "Yes, it's a priority" },
+      { value: "priority", label: "It's a priority" },
       { value: "somewhat", label: "Somewhat" },
-      { value: "no", label: "No, just study" },
+      { value: "no", label: "I'd rather follow my interest" },
     ],
   },
   {
@@ -80,8 +80,8 @@ export const questions: Question[] = [
 ];
 
 // Compliance copy now lives in lib/compliance.ts so the higher-education pages
-// share the exact same strings. Re-exported here so existing imports still work.
-export { MARA_NOTICE, INDICATIVE_NOTICE } from "./compliance";
+// share the exact same string. Re-exported here so existing imports still work.
+export { INDICATIVE_NOTICE } from "./compliance";
 
 // ---------------------------------------------------------------------------
 // Timing shapes the closing prompt only. It never affects ranking: intakes vary
@@ -90,7 +90,7 @@ export { MARA_NOTICE, INDICATIVE_NOTICE } from "./compliance";
 
 export const timingPrompt: Record<Timing, string> = {
   "next-intake":
-    "Intakes fill and visa processing slows once a provider hits its allocation. Book a consultation this week.",
+    "Popular intakes fill early, and places close once a provider hits its allocation. Book a consultation this week.",
   "six-months":
     "Good timing. Book a free consultation and we'll map your application deadlines.",
   "one-year":
@@ -104,10 +104,10 @@ export const timingPrompt: Record<Timing, string> = {
 //   field match          +3
 //   qualification match  +2
 //   budget band match    +2
-//   skilled occupation   +1 when residency is a priority, +0.5 when somewhat
+//   in-demand field      +1 when job demand is a priority, +0.5 when somewhat
 // "Not sure yet" applies no field preference, so nothing is filtered out.
-// Residency only weights which pathways surface. It produces no visa or
-// residency output anywhere in the results.
+// Job demand only weights which pathways surface. It prints nothing on the
+// results themselves.
 // ---------------------------------------------------------------------------
 
 export function scorePathway(p: Pathway, a: Answers): number {
@@ -122,9 +122,9 @@ export function scorePathway(p: Pathway, a: Answers): number {
   if (a.budget && p.tags.budgetBands.includes(a.budget)) {
     score += 2;
   }
-  if (p.tags.skilledOccupation) {
-    if (a.residency === "priority") score += 1;
-    else if (a.residency === "somewhat") score += 0.5;
+  if (p.tags.inDemand) {
+    if (a.jobDemand === "priority") score += 1;
+    else if (a.jobDemand === "somewhat") score += 0.5;
   }
 
   return score;

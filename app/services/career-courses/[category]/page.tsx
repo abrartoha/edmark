@@ -7,10 +7,10 @@ import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import ServiceIcon from "@/components/ServiceIcon";
 import { IconCheck, IconArrow } from "@/components/Icons";
-import { prCategories, getPrCategory } from "@/lib/pr-courses";
+import { careerCategories, getCareerCategory } from "@/lib/career-courses";
 
 export function generateStaticParams() {
-  return prCategories.map((c) => ({ category: c.slug }));
+  return careerCategories.map((c) => ({ category: c.slug }));
 }
 
 export function generateMetadata({
@@ -18,32 +18,32 @@ export function generateMetadata({
 }: {
   params: { category: string };
 }): Metadata {
-  const cat = getPrCategory(params.category);
+  const cat = getCareerCategory(params.category);
   if (!cat) return {};
   return {
-    title: `${cat.title}: PR Pathway Courses`,
+    title: `${cat.title} Courses in Australia`,
     description: `${cat.tagline} Explore ${cat.title.toLowerCase()} qualifications, eligibility and career pathways with Edmark Education.`,
-    alternates: { canonical: `/services/pr-pathway-courses/${cat.slug}` },
+    alternates: { canonical: `/services/career-courses/${cat.slug}` },
   };
 }
 
-export default function PrCategoryPage({
+export default function CareerCategoryPage({
   params,
 }: {
   params: { category: string };
 }) {
-  const cat = getPrCategory(params.category);
+  const cat = getCareerCategory(params.category);
   if (!cat) notFound();
 
-  const others = prCategories.filter((c) => c.slug !== cat.slug);
+  const others = careerCategories.filter((c) => c.slug !== cat.slug);
 
   return (
     <>
-      <PageHero eyebrow="PR Pathway Courses" title={cat.title} subtitle={cat.tagline} />
+      <PageHero eyebrow="Career Courses" title={cat.title} subtitle={cat.tagline} />
       <Breadcrumb
         items={[
           { label: "Services", href: "/services" },
-          { label: "PR Pathway Courses", href: "/services/pr-pathway-courses" },
+          { label: "In-Demand Career Courses", href: "/services/career-courses" },
           { label: cat.title },
         ]}
       />
@@ -108,7 +108,7 @@ export default function PrCategoryPage({
             center
             eyebrow="Eligibility"
             title="Eligibility requirements"
-            subtitle="General entry guidance. Exact requirements vary by provider, course and your visa. We confirm the specifics for you."
+            subtitle="General entry guidance. Exact requirements vary by provider, course and intake. We confirm the specifics for you."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {cat.eligibility.map((e) => (
@@ -151,13 +151,14 @@ export default function PrCategoryPage({
         </div>
       </section>
 
-      {/* Migration note */}
+      {/* Course currency note */}
       <section className="bg-white py-10">
         <div className="container-page">
           <p className="mx-auto max-w-3xl rounded-2xl border border-brand-100 bg-brand-50/60 p-5 text-center text-xs leading-relaxed text-brand-900/60">
-            Skilled occupation lists and migration rules change regularly. Edmark provides education and
-            course guidance only. Formal migration advice must come from a registered migration agent
-            (MARA), whom we can connect you with.
+            Edmark provides education and course guidance. Training packages are updated and
+            qualification codes are superseded from time to time, and not every provider is CRICOS
+            registered for every course, so we confirm current codes, provider registration and entry
+            requirements for you before you apply.
           </p>
         </div>
       </section>
@@ -166,13 +167,13 @@ export default function PrCategoryPage({
       <section className="bg-brand-50 py-16 lg:py-24">
         <div className="container-page">
           <h2 className="text-center text-2xl font-medium text-brand-900">
-            Explore other PR pathway courses
+            Explore other career courses
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {others.map((o) => (
               <Link
                 key={o.slug}
-                href={`/services/pr-pathway-courses/${o.slug}`}
+                href={`/services/career-courses/${o.slug}`}
                 className="card-hover group flex items-start gap-4"
               >
                 <div className="shrink-0 text-brand-500">

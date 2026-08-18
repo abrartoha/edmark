@@ -19,12 +19,6 @@
 //   entryRequirement     Free text. Keep it generic across the network.
 //   englishRequirement   Free text, e.g. "IELTS Academic 6.0".
 //   nextIntake           Free text, e.g. "February and July".
-//   skilledOccupation    true only where the qualification maps to an
-//                        occupation on a skilled list. Setting it true prints
-//                        the ANZSCO reference on the card, and any true entry
-//                        on a level pulls the MARA notice onto that page.
-//   anzsco               Occupation name and code. Required when
-//                        skilledOccupation is true, ignored otherwise.
 //
 // The indicative-only notice renders under every course listing on all four
 // pages. It is not configurable, by design.
@@ -44,10 +38,6 @@ export type Course = {
   nextIntake: string;
   /** Defaults to "per year". */
   tuitionBasis?: string;
-  /** Optional so the short-courses list, which shares this type, stays valid. */
-  skilledOccupation?: boolean;
-  /** Occupation name and ANZSCO code. Only read when skilledOccupation. */
-  anzsco?: string;
 };
 
 export type LevelSlug = "undergraduate" | "postgraduate" | "pathway-programs";
@@ -60,7 +50,6 @@ export type Level = {
   /** Paragraphs above the course list. */
   intro: string[];
   courses: Course[];
-  skilledOccupationRelated: boolean;
 };
 
 export const levels: Level[] = [
@@ -83,8 +72,6 @@ export const levels: Level[] = [
         englishRequirement:
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0, so that standard cannot be lowered by a provider.",
         nextIntake: "February, with July at some providers",
-        skilledOccupation: true,
-        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
         name: "Bachelor of Business",
@@ -94,7 +81,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
-        skilledOccupation: false,
       },
       {
         name: "Bachelor of Accounting",
@@ -104,8 +90,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
-        skilledOccupation: true,
-        anzsco: "Accountant (General), ANZSCO 221111",
       },
       {
         name: "Bachelor of Information Technology / Networking",
@@ -115,8 +99,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.0.",
         nextIntake: "February, July and November",
-        skilledOccupation: true,
-        anzsco: "Software Engineer, ANZSCO 261313, and related ICT occupations",
       },
       {
         name: "Bachelor of Engineering",
@@ -126,8 +108,6 @@ export const levels: Level[] = [
         entryRequirement: "Completed Year 12 or equivalent senior secondary qualification.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February and July",
-        skilledOccupation: true,
-        anzsco: "Engineering occupations, for example Civil Engineer, ANZSCO 233211",
       },
       {
         name: "Bachelor of Early Childhood Education",
@@ -138,11 +118,8 @@ export const levels: Level[] = [
         englishRequirement:
           "IELTS Academic 6.5 to 7.0. Teacher registration authorities set their own standard on top of the provider's.",
         nextIntake: "February and July",
-        skilledOccupation: true,
-        anzsco: "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111",
       },
     ],
-    skilledOccupationRelated: true,
   },
   {
     slug: "postgraduate",
@@ -162,8 +139,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.0 to 6.5.",
         nextIntake: "February, July and November",
-        skilledOccupation: true,
-        anzsco: "ICT occupations, for example Software Engineer, ANZSCO 261313",
       },
       {
         name: "Master of Professional Accounting",
@@ -174,8 +149,6 @@ export const levels: Level[] = [
           "A completed bachelor degree in any discipline. Designed as an entry route for graduates without an accounting background.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
-        skilledOccupation: true,
-        anzsco: "Accountant (General), ANZSCO 221111",
       },
       {
         name: "MBA / Master of Business",
@@ -186,7 +159,6 @@ export const levels: Level[] = [
           "A completed bachelor degree. Some providers also expect professional work experience.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
-        skilledOccupation: false,
       },
       {
         name: "Master of Business Analytics",
@@ -196,7 +168,6 @@ export const levels: Level[] = [
         entryRequirement: "A completed bachelor degree.",
         englishRequirement: "IELTS Academic 6.5.",
         nextIntake: "February, July and November",
-        skilledOccupation: false,
       },
       {
         name: "Master of Nursing",
@@ -208,8 +179,6 @@ export const levels: Level[] = [
         englishRequirement:
           "IELTS Academic 6.5 to 7.0. The nursing registration body sets 7.0 where the program leads to registration.",
         nextIntake: "February and July",
-        skilledOccupation: true,
-        anzsco: "Registered Nurses, ANZSCO 2544",
       },
       {
         name: "Master of Teaching",
@@ -221,12 +190,8 @@ export const levels: Level[] = [
         englishRequirement:
           "IELTS Academic 7.0 or higher, with registration authorities setting an additional standard.",
         nextIntake: "February and July",
-        skilledOccupation: true,
-        anzsco:
-          "Early Childhood (Pre-primary School) Teacher, ANZSCO 241111, and Secondary School Teacher, ANZSCO 241411",
       },
     ],
-    skilledOccupationRelated: true,
   },
   {
     slug: "pathway-programs",
@@ -235,7 +200,7 @@ export const levels: Level[] = [
       "Foundation, diploma-to-degree and ELICOS routes that get you to the entry requirement.",
     intro: [
       "Pathway programs exist to get you to a university's entry requirement rather than around it. Foundation studies build academic and English skills for degree entry, diploma programs can carry credit equivalent to the first year of a bachelor degree so you continue into second year, and ELICOS courses lift your English to the level a course requires.",
-      "Where a pathway leads into a degree, both can be issued together as a packaged offer on a single student visa, so you apply once rather than twice.",
+      "Where a pathway leads into a degree, both can be issued together as a single packaged offer, so you apply once rather than twice.",
     ],
     courses: [
       {
@@ -245,7 +210,6 @@ export const levels: Level[] = [
           "Leads into year 1 of a bachelor degree. Suited to a Year 11 or Year 12 result below the direct-entry level for your chosen degree.",
         englishRequirement: "IELTS Academic 5.5.",
         nextIntake: "February, June and October",
-        skilledOccupation: false,
       },
       {
         name: "Diploma to degree (Business or IT)",
@@ -257,7 +221,6 @@ export const levels: Level[] = [
           "Usually carries credit into year 2 of a bachelor degree, so you continue rather than start again.",
         englishRequirement: "IELTS Academic 5.5 to 6.0.",
         nextIntake: "February, July and November",
-        skilledOccupation: false,
       },
       {
         name: "ELICOS (English language)",
@@ -266,13 +229,11 @@ export const levels: Level[] = [
         tuitionMax: 500,
         tuitionBasis: "per week",
         entryRequirement:
-          "Packaged with a main course on a single student visa, so you apply once rather than twice.",
+          "Packaged with a main course as a single offer, so you apply once rather than twice.",
         englishRequirement: "No minimum to enter. A placement test sets your starting level.",
         nextIntake: "Rolling starts through the year",
-        skilledOccupation: false,
       },
     ],
-    skilledOccupationRelated: false,
   },
 ];
 
@@ -326,7 +287,7 @@ export const entryRequirementsExample = {
     {
       label: "Outcome",
       value:
-        "Meet all three and you receive a full offer. Meet the first two but not the English, and the usual result is a packaged offer with an ELICOS course attached, on a single student visa.",
+        "Meet all three and you receive a full offer. Meet the first two but not the English, and the usual result is a packaged offer with an ELICOS course attached.",
     },
   ],
   note:
@@ -339,7 +300,7 @@ export const entryRequirementsExample = {
 // drift through an edit to the page. Do not reword.
 // ---------------------------------------------------------------------------
 export const INTAKE_PLANNING_2026 =
-  "Australia's National Planning Level for 2026 is 295,000 new international student commencements, with higher education providers sharing 196,750 of those places. It operates as a visa processing priority system rather than a hard refusal limit — once a provider reaches its allocation, visa processing for its students can slow significantly. Students moving into public universities from Australian schooling or from pathway colleges are exempt from the planning level. We'll tell you which providers still have room for your intake.";
+  "Australia's National Planning Level for 2026 is 295,000 new international student commencements, with higher education providers sharing 196,750 of those places. It operates as a processing priority system rather than a hard cap — once a provider reaches its allocation, processing for its students can slow significantly. Students moving into public universities from Australian schooling or from pathway colleges are exempt from the planning level. We'll tell you which providers still have room for your intake.";
 
 // ---------------------------------------------------------------------------
 // HUB BLOCK 4 — Scholarships

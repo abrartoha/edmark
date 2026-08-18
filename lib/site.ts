@@ -94,9 +94,9 @@ export const nav: NavItem[] = [
         note: "Masters by research · PhD",
       },
       {
-        label: "PR pathway courses",
-        href: "/services/pr-pathway-courses",
-        note: "Courses at any level aligned to skilled occupation lists",
+        label: "In-demand career courses",
+        href: "/services/career-courses",
+        note: "Trade · Nursing · Hospitality & cookery · Teaching",
       },
     ],
   },

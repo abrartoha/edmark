@@ -24,17 +24,17 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "pr-pathway-courses",
+    slug: "career-courses",
     icon: "plane",
-    title: "PR Pathway Courses",
+    title: "In-Demand Career Courses",
     short:
-      "Choose courses aligned with Australia's skilled occupation lists to strengthen your long-term residency prospects.",
-    long: "Not every course carries the same weight for migration. We help you select qualifications linked to occupations on Australia's skilled occupation lists, and consider regional study options that can support your pathway toward permanent residency. For formal migration advice we work alongside registered migration agents (MARA).",
+      "Choose courses tied to the fields Australia needs most, so your qualification builds toward a strong, in-demand career.",
+    long: "Not every course opens the same doors. We help you choose qualifications linked to occupations in high demand across Australia, and weigh study locations, so your degree builds real, employable skills that support your long-term goals here.",
     points: [
-      "Course selection aligned to skilled occupation lists",
-      "Regional and state-nominated study options",
-      "Referral to registered migration agents for formal advice",
-      "Long-term study-to-residency planning",
+      "Course selection matched to in-demand fields",
+      "Regional and metropolitan study options",
+      "Guidance on qualifications employers value",
+      "Long-term career and study planning",
     ],
   },
   {
@@ -58,11 +58,11 @@ export const services: Service[] = [
     title: "Application & Enrolment Support",
     short:
       "We prepare, submit and track your applications, then carry you through offer, payment and CoE.",
-    long: "An application fails on detail far more often than on grades. We build your document set, check every transcript and English result against the institution's own criteria, and submit to several providers in parallel so you are not waiting on a single answer. From there we chase admissions on your behalf, talk you through each offer, and handle acceptance, tuition payment and your Confirmation of Enrolment (CoE).\n\nWe also help you prepare for the Genuine Student (GS) requirement, which replaced the old Genuine Temporary Entrant test in March 2024. GS asks targeted questions, each answered in 150 words or fewer, about why you chose this course, how it fits your background and career plans, and how you will meet your visa conditions. Unlike GTE, it accepts that you may later seek permanent residency, provided study is your genuine primary purpose. We help you answer it consistently and in your own voice.",
+    long: "An application fails on detail far more often than on grades. We build your document set, check every transcript and English result against the institution's own criteria, and submit to several providers in parallel so you are not waiting on a single answer. From there we chase admissions on your behalf, talk you through each offer, and handle acceptance, tuition payment and your Confirmation of Enrolment (CoE).\n\nInstitutions also ask you to explain yourself in writing: why this course, why now, how it follows from what you have already studied or done, and where you expect it to take you. Those answers are short, and a vague one costs offers. We help you write them consistently and in your own voice, so the story your application tells matches the documents behind it.",
     points: [
       "Document checklist and transcript preparation",
       "Parallel applications to several institutions",
-      "Genuine Student (GS) statement guidance",
+      "Study plan and course-choice statement guidance",
       "Offer comparison, acceptance and tuition payment",
       "Confirmation of Enrolment (CoE) and deadline tracking",
     ],
@@ -87,10 +87,10 @@ export const services: Service[] = [
     title: "PTE & NAATI Test Prep",
     short:
       "Preparation, strategy and booking support for PTE Academic and the NAATI CCL test.",
-    long: "English proficiency and community-language credentials both carry weight in the skilled migration points test, and both reward preparation. We help you work out which test suits you, what score to aim for, and how to prepare for it, then support you through booking and results. PTE Academic is accepted by every Australian university and by the Department of Home Affairs, while the NAATI CCL test rewards applicants who speak an eligible community language.",
+    long: "Strong English and community-language credentials open doors, and both reward preparation. We help you work out which test suits you, what score to aim for, and how to prepare for it, then support you through booking and results. PTE Academic is accepted by every Australian university, while the NAATI CCL test recognises applicants who speak an eligible community language.",
     points: [
       "Choosing between PTE Academic and IELTS",
-      "Target score planning for your course and visa",
+      "Target score planning for your course and goals",
       "Practice resources and test-day strategy",
       "NAATI CCL (community language) preparation",
       "Booking support and results guidance",
@@ -101,15 +101,14 @@ export const services: Service[] = [
     icon: "trophy",
     title: "Professional Year",
     short:
-      "A 44-week program for accounting, IT and engineering graduates, including a 12-week internship, worth 5 points toward skilled migration.",
-    long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your nominated occupation, it is worth 5 points in the skilled migration points test, and the local experience is often worth more than the points.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nA Professional Year on its own does not guarantee permanent residency. It is one input alongside your occupation, English score, work experience and skills assessment, and the rules change. We help you choose a provider and time your enrolment, and refer you to a registered migration agent (MARA) for formal migration advice.",
+      "A 44-week program for accounting, IT and engineering graduates, including a 12-week internship that builds real Australian workplace experience.",
+    long: "The Professional Year Program runs for 44 weeks and combines classroom learning in Australian workplace practice with a 12-week internship at a host company in your field. Completed with an approved provider in an area related to your degree, it gives you genuine local experience, often the first line on an Australian resume and frequently what employers value most.\n\nTo enrol you generally need a Temporary Graduate (subclass 485) visa and a bachelor degree or higher from an Australian institution in accounting, IT or engineering, recognised by the body that governs your stream: ACS for IT, CPA Australia or CA ANZ for accounting, and Engineers Australia for engineering. Because the program takes about a year, apply at least 12 months before your visa expires.\n\nWe help you choose a provider, check your eligibility and time your enrolment so it fits your study and career plans.",
     points: [
       "44 weeks, including a 12-week industry internship",
       "Accounting, IT and engineering streams",
-      "5 points toward the skilled migration points test",
-      "Eligibility check against your 485 visa and degree",
+      "Real Australian workplace experience for your resume",
+      "Eligibility check against your degree and current visa",
       "Approved provider selection and enrolment",
-      "Referral to a registered migration agent for formal advice",
     ],
   },
   {
@@ -260,10 +259,10 @@ export const faqs = [
     q: "Can I get a full scholarship?",
     a: "Full scholarships are competitive but absolutely available, particularly through programs like Australia Awards and some university-specific schemes. Most students receive partial scholarships that significantly reduce tuition fees. We'll be upfront about your chances and help you maximise your application.",
   },
-  // Visa & Life in Australia
+  // Life in Australia
   {
-    q: "Do you help with student visa applications?",
-    a: "While we are not migration agents, we guide you through the student visa (Subclass 500) process step by step. We help you understand the requirements, prepare your documentation, and connect you with a registered migration agent if you need specialist visa assistance.",
+    q: "What exactly do you help me with?",
+    a: "Course and institution selection, your document set, applications to several providers in parallel, offer comparison, acceptance and tuition payment, your Confirmation of Enrolment (CoE), OSHC health cover, and pre-departure support through to your first day on campus. One advisor stays with you across all of it, so you are never re-explaining your situation to someone new.",
   },
   {
     q: "Can I work while studying in Australia?",
@@ -271,7 +270,7 @@ export const faqs = [
   },
   {
     q: "How much does it cost to live in Australia as a student?",
-    a: "Two different numbers matter here. For your visa you must show access to at least AUD $29,710 per year for living costs, which is the Australian Government's financial capacity requirement and is not negotiable. What you actually spend is a separate question: in Melbourne most students find accommodation, food, transport and personal expenses land somewhere around AUD $24,000 to $30,000 a year depending on how you live, and regional areas are cheaper. Budget to the visa figure, not to the lifestyle one. We go through both with you during your consultation.",
+    a: "Two different numbers matter here. The Australian Government sets a financial capacity benchmark of AUD $29,710 per year for living costs, and it is not negotiable. What you actually spend is a separate question: in Melbourne most students find accommodation, food, transport and personal expenses land somewhere around AUD $24,000 to $30,000 a year depending on how you live, and regional areas are cheaper. Plan to the higher of the two figures rather than the comfortable one. We go through both with you during your consultation.",
   },
   {
     q: "What is OSHC and do I need it?",
@@ -316,7 +315,7 @@ const homepageFaqQuestions = [
   "How does the consultation process work?",
   "How long does the entire process take?",
   "Can I consult online or does it have to be in person?",
-  "Do you help with student visa applications?",
+  "What exactly do you help me with?",
 ];
 
 export const homepageFaqs = homepageFaqQuestions.map((q) => {

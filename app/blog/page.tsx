@@ -9,7 +9,7 @@ import { IconArrow } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Blog: Study in Australia Tips & Guides",
   description:
-    "Expert tips, guides and advice for international students planning to study in Australia. Courses, visas, scholarships, student life and more from Edmark Education.",
+    "Expert tips, guides and advice for international students planning to study in Australia. Courses, scholarships, costs, student life and more from Edmark Education.",
   alternates: { canonical: "/blog" },
 };
 
@@ -29,7 +29,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog"
         title="Tips & guides for studying in Australia"
-        subtitle="Expert advice to help you choose the right course, win scholarships, navigate visas and thrive as a student in Australia."
+        subtitle="Expert advice to help you choose the right course, win scholarships, understand how the Australian system works, and thrive once you get here."
       />
       <Breadcrumb items={[{ label: "Blog" }]} />
 

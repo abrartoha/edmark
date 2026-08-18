@@ -6,7 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CourseCard from "@/components/CourseCard";
 import CTA from "@/components/CTA";
 import { IconArrow } from "@/components/Icons";
-import { ANZSCO_NOTICE, INDICATIVE_NOTICE, MARA_NOTICE } from "@/lib/compliance";
+import { INDICATIVE_NOTICE } from "@/lib/compliance";
 import { getLevel, levels } from "@/lib/higher-education";
 
 export function generateStaticParams() {
@@ -67,23 +67,8 @@ export default function LevelPage({ params }: { params: { level: string } }) {
             ))}
           </div>
 
-          {/* Derived from the cards rather than the level flag, so a page can
-              never show ANZSCO codes without the note that qualifies them. */}
-          {level.courses.some((c) => c.skilledOccupation && c.anzsco) && (
-            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
-              {ANZSCO_NOTICE}
-            </p>
-          )}
-
-          {/* Only when the level genuinely touches skilled occupations. */}
-          {level.skilledOccupationRelated && (
-            <p className="mt-6 max-w-3xl text-sm leading-relaxed text-sage">
-              {MARA_NOTICE}
-            </p>
-          )}
-
           {/* Unconditional, under every course listing. */}
-          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-sage">
+          <p className="mt-8 max-w-3xl text-sm leading-relaxed text-sage">
             {INDICATIVE_NOTICE}
           </p>
 

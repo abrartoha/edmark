@@ -9,6 +9,19 @@ const nextConfig = {
         destination: "/research-degrees",
         permanent: true,
       },
+      {
+        // This section was renamed: it is course and career guidance, so the
+        // URL says that now. Both the hub and its four category pages were
+        // indexed under the old path, so both forms redirect.
+        source: "/services/pr-pathway-courses",
+        destination: "/services/career-courses",
+        permanent: true,
+      },
+      {
+        source: "/services/pr-pathway-courses/:category",
+        destination: "/services/career-courses/:category",
+        permanent: true,
+      },
     ];
   },
 

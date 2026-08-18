@@ -29,9 +29,10 @@
 //                      "year12" | "diploma" | "bachelor" | "masters"
 //   budgetBands        which yearly tuition budgets this fits:
 //                      "under-15k" | "15-25k" | "25-40k" | "40k-plus"
-//   skilledOccupation  true only if this pathway maps to an occupation on a
-//                      skilled occupation list. Setting true adds the MARA
-//                      referral notice to the card. When in doubt, use false.
+//   inDemand           true only if this pathway leads to work Australian
+//                      employers are consistently hiring for. It weights the
+//                      matcher's ranking and prints nothing on the card. When
+//                      in doubt, use false.
 //
 // There is deliberately no intake-month tag: intakes vary by institution, not
 // by pathway, so a single value here would be invented data.
@@ -61,7 +62,7 @@ export type Pathway = {
     fields: Field[];
     qualifications: Qualification[];
     budgetBands: BudgetBand[];
-    skilledOccupation: boolean;
+    inDemand: boolean;
   };
 };
 
@@ -79,7 +80,7 @@ export const pathways: Pathway[] = [
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma", "bachelor", "masters"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -94,7 +95,7 @@ export const pathways: Pathway[] = [
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["15-25k", "25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -109,7 +110,7 @@ export const pathways: Pathway[] = [
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma", "bachelor"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -126,7 +127,7 @@ export const pathways: Pathway[] = [
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -143,7 +144,7 @@ export const pathways: Pathway[] = [
       fields: ["hospitality-cookery"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -158,7 +159,7 @@ export const pathways: Pathway[] = [
       fields: ["hospitality-cookery"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["15-25k", "25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -175,7 +176,7 @@ export const pathways: Pathway[] = [
       fields: ["teaching-childcare"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["15-25k", "25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -190,7 +191,7 @@ export const pathways: Pathway[] = [
       fields: ["teaching-childcare"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -207,7 +208,7 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -222,7 +223,7 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["15-25k", "25-40k", "40k-plus"],
-      skilledOccupation: false,
+      inDemand: false,
     },
   },
   {
@@ -237,7 +238,7 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -252,7 +253,7 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   // ---- Added: trades beyond carpentry ------------------------------------
@@ -268,7 +269,7 @@ export const pathways: Pathway[] = [
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -283,7 +284,7 @@ export const pathways: Pathway[] = [
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -298,7 +299,7 @@ export const pathways: Pathway[] = [
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -315,7 +316,7 @@ export const pathways: Pathway[] = [
       fields: ["nursing-health", "teaching-childcare"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -330,7 +331,7 @@ export const pathways: Pathway[] = [
       fields: ["nursing-health"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -347,7 +348,7 @@ export const pathways: Pathway[] = [
       fields: ["hospitality-cookery"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -364,7 +365,7 @@ export const pathways: Pathway[] = [
       fields: ["teaching-childcare"],
       qualifications: ["year12", "diploma", "bachelor", "masters"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -379,7 +380,7 @@ export const pathways: Pathway[] = [
       fields: ["teaching-childcare"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
 
@@ -396,7 +397,7 @@ export const pathways: Pathway[] = [
       fields: ["business-it"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k"],
-      skilledOccupation: false,
+      inDemand: false,
     },
   },
   // ---- Engineering & science ---------------------------------------------
@@ -412,7 +413,7 @@ export const pathways: Pathway[] = [
       fields: ["engineering-science"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -427,7 +428,7 @@ export const pathways: Pathway[] = [
       fields: ["engineering-science"],
       qualifications: ["bachelor", "masters"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -442,7 +443,7 @@ export const pathways: Pathway[] = [
       fields: ["engineering-science"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["under-15k", "15-25k", "25-40k"],
-      skilledOccupation: true,
+      inDemand: true,
     },
   },
   {
@@ -457,7 +458,7 @@ export const pathways: Pathway[] = [
       fields: ["engineering-science"],
       qualifications: ["year12", "diploma"],
       budgetBands: ["25-40k", "40k-plus"],
-      skilledOccupation: false,
+      inDemand: false,
     },
   },
 ];

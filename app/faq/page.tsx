@@ -7,7 +7,7 @@ import { faqs } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Get answers to common questions about studying in Australia, scholarships, student visas, costs and how Edmark Education can help you. Free consultation available.",
+    "Get answers to common questions about studying in Australia: courses, scholarships, costs, health cover and how Edmark Education can help you. Free consultation available.",
   alternates: { canonical: "/faq" },
 };
 
@@ -25,7 +25,7 @@ const categories = [
     items: faqs.slice(10, 14),
   },
   {
-    heading: "Visa & Life in Australia",
+    heading: "Life in Australia",
     items: faqs.slice(14),
   },
 ];

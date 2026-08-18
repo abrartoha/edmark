@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "study in Australia",
     "international student advisor",
     "university admission Australia",
-    "student visa guidance",
+    "university and course counselling",
     "course selection Melbourne",
     "education agent Sunshine VIC",
     "Edmark Education",
