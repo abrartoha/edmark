@@ -2,12 +2,13 @@
   "name": "edmark-education",
   "version": "1.0.0",
   "private": true,
-  "description": "Edmark Education — Australian education consultancy website",
+  "description": "Edmark Education \u2014 Australian education consultancy website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fingerprint:photos": "node scripts/fingerprint-course-photos.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",

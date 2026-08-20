@@ -9,6 +9,7 @@
 // ---------------------------------------------------------------------------
 
 import { levels, type Course, type Field } from "./higher-education";
+import { COURSE_PHOTO_FILES } from "./course-photos.generated";
 import { vetCourses } from "./vet-courses";
 
 export type Sector = "Higher education" | "Vocational";
@@ -289,115 +290,22 @@ export const FIELD_INFO: Record<string, FieldInfo> = {
 };
 
 // ---------------------------------------------------------------------------
-// Course photography. Listed explicitly rather than probed from disk, because
-// the card renders inside a client component and cannot read the filesystem.
-// A course without an entry here falls back to its study area illustration,
-// so the two can coexist and photos can arrive a few at a time.
+// Course photography. The slug -> filename map is generated from what is
+// actually on disk rather than listed here, because the card renders inside a
+// client component and cannot read the filesystem. A course with no entry
+// falls back to its study area illustration, so the two can coexist and
+// photos can arrive a few at a time.
 //
-// This now covers every course in the catalogue: the 53 higher-education ones
-// and the 43 vocational ones.
+// Filenames carry a hash of their contents. Photos are served with a
+// month-long max-age, so reusing a filename means returning visitors keep the
+// old picture until that expires; a new hash gives a new URL instead, which no
+// cache can answer. Run `npm run fingerprint:photos` after replacing one.
 // ---------------------------------------------------------------------------
-export const COURSE_PHOTOS = new Set<string>([
-  "advanced-diploma-of-engineering-mem60122",
-  "advanced-diploma-of-hospitality-management-sit60322",
-  "associate-degree-of-international-hotel-and-tourism-management",
-  "associate-degree-of-law-paralegal-studies",
-  "bachelor-of-accounting",
-  "bachelor-of-biomedical-science",
-  "bachelor-of-business",
-  "bachelor-of-business-in-hotel-management",
-  "bachelor-of-business-marketing",
-  "bachelor-of-clinical-exercise-physiology",
-  "bachelor-of-clinical-sciences-osteopathic-studies",
-  "bachelor-of-community-welfare",
-  "bachelor-of-counselling",
-  "bachelor-of-early-childhood-education",
-  "bachelor-of-education",
-  "bachelor-of-engineering-honours",
-  "bachelor-of-exercise-science-and-psychological-science",
-  "bachelor-of-health-science-health-and-lifestyle",
-  "bachelor-of-information-technology-bachelor-of-business",
-  "bachelor-of-information-technology-cyber-security",
-  "bachelor-of-information-technology-networking",
-  "bachelor-of-laws",
-  "bachelor-of-legal-and-justice-studies",
-  "bachelor-of-midwifery",
-  "bachelor-of-nursing",
-  "bachelor-of-nursing-enrolled-nurse-to-registered-nurse",
-  "bachelor-of-occupational-therapy",
-  "bachelor-of-psychological-science",
-  "bachelor-of-psychological-science-bachelor-of-business",
-  "bachelor-of-psychological-science-with-honours",
-  "bachelor-of-science",
-  "bachelor-of-social-work",
-  "bachelor-of-speech-pathology",
-  "bachelor-of-sport-and-exercise-science",
-  "bachelor-of-veterinary-technology",
-  "certificate-ii-in-security-operations-cpp20218",
-  "certificate-iii-in-air-conditioning-and-refrigeration-uee32225",
-  "certificate-iii-in-automotive-electrical-technology-aur30320",
-  "certificate-iii-in-bricklaying-and-blocklaying-cpc33020",
-  "certificate-iii-in-cabinet-making-and-timber-technology-msf30322",
-  "certificate-iii-in-carpentry-cpc30220",
-  "certificate-iii-in-commercial-cookery-sit30821",
-  "certificate-iii-in-concreting-cpc30320",
-  "certificate-iii-in-early-childhood-education-and-care-chc30125",
-  "certificate-iii-in-electrotechnology-electrician-uee30820",
-  "certificate-iii-in-engineering-fabrication-trade-mem31922",
-  "certificate-iii-in-engineering-mechanical-trade-mem30219",
-  "certificate-iii-in-glass-and-glazing-msf30422",
-  "certificate-iii-in-heavy-commercial-vehicle-mechanical-technology-aur31120",
-  "certificate-iii-in-hospitality-sit30622",
-  "certificate-iii-in-individual-support-ageing-and-disability-chc33021",
-  "certificate-iii-in-instrumentation-and-control-uee31220",
-  "certificate-iii-in-joinery-cpc31920",
-  "certificate-iii-in-light-vehicle-mechanical-technology-aur30620",
-  "certificate-iii-in-painting-and-decorating-cpc30620",
-  "certificate-iii-in-patisserie-sit31021",
-  "certificate-iii-in-plumbing-cpc32420",
-  "certificate-iii-in-roof-plumbing-cpc32620",
-  "certificate-iii-in-solid-plastering-cpc31020",
-  "certificate-iii-in-wall-and-floor-tiling-cpc31320",
-  "certificate-iv-in-ageing-support",
-  "certificate-iv-in-building-and-construction-cpc40120",
-  "certificate-iv-in-disability-support-chc43121",
-  "certificate-iv-in-kitchen-management-sit40521",
-  "certificate-iv-in-mental-health-peer-work-chc43515",
-  "certificate-iv-in-patisserie-sit40721",
-  "certificate-iv-in-school-based-education-support-chc40221",
-  "diploma-of-building-and-construction-building-cpc50220",
-  "diploma-of-business-bsb50120",
-  "diploma-of-community-services-case-management-child-youth-and-family-welfare-chc52025",
-  "diploma-of-early-childhood-education-and-care-chc50125",
-  "diploma-of-hospitality-management-sit50422",
-  "diploma-of-mental-health-chc53315",
-  "diploma-of-nursing-hlt54121",
-  "diploma-of-school-age-education-and-care-chc50221",
-  "graduate-certificate-in-business",
-  "graduate-certificate-in-social-sciences-for-social-work",
-  "graduate-certificate-of-business-in-global-hotel-leadership",
-  "graduate-diploma-of-business",
-  "graduate-diploma-of-business-in-global-hotel-leadership",
-  "graduate-diploma-of-education-early-childhood",
-  "graduate-diploma-of-management-learning-bsb80120",
-  "graduate-diploma-of-teaching-primary-secondary",
-  "master-of-business-analytics",
-  "master-of-business-in-global-hotel-leadership",
-  "master-of-engineering",
-  "master-of-information-technology-cyber-security",
-  "master-of-information-technology-networking",
-  "master-of-naturopathic-medicine",
-  "master-of-nursing-graduate-entry",
-  "master-of-osteopathic-medicine",
-  "master-of-professional-accounting",
-  "master-of-social-work-professional-qualifying",
-  "master-of-teaching",
-  "master-of-teaching-early-childhood",
-  "mba-master-of-business",
-]);
+export const COURSE_PHOTOS = new Set<string>(Object.keys(COURSE_PHOTO_FILES));
 
 export function coursePhoto(slug?: string): string | null {
-  return slug && COURSE_PHOTOS.has(slug) ? `/images/courses/${slug}.jpg` : null;
+  const file = slug ? COURSE_PHOTO_FILES[slug] : undefined;
+  return file ? `/images/courses/${file}` : null;
 }
 
 export function fieldInfo(field?: Field | string): FieldInfo | undefined {
