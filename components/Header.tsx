@@ -150,7 +150,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 xl:flex">
-          <Link href="/contact" className="btn-primary">
+          <Link href="/contact" className="btn-primary pointer-framed">
             Enquire now
           </Link>
         </div>

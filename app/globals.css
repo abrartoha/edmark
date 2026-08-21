@@ -29,8 +29,11 @@
     @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
   }
 
+  /* A 1px lift on hover. Small enough to read as the button coming to meet
+     the cursor rather than as an animation, and on transform so it cannot
+     nudge anything around it. */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-eucalypt;
+    @apply inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-medium transition-[color,background-color,border-color,transform] duration-200 hover:-translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-eucalypt;
   }
 
   .btn-primary {
@@ -61,15 +64,63 @@
   .nav-link {
     @apply relative text-sm font-medium text-copy transition-colors hover:text-eucalypt;
   }
+  /* Brass, per the palette rule: teal fills, brass outlines, and brass is the
+     underline on active nav. It is a decorative rule, not text, and the link
+     colour shifts on hover too, so the cue is not underline-only.
+
+     The bar is laid out at full width and revealed with opacity and scaleX
+     rather than grown from width: 0. Same read, but width is a layout
+     property — animating it reflowed the pseudo-element on every frame of
+     every hover. It also lets the bar settle from slightly narrow instead of
+     wiping, which is what stops it feeling like a progress bar. */
   .nav-link::after {
     content: "";
-    /* Brass, per the palette rule: teal fills, brass outlines, and brass is
-       the underline on active nav. It is a 1px decorative rule, not text, and
-       the link colour shifts on hover too, so the cue is not underline-only. */
-    @apply absolute -bottom-1 left-0 h-px w-0 bg-brass transition-all duration-300;
+    @apply absolute -bottom-1 left-0 h-0.5 w-full origin-center bg-brass;
+    opacity: 0;
+    transform: scaleX(0.55);
+    transition: opacity 180ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .nav-link:hover::after {
-    @apply w-full;
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  /* Footer links sit on the deep wash, so the same idea in brass-light. */
+  .footer-link {
+    @apply relative text-mist transition-colors hover:text-brass-light;
+  }
+  .footer-link::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-full origin-center bg-brass-light;
+    opacity: 0;
+    transform: scaleX(0.55);
+    transition: opacity 180ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .footer-link:hover::after,
+  .footer-link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  /* A brass frame that drops onto the element from slightly oversize. Used
+     sparingly — it is loud enough that a second one on the same screen reads
+     as decoration rather than as a pointer. Drawn on a pseudo-element outside
+     the box so it never disturbs the element's own metrics. */
+  .pointer-framed {
+    @apply relative;
+  }
+  .pointer-framed::before {
+    content: "";
+    @apply pointer-events-none absolute -inset-1.5 rounded border border-brass/70;
+    opacity: 0;
+    transform: scale(1.25);
+    transition: opacity 200ms ease, transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .pointer-framed:hover::before,
+  .pointer-framed:focus-visible::before {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .card {
@@ -320,5 +371,27 @@
   }
   details.faq::details-content {
     transition: none;
+  }
+  /* The hover cues stay — an underline appearing under the tab you are on is
+     information, not decoration. What goes is the travel: no scaling in, no
+     lift, the state just swaps. */
+  .nav-link::after,
+  .footer-link::after,
+  .pointer-framed::before,
+  .btn {
+    transition: opacity 180ms ease, color 200ms ease, background-color 200ms ease,
+      border-color 200ms ease;
+    transform: none;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .footer-link:hover::after,
+  .footer-link:focus-visible::after,
+  .pointer-framed:hover::before,
+  .pointer-framed:focus-visible::before {
+    transform: none;
+  }
+  .btn:hover {
+    transform: none;
   }
 }

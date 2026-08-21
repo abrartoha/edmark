@@ -67,7 +67,7 @@ export default function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-mist transition-colors hover:text-brass-light"
+                    className="footer-link"
                   >
                     {item.label}
                   </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-mist transition-colors hover:text-brass-light"
+                    className="footer-link"
                   >
                     {s.label}
                   </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <li key={r.href}>
                   <Link
                     href={r.href}
-                    className="text-mist transition-colors hover:text-brass-light"
+                    className="footer-link"
                   >
                     {r.label}
                   </Link>
