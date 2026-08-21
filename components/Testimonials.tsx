@@ -8,7 +8,7 @@ const featured = testimonials[0];
 
 export default function Testimonials() {
   return (
-    <section className="bg-paper-sunk py-20 lg:py-28">
+    <section className="reveal bg-paper-sunk py-20 lg:py-28">
       <div className="container-page">
         {/* No portrait. The measure is capped so the quote does not run the
             full container width once there is nothing beside it. */}

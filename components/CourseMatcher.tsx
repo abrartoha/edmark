@@ -99,7 +99,7 @@ export default function CourseMatcher() {
   return (
     <section
       id="course-matcher"
-      className="border-y border-line bg-paper-sunk py-16 lg:py-24"
+      className="reveal border-y border-line bg-paper-sunk py-16 lg:py-24"
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">

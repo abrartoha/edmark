@@ -7,7 +7,7 @@ import { IconArrow } from "./Icons";
 // on /faq.
 export default function FAQ() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="reveal bg-white py-20 lg:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-2xl">
           <h2 className="reveal text-3xl font-medium text-ink sm:text-4xl">
@@ -16,9 +16,13 @@ export default function FAQ() {
 
           <div className="reveal mt-8 divide-y divide-line border-y border-line">
             {homepageFaqs.map((f) => (
+              // Still a native <details>: it opens without JavaScript and
+              // carries its own expanded state for assistive tech. The
+              // stylesheet animates ::details-content, so the open and close
+              // are the browser's, only slower.
               <details
                 key={f.q}
-                className="group py-5 [&_summary::-webkit-details-marker]:hidden"
+                className="faq group py-5 [&_summary::-webkit-details-marker]:hidden"
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-medium text-ink">
                   {f.q}
@@ -29,9 +33,14 @@ export default function FAQ() {
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-copy">
-                  {f.a}
-                </p>
+                {/* The wrapper is the grid item that collapses. The margin
+                    sits inside it, not on it, so a closed row measures zero
+                    rather than zero-plus-a-margin. */}
+                <div className="faq-body">
+                  <p className="mt-3 text-sm leading-relaxed text-copy">
+                    {f.a}
+                  </p>
+                </div>
               </details>
             ))}
           </div>

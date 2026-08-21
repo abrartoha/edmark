@@ -13,7 +13,7 @@ export default function CTA({
   tinted?: boolean;
 }) {
   return (
-    <section className={`${tinted ? "bg-paper-sunk" : "bg-white"} pb-20 lg:pb-28 ${tinted ? "pt-20 lg:pt-28" : ""}`}>
+    <section className={`reveal ${tinted ? "bg-paper-sunk" : "bg-white"} pb-20 lg:pb-28 ${tinted ? "pt-20 lg:pt-28" : ""}`}>
       <div className="container-page">
         <div className="reveal relative overflow-hidden rounded-xl bg-wash-deep px-8 py-16 text-center sm:px-16">
           <div className="relative mx-auto max-w-2xl">

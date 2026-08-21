@@ -6,7 +6,7 @@ import { IconArrow } from "./Icons";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-20 lg:py-28">
+    <section id="services" className="reveal bg-white py-20 lg:py-28">
       <div className="container-page">
         <SectionHeading
           center

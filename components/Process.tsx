@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { steps } from "@/lib/content";
 
 // Short node labels for the timeline. The full step titles and bodies stay in
@@ -6,7 +7,7 @@ const nodeLabels = ["Consult", "Plan", "Apply", "Enrol"];
 
 export default function Process() {
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="reveal timeline bg-white py-12 lg:py-16">
       <div className="container-page">
         <h2 className="reveal text-3xl font-medium text-ink sm:text-4xl">
           From confused to enrolled in four simple steps
@@ -18,19 +19,28 @@ export default function Process() {
             the left and the nodes sitting on it. One DOM, no duplication.
             --------------------------------------------------------------- */}
         <ol className="reveal relative mt-10 grid gap-8 sm:mt-14 sm:grid-cols-4 sm:gap-6">
-          {/* Vertical rule, below sm */}
+          {/* Vertical rule, below sm. Drawn top to bottom on scroll; the
+              height stays fixed and scaleY does the work, so the rule never
+              costs a layout pass. */}
           <span
-            className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-line sm:hidden"
+            className="timeline-rule timeline-rule-y absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-line sm:hidden"
             aria-hidden="true"
           />
-          {/* Horizontal rule, sm and up */}
+          {/* Horizontal rule, sm and up. Same, on scaleX from the left. */}
           <span
-            className="absolute left-0 right-0 top-[7px] hidden h-px bg-line sm:block"
+            className="timeline-rule absolute left-0 right-0 top-[7px] hidden h-px bg-line sm:block"
             aria-hidden="true"
           />
 
           {steps.map((step, i) => (
-            <li key={step.n} className="relative pl-8 sm:pl-0">
+            // --i is the node's place in the queue; the stylesheet turns it
+            // into an offset along the section's scroll range, so each node
+            // lands just after the rule has drawn past it.
+            <li
+              key={step.n}
+              className="timeline-node relative pl-8 sm:pl-0"
+              style={{ "--i": i } as CSSProperties}
+            >
               <span
                 className="absolute left-0 top-0 grid h-[15px] w-[15px] place-items-center rounded-full border-2 border-eucalypt bg-white sm:relative sm:mb-5"
                 aria-hidden="true"

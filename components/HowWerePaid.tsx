@@ -18,7 +18,7 @@ export default function HowWerePaid({
   withLink?: boolean;
 }) {
   return (
-    <section className="bg-paper py-20 lg:py-28">
+    <section className="reveal bg-paper py-20 lg:py-28">
       <div className="container-page grid items-start gap-14 lg:grid-cols-2">
         <div>
           <SectionHeading

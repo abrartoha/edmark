@@ -5,7 +5,7 @@ import { IconArrow, IconCheck } from "./Icons";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-paper-sunk py-20 lg:py-28">
+    <section className="reveal bg-paper-sunk py-20 lg:py-28">
       <div className="container-page grid items-center gap-14 lg:grid-cols-2">
         <div>
           <SectionHeading

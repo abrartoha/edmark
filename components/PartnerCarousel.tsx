@@ -45,7 +45,7 @@ export default function PartnerCarousel() {
 
   return (
     <section
-      className="border-b border-line bg-white py-12 lg:py-16"
+      className="reveal border-b border-line bg-white py-12 lg:py-16"
       aria-roledescription="carousel"
       aria-label="Our partners"
     >

@@ -164,6 +164,136 @@
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Motion layer — CSS scroll-driven animations, no library.            */
+/*                                                                     */
+/* Doubly gated: prefers-reduced-motion: no-preference, so a reader who */
+/* has asked for less motion never gets any of it, and @supports        */
+/* (animation-timeline: view()), so a browser without scroll timelines  */
+/* (Firefox, as of now) falls through to the IntersectionObserver above */
+/* rather than to nothing. Only opacity and transform are animated, so  */
+/* none of this reads back layout or repaints outside the compositor.   */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 35%;
+    }
+
+    /* The observer still adds .is-visible, which is harmless, but its
+       transition would fight the animation for the same two properties. The
+       animation wins on the cascade either way; this just stops the browser
+       doing the work twice. */
+    .js .reveal {
+      transition: none;
+    }
+
+    /* Sections carry .reveal and so do headings and grids inside them. One
+       reveal per section reads as the section arriving; two nested reads as
+       a stutter, the inner one starting from an offset the outer has already
+       half-travelled. Outermost wins. */
+    .reveal .reveal {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    /* --- Process timeline ---------------------------------------------
+       The section names one timeline and the rule and the nodes both read
+       from it, so all five are measured against a single scroll range
+       rather than each against its own box. Without that the four nodes sit
+       at the same height on desktop, share an identical range, and arrive
+       together. */
+    .timeline {
+      view-timeline-name: --timeline;
+    }
+
+    .timeline-rule {
+      transform-origin: left center;
+      animation: timeline-draw linear both;
+      animation-timeline: --timeline;
+      animation-range: entry 25% cover 50%;
+    }
+
+    /* Below sm the same rule runs vertically, so it grows from the top. */
+    .timeline-rule-y {
+      transform-origin: center top;
+      animation-name: timeline-draw-y;
+    }
+
+    @keyframes timeline-draw {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes timeline-draw-y {
+      from {
+        transform: scaleY(0);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    .timeline-node {
+      animation: reveal linear both;
+      animation-timeline: --timeline;
+      /* A scroll-driven animation has no time axis, so animation-delay is
+         inert here — the stagger has to be a shift along the range instead.
+         Each node opens 6% of the range after the one before it, which keeps
+         every node just behind the line as it draws past. */
+      animation-range: entry calc(28% + var(--i, 0) * 6%)
+        cover calc(52% + var(--i, 0) * 6%);
+    }
+  }
+
+  /* --- FAQ accordion --------------------------------------------------
+     grid-template-rows 0fr -> 1fr rather than max-height: the row resolves
+     to the answer's own height, so there is no guessed ceiling to overshoot
+     (dead time on short answers) or undershoot (clipped long ones).
+     content-visibility carries the closed state and transitions with
+     allow-discrete, so a collapsed answer stays out of the accessibility
+     tree instead of being merely scrolled out of sight. */
+  @supports selector(::details-content) {
+    details.faq::details-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      content-visibility: hidden;
+      transition: grid-template-rows 260ms ease,
+        content-visibility 260ms allow-discrete;
+    }
+
+    details.faq[open]::details-content {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+/* The grid child needs to be allowed to lose its height; a grid item's
+   min-height defaults to auto, which would floor the 0fr row at the content
+   height. Outside the guards above because it is layout, not motion. */
+.faq-body {
+  min-height: 0;
+  overflow: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js .reveal {
     opacity: 1;
@@ -176,5 +306,19 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+  /* Belt and braces: the motion layer is already scoped to no-preference, so
+     none of this should be running. Stated anyway, because a rule that turns
+     motion off is the one rule that should not depend on a guard elsewhere
+     being right. */
+  .reveal,
+  .timeline-rule,
+  .timeline-node {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  details.faq::details-content {
+    transition: none;
   }
 }
