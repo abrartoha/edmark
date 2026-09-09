@@ -96,7 +96,11 @@ const registrations = [
 
 const orgJsonLd = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  // Organization, not EducationalOrganization. Edmark is an education agent:
+  // it does not deliver training and does not issue qualifications, and the
+  // narrower type asserted in machine-readable form exactly the thing ASQA's
+  // notice of 2 September 2026 said the site should stop implying.
+  "@type": "Organization",
   "@id": ORG_ID,
   name: site.name,
   legalName: site.legalName,

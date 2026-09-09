@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AGENT_ROLE_DISCLOSURE } from "@/lib/compliance";
 import { nav, site } from "@/lib/site";
 import { services as allServices } from "@/lib/content";
 import Logo from "./Logo";
@@ -146,7 +147,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.14] pt-8 text-xs text-mist sm:flex-row">
+        {/* Edmark's role, in body copy on every page. Added in response to
+            ASQA's tip-off notice of 2 September 2026: a reader could not
+            readily tell who delivers and issues the qualifications this site
+            refers to, and the answer is never Edmark. */}
+        <div className="mt-14 border-t border-white/[0.14] pt-8">
+          <p className="max-w-4xl text-xs leading-relaxed text-mist">
+            {AGENT_ROLE_DISCLOSURE}
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/[0.14] pt-8 text-xs text-mist sm:flex-row">
           <p>
             © {site.legalName}. All rights reserved. ABN {site.abn} · ACN {site.acn}
           </p>
