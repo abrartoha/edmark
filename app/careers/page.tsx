@@ -4,7 +4,6 @@ import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CareerCard from "@/components/CareerCard";
 import CTA from "@/components/CTA";
-import { AGENT_ROLE_DISCLOSURE } from "@/lib/compliance";
 import { careers } from "@/lib/careers";
 
 export const metadata: Metadata = pageSeo({
@@ -30,16 +29,6 @@ export default function CareersPage() {
       />
 
       <Breadcrumb items={[{ label: "Careers & pathways" }]} />
-
-      {/* Edmark's role, stated before the reader sees a single occupation
-          rather than in the footer after they have read everything. */}
-      <section className="border-b border-line bg-paper-sunk py-8">
-        <div className="container-page">
-          <p className="max-w-4xl text-sm leading-relaxed text-copy">
-            {AGENT_ROLE_DISCLOSURE}
-          </p>
-        </div>
-      </section>
 
       <section className="reveal bg-paper py-16 lg:py-20">
         <div className="container-page">
