@@ -27,6 +27,31 @@ function Detail({ label, value }: { label: string; value: string; }) {
 }
 
 function ResultCard({ pathway }: { pathway: Pathway }) {
+  // A vocational result is an occupation, not a course on offer. It carries no
+  // fee, duration, intake or entry requirement, because Edmark neither
+  // delivers nor issues the qualification behind it and has no source for any
+  // of those numbers. It links to the career page instead.
+  if (pathway.careerSlug) {
+    return (
+      <article className="flex h-full flex-col rounded-xl border border-line bg-paper p-6">
+        <h3 className="font-serif text-xl font-normal leading-snug text-ink">
+          {pathway.name}
+        </h3>
+        {pathway.summary && (
+          <p className="mt-3 text-sm leading-relaxed text-copy">
+            {pathway.summary}
+          </p>
+        )}
+        <Link
+          href={`/careers/${pathway.careerSlug}`}
+          className="mt-auto pt-5 text-sm font-semibold text-eucalypt transition-colors hover:text-ink"
+        >
+          About this career &rarr;
+        </Link>
+      </article>
+    );
+  }
+
   return (
     <article className="flex h-full flex-col rounded-xl border border-line bg-paper p-6">
       <h3 className="font-serif text-xl font-normal leading-snug text-ink">
@@ -34,17 +59,25 @@ function ResultCard({ pathway }: { pathway: Pathway }) {
       </h3>
 
       <dl className="mt-5 space-y-3">
-        <Detail label="Typical duration" value={pathway.duration} />
-        <div className="border-t border-line pt-3">
-          <dt className="eyebrow text-[0.65rem]">
-            Indicative annual tuition
-          </dt>
-          <dd className="mt-1 font-mono text-sm text-eucalypt">
-            {formatTuition(pathway.tuitionMin, pathway.tuitionMax)}
-          </dd>
-        </div>
-        <Detail label="Typical entry requirement" value={pathway.entryRequirement} />
-        <Detail label="Next intake" value={pathway.nextIntake} />
+        {pathway.duration && (
+          <Detail label="Typical duration" value={pathway.duration} />
+        )}
+        {(pathway.tuitionMin || pathway.tuitionMax) && (
+          <div className="border-t border-line pt-3">
+            <dt className="eyebrow text-[0.65rem]">
+              Indicative annual tuition
+            </dt>
+            <dd className="mt-1 font-mono text-sm text-eucalypt">
+              {formatTuition(pathway.tuitionMin, pathway.tuitionMax)}
+            </dd>
+          </div>
+        )}
+        {pathway.entryRequirement && (
+          <Detail label="Typical entry requirement" value={pathway.entryRequirement} />
+        )}
+        {pathway.nextIntake && (
+          <Detail label="Next intake" value={pathway.nextIntake} />
+        )}
       </dl>
     </article>
   );

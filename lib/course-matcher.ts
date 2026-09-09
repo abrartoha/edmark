@@ -141,9 +141,10 @@ export function matchPathways(a: Answers): Pathway[] {
 }
 
 /** "$18,000–$24,000", or "Not set" while the data file is unfilled. */
-export function formatTuition(min: number, max: number): string {
+/** Both optional: vocational pathways publish no fee at all. */
+export function formatTuition(min?: number, max?: number): string {
   if (!min && !max) return "Not set";
   const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
   if (min && max && min !== max) return `${money(min)}–${money(max)}`;
-  return money(max || min);
+  return money(max || min || 0);
 }

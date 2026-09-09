@@ -54,14 +54,28 @@ export type Qualification = "year12" | "diploma" | "bachelor" | "masters";
 
 export type BudgetBand = "under-15k" | "15-25k" | "25-40k" | "40k-plus";
 
+/**
+ * Higher-education pathways carry the commercial detail. Vocational ones do
+ * not, and instead point at a career page.
+ *
+ * Edmark is an education agent, not an RTO. Publishing a fee, a duration or an
+ * intake against an AQF qualification is marketing somebody else's training
+ * product, which is what ASQA's notice of 2 September 2026 was about. The
+ * vocational entries here were doing exactly that, on the homepage, and are
+ * now occupations rather than qualifications.
+ */
 export type Pathway = {
   id: string;
   name: string;
-  duration: string;
-  tuitionMin: number;
-  tuitionMax: number;
-  entryRequirement: string;
-  nextIntake: string;
+  /** Set on vocational entries. Its presence is what makes an entry a career. */
+  careerSlug?: string;
+  /** One line about the occupation. Vocational entries only. */
+  summary?: string;
+  duration?: string;
+  tuitionMin?: number;
+  tuitionMax?: number;
+  entryRequirement?: string;
+  nextIntake?: string;
   tags: {
     fields: Field[];
     qualifications: Qualification[];
@@ -71,15 +85,11 @@ export type Pathway = {
 };
 
 export const pathways: Pathway[] = [
-  // ---- Nursing & health -------------------------------------------------
   {
     id: "cert3-individual-support",
-    name: "Certificate III in Individual Support (Ageing)",
-    duration: "6 to 12 months",
-    tuitionMin: 8000,
-    tuitionMax: 15000,
-    entryRequirement: "Year 12 or equivalent. Police check and placement hours required.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Aged care and disability support worker",
+    careerSlug: "aged-care-and-disability-support-worker",
+    summary: "Assisting older people and people with disability with daily living, personal care and community access.",
     tags: {
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma", "bachelor", "masters"],
@@ -89,12 +99,9 @@ export const pathways: Pathway[] = [
   },
   {
     id: "diploma-nursing",
-    name: "Diploma of Nursing (Enrolled Nurse)",
-    duration: "18 months to 2 years",
-    tuitionMin: 18000,
-    tuitionMax: 28000,
-    entryRequirement: "Year 12 or equivalent. Leads to AHPRA registration as an Enrolled Nurse.",
-    nextIntake: "February and July, with extra intakes at some RTOs",
+    name: "Enrolled nurse",
+    careerSlug: "enrolled-nurse",
+    summary: "Providing nursing care under the supervision of a registered nurse, in hospitals, aged care and community health.",
     tags: {
       fields: ["nursing-health"],
       qualifications: ["year12", "diploma"],
@@ -117,16 +124,11 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Trade & construction ---------------------------------------------
   {
     id: "cert3-carpentry",
-    name: "Certificate III in Carpentry",
-    duration: "2 to 3 years, including on-the-job training",
-    tuitionMin: 12000,
-    tuitionMax: 20000,
-    entryRequirement: "Year 12 or equivalent. Usually completed alongside an apprenticeship or work placement.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Carpenter",
+    careerSlug: "carpenter",
+    summary: "Setting out, building and installing structures in timber on residential and commercial sites.",
     tags: {
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
@@ -134,16 +136,11 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Hospitality & cookery --------------------------------------------
   {
     id: "cert3-commercial-cookery",
-    name: "Certificate III in Commercial Cookery",
-    duration: "12 to 18 months",
-    tuitionMin: 12000,
-    tuitionMax: 18000,
-    entryRequirement: "Year 12 or equivalent. Includes supervised kitchen service hours.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Chef and commercial cook",
+    careerSlug: "chef",
+    summary: "Preparing and cooking food to order in commercial kitchens, and supervising kitchen sections.",
     tags: {
       fields: ["hospitality-cookery"],
       qualifications: ["year12", "diploma"],
@@ -153,12 +150,9 @@ export const pathways: Pathway[] = [
   },
   {
     id: "diploma-hospitality-management",
-    name: "Diploma of Hospitality Management",
-    duration: "12 to 18 months",
-    tuitionMin: 16000,
-    tuitionMax: 26000,
-    entryRequirement: "Year 12 or equivalent, or a Certificate III in a hospitality field for credit.",
-    nextIntake: "Multiple intakes a year at most providers",
+    name: "Hospitality and venue manager",
+    careerSlug: "hospitality-manager",
+    summary: "Running the service, staffing and commercial side of cafes, restaurants, hotels and venues.",
     tags: {
       fields: ["hospitality-cookery"],
       qualifications: ["year12", "diploma"],
@@ -166,16 +160,11 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Teaching & childcare ---------------------------------------------
   {
     id: "diploma-early-childhood",
-    name: "Diploma of Early Childhood Education and Care",
-    duration: "18 months to 2 years",
-    tuitionMin: 16000,
-    tuitionMax: 26000,
-    entryRequirement: "Year 12 or equivalent. Working with Children Check and placement hours required.",
-    nextIntake: "Multiple intakes a year at most providers",
+    name: "Early childhood educator",
+    careerSlug: "early-childhood-educator",
+    summary: "Planning and delivering education and care for children before school age.",
     tags: {
       fields: ["teaching-childcare"],
       qualifications: ["year12", "diploma"],
@@ -198,8 +187,6 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Business & IT ------------------------------------------------------
   {
     id: "bachelor-it",
     name: "Bachelor of Information Technology",
@@ -260,15 +247,11 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-  // ---- Added: trades beyond carpentry ------------------------------------
   {
     id: "cert3-electrician",
-    name: "Certificate III in Electrotechnology Electrician",
-    duration: "3 to 4 years, including on-the-job training",
-    tuitionMin: 14000,
-    tuitionMax: 22000,
-    entryRequirement: "Year 12 or equivalent. Leads to electrical licensing, which is regulated in each state.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Electrician",
+    careerSlug: "electrician",
+    summary: "Installing, testing and maintaining electrical wiring, switchboards and equipment.",
     tags: {
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
@@ -278,12 +261,9 @@ export const pathways: Pathway[] = [
   },
   {
     id: "cert3-plumbing",
-    name: "Certificate III in Plumbing",
-    duration: "3 to 4 years, including on-the-job training",
-    tuitionMin: 14000,
-    tuitionMax: 22000,
-    entryRequirement: "Year 12 or equivalent. Usually completed alongside an apprenticeship.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Plumber",
+    careerSlug: "plumber",
+    summary: "Installing and maintaining the water, gas, drainage and roof drainage systems in buildings.",
     tags: {
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
@@ -293,12 +273,9 @@ export const pathways: Pathway[] = [
   },
   {
     id: "cert3-automotive",
-    name: "Certificate III in Light Vehicle Mechanical Technology",
-    duration: "2 to 3 years, including on-the-job training",
-    tuitionMin: 12000,
-    tuitionMax: 20000,
-    entryRequirement: "Year 12 or equivalent. Diagnosing, servicing and repairing light vehicles.",
-    nextIntake: "Rolling intakes at most RTOs",
+    name: "Light vehicle mechanic",
+    careerSlug: "light-vehicle-mechanic",
+    summary: "Diagnosing, servicing and repairing cars and light commercial vehicles.",
     tags: {
       fields: ["trade-construction"],
       qualifications: ["year12", "diploma"],
@@ -306,8 +283,6 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Added: health beyond nursing --------------------------------------
   {
     id: "bachelor-social-work",
     name: "Bachelor of Social Work",
@@ -338,40 +313,6 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Added: hospitality progression ------------------------------------
-  {
-    id: "cert4-kitchen-management",
-    name: "Certificate IV in Kitchen Management",
-    duration: "12 to 18 months",
-    tuitionMin: 13000,
-    tuitionMax: 20000,
-    entryRequirement: "Usually follows a Certificate III in Commercial Cookery and builds toward chef de partie roles.",
-    nextIntake: "Rolling intakes at most RTOs",
-    tags: {
-      fields: ["hospitality-cookery"],
-      qualifications: ["year12", "diploma"],
-      budgetBands: ["under-15k", "15-25k"],
-      inDemand: true,
-    },
-  },
-
-  // ---- Added: teaching entry point ---------------------------------------
-  {
-    id: "cert3-early-childhood",
-    name: "Certificate III in Early Childhood Education and Care",
-    duration: "6 to 12 months",
-    tuitionMin: 8000,
-    tuitionMax: 15000,
-    entryRequirement: "Year 12 or equivalent. Working with Children Check and placement hours required.",
-    nextIntake: "Rolling intakes at most RTOs",
-    tags: {
-      fields: ["teaching-childcare"],
-      qualifications: ["year12", "diploma", "bachelor", "masters"],
-      budgetBands: ["under-15k", "15-25k"],
-      inDemand: true,
-    },
-  },
   {
     id: "bachelor-education",
     name: "Bachelor of Education (Early Childhood / Primary)",
@@ -387,16 +328,11 @@ export const pathways: Pathway[] = [
       inDemand: true,
     },
   },
-
-  // ---- Added: business entry point ---------------------------------------
   {
     id: "diploma-business",
-    name: "Diploma of Business",
-    duration: "12 months",
-    tuitionMin: 12000,
-    tuitionMax: 22000,
-    entryRequirement: "Year 12 or equivalent. Often packaged as credit into the first year of a bachelor degree.",
-    nextIntake: "Multiple intakes a year at most providers",
+    name: "Business administrator and manager",
+    careerSlug: "business-administrator",
+    summary: "Running the operations, planning and coordination side of an organisation.",
     tags: {
       fields: ["business-it"],
       qualifications: ["year12", "diploma"],
@@ -404,7 +340,6 @@ export const pathways: Pathway[] = [
       inDemand: false,
     },
   },
-  // ---- Engineering & science ---------------------------------------------
   {
     id: "bachelor-engineering",
     name: "Bachelor of Engineering (Honours)",
@@ -437,12 +372,9 @@ export const pathways: Pathway[] = [
   },
   {
     id: "diploma-engineering",
-    name: "Diploma of Engineering",
-    duration: "12 months",
-    tuitionMin: 16000,
-    tuitionMax: 28000,
-    entryRequirement: "Year 12 or equivalent. Usually carries credit into the second year of an engineering degree.",
-    nextIntake: "Multiple intakes a year at most providers",
+    name: "Engineering technician",
+    careerSlug: "engineering-technician",
+    summary: "Supporting design, planning and project delivery in engineering environments.",
     tags: {
       fields: ["engineering-science"],
       qualifications: ["year12", "diploma"],
