@@ -1,8 +1,15 @@
 // ---------------------------------------------------------------------------
 // COURSE CATALOGUE
 //
-// One list covering both higher education and vocational study, so a course
-// can have its own page without either source knowing about the other. Slugs
+// Higher education only.
+//
+// The vocational qualifications were removed on 10 September 2026: Edmark is
+// an education agent, not an RTO, and listing a qualification it neither
+// delivers nor issues was marketing a training product without naming the
+// provider. Those now live as careers, under /careers, described as
+// occupations rather than as courses on offer. See lib/careers.ts.
+//
+// Slugs
 // are derived from the course name, and from its national code where it has
 // one, since two providers can word the same qualification differently but the
 // code is fixed.
@@ -10,7 +17,6 @@
 
 import { levels, type Course, type Field } from "./higher-education";
 import { COURSE_PHOTO_FILES } from "./course-photos.generated";
-import { vetCourses } from "./vet-courses";
 
 export type Sector = "Higher education" | "Vocational";
 
@@ -52,17 +58,6 @@ function build(): CatalogCourse[] {
         listHref: `/courses/higher-education/${level.slug}`,
       });
     }
-  }
-
-  for (const c of vetCourses) {
-    out.push({
-      ...c,
-      slug: courseSlug(c.name),
-      sector: "Vocational",
-      levelTitle: "",
-      levelSlug: "",
-      listHref: "/courses/short-courses",
-    });
   }
 
   // A slug collision would silently make one course unreachable, so the

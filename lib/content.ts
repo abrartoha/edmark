@@ -31,18 +31,18 @@ export const services: Service[] = [
   },
   {
     slug: "short-courses",
-    href: "/courses/short-courses",
+    href: "/careers",
     icon: "graduation",
-    title: "Vocational (VET) & Short Courses",
+    title: "Careers & Pathways",
     short:
-      "Nationally recognised trade, care, cookery and short courses. Practical qualifications that lead to work rather than to another degree.",
-    long: "Vocational education and training, VET, is the practical half of the Australian system. These are nationally recognised qualifications built around doing the job rather than studying the theory of it, and many of them lead to licensed or registered occupations. They are also the fastest and cheapest route to a recognised Australian qualification.\n\nWe cover trades such as carpentry, plumbing, electrical and automotive, the care sector across aged care and early childhood, commercial cookery and hospitality, and short security courses. Every one of these is delivered by a registered training organisation, and we check that the RTO and the course are the right ones for your visa and your goal before you enrol.",
+      "Guides to trade, care, cookery and business occupations, and the qualification usually used to enter each one.",
+    long: "Vocational education and training, VET, is the practical half of the Australian system. These qualifications are built around doing the job rather than studying the theory of it, and many of them lead to licensed or registered occupations.\n\nEdmark Education is an education agent. We are not a registered training organisation: we do not deliver training and we do not issue qualifications. Nationally recognised training is delivered and issued by registered training organisations, which are listed on training.gov.au. What we help with is the decision and the application \u2014 comparing providers, understanding the visa and licensing requirements that apply to you, and preparing an application that holds together.",
     points: [
-      "Trade apprenticeship qualifications",
-      "Security licensing courses",
-      "Aged Care (Certificate III & IV)",
-      "Child Care / Early Childhood Education & Care",
-      "RTO selection and enrolment support",
+      "Guides to trade, care, cookery and business occupations",
+      "The qualification usually used to enter each one",
+      "Help comparing the providers approved to deliver it",
+      "Licensing and registration requirements explained",
+      "Application support and document preparation",
     ],
   },
   {
@@ -233,7 +233,7 @@ export const serviceExtras: Record<string, ServiceExtras> = {
   },
   "short-courses": {
     extended:
-      "Short vocational (VET) courses are one of the fastest, most affordable ways to gain nationally recognised, job-ready skills. Whether you want to start working sooner or add a practical qualification, these courses open doors in high-demand industries.\n\nWe help you choose the right course and provider in popular areas such as Security, Aged Care and Child Care, and connect you with quality registered training organisations (RTOs) so your qualification is recognised and respected by employers.",
+      "Vocational qualifications are one of the fastest, most affordable routes to job-ready skills in Australia, and many of them lead into licensed or registered occupations in high-demand industries.\n\nEdmark Education is an education agent, not a registered training organisation. We do not deliver training or issue qualifications. We help you work out which occupation suits you, compare the registered training organisations approved to deliver the qualification behind it, and prepare a strong application.",
     whoFor: [
       "People wanting job-ready skills quickly",
       "Students seeking an affordable, practical qualification",
