@@ -1,5 +1,11 @@
 export type BlogPost = {
   slug: string;
+  /**
+   * ISO date the content was last checked. Present on posts carrying visa or
+   * cost information, where a reader needs to know how current the figures
+   * are; absent on posts whose content does not go stale that way.
+   */
+  lastReviewed?: string;
   title: string;
   excerpt: string;
   category: string;
@@ -10,6 +16,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-choose-the-right-course-in-australia",
+    lastReviewed: "2026-09-11",
     title: "How to Choose the Right Course in Australia",
     excerpt:
       "With over 1,200 institutions and 22,000 courses, choosing the right program can feel overwhelming. Here's a practical framework to narrow your options.",
@@ -19,6 +26,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "complete-guide-to-australian-student-visas-2026",
+    lastReviewed: "2026-09-11",
     title: "Complete Guide to Australian Student Visas in 2026",
     excerpt:
       "Everything you need to know about the Subclass 500 student visa, including requirements, costs, processing times and common mistakes to avoid.",
@@ -28,6 +36,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "top-scholarships-for-international-students-in-australia",
+    lastReviewed: "2026-09-11",
     title: "Top Scholarships for International Students in Australia",
     excerpt:
       "From government-funded Australia Awards to university-specific grants, here are the scholarships worth applying for, and how to win them.",
@@ -37,6 +46,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cost-of-living-in-melbourne-student-guide",
+    lastReviewed: "2026-09-11",
     title: "Cost of Living in Melbourne: A Student's Guide",
     excerpt:
       "A realistic breakdown of what you'll spend on rent, food, transport and fun in Melbourne, plus tips to stretch your budget further.",

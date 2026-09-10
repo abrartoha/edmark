@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageReviewed from "@/components/PageReviewed";
 import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -96,6 +97,8 @@ export default function FAQPage() {
           ))}
         </div>
       </section>
+
+      <PageReviewed date="2026-09-11" />
 
       <CTA
         title="Still have questions?"

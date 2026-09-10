@@ -70,3 +70,16 @@ export const allInstitutions: Institution[] = [
   ...colleges,
   ...tafes,
 ];
+
+/**
+ * How many institutions are listed, counted from the list itself.
+ *
+ * The FAQ used to claim "over 50 institutions" against 27 on the page. Nobody
+ * had lied on purpose; the number was typed once and the list changed
+ * underneath it. Deriving it means the claim cannot be wrong, because there is
+ * no separate claim to be wrong.
+ *
+ * OSHC providers are excluded: they insure students, they do not teach them.
+ */
+export const institutionCount =
+  universities.length + tafes.length + colleges.length;

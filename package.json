@@ -5,11 +5,13 @@
   "description": "Edmark Education \u2014 Australian education consultancy website",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/verify-careers.ts && next build",
+    "build": "npm run verify && next build",
     "start": "next start",
     "lint": "next lint",
     "fingerprint:photos": "node scripts/fingerprint-course-photos.mjs",
-    "verify:careers": "node scripts/verify-careers.ts"
+    "verify:careers": "node scripts/verify-careers.ts",
+    "verify:facts": "node scripts/verify-facts.ts",
+    "verify": "node scripts/verify-careers.ts && node scripts/verify-facts.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",

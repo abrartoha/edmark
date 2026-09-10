@@ -7,7 +7,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
 import { blogPosts } from "@/lib/blog";
 import { site } from "@/lib/site";
+import { facts } from "@/lib/facts";
 import { IconArrow } from "@/components/Icons";
+import PageReviewed from "@/components/PageReviewed";
 
 const blogContent: Record<string, string> = {
   "how-to-choose-the-right-course-in-australia": `
@@ -53,7 +55,7 @@ To apply for a Subclass 500 visa, you need:
 - **Confirmation of Enrolment (CoE)** from a CRICOS-registered institution
 - **Genuine Student (GS) responses** explaining why you chose this course, how it fits your background and career plans, and how you will meet your visa conditions
 - **English language proficiency** (IELTS, PTE, TOEFL or Cambridge)
-- **Financial capacity** to cover tuition fees, living costs and travel (at least AUD $29,710 per year for living costs)
+- **Financial capacity** to cover tuition fees, living costs and travel (the ${facts.livingCostRequirement.source} amount, currently ${facts.livingCostRequirement.value} for living costs)
 - **Overseas Student Health Cover (OSHC)** for the duration of your stay
 - **Character and health requirements** including police clearances and medical examinations
 
@@ -65,7 +67,7 @@ The application process is completed online through the Department of Home Affai
 2. Create an ImmiAccount and start your application
 3. Upload all required documents (passport, CoE, financial evidence, OSHC, English test results)
 4. Answer the Genuine Student (GS) questions, 150 words or fewer each
-5. Pay the visa application charge (AUD $2,500 for the primary applicant from 1 July 2026; AUD $2,050 for ELICOS and non-award courses)
+5. Pay the visa application charge (${facts.studentVisaCharge.value} for the primary applicant; ${facts.elicosVisaCharge.value} for ELICOS and non-award courses, per the ${facts.studentVisaCharge.source})
 6. Attend a medical examination if required
 7. Wait for a decision
 
@@ -75,7 +77,7 @@ Processing times vary but typically range from 4 to 12 weeks. We recommend apply
 
 ## Work rights
 
-Student visa holders can work up to 48 hours per fortnight during study periods and unlimited hours during scheduled course breaks. This is a significant benefit that helps students gain work experience and offset living costs.
+Student visa holders can work up to ${facts.workRights.value} during study periods and unrestricted hours during scheduled course breaks. This is a significant benefit that helps students gain work experience and offset living costs.
 
 ## Common mistakes to avoid
 
@@ -101,18 +103,18 @@ Studying in Australia is a significant financial investment, with tuition fees r
 The Australian Government's flagship scholarship program for students from developing countries. Australia Awards cover full tuition, return airfare, establishment allowance, living costs and health insurance. They are highly competitive but transformational for successful applicants.
 
 ### Destination Australia
-A government program that provides scholarships for students studying at regional Australian campuses. Awards of up to $15,000 AUD per year help offset tuition and living costs while encouraging students to study outside major cities.
+A government program that provides scholarships for students studying at regional Australian campuses. Awards help offset tuition and living costs while encouraging students to study outside major cities. Amounts are set by the participating institution, so check the current value on its page.
 
 ## University-specific scholarships
 
 Most Australian universities offer their own scholarship programs. Some notable examples:
 
-- **University of Melbourne**: Melbourne International Undergraduate Scholarship (up to $28,000 fee remission)
-- **Monash University**: International Merit Scholarship (up to $10,000 per year)
-- **RMIT University**: RMIT International Scholarship (up to 25% fee waiver)
-- **Deakin University**: Deakin International Scholarship (up to 25% fee reduction)
+- **University of Melbourne**: Melbourne International Undergraduate Scholarship
+- **Monash University**: International Merit Scholarship
+- **RMIT University**: RMIT International Scholarship
+- **Deakin University**: Deakin International Scholarship
 
-These scholarships are typically merit-based and assessed on academic performance, but some also consider financial need and community involvement.
+These are typically merit-based and assessed on academic performance, though some also consider financial need and community involvement. What each is worth changes year to year and is set by the university, so check the amount and the closing date on the university own scholarships page before planning around it.
 
 ## Country-specific scholarships
 
@@ -135,7 +137,7 @@ We screen your eligibility for every available scholarship, help you prepare win
 
 Melbourne is consistently ranked as one of the world's most liveable cities, and it's also one of Australia's most popular student destinations. While it's not the cheapest city, it offers excellent value when you factor in quality of life, work opportunities and cultural experiences.
 
-The Australian Government requires international students to show at least AUD $29,710 per year for living costs (excluding tuition). In Melbourne, your actual costs will depend on your lifestyle, accommodation choices and spending habits.
+The ${facts.livingCostRequirement.source} requires international students to show ${facts.livingCostRequirement.value} for living costs, excluding tuition. In Melbourne, your actual costs will depend on your lifestyle, accommodation choices and spending habits.
 
 ## Accommodation
 
@@ -168,17 +170,17 @@ Many students live close to campus and walk or cycle to save on transport costs.
 
 - **Phone plan**: $20–$40 per month
 - **Internet** (if not included in rent): $60–$80 per month
-- **OSHC health insurance**: $620–$800 per year for single cover
+- **OSHC health insurance**: ${facts.oshcCost.value} for single cover
 - **Textbooks and supplies**: $500–$1,000 per year
 - **Entertainment and social**: $50–$100 per week
 
-> Costs current as at July 2026. Government charges and fares change, often at the start of a financial year, so check the official source before you budget against them.
+> **Where these come from.** The financial capacity figure is the ${facts.livingCostRequirement.source}'s. Fares are Public Transport Victoria's. Rent, groceries and other living costs are indicative ranges from Edmark's own review of the Melbourne market, checked September 2026 — they are a starting point for a budget, not a quote. For maintained figures see the Australian Government's [Study Australia cost of living guide](https://www.studyaustralia.gov.au/en/plan-your-studies/cost-of-studying-and-living-in-australia). Government charges and fares change, often at the start of a financial year, so check the source before budgeting against them.
 
 ## Tips to save money
 
 1. **Cook at home**: meal prep saves hundreds per month
 2. **Use student discounts**: your student ID unlocks discounts on food, transport, entertainment and software
-3. **Work part-time**: student visa holders can work up to 48 hours per fortnight
+3. **Work part-time**: student visa holders can work up to ${facts.workRights.value} in study periods
 4. **Live in the inner suburbs**: areas like Footscray, Brunswick and Clayton offer cheaper rent with good transport links
 5. **Buy second-hand textbooks**: check campus noticeboards and online marketplaces
 `,
@@ -248,7 +250,7 @@ Before you submit a formal application, you should ideally have a supervisor who
 
 Research degree students have access to funding that coursework students don't:
 
-- **Research Training Program (RTP)**: Australian Government-funded scholarships covering tuition fees and a living stipend. The 2026 base rate is around $34,315 AUD/year, and many universities top it up, with rates from roughly $37,000 to $42,000 at the larger research institutions. Available at all Australian universities.
+- **Research Training Program (RTP)**: Australian Government-funded scholarships covering tuition fees and a living stipend. The base stipend rate is set annually by the Australian Government and many universities top it up, so confirm the current rate with the university you are applying to. Available at all Australian universities.
 - **University-specific research scholarships**: many universities offer their own research awards with stipends and travel grants
 - **Industry-partnered PhDs**: some research projects are co-funded by industry partners, offering higher stipends and industry experience
 - **International postgraduate research scholarships**: specifically for international students, covering tuition and living costs
@@ -670,6 +672,10 @@ export default function BlogPostPage({
           </div>
         </div>
       </section>
+
+      {/* Only on posts carrying visa or cost figures. A post about how to
+          write a statement of purpose does not go stale the same way. */}
+      {post.lastReviewed && <PageReviewed date={post.lastReviewed} />}
 
       <CTA />
     </>

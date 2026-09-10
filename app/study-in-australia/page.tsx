@@ -3,6 +3,8 @@ import Image from "next/image";
 import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import Fact from "@/components/Fact";
+import PageReviewed from "@/components/PageReviewed";
 import Breadcrumb from "@/components/Breadcrumb";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
@@ -21,12 +23,16 @@ export const metadata: Metadata = pageSeo({
 const whyAustralia = [
   {
     title: "World-class education",
-    desc: "8 of the world's top 100 universities. Globally recognised qualifications accepted by employers worldwide.",
+    desc: "Australian qualifications are recognised by employers worldwide, and its universities rank consistently among the world's strongest.",
     image: "/images/why-australia/world-class-education.jpg",
   },
   {
     title: "Post-study work rights",
-    desc: "Temporary Graduate visa (Subclass 485) lets you work in Australia for 2–4 years after graduating.",
+    // TODO: verify against the Department of Home Affairs and state the stream.
+    // The old copy said "2 to 4 years" with no source and no stream named; the
+    // period depends on which stream you hold and what you studied, so a single
+    // range across all of them was never right.
+    desc: "The Temporary Graduate visa (Subclass 485) lets eligible graduates stay and work in Australia. How long depends on the stream and your qualification.",
     image: "/images/why-australia/post-study-work.jpg",
   },
   {
@@ -36,7 +42,7 @@ const whyAustralia = [
   },
   {
     title: "Work while studying",
-    desc: "Student visa holders can work up to 48 hours per fortnight during study periods.",
+    desc: "Student visa holders can work limited hours during study periods, and unrestricted hours when their course is not in session.",
     image: "/images/why-australia/work-while-studying.jpg",
   },
   {
@@ -54,38 +60,32 @@ const whyAustralia = [
 const educationTypes = [
   {
     type: "Universities",
-    desc: "43 universities offering bachelor's, master's and PhD programs. Includes the prestigious Group of Eight research universities.",
-    fees: "$20,000–$50,000 AUD/year",
+    desc: "Bachelor's, master's and PhD programs, including the Group of Eight research universities.",
   },
   {
     type: "TAFE",
     desc: "Government-funded technical and further education. Practical, industry-focused certificates and diplomas with pathways to university.",
-    fees: "$8,000–$22,000 AUD/year",
   },
   {
     type: "Private Colleges",
     desc: "Specialised training in business, IT, hospitality, health and creative fields. Often smaller class sizes with strong industry connections.",
-    fees: "$10,000–$25,000 AUD/year",
   },
   {
     type: "ELICOS",
     desc: "English Language Intensive Courses for Overseas Students. Build your English skills before starting your main program.",
-    fees: "$300–$400 AUD/week",
   },
   {
     type: "Foundation & Pathway",
-    desc: "Bridging programs that prepare you for university entry. Typically 6–12 months with guaranteed progression to a partner university.",
-    fees: "$15,000–$30,000 AUD/year",
+    desc: "Bridging programs that prepare you for university entry, with progression into a linked degree.",
   },
 ];
 
-const livingCosts = [
-  { city: "Melbourne", rent: "$200–$350/week", food: "$100–$150/week", transport: "$40–$50/week" },
-  { city: "Sydney", rent: "$250–$400/week", food: "$100–$150/week", transport: "$40–$55/week" },
-  { city: "Brisbane", rent: "$180–$300/week", food: "$90–$130/week", transport: "$35–$45/week" },
-  { city: "Adelaide", rent: "$150–$250/week", food: "$80–$120/week", transport: "$30–$40/week" },
-  { city: "Perth", rent: "$170–$280/week", food: "$90–$130/week", transport: "$35–$45/week" },
-];
+// The per-city rent, food and transport table that used to sit here quoted
+// twenty figures to the dollar with no source behind any of them, and no date.
+// Rents in particular move faster than a marketing page gets edited. What
+// replaced it is the one number that is actually official — the financial
+// capacity the visa requires — plus a pointer to the government's own cost
+// guidance, which is maintained by people whose job that is.
 
 export default function StudyInAustraliaPage() {
   return (
@@ -146,7 +146,7 @@ export default function StudyInAustraliaPage() {
             {educationTypes.map((t, i) => (
               <div
                 key={t.type}
-                className="reveal grid items-center gap-6 rounded-2xl border border-brand-100 bg-white p-6 shadow-soft sm:grid-cols-[1fr_auto]"
+                className="reveal rounded-2xl border border-brand-100 bg-white p-6 shadow-soft"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div>
@@ -154,14 +154,6 @@ export default function StudyInAustraliaPage() {
                   <p className="mt-1 text-sm leading-relaxed text-brand-900/70">
                     {t.desc}
                   </p>
-                </div>
-                <div className="rounded-xl bg-brand-50 px-4 py-2 text-center">
-                  <span className="block text-xs font-medium uppercase text-brand-500">
-                    Typical fees
-                  </span>
-                  <span className="font-display text-lg font-medium text-brand-900">
-                    {t.fees}
-                  </span>
                 </div>
               </div>
             ))}
@@ -176,29 +168,32 @@ export default function StudyInAustraliaPage() {
             center
             eyebrow="Living costs"
             title="How much does it cost to live in Australia?"
-            subtitle="The Australian Government requires international students to demonstrate access to at least AUD $29,710 per year for living costs."
+            subtitle="What the visa requires you to show, and where to check what things actually cost."
           />
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[600px] text-left text-sm">
-              <thead>
-                <tr className="border-b-2 border-brand-200">
-                  <th className="py-3 pr-4 font-medium text-brand-900">City</th>
-                  <th className="py-3 pr-4 font-medium text-brand-900">Rent (shared)</th>
-                  <th className="py-3 pr-4 font-medium text-brand-900">Food</th>
-                  <th className="py-3 font-medium text-brand-900">Transport</th>
-                </tr>
-              </thead>
-              <tbody>
-                {livingCosts.map((c) => (
-                  <tr key={c.city} className="border-b border-brand-100">
-                    <td className="py-3 pr-4 text-brand-900">{c.city}</td>
-                    <td className="py-3 pr-4 text-brand-900/70">{c.rent}</td>
-                    <td className="py-3 pr-4 text-brand-900/70">{c.food}</td>
-                    <td className="py-3 text-brand-900/70">{c.transport}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mx-auto mt-12 max-w-3xl">
+            <div className="rounded-2xl border border-brand-100 bg-white p-6 shadow-soft">
+              <p className="text-xs font-medium uppercase tracking-wider text-brand-500">
+                Financial capacity you must demonstrate
+              </p>
+              <Fact name="livingCostRequirement" className="mt-2" />
+            </div>
+
+            <p className="mt-8 text-base leading-relaxed text-brand-900/70">
+              Actual living costs depend on the city, the suburb and how you
+              live, and rents move faster than any page like this is edited. We
+              would rather point you at figures somebody maintains than quote
+              you our own. The Australian Government&apos;s{" "}
+              <a
+                href="https://www.studyaustralia.gov.au/en/plan-your-studies/cost-of-studying-and-living-in-australia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-eucalypt underline underline-offset-2 hover:text-ink"
+              >
+                Study Australia cost of living guide
+              </a>{" "}
+              is the place to start, and we will go through your own numbers
+              with you in a consultation.
+            </p>
           </div>
         </div>
       </section>
@@ -217,7 +212,7 @@ export default function StudyInAustraliaPage() {
               "Confirmation of Enrolment (CoE) from a CRICOS-registered institution",
               "Genuine Student (GS) responses",
               "English language proficiency (IELTS 5.5–7.0 depending on course)",
-              "Financial capacity (tuition + AUD $29,710/year living costs)",
+              "Financial capacity: tuition plus the living-cost amount set by the Department of Home Affairs",
               "Overseas Student Health Cover (OSHC)",
               "Police clearance and medical examination",
             ].map((req) => (
@@ -233,7 +228,7 @@ export default function StudyInAustraliaPage() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-brand-900/60">
-            Visa application charge: AUD $2,500 (from 1 July 2026) · Processing time: 4–12 weeks ·{" "}
+            Visa application charge: <Fact name="studentVisaCharge" inline /> ·{" "}
             <Link href="/blog/complete-guide-to-australian-student-visas-2026" className="font-medium text-brand-600 hover:underline">
               Read our full visa guide →
             </Link>
@@ -330,7 +325,7 @@ export default function StudyInAustraliaPage() {
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
-                <span><strong className="text-brand-900">During study periods:</strong> Up to 48 hours per fortnight</span>
+                <span><strong className="text-brand-900">During study periods:</strong> <Fact name="workRights" inline /></span>
               </li>
               <li className="flex items-start gap-3 text-sm text-brand-900/70">
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
@@ -342,7 +337,7 @@ export default function StudyInAustraliaPage() {
                 <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint-300 text-brand-950">
                   <IconCheck className="h-3 w-3" />
                 </span>
-                <span><strong className="text-brand-900">Minimum wage:</strong> $24.10 AUD/hour (2026)</span>
+                <span><strong className="text-brand-900">Minimum wage:</strong> <Fact name="minimumWage" inline /></span>
               </li>
             </ul>
           </div>
@@ -360,11 +355,13 @@ export default function StudyInAustraliaPage() {
           />
           <div className="mt-8 rounded-2xl bg-brand-50 p-8">
             <p className="text-sm leading-relaxed text-brand-900/70">
-              OSHC typically costs <strong className="text-brand-900">$500–$700 AUD per year</strong> and must be held for the entire duration of your student visa. Popular providers include Medibank, Allianz, BUPA and NIB. We help you choose the right plan during our pre-departure support.
+              OSHC must be held for the entire duration of your student visa. Cost varies by provider and level of cover: <Fact name="oshcCost" inline /> We help you compare plans during our pre-departure support.
             </p>
           </div>
         </div>
       </section>
+
+      <PageReviewed date="2026-09-11" />
 
       <CTA
         title="Let us guide your journey to Australia"

@@ -1,3 +1,6 @@
+import { facts } from "./facts";
+import { institutionCount } from "./partners";
+
 // Shared marketing content used across the homepage and inner pages.
 
 export type Service = {
@@ -345,7 +348,7 @@ export const faqs = [
   // Courses & Universities
   {
     q: "Which courses and institutions do you work with?",
-    a: "We work across the full spectrum of Australian education, including universities, TAFEs, private colleges like PIA, AAHE, VIT and SISTC, English language schools, and foundation/pathway programs. Our partnerships span over 50 institutions across Australia.",
+    a: `We work across the full spectrum of Australian education: universities, TAFEs, private colleges, English language schools and foundation or pathway programs. We list ${institutionCount} institutions on our partners page, and we can place students at many more beyond that list. Ask us about the course you want either way.`,
   },
   {
     q: "How do I choose the right course?",
@@ -387,15 +390,15 @@ export const faqs = [
   },
   {
     q: "Can I work while studying in Australia?",
-    a: "Yes! Student visa holders can work up to 48 hours per fortnight during study periods and unlimited hours during scheduled breaks. This allows many students to gain valuable work experience and supplement their living costs while studying.",
+    a: `Yes. Student visa holders can work up to ${facts.workRights.value} during study periods, and unrestricted hours when the course is not in session, per the ${facts.workRights.source}. Many students work part time to support living costs, though we would not recommend planning your budget around it.`,
   },
   {
     q: "How much does it cost to live in Australia as a student?",
-    a: "Two different numbers matter here. For your visa you must show access to at least AUD $29,710 per year for living costs, which is the Australian Government's financial capacity requirement and is not negotiable. What you actually spend is a separate question: in Melbourne most students find accommodation, food, transport and personal expenses land somewhere around AUD $24,000 to $30,000 a year depending on how you live, and regional areas are cheaper. Budget to the visa figure, not to the lifestyle one. We go through both with you during your consultation.",
+    a: `Two different numbers matter here. For your visa you must show access to ${facts.livingCostRequirement.value} for living costs, which is the ${facts.livingCostRequirement.source} financial capacity requirement and is not negotiable. What you actually spend is a separate question, and it depends on the city, the suburb and how you live. The Australian Government's Study Australia cost of living guide is the place to check current figures, and we will work through your own numbers with you.`,
   },
   {
     q: "What is OSHC and do I need it?",
-    a: "Overseas Student Health Cover (OSHC) is mandatory health insurance for international students in Australia. It covers essential medical and hospital services. The cost is approximately $500–$700 AUD per year, and we help you choose the right provider and plan.",
+    a: `Overseas Student Health Cover (OSHC) is mandatory health insurance for international students in Australia, covering essential medical and hospital services. You must hold it for the full length of your visa. Cost depends on the provider, the level of cover and the policy length — typically ${facts.oshcCost.value} for single cover. We help you compare providers and arrange your policy.`,
   },
   {
     q: "Do you help after I get my offer?",
@@ -420,7 +423,7 @@ export const faqs = [
   },
   {
     q: "Are there scholarships for research degree students?",
-    a: "Yes. Research students have access to specific funding that coursework students don't, including Research Training Program (RTP) scholarships from the Australian Government, university-funded research scholarships, and industry-partnered PhD stipends. Many of these cover full tuition plus a living allowance of $30,000–$35,000 AUD per year. We help you identify and apply for every scholarship you're eligible for.",
+    a: "Yes. Research students have access to funding that coursework students do not, including Research Training Program (RTP) scholarships from the Australian Government, university-funded research scholarships and industry-partnered PhD stipends. Amounts and stipend rates are set by each university and change year to year, so check the current figures with the university and we will help you identify and apply for everything you are eligible for.",
   },
 ];
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageReviewed from "@/components/PageReviewed";
 import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -29,7 +30,7 @@ const scholarshipTypes = [
   },
   {
     title: "University-Specific",
-    desc: "Each university offers its own scholarship programs. Range from 10% to 100% fee waivers. Often automatically assessed on application.",
+    desc: "Each university offers its own scholarship programs, and what they are worth varies widely between institutions and courses. Often automatically assessed on application.",
   },
   {
     title: "Country-Specific",
@@ -62,7 +63,7 @@ const steps = [
 const scholarshipFaqs = [
   {
     q: "How much can I save with a scholarship?",
-    a: "Savings range from $2,000 to $40,000+ depending on the scholarship type and your eligibility. Some government scholarships cover full tuition, living costs and airfare.",
+    a: "It varies widely. Scholarships range from small one-off contributions to full fee waivers, and what is on offer depends on the institution, the course, your academic record and where you are applying from. Rather than quote a range that would be wrong for most people, we check what you are actually eligible for and what each one is worth, at the institutions on your shortlist.",
   },
   {
     q: "Do I need perfect grades to get a scholarship?",
@@ -205,6 +206,8 @@ export default function ScholarshipsPage() {
           </div>
         </div>
       </section>
+
+      <PageReviewed date="2026-09-11" />
 
       <CTA
         title="Find out what scholarships you qualify for"
