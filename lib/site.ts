@@ -42,17 +42,10 @@ export const site = {
     },
     {
       name: "Mahin Khan",
-      role: "Business Development Manager",
+      role: "Operations Manager",
       credential: "ICEF Certified · QEAC No: #15175",
       email: "mahin@edmark.com.au",
       image: "/images/mahin.png",
-    },
-    {
-      name: "Abrar Hossain Chy Toha",
-      role: "Operations Manager",
-      credential: "",
-      email: "abrar@edmark.com.au",
-      image: "/images/abrar.png",
     },
     ],
   hours: "Mon–Sat: 8:00am – 7:00pm",

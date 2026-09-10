@@ -59,7 +59,14 @@ export default function AboutPage() {
             title="Your dedicated team"
             subtitle="Experienced consultants and support ready to guide you through every step of your study journey in Australia."
           />
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+          {/* Columns follow the size of the team. Three across is right for
+              three or more; with two it left a hole in the third column, so
+              two sit centred in a narrower measure instead. */}
+          <div
+            className={`mx-auto mt-12 grid gap-8 sm:grid-cols-2 ${
+              site.team.length > 2 ? "max-w-5xl lg:grid-cols-3" : "max-w-3xl"
+            }`}
+          >
             {site.team.map((member, i) => (
               <div
                 key={member.name}
