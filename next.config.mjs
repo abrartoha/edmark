@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+// Redirects here use statusCode: 301 rather than `permanent: true`. Next emits
+// 308 for `permanent`, which is the modern permanent redirect and which Google
+// treats identically — but 308 still reads as unexpected to a good deal of SEO
+// tooling, and an audit that flags every retired URL is an audit nobody reads.
+// 301 says the same thing in the dialect the tools speak.
 const nextConfig = {
   async redirects() {
     return [
@@ -16,229 +21,229 @@ const nextConfig = {
       {
         source: "/courses/certificate-iii-in-carpentry-cpc30220",
         destination: "/careers/carpenter",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-plumbing-cpc32420",
         destination: "/careers/plumber",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-electrotechnology-electrician-uee30820",
         destination: "/careers/electrician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-light-vehicle-mechanical-technology-aur30620",
         destination: "/careers/light-vehicle-mechanic",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-commercial-cookery-sit30821",
         destination: "/careers/chef",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-hospitality-management-sit50422",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-nursing-hlt54121",
         destination: "/careers/enrolled-nurse",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-ii-in-security-operations-cpp20218",
         destination: "/careers/security-officer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-individual-support-ageing-and-disability-chc33021",
         destination: "/careers/aged-care-and-disability-support-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-ageing-support",
         destination: "/careers/aged-care-and-disability-support-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-early-childhood-education-and-care-chc30125",
         destination: "/careers/early-childhood-educator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-early-childhood-education-and-care-chc50125",
         destination: "/careers/early-childhood-educator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-joinery-cpc31920",
         destination: "/careers/joiner",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-bricklaying-and-blocklaying-cpc33020",
         destination: "/careers/bricklayer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-wall-and-floor-tiling-cpc31320",
         destination: "/careers/wall-and-floor-tiler",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-solid-plastering-cpc31020",
         destination: "/careers/plasterer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-painting-and-decorating-cpc30620",
         destination: "/careers/painter-and-decorator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-concreting-cpc30320",
         destination: "/careers/concreter",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-cabinet-making-and-timber-technology-msf30322",
         destination: "/careers/cabinet-maker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-roof-plumbing-cpc32620",
         destination: "/careers/plumber",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-building-and-construction-cpc40120",
         destination: "/careers/builder",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-instrumentation-and-control-uee31220",
         destination: "/careers/instrumentation-and-control-technician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-air-conditioning-and-refrigeration-uee32225",
         destination: "/careers/air-conditioning-and-refrigeration-technician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-engineering-fabrication-trade-mem31922",
         destination: "/careers/metal-fabricator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-engineering-mechanical-trade-mem30219",
         destination: "/careers/mechanical-fitter",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/advanced-diploma-of-engineering-mem60122",
         destination: "/careers/engineering-technician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-heavy-commercial-vehicle-mechanical-technology-aur31120",
         destination: "/careers/heavy-vehicle-mechanic",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-automotive-electrical-technology-aur30320",
         destination: "/careers/automotive-electrician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-glass-and-glazing-msf30422",
         destination: "/careers/glazier",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-building-and-construction-building-cpc50220",
         destination: "/careers/builder",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-business-bsb50120",
         destination: "/careers/business-administrator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-diploma-of-management-learning-bsb80120",
         destination: "/careers/learning-and-development-officer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-disability-support-chc43121",
         destination: "/careers/aged-care-and-disability-support-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-mental-health-peer-work-chc43515",
         destination: "/careers/mental-health-support-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-mental-health-chc53315",
         destination: "/careers/mental-health-support-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-community-services-case-management-child-youth-and-family-welfare-chc52025",
         destination: "/careers/community-services-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-hospitality-sit30622",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iii-in-patisserie-sit31021",
         destination: "/careers/pastry-chef",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-patisserie-sit40721",
         destination: "/careers/pastry-chef",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-kitchen-management-sit40521",
         destination: "/careers/chef",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/advanced-diploma-of-hospitality-management-sit60322",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/certificate-iv-in-school-based-education-support-chc40221",
         destination: "/careers/education-support-officer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/diploma-of-school-age-education-and-care-chc50221",
         destination: "/careers/education-support-officer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/short-courses",
         destination: "/careers/vocational-education",
-        permanent: true,
+        statusCode: 301,
       },
       // /careers/vocational was live briefly before being renamed for symmetry
       // with /careers/higher-education. Short-lived, but it was in the sitemap.
       {
         source: "/careers/vocational",
         destination: "/careers/vocational-education",
-        permanent: true,
+        statusCode: 301,
       },
       // ----------------------------------------------------------------
       // 11 September 2026. The 53 higher-education course pages follow the
@@ -251,291 +256,295 @@ const nextConfig = {
       {
         source: "/courses/bachelor-of-information-technology-and-systems",
         destination: "/careers/network-and-systems-engineer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-engineering-honours",
         destination: "/careers/professional-engineer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-information-technology-bachelor-of-business",
         destination: "/careers/network-and-systems-engineer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-business",
         destination: "/careers/business-administrator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-accounting",
         destination: "/careers/accountant",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-early-childhood-education",
         destination: "/careers/early-childhood-educator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-education",
         destination: "/careers/school-teacher",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-nursing",
         destination: "/careers/registered-nurse",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-nursing-enrolled-nurse-to-registered-nurse",
         destination: "/careers/registered-nurse",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-midwifery",
         destination: "/careers/midwife",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-occupational-therapy",
         destination: "/careers/occupational-therapist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-speech-pathology",
         destination: "/careers/speech-pathologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-psychological-science",
         destination: "/careers/psychologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-psychological-science-with-honours",
         destination: "/careers/psychologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-psychological-science-bachelor-of-business",
         destination: "/careers/psychologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-health-science-health-and-lifestyle",
         destination: "/careers/health-promotion-officer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-biomedical-science",
         destination: "/careers/biomedical-scientist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-clinical-exercise-physiology",
         destination: "/careers/exercise-physiologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-clinical-sciences-osteopathic-studies",
         destination: "/careers/osteopath",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-sport-and-exercise-science",
         destination: "/careers/exercise-physiologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-exercise-science-and-psychological-science",
         destination: "/careers/exercise-physiologist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-counselling",
         destination: "/careers/counsellor",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-social-work",
         destination: "/careers/social-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-community-welfare",
         destination: "/careers/community-services-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-laws",
         destination: "/careers/lawyer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-legal-and-justice-studies",
         destination: "/careers/paralegal",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/associate-degree-of-law-paralegal-studies",
         destination: "/careers/paralegal",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-science",
         destination: "/careers/laboratory-scientist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-veterinary-technology",
         destination: "/careers/veterinary-technician",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-business-in-hotel-management",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/associate-degree-of-international-hotel-and-tourism-management",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-business-marketing",
         destination: "/careers/marketing-specialist",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/bachelor-of-information-technology-cyber-security",
         destination: "/careers/cyber-security-analyst",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-information-technology-networking",
         destination: "/careers/network-and-systems-engineer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/mba-master-of-business",
         destination: "/careers/business-administrator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-professional-accounting",
         destination: "/careers/accountant",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-business-analytics",
         destination: "/careers/data-analyst",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-diploma-of-business",
         destination: "/careers/business-administrator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-certificate-in-business",
         destination: "/careers/business-administrator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-teaching",
         destination: "/careers/school-teacher",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-teaching-early-childhood",
         destination: "/careers/early-childhood-educator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-diploma-of-education-early-childhood",
         destination: "/careers/early-childhood-educator",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-diploma-of-teaching-primary-secondary",
         destination: "/careers/school-teacher",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-engineering",
         destination: "/careers/professional-engineer",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-nursing-graduate-entry",
         destination: "/careers/registered-nurse",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-social-work-professional-qualifying",
         destination: "/careers/social-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-certificate-in-social-sciences-for-social-work",
         destination: "/careers/social-worker",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-naturopathic-medicine",
         destination: "/careers/naturopath",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-osteopathic-medicine",
         destination: "/careers/osteopath",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-business-in-global-hotel-leadership",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-diploma-of-business-in-global-hotel-leadership",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/graduate-certificate-of-business-in-global-hotel-leadership",
         destination: "/careers/hospitality-manager",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/master-of-information-technology-cyber-security",
         destination: "/careers/cyber-security-analyst",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/higher-education",
         destination: "/careers/higher-education",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/higher-education/undergraduate",
         destination: "/careers/higher-education",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/courses/higher-education/postgraduate",
         destination: "/careers/higher-education",
-        permanent: true,
+        statusCode: 301,
       },
       // Renamed 11 September 2026: "Bachelor of Information Technology /
       // Networking" is now "Bachelor of Information Technology and Systems".
       // The slug is derived from the course name, so the old URL was live and
       // indexed and redirects rather than 404ing.
       {
+        // Was renamed to .../and-systems, which has since become a career page.
+        // Pointed straight at the destination rather than through the
+        // intermediate URL: a chain of redirects loses a little link equity at
+        // every hop and costs a crawler an extra round trip for nothing.
         source: "/courses/bachelor-of-information-technology-networking",
-        destination: "/courses/bachelor-of-information-technology-and-systems",
-        permanent: true,
+        destination: "/careers/network-and-systems-engineer",
+        statusCode: 301,
       },
       // What you study now lives under /courses, and how we help you get
       // there stays under /services. These three pages were on the wrong side
@@ -544,29 +553,29 @@ const nextConfig = {
       // indexed, so each one redirects to its new home rather than 404ing.
       {
         source: "/services/higher-education",
-        destination: "/courses/higher-education",
-        permanent: true,
+        destination: "/careers/higher-education",
+        statusCode: 301,
       },
       {
         // Before the catch-all below, which would otherwise claim it.
         source: "/services/higher-education/pathway-programs",
-        destination: "/courses/higher-education",
-        permanent: true,
+        destination: "/careers/higher-education",
+        statusCode: 301,
       },
       {
         source: "/services/higher-education/:level",
-        destination: "/courses/higher-education/:level",
-        permanent: true,
+        destination: "/careers/higher-education",
+        statusCode: 301,
       },
       {
         source: "/services/short-courses",
-        destination: "/courses/short-courses",
-        permanent: true,
+        destination: "/careers/vocational-education",
+        statusCode: 301,
       },
       {
         source: "/research-degrees",
         destination: "/courses/research-degrees",
-        permanent: true,
+        statusCode: 301,
       },
       {
         // Research Degrees existed at two URLs competing for the same queries.
@@ -574,20 +583,20 @@ const nextConfig = {
         // chain through /research-degrees.
         source: "/services/research-degrees",
         destination: "/courses/research-degrees",
-        permanent: true,
+        statusCode: 301,
       },
       {
         // PR pathway courses was removed. Its trade list now lives on the
         // vocational page, so that URL goes there rather than to the hub.
         // Listed before the catch-all below, which would otherwise claim it.
         source: "/services/pr-pathway-courses/trade",
-        destination: "/courses/short-courses",
-        permanent: true,
+        destination: "/careers/vocational-education",
+        statusCode: 301,
       },
       {
         source: "/services/pr-pathway-courses/:category*",
         destination: "/services",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
