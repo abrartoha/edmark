@@ -43,12 +43,21 @@ function LogoCard({ inst, i }: { inst: Institution; i: number }) {
       style={{ transitionDelay: `${(i % 10) * 40}ms` }}
     >
       <div className="grid h-20 w-20 place-items-center rounded-2xl border border-brand-100 bg-white">
-        {/* Initial, not the institution's logo. Displaying a trade mark
-            implies an endorsement we do not hold in writing; the files remain
-            on disk behind Institution.logoLicensed. */}
-        <span className="font-mono text-2xl font-medium text-eucalypt">
-          {inst.name.charAt(0).toUpperCase()}
-        </span>
+        {/* Gated on logoLicensed. Without permission or without a file, the
+            card falls back to the institution's initial. */}
+        {inst.logoLicensed && inst.logoAsset ? (
+          <Image
+            src={`/images/partners/${inst.logoAsset}`}
+            alt={`${inst.name} logo`}
+            width={80}
+            height={80}
+            className="h-16 w-16 object-contain"
+          />
+        ) : (
+          <span className="font-mono text-2xl font-medium text-eucalypt">
+            {inst.name.charAt(0).toUpperCase()}
+          </span>
+        )}
       </div>
       <div>
         <h3 className="text-sm font-medium leading-snug text-brand-900 transition-colors group-hover:text-brand-600">

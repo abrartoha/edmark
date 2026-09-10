@@ -218,10 +218,16 @@ living-cost table of twenty figures quoted to the dollar from nowhere. Where
 the information is useful, pages now point at the government source that
 maintains it.
 
-**Gated behind a flag, off by default** — institution logos
-(`logoLicensed: false` on all 33) and testimonials (`consentOnFile: false` on
-all 5). Both are set by hand against a document. Nothing in the build sets
-either.
+**Gated behind a flag** — institution logos and testimonials
+(`consentOnFile: false` on all 5, none rendering). Both are set by hand, never
+by a script.
+
+Logos were initially turned off on all 32 institutions and were **turned back
+on at Edmark's direction on 11 September 2026**. A logo is a trade mark and
+displaying one implies a relationship and an endorsement, so the written
+permissions belong on file per institution. Recorded here because the decision
+was Edmark's, not the developer's. The per-institution flag remains, so any
+single logo can be withdrawn without touching a component.
 
 **Two-mode rendering** for the 53 higher-education courses, matching Part 1:
 attributed shows the full page with "Delivered by {provider} · CRICOS provider
