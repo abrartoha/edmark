@@ -15,7 +15,11 @@ export const site = {
   phoneHref: "tel:0370573443",
   email: "info@edmark.com.au",
   emailHref: "mailto:info@edmark.com.au",
-  whatsappHref: "https://wa.me/61449212492",
+  // The office line, in the international form wa.me needs: 03 7057 3443 with
+  // the leading 0 replaced by Australia's country code. It must be the number
+  // registered to the WhatsApp Business account, or the link opens a chat that
+  // reaches nobody.
+  whatsappHref: "https://wa.me/61370573443",
   // Empty when unset rather than a dummy id: this value is serialised into
   // every page, so a placeholder would be visible in the source of all of them.
   gaId: process.env.NEXT_PUBLIC_GA_ID || "",
