@@ -295,6 +295,10 @@ export const reasons = [
 ];
 
 export type Testimonial = {
+  /** See lib/success-stories.ts. No consent on file, so none render. */
+  consentOnFile: boolean;
+  consentDate: string | null;
+  evidenceOnFile: boolean;
   quote: string;
   name: string;
   detail: string;
@@ -312,6 +316,9 @@ export const testimonials: Testimonial[] = [
     detail: "Bachelor of Nursing, Australian Catholic University",
     route: "India to Melbourne",
     outcome: "Now a registered nurse at a Melbourne hospital",
+    consentOnFile: false,
+    consentDate: null,
+    evidenceOnFile: false,
   },
   {
     quote:
@@ -320,6 +327,9 @@ export const testimonials: Testimonial[] = [
     detail: "Master of IT, Melbourne Institute of Technology",
     route: "India",
     outcome: "Now working in IT consulting in Melbourne",
+    consentOnFile: false,
+    consentDate: null,
+    evidenceOnFile: false,
   },
 ];
 

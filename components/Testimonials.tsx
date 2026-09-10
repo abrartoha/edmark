@@ -1,12 +1,19 @@
 import Link from "next/link";
-import { testimonials } from "@/lib/content";
 import { IconArrow } from "./Icons";
+import {
+  OUTCOMES_VARY_NOTICE,
+  publishedTestimonials,
+} from "@/lib/testimonials";
 
-// One testimonial only, the most complete. The other two are shown on
-// /success-stories, which carries a pull-quote strip at its foot.
-const featured = testimonials[0];
+// One testimonial only, the most complete. The others are on /success-stories.
+//
+// Nothing here renders until a signed consent exists for that student, so the
+// whole section is absent today rather than showing a heading over a gap.
+const featured = publishedTestimonials[0];
 
 export default function Testimonials() {
+  if (!featured) return null;
+
   return (
     <section className="reveal bg-paper-sunk py-20 lg:py-28">
       <div className="container-page">
@@ -44,6 +51,9 @@ export default function Testimonials() {
         >
           Read more student stories <IconArrow className="h-3.5 w-3.5" />
         </Link>
+        <p className="reveal mt-10 max-w-3xl text-sm leading-relaxed text-sage">
+          {OUTCOMES_VARY_NOTICE}
+        </p>
       </div>
     </section>
   );

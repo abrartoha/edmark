@@ -3,14 +3,17 @@ import { pageSeo } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTA from "@/components/CTA";
-import { successStories } from "@/lib/success-stories";
-import { testimonials } from "@/lib/content";
+import {
+  OUTCOMES_VARY_NOTICE,
+  publishedStories,
+  publishedTestimonials,
+} from "@/lib/testimonials";
 import { IconStar } from "@/components/Icons";
 
 export const metadata: Metadata = pageSeo({
   title: "Student Success Stories",
   description:
-    "Real stories from real students. See how Edmark Education has helped 1,200+ students find the right course, win scholarships and launch their careers in Australia.",
+    "How Edmark Education helps students find the right course, apply for scholarships and start their studies in Australia.",
   path: "/success-stories",
 });
 
@@ -25,10 +28,27 @@ export default function SuccessStoriesPage() {
       />
       <Breadcrumb items={[{ label: "Success Stories" }]} />
 
+      {/* Nothing renders until a signed consent exists for that student, so
+          this section is empty today. It says so rather than leaving a gap. */}
+      {publishedStories.length === 0 ? (
+        <section className="bg-white py-16 lg:py-24">
+          <div className="container-page max-w-3xl">
+            <h2 className="text-2xl font-medium text-brand-900 sm:text-3xl">
+              Student stories are being updated
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-brand-900/70">
+              We are re-collecting written permission from every student before
+              republishing their story, so there is nothing here at the moment.
+              If you would like to speak to a former client about their
+              experience, ask us and we will arrange it with their consent.
+            </p>
+          </div>
+        </section>
+      ) : (
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-2">
-            {successStories.map((story, i) => (
+            {publishedStories.map((story, i) => (
               <article
                 key={story.name}
                 className="card reveal flex flex-col"
@@ -65,17 +85,22 @@ export default function SuccessStoriesPage() {
               </article>
             ))}
           </div>
+          <p className="mt-10 max-w-3xl text-sm leading-relaxed text-sage">
+            {OUTCOMES_VARY_NOTICE}
+          </p>
         </div>
       </section>
+      )}
 
       {/* Moved here from the homepage, which now features one story only. */}
+      {publishedTestimonials.length > 1 && (
       <section className="bg-paper-sunk py-16 lg:py-24">
         <div className="container-page">
           <h2 className="reveal text-2xl font-medium text-brand-900 sm:text-3xl">
             More from our students
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {testimonials.slice(1).map((t) => (
+            {publishedTestimonials.slice(1).map((t) => (
               <figure
                 key={t.name}
                 className="reveal rounded-2xl border border-brand-100 bg-white p-7"
@@ -105,6 +130,7 @@ export default function SuccessStoriesPage() {
           </div>
         </div>
       </section>
+      )}
 
       <CTA
         title="Ready to write your own success story?"
