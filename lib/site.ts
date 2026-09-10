@@ -78,8 +78,8 @@ export type NavItem = {
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   {
-    label: "Courses",
-    blurb: "What you'll study",
+    label: "Courses & Careers",
+    blurb: "What you'll study, and where it leads",
     children: [
       {
         label: "Higher Education",

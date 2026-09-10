@@ -231,7 +231,7 @@ export const levels: Level[] = [
     ],
     courses: [
       {
-        name: "Bachelor of Information Technology / Networking",
+        name: "Bachelor of Information Technology and Systems",
         duration: "3 years full time",
         tuitionMin: 13000,
         tuitionMax: 20000,

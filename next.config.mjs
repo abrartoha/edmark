@@ -233,6 +233,15 @@ const nextConfig = {
         destination: "/careers",
         permanent: true,
       },
+      // Renamed 11 September 2026: "Bachelor of Information Technology /
+      // Networking" is now "Bachelor of Information Technology and Systems".
+      // The slug is derived from the course name, so the old URL was live and
+      // indexed and redirects rather than 404ing.
+      {
+        source: "/courses/bachelor-of-information-technology-networking",
+        destination: "/courses/bachelor-of-information-technology-and-systems",
+        permanent: true,
+      },
       // What you study now lives under /courses, and how we help you get
       // there stays under /services. These three pages were on the wrong side
       // of that line: the nav filed them under Courses while their URLs, and
