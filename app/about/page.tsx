@@ -73,13 +73,26 @@ export default function AboutPage() {
                 className="reveal rounded-3xl border border-brand-100 bg-white p-8 text-center shadow-soft"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={160}
-                  height={160}
-                  className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white shadow-soft"
-                />
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={160}
+                    height={160}
+                    className="mx-auto h-40 w-40 rounded-full object-cover border-4 border-white shadow-soft"
+                  />
+                ) : (
+                  /* No photograph yet: initials rather than a broken image or
+                     a gap where a face should be. */
+                  <span className="mx-auto grid h-40 w-40 place-items-center rounded-full border-4 border-white bg-brand-50 font-display text-4xl font-medium text-eucalypt shadow-soft">
+                    {member.name
+                      .split(" ")
+                      .filter((w) => w.length > 2)
+                      .slice(0, 2)
+                      .map((w) => w[0])
+                      .join("")}
+                  </span>
+                )}
                 <h3 className="mt-5 text-xl font-medium text-brand-900">
                   {member.name}
                 </h3>

@@ -47,6 +47,14 @@ export const site = {
       email: "mahin@edmark.com.au",
       image: "/images/mahin.png",
     },
+    {
+      name: "MD Tareq Hossain Shah",
+      role: "Business Development Manager",
+      credential: "",
+      email: "tareq@edmark.com.au",
+      // TODO: add /images/tareq.png. The card shows initials until it exists.
+      image: "",
+    },
     ],
   hours: "Mon–Sat: 8:00am – 7:00pm",
   social: {
