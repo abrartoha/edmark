@@ -21,6 +21,13 @@ export type LegalDoc = {
   body: string;
 };
 
+// OUTSTANDING (Edmark, not the developer): the overseas-disclosure section
+// states categories of recipient but not the countries they are in, which APP 8
+// expects. The countries where website hosting, email and application records
+// sit still need to be named here. They are not guessed, and the note lives in
+// the source rather than in the document body — a policy that publishes its own
+// unfinished business tells a reader the policy is unfinished.
+// Tracked in docs/asqa-remediation-log.md.
 export const privacy: LegalDoc = {
   slug: "privacy",
   title: "Privacy Policy",
@@ -87,12 +94,6 @@ We may also disclose information where the law requires it.
 Some of the parties above are outside Australia, and APP 8 governs what we must do before your information goes to them.
 
 Where we disclose your personal information to an overseas recipient, we take reasonable steps to ensure they handle it in line with the Australian Privacy Principles, and we remain accountable to you for what happens to it.
-
-<!-- TODO: Edmark to confirm and list the specifics — the countries where our
-     website hosting, email and application records are held, and any offshore
-     party that receives student information.
-     Categories are stated here rather than vendor names, which is the usual
-     form; the countries still need to be named. Do not guess these. -->
 
 Ask us at any time which categories of recipient are overseas and where they are located, and we will tell you.
 

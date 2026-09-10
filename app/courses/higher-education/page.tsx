@@ -37,7 +37,7 @@ export default function HigherEducationPage() {
       />
       <Breadcrumb
         items={[
-          { label: "Courses" },
+          { label: "Courses & Careers" },
           { label: "Higher Education" },
         ]}
       />

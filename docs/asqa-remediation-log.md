@@ -252,7 +252,9 @@ pages.
 
 1. **Overseas disclosure specifics** in `/privacy` — the countries where
    hosting, email and records sit, and any offshore party receiving student
-   information. Marked TODO; not guessed.
+   information. Tracked in a source comment above the document in
+   `lib/legal.ts`, deliberately not in the published policy: a policy that
+   prints its own unfinished business tells a reader it is unfinished.
 2. **OSHC commission** — whether Edmark receives any benefit for arranging
    cover. Marked TODO in `/how-were-paid`; deliberately not asserted either way.
 3. **485 visa period** — verify against Home Affairs and name the stream.

@@ -175,7 +175,7 @@ export default function ResearchDegreesPage() {
         subtitle="From research proposal writing to supervisor matching and scholarship applications, we guide you into Australia's top research programs."
         image="/images/heroes/research-degrees.jpg"
       />
-      <Breadcrumb items={[{ label: "Courses" }, { label: "Research Degrees" }]} />
+      <Breadcrumb items={[{ label: "Courses & Careers" }, { label: "Research Degrees" }]} />
 
       {/* What We Help With */}
       <section className="bg-white py-16 lg:py-24">

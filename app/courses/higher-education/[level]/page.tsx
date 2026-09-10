@@ -45,7 +45,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
       />
       <Breadcrumb
         items={[
-          { label: "Courses" },
+          { label: "Courses & Careers" },
           { label: "Higher Education", href: "/courses/higher-education" },
           { label: level.title },
         ]}
