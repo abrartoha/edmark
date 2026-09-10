@@ -27,6 +27,16 @@ const today = new Date();
 const staleBefore = new Date(today);
 staleBefore.setMonth(staleBefore.getMonth() - MAX_AGE_MONTHS);
 
+// Dates here are typed by a person in Australia and checked by a build server
+// running UTC, which is up to eleven hours behind. Without this, a figure
+// verified this morning in Melbourne reads as future-dated to the server and
+// fails the build — which is precisely what happened, taking every deploy with
+// it for an hour. Two days is enough for any timezone and still catches a year
+// typed wrong.
+const TIMEZONE_GRACE_DAYS = 2;
+const futureLimit = new Date(today);
+futureLimit.setDate(futureLimit.getDate() + TIMEZONE_GRACE_DAYS);
+
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 
 function monthsBetween(from: Date, to: Date): number {
@@ -75,7 +85,7 @@ for (const [name, raw] of Object.entries(facts)) {
 
   if (ISO.test(fact.lastVerified ?? "")) {
     const verified = new Date(`${fact.lastVerified}T00:00:00`);
-    if (verified > today) {
+    if (verified > futureLimit) {
       problems.push({
         fact: name,
         problem: `lastVerified is in the future (${fact.lastVerified})`,
