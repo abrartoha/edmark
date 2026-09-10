@@ -241,7 +241,15 @@
     .reveal {
       animation: reveal linear both;
       animation-timeline: view();
-      animation-range: entry 15% cover 35%;
+      /* A fixed distance, not a share of the section.
+         `entry 15% cover 35%` both scale with the subject's height, which is
+         fine for a section the size of a screen and wrong for a tall one. The
+         careers index is a single section holding 32 cards, so the reveal
+         stretched over roughly 2000px of scrolling: it opened at opacity 0.13
+         and only reached full strength most of the way down. That does not
+         read as a section arriving, it reads as the page being greyed out.
+         A length makes the reveal the same short move at any height. */
+      animation-range: entry 0% entry 360px;
     }
 
     /* The observer still adds .is-visible, which is harmless, but its
@@ -276,7 +284,7 @@
       transform-origin: left center;
       animation: timeline-draw linear both;
       animation-timeline: --timeline;
-      animation-range: entry 25% cover 50%;
+      animation-range: entry 0% entry 460px;
     }
 
     /* Below sm the same rule runs vertically, so it grows from the top. */
@@ -310,8 +318,8 @@
          inert here — the stagger has to be a shift along the range instead.
          Each node opens 6% of the range after the one before it, which keeps
          every node just behind the line as it draws past. */
-      animation-range: entry calc(28% + var(--i, 0) * 6%)
-        cover calc(52% + var(--i, 0) * 6%);
+      animation-range: entry calc(90px + var(--i, 0) * 70px)
+        entry calc(420px + var(--i, 0) * 70px);
     }
   }
 
