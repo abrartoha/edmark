@@ -17,17 +17,20 @@ import {
 export const metadata: Metadata = pageSeo({
   title: "Our Partner Institutions",
   description:
-    "Edmark Education partners with leading Australian universities, TAFEs and colleges across every state. Explore our partner institutions and find the right fit for your study journey.",
+    "The Australian universities, TAFEs and colleges Edmark Education places students with, and how the application process works.",
   path: "/partners",
 });
 
+// What Edmark can actually evidence. The previous list claimed faster
+// processing, priority assessment, exclusive scholarships and "an open line to
+// admissions teams" — assertions of special access that would need an
+// institution to confirm them, and none has.
 const benefits = [
-  "Faster application processing through our partner network",
-  "Access to exclusive scholarships not publicly advertised",
-  "Priority assessment and conditional offers",
-  "An open line to admissions teams",
-  "Pathway and credit transfer arrangements",
-  "Up-to-date knowledge of entry requirements and course changes",
+  "Help comparing institutions, courses and campuses against your goals",
+  "Applications prepared and checked before they are lodged",
+  "Pathway and credit transfer options explained",
+  "Current entry and English requirements confirmed with the institution",
+  "One point of contact from shortlist to enrolment",
 ];
 
 function LogoCard({ inst, i }: { inst: Institution; i: number }) {
@@ -40,20 +43,12 @@ function LogoCard({ inst, i }: { inst: Institution; i: number }) {
       style={{ transitionDelay: `${(i % 10) * 40}ms` }}
     >
       <div className="grid h-20 w-20 place-items-center rounded-2xl border border-brand-100 bg-white">
-        {inst.hasLogo ? (
-          <Image
-            src={`/images/partners/${inst.slug}.png`}
-            alt={`${inst.name} logo`}
-            width={80}
-            height={80}
-            className="h-16 w-16 object-contain"
-          />
-        ) : (
-          /* No logo file yet: initial as a placeholder mark. */
-          <span className="font-mono text-2xl font-medium text-eucalypt">
-            {inst.name.charAt(0).toUpperCase()}
-          </span>
-        )}
+        {/* Initial, not the institution's logo. Displaying a trade mark
+            implies an endorsement we do not hold in writing; the files remain
+            on disk behind Institution.logoLicensed. */}
+        <span className="font-mono text-2xl font-medium text-eucalypt">
+          {inst.name.charAt(0).toUpperCase()}
+        </span>
       </div>
       <div>
         <h3 className="text-sm font-medium leading-snug text-brand-900 transition-colors group-hover:text-brand-600">
@@ -80,8 +75,8 @@ export default function PartnersPage() {
     <>
       <PageHero
         eyebrow="Our partners"
-        title="Direct partnerships across Australia"
-        subtitle="We work directly with the universities, TAFEs and colleges listed here, which means faster offers and stronger applications. We can also get students admitted to many more institutions beyond this list."
+        title="Institutions we place students with"
+        subtitle="The universities, TAFEs and colleges we most often place students with. We can also apply to many institutions beyond this list."
         image="/images/heroes/partners.jpg"
       />
       <Breadcrumb items={[{ label: "Partners" }]} />
@@ -161,14 +156,15 @@ export default function PartnersPage() {
             </ul>
           </div>
           <div className="card">
-            <p className="eyebrow">Direct partners</p>
+            <p className="eyebrow">How this works</p>
             <h3 className="mt-3 text-2xl">
-              These are the institutions we work with directly
+              How we place students at these institutions
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
-              Every university, TAFE and college on this page is a direct
-              partner. Your application goes straight to an admissions team
-              that already knows us, which is why offers come back faster.
+              Applications are lodged either directly or through a partner
+              agency, depending on the institution. Either way Edmark Education
+              is your education agent, and the institution named on your offer
+              is the provider that delivers and issues your qualification.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
               We can also get students admitted to many more institutions

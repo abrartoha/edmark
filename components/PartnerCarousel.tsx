@@ -86,25 +86,13 @@ export default function PartnerCarousel() {
                         tabIndex={gi === index ? 0 : -1}
                         className="group flex h-full flex-col items-center gap-3 rounded-xl border border-line bg-white p-4 text-center transition-colors hover:border-sage/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-eucalypt focus-visible:ring-offset-2"
                       >
-                        {inst.hasLogo ? (
-                          <>
-                            <Image
-                              src={`/images/partners/${inst.slug}.png`}
-                              alt={`${inst.name} logo`}
-                              width={120}
-                              height={60}
-                              className="h-10 w-auto max-w-[100px] object-contain"
-                            />
-                            <span className="text-xs font-medium leading-snug text-ink transition-colors group-hover:text-eucalypt">
-                              {inst.name}
-                            </span>
-                          </>
-                        ) : (
-                          /* No logo file yet: set the name once, as a wordmark. */
-                          <span className="grid h-[3.75rem] place-items-center text-sm font-medium leading-snug text-ink transition-colors group-hover:text-eucalypt">
-                            {inst.name}
-                          </span>
-                        )}
+                        {/* Names only. A logo is a trade mark and showing one
+                            implies an endorsement none of these institutions
+                            has given in writing, so nothing renders until
+                            logoLicensed is true for that entry. */}
+                        <span className="grid h-[3.75rem] place-items-center text-sm font-medium leading-snug text-ink transition-colors group-hover:text-eucalypt">
+                          {inst.name}
+                        </span>
                       </a>
                     </li>
                   ))}

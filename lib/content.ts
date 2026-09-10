@@ -281,8 +281,8 @@ export const reasons = [
     body: "We recommend what's right for you, with honest, student-first guidance every time. Your goals come before anything else.",
   },
   {
-    title: "Direct university partnerships",
-    body: "Established relationships with leading Australian institutions mean faster offers and stronger applications.",
+    title: "Institutions we know well",
+    body: "We place students across universities, TAFEs and colleges, and we know what each one asks for before you apply.",
   },
   {
     title: "End-to-end, done-for-you service",
