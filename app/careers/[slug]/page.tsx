@@ -134,10 +134,9 @@ export default function CareerPage({ params }: { params: { slug: string } }) {
                 How Edmark helps
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-copy">
-                Edmark Education is an education agent. We help international
-                students compare providers, understand visa and licensing
-                requirements, and prepare a strong application. We do not
-                deliver training or issue qualifications.
+                We help international students compare providers, understand
+                visa and licensing requirements, and prepare a strong
+                application.
               </p>
               <Link href="/contact" className="btn-primary mt-6 w-full">
                 Book a free consultation

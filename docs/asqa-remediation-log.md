@@ -333,3 +333,42 @@ The retired hubs redirect to the matching half rather than to the mixed list.
 
 Institution logos were turned back on across all 32 partners at Edmark's
 direction the same day; see the note in Round 2.
+
+
+---
+
+## Change of position: the agent-role statement (11 September 2026)
+
+The statement that Edmark is an education agent and is not a registered
+training organisation, an education provider or a registered migration agent
+has been **removed from the site footer and from the career pages**, at
+Edmark's direction.
+
+It had appeared three times on a career page — in the "How Edmark helps" panel,
+at the foot of the qualification pathway section, and in the site-wide footer.
+The duplication was raised, along with the option of keeping one instance;
+Edmark chose to remove all three.
+
+Recorded here because this log describes the response to the ASQA notice of
+2 September 2026, and a log that describes a control the site no longer has
+would be worse than the removal itself.
+
+**What still addresses the ASQA finding.** The notice was that a reader could
+not readily identify the organisation responsible for delivering and issuing
+each qualification. That is answered by the structure of the pages rather than
+by this statement, and the structure is unchanged:
+
+- No page advertises a training product. No fee, duration, intake, entry
+  requirement or English requirement appears on any of the 55 career pages, and
+  `verify:careers` fails the build if one reappears.
+- Each qualification is named as a fact and linked to its register —
+  training.gov.au for vocational qualifications, CRICOS for higher education —
+  so a reader can identify the organisations approved to deliver it.
+- No provider is named anywhere as being in a relationship with Edmark that is
+  not evidenced.
+
+**What no longer appears anywhere on the site.** A plain statement that Edmark
+does not deliver training or issue qualifications. Three pages still describe
+the agent role in passing — `/services`, `/partners` and `/complaints` — but
+none of them is a site-wide disclosure, and a reader landing on a career page
+from search will not see one.

@@ -68,12 +68,6 @@ export default function QualificationPathway({ career }: { career: Career }) {
             </li>
           ))}
         </ul>
-
-        <p className="mt-8 text-sm leading-relaxed text-sage">
-          Edmark Education is an education agent. We are not a registered
-          training organisation or an education provider: we do not deliver
-          these qualifications and we do not issue them.
-        </p>
       </div>
     </section>
   );
