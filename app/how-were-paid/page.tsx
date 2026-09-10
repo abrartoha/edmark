@@ -8,7 +8,7 @@ import CTA from "@/components/CTA";
 export const metadata: Metadata = pageSeo({
   title: "How We're Paid",
   description:
-    "Edmark is free for students because institutions pay us a commission when a student enrols. What that means for your shortlist, and why you can ask us what we earn on any course we recommend.",
+    "Edmark is free for students because a commission is paid when a student enrols, in most cases through a partner agency. What that means for your shortlist, and why you can ask us what we earn on any course we recommend.",
   path: "/how-were-paid",
 });
 

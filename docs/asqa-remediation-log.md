@@ -160,3 +160,101 @@ Captured with reduced motion enabled so that every section renders at full
 opacity in a single full-page capture; the site uses CSS scroll-driven reveal
 animations, which otherwise leave un-scrolled sections transparent in an
 automated screenshot.
+
+---
+
+# Round 2 — site-wide compliance
+
+**Completed:** 11 September 2026
+**Trigger:** internal review following the ASQA notice of 2 September 2026,
+which found the same underlying defect outside the VET pages — confident
+factual claims with no named source and no review date.
+
+## 1. What the review found
+
+| Area | Defect |
+|---|---|
+| `/study-in-australia` | Minimum wage published as "$24.10 AUD/hour (2026)" — the rate from 1 July **2024** |
+| `/faq` | "Over 50 institutions" against 27 listed on `/partners` |
+| `/partners` | "Every university, TAFE and college on this page is a direct partner", "your application goes straight to an admissions team that already knows us", "an open line to admissions teams", "priority assessment", "exclusive scholarships not publicly advertised" — none of it evidenced |
+| `/partners`, homepage | 33 institution logos displayed with no written licence |
+| Higher education | 53 courses with per-semester fees, durations and entry requirements; no delivering provider named, no CRICOS code — the same defect ASQA cited for VET |
+| Testimonials | 5 identifiable students named with course, institution and outcome; no signed consent for any |
+| Homepage matcher, blog, `/scholarships`, `/study-in-australia` | ~40 further figures — living costs, tuition ranges, scholarship amounts, RTP stipends — none sourced, none dated |
+| `/privacy` | No reference to the *Privacy Act 1988* (Cth), no APP 8 section, no OAIC path, no named privacy role |
+| `/complaints` | No external escalation of any kind |
+| Both forms | Personal information collected with no consent checkbox and no link to the policy |
+| `/how-were-paid` | Said institutions pay Edmark directly; in most cases commission arrives through a partner agency |
+
+## 2. The control
+
+**`scripts/verify-facts.ts`**, run by `npm run verify:facts` and wired into
+`npm run build` alongside the Part 1 careers guard. The build **fails** when:
+
+- a published figure has no source, no source URL, or a malformed date
+- a figure has not been verified in **6 months**
+- a higher-education course renders a fee without `providerLegalName`,
+  `cricosProviderCode`, `feeSource` and `lastVerified`
+
+Every figure the site publishes now lives in `lib/facts.ts` as a `SourcedFact`:
+value, publisher, URL, the date it took effect, and the date a human last
+checked it. Nothing is typed into a paragraph. The build prints how many
+higher-education courses are attributed, so that number cannot drift quietly.
+
+Negative-tested before wiring in: a blanked source and a back-dated
+`lastVerified` both produce findings and exit code 1; clean data exits 0.
+
+## 3. What changed
+
+**Corrected** — minimum wage to $26.44 from 1 July 2026 (Fair Work Ombudsman).
+Institution count derived from the partners list, so claim and list cannot
+diverge.
+
+**Deleted rather than softened** — the direct-partnership and special-access
+claims; the 485 visa "2 to 4 years" (no stream named, flagged for
+verification); scholarship ranges with no source; thirteen named universities'
+scholarship amounts; RTP stipend rates; sector-wide tuition ranges; a per-city
+living-cost table of twenty figures quoted to the dollar from nowhere. Where
+the information is useful, pages now point at the government source that
+maintains it.
+
+**Gated behind a flag, off by default** — institution logos
+(`logoLicensed: false` on all 33) and testimonials (`consentOnFile: false` on
+all 5). Both are set by hand against a document. Nothing in the build sets
+either.
+
+**Two-mode rendering** for the 53 higher-education courses, matching Part 1:
+attributed shows the full page with "Delivered by {provider} · CRICOS provider
+code {code}" above the fold; unattributed — all 53 today — shows no fee, no
+duration and no entry requirement. The gate is on the course card as well as
+the page; a fee was leaking through the related-courses strip until that was
+caught.
+
+**Legal** — `/privacy` gains the *Privacy Act 1988* (Cth), a sensitive
+information section under APP 3, an APP 8 overseas disclosure section, the OAIC
+escalation path and a named Privacy Officer. `/complaints` gains the Overseas
+Students Ombudsman, the OAIC and Consumer Affairs Victoria, and states that a
+student need not exhaust Edmark's process first. Both forms gain a consent
+checkbox linking to the policy, with a separate express tick for health
+information.
+
+**Site-wide footer** now reads: not a registered training organisation, not an
+education provider, not a registered migration agent. Verified on all 120
+pages.
+
+## 4. Outstanding — requires Edmark
+
+1. **Overseas disclosure specifics** in `/privacy` — the countries where
+   hosting, email and records sit, and any offshore party receiving student
+   information. Marked TODO; not guessed.
+2. **OSHC commission** — whether Edmark receives any benefit for arranging
+   cover. Marked TODO in `/how-were-paid`; deliberately not asserted either way.
+3. **485 visa period** — verify against Home Affairs and name the stream.
+4. **Provider attribution** for the 53 higher-education courses. Until then
+   they publish no commercial detail.
+5. **Logo licences and testimonial consents** — 33 and 5 documents respectively.
+6. **The OSHC price range** ($500–$700) is attributed to Edmark's own review of
+   policies on the government comparison site, because no government body
+   publishes a range. Replace with a provider citation if one exists.
+7. **"1,200+ students" and "5+ years"** were left as they are, per instruction.
+   They are Edmark's own claims and would need a basis if challenged.

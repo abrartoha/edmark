@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { getSupabase } from "@/lib/supabase";
 import { IconArrow } from "./Icons";
 import { trackFormSubmission } from "./GoogleAnalytics";
@@ -216,6 +217,46 @@ export default function ContactForm() {
           {error}
         </p>
       )}
+
+      {/* Consent to the collection itself, required before the form submits.
+          A privacy policy nobody was pointed at is not consent, and APP 5 is
+          about telling people at the point of collection rather than in a
+          document they never open. */}
+      <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-copy">
+        <input
+          type="checkbox"
+          name="privacyConsent"
+          required
+          className="mt-1 h-4 w-4 shrink-0 rounded border-line text-eucalypt focus:ring-eucalypt"
+        />
+        <span>
+          I agree to Edmark Education collecting and using my personal
+          information to help with my enquiry, as described in the{" "}
+          <Link
+            href="/privacy"
+            className="font-medium text-eucalypt underline underline-offset-2"
+          >
+            Privacy Policy
+          </Link>
+          . <span className="text-brand-400">*</span>
+        </span>
+      </label>
+
+      {/* Separate and express, because health information is sensitive
+          information under APP 3 and a general consent does not reach it.
+          Optional: a student who declines can still make an enquiry. */}
+      <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-copy">
+        <input
+          type="checkbox"
+          name="healthConsent"
+          className="mt-1 h-4 w-4 shrink-0 rounded border-line text-eucalypt focus:ring-eucalypt"
+        />
+        <span>
+          If my enquiry involves health cover (OSHC) or a course with health
+          requirements, I consent to Edmark collecting the health information
+          needed for that. You can leave this unticked and still enquire.
+        </span>
+      </label>
 
       <button
         type="submit"

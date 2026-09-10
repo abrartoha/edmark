@@ -14,4 +14,4 @@ export const INDICATIVE_NOTICE =
  * delivering and issuing the qualifications this site referred to.
  */
 export const AGENT_ROLE_DISCLOSURE =
-  "Edmark Education Pty Ltd (ABN 75 700 341 028) is an education agent. We are not a registered training organisation. We do not deliver training or issue qualifications. Nationally recognised training is delivered and issued by registered training organisations listed on training.gov.au.";
+  "Edmark Education Pty Ltd (ABN 75 700 341 028) is an education agent. We are not a registered training organisation, an education provider, or a registered migration agent. We do not deliver training or issue qualifications. Nationally recognised training is delivered and issued by registered training organisations listed on training.gov.au.";

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, type FormEvent } from "react";
+import Link from "next/link";
 
 export default function ExitIntentPopup() {
   const [show, setShow] = useState(false);
@@ -92,6 +93,23 @@ export default function ExitIntentPopup() {
                 Send it
               </button>
             </form>
+            <label className="mt-4 flex cursor-pointer items-start gap-2.5 text-xs leading-relaxed text-brand-900/70">
+              <input
+                type="checkbox"
+                name="privacyConsent"
+                required
+                className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded border-brand-200 text-eucalypt focus:ring-eucalypt"
+              />
+              <span>
+                I agree to Edmark Education using my email to send the checklist
+                and to contact me about studying in Australia, as described in
+                the{" "}
+                <Link href="/privacy" className="font-medium underline underline-offset-2">
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+            </label>
             <p className="mt-3 text-center text-xs text-brand-900/40">
               No spam. Unsubscribe anytime.
             </p>

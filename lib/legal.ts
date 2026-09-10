@@ -32,7 +32,7 @@ export const privacy: LegalDoc = {
 
 Edmark Education Pty Ltd (ACN 700 341 028, ABN 75 700 341 028) collects personal information about you when we help you apply to study in Australia. This page explains what we collect, why, who we give it to, and how you can see or correct it.
 
-We handle personal information in line with the Australian Privacy Principles.
+We handle personal information in line with the *Privacy Act 1988* (Cth) and the Australian Privacy Principles (APPs) it contains.
 
 ---
 
@@ -47,7 +47,11 @@ To do our job we usually need:
 - **Your current visa and study history in Australia** — what you hold now and when it expires, so we can tell you which courses and intakes are open to you
 - **Health information** — only where it is needed to arrange your Overseas Student Health Cover, or where an institution requires a disclosure for a placement or a course with health requirements
 
-Health information is sensitive information. We only collect it with your consent, and only when it is necessary.
+## Sensitive information
+
+Health information is **sensitive information** under the *Privacy Act 1988* (Cth), and APP 3 sets a higher bar for collecting it than for ordinary personal information.
+
+We collect health information only with your express consent, and only where it is genuinely needed — to arrange your Overseas Student Health Cover, or where an institution requires a disclosure for a placement or a course with health requirements. We do not collect it to help us market to you, and you can decline. If you decline, we will tell you plainly what we cannot do for you as a result.
 
 We also collect basic technical information when you use this website. See **Cookies and analytics** below.
 
@@ -78,6 +82,20 @@ We disclose your personal information to:
 
 We may also disclose information where the law requires it.
 
+## Sending information overseas
+
+Some of the parties above are outside Australia, and APP 8 governs what we must do before your information goes to them.
+
+Where we disclose your personal information to an overseas recipient, we take reasonable steps to ensure they handle it in line with the Australian Privacy Principles, and we remain accountable to you for what happens to it.
+
+<!-- TODO: Edmark to confirm and list the specifics — the countries where our
+     website hosting, email and application records are held, and any offshore
+     party (including any partner agency) that receives student information.
+     Categories are stated here rather than vendor names, which is the usual
+     form; the countries still need to be named. Do not guess these. -->
+
+Ask us at any time which categories of recipient are overseas and where they are located, and we will tell you.
+
 ## Cookies and analytics
 
 This website uses cookies and similar technology to remember your preferences and to understand how the site is used. We use Google Analytics for aggregate visitor statistics: how many people visit, which pages they read, and roughly where they are in the world. We do not use it to identify you.
@@ -100,9 +118,11 @@ You can also ask us to delete your information. We will do so unless we are requ
 
 ## Complaints
 
-If you think we have mishandled your personal information, email **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it and give you a written response.
+If you think we have mishandled your personal information, contact our **Privacy Officer** at **info@edmark.com.au** with "Privacy complaint" in the subject line. We will acknowledge it and give you a written response.
 
-Our full complaints process, including what to do if you are not satisfied with our answer, is at [edmark.com.au/complaints](/complaints).
+Our full complaints process is at [edmark.com.au/complaints](/complaints).
+
+If you are not satisfied with our response, or we do not respond, you can complain to the **Office of the Australian Information Commissioner (OAIC)**, the national privacy regulator, at [oaic.gov.au](https://www.oaic.gov.au). You do not need our permission, and you do not have to wait for us to finish.
 
 ## Changes to this policy
 
@@ -110,7 +130,10 @@ We update this page when our practices change. The date at the top tells you whe
 
 ## Contact us
 
+Privacy questions and requests go to our **Privacy Officer**:
+
 **Edmark Education Pty Ltd**
+Attn: Privacy Officer
 Level 5, 12 Clarke Street, Sunshine VIC 3020
 03 7057 3443
 info@edmark.com.au`,
@@ -274,6 +297,18 @@ You can complain in writing or by phone. If English is not your first language, 
 If our answer does not settle it, you can ask for the matter to be reviewed by a senior member of our team who was not involved the first time. Ask in writing and we will arrange it.
 
 We keep a record of every complaint and what came of it, so the same thing does not keep happening.
+
+---
+
+## Taking it outside Edmark
+
+You do not have to use our process first, and you do not have to finish it before going elsewhere. You can approach any of the following at any time, including while we are still looking into your complaint.
+
+- **Overseas Students Ombudsman** — investigates complaints from international students about the way private education providers and **education agents** have dealt with them. Free, independent, and the right place for most complaints about our conduct. [ombudsman.gov.au/complaints/overseas-students](https://www.ombudsman.gov.au/complaints/overseas-students)
+- **Office of the Australian Information Commissioner (OAIC)** — the national privacy regulator, for complaints about how we handled your personal information. [oaic.gov.au](https://www.oaic.gov.au)
+- **Consumer Affairs Victoria** — for consumer matters, including disputes about fees or services. [consumer.vic.gov.au](https://www.consumer.vic.gov.au)
+
+If your complaint is about an education provider rather than about us, raise it with the provider's own internal complaints process first. We will help you find it and put your complaint together if you want us to.
 
 ---
 

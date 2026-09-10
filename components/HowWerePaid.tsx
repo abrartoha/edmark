@@ -6,8 +6,12 @@ import { IconArrow } from "./Icons";
 // Held here and rendered on both the homepage and /how-were-paid so the two
 // cannot drift apart. Same two-column shape as Why Edmark, which it sits under.
 export const HOW_WERE_PAID = [
-  "Edmark is free for students because institutions pay us a commission when a student enrols. Rates differ between institutions.",
-  "We don't let that decide your shortlist. If the right course is somewhere we don't have an agreement with, we'll tell you, and we'll help you apply anyway.",
+  "Edmark is free for students because a commission is paid when a student enrols. For most institutions that commission reaches us through a partner agency rather than directly from the institution itself. Rates differ between institutions.",
+  "We don't let that decide your shortlist. If the right course is somewhere we don't have an arrangement with, we'll tell you, and we'll help you apply anyway.",
+  "Since 31 March 2026, providers cannot pay agent commission when a student transfers between providers onshore. We receive no commission on those transfers. Initial enrolments and progression within a packaged course are not affected.",
+  // TODO: confirm whether Edmark receives any commission or benefit for
+  // arranging OSHC, and state the answer here either way. Do not assert
+  // either position until it is confirmed.
   "And if you ever want to know what we earn on a course we've recommended, ask. We'll tell you.",
 ];
 
@@ -23,7 +27,7 @@ export default function HowWerePaid({
         <div>
           <SectionHeading
             eyebrow="How we're paid"
-            title="Free for you, because institutions pay us."
+            title="Free for you, because the institution pays the commission."
           />
           {withLink && (
             <Link href="/how-were-paid" className="btn-outline mt-8">
