@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/study-in-australia", priority: 0.9, freq: "monthly" as const },
     { path: "/courses/research-degrees", priority: 0.9, freq: "monthly" as const },
     { path: "/careers", priority: 0.9, freq: "monthly" as const },
+    { path: "/careers/higher-education", priority: 0.9, freq: "monthly" as const },
+    { path: "/careers/vocational", priority: 0.9, freq: "monthly" as const },
     { path: "/partners", priority: 0.7, freq: "monthly" as const },
     { path: "/how-were-paid", priority: 0.6, freq: "yearly" as const },
     // Low priority, but listed: a student looking for the privacy policy or

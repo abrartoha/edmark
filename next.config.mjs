@@ -230,7 +230,7 @@ const nextConfig = {
       },
       {
         source: "/courses/short-courses",
-        destination: "/careers",
+        destination: "/careers/vocational",
         permanent: true,
       },
       // ----------------------------------------------------------------
@@ -508,17 +508,17 @@ const nextConfig = {
       },
       {
         source: "/courses/higher-education",
-        destination: "/careers",
+        destination: "/careers/higher-education",
         permanent: true,
       },
       {
         source: "/courses/higher-education/undergraduate",
-        destination: "/careers",
+        destination: "/careers/higher-education",
         permanent: true,
       },
       {
         source: "/courses/higher-education/postgraduate",
-        destination: "/careers",
+        destination: "/careers/higher-education",
         permanent: true,
       },
       // Renamed 11 September 2026: "Bachelor of Information Technology /

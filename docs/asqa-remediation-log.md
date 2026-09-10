@@ -323,5 +323,13 @@ occupation is Edmark's to write about. The course is not.
 - No fee, duration, intake or entry requirement appears on any of the 55 career
   pages, and verify:careers enforces that across all 96 qualifications.
 
+The careers are presented in two lists, matching the navigation: higher
+education (27 occupations) and vocational education (32). The split is derived
+from each career's pathways rather than stored on the record, so the lists
+cannot drift from the qualifications they cover. Four careers appear in both,
+which is the point of organising by occupation: an early childhood educator is
+the same job whether a Certificate III or a Master of Teaching got them there.
+The retired hubs redirect to the matching half rather than to the mixed list.
+
 Institution logos were turned back on across all 32 partners at Edmark's
 direction the same day; see the note in Round 2.

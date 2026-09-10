@@ -1724,3 +1724,24 @@ export function relatedTo(career: Career): Career[] {
     .map((s) => careers.find((c) => c.slug === s))
     .filter((c): c is Career => Boolean(c));
 }
+
+/**
+ * Careers split by the kind of qualification that leads into them.
+ *
+ * Derived from the pathways rather than stored on the record, so the two lists
+ * cannot drift away from the qualifications they claim to cover. Add a degree
+ * to a career and it appears under higher education; add a training-package
+ * qualification and it appears under vocational.
+ *
+ * Four careers appear in both, and that is the point rather than a bug. An
+ * early childhood educator is the same job whether a Certificate III or a
+ * Master of Teaching got them there, and a student browsing either list should
+ * find it.
+ */
+export const vocationalCareers: Career[] = careers.filter((c) =>
+  c.pathways.some((p) => p.register === "tga")
+);
+
+export const higherEducationCareers: Career[] = careers.filter((c) =>
+  c.pathways.some((p) => p.register === "cricos")
+);

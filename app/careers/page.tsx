@@ -1,61 +1,31 @@
 import type { Metadata } from "next";
 import { pageSeo } from "@/lib/seo";
-import PageHero from "@/components/PageHero";
-import Breadcrumb from "@/components/Breadcrumb";
-import CareerCard from "@/components/CareerCard";
-import CTA from "@/components/CTA";
+import CareerIndex from "@/components/CareerIndex";
 import { careers } from "@/lib/careers";
 
 export const metadata: Metadata = pageSeo({
   title: "Careers & Pathways in Australia",
   description:
-    "Guides to trade, care, hospitality and business occupations in Australia: what the work involves, what licensing applies, and the qualification usually used to enter each one.",
+    "Guides to trade, health, business, education and technology occupations in Australia: what the work involves, what licensing applies, and the qualification usually used to enter each one.",
   path: "/careers",
 });
 
+// Every occupation in one list. The two sector pages are the ones in the
+// navigation; this stays as the place a search result or an old link can land
+// without having to guess which half a reader wanted.
 export default function CareersPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Careers & pathways"
-        title={
-          <>
-            Start with the job,{" "}
-            <span className="text-eucalypt-light">not the course</span>
-          </>
-        }
-        subtitle="What the work involves, where it is done, what licensing applies, and the qualification usually used to get there."
-        image="/images/heroes/short-courses.jpg"
-      />
-
-      <Breadcrumb items={[{ label: "Careers & pathways" }]} />
-
-      <section className="reveal bg-paper py-16 lg:py-20">
-        <div className="container-page">
-          <p className="eyebrow">Occupations</p>
-          <h2 className="mt-3 max-w-3xl text-3xl sm:text-4xl">
-            {careers.length} careers you can work toward in Australia
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-copy">
-            These are guides to the work itself. Where a nationally recognised
-            qualification is the usual way in, each page names it and links to
-            the national register, so you can see for yourself which
-            organisations are approved to deliver it.
-          </p>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {careers.map((c) => (
-              <CareerCard key={c.slug} career={c} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTA
-        title="Not sure which of these fits you?"
-        subtitle="Book a free consultation. We'll help you compare providers, understand the visa and licensing requirements, and prepare a strong application."
-        tinted
-      />
-    </>
+    <CareerIndex
+      eyebrow="Careers & pathways"
+      title={
+        <>
+          Start with the job,{" "}
+          <span className="text-eucalypt-light">not the course</span>
+        </>
+      }
+      subtitle="What the work involves, where it is done, what licensing applies, and the qualification usually used to get there."
+      intro="These are guides to the work itself. Where a qualification is the usual way in, each page names it and links to the register that lists the organisations approved to deliver it, so you can check for yourself."
+      careers={careers}
+    />
   );
 }
