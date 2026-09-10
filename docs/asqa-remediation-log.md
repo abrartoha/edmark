@@ -296,3 +296,32 @@ Enforcement therefore lives in CI rather than in the deploy build:
 push to main, with no tolerance. That is also the audit trail — a recorded pass
 or fail against these checks for every commit, which is what makes the control
 demonstrable rather than merely asserted.
+
+
+---
+
+# Round 3 — higher education follows the same path (11 September 2026)
+
+The 53 higher-education course pages are retired and replaced by career pages,
+on Edmark's instruction, for the reason that applied to the vocational ones: a
+page built around a qualification Edmark neither delivers nor issues is
+somebody else's product being marketed without the provider named. The
+occupation is Edmark's to write about. The course is not.
+
+- 53 courses map onto 27 occupations. 23 career pages are new; 4 existing ones
+  (business administrator, early childhood educator, community services worker,
+  hospitality manager) gained degree pathways alongside their vocational ones.
+- The pathway model now carries both registers. A vocational qualification
+  points at training.gov.au with its national code; a degree points at the
+  CRICOS register, which is where a reader finds the institutions registered to
+  deliver it to international students.
+- 56 permanent redirects: every retired course URL to the career page that
+  replaced it, plus the higher-education hub and its two level pages. Verified,
+  all 56.
+- `/courses/` now holds research degrees only. The course browser, course card
+  and course catalogue are deleted.
+- No fee, duration, intake or entry requirement appears on any of the 55 career
+  pages, and verify:careers enforces that across all 96 qualifications.
+
+Institution logos were turned back on across all 32 partners at Edmark's
+direction the same day; see the note in Round 2.

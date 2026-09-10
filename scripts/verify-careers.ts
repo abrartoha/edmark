@@ -114,12 +114,15 @@ for (const career of careers as Career[]) {
   // The pathway entries themselves still may not carry commercial detail —
   // only the title, the code, the register link and an optional note.
   for (const p of pathways) {
-    for (const [path, text] of strings({ note: p.note ?? "" }, `${career.slug}.${p.nationalCode}`)) {
+    for (const [path, text] of strings({ note: p.note ?? "" }, `${career.slug}.${p.nationalCode ?? p.title}`)) {
       for (const { label, re, why } of BANNED.filter((b) => b.label !== "an RTO or provider name")) {
         if (re.test(text)) fail(career.slug, path, `contains ${label}. ${why}`);
       }
     }
-    if (p.codeStatus === "current" || p.codeStatus === "superseded") {
+    if (!p.nationalCode) {
+      // A degree carries no training-package code, so there is nothing to
+      // verify against training.gov.au.
+    } else if (p.codeStatus === "current" || p.codeStatus === "superseded") {
       // Fine — someone has checked it against the register.
     } else if (p.codeStatus !== "unverified") {
       fail(career.slug, p.nationalCode, `has an unknown codeStatus "${p.codeStatus}"`);

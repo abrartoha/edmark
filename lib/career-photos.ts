@@ -14,7 +14,7 @@ import type { Career } from "./careers";
 
 /** Photo for a career, found via the national code of its first pathway. */
 export function careerPhoto(career: Career): string | null {
-  const code = career.pathways[0]?.nationalCode.toLowerCase();
+  const code = career.pathways.find((p) => p.nationalCode)?.nationalCode?.toLowerCase();
   if (!code) return null;
 
   const key = Object.keys(COURSE_PHOTO_FILES).find((k) => k.endsWith(`-${code}`));

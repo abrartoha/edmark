@@ -233,6 +233,294 @@ const nextConfig = {
         destination: "/careers",
         permanent: true,
       },
+      // ----------------------------------------------------------------
+      // 11 September 2026. The 53 higher-education course pages follow the
+      // vocational ones to /careers, for the same reason: Edmark is an
+      // education agent, and a page built around a qualification it neither
+      // delivers nor issues is somebody else's product being marketed without
+      // the provider named. The occupation is ours to write about; the course
+      // is not.
+      // ----------------------------------------------------------------
+      {
+        source: "/courses/bachelor-of-information-technology-and-systems",
+        destination: "/careers/network-and-systems-engineer",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-engineering-honours",
+        destination: "/careers/professional-engineer",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-information-technology-bachelor-of-business",
+        destination: "/careers/network-and-systems-engineer",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-business",
+        destination: "/careers/business-administrator",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-accounting",
+        destination: "/careers/accountant",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-early-childhood-education",
+        destination: "/careers/early-childhood-educator",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-education",
+        destination: "/careers/school-teacher",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-nursing",
+        destination: "/careers/registered-nurse",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-nursing-enrolled-nurse-to-registered-nurse",
+        destination: "/careers/registered-nurse",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-midwifery",
+        destination: "/careers/midwife",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-occupational-therapy",
+        destination: "/careers/occupational-therapist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-speech-pathology",
+        destination: "/careers/speech-pathologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-psychological-science",
+        destination: "/careers/psychologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-psychological-science-with-honours",
+        destination: "/careers/psychologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-psychological-science-bachelor-of-business",
+        destination: "/careers/psychologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-health-science-health-and-lifestyle",
+        destination: "/careers/health-promotion-officer",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-biomedical-science",
+        destination: "/careers/biomedical-scientist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-clinical-exercise-physiology",
+        destination: "/careers/exercise-physiologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-clinical-sciences-osteopathic-studies",
+        destination: "/careers/osteopath",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-sport-and-exercise-science",
+        destination: "/careers/exercise-physiologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-exercise-science-and-psychological-science",
+        destination: "/careers/exercise-physiologist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-counselling",
+        destination: "/careers/counsellor",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-social-work",
+        destination: "/careers/social-worker",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-community-welfare",
+        destination: "/careers/community-services-worker",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-laws",
+        destination: "/careers/lawyer",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-legal-and-justice-studies",
+        destination: "/careers/paralegal",
+        permanent: true,
+      },
+      {
+        source: "/courses/associate-degree-of-law-paralegal-studies",
+        destination: "/careers/paralegal",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-science",
+        destination: "/careers/laboratory-scientist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-veterinary-technology",
+        destination: "/careers/veterinary-technician",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-business-in-hotel-management",
+        destination: "/careers/hospitality-manager",
+        permanent: true,
+      },
+      {
+        source: "/courses/associate-degree-of-international-hotel-and-tourism-management",
+        destination: "/careers/hospitality-manager",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-business-marketing",
+        destination: "/careers/marketing-specialist",
+        permanent: true,
+      },
+      {
+        source: "/courses/bachelor-of-information-technology-cyber-security",
+        destination: "/careers/cyber-security-analyst",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-information-technology-networking",
+        destination: "/careers/network-and-systems-engineer",
+        permanent: true,
+      },
+      {
+        source: "/courses/mba-master-of-business",
+        destination: "/careers/business-administrator",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-professional-accounting",
+        destination: "/careers/accountant",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-business-analytics",
+        destination: "/careers/data-analyst",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-diploma-of-business",
+        destination: "/careers/business-administrator",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-certificate-in-business",
+        destination: "/careers/business-administrator",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-teaching",
+        destination: "/careers/school-teacher",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-teaching-early-childhood",
+        destination: "/careers/early-childhood-educator",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-diploma-of-education-early-childhood",
+        destination: "/careers/early-childhood-educator",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-diploma-of-teaching-primary-secondary",
+        destination: "/careers/school-teacher",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-engineering",
+        destination: "/careers/professional-engineer",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-nursing-graduate-entry",
+        destination: "/careers/registered-nurse",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-social-work-professional-qualifying",
+        destination: "/careers/social-worker",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-certificate-in-social-sciences-for-social-work",
+        destination: "/careers/social-worker",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-naturopathic-medicine",
+        destination: "/careers/naturopath",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-osteopathic-medicine",
+        destination: "/careers/osteopath",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-business-in-global-hotel-leadership",
+        destination: "/careers/hospitality-manager",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-diploma-of-business-in-global-hotel-leadership",
+        destination: "/careers/hospitality-manager",
+        permanent: true,
+      },
+      {
+        source: "/courses/graduate-certificate-of-business-in-global-hotel-leadership",
+        destination: "/careers/hospitality-manager",
+        permanent: true,
+      },
+      {
+        source: "/courses/master-of-information-technology-cyber-security",
+        destination: "/careers/cyber-security-analyst",
+        permanent: true,
+      },
+      {
+        source: "/courses/higher-education",
+        destination: "/careers",
+        permanent: true,
+      },
+      {
+        source: "/courses/higher-education/undergraduate",
+        destination: "/careers",
+        permanent: true,
+      },
+      {
+        source: "/courses/higher-education/postgraduate",
+        destination: "/careers",
+        permanent: true,
+      },
       // Renamed 11 September 2026: "Bachelor of Information Technology /
       // Networking" is now "Bachelor of Information Technology and Systems".
       // The slug is derived from the course name, so the old URL was live and

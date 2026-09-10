@@ -30,24 +30,35 @@ export default function QualificationPathway({ career }: { career: Career }) {
         <ul className="mt-8 space-y-6">
           {career.pathways.map((p) => (
             <li
-              key={p.nationalCode}
+              key={p.nationalCode ?? p.title}
               className="border-t border-line pt-6 text-base leading-relaxed text-copy"
             >
               <p>
                 {many ? "One entry qualification is" : "The usual entry qualification is"}{" "}
                 <strong className="font-semibold text-ink">
-                  {p.tgaTitle} ({p.nationalCode})
+                  {p.title}
+                  {p.nationalCode ? ` (${p.nationalCode})` : ""}
                 </strong>
-                , a nationally recognised qualification on the national
-                register. The registered training organisations approved to
-                deliver and issue it are listed on{" "}
+                {p.register === "tga" ? (
+                  <>
+                    , a nationally recognised qualification on the national
+                    register. The registered training organisations approved to
+                    deliver and issue it are listed on{" "}
+                  </>
+                ) : (
+                  <>
+                    , a higher education qualification. The institutions
+                    registered to deliver it to international students are
+                    listed on{" "}
+                  </>
+                )}
                 <a
-                  href={p.tgaUrl}
+                  href={p.registerUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-eucalypt underline underline-offset-2 transition-colors hover:text-ink"
                 >
-                  training.gov.au
+                  {p.register === "tga" ? "training.gov.au" : "the CRICOS register"}
                 </a>
                 .
               </p>
@@ -59,8 +70,9 @@ export default function QualificationPathway({ career }: { career: Career }) {
         </ul>
 
         <p className="mt-8 text-sm leading-relaxed text-sage">
-          Edmark Education is not a registered training organisation. We do not
-          deliver these qualifications and we do not issue them.
+          Edmark Education is an education agent. We are not a registered
+          training organisation or an education provider: we do not deliver
+          these qualifications and we do not issue them.
         </p>
       </div>
     </section>

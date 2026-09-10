@@ -2,8 +2,6 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { services } from "@/lib/content";
 import { blogPosts } from "@/lib/blog";
-import { levels } from "@/lib/higher-education";
-import { catalog } from "@/lib/course-catalog";
 import { careers } from "@/lib/careers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -40,15 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     freq: "monthly" as const,
   }));
 
-  // Higher-education courses keep their own pages: they are the pages a
-  // student searches for by course name. /course-matcher is deliberately
-  // absent, since it is noindex.
-  const courseRoutes = catalog.map((c) => ({
-    path: `/courses/${c.slug}`,
-    priority: 0.6,
-    freq: "monthly" as const,
-  }));
-
   // Services written up elsewhere (the course categories, under /courses) are
   // listed with the routes above instead, at their own URL.
   const serviceRoutes = services
@@ -58,17 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
     freq: "monthly" as const,
   }));
-
-  // Course data is populated and these pages are indexable: they inherit
-  // index/follow from the root layout and set no robots override.
-  const higherEducationRoutes = [
-    { path: "/courses/higher-education", priority: 0.8, freq: "monthly" as const },
-    ...levels.map((l) => ({
-      path: `/courses/higher-education/${l.slug}`,
-      priority: 0.7,
-      freq: "monthly" as const,
-    })),
-  ];
 
   const blogRoutes = blogPosts.map((post) => ({
     path: `/blog/${post.slug}`,
@@ -80,8 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...serviceRoutes,
     ...careerRoutes,
-    ...higherEducationRoutes,
-    ...courseRoutes,
     ...blogRoutes,
   ];
 

@@ -38,13 +38,28 @@
 export type CodeStatus = "current" | "superseded" | "unverified";
 
 export type QualificationPathway = {
-  /** National code from the training package, e.g. "CPC30220". */
-  nationalCode: string;
-  /** Title exactly as training.gov.au states it. No added specialisations. */
-  tgaTitle: string;
-  tgaUrl: string;
-  /** Unverified until checked against the register. See docs/code-verification.md. */
-  codeStatus: CodeStatus;
+  /**
+   * The qualification title, exactly as its register states it. No added
+   * specialisations, and no institution's marketing name for it.
+   */
+  title: string;
+  /**
+   * Which national register lists the organisations approved to deliver it.
+   *
+   * "tga" — training.gov.au, for nationally recognised VET qualifications.
+   * "cricos" — the CRICOS register, for higher education courses that may be
+   * delivered to international students.
+   *
+   * Either way the point is the same: the page states the qualification as a
+   * fact and sends the reader to the register to find who actually delivers
+   * it, because Edmark does not.
+   */
+  register: "tga" | "cricos";
+  registerUrl: string;
+  /** VET only: the national code from the training package, e.g. "CPC30220". */
+  nationalCode?: string;
+  /** VET only. Unverified until checked. See docs/code-verification.md. */
+  codeStatus?: CodeStatus;
   note?: string;
 };
 
@@ -81,9 +96,10 @@ export const careers: Career[] = [
     workEnvironment: "Residential and commercial building sites, mostly outdoors and often at height. Work is physical and usually starts early.",
     pathways: [
       {
+        title: "Certificate III in Carpentry",
         nationalCode: "CPC30220",
-        tgaTitle: "Certificate III in Carpentry",
-        tgaUrl: "https://training.gov.au/training/details/CPC30220",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC30220",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -105,9 +121,10 @@ export const careers: Career[] = [
     workEnvironment: "A workshop environment with static machinery, with some installation work on site.",
     pathways: [
       {
+        title: "Certificate III in Joinery",
         nationalCode: "CPC31920",
-        tgaTitle: "Certificate III in Joinery",
-        tgaUrl: "https://training.gov.au/training/details/CPC31920",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC31920",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -132,16 +149,18 @@ export const careers: Career[] = [
       "Plumbing is a licensed trade in every state and territory. In Victoria, plumbing licensing and registration is administered by the Victorian Building Authority. Check the current requirements with the authority in the state where you intend to work.",
     pathways: [
       {
+        title: "Certificate III in Plumbing",
         nationalCode: "CPC32420",
-        tgaTitle: "Certificate III in Plumbing",
-        tgaUrl: "https://training.gov.au/training/details/CPC32420",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC32420",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Certificate III in Roof Plumbing",
         nationalCode: "CPC32620",
-        tgaTitle: "Certificate III in Roof Plumbing",
-        tgaUrl: "https://training.gov.au/training/details/CPC32620",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC32620",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -165,9 +184,10 @@ export const careers: Career[] = [
       "Electrical work is licensed in every state and territory. In Victoria, electrical licensing is administered by Energy Safe Victoria. Check the current requirements with the authority in the state where you intend to work.",
     pathways: [
       {
+        title: "Certificate III in Electrotechnology Electrician",
         nationalCode: "UEE30820",
-        tgaTitle: "Certificate III in Electrotechnology Electrician",
-        tgaUrl: "https://training.gov.au/training/details/UEE30820",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/UEE30820",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -189,9 +209,10 @@ export const careers: Career[] = [
     workEnvironment: "Outdoor building sites in most weather. Physically demanding, repetitive lifting.",
     pathways: [
       {
+        title: "Certificate III in Bricklaying and Blocklaying",
         nationalCode: "CPC33020",
-        tgaTitle: "Certificate III in Bricklaying and Blocklaying",
-        tgaUrl: "https://training.gov.au/training/details/CPC33020",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC33020",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -213,9 +234,10 @@ export const careers: Career[] = [
     workEnvironment: "Residential and commercial interiors, often in bathrooms and kitchens. Extended kneeling and crouching.",
     pathways: [
       {
+        title: "Certificate III in Wall and Floor Tiling",
         nationalCode: "CPC31320",
-        tgaTitle: "Certificate III in Wall and Floor Tiling",
-        tgaUrl: "https://training.gov.au/training/details/CPC31320",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC31320",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -237,9 +259,10 @@ export const careers: Career[] = [
     workEnvironment: "Building sites and occupied buildings, indoors and outdoors. Overhead work is common.",
     pathways: [
       {
+        title: "Certificate III in Solid Plastering",
         nationalCode: "CPC31020",
-        tgaTitle: "Certificate III in Solid Plastering",
-        tgaUrl: "https://training.gov.au/training/details/CPC31020",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC31020",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -261,9 +284,10 @@ export const careers: Career[] = [
     workEnvironment: "Residential and commercial buildings, indoors and outdoors, frequently on ladders or scaffold.",
     pathways: [
       {
+        title: "Certificate III in Painting and Decorating",
         nationalCode: "CPC30620",
-        tgaTitle: "Certificate III in Painting and Decorating",
-        tgaUrl: "https://training.gov.au/training/details/CPC30620",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC30620",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -285,9 +309,10 @@ export const careers: Career[] = [
     workEnvironment: "Outdoor sites, early starts, and work paced by the concrete pour rather than the clock.",
     pathways: [
       {
+        title: "Certificate III in Concreting",
         nationalCode: "CPC30320",
-        tgaTitle: "Certificate III in Concreting",
-        tgaUrl: "https://training.gov.au/training/details/CPC30320",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC30320",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -309,9 +334,10 @@ export const careers: Career[] = [
     workEnvironment: "A workshop with static and portable machinery, plus installation work in homes and businesses.",
     pathways: [
       {
+        title: "Certificate III in Cabinet Making and Timber Technology",
         nationalCode: "MSF30322",
-        tgaTitle: "Certificate III in Cabinet Making and Timber Technology",
-        tgaUrl: "https://training.gov.au/training/details/MSF30322",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/MSF30322",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -333,9 +359,10 @@ export const careers: Career[] = [
     workEnvironment: "Workshops and on-site installation. Heavy, fragile materials and strict manual handling controls.",
     pathways: [
       {
+        title: "Certificate III in Glass and Glazing",
         nationalCode: "MSF30422",
-        tgaTitle: "Certificate III in Glass and Glazing",
-        tgaUrl: "https://training.gov.au/training/details/MSF30422",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/MSF30422",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -360,16 +387,18 @@ export const careers: Career[] = [
       "Building work above certain values requires registration. In Victoria, builder registration is administered by the Victorian Building Authority. Registration classes and requirements are set state by state.",
     pathways: [
       {
+        title: "Certificate IV in Building and Construction",
         nationalCode: "CPC40120",
-        tgaTitle: "Certificate IV in Building and Construction",
-        tgaUrl: "https://training.gov.au/training/details/CPC40120",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC40120",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Diploma of Building and Construction (Building)",
         nationalCode: "CPC50220",
-        tgaTitle: "Diploma of Building and Construction (Building)",
-        tgaUrl: "https://training.gov.au/training/details/CPC50220",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPC50220",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -393,9 +422,10 @@ export const careers: Career[] = [
       "Work involving refrigerant handling requires a licence issued through the Australian Refrigeration Council. Electrical work carried out as part of the role is separately licensed by the electrical safety regulator in each state.",
     pathways: [
       {
+        title: "Certificate III in Air Conditioning and Refrigeration",
         nationalCode: "UEE32225",
-        tgaTitle: "Certificate III in Air Conditioning and Refrigeration",
-        tgaUrl: "https://training.gov.au/training/details/UEE32225",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/UEE32225",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -417,9 +447,10 @@ export const careers: Career[] = [
     workEnvironment: "Industrial plant, utilities and processing facilities, working to permit and isolation procedures.",
     pathways: [
       {
+        title: "Certificate III in Instrumentation and Control",
         nationalCode: "UEE31220",
-        tgaTitle: "Certificate III in Instrumentation and Control",
-        tgaUrl: "https://training.gov.au/training/details/UEE31220",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/UEE31220",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -441,9 +472,10 @@ export const careers: Career[] = [
     workEnvironment: "Fabrication workshops and site installation, with heat, noise and hot-work controls.",
     pathways: [
       {
+        title: "Certificate III in Engineering - Fabrication Trade",
         nationalCode: "MEM31922",
-        tgaTitle: "Certificate III in Engineering - Fabrication Trade",
-        tgaUrl: "https://training.gov.au/training/details/MEM31922",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/MEM31922",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -465,9 +497,10 @@ export const careers: Career[] = [
     workEnvironment: "Workshops and industrial plant, often on planned maintenance shutdowns.",
     pathways: [
       {
+        title: "Certificate III in Engineering - Mechanical Trade",
         nationalCode: "MEM30219",
-        tgaTitle: "Certificate III in Engineering - Mechanical Trade",
-        tgaUrl: "https://training.gov.au/training/details/MEM30219",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/MEM30219",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -489,9 +522,10 @@ export const careers: Career[] = [
     workEnvironment: "Offices, workshops and plant, working alongside engineers and trades.",
     pathways: [
       {
+        title: "Advanced Diploma of Engineering",
         nationalCode: "MEM60122",
-        tgaTitle: "Advanced Diploma of Engineering",
-        tgaUrl: "https://training.gov.au/training/details/MEM60122",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/MEM60122",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -513,9 +547,10 @@ export const careers: Career[] = [
     workEnvironment: "Workshops and service centres, working on hoists and with diagnostic equipment.",
     pathways: [
       {
+        title: "Certificate III in Light Vehicle Mechanical Technology",
         nationalCode: "AUR30620",
-        tgaTitle: "Certificate III in Light Vehicle Mechanical Technology",
-        tgaUrl: "https://training.gov.au/training/details/AUR30620",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/AUR30620",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -537,9 +572,10 @@ export const careers: Career[] = [
     workEnvironment: "Large workshops and depots, working on heavy plant with lifting equipment.",
     pathways: [
       {
+        title: "Certificate III in Heavy Commercial Vehicle Mechanical Technology",
         nationalCode: "AUR31120",
-        tgaTitle: "Certificate III in Heavy Commercial Vehicle Mechanical Technology",
-        tgaUrl: "https://training.gov.au/training/details/AUR31120",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/AUR31120",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -561,9 +597,10 @@ export const careers: Career[] = [
     workEnvironment: "Automotive workshops, working with wiring looms, test equipment and vehicle electronics.",
     pathways: [
       {
+        title: "Certificate III in Automotive Electrical Technology",
         nationalCode: "AUR30320",
-        tgaTitle: "Certificate III in Automotive Electrical Technology",
-        tgaUrl: "https://training.gov.au/training/details/AUR30320",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/AUR30320",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -586,16 +623,18 @@ export const careers: Career[] = [
     workEnvironment: "Commercial kitchens, working evenings, weekends and public holidays under time pressure.",
     pathways: [
       {
+        title: "Certificate III in Commercial Cookery",
         nationalCode: "SIT30821",
-        tgaTitle: "Certificate III in Commercial Cookery",
-        tgaUrl: "https://training.gov.au/training/details/SIT30821",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT30821",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Certificate IV in Kitchen Management",
         nationalCode: "SIT40521",
-        tgaTitle: "Certificate IV in Kitchen Management",
-        tgaUrl: "https://training.gov.au/training/details/SIT40521",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT40521",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -617,16 +656,18 @@ export const careers: Career[] = [
     workEnvironment: "Patisseries, bakeries and hotel kitchens, usually with early morning starts.",
     pathways: [
       {
+        title: "Certificate III in Patisserie",
         nationalCode: "SIT31021",
-        tgaTitle: "Certificate III in Patisserie",
-        tgaUrl: "https://training.gov.au/training/details/SIT31021",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT31021",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Certificate IV in Patisserie",
         nationalCode: "SIT40721",
-        tgaTitle: "Certificate IV in Patisserie",
-        tgaUrl: "https://training.gov.au/training/details/SIT40721",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT40721",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -649,25 +690,53 @@ export const careers: Career[] = [
     workEnvironment: "Venues and hotels, across split shifts, evenings and weekends.",
     pathways: [
       {
+        title: "Certificate III in Hospitality",
         nationalCode: "SIT30622",
-        tgaTitle: "Certificate III in Hospitality",
-        tgaUrl: "https://training.gov.au/training/details/SIT30622",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT30622",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Diploma of Hospitality Management",
         nationalCode: "SIT50422",
-        tgaTitle: "Diploma of Hospitality Management",
-        tgaUrl: "https://training.gov.au/training/details/SIT50422",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT50422",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Advanced Diploma of Hospitality Management",
         nationalCode: "SIT60322",
-        tgaTitle: "Advanced Diploma of Hospitality Management",
-        tgaUrl: "https://training.gov.au/training/details/SIT60322",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/SIT60322",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
+      },
+      {
+        title: "Bachelor of Business in Hotel Management",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Associate Degree of International Hotel and Tourism Management",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Business in Global Hotel Leadership",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Diploma of Business in Global Hotel Leadership",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Certificate of Business in Global Hotel Leadership",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
       },
     ],
     relatedCareers: ["chef", "pastry-chef", "business-administrator"],
@@ -690,23 +759,26 @@ export const careers: Career[] = [
       "Workers in NDIS-funded roles require an NDIS Worker Screening Check, and aged care roles require a police check. Requirements are set by the relevant scheme and by each employer.",
     pathways: [
       {
+        title: "Certificate III in Individual Support",
         nationalCode: "CHC33021",
-        tgaTitle: "Certificate III in Individual Support",
-        tgaUrl: "https://training.gov.au/training/details/CHC33021",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC33021",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Certificate IV in Ageing Support",
         nationalCode: "CHC43015",
-        tgaTitle: "Certificate IV in Ageing Support",
-        tgaUrl: "https://training.gov.au/training/details/CHC43015",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC43015",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Certificate IV in Disability Support",
         nationalCode: "CHC43121",
-        tgaTitle: "Certificate IV in Disability Support",
-        tgaUrl: "https://training.gov.au/training/details/CHC43121",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC43121",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -731,9 +803,10 @@ export const careers: Career[] = [
       "Enrolled nurses must be registered with the Nursing and Midwifery Board of Australia through Ahpra before they can practise. Registration standards are set by the Board.",
     pathways: [
       {
+        title: "Diploma of Nursing",
         nationalCode: "HLT54121",
-        tgaTitle: "Diploma of Nursing",
-        tgaUrl: "https://training.gov.au/training/details/HLT54121",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/HLT54121",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -758,16 +831,18 @@ export const careers: Career[] = [
       "Roles commonly require a police check, and a Working with Children Check where the work involves young people.",
     pathways: [
       {
+        title: "Certificate IV in Mental Health Peer Work",
         nationalCode: "CHC43515",
-        tgaTitle: "Certificate IV in Mental Health Peer Work",
-        tgaUrl: "https://training.gov.au/training/details/CHC43515",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC43515",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Diploma of Mental Health",
         nationalCode: "CHC53315",
-        tgaTitle: "Diploma of Mental Health",
-        tgaUrl: "https://training.gov.au/training/details/CHC53315",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC53315",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -792,11 +867,17 @@ export const careers: Career[] = [
       "Roles commonly require a police check, and a Working with Children Check where the work involves children or young people.",
     pathways: [
       {
+        title: "Diploma of Community Services",
         nationalCode: "CHC52025",
-        tgaTitle: "Diploma of Community Services",
-        tgaUrl: "https://training.gov.au/training/details/CHC52025",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC52025",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
+      },
+      {
+        title: "Bachelor of Community Welfare",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
       },
     ],
     relatedCareers: ["mental-health-support-worker", "aged-care-and-disability-support-worker", "education-support-officer"],
@@ -819,18 +900,35 @@ export const careers: Career[] = [
       "Working with children requires a Working with Children Check in every state and territory. In Victoria it is administered by the Department of Government Services.",
     pathways: [
       {
+        title: "Certificate III in Early Childhood Education and Care",
         nationalCode: "CHC30125",
-        tgaTitle: "Certificate III in Early Childhood Education and Care",
-        tgaUrl: "https://training.gov.au/training/details/CHC30125",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC30125",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Diploma of Early Childhood Education and Care",
         nationalCode: "CHC50125",
-        tgaTitle: "Diploma of Early Childhood Education and Care",
-        tgaUrl: "https://training.gov.au/training/details/CHC50125",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC50125",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
+      },
+      {
+        title: "Bachelor of Early Childhood Education",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Teaching (Early Childhood)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Diploma of Education (Early Childhood)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
       },
     ],
     relatedCareers: ["education-support-officer", "community-services-worker"],
@@ -853,16 +951,18 @@ export const careers: Career[] = [
       "Working with children requires a Working with Children Check in every state and territory. In Victoria it is administered by the Department of Government Services.",
     pathways: [
       {
+        title: "Certificate IV in School Based Education Support",
         nationalCode: "CHC40221",
-        tgaTitle: "Certificate IV in School Based Education Support",
-        tgaUrl: "https://training.gov.au/training/details/CHC40221",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC40221",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
       {
+        title: "Diploma of School Age Education and Care",
         nationalCode: "CHC50221",
-        tgaTitle: "Diploma of School Age Education and Care",
-        tgaUrl: "https://training.gov.au/training/details/CHC50221",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CHC50221",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -885,11 +985,32 @@ export const careers: Career[] = [
     workEnvironment: "Offices across almost every industry, increasingly with hybrid arrangements.",
     pathways: [
       {
+        title: "Diploma of Business",
         nationalCode: "BSB50120",
-        tgaTitle: "Diploma of Business",
-        tgaUrl: "https://training.gov.au/training/details/BSB50120",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/BSB50120",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
+      },
+      {
+        title: "Bachelor of Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "MBA / Master of Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Diploma of Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Certificate in Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
       },
     ],
     relatedCareers: ["learning-and-development-officer", "hospitality-manager"],
@@ -910,9 +1031,10 @@ export const careers: Career[] = [
     workEnvironment: "Corporate, government and large service organisations, working across teams.",
     pathways: [
       {
+        title: "Graduate Diploma of Management (Learning)",
         nationalCode: "BSB80120",
-        tgaTitle: "Graduate Diploma of Management (Learning)",
-        tgaUrl: "https://training.gov.au/training/details/BSB80120",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/BSB80120",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
@@ -937,14 +1059,657 @@ export const careers: Career[] = [
       "Security work requires a licence. In Victoria, security licences are issued by Victoria Police through its Licensing and Regulation Division, which sets its own requirements for training completed by overseas students. Confirm the current requirements with Victoria Police before you commit to a course.",
     pathways: [
       {
+        title: "Certificate II in Security Operations",
         nationalCode: "CPP20218",
-        tgaTitle: "Certificate II in Security Operations",
-        tgaUrl: "https://training.gov.au/training/details/CPP20218",
+        register: "tga",
+        registerUrl: "https://training.gov.au/training/details/CPP20218",
         // TODO: verify on training.gov.au — see docs/code-verification.md
         codeStatus: "unverified",
       },
     ],
     relatedCareers: ["aged-care-and-disability-support-worker", "hospitality-manager"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "accountant",
+    occupation: "Accountant",
+    h1: "How to become an accountant in Australia",
+    summary: "Accountants prepare and interpret financial records, and advise on tax, compliance and business performance.",
+    dayToDay: [
+      "Prepare financial statements and management reports",
+      "Prepare and lodge tax returns and BAS",
+      "Reconcile accounts and review controls",
+      "Advise on budgeting, cash flow and structure",
+      "Work to Australian accounting standards",
+    ],
+    workEnvironment: "Accounting practices, corporate finance teams and government, mostly office-based with busy periods around reporting and tax deadlines.",
+    licensing:
+      "Membership of a professional body such as CPA Australia, Chartered Accountants ANZ or IPA is expected for most senior roles and required to sign certain documents. Each body sets its own admission requirements.",
+    pathways: [
+      {
+        title: "Bachelor of Accounting",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Professional Accounting",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["business-administrator", "data-analyst", "marketing-specialist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "marketing-specialist",
+    occupation: "Marketing specialist",
+    h1: "How to become a marketing specialist in Australia",
+    summary: "Marketing specialists plan and run the campaigns and channels that bring an organisation its customers.",
+    dayToDay: [
+      "Plan campaigns against commercial objectives",
+      "Run digital, social and content channels",
+      "Research customers, competitors and pricing",
+      "Measure performance and report on it",
+      "Brief designers, agencies and media partners",
+    ],
+    workEnvironment: "Agencies, in-house marketing teams and consultancies, office-based with a good deal of collaboration.",
+    pathways: [
+      {
+        title: "Bachelor of Business (Marketing)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["business-administrator", "data-analyst", "accountant"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "data-analyst",
+    occupation: "Data analyst",
+    h1: "How to become a data analyst in Australia",
+    summary: "Data analysts turn an organisation's data into the numbers people make decisions from.",
+    dayToDay: [
+      "Pull and clean data from operational systems",
+      "Build dashboards and recurring reports",
+      "Analyse patterns and test what drives them",
+      "Translate findings for non-technical audiences",
+      "Support forecasting and planning",
+    ],
+    workEnvironment: "Office and hybrid roles across almost every industry, working alongside operations, finance and technology teams.",
+    pathways: [
+      {
+        title: "Master of Business Analytics",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["business-administrator", "network-and-systems-engineer", "marketing-specialist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "network-and-systems-engineer",
+    occupation: "Network and systems engineer",
+    h1: "How to become a network and systems engineer in Australia",
+    summary: "These engineers design, build and maintain the networks and server systems an organisation runs on.",
+    dayToDay: [
+      "Design and configure network infrastructure",
+      "Maintain servers, storage and cloud services",
+      "Monitor performance and resolve incidents",
+      "Plan capacity, upgrades and migrations",
+      "Document architecture and changes",
+    ],
+    workEnvironment: "Corporate IT teams, managed service providers and data centres, with on-call rotations in many roles.",
+    pathways: [
+      {
+        title: "Bachelor of Information Technology and Systems",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Information Technology, Bachelor of Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Information Technology / Networking",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["cyber-security-analyst", "data-analyst", "instrumentation-and-control-technician"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "cyber-security-analyst",
+    occupation: "Cyber security analyst",
+    h1: "How to become a cyber security analyst in Australia",
+    summary: "Security analysts protect an organisation's systems and data from attack, and respond when something gets through.",
+    dayToDay: [
+      "Monitor systems for suspicious activity",
+      "Investigate and respond to incidents",
+      "Assess vulnerabilities and recommend fixes",
+      "Apply security controls and policy",
+      "Report on risk to management",
+    ],
+    workEnvironment: "Security operations centres, corporate IT and consultancies, often with shift or on-call coverage.",
+    pathways: [
+      {
+        title: "Bachelor of Information Technology (Cyber Security)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Information Technology (Cyber Security)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["network-and-systems-engineer", "data-analyst"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "school-teacher",
+    occupation: "School teacher",
+    h1: "How to become a school teacher in Australia",
+    summary: "Teachers plan and deliver the curriculum, assess learning, and support students through their schooling.",
+    dayToDay: [
+      "Plan lessons and units against the curriculum",
+      "Teach classes and manage the classroom",
+      "Assess work and report on progress",
+      "Support students with additional needs",
+      "Work with families and colleagues",
+    ],
+    workEnvironment: "Primary and secondary schools, government and non-government, working to school terms.",
+    licensing:
+      "Teachers must be registered with the teacher regulatory authority in their state or territory before they can teach. In Victoria that is the Victorian Institute of Teaching, and a Working with Children Check applies as well.",
+    pathways: [
+      {
+        title: "Bachelor of Education",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Teaching",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Diploma of Teaching (Primary / Secondary)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["early-childhood-educator", "education-support-officer", "psychologist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "professional-engineer",
+    occupation: "Professional engineer",
+    h1: "How to become a professional engineer in Australia",
+    summary: "Engineers design, analyse and deliver the built and mechanical systems that infrastructure and industry depend on.",
+    dayToDay: [
+      "Design and model systems and structures",
+      "Analyse loads, tolerances and performance",
+      "Prepare technical documentation and drawings",
+      "Oversee construction, testing and commissioning",
+      "Work to Australian standards and codes",
+    ],
+    workEnvironment: "Consultancies, contractors, utilities and manufacturers, split between office design work and site or plant visits.",
+    licensing:
+      "Engineers Australia assesses and recognises professional engineering qualifications, and some states restrict who may carry out or certify certain engineering work. Check the requirement for your discipline and state.",
+    pathways: [
+      {
+        title: "Bachelor of Engineering (Honours)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Engineering",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["engineering-technician", "mechanical-fitter", "builder"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "registered-nurse",
+    occupation: "Registered nurse",
+    h1: "How to become a registered nurse in Australia",
+    summary: "Registered nurses assess, plan and deliver patient care, and lead the nursing team around them.",
+    dayToDay: [
+      "Assess patients and plan their care",
+      "Administer medication and treatments",
+      "Monitor and document clinical observations",
+      "Coordinate care with doctors and allied health",
+      "Supervise enrolled nurses and support staff",
+    ],
+    workEnvironment: "Hospitals, aged care, community health and specialist services, on rotating shifts including nights and weekends.",
+    licensing:
+      "Registered nurses must hold registration with the Nursing and Midwifery Board of Australia through Ahpra before they can practise. Registration standards, including English language requirements, are set by the Board.",
+    pathways: [
+      {
+        title: "Bachelor of Nursing",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Nursing (Enrolled Nurse to Registered Nurse)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Nursing (Graduate Entry)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["enrolled-nurse", "midwife", "aged-care-and-disability-support-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "midwife",
+    occupation: "Midwife",
+    h1: "How to become a midwife in Australia",
+    summary: "Midwives care for women through pregnancy, birth and the weeks that follow, and for their newborns.",
+    dayToDay: [
+      "Provide antenatal care and education",
+      "Support and monitor women through labour and birth",
+      "Care for newborns and support feeding",
+      "Provide postnatal care in hospital and at home",
+      "Refer and coordinate with obstetric teams",
+    ],
+    workEnvironment: "Birthing suites, maternity wards and community midwifery programs, on rotating shifts.",
+    licensing:
+      "Midwives must hold registration with the Nursing and Midwifery Board of Australia through Ahpra before they can practise.",
+    pathways: [
+      {
+        title: "Bachelor of Midwifery",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["registered-nurse", "enrolled-nurse"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "occupational-therapist",
+    occupation: "Occupational therapist",
+    h1: "How to become an occupational therapist in Australia",
+    summary: "Occupational therapists help people do the everyday things illness, injury or disability has made difficult.",
+    dayToDay: [
+      "Assess function at home, school or work",
+      "Set goals and plan therapy with the client",
+      "Prescribe equipment and home modifications",
+      "Retrain daily living and work skills",
+      "Report to funders and referrers",
+    ],
+    workEnvironment: "Hospitals, community health, schools, aged care and private practice, with a good deal of travel to clients.",
+    licensing:
+      "Occupational therapists must hold registration with the Occupational Therapy Board of Australia through Ahpra.",
+    pathways: [
+      {
+        title: "Bachelor of Occupational Therapy",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["speech-pathologist", "exercise-physiologist", "aged-care-and-disability-support-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "speech-pathologist",
+    occupation: "Speech pathologist",
+    h1: "How to become a speech pathologist in Australia",
+    summary: "Speech pathologists assess and treat difficulties with speech, language, voice and swallowing.",
+    dayToDay: [
+      "Assess communication and swallowing",
+      "Plan and deliver therapy programs",
+      "Work with families, teachers and carers",
+      "Introduce communication aids where needed",
+      "Document progress and outcomes",
+    ],
+    workEnvironment: "Schools, hospitals, community health and private practice, across all ages from infants to older adults.",
+    licensing:
+      "Speech Pathology Australia sets the professional standards and certification most employers require. The profession is self-regulated rather than registered through Ahpra.",
+    pathways: [
+      {
+        title: "Bachelor of Speech Pathology",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["occupational-therapist", "psychologist", "education-support-officer"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "psychologist",
+    occupation: "Psychologist",
+    h1: "How to become a psychologist in Australia",
+    summary: "Psychologists study behaviour and mental processes, and apply that to assessment, therapy and research.",
+    dayToDay: [
+      "Assess clients using structured tools",
+      "Plan and deliver evidence-based interventions",
+      "Write reports for clients and referrers",
+      "Work with schools, employers or health teams",
+      "Maintain confidential case records",
+    ],
+    workEnvironment: "Private practice, health services, schools, workplaces and research, in consulting rooms and increasingly by telehealth.",
+    licensing:
+      "Psychologists must hold registration with the Psychology Board of Australia through Ahpra. Registration requires accredited study beyond a first degree plus supervised practice, so the degrees below are the first step rather than the whole path.",
+    pathways: [
+      {
+        title: "Bachelor of Psychological Science",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Psychological Science with Honours",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Psychological Science, Bachelor of Business",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["counsellor", "mental-health-support-worker", "social-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "health-promotion-officer",
+    occupation: "Health promotion officer",
+    h1: "How to become a health promotion officer in Australia",
+    summary: "Health promotion officers design and run programs that help communities live healthier lives.",
+    dayToDay: [
+      "Assess community health needs",
+      "Design and deliver health programs",
+      "Run education and behaviour-change campaigns",
+      "Work with schools, workplaces and local groups",
+      "Evaluate programs and report on outcomes",
+    ],
+    workEnvironment: "Local government, community health services, non-profits and workplaces, mixing office work with community delivery.",
+    pathways: [
+      {
+        title: "Bachelor of Health Science (Health and Lifestyle)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["exercise-physiologist", "community-services-worker", "social-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "biomedical-scientist",
+    occupation: "Biomedical scientist",
+    h1: "How to become a biomedical scientist in Australia",
+    summary: "Biomedical scientists investigate how disease works, and run the laboratory testing that diagnosis depends on.",
+    dayToDay: [
+      "Run laboratory analyses and assays",
+      "Maintain instruments and quality control",
+      "Interpret and report results",
+      "Follow strict laboratory safety and handling",
+      "Support research projects and trials",
+    ],
+    workEnvironment: "Pathology laboratories, hospitals, universities and biotechnology companies, working to accredited procedures.",
+    pathways: [
+      {
+        title: "Bachelor of Biomedical Science",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["laboratory-scientist", "registered-nurse"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "exercise-physiologist",
+    occupation: "Exercise physiologist",
+    h1: "How to become an exercise physiologist in Australia",
+    summary: "Exercise physiologists prescribe exercise as treatment for injury, chronic disease and rehabilitation.",
+    dayToDay: [
+      "Assess movement, capacity and risk",
+      "Prescribe and supervise exercise programs",
+      "Rehabilitate injury and manage chronic conditions",
+      "Educate clients on activity and lifestyle",
+      "Report to referrers and funders",
+    ],
+    workEnvironment: "Clinics, hospitals, sporting organisations and community health, in gyms, clinics and rehabilitation spaces.",
+    licensing:
+      "Exercise and Sports Science Australia accredits practitioners, and accreditation is what most funders and referrers require. The profession is self-regulated rather than registered through Ahpra.",
+    pathways: [
+      {
+        title: "Bachelor of Clinical Exercise Physiology",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Sport and Exercise Science",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Bachelor of Exercise Science and Psychological Science",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["occupational-therapist", "health-promotion-officer", "osteopath"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "osteopath",
+    occupation: "Osteopath",
+    h1: "How to become an osteopath in Australia",
+    summary: "Osteopaths assess and treat pain and movement problems through manual therapy and rehabilitation.",
+    dayToDay: [
+      "Take a history and assess movement",
+      "Treat using manual and manipulative therapy",
+      "Prescribe rehabilitation exercises",
+      "Advise on posture, load and activity",
+      "Refer for imaging or medical review where needed",
+    ],
+    workEnvironment: "Private practice and multidisciplinary clinics, in treatment rooms, largely one to one.",
+    licensing:
+      "Osteopaths must hold registration with the Osteopathy Board of Australia through Ahpra before they can practise.",
+    pathways: [
+      {
+        title: "Bachelor of Clinical Sciences (Osteopathic Studies)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Osteopathic Medicine",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["exercise-physiologist", "naturopath", "occupational-therapist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "counsellor",
+    occupation: "Counsellor",
+    h1: "How to become a counsellor in Australia",
+    summary: "Counsellors work with people through difficulty, using structured conversation to help them find a way forward.",
+    dayToDay: [
+      "Build a working relationship with the client",
+      "Assess need, risk and goals",
+      "Deliver counselling using established approaches",
+      "Refer to specialist services where needed",
+      "Keep confidential case notes",
+    ],
+    workEnvironment: "Private practice, community agencies, schools and employee assistance programs, in consulting rooms and by telehealth.",
+    licensing:
+      "Counselling is self-regulated. Membership of a body such as the Australian Counselling Association or PACFA is what most employers and funders look for, and each sets its own requirements.",
+    pathways: [
+      {
+        title: "Bachelor of Counselling",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["psychologist", "mental-health-support-worker", "social-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "social-worker",
+    occupation: "Social worker",
+    h1: "How to become a social worker in Australia",
+    summary: "Social workers support people through hardship and advocate for them across the systems around them.",
+    dayToDay: [
+      "Assess client need, risk and safety",
+      "Develop and review case plans",
+      "Provide counselling and practical support",
+      "Advocate with housing, health and legal systems",
+      "Maintain records and statutory reporting",
+    ],
+    workEnvironment: "Hospitals, child protection, community agencies, courts and mental health services, mixing office work with home and field visits.",
+    licensing:
+      "The Australian Association of Social Workers sets the professional standard, and eligibility for membership is what most employers require. A Working with Children Check and a police check apply to most roles.",
+    pathways: [
+      {
+        title: "Bachelor of Social Work",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Master of Social Work (Professional Qualifying)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Graduate Certificate in Social Sciences for Social Work",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["community-services-worker", "counsellor", "psychologist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "naturopath",
+    occupation: "Naturopath",
+    h1: "How to become a naturopath in Australia",
+    summary: "Naturopaths use nutritional, herbal and lifestyle approaches to support health, alongside conventional care.",
+    dayToDay: [
+      "Take a detailed health and lifestyle history",
+      "Develop nutritional and herbal treatment plans",
+      "Advise on diet, sleep and activity",
+      "Monitor progress and adjust plans",
+      "Refer to medical practitioners where indicated",
+    ],
+    workEnvironment: "Private practice, integrative clinics and dispensaries, largely one-to-one consultations.",
+    licensing:
+      "Naturopathy is not registered through Ahpra. Professional association membership is what most private health funds and clinics require, and each association sets its own standards.",
+    pathways: [
+      {
+        title: "Master of Naturopathic Medicine",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["osteopath", "health-promotion-officer", "exercise-physiologist"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "lawyer",
+    occupation: "Lawyer",
+    h1: "How to become a lawyer in Australia",
+    summary: "Lawyers advise clients on the law, prepare their documents and represent them in disputes.",
+    dayToDay: [
+      "Advise clients on their rights and options",
+      "Draft contracts, pleadings and correspondence",
+      "Research case law and legislation",
+      "Negotiate settlements and appear in matters",
+      "Manage files and client confidentiality",
+    ],
+    workEnvironment: "Law firms, in-house legal teams, government and community legal centres, mostly office-based with court and client attendance.",
+    licensing:
+      "To practise you must be admitted to the legal profession by the Supreme Court in your state or territory and hold a practising certificate. Admission requires accredited academic study plus practical legal training, so a law degree is the first step rather than the whole path.",
+    pathways: [
+      {
+        title: "Bachelor of Laws",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["paralegal", "social-worker", "business-administrator"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "paralegal",
+    occupation: "Paralegal and legal support officer",
+    h1: "How to become a paralegal and legal support officer in Australia",
+    summary: "Paralegals do the research, drafting and file management that keeps legal matters moving.",
+    dayToDay: [
+      "Research legislation and case law",
+      "Draft routine documents and correspondence",
+      "Manage files, evidence and court deadlines",
+      "Liaise with clients, courts and registries",
+      "Support solicitors in preparing matters",
+    ],
+    workEnvironment: "Law firms, in-house legal teams, courts and government, office-based with registry and court errands.",
+    pathways: [
+      {
+        title: "Bachelor of Legal and Justice Studies",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+      {
+        title: "Associate Degree of Law (Paralegal Studies)",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["lawyer", "business-administrator", "community-services-worker"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "laboratory-scientist",
+    occupation: "Laboratory scientist",
+    h1: "How to become a laboratory scientist in Australia",
+    summary: "Laboratory scientists design and run the experiments and analyses that produce scientific evidence.",
+    dayToDay: [
+      "Plan and run experiments and analyses",
+      "Operate and calibrate laboratory instruments",
+      "Record, analyse and present data",
+      "Maintain quality control and safety standards",
+      "Contribute to reports and publications",
+    ],
+    workEnvironment: "University, government, industrial and commercial laboratories, working to documented procedures.",
+    pathways: [
+      {
+        title: "Bachelor of Science",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["biomedical-scientist", "veterinary-technician", "professional-engineer"],
+    lastReviewed: "2026-09-10",
+  },
+  {
+    slug: "veterinary-technician",
+    occupation: "Veterinary technician",
+    h1: "How to become a veterinary technician in Australia",
+    summary: "Veterinary technicians provide the clinical and nursing care that veterinary practice depends on.",
+    dayToDay: [
+      "Prepare animals and equipment for procedures",
+      "Monitor anaesthesia and recovery",
+      "Take samples and run laboratory tests",
+      "Administer treatments under veterinary direction",
+      "Advise owners on aftercare",
+    ],
+    workEnvironment: "Veterinary clinics, emergency hospitals, wildlife and research facilities, physically active and sometimes distressing work.",
+    pathways: [
+      {
+        title: "Bachelor of Veterinary Technology",
+        register: "cricos",
+        registerUrl: "https://cricos.education.gov.au/",
+      },
+    ],
+    relatedCareers: ["laboratory-scientist", "biomedical-scientist"],
     lastReviewed: "2026-09-10",
   },
 ];
