@@ -161,10 +161,10 @@ export default function PartnersPage() {
               How we place students at these institutions
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
-              Applications are lodged either directly or through a partner
-              agency, depending on the institution. Either way Edmark Education
-              is your education agent, and the institution named on your offer
-              is the provider that delivers and issues your qualification.
+              Our relationships with these institutions are direct and
+              sub-partnered. Either way Edmark Education is your education
+              agent, and the institution named on your offer is the provider
+              that delivers and issues your qualification.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-brand-900/70">
               We can also get students admitted to many more institutions

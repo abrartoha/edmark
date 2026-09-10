@@ -90,7 +90,7 @@ Where we disclose your personal information to an overseas recipient, we take re
 
 <!-- TODO: Edmark to confirm and list the specifics — the countries where our
      website hosting, email and application records are held, and any offshore
-     party (including any partner agency) that receives student information.
+     party that receives student information.
      Categories are stated here rather than vendor names, which is the usual
      form; the countries still need to be named. Do not guess these. -->
 

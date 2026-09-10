@@ -6,7 +6,7 @@ import { IconArrow } from "./Icons";
 // Held here and rendered on both the homepage and /how-were-paid so the two
 // cannot drift apart. Same two-column shape as Why Edmark, which it sits under.
 export const HOW_WERE_PAID = [
-  "Edmark is free for students because a commission is paid when a student enrols. For most institutions that commission reaches us through a partner agency rather than directly from the institution itself. Rates differ between institutions.",
+  "Edmark is free for students because a commission is paid when a student enrols. Our institution relationships are direct and sub-partnered, and rates differ between institutions.",
   "We don't let that decide your shortlist. If the right course is somewhere we don't have an arrangement with, we'll tell you, and we'll help you apply anyway.",
   "Since 31 March 2026, providers cannot pay agent commission when a student transfers between providers onshore. We receive no commission on those transfers. Initial enrolments and progression within a packaged course are not affected.",
   // TODO: confirm whether Edmark receives any commission or benefit for

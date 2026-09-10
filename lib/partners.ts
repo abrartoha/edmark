@@ -7,10 +7,13 @@ export type Institution = {
   meta: string;
   url: string;
   /**
-   * How Edmark reaches this institution. Some placements are direct; others
-   * run through a partner agency that holds the agreement. The site does not
-   * say which is which, because a student's outcome does not turn on it — what
-   * matters is that Edmark is the agent and the institution is the provider.
+   * How Edmark reaches this institution: direct, or sub-partnered.
+   *
+   * Recorded per institution but never published per institution. The site
+   * says the relationships are direct and sub-partnered and leaves it there,
+   * because a student's outcome does not turn on which one applies to them —
+   * what matters is that Edmark is the agent and the institution named on the
+   * offer is the provider.
    */
   relationship: "direct" | "sub-partnered";
   /**

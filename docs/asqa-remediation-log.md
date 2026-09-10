@@ -230,6 +230,12 @@ duration and no entry requirement. The gate is on the course card as well as
 the page; a fee was leaking through the related-courses strip until that was
 caught.
 
+**Institution relationships** — the site states that they are direct and
+sub-partnered, and says no more than that. Which arrangement applies to which
+institution is recorded in the data and not published: a student's outcome does
+not turn on it, and what matters on the page is that Edmark is the agent and
+the institution named on the offer is the provider.
+
 **Legal** — `/privacy` gains the *Privacy Act 1988* (Cth), a sensitive
 information section under APP 3, an APP 8 overseas disclosure section, the OAIC
 escalation path and a named Privacy Officer. `/complaints` gains the Overseas
