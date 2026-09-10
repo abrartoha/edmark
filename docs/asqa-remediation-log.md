@@ -266,3 +266,27 @@ pages.
    publishes a range. Replace with a provider citation if one exists.
 7. **"1,200+ students" and "5+ years"** were left as they are, per instruction.
    They are Edmark's own claims and would need a basis if challenged.
+
+
+---
+
+## Note on how the guards run (11 September 2026)
+
+The guards block a deploy when they find a violation. They do **not** block a
+deploy when they cannot run.
+
+That distinction was learned the hard way. The guards are TypeScript executed
+directly by Node, which needs Node 22.6 or newer. Wired straight into the build
+command, a host on an older Node fails the guard, fails the build, and deploys
+nothing — with no symptom except a site that stops updating. Nine commits of
+this remediation sat on the main branch, pushed and passing locally, while
+production served a build from before any of it.
+
+`scripts/verify.mjs` now separates the two cases: a finding fails the build,
+an environment failure warns loudly in the build log and lets the site ship.
+
+Enforcement therefore lives in CI rather than in the deploy build:
+`.github/workflows/verify.yml` runs both guards on a pinned Node 22 on every
+push to main, with no tolerance. That is also the audit trail — a recorded pass
+or fail against these checks for every commit, which is what makes the control
+demonstrable rather than merely asserted.

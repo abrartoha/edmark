@@ -11,7 +11,7 @@
     "fingerprint:photos": "node scripts/fingerprint-course-photos.mjs",
     "verify:careers": "node --experimental-strip-types scripts/verify-careers.ts",
     "verify:facts": "node --experimental-strip-types scripts/verify-facts.ts",
-    "verify": "npm run verify:careers && npm run verify:facts"
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
@@ -31,6 +31,6 @@
     "typescript": "^5.5.3"
   },
   "engines": {
-    "node": ">=22.6.0"
+    "node": "22.x"
   }
 }

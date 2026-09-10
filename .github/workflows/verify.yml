@@ -1,0 +1,45 @@
+# Where the compliance guards are actually enforced.
+#
+# The deploy build runs them too, but tolerantly: if the guards cannot execute
+# on the host's Node version it warns and lets the site ship, because a control
+# that silently stops all deploys is worse than no control. That tolerance
+# needs somewhere strict to live, and this is it — a pinned Node, no fallback,
+# a red X on the commit if anything is wrong.
+#
+# This also gives the audit trail. Every push has a recorded pass or fail
+# against the same checks, which is the evidence that the control described in
+# docs/asqa-remediation-log.md is real and running rather than asserted.
+
+name: Compliance guards
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Pinned, not a range. These guards are TypeScript run directly by
+          # Node, and the version is the thing that broke the deploy once.
+          node-version: "22.x"
+          cache: npm
+
+      - run: npm ci
+
+      # Strict: no wrapper, no tolerance. If a guard cannot run here, that is
+      # itself a failure worth a red X.
+      - name: Careers guard
+        run: node --experimental-strip-types scripts/verify-careers.ts
+
+      - name: Sourced facts guard
+        run: node --experimental-strip-types scripts/verify-facts.ts
+
+      - name: Build
+        run: npx next build
