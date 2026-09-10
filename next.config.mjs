@@ -230,7 +230,14 @@ const nextConfig = {
       },
       {
         source: "/courses/short-courses",
-        destination: "/careers/vocational",
+        destination: "/careers/vocational-education",
+        permanent: true,
+      },
+      // /careers/vocational was live briefly before being renamed for symmetry
+      // with /careers/higher-education. Short-lived, but it was in the sitemap.
+      {
+        source: "/careers/vocational",
+        destination: "/careers/vocational-education",
         permanent: true,
       },
       // ----------------------------------------------------------------

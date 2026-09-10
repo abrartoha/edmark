@@ -7,7 +7,7 @@ export const metadata: Metadata = pageSeo({
   title: "Vocational Education Careers in Australia",
   description:
     "Trade, care, cookery and service occupations in Australia: what the work involves, what licensing applies, and the nationally recognised qualification usually used to enter each one.",
-  path: "/careers/vocational",
+  path: "/careers/vocational-education",
 });
 
 export default function VocationalCareersPage() {

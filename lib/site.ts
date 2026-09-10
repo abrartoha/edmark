@@ -88,7 +88,7 @@ export const nav: NavItem[] = [
       },
       {
         label: "Vocational Education Careers",
-        href: "/careers/vocational",
+        href: "/careers/vocational-education",
         note: "Trades · Care · Cookery · Hospitality · Security",
       },
       {

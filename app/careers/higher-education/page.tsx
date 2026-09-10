@@ -24,7 +24,7 @@ export default function HigherEducationCareersPage() {
       crumb="Higher education"
       intro="These are guides to the work itself. Each page names the qualification usually used to enter the occupation and links to the CRICOS register, so you can see which institutions are registered to deliver it to international students. Some of these occupations also require registration with a professional board beyond the degree, and the pages say so where that applies."
       careers={higherEducationCareers}
-      alsoSee={{ label: "Looking at trades and vocational careers instead", href: "/careers/vocational" }}
+      alsoSee={{ label: "Looking at trades and vocational careers instead", href: "/careers/vocational-education" }}
       image="/images/heroes/higher-education.jpg"
     />
   );
