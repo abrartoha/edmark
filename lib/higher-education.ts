@@ -101,18 +101,54 @@ export function courseGroups(courses: Course[]): { label: string; courses: Cours
 
 export type Course = {
   name: string;
-  duration: string;
-  /** Omit both when fees vary too widely to quote as a range. */
+  /**
+   * Commercial detail, all optional.
+   *
+   * A fee, a duration and an entry requirement are claims about a course
+   * somebody else delivers and issues. ASQA's notice of 2 September 2026 was
+   * about publishing exactly this class of claim without naming the provider
+   * responsible. The vocational qualifications were dealt with by replacing
+   * those pages; higher education keeps its pages, and instead renders these
+   * only where the provider is named and the fee has a source.
+   *
+   * See isAttributed() below.
+   */
+  duration?: string;
   tuitionMin?: number;
   tuitionMax?: number;
-  entryRequirement: string;
-  englishRequirement: string;
-  nextIntake: string;
+  entryRequirement?: string;
+  englishRequirement?: string;
+  nextIntake?: string;
   /** Defaults to "per year". */
   tuitionBasis?: string;
   /** Study area. Drives the browse-by-field index on a level page. */
   field?: Field;
+
+  // --- Attribution. All null until Edmark populates them. ---------------
+  /** Legal name of the institution that delivers and issues the course. */
+  providerLegalName?: string | null;
+  /** The institution's CRICOS provider code. */
+  cricosProviderCode?: string | null;
+  /** The course's own CRICOS registration code. */
+  cricosCourseCode?: string | null;
+  /** Where the published fee came from. No source, no fee. */
+  feeSource?: string | null;
+  /** ISO date this record was last checked against the provider. */
+  lastVerified?: string | null;
 };
+
+/**
+ * True where a higher-education course may show its commercial detail.
+ *
+ * Both halves matter. The provider's legal name and CRICOS code say who is
+ * responsible for the course; the fee source says where the number came from.
+ * A page carrying a fee without both is the thing the regulator wrote about.
+ *
+ * Today this returns false for all 53 courses, which is the honest state.
+ */
+export function isAttributed(c: Course): boolean {
+  return Boolean(c.providerLegalName && c.cricosProviderCode && c.feeSource);
+}
 
 // ---------------------------------------------------------------------------
 // Filter helpers. Intake and English requirement are stored as free text
@@ -137,7 +173,7 @@ export function ieltsOf(c: Course): number | null {
   // every course words it as "IELTS Academic 5.5"; one reads "Provider
   // placement test, commonly around IELTS 5.5", and requiring the strict
   // phrasing left that course out of the English filter entirely.
-  const m = c.englishRequirement.match(/IELTS\D{0,20}(\d+(?:\.\d+)?)/);
+  const m = c.englishRequirement?.match(/IELTS\D{0,20}(\d+(?:\.\d+)?)/);
   return m ? Number(m[1]) : null;
 }
 
@@ -172,7 +208,8 @@ export const ROLLING_INTAKE = "Rolling or multiple";
  * the moment one was ticked.
  */
 export function intakeMonthsOf(c: Course): string[] {
-  const found = INTAKE_MONTHS.filter((m) => c.nextIntake.includes(m));
+  if (!c.nextIntake) return [];
+  const found = INTAKE_MONTHS.filter((m) => c.nextIntake!.includes(m));
   return found.length > 0 ? found : [ROLLING_INTAKE];
 }
 

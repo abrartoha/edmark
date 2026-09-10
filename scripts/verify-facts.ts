@@ -16,6 +16,7 @@
 // Run: npm run verify:facts   (also runs as part of npm run build)
 
 import { facts, type SourcedFact } from "../lib/facts.ts";
+import { levels, isAttributed, type Course } from "../lib/higher-education.ts";
 
 const MAX_AGE_MONTHS = 6;
 
@@ -89,6 +90,49 @@ for (const [name, raw] of Object.entries(facts)) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Higher-education courses.
+//
+// Same rule as the vocational pages, for the same reason: a fee, a duration or
+// an entry requirement is a claim about a course somebody else delivers. It may
+// be published only where the provider responsible is named and the fee has a
+// source. Nothing is attributed today, so nothing should be rendering these.
+// ---------------------------------------------------------------------------
+// The rule is about what renders, not about what sits in the file. An
+// unattributed course renders none of its commercial detail, so the values can
+// stay where they are, dormant, until Edmark names the provider — deleting
+// them would just mean re-keying 53 courses later. What must never happen is a
+// fee reaching a reader with nobody named behind it.
+let dormant = 0;
+
+for (const level of levels) {
+  for (const course of level.courses) {
+    const attributed = isAttributed(course);
+    const hasFee = Boolean(course.tuitionMin || course.tuitionMax);
+
+    if (!attributed) {
+      if (hasFee || course.duration || course.entryRequirement) dormant++;
+      continue;
+    }
+
+    // Attributed: this course's fee and detail reach the reader, so everything
+    // that says who is responsible for them has to be there.
+    const missing = [
+      !course.providerLegalName && "providerLegalName",
+      !course.cricosProviderCode && "cricosProviderCode",
+      hasFee && !course.feeSource && "feeSource",
+      !course.lastVerified && "lastVerified",
+    ].filter(Boolean);
+
+    if (missing.length > 0) {
+      problems.push({
+        fact: `course "${course.name}"`,
+        problem: `renders its fee and course detail but is missing ${missing.join(", ")}. A fee is a claim about a course somebody else delivers: name the provider it came from, or the course renders as information only.`,
+      });
+    }
+  }
+}
+
 if (problems.length > 0) {
   console.error(`\nverify:facts FAILED — ${problems.length} problem(s)\n`);
   for (const p of problems) {
@@ -102,10 +146,17 @@ if (problems.length > 0) {
   process.exit(1);
 }
 
+const courseCount = levels.reduce((n, l) => n + l.courses.length, 0);
+const attributedCount = levels.reduce(
+  (n, l) => n + l.courses.filter(isAttributed).length,
+  0
+);
 const count = Object.keys(facts).length;
 const oldest = Object.values(facts)
   .map((f) => (f as SourcedFact).lastVerified)
   .sort()[0];
 console.log(
-  `verify:facts OK — ${count} figures, all sourced, oldest check ${oldest}.`
+  `verify:facts OK — ${count} figures, all sourced, oldest check ${oldest}.\n` +
+    `                 ${attributedCount}/${courseCount} higher-education courses attributed; ` +
+    `${dormant} render as information only until a provider is named.`
 );

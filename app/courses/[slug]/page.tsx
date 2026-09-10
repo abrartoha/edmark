@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import FieldArt from "@/components/FieldArt";
 import { IconArrow, IconCheck } from "@/components/Icons";
 import { INDICATIVE_NOTICE } from "@/lib/compliance";
+import { isAttributed } from "@/lib/higher-education";
 import Image from "next/image";
 import {
   catalog,
@@ -46,7 +47,8 @@ function formatTuition(min?: number, max?: number) {
   return money(max || min || 0);
 }
 
-function Fact({ label, value }: { label: string; value: string }) {
+function Fact({ label, value }: { label: string; value?: string }) {
+  if (!value) return null;
   return (
     <div className="border-t border-line py-4">
       <dt className="eyebrow text-[0.65rem]">{label}</dt>
@@ -63,6 +65,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   const info = fieldInfo(course.field);
   const related = relatedCourses(course);
   const photo = coursePhoto(course.slug);
+  const attributed = isAttributed(course);
 
   return (
     <>
@@ -102,6 +105,16 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
           {code && (
             <p className="mt-3 font-mono text-sm text-mist">{code}</p>
           )}
+          {attributed && (
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-mist">
+              Delivered by {course.providerLegalName} · CRICOS provider code{" "}
+              {course.cricosProviderCode}
+              {course.cricosCourseCode
+                ? ` · CRICOS course code ${course.cricosCourseCode}`
+                : ""}
+              . Edmark Education is an education agent and is not the provider.
+            </p>
+          )}
         </div>
       </section>
 
@@ -130,20 +143,46 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
               </p>
             )}
 
-            <dl className="mt-8">
-              <Fact label="Typical duration" value={course.duration} />
-              <Fact
-                label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
-                value={formatTuition(course.tuitionMin, course.tuitionMax)}
-              />
-              <Fact label="Typical entry requirement" value={course.entryRequirement} />
-              <Fact label="English requirement" value={course.englishRequirement} />
-              <Fact label="Next intake" value={course.nextIntake} />
-            </dl>
+            {/* Commercial detail renders only where the provider is named
+                and the fee has a source. Until then the page describes the
+                course and says who to ask. */}
+            {attributed ? (
+              <>
+                <dl className="mt-8">
+                  <Fact label="Typical duration" value={course.duration} />
+                  <Fact
+                    label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
+                    value={
+                      course.tuitionMin || course.tuitionMax
+                        ? formatTuition(course.tuitionMin, course.tuitionMax)
+                        : undefined
+                    }
+                  />
+                  <Fact label="Typical entry requirement" value={course.entryRequirement} />
+                  <Fact label="English requirement" value={course.englishRequirement} />
+                  <Fact label="Next intake" value={course.nextIntake} />
+                </dl>
 
-            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
-              {INDICATIVE_NOTICE}
-            </p>
+                <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
+                  {INDICATIVE_NOTICE}
+                  {course.feeSource ? ` Fees per ${course.feeSource}.` : ""}
+                </p>
+              </>
+            ) : (
+              <div className="mt-8 rounded-tr-[2.5rem] rounded-bl-[2.5rem] border border-line bg-mint-100 p-6 sm:p-7">
+                <p className="text-base font-medium leading-relaxed text-ink">
+                  Fees, duration and entry requirements are set by the
+                  institution delivering this course.
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-copy">
+                  Edmark Education is an education agent. We do not deliver this
+                  course or issue the qualification, and we publish a fee or an
+                  entry requirement only where we can name the provider it came
+                  from. Book a free consultation and we will confirm the current
+                  details with the institutions on your shortlist.
+                </p>
+              </div>
+            )}
           </div>
 
           <aside className="lg:pt-14">
