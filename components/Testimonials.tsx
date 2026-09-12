@@ -1,11 +1,9 @@
-import Link from "next/link";
-import { IconArrow } from "./Icons";
 import {
   OUTCOMES_VARY_NOTICE,
   publishedTestimonials,
 } from "@/lib/testimonials";
 
-// One testimonial only, the most complete. The others are on /success-stories.
+// One testimonial only, the most complete.
 //
 // Nothing here renders until a signed consent exists for that student, so the
 // whole section is absent today rather than showing a heading over a gap.
@@ -45,12 +43,6 @@ export default function Testimonials() {
           </figcaption>
         </figure>
 
-        <Link
-          href="/success-stories"
-          className="mt-7 inline-flex items-center gap-1.5 text-sm font-medium text-eucalypt transition-colors hover:text-ink"
-        >
-          Read more student stories <IconArrow className="h-3.5 w-3.5" />
-        </Link>
         <p className="reveal mt-10 max-w-3xl text-sm leading-relaxed text-sage">
           {OUTCOMES_VARY_NOTICE}
         </p>

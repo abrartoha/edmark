@@ -116,7 +116,6 @@ export const nav: NavItem[] = [
     ],
   },
   { label: "Partners", href: "/partners" },
-  { label: "Success stories", href: "/success-stories" },
   {
     label: "Resources",
     href: "/blog",

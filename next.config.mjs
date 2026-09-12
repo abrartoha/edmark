@@ -7,6 +7,14 @@
 const nextConfig = {
   async redirects() {
     return [
+      // The success stories page was removed on 13 September 2026. It had no
+      // stories to show — none have a signed consent on file — so it goes to
+      // the homepage rather than leaving a live URL with nothing behind it.
+      {
+        source: "/success-stories",
+        destination: "/",
+        statusCode: 301,
+      },
       // ----------------------------------------------------------------
       // ASQA notice, 2 September 2026. The 43 vocational course pages are
       // retired: Edmark is an education agent, not an RTO, and a page

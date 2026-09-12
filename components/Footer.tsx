@@ -24,7 +24,6 @@ const resources = [
   { label: "Scholarships", href: "/scholarships" },
   { label: "Research Degrees", href: "/courses/research-degrees" },
   { label: "Study in Australia", href: "/study-in-australia" },
-  { label: "Success Stories", href: "/success-stories" },
 ];
 
 export default function Footer() {

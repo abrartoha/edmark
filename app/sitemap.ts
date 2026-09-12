@@ -15,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog", priority: 0.8, freq: "weekly" as const },
     { path: "/faq", priority: 0.7, freq: "monthly" as const },
     { path: "/scholarships", priority: 0.8, freq: "monthly" as const },
-    { path: "/success-stories", priority: 0.7, freq: "monthly" as const },
     { path: "/study-in-australia", priority: 0.9, freq: "monthly" as const },
     { path: "/courses/research-degrees", priority: 0.9, freq: "monthly" as const },
     { path: "/careers", priority: 0.9, freq: "monthly" as const },
