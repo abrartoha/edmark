@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { services } from "@/lib/content";
 import { blogPosts } from "@/lib/blog";
-import { careers } from "@/lib/careers";
+import { vocationalCareers } from "@/lib/careers";
 import { levels } from "@/lib/higher-education";
 import { catalog } from "@/lib/course-catalog";
 
@@ -20,10 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/study-in-australia", priority: 0.9, freq: "monthly" as const },
     { path: "/courses/research-degrees", priority: 0.9, freq: "monthly" as const },
     { path: "/careers", priority: 0.9, freq: "monthly" as const },
-    { path: "/careers/higher-education", priority: 0.9, freq: "monthly" as const },
     { path: "/careers/vocational-education", priority: 0.9, freq: "monthly" as const },
     { path: "/partners", priority: 0.7, freq: "monthly" as const },
-    { path: "/how-were-paid", priority: 0.6, freq: "yearly" as const },
     // Low priority, but listed: a student looking for the privacy policy or
     // the complaints process should be able to find it in search rather than
     // having to trust that it exists.
@@ -35,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // One page per occupation. These replaced the vocational course pages on
   // 10 September 2026; the retired course URLs 301 to them from
   // next.config.mjs and are deliberately absent here.
-  const careerRoutes = careers.map((c) => ({
+  const careerRoutes = vocationalCareers.map((c) => ({
     path: `/careers/${c.slug}`,
     priority: 0.7,
     freq: "monthly" as const,

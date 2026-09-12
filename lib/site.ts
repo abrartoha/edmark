@@ -91,11 +91,6 @@ export const nav: NavItem[] = [
         note: "Bachelor degrees · Masters by coursework",
       },
       {
-        label: "Higher Education Careers",
-        href: "/careers/higher-education",
-        note: "Nursing · Teaching · Business · Engineering · Law",
-      },
-      {
         label: "Vocational Education Careers",
         href: "/careers/vocational-education",
         note: "Trades · Care · Cookery · Hospitality · Security",

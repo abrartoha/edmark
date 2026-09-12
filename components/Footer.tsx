@@ -8,10 +8,6 @@ const services = allServices.map((s) => ({
   href: s.href ?? `/services/${s.slug}`,
 }));
 
-// Appended to the nav-derived Explore column. Not in the header nav: it is a
-// disclosure students should be able to find, not a primary destination.
-const explore = [{ label: "How we're paid", href: "/how-were-paid" }];
-
 const legal = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
@@ -59,10 +55,10 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-3 text-sm">
-              {[
-                ...nav.filter((i) => i.href).map((i) => ({ label: i.label, href: i.href ?? "/" })),
-                ...explore,
-              ].map((item) => (
+              {nav
+                .filter((i) => i.href)
+                .map((i) => ({ label: i.label, href: i.href ?? "/" }))
+                .map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}

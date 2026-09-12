@@ -246,8 +246,27 @@ const nextConfig = {
         destination: "/careers/vocational-education",
         statusCode: 301,
       },
-      // /careers/vocational was live briefly before being renamed for symmetry
-      // with /careers/higher-education. Short-lived, but it was in the sitemap.
+      // Higher education careers retired 13 September 2026: the degree course
+      // pages cover higher education again. Careers reached only through a
+      // degree go to the course hub; careers with a vocational pathway stay.
+      // How we're paid page removed 13 September 2026 at Edmark's direction.
+      {
+        source: "/how-were-paid",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
+        source: "/careers/higher-education",
+        destination: "/courses/higher-education",
+        statusCode: 301,
+      },
+      {
+        source: "/careers/:slug(accountant|marketing-specialist|data-analyst|network-and-systems-engineer|cyber-security-analyst|school-teacher|professional-engineer|registered-nurse|midwife|occupational-therapist|speech-pathologist|psychologist|health-promotion-officer|biomedical-scientist|exercise-physiologist|osteopath|counsellor|social-worker|naturopath|lawyer|paralegal|laboratory-scientist|veterinary-technician)",
+        destination: "/courses/higher-education",
+        statusCode: 301,
+      },
+      // /careers/vocational was live briefly before being renamed to
+      // /careers/vocational-education. Short-lived, but it was in the sitemap.
       {
         source: "/careers/vocational",
         destination: "/careers/vocational-education",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageSeo } from "@/lib/seo";
 import CareerIndex from "@/components/CareerIndex";
-import { careers } from "@/lib/careers";
+import { vocationalCareers } from "@/lib/careers";
 
 export const metadata: Metadata = pageSeo({
   title: "Careers & Pathways in Australia",
@@ -10,9 +10,8 @@ export const metadata: Metadata = pageSeo({
   path: "/careers",
 });
 
-// Every occupation in one list. The two sector pages are the ones in the
-// navigation; this stays as the place a search result or an old link can land
-// without having to guess which half a reader wanted.
+// Every published occupation. /careers/vocational-education is the page in the
+// navigation; this stays as the place a search result or an old link can land.
 export default function CareersPage() {
   return (
     <CareerIndex
@@ -25,7 +24,7 @@ export default function CareersPage() {
       }
       subtitle="What the work involves, where it is done, what licensing applies, and the qualification usually used to get there."
       intro="These are guides to the work itself. Where a qualification is the usual way in, each page names it and links to the register that lists the organisations approved to deliver it, so you can check for yourself."
-      careers={careers}
+      careers={vocationalCareers}
     />
   );
 }

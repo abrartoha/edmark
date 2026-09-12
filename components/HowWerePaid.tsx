@@ -1,10 +1,8 @@
-import Link from "next/link";
 import SectionHeading from "./SectionHeading";
-import { IconArrow } from "./Icons";
 
 // The commission disclosure, in the students' words rather than a footnote.
-// Held here and rendered on both the homepage and /how-were-paid so the two
-// cannot drift apart. Same two-column shape as Why Edmark, which it sits under.
+// Rendered on the homepage. Same two-column shape as Why Edmark, which it sits
+// under.
 export const HOW_WERE_PAID = [
   "Edmark is free for students because a commission is paid when a student enrols. Our institution relationships are direct and sub-partnered, and rates differ between institutions.",
   "We don't let that decide your shortlist. If the right course is somewhere we don't have an arrangement with, we'll tell you, and we'll help you apply anyway.",
@@ -15,12 +13,7 @@ export const HOW_WERE_PAID = [
   "And if you ever want to know what we earn on a course we've recommended, ask. We'll tell you.",
 ];
 
-export default function HowWerePaid({
-  /** The homepage links through to the full page; the page itself does not. */
-  withLink = false,
-}: {
-  withLink?: boolean;
-}) {
+export default function HowWerePaid() {
   return (
     <section className="reveal bg-paper py-20 lg:py-28">
       <div className="container-page grid items-start gap-14 lg:grid-cols-2">
@@ -29,11 +22,6 @@ export default function HowWerePaid({
             eyebrow="How we're paid"
             title="Free for you, because the institution pays the commission."
           />
-          {withLink && (
-            <Link href="/how-were-paid" className="btn-outline mt-8">
-              Read the detail <IconArrow />
-            </Link>
-          )}
         </div>
 
         <div className="reveal space-y-5">

@@ -396,3 +396,12 @@ Partners: "Private colleges & pathway providers" and "TAFE & polytechnic
 partners" merged into one group, "Private Colleges, TAFE and Polytechnic
 Partners". Macquarie University and University of Canberra added; both show
 their names until logo files are supplied.
+
+Also at Edmark's direction, 13 September 2026:
+
+- Higher education careers retired. `/careers/higher-education` and the 23
+  careers reached only through a degree 301 to `/courses/higher-education`.
+  The 32 careers with a vocational qualification remain.
+- The `/how-were-paid` page removed and 301'd to the homepage. The commission
+  disclosure remains as a section on the homepage.
+- About page hero photograph replaced with a campus photograph of students.

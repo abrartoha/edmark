@@ -9,10 +9,10 @@ import CareerCard from "@/components/CareerCard";
 import QualificationPathway from "@/components/QualificationPathway";
 import { IconCheck } from "@/components/Icons";
 import { careerPhoto } from "@/lib/career-photos";
-import { careers, getCareer, relatedTo } from "@/lib/careers";
+import { getCareer, relatedTo, vocationalCareers } from "@/lib/careers";
 
 export function generateStaticParams() {
-  return careers.map((c) => ({ slug: c.slug }));
+  return vocationalCareers.map((c) => ({ slug: c.slug }));
 }
 
 /**

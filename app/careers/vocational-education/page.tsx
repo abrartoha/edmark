@@ -24,7 +24,7 @@ export default function VocationalCareersPage() {
       crumb="Vocational education"
       intro="These are guides to the work itself. Each page names the nationally recognised qualification usually used to enter the occupation and links to training.gov.au, so you can see for yourself which registered training organisations are approved to deliver it. Several of these trades are licensed, and the pages name the authority that licenses them."
       careers={vocationalCareers}
-      alsoSee={{ label: "Looking at degree careers instead", href: "/careers/higher-education" }}
+      alsoSee={{ label: "Looking at degrees instead", href: "/courses/higher-education" }}
       image="/images/heroes/short-courses.jpg"
     />
   );

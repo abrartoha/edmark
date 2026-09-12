@@ -35,7 +35,7 @@ export default function HomePage() {
       <CourseMatcher />
       <Services />
       <WhyChooseUs />
-      <HowWerePaid withLink />
+      <HowWerePaid />
       <Process />
       <Testimonials />
       <FAQ />
