@@ -6,18 +6,22 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { colleges, oshcProviders, tafes, universities } from "@/lib/partners";
 import { IconArrow } from "./Icons";
 
-// One slide per partner type. Twelve per slide, which is two rows of six on
-// desktop, rather than the single row of six this used to show: that was
-// hiding four partners outright, including two universities and two colleges
-// added after it was written.
+// Slides by partner type, twelve per slide: two rows of six on desktop.
 const PER_SLIDE = 12;
 
+// A group longer than one slide runs on to the next under the same label, so
+// no partner is cut off.
 const groups = [
-  { label: "Universities", items: universities.slice(0, PER_SLIDE) },
-  { label: "Colleges & pathway providers", items: colleges.slice(0, PER_SLIDE) },
-  { label: "TAFEs & polytechnics", items: tafes.slice(0, PER_SLIDE) },
-  { label: "OSHC providers", items: oshcProviders.slice(0, PER_SLIDE) },
-];
+  { label: "Universities", items: universities },
+  { label: "Private Colleges, TAFE and Polytechnic Partners", items: [...colleges, ...tafes] },
+  { label: "OSHC providers", items: oshcProviders },
+].flatMap((g) =>
+  Array.from({ length: Math.ceil(g.items.length / PER_SLIDE) }, (_, i) => ({
+    key: `${g.label}-${i}`,
+    label: g.label,
+    items: g.items.slice(i * PER_SLIDE, (i + 1) * PER_SLIDE),
+  }))
+);
 
 const INTERVAL = 3000;
 
@@ -72,7 +76,7 @@ export default function PartnerCarousel() {
           >
             {groups.map((g, gi) => (
               <div
-                key={g.label}
+                key={g.key}
                 className="w-full shrink-0"
                 aria-hidden={gi !== index}
               >
@@ -121,7 +125,7 @@ export default function PartnerCarousel() {
         <div className="mt-8 flex items-center justify-center gap-2.5">
           {groups.map((g, i) => (
             <button
-              key={g.label}
+              key={g.key}
               type="button"
               onClick={() => go(i)}
               aria-label={`Show ${g.label}`}

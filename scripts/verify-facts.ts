@@ -103,17 +103,13 @@ for (const [name, raw] of Object.entries(facts)) {
 // ---------------------------------------------------------------------------
 // Higher-education courses.
 //
-// Same rule as the vocational pages, for the same reason: a fee, a duration or
-// an entry requirement is a claim about a course somebody else delivers. It may
-// be published only where the provider responsible is named and the fee has a
-// source. Nothing is attributed today, so nothing should be rendering these.
+// Higher-education course detail (duration, indicative tuition, entry and
+// English requirements) renders on every course page and card, beside
+// INDICATIVE_NOTICE, at Edmark's direction (13 September 2026). A course that
+// also names its provider is held to more: the provider, CRICOS code, fee
+// source and check date must all be there.
 // ---------------------------------------------------------------------------
-// The rule is about what renders, not about what sits in the file. An
-// unattributed course renders none of its commercial detail, so the values can
-// stay where they are, dormant, until Edmark names the provider — deleting
-// them would just mean re-keying 53 courses later. What must never happen is a
-// fee reaching a reader with nobody named behind it.
-let dormant = 0;
+let indicative = 0;
 
 for (const level of levels) {
   for (const course of level.courses) {
@@ -121,7 +117,7 @@ for (const level of levels) {
     const hasFee = Boolean(course.tuitionMin || course.tuitionMax);
 
     if (!attributed) {
-      if (hasFee || course.duration || course.entryRequirement) dormant++;
+      if (hasFee || course.duration || course.entryRequirement) indicative++;
       continue;
     }
 
@@ -137,7 +133,7 @@ for (const level of levels) {
     if (missing.length > 0) {
       problems.push({
         fact: `course "${course.name}"`,
-        problem: `renders its fee and course detail but is missing ${missing.join(", ")}. A fee is a claim about a course somebody else delivers: name the provider it came from, or the course renders as information only.`,
+        problem: `renders its fee and course detail but is missing ${missing.join(", ")}. A fee is a claim about a course somebody else delivers: name the provider it came from, or remove the attribution.`,
       });
     }
   }
@@ -168,5 +164,5 @@ const oldest = Object.values(facts)
 console.log(
   `verify:facts OK — ${count} figures, all sourced, oldest check ${oldest}.\n` +
     `                 ${attributedCount}/${courseCount} higher-education courses attributed; ` +
-    `${dormant} render as information only until a provider is named.`
+    `${indicative} show indicative detail without a named provider.`
 );

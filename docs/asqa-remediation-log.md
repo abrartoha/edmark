@@ -372,3 +372,27 @@ does not deliver training or issue qualifications. Three pages still describe
 the agent role in passing — `/services`, `/partners` and `/complaints` — but
 none of them is a site-wide disclosure, and a reader landing on a career page
 from search will not see one.
+
+## Higher-education course section restored, with indicative detail (13 September 2026)
+
+At Edmark's direction:
+
+- The higher-education course section (`/courses/higher-education`, its level
+  pages and all 53 course pages) is back, replacing the higher-education career
+  conversion from Round 3. Vocational qualifications remain career pages and
+  their old course URLs still 301 to them.
+- Typical duration, indicative tuition, entry requirement, English requirement
+  and next intake show again on every higher-education course page and card.
+  None of the 53 names a provider. Each page carries `INDICATIVE_NOTICE` beside
+  the figures, and the listing pages carry it beside the grid.
+- This reverses the Round 2 rule that no fee, duration or entry requirement
+  appears without a named provider and a fee source. The risk was raised before
+  the change: the ASQA response is due 16 September 2026, and a reviewer may
+  read an unattributed fee as advertising. Edmark accepted it.
+- `verify:facts` still fails a course that names a provider without the CRICOS
+  code, fee source and check date.
+
+Partners: "Private colleges & pathway providers" and "TAFE & polytechnic
+partners" merged into one group, "Private Colleges, TAFE and Polytechnic
+Partners". Macquarie University and University of Canberra added; both show
+their names until logo files are supplied.

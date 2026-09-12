@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FieldArt from "./FieldArt";
 import { coursePhoto } from "@/lib/course-catalog";
-import { isAttributed, type Course } from "@/lib/higher-education";
+import type { Course } from "@/lib/higher-education";
 
 function formatTuition(min?: number, max?: number): string {
   // Both omitted is a deliberate signal, not missing data: some programs are
@@ -48,8 +48,7 @@ export function splitCourseName(name: string) {
  * sentences, so the value wraps under the label instead of being truncated.
  */
 function Row({ label, value }: { label: string; value?: string }) {
-  // No value, no row. An unattributed course carries no commercial detail at
-  // all, so the card shows its name and field and nothing it cannot stand behind.
+  // No value, no row.
   if (!value) return null;
   return (
     <div>
@@ -75,7 +74,6 @@ export default function CourseCard({
   // than threading a second prop through every caller.
   const slug = href?.replace("/courses/", "");
   const photo = coursePhoto(slug);
-  const attributed = isAttributed(course);
 
   const media = "-mx-7 -mt-7 mb-6 h-36 w-[calc(100%+3.5rem)] rounded-tr-[2.5rem] object-cover";
 
@@ -109,23 +107,21 @@ export default function CourseCard({
         )}
       </h3>
 
-      {/* Same rule as the course page: no fee, duration or requirement leaves
-          this card unless the provider responsible for them is named. A card
-          is where most readers meet a course, so a leak here would undo the
-          attribution on the page itself. */}
+      {/* Indicative detail. The listing pages carry INDICATIVE_NOTICE beside
+          the grid, so the card never shows a fee without it. */}
       <dl className="mt-5 space-y-2.5 text-sm leading-relaxed">
-        <Row label="Typical duration" value={attributed ? course.duration : undefined} />
+        <Row label="Typical duration" value={course.duration} />
         <Row
           label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
           value={
-            attributed && (course.tuitionMin || course.tuitionMax)
+            course.tuitionMin || course.tuitionMax
               ? formatTuition(course.tuitionMin, course.tuitionMax)
               : undefined
           }
         />
-        <Row label="Typical entry requirement" value={attributed ? course.entryRequirement : undefined} />
-        <Row label="English requirement" value={attributed ? course.englishRequirement : undefined} />
-        <Row label="Next intake" value={attributed ? course.nextIntake : undefined} />
+        <Row label="Typical entry requirement" value={course.entryRequirement} />
+        <Row label="English requirement" value={course.englishRequirement} />
+        <Row label="Next intake" value={course.nextIntake} />
       </dl>
     </>
   );

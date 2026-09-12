@@ -143,46 +143,27 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
               </p>
             )}
 
-            {/* Commercial detail renders only where the provider is named
-                and the fee has a source. Until then the page describes the
-                course and says who to ask. */}
-            {attributed ? (
-              <>
-                <dl className="mt-8">
-                  <Fact label="Typical duration" value={course.duration} />
-                  <Fact
-                    label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
-                    value={
-                      course.tuitionMin || course.tuitionMax
-                        ? formatTuition(course.tuitionMin, course.tuitionMax)
-                        : undefined
-                    }
-                  />
-                  <Fact label="Typical entry requirement" value={course.entryRequirement} />
-                  <Fact label="English requirement" value={course.englishRequirement} />
-                  <Fact label="Next intake" value={course.nextIntake} />
-                </dl>
+            {/* Indicative detail, always shown with the notice beside it.
+                Where a provider is named, the fee source is cited too. */}
+            <dl className="mt-8">
+              <Fact label="Typical duration" value={course.duration} />
+              <Fact
+                label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
+                value={
+                  course.tuitionMin || course.tuitionMax
+                    ? formatTuition(course.tuitionMin, course.tuitionMax)
+                    : undefined
+                }
+              />
+              <Fact label="Typical entry requirement" value={course.entryRequirement} />
+              <Fact label="English requirement" value={course.englishRequirement} />
+              <Fact label="Next intake" value={course.nextIntake} />
+            </dl>
 
-                <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
-                  {INDICATIVE_NOTICE}
-                  {course.feeSource ? ` Fees per ${course.feeSource}.` : ""}
-                </p>
-              </>
-            ) : (
-              <div className="mt-8 rounded-tr-[2.5rem] rounded-bl-[2.5rem] border border-line bg-mint-100 p-6 sm:p-7">
-                <p className="text-base font-medium leading-relaxed text-ink">
-                  Fees, duration and entry requirements are set by the
-                  institution delivering this course.
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-copy">
-                  Edmark Education is an education agent. We do not deliver this
-                  course or issue the qualification, and we publish a fee or an
-                  entry requirement only where we can name the provider it came
-                  from. Book a free consultation and we will confirm the current
-                  details with the institutions on your shortlist.
-                </p>
-              </div>
-            )}
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
+              {INDICATIVE_NOTICE}
+              {attributed && course.feeSource ? ` Fees per ${course.feeSource}.` : ""}
+            </p>
           </div>
 
           <aside className="lg:pt-14">

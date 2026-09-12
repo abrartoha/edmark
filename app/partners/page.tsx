@@ -97,35 +97,22 @@ export default function PartnersPage() {
             center
             eyebrow="Universities"
             title="University partners"
-            subtitle="Victorian universities, TAFEs and colleges, alongside partners in Tasmania, the Northern Territory and New South Wales."
+            subtitle="Victorian universities, TAFEs and colleges, alongside partners in New South Wales, the ACT, Tasmania and the Northern Territory."
           />
           <LogoGrid items={universities} />
         </div>
       </section>
 
-      {/* Colleges & pathways */}
+      {/* Private colleges, TAFEs and polytechnics, as one group */}
       <section className="bg-white py-16 lg:py-24">
         <div className="container-page">
           <SectionHeading
             center
-            eyebrow="Colleges & pathways"
-            title="Private colleges & pathway providers"
-            subtitle="Flexible entry points, diplomas and pathway programs that lead into a full degree."
+            eyebrow="Colleges, TAFEs & polytechnics"
+            title="Private Colleges, TAFE and Polytechnic Partners"
+            subtitle="Practical, industry-focused study, from certificates and diplomas through to degrees."
           />
-          <LogoGrid items={colleges} />
-        </div>
-      </section>
-
-      {/* TAFEs */}
-      <section className="bg-brand-50 py-16 lg:py-24">
-        <div className="container-page">
-          <SectionHeading
-            center
-            eyebrow="Vocational education"
-            title="TAFE & polytechnic partners"
-            subtitle="Practical, industry-focused qualifications with strong graduate employment outcomes."
-          />
-          <LogoGrid items={tafes} />
+          <LogoGrid items={[...colleges, ...tafes]} />
         </div>
       </section>
 
