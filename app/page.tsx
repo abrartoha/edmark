@@ -31,9 +31,9 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
+      <Services />
       <PartnerCarousel />
       <CourseMatcher />
-      <Services />
       <WhyChooseUs />
       <HowWerePaid />
       <Process />
