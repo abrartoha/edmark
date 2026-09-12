@@ -45,8 +45,8 @@ export const universities: Institution[] = [
   { slug: "utas", name: "University of Tasmania", meta: "Hobart, TAS", relationship: "sub-partnered", logoLicensed: true, logoAsset: "utas.png", url: "https://www.utas.edu.au" },
   { slug: "cdu", name: "Charles Darwin University", meta: "Darwin, NT", relationship: "sub-partnered", logoLicensed: true, logoAsset: "cdu.png", url: "https://www.cdu.edu.au" },
   { slug: "southerncross", name: "Southern Cross University", meta: "Gold Coast, NSW · Sydney & Melbourne campuses", relationship: "sub-partnered", logoLicensed: true, logoAsset: "southerncross.png", url: "https://www.scu.edu.au" },
-  { slug: "macquarie", name: "Macquarie University", meta: "Sydney, NSW", relationship: "sub-partnered", logoLicensed: true, logoAsset: null, url: "https://www.mq.edu.au" },
-  { slug: "canberra", name: "University of Canberra", meta: "Canberra, ACT", relationship: "sub-partnered", logoLicensed: true, logoAsset: null, url: "https://www.canberra.edu.au" },
+  { slug: "macquarie", name: "Macquarie University", meta: "Sydney, NSW", relationship: "sub-partnered", logoLicensed: true, logoAsset: "macquarie.png", url: "https://www.mq.edu.au" },
+  { slug: "canberra", name: "University of Canberra", meta: "Canberra, ACT", relationship: "sub-partnered", logoLicensed: true, logoAsset: "canberra.png", url: "https://www.canberra.edu.au" },
 ];
 
 export const tafes: Institution[] = [
