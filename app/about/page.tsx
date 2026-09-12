@@ -39,6 +39,15 @@ const stats = [
   { value: "5+", label: "Years of experience" },
 ];
 
+type TeamMember = {
+  name: string;
+  role: string;
+  credential: string;
+  email: string;
+  /** Empty until a photograph exists; the card shows initials meanwhile. */
+  image: string;
+};
+
 export default function AboutPage() {
   return (
     <>
@@ -67,7 +76,12 @@ export default function AboutPage() {
               site.team.length > 2 ? "max-w-5xl lg:grid-cols-3" : "max-w-3xl"
             }`}
           >
-            {site.team.map((member, i) => (
+            {/* Typed as a plain list rather than the literal tuple site.ts
+                declares. With every member photographed, the literal type
+                makes the initials fallback unreachable, TypeScript narrows it
+                to never, and the build fails — but the fallback has to stay
+                valid for whoever joins next without a picture. */}
+            {(site.team as readonly TeamMember[]).map((member, i) => (
               <div
                 key={member.name}
                 className="reveal rounded-3xl border border-brand-100 bg-white p-8 text-center shadow-soft"
