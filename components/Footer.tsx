@@ -163,6 +163,13 @@ export default function Footer() {
             {site.address.full}
           </p>
         </div>
+
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-mist">
+          We acknowledge the Wurundjeri Woi-wurrung people of the Kulin Nation
+          as the Traditional Custodians of the land on which we work and learn.
+          We pay our respects to Elders past and present, and extend that
+          respect to all Aboriginal and Torres Strait Islander peoples.
+        </p>
       </div>
     </footer>
   );
