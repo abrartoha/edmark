@@ -6,22 +6,17 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { colleges, oshcProviders, tafes, universities } from "@/lib/partners";
 import { IconArrow } from "./Icons";
 
-// Slides by partner type, twelve per slide: two rows of six on desktop.
-const PER_SLIDE = 12;
-
-// A group longer than one slide runs on to the next under the same label, so
-// no partner is cut off.
+// Three slides, one per partner type, each showing every partner in the group
+// (rows of six on desktop).
 const groups = [
-  { label: "Universities", items: universities },
-  { label: "Private Colleges, TAFE and Polytechnic Partners", items: [...colleges, ...tafes] },
-  { label: "OSHC providers", items: oshcProviders },
-].flatMap((g) =>
-  Array.from({ length: Math.ceil(g.items.length / PER_SLIDE) }, (_, i) => ({
-    key: `${g.label}-${i}`,
-    label: g.label,
-    items: g.items.slice(i * PER_SLIDE, (i + 1) * PER_SLIDE),
-  }))
-);
+  { key: "universities", label: "Universities", items: universities },
+  {
+    key: "colleges",
+    label: "Private Colleges, TAFE and Polytechnic Partners",
+    items: [...colleges, ...tafes],
+  },
+  { key: "oshc", label: "OSHC providers", items: oshcProviders },
+];
 
 const INTERVAL = 3000;
 
@@ -29,6 +24,17 @@ export default function PartnerCarousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduceMotion = useRef(false);
+  // The viewport takes the height of the slide on show, so a short group
+  // (OSHC) doesn't sit above the empty space left for a long one.
+  const slides = useRef<(HTMLDivElement | null)[]>([]);
+  const [height, setHeight] = useState<number>();
+
+  useEffect(() => {
+    const measure = () => setHeight(slides.current[index]?.offsetHeight);
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [index]);
 
   useEffect(() => {
     reduceMotion.current = window.matchMedia(
@@ -64,19 +70,23 @@ export default function PartnerCarousel() {
             section matters: the section is a full-width band, so an idle
             cursor resting anywhere in it used to stop the carousel dead. */}
         <div
-          className="mt-8 overflow-hidden"
+          className="mt-8 overflow-hidden transition-[height] duration-700 ease-out motion-reduce:transition-none"
+          style={{ height }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
           onBlurCapture={() => setPaused(false)}
         >
           <div
-            className="flex transition-transform duration-700 ease-out motion-reduce:transition-none"
+            className="flex items-start transition-transform duration-700 ease-out motion-reduce:transition-none"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {groups.map((g, gi) => (
               <div
                 key={g.key}
+                ref={(el) => {
+                  slides.current[gi] = el;
+                }}
                 className="w-full shrink-0"
                 aria-hidden={gi !== index}
               >
@@ -108,7 +118,7 @@ export default function PartnerCarousel() {
                             </span>
                           </>
                         ) : (
-                          <span className="grid h-[3.75rem] place-items-center text-sm font-medium leading-snug text-ink transition-colors group-hover:text-eucalypt">
+                          <span className="grid flex-1 place-items-center text-sm font-medium leading-snug text-ink transition-colors group-hover:text-eucalypt">
                             {inst.name}
                           </span>
                         )}
