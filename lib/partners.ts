@@ -33,12 +33,12 @@ export type Institution = {
 // Order is deliberate: this is the sequence they appear in on the homepage
 // carousel and /partners, so the first three lead the first slide.
 export const universities: Institution[] = [
-  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "rmit.png", url: "https://www.rmit.edu.au" },
+  { slug: "rmit", name: "RMIT University", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "rmit-2026.png", url: "https://www.rmit.edu.au" },
   { slug: "swinburne", name: "Swinburne University of Technology", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "swinburne.png", url: "https://www.swinburne.edu.au" },
   { slug: "latrobe", name: "La Trobe University", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "latrobe.png", url: "https://www.latrobe.edu.au" },
   { slug: "vu", name: "Victoria University", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "vu.png", url: "https://www.vu.edu.au" },
   { slug: "federation", name: "Federation University", meta: "Ballarat / Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "federation.png", url: "https://federation.edu.au" },
-  { slug: "deakin", name: "Deakin University", meta: "Geelong / Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "deakin.png", url: "https://www.deakin.edu.au" },
+  { slug: "deakin", name: "Deakin University", meta: "Geelong / Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "deakin-2026.png", url: "https://www.deakin.edu.au" },
   { slug: "acu", name: "Australian Catholic University", meta: "Melbourne, VIC · multiple campuses", relationship: "sub-partnered", logoLicensed: true, logoAsset: "acu.png", url: "https://www.acu.edu.au" },
   { slug: "cqu", name: "CQUniversity Melbourne", meta: "Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "cqu.png", url: "https://www.cqu.edu.au" },
   { slug: "torrens", name: "Torrens University", meta: "Melbourne, VIC · multiple campuses", relationship: "sub-partnered", logoLicensed: true, logoAsset: "torrens.png", url: "https://www.torrens.edu.au" },
@@ -66,7 +66,8 @@ export const colleges: Institution[] = [
   { slug: "icv", name: "International College of Victoria (ICV)", meta: "West Melbourne, VIC · RTO 22581", relationship: "sub-partnered", logoLicensed: true, logoAsset: "icv.png", url: "https://www.icv.edu.au" },
   { slug: "mihe", name: "Melbourne Institute of Higher Education (MIHE)", meta: "Preston & Melbourne, VIC", relationship: "sub-partnered", logoLicensed: true, logoAsset: "mihe.png", url: "https://www.mihe.vic.edu.au" },
   { slug: "jti", name: "Job Training Institute (JTI)", meta: "Melbourne, VIC · RTO 122208", relationship: "sub-partnered", logoLicensed: true, logoAsset: "jti.png", url: "https://www.jti.edu.au" },
-  { slug: "apc", name: "Australian Polytechnic College", meta: "Sydney, NSW & Melbourne, VIC · RTO 45441", relationship: "sub-partnered", logoLicensed: true, logoAsset: null, url: "https://australianpolytechnic.edu.au" },
+  { slug: "apc", name: "Australian Polytechnic College", meta: "Sydney, NSW & Melbourne, VIC · RTO 45441", relationship: "sub-partnered", logoLicensed: true, logoAsset: "apc.png", url: "https://australianpolytechnic.edu.au" },
+  { slug: "mpc", name: "Monash Polytechnic College", meta: "Hampton Park, VIC · RTO 46000", relationship: "sub-partnered", logoLicensed: true, logoAsset: "mpc.png", url: "https://mpc.edu.au" },
 ];
 
 // ---------------------------------------------------------------------------
