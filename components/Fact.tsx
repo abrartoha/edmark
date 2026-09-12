@@ -71,7 +71,7 @@ export default function Fact({
         >
           {fact.source}
         </a>
-        , as at {longDate(fact.asAt)}. Checked {longDate(fact.lastVerified)}.
+        , as at {longDate(fact.asAt)}.
       </p>
     </div>
   );
