@@ -51,7 +51,7 @@ export default function HigherEducationPage() {
 
           <CourseBrowser
             courses={levels.flatMap((l) =>
-              l.courses.map((c) => ({
+              l.courses.map(({ tuitionMin, tuitionMax, tuitionBasis, nextIntake, feeSource, ...c }) => ({
                 ...c,
                 levelSlug: l.slug,
                 levelTitle: l.title,

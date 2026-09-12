@@ -103,9 +103,10 @@ for (const [name, raw] of Object.entries(facts)) {
 // ---------------------------------------------------------------------------
 // Higher-education courses.
 //
-// Higher-education course detail (duration, indicative tuition, entry and
-// English requirements) renders on every course page and card, beside
-// INDICATIVE_NOTICE, at Edmark's direction (13 September 2026). A course that
+// Higher-education course detail (duration, entry and English requirements)
+// renders on every course page and card, beside INDICATIVE_NOTICE, at
+// Edmark's direction (13 September 2026). Tuition and next intake are not
+// shown. A course that
 // also names its provider is held to more: the provider, CRICOS code, fee
 // source and check date must all be there.
 // ---------------------------------------------------------------------------

@@ -405,3 +405,9 @@ Also at Edmark's direction, 13 September 2026:
 - The `/how-were-paid` page removed and 301'd to the homepage. The commission
   disclosure remains as a section on the homepage.
 - About page hero photograph replaced with a campus photograph of students.
+- Tuition and next intake removed from every higher-education course page and
+  card. Duration, entry requirement and English requirement remain, beside
+  `INDICATIVE_NOTICE`. The course browser no longer filters by budget, intake
+  or IELTS/PTE score; its study-area filter is renamed "Sector of study".
+- Homepage "What we do" section moved above the partner carousel and course
+  matcher.

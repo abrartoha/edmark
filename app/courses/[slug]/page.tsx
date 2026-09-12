@@ -33,18 +33,11 @@ export function generateMetadata({
   return {
     ...pageSeo({
       title: course.name,
-      description: `${course.name}: typical duration, indicative tuition, entry and English requirements, intakes and career outcomes. Confirmed for your situation in a free consultation with Edmark Education.`,
+      description: `${course.name}: typical duration, entry and English requirements, and career outcomes. Confirmed for your situation in a free consultation with Edmark Education.`,
       path: `/courses/${course.slug}`,
       image: "/og/courses.jpg",
     }),
   };
-}
-
-function formatTuition(min?: number, max?: number) {
-  if (!min && !max) return "Varies by provider";
-  const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
-  if (min && max && min !== max) return `${money(min)}–${money(max)}`;
-  return money(max || min || 0);
 }
 
 function Fact({ label, value }: { label: string; value?: string }) {
@@ -143,26 +136,15 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
               </p>
             )}
 
-            {/* Indicative detail, always shown with the notice beside it.
-                Where a provider is named, the fee source is cited too. */}
+            {/* Indicative detail, always shown with the notice beside it. */}
             <dl className="mt-8">
               <Fact label="Typical duration" value={course.duration} />
-              <Fact
-                label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
-                value={
-                  course.tuitionMin || course.tuitionMax
-                    ? formatTuition(course.tuitionMin, course.tuitionMax)
-                    : undefined
-                }
-              />
               <Fact label="Typical entry requirement" value={course.entryRequirement} />
               <Fact label="English requirement" value={course.englishRequirement} />
-              <Fact label="Next intake" value={course.nextIntake} />
             </dl>
 
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-sage">
               {INDICATIVE_NOTICE}
-              {attributed && course.feeSource ? ` Fees per ${course.feeSource}.` : ""}
             </p>
           </div>
 
@@ -217,7 +199,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
 
       <CTA
         title={`Thinking about ${subject}?`}
-        subtitle="Book a free consultation and we'll confirm the fees, entry requirements and intakes that apply to your background, across the providers we work with."
+        subtitle="Book a free consultation and we'll confirm the entry requirements that apply to your background, across the providers we work with."
       />
     </>
   );

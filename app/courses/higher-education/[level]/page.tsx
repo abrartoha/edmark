@@ -25,7 +25,7 @@ export function generateMetadata({
   return {
     ...pageSeo({
       title: `${level.title} in Australia`,
-      description: `${level.title} study options in Australia: indicative tuition, typical entry and English requirements, and intake timing. Confirmed for your situation during a free consultation with Edmark Education.`,
+      description: `${level.title} study options in Australia: typical duration, entry and English requirements. Confirmed for your situation during a free consultation with Edmark Education.`,
       path: `/courses/higher-education/${level.slug}`,
     }),
   };
@@ -71,7 +71,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
           <h2 className="mt-3 text-3xl sm:text-4xl">{level.title} options</h2>
 
           <CourseBrowser
-            courses={level.courses.map((c) => ({
+            courses={level.courses.map(({ tuitionMin, tuitionMax, tuitionBasis, nextIntake, feeSource, ...c }) => ({
               ...c,
               levelSlug: level.slug,
               levelTitle: level.title,
@@ -102,7 +102,7 @@ export default function LevelPage({ params }: { params: { level: string } }) {
 
       <CTA
         title={`Ready to look at ${level.title.toLowerCase()} options?`}
-        subtitle="Book a free consultation and we'll shortlist the providers that fit your background, budget and intake."
+        subtitle="Book a free consultation and we'll shortlist the providers that fit your background and goals."
       />
     </>
   );

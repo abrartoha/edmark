@@ -4,15 +4,6 @@ import FieldArt from "./FieldArt";
 import { coursePhoto } from "@/lib/course-catalog";
 import type { Course } from "@/lib/higher-education";
 
-function formatTuition(min?: number, max?: number): string {
-  // Both omitted is a deliberate signal, not missing data: some programs are
-  // priced too differently across the network to quote as a range.
-  if (!min && !max) return "Varies by provider";
-  const money = (n: number) => `$${n.toLocaleString("en-AU")}`;
-  if (min && max && min !== max) return `${money(min)}–${money(max)}`;
-  return money(max || min || 0);
-}
-
 /** A trailing training package code, e.g. "(CPC30220)". Deliberately strict on
  *  case and digits so a real parenthetical like "(Paralegal Studies)" or
  *  "(English language)" is left as part of the course name. */
@@ -108,20 +99,11 @@ export default function CourseCard({
       </h3>
 
       {/* Indicative detail. The listing pages carry INDICATIVE_NOTICE beside
-          the grid, so the card never shows a fee without it. */}
+          the grid. */}
       <dl className="mt-5 space-y-2.5 text-sm leading-relaxed">
         <Row label="Typical duration" value={course.duration} />
-        <Row
-          label={`Indicative tuition (${course.tuitionBasis ?? "per year"})`}
-          value={
-            course.tuitionMin || course.tuitionMax
-              ? formatTuition(course.tuitionMin, course.tuitionMax)
-              : undefined
-          }
-        />
         <Row label="Typical entry requirement" value={course.entryRequirement} />
         <Row label="English requirement" value={course.englishRequirement} />
-        <Row label="Next intake" value={course.nextIntake} />
       </dl>
     </>
   );

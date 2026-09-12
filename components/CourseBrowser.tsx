@@ -3,18 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import CourseCard from "./CourseCard";
-import {
-  FEE_BANDS,
-  FIELD_ORDER,
-  INTAKE_MONTHS,
-  ieltsOf,
-  intakeMonthsOf,
-  PTE_EQUIVALENT,
-  ROLLING_INTAKE,
-  type Course,
-  type Field,
-  type FeeBand,
-} from "@/lib/higher-education";
+import { FIELD_ORDER, type Course, type Field } from "@/lib/higher-education";
 
 /** A course plus the level it sits under, so one flat list can span both. */
 export type BrowserCourse = Course & {
@@ -79,10 +68,6 @@ export default function CourseBrowser({
   levels = [],
   lockedLevel,
   fieldOrder = FIELD_ORDER,
-  feeBands = FEE_BANDS,
-  feeLegend = "Budget per semester",
-  showIntake = true,
-  showEnglish = true,
 }: {
   courses: BrowserCourse[];
   /** Omit where the list has no levels, e.g. vocational courses. */
@@ -93,24 +78,11 @@ export default function CourseBrowser({
    * a student can switch without loading another page.
    */
   lockedLevel?: string;
-  /** Study areas to offer, in display order. Higher education by default. */
+  /** Sectors of study to offer, in display order. Higher education by default. */
   fieldOrder?: readonly Field[];
-  /** Fee tiers. Higher education quotes per semester, vocational per year. */
-  feeBands?: FeeBand[];
-  feeLegend?: string;
-  /**
-   * Vocational courses are almost all rolling intake at a provider-set English
-   * level, so those two groups say the same thing on nearly every card and are
-   * turned off there rather than offering a filter that cannot narrow much.
-   */
-  showIntake?: boolean;
-  showEnglish?: boolean;
 }) {
   const [levelSlugs, setLevelSlugs] = useState<Set<string>>(new Set());
   const [fields, setFields] = useState<Set<string>>(new Set());
-  const [fees, setFees] = useState<Set<string>>(new Set());
-  const [months, setMonths] = useState<Set<string>>(new Set());
-  const [ielts, setIelts] = useState<Set<number>>(new Set());
 
   const all = courses;
 
@@ -122,22 +94,8 @@ export default function CourseBrowser({
       level: (c: BrowserCourse) =>
         levelSlugs.size === 0 || levelSlugs.has(c.levelSlug),
       field: (c: Course) => fields.size === 0 || (c.field ? fields.has(c.field) : false),
-      fee: (c: Course) =>
-        fees.size === 0 ||
-        feeBands.some(
-          (b) => fees.has(b.label) && c.tuitionMin != null && c.tuitionMin <= b.max
-        ),
-      month: (c: Course) =>
-        !showIntake ||
-        months.size === 0 ||
-        intakeMonthsOf(c).some((m) => months.has(m)),
-      ielts: (c: Course) => {
-        if (!showEnglish || ielts.size === 0) return true;
-        const v = ieltsOf(c);
-        return v !== null && ielts.has(v);
-      },
     }),
-    [levelSlugs, fields, fees, months, ielts, feeBands, showIntake, showEnglish]
+    [levelSlugs, fields]
   );
 
   const results = useMemo(
@@ -154,38 +112,20 @@ export default function CourseBrowser({
     );
 
   const fieldOptions = fieldOrder.filter((f) => all.some((c) => c.field === f));
-  const ieltsOptions = Array.from(
-    new Set(all.map(ieltsOf).filter((v): v is number => v !== null))
-  ).sort((a, b) => a - b);
-  const monthOptions = [
-    ...INTAKE_MONTHS.filter((m) => all.some((c) => intakeMonthsOf(c).includes(m))),
-    ...(all.some((c) => intakeMonthsOf(c).includes(ROLLING_INTAKE))
-      ? [ROLLING_INTAKE]
-      : []),
-  ];
 
-  const activeCount =
-    levelSlugs.size +
-    fields.size +
-    fees.size +
-    (showIntake ? months.size : 0) +
-    (showEnglish ? ielts.size : 0);
+  const activeCount = levelSlugs.size + fields.size;
 
   const clear = () => {
     setLevelSlugs(new Set());
     setFields(new Set());
-    setFees(new Set());
-    setMonths(new Set());
-    setIelts(new Set());
   };
 
   return (
     <div className="mt-10 grid gap-10 lg:grid-cols-[248px_1fr] lg:gap-12">
       {/* Sticky on desktop so the filters stay reachable down a long list, and
-          scrollable in its own right because the six groups run past 1100px,
-          taller than a laptop viewport. Without the max height and overflow a
-          sticky column simply pins at the top and everything below the fold
-          becomes unreachable: the page scrolls, the sidebar does not. */}
+          scrollable in its own right in case the groups outgrow the viewport:
+          a sticky column without a max height pins at the top and anything
+          below the fold becomes unreachable. */}
       <aside className="lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto lg:pr-3">
         <div className="flex items-baseline justify-between">
           <h3 className="text-lg">Filter</h3>
@@ -232,7 +172,7 @@ export default function CourseBrowser({
           </fieldset>
           )}
 
-          <Group legend="Study area">
+          <Group legend="Sector of study">
             {fieldOptions.map((f) => (
               <Check
                 key={f}
@@ -243,59 +183,6 @@ export default function CourseBrowser({
               />
             ))}
           </Group>
-
-          <Group legend={feeLegend}>
-            {feeBands.map((b) => (
-              <Check
-                key={b.label}
-                label={b.label}
-                checked={fees.has(b.label)}
-                count={
-                  others("fee").filter(
-                    (c) => c.tuitionMin != null && c.tuitionMin <= b.max
-                  ).length
-                }
-                onChange={() => setFees(toggle(fees, b.label))}
-              />
-            ))}
-            <p className="mt-2 text-xs leading-relaxed text-sage">
-              Matched on the lowest fee in each course's range, so a tier shows
-              everything available at or below it somewhere in the network.
-            </p>
-          </Group>
-
-          {showIntake && (
-          <Group legend="Intake">
-            {monthOptions.map((m) => (
-              <Check
-                key={m}
-                label={m}
-                checked={months.has(m)}
-                count={others("month").filter((c) => intakeMonthsOf(c).includes(m)).length}
-                onChange={() => setMonths(toggle(months, m))}
-              />
-            ))}
-          </Group>
-          )}
-
-          {showEnglish && (
-          <Group legend="English (IELTS / PTE)">
-            {ieltsOptions.map((v) => (
-              <Check
-                key={v}
-                label={`IELTS ${v.toFixed(1)} / PTE ${PTE_EQUIVALENT[v.toFixed(1)] ?? "-"}`}
-                checked={ielts.has(v)}
-                count={others("ielts").filter((c) => ieltsOf(c) === v).length}
-                onChange={() => setIelts(toggle(ielts, v))}
-              />
-            ))}
-            <p className="mt-2 text-xs leading-relaxed text-sage">
-              PTE figures are Pearson's indicative concordance. Each provider
-              sets the score it accepts, and the visa requirement is set
-              separately, so we confirm both against your shortlist.
-            </p>
-          </Group>
-          )}
 
         </div>
       </aside>

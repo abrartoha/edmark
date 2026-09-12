@@ -5,7 +5,6 @@ import { useState } from "react";
 import type { Pathway } from "@/lib/pathways";
 import {
   INDICATIVE_NOTICE,
-  formatTuition,
   matchPathways,
   questions,
   timingPrompt,
@@ -62,21 +61,8 @@ function ResultCard({ pathway }: { pathway: Pathway }) {
         {pathway.duration && (
           <Detail label="Typical duration" value={pathway.duration} />
         )}
-        {(pathway.tuitionMin || pathway.tuitionMax) && (
-          <div className="border-t border-line pt-3">
-            <dt className="eyebrow text-[0.65rem]">
-              Indicative annual tuition
-            </dt>
-            <dd className="mt-1 font-mono text-sm text-eucalypt">
-              {formatTuition(pathway.tuitionMin, pathway.tuitionMax)}
-            </dd>
-          </div>
-        )}
         {pathway.entryRequirement && (
           <Detail label="Typical entry requirement" value={pathway.entryRequirement} />
-        )}
-        {pathway.nextIntake && (
-          <Detail label="Next intake" value={pathway.nextIntake} />
         )}
       </dl>
     </article>
