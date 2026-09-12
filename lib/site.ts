@@ -55,7 +55,7 @@ export const site = {
       image: "/images/tareq.png",
     },
     ],
-  hours: "Mon–Sat: 8:00am – 7:00pm",
+  hours: "Mon–Fri: 9:00am – 5:00pm",
   social: {
     facebook: "https://www.facebook.com/profile.php?id=61592129003362",
     instagram: "https://www.instagram.com/edmark.education",
