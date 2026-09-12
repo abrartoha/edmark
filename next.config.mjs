@@ -253,305 +253,15 @@ const nextConfig = {
         destination: "/careers/vocational-education",
         statusCode: 301,
       },
-      // ----------------------------------------------------------------
-      // 11 September 2026. The 53 higher-education course pages follow the
-      // vocational ones to /careers, for the same reason: Edmark is an
-      // education agent, and a page built around a qualification it neither
-      // delivers nor issues is somebody else's product being marketed without
-      // the provider named. The occupation is ours to write about; the course
-      // is not.
-      // ----------------------------------------------------------------
-      {
-        source: "/courses/bachelor-of-information-technology-and-systems",
-        destination: "/careers/network-and-systems-engineer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-engineering-honours",
-        destination: "/careers/professional-engineer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-information-technology-bachelor-of-business",
-        destination: "/careers/network-and-systems-engineer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-business",
-        destination: "/careers/business-administrator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-accounting",
-        destination: "/careers/accountant",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-early-childhood-education",
-        destination: "/careers/early-childhood-educator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-education",
-        destination: "/careers/school-teacher",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-nursing",
-        destination: "/careers/registered-nurse",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-nursing-enrolled-nurse-to-registered-nurse",
-        destination: "/careers/registered-nurse",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-midwifery",
-        destination: "/careers/midwife",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-occupational-therapy",
-        destination: "/careers/occupational-therapist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-speech-pathology",
-        destination: "/careers/speech-pathologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-psychological-science",
-        destination: "/careers/psychologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-psychological-science-with-honours",
-        destination: "/careers/psychologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-psychological-science-bachelor-of-business",
-        destination: "/careers/psychologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-health-science-health-and-lifestyle",
-        destination: "/careers/health-promotion-officer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-biomedical-science",
-        destination: "/careers/biomedical-scientist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-clinical-exercise-physiology",
-        destination: "/careers/exercise-physiologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-clinical-sciences-osteopathic-studies",
-        destination: "/careers/osteopath",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-sport-and-exercise-science",
-        destination: "/careers/exercise-physiologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-exercise-science-and-psychological-science",
-        destination: "/careers/exercise-physiologist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-counselling",
-        destination: "/careers/counsellor",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-social-work",
-        destination: "/careers/social-worker",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-community-welfare",
-        destination: "/careers/community-services-worker",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-laws",
-        destination: "/careers/lawyer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-legal-and-justice-studies",
-        destination: "/careers/paralegal",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/associate-degree-of-law-paralegal-studies",
-        destination: "/careers/paralegal",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-science",
-        destination: "/careers/laboratory-scientist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-veterinary-technology",
-        destination: "/careers/veterinary-technician",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-business-in-hotel-management",
-        destination: "/careers/hospitality-manager",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/associate-degree-of-international-hotel-and-tourism-management",
-        destination: "/careers/hospitality-manager",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-business-marketing",
-        destination: "/careers/marketing-specialist",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/bachelor-of-information-technology-cyber-security",
-        destination: "/careers/cyber-security-analyst",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-information-technology-networking",
-        destination: "/careers/network-and-systems-engineer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/mba-master-of-business",
-        destination: "/careers/business-administrator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-professional-accounting",
-        destination: "/careers/accountant",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-business-analytics",
-        destination: "/careers/data-analyst",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-diploma-of-business",
-        destination: "/careers/business-administrator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-certificate-in-business",
-        destination: "/careers/business-administrator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-teaching",
-        destination: "/careers/school-teacher",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-teaching-early-childhood",
-        destination: "/careers/early-childhood-educator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-diploma-of-education-early-childhood",
-        destination: "/careers/early-childhood-educator",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-diploma-of-teaching-primary-secondary",
-        destination: "/careers/school-teacher",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-engineering",
-        destination: "/careers/professional-engineer",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-nursing-graduate-entry",
-        destination: "/careers/registered-nurse",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-social-work-professional-qualifying",
-        destination: "/careers/social-worker",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-certificate-in-social-sciences-for-social-work",
-        destination: "/careers/social-worker",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-naturopathic-medicine",
-        destination: "/careers/naturopath",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-osteopathic-medicine",
-        destination: "/careers/osteopath",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-business-in-global-hotel-leadership",
-        destination: "/careers/hospitality-manager",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-diploma-of-business-in-global-hotel-leadership",
-        destination: "/careers/hospitality-manager",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/graduate-certificate-of-business-in-global-hotel-leadership",
-        destination: "/careers/hospitality-manager",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/master-of-information-technology-cyber-security",
-        destination: "/careers/cyber-security-analyst",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/higher-education",
-        destination: "/careers/higher-education",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/higher-education/undergraduate",
-        destination: "/careers/higher-education",
-        statusCode: 301,
-      },
-      {
-        source: "/courses/higher-education/postgraduate",
-        destination: "/careers/higher-education",
-        statusCode: 301,
-      },
       // Renamed 11 September 2026: "Bachelor of Information Technology /
       // Networking" is now "Bachelor of Information Technology and Systems".
       // The slug is derived from the course name, so the old URL was live and
       // indexed and redirects rather than 404ing.
       {
-        // Was renamed to .../and-systems, which has since become a career page.
-        // Pointed straight at the destination rather than through the
-        // intermediate URL: a chain of redirects loses a little link equity at
-        // every hop and costs a crawler an extra round trip for nothing.
+        // Renamed to Bachelor of Information Technology and Systems on
+        // 11 September 2026; the slug moved with the name.
         source: "/courses/bachelor-of-information-technology-networking",
-        destination: "/careers/network-and-systems-engineer",
+        destination: "/courses/bachelor-of-information-technology-and-systems",
         statusCode: 301,
       },
       // What you study now lives under /courses, and how we help you get
@@ -561,18 +271,18 @@ const nextConfig = {
       // indexed, so each one redirects to its new home rather than 404ing.
       {
         source: "/services/higher-education",
-        destination: "/careers/higher-education",
+        destination: "/courses/higher-education",
         statusCode: 301,
       },
       {
         // Before the catch-all below, which would otherwise claim it.
         source: "/services/higher-education/pathway-programs",
-        destination: "/careers/higher-education",
+        destination: "/courses/higher-education",
         statusCode: 301,
       },
       {
         source: "/services/higher-education/:level",
-        destination: "/careers/higher-education",
+        destination: "/courses/higher-education/:level",
         statusCode: 301,
       },
       {

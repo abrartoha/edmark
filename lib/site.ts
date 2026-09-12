@@ -86,6 +86,11 @@ export const nav: NavItem[] = [
     blurb: "What you'll study, and where it leads",
     children: [
       {
+        label: "Higher Education",
+        href: "/courses/higher-education",
+        note: "Bachelor degrees · Masters by coursework",
+      },
+      {
         label: "Higher Education Careers",
         href: "/careers/higher-education",
         note: "Nursing · Teaching · Business · Engineering · Law",

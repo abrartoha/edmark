@@ -3,6 +3,8 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/content";
 import { blogPosts } from "@/lib/blog";
 import { careers } from "@/lib/careers";
+import { levels } from "@/lib/higher-education";
+import { catalog } from "@/lib/course-catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -49,6 +51,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     freq: "monthly" as const,
   }));
 
+  // Higher-education courses, restored on 13 September 2026. Each keeps its own
+  // page because it is what a student searches for by course name.
+  const courseRoutes = catalog.map((c) => ({
+    path: `/courses/${c.slug}`,
+    priority: 0.6,
+    freq: "monthly" as const,
+  }));
+
+  const higherEducationRoutes = [
+    { path: "/courses/higher-education", priority: 0.8, freq: "monthly" as const },
+    ...levels.map((l) => ({
+      path: `/courses/higher-education/${l.slug}`,
+      priority: 0.7,
+      freq: "monthly" as const,
+    })),
+  ];
+
   const blogRoutes = blogPosts.map((post) => ({
     path: `/blog/${post.slug}`,
     priority: 0.6,
@@ -59,6 +78,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...serviceRoutes,
     ...careerRoutes,
+    ...higherEducationRoutes,
+    ...courseRoutes,
     ...blogRoutes,
   ];
 
